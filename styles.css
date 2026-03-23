@@ -277,39 +277,49 @@ img { max-width: 100%; display: block; }
 .brands-strip {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 3rem;
+    align-items: stretch;
+    gap: 1.5rem;
     flex-wrap: wrap;
-    padding: 0 2rem;
+    padding: 0;
 }
 .brand-logo {
     display: flex;
     align-items: center;
     justify-content: center;
     transition: var(--transition);
-    opacity: 0.65;
     flex: 0 0 auto;
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 1.75rem 2.5rem;
+    min-width: 160px;
 }
 .brand-logo svg {
     fill: var(--dark);
     transition: var(--transition);
-    height: 28px;
+    height: 34px;
     width: auto;
+    opacity: 0.7;
 }
-.brand-logo:hover { opacity: 1; transform: translateY(-3px); }
-.brand-logo:hover svg { fill: var(--accent); }
+.brand-logo:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow-hover);
+    border-color: var(--accent);
+}
+.brand-logo:hover svg { fill: var(--accent); opacity: 1; }
 .brand-logo-text { text-decoration: none; }
 .brand-name {
     font-family: 'Inter', sans-serif;
     font-weight: 800;
-    font-size: 1.15rem;
-    letter-spacing: 3px;
+    font-size: 1.2rem;
+    letter-spacing: 4px;
     color: var(--dark);
     transition: var(--transition);
     white-space: nowrap;
+    opacity: 0.7;
 }
-.brand-name-sm { font-size: 0.85rem; letter-spacing: 2.5px; }
-.brand-logo-text:hover .brand-name { color: var(--accent); }
+.brand-name-sm { font-size: 0.88rem; letter-spacing: 2.5px; }
+.brand-logo-text:hover .brand-name { color: var(--accent); opacity: 1; }
 
 /* ---- PRODUCT GRID ---- */
 .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
