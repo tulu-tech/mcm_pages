@@ -475,8 +475,21 @@ img { max-width: 100%; display: block; }
     border: 1px solid var(--border-light);
     transition: var(--transition);
 }
-.feature-card:hover { border-color: var(--accent); box-shadow: var(--card-shadow); }
-.feature-card svg { width: 30px; height: 30px; fill: var(--accent); margin-bottom: 12px; }
+.feature-card:hover { border-color: var(--accent); box-shadow: var(--card-shadow); transform: translateY(-4px); }
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--accent-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    transition: var(--transition);
+}
+.feature-card:hover .feature-icon { background: var(--accent); transform: scale(1.1); }
+.feature-card:hover .feature-icon svg { fill: var(--white); }
+.feature-icon svg { width: 28px; height: 28px; fill: var(--accent); transition: fill 0.3s ease; }
 .feature-card h3 { font-size: 1.05rem; margin-bottom: 6px; font-family: 'Inter', sans-serif; }
 .feature-card p { font-size: 0.88rem; margin: 0; color: var(--muted); line-height: 1.6; }
 
