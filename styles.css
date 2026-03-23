@@ -400,7 +400,9 @@ img { max-width: 100%; display: block; }
     transition: var(--transition);
 }
 .lifestyle-card:hover { transform: translateY(-4px); box-shadow: var(--card-shadow-hover); border-color: var(--accent); }
-.lifestyle-card-img { width: 100%; height: 220px; object-fit: cover; }
+.lifestyle-card-img { width: 100%; height: 240px; overflow: hidden; }
+.lifestyle-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.lifestyle-card:hover .lifestyle-card-img img { transform: scale(1.06); }
 .lifestyle-card-body { padding: 1.5rem 1.75rem 2rem; }
 .lifestyle-card-body h3 { font-size: 1.1rem; margin-bottom: 0.5rem; font-family: 'Inter', sans-serif; }
 .lifestyle-card-body p { font-size: 0.9rem; color: var(--muted); margin: 0; line-height: 1.6; }
