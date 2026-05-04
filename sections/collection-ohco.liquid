@@ -1,0 +1,1329 @@
+{%- comment -%}
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  SECTION: collection-ohco.liquid                             ║
+  ║  Template: templates/collection.ohco-massage-chairs.json     ║
+  ║  Collection handle: ohco-massage-chairs                      ║
+  ║                                                              ║
+  ║  HOW TO INSTALL:                                             ║
+  ║  1. Upload this file to /sections/collection-ohco.liquid     ║
+  ║  2. Upload templates/collection.ohco-massage-chairs.json     ║
+  ║  3. Upload these images to Shopify Files:                    ║
+  ║     - ohco-lifestyle.png  (hero background)                  ║
+  ║     - ohco-tech-features.png (technology showcase)           ║
+  ║  4. Update section settings with CDN URLs for all images     ║
+  ╚══════════════════════════════════════════════════════════════╝
+{%- endcomment -%}
+
+{%- comment -%} ── SCHEMA MARKUP ── {%- endcomment -%}
+<script type="application/ld+json">
+[{
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "OHCO Massage Chairs",
+    "description": "Ultra-premium OHCO massage chair collection featuring the R6, M8 Neo, and M8 Neo LE. Japanese-crafted luxury wellness chairs with Sens8 4D massage technology.",
+    "url": "{{ canonical_url }}",
+    "mainEntity": {
+        "@type": "Brand",
+        "name": "OHCO",
+        "description": "OHCO is an ultra-premium massage chair brand known for Japanese craftsmanship, Ken Okuyama industrial design, and the proprietary Sens8 4D massage mechanism."
+    }
+},
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ shop.url }}"},
+        {"@type": "ListItem", "position": 2, "name": "Massage Chairs", "item": "{{ shop.url }}/collections/massage-chair"},
+        {"@type": "ListItem", "position": 3, "name": "OHCO Massage Chairs", "item": "{{ canonical_url }}"}
+    ]
+},
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {"@type":"Question","name":"What makes OHCO massage chairs different from other brands?","acceptedAnswer":{"@type":"Answer","text":"OHCO stands apart through Japanese craftsmanship, Ken Okuyama industrial design, and the proprietary Sens8 4D massage mechanism that mimics the nuanced hand movements of a master shiatsu therapist. OHCO chairs also feature premium materials, multi-zone infrared heat, aromatherapy, Bluetooth audio immersion, and design-forward aesthetics that integrate into luxury homes."}},
+        {"@type":"Question","name":"Which OHCO massage chair is best?","acceptedAnswer":{"@type":"Answer","text":"The best OHCO chair depends on your priorities. The M8 Neo LE is the flagship with exclusive finishes, the M8 Neo offers the full OHCO experience with Movesync dual mechanisms, and the R6 provides a refined entry into the OHCO lineup with Mid-Century Modern design. All three feature the Sens8 4D massage engine."}},
+        {"@type":"Question","name":"What is the difference between OHCO M8 Neo and M8 Neo LE?","acceptedAnswer":{"@type":"Answer","text":"The M8 Neo LE is a Limited Edition variant of the M8 Neo featuring exclusive colorways like Rosso Nero, premium finish details, and collector-grade positioning. Both share the same core technology platform including the Sens8 mechanism, MaxTrack coverage, total-body heat, and full sensory immersion suite."}},
+        {"@type":"Question","name":"Are OHCO massage chairs worth it?","acceptedAnswer":{"@type":"Answer","text":"OHCO chairs are considered worth the investment by buyers who value genuine massage quality over basic vibration, premium design that integrates into their home, and long-term daily wellness routines. The Sens8 mechanism delivers a measurably different massage experience from standard 4D chairs, and the build quality supports years of consistent daily use."}},
+        {"@type":"Question","name":"Where can I buy OHCO massage chairs?","acceptedAnswer":{"@type":"Answer","text":"OHCO massage chairs are available at Massage Chairs and More, an authorized premium retailer with showroom experience, white-glove delivery nationwide, financing through Affirm, and extended factory warranty options. Contact us at {{ section.settings.phone }} or visit our showroom."}},
+        {"@type":"Question","name":"Is OHCO a luxury massage chair brand?","acceptedAnswer":{"@type":"Answer","text":"Yes. OHCO is widely regarded as one of the most premium massage chair brands available. Their chairs feature industrial design by Ken Okuyama (designer of the Ferrari Enzo), shiatsu expertise from Akira Okabayashi, and Japanese manufacturing standards."}}
+    ]
+},
+{
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Massage Chairs and More",
+    "description": "Authorized OHCO massage chair dealer with showroom experience, premium support, and white-glove delivery.",
+    "url": "{{ shop.url }}",
+    "telephone": "{{ section.settings.phone | default: '+14088891188' }}",
+    "email": "info@massagechairsandmore.com"
+}]
+</script>
+
+<style>
+  /* ============================================
+     OHCO COLLECTION — PREMIUM EDITORIAL LANDING
+     Massage Chairs and More Design System
+     All units in PX for Shopify compatibility
+     ============================================ */
+
+  :root {
+    --ohco-bg: #ffffff;
+    --ohco-surface: #f9f8f6;
+    --ohco-surface-alt: #f3f1ed;
+    --ohco-surface-warm: #faf7f2;
+    --ohco-dark: #1a1a1a;
+    --ohco-dark2: #111111;
+    --ohco-text: #2d2d2d;
+    --ohco-muted: #5a5a5a;
+    --ohco-light-text: #8a8a8a;
+    --ohco-accent: #b8944f;
+    --ohco-accent-hover: #a07e3f;
+    --ohco-accent-light: rgba(184, 148, 79, 0.08);
+    --ohco-accent-glow: rgba(184, 148, 79, 0.15);
+    --ohco-accent-warm: #c9a45a;
+    --ohco-border: #e8e4de;
+    --ohco-border-light: #f0ece6;
+    --ohco-white: #ffffff;
+    --ohco-hero-overlay: rgba(15, 12, 8, 0.62);
+    --ohco-card-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    --ohco-card-shadow-hover: 0 20px 50px rgba(0,0,0,0.10);
+    --ohco-shadow-gold: 0 8px 32px rgba(184,148,79,0.22);
+    --ohco-radius: 16px;
+    --ohco-radius-sm: 10px;
+    --ohco-radius-lg: 24px;
+    --ohco-radius-xl: 32px;
+    --ohco-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .ohco-wrap *,.ohco-wrap *::before,.ohco-wrap *::after{box-sizing:border-box;margin:0;padding:0}
+  .ohco-wrap{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--ohco-bg);color:var(--ohco-text);line-height:1.75;font-size:16px !important;font-weight:400;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+  .ohco-wrap h1,.ohco-wrap h2,.ohco-wrap h3,.ohco-wrap h4,.ohco-wrap h5{color:var(--ohco-dark);line-height:1.2;font-weight:700}
+  .ohco-wrap h1,.ohco-wrap h2{font-family:'Playfair Display',Georgia,serif}
+  .ohco-wrap a{color:inherit;text-decoration:none}
+  .ohco-wrap img{max-width:100%;display:block}
+  .ohco-wrap p{font-size:15px;color:var(--ohco-muted);line-height:1.8}
+  .ohco-wrap h2{font-size:38px !important}
+  .ohco-wrap h3{font-size:20px !important}
+
+  .ohco-container{max-width:1320px;margin:0 auto;padding:0 2rem}
+  .ohco-container-narrow{max-width:900px;margin:0 auto;padding:0 2rem}
+
+  /* ---- ANIMATIONS ---- */
+  @keyframes ohcoFadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes ohcoShimmer{0%,100%{opacity:0.5}50%{opacity:1}}
+  @keyframes ohcoPulseDot{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:0.6}}
+  @keyframes ohcoGradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+  .ohco-fade-up{animation:ohcoFadeUp 0.7s ease both}
+  .ohco-fade-up-1{animation-delay:0.1s}
+  .ohco-fade-up-2{animation-delay:0.2s}
+  .ohco-fade-up-3{animation-delay:0.3s}
+  .ohco-fade-up-4{animation-delay:0.4s}
+
+  /* ---- STICKY SUBNAV ---- */
+  .ohco-subnav{background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--ohco-border-light);overflow-x:auto;scrollbar-width:none}
+  .ohco-subnav::-webkit-scrollbar{display:none}
+  .ohco-subnav-inner{display:flex;padding:0 2rem;min-width:max-content}
+  .ohco-subnav-inner a{display:block;padding:12px 17px;font-size:12px;font-weight:700;color:var(--ohco-muted);border-bottom:2.5px solid transparent;white-space:nowrap;transition:var(--ohco-transition);text-transform:uppercase;letter-spacing:0.07em;text-decoration:none}
+  .ohco-subnav-inner a:hover,.ohco-subnav-inner a.active{color:var(--ohco-dark);border-bottom-color:var(--ohco-accent)}
+
+  /* ---- BUTTONS ---- */
+  .ohco-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 40px;font-size:15px;font-weight:700;border-radius:50px;text-decoration:none;transition:var(--ohco-transition);border:2px solid transparent;cursor:pointer;letter-spacing:0.02em;font-family:'Inter',sans-serif}
+  .ohco-btn-primary{background:var(--ohco-dark);color:#fff !important;border-color:var(--ohco-dark)}
+  .ohco-btn-primary:hover{background:var(--ohco-accent);border-color:var(--ohco-accent);transform:translateY(-2px);box-shadow:var(--ohco-shadow-gold);color:#fff !important}
+  .ohco-btn-accent{background:var(--ohco-accent);color:#fff !important;border-color:var(--ohco-accent)}
+  .ohco-btn-accent:hover{background:var(--ohco-accent-hover);border-color:var(--ohco-accent-hover);transform:translateY(-2px);box-shadow:var(--ohco-shadow-gold);color:#fff !important}
+  .ohco-btn-outline{background:transparent;color:var(--ohco-dark) !important;border:2px solid var(--ohco-border)}
+  .ohco-btn-outline:hover{border-color:var(--ohco-accent);color:var(--ohco-accent) !important;transform:translateY(-1px)}
+  .ohco-btn-white-outline{background:transparent;color:#fff !important;border:2px solid rgba(255,255,255,0.45)}
+  .ohco-btn-white-outline:hover{border-color:#fff;background:rgba(255,255,255,0.10);transform:translateY(-1px);color:#fff !important}
+  .ohco-btn-ghost-dark{background:rgba(255,255,255,0.08);color:#fff !important;border:1.5px solid rgba(255,255,255,0.28)}
+  .ohco-btn-ghost-dark:hover{background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.45);color:#fff !important}
+  .ohco-btn-sm{padding:11px 26px;font-size:14px}
+
+  /* ---- SECTION GENERAL ---- */
+  .ohco-section{padding:96px 0}
+  .ohco-section-alt{background:var(--ohco-surface)}
+  .ohco-section-dark{background:var(--ohco-dark)}
+  .ohco-section-warm{background:var(--ohco-surface-warm)}
+  .ohco-section-header{text-align:center;margin-bottom:64px}
+  .ohco-section-header .ohco-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ohco-accent);margin-bottom:16px;font-weight:700;font-family:'Inter',sans-serif}
+  .ohco-section-header .ohco-eyebrow::before{content:'';width:20px;height:2px;background:linear-gradient(90deg,var(--ohco-accent),var(--ohco-accent-warm));border-radius:2px}
+  .ohco-section-header h2{font-size:44px !important;margin-bottom:16px;letter-spacing:-0.02em}
+  .ohco-section-header p{font-size:18px;color:var(--ohco-muted);max-width:700px;margin:0 auto;line-height:1.8}
+  .ohco-section-header.ohco-left-align{text-align:left}
+  .ohco-section-header.ohco-left-align p{margin:0}
+
+  /* Accent underline heading */
+  .ohco-accent-heading::after{content:'';display:block;width:48px;height:3px;margin-top:12px;background:linear-gradient(90deg,var(--ohco-accent),var(--ohco-accent-warm));border-radius:4px}
+  .ohco-section-header .ohco-accent-heading::after{margin-left:auto;margin-right:auto}
+  .ohco-section-header.ohco-left-align .ohco-accent-heading::after{margin-left:0}
+
+  /* ---- HERO ---- */
+  .ohco-hero{position:relative;min-height:92vh;display:flex;align-items:center;background:var(--ohco-dark);overflow:hidden}
+  .ohco-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0.4;z-index:0;transition:opacity 0.5s}
+  .ohco-hero-overlay{position:absolute;inset:0;background:linear-gradient(110deg,rgba(5,5,12,0.92) 25%,rgba(15,10,5,0.65) 60%,rgba(184,148,79,0.06) 100%);z-index:1}
+  .ohco-hero-glow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(184,148,79,0.12) 0%,transparent 70%);right:-100px;top:-100px;z-index:1;animation:ohcoShimmer 5s ease-in-out infinite}
+  .ohco-hero-content{position:relative;z-index:2;padding:80px 0 96px}
+  .ohco-hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ohco-accent-warm);font-weight:700;margin-bottom:24px;background:rgba(184,148,79,0.1);padding:6px 16px;border-radius:50px;border:1px solid rgba(184,148,79,0.18)}
+  .ohco-hero-eyebrow::before{content:'●';font-size:7px;animation:ohcoPulseDot 2.5s infinite}
+  .ohco-hero h1{font-size:67px !important;color:var(--ohco-white);max-width:800px;margin-bottom:24px;font-weight:700;line-height:1.08;letter-spacing:-0.02em;text-shadow:0 4px 30px rgba(0,0,0,0.3)}
+  .ohco-hero-tag{display:inline-block;background:linear-gradient(135deg,var(--ohco-accent),var(--ohco-accent-warm));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .ohco-hero-sub{font-size:20px !important;color:rgba(255,255,255,0.78);max-width:640px;margin-bottom:12px;font-weight:400;line-height:1.7}
+  .ohco-hero-note{font-size:15px;color:rgba(255,255,255,0.45);max-width:580px;margin-bottom:40px;line-height:1.7}
+  .ohco-hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px}
+  .ohco-hero-stats{display:flex;gap:0;padding-top:40px;border-top:1px solid rgba(255,255,255,0.08);flex-wrap:wrap}
+  .ohco-hero-stat{padding-right:40px;margin-right:40px;border-right:1px solid rgba(255,255,255,0.08)}
+  .ohco-hero-stat:last-child{border-right:none;margin-right:0}
+  .ohco-hero-stat-num{font-size:32px;font-weight:900;color:#fff;display:block;line-height:1;margin-bottom:5px;background:linear-gradient(135deg,#fff,rgba(255,255,255,0.7));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-family:'Inter',sans-serif}
+  .ohco-hero-stat-label{font-size:12px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.12em;font-weight:600}
+
+  /* ---- TRUST BAR ---- */
+  .ohco-trust-bar{background:var(--ohco-surface);border-bottom:1px solid var(--ohco-border-light);padding:48px 0}
+  .ohco-trust-bar-inner{display:flex;justify-content:center;align-items:center;gap:0;flex-wrap:wrap}
+  .ohco-trust-item{display:flex;align-items:center;gap:14px;padding:8px 32px;transition:var(--ohco-transition)}
+  .ohco-trust-item:hover{transform:translateY(-3px)}
+  .ohco-trust-icon{width:50px;height:50px;background:var(--ohco-accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:var(--ohco-transition)}
+  .ohco-trust-item:hover .ohco-trust-icon{background:var(--ohco-accent)}
+  .ohco-trust-item:hover .ohco-trust-icon svg{fill:var(--ohco-white)}
+  .ohco-trust-icon svg{width:24px;height:24px;fill:var(--ohco-accent);transition:fill 0.3s ease}
+  .ohco-trust-text{display:flex;flex-direction:column}
+  .ohco-trust-text strong{font-size:15px;font-weight:700;color:var(--ohco-dark);line-height:1.3}
+  .ohco-trust-text span{font-size:12px;color:var(--ohco-light-text);font-weight:400;line-height:1.4}
+  .ohco-trust-divider{width:1px;height:44px;background:var(--ohco-border);flex-shrink:0}
+
+  /* ---- EDITORIAL INTRO ---- */
+  .ohco-intro-lead{font-size:21px;color:var(--ohco-text);line-height:1.8;margin-bottom:48px;max-width:800px;font-weight:400}
+  .ohco-intro-lead strong{color:var(--ohco-dark);font-weight:700}
+  .ohco-intro-lead em{font-style:italic;color:var(--ohco-accent)}
+  .ohco-intro-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;text-align:left}
+  .ohco-intro-pillar{padding:32px 28px;border-left:3px solid var(--ohco-accent);background:linear-gradient(135deg,var(--ohco-accent-light),transparent);border-radius:0 var(--ohco-radius-sm) var(--ohco-radius-sm) 0}
+  .ohco-intro-pillar h3{font-size:16px !important;font-family:'Inter',sans-serif;font-weight:700;margin-bottom:8px}
+  .ohco-intro-pillar p{font-size:15px;color:var(--ohco-muted);line-height:1.7;margin:0}
+
+  /* ---- QUICK ANSWER BOX ---- */
+  .ohco-quick-answer{background:linear-gradient(145deg,#09090f 0%,#1c1408 100%);border-radius:var(--ohco-radius-xl);padding:56px;border:1px solid rgba(184,148,79,0.15);position:relative;overflow:hidden}
+  .ohco-quick-answer::before{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(184,148,79,0.08) 0%,transparent 70%);right:-100px;bottom:-100px;pointer-events:none}
+  .ohco-quick-answer h2{color:#fff;margin-bottom:8px;font-size:34px !important}
+  .ohco-qa-intro{color:rgba(255,255,255,0.55);font-size:16px;max-width:600px;margin-bottom:40px;line-height:1.75}
+  .ohco-qa-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  .ohco-qa-item{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:var(--ohco-radius);padding:28px;transition:var(--ohco-transition)}
+  .ohco-qa-item:hover{background:rgba(184,148,79,0.06);border-color:rgba(184,148,79,0.18);transform:translateY(-2px)}
+  .ohco-qa-item h3{color:var(--ohco-accent-warm);font-size:13px;text-transform:uppercase;letter-spacing:0.14em;margin-bottom:12px;font-weight:800;font-family:'Inter',sans-serif}
+  .ohco-qa-item p{font-size:15px;color:rgba(255,255,255,0.68);line-height:1.8;margin:0}
+
+  /* ---- PILLAR CARDS ---- */
+  .ohco-pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .ohco-pillar-card{background:var(--ohco-white);border:1px solid var(--ohco-border);border-radius:var(--ohco-radius-lg);padding:36px;transition:var(--ohco-transition);position:relative;overflow:hidden}
+  .ohco-pillar-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--ohco-accent),var(--ohco-accent-warm));transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+  .ohco-pillar-card:hover::before{transform:scaleX(1)}
+  .ohco-pillar-card:hover{transform:translateY(-6px);box-shadow:var(--ohco-card-shadow-hover);border-color:transparent}
+  .ohco-pillar-icon{width:54px;height:54px;background:var(--ohco-accent-light);border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;transition:var(--ohco-transition)}
+  .ohco-pillar-card:hover .ohco-pillar-icon{background:linear-gradient(135deg,var(--ohco-accent),var(--ohco-accent-warm))}
+  .ohco-pillar-icon svg{width:26px;height:26px;fill:var(--ohco-accent);transition:fill 0.3s}
+  .ohco-pillar-card:hover .ohco-pillar-icon svg{fill:#fff}
+  .ohco-pillar-card h3{font-size:16px;margin-bottom:10px;font-family:'Inter',sans-serif}
+  .ohco-pillar-card p{font-size:14px;color:var(--ohco-muted);margin:0;line-height:1.75}
+
+  /* ---- MODEL SPOTLIGHT ---- */
+  .ohco-model-spotlight{border-radius:var(--ohco-radius-xl);overflow:hidden;border:1px solid var(--ohco-border);background:var(--ohco-white);margin-bottom:48px;transition:box-shadow 0.35s;box-shadow:var(--ohco-card-shadow)}
+  .ohco-model-spotlight:hover{box-shadow:var(--ohco-card-shadow-hover)}
+  .ohco-model-spotlight-header{background:linear-gradient(160deg,#09090f 0%,#1c1408 100%);padding:48px 56px;position:relative;overflow:hidden}
+  .ohco-model-spotlight-header::after{content:'';position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(184,148,79,0.08) 0%,transparent 70%);right:-80px;top:-80px;pointer-events:none}
+  .ohco-model-tier-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.18em;color:var(--ohco-accent-warm);margin-bottom:8px;display:inline-flex;align-items:center;gap:8px}
+  .ohco-model-tier-label::before{content:'';width:16px;height:2px;background:var(--ohco-accent);border-radius:2px}
+  .ohco-model-spotlight-header h2{color:#fff;font-size:38px !important;margin-bottom:12px;letter-spacing:-0.02em}
+  .ohco-model-spotlight-header .ohco-model-tagline{color:rgba(255,255,255,0.55);font-size:16px !important;max-width:600px;line-height:1.7;margin:0}
+
+  .ohco-model-spotlight-body{display:grid;grid-template-columns:380px 1fr;gap:0}
+  .ohco-model-sidebar{background:var(--ohco-surface);padding:40px;display:flex;flex-direction:column;border-right:1px solid var(--ohco-border-light)}
+  .ohco-model-sidebar-imgbox{background:var(--ohco-white);border-radius:var(--ohco-radius);padding:32px 24px;margin-bottom:24px;overflow:hidden;display:flex;align-items:center;justify-content:center;min-height:260px;border:1px solid var(--ohco-border-light);text-decoration:none;cursor:pointer}
+  .ohco-model-sidebar-imgbox img{width:100%;height:100%;object-fit:contain;max-height:280px;mix-blend-mode:multiply;transition:transform 0.4s ease}
+  .ohco-model-spotlight:hover .ohco-model-sidebar-imgbox img{transform:scale(1.05)}
+  .ohco-model-sidebar-cta{display:block;text-align:center;background:var(--ohco-dark);color:#fff !important;padding:14px;border-radius:var(--ohco-radius-sm);font-size:14px;font-weight:700;transition:var(--ohco-transition);letter-spacing:0.02em;margin-bottom:12px;text-decoration:none}
+  .ohco-model-sidebar-cta:hover{background:var(--ohco-accent);transform:translateY(-2px);box-shadow:var(--ohco-shadow-gold);color:#fff !important}
+  .ohco-model-sidebar-link{display:block;text-align:center;color:var(--ohco-muted);font-size:13px;font-weight:600;transition:color 0.2s;text-decoration:none}
+  .ohco-model-sidebar-link:hover{color:var(--ohco-accent)}
+
+  .ohco-model-content{padding:40px 48px}
+  .ohco-model-best-for{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;color:var(--ohco-accent);background:var(--ohco-accent-light);padding:5px 14px;border-radius:50px;margin-bottom:20px;border:1px solid rgba(184,148,79,0.18)}
+  .ohco-model-content h3{font-size:18px;margin-bottom:12px;font-family:'Inter',sans-serif}
+  .ohco-model-content p{font-size:15px;color:var(--ohco-muted);line-height:1.85;margin-bottom:16px}
+  .ohco-model-traits{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+  .ohco-trait-pill{font-size:12px;font-weight:700;padding:5px 12px;border-radius:20px;background:var(--ohco-surface);border:1px solid var(--ohco-border);color:var(--ohco-muted);transition:var(--ohco-transition)}
+  .ohco-trait-pill:hover{background:var(--ohco-accent-light);border-color:var(--ohco-accent);color:var(--ohco-accent)}
+
+  /* ---- TECHNOLOGY SHOWCASE BANNER ---- */
+  .ohco-tech-showcase-banner{position:relative;overflow:hidden;background:#0a0a0a}
+  .ohco-tech-showcase-inner{display:grid;grid-template-columns:1fr 1fr;min-height:560px}
+  .ohco-tech-showcase-img-wrap{position:relative;overflow:hidden}
+  .ohco-tech-showcase-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.95);transition:transform 0.6s ease}
+  .ohco-tech-showcase-banner:hover .ohco-tech-showcase-img-wrap img{transform:scale(1.03)}
+  .ohco-tech-showcase-overlay{display:flex;align-items:center;padding:56px 64px;position:relative}
+  .ohco-tech-showcase-overlay::before{content:'';position:absolute;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(184,148,79,0.08) 0%,transparent 70%);right:-80px;bottom:-80px;pointer-events:none}
+  .ohco-tech-showcase-content{position:relative;z-index:2}
+  .ohco-tech-showcase-content .ohco-eyebrow::before{background:linear-gradient(90deg,var(--ohco-accent-warm),var(--ohco-accent))}
+  .ohco-tech-showcase-content h2{font-size:35px !important;color:#fff;margin-bottom:16px;line-height:1.2;letter-spacing:-0.02em}
+  .ohco-tech-showcase-content p{font-size:16px;color:rgba(255,255,255,0.65);line-height:1.8;max-width:480px;margin-bottom:24px}
+  .ohco-tech-showcase-pills{display:flex;flex-wrap:wrap;gap:8px}
+
+  /* ---- COMPARISON TABLE ---- */
+  .ohco-compare-wrap{overflow-x:auto;border-radius:var(--ohco-radius-lg);border:1px solid var(--ohco-border);box-shadow:var(--ohco-card-shadow)}
+  .ohco-compare-table{width:100%;border-collapse:collapse;font-size:14px;min-width:700px}
+  .ohco-compare-table th{background:var(--ohco-dark);color:#fff;padding:16px 20px;text-align:left;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.07em}
+  .ohco-compare-table th:first-child{background:#111}
+  .ohco-compare-table td{padding:14px 20px;border-bottom:1px solid var(--ohco-border);color:var(--ohco-muted);vertical-align:middle}
+  .ohco-compare-table tr:last-child td{border-bottom:none}
+  .ohco-compare-table tr:hover td{background:var(--ohco-surface)}
+  .ohco-compare-table .ohco-col-feat{font-weight:700;color:var(--ohco-dark);white-space:nowrap}
+  .ohco-check{color:var(--ohco-accent);font-weight:800}
+  .ohco-cross{color:#d4d4d8}
+
+  /* ---- BUYER GUIDE CARDS ---- */
+  .ohco-buyer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .ohco-buyer-card{background:var(--ohco-white);border:1px solid var(--ohco-border);border-radius:var(--ohco-radius-lg);padding:36px;transition:var(--ohco-transition);position:relative;overflow:hidden}
+  .ohco-buyer-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--ohco-accent),var(--ohco-accent-warm));transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+  .ohco-buyer-card:hover::after{transform:scaleX(1)}
+  .ohco-buyer-card:hover{border-color:rgba(184,148,79,0.25);box-shadow:var(--ohco-card-shadow-hover);transform:translateY(-4px)}
+  .ohco-buyer-icon{width:50px;height:50px;background:var(--ohco-accent-light);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;transition:var(--ohco-transition)}
+  .ohco-buyer-card:hover .ohco-buyer-icon{background:var(--ohco-accent)}
+  .ohco-buyer-icon svg{width:24px;height:24px;fill:var(--ohco-accent);transition:fill 0.3s}
+  .ohco-buyer-card:hover .ohco-buyer-icon svg{fill:#fff}
+  .ohco-buyer-card h3{font-size:16px;margin-bottom:8px;font-family:'Inter',sans-serif}
+  .ohco-buyer-card p{font-size:14px;color:var(--ohco-muted);margin:0;line-height:1.75}
+  .ohco-buyer-rec{display:flex;align-items:center;gap:6px;margin-top:16px;font-size:12px;font-weight:800;color:var(--ohco-accent)}
+  .ohco-buyer-rec::before{content:'→'}
+
+  /* ---- WHY BUY HERE (TRUST GRID) ---- */
+  .ohco-trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+  .ohco-trust-card{background:var(--ohco-white);border:1px solid var(--ohco-border);border-radius:var(--ohco-radius-lg);padding:32px;transition:var(--ohco-transition)}
+  .ohco-trust-card:hover{transform:translateY(-5px);box-shadow:var(--ohco-card-shadow-hover);border-color:rgba(184,148,79,0.2)}
+  .ohco-trust-card-icon{width:50px;height:50px;background:var(--ohco-accent-light);border-radius:15px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;transition:var(--ohco-transition)}
+  .ohco-trust-card:hover .ohco-trust-card-icon{background:linear-gradient(135deg,var(--ohco-accent),var(--ohco-accent-warm))}
+  .ohco-trust-card-icon svg{width:24px;height:24px;fill:var(--ohco-accent);transition:fill 0.3s}
+  .ohco-trust-card:hover .ohco-trust-card-icon svg{fill:#fff}
+  .ohco-trust-card h3{font-size:16px;margin-bottom:10px;font-family:'Inter',sans-serif}
+  .ohco-trust-card p{font-size:14px;color:var(--ohco-muted);margin:0;line-height:1.75}
+
+  /* ---- FAQ ---- */
+  .ohco-faq-list{border-top:1px solid var(--ohco-border)}
+  .ohco-faq-item{border-bottom:1px solid var(--ohco-border)}
+  .ohco-faq-q{display:flex;justify-content:space-between;align-items:center;padding:24px 0;cursor:pointer;gap:16px;user-select:none}
+  .ohco-faq-q h3{font-size:16px !important;font-family:'Inter',sans-serif;font-weight:700;margin:0;flex:1;line-height:1.4;transition:color 0.2s}
+  .ohco-faq-q:hover h3{color:var(--ohco-accent)}
+  .ohco-faq-toggle{width:36px;height:36px;border-radius:50%;background:var(--ohco-surface);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:300;color:var(--ohco-accent);flex-shrink:0;transition:var(--ohco-transition);font-family:'Inter',sans-serif}
+  .ohco-faq-item.open .ohco-faq-toggle{background:var(--ohco-accent);color:var(--ohco-white);transform:rotate(45deg)}
+  .ohco-faq-a{max-height:0;overflow:hidden;transition:max-height 0.35s cubic-bezier(0.4,0,0.2,1)}
+  .ohco-faq-a-inner{padding:0 0 28px}
+  .ohco-faq-a-inner p{font-size:16px;color:var(--ohco-muted);line-height:1.85;margin:0}
+
+  /* ---- FINAL CTA ---- */
+  .ohco-final-cta{background:linear-gradient(160deg,#09090f 0%,#1c1408 100%);border-radius:var(--ohco-radius-xl);padding:80px 64px;color:var(--ohco-white);position:relative;overflow:hidden;text-align:center}
+  .ohco-final-cta::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--ohco-accent),var(--ohco-accent-warm),var(--ohco-accent));background-size:200% 100%;animation:ohcoGradientShift 4s ease infinite}
+  .ohco-final-cta::after{content:'';position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(184,148,79,0.08) 0%,transparent 70%);bottom:-200px;right:-100px;pointer-events:none}
+  .ohco-final-cta .ohco-eyebrow{color:var(--ohco-accent-warm)}
+  .ohco-final-cta h2{color:var(--ohco-white);font-size:40px !important;margin-bottom:16px;line-height:1.15}
+  .ohco-final-cta p{color:rgba(255,255,255,0.65);font-size:16px !important;max-width:680px;margin:0 auto 40px;line-height:1.8}
+  .ohco-final-cta-btns{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+
+  /* ---- SUPPORT BAR ---- */
+  .ohco-support-bar{background:var(--ohco-white);padding:64px 0;border-top:1px solid var(--ohco-border-light);border-bottom:1px solid var(--ohco-border-light)}
+  .ohco-support-bar-inner{display:flex;justify-content:center;align-items:center;gap:0;flex-wrap:wrap}
+  .ohco-support-item{display:flex;align-items:center;gap:16px;padding:8px 40px;transition:var(--ohco-transition)}
+  .ohco-support-item:hover{transform:translateY(-3px)}
+  .ohco-support-icon{width:52px;height:52px;background:var(--ohco-accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:var(--ohco-transition)}
+  .ohco-support-item:hover .ohco-support-icon{background:var(--ohco-accent)}
+  .ohco-support-item:hover .ohco-support-icon svg{fill:var(--ohco-white)}
+  .ohco-support-icon svg{width:24px;height:24px;fill:var(--ohco-accent);transition:fill 0.3s ease}
+  .ohco-support-text{display:flex;flex-direction:column}
+  .ohco-support-text strong{font-size:15px;font-weight:700;color:var(--ohco-dark);line-height:1.3}
+  .ohco-support-text span{font-size:13px;color:var(--ohco-light-text);font-weight:400;line-height:1.4}
+  .ohco-support-divider{width:1px;height:48px;background:var(--ohco-border);flex-shrink:0}
+  .ohco-grad-divider{height:1px;background:linear-gradient(90deg,transparent,var(--ohco-border),transparent);margin:0}
+
+  /* ---- PRODUCT CARDS (hero-immediately-after) ---- */
+  .ohco-cards-section{padding:72px 0;background:var(--ohco-bg)}
+  .ohco-cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .ohco-pcard{background:var(--ohco-white);border:1px solid var(--ohco-border);border-radius:var(--ohco-radius-lg);overflow:hidden;transition:var(--ohco-transition);position:relative;display:flex;flex-direction:column}
+  .ohco-pcard:hover{transform:translateY(-6px);box-shadow:var(--ohco-card-shadow-hover);border-color:transparent}
+  .ohco-pcard-badge{position:absolute;top:14px;left:14px;font-size:10px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;padding:4px 12px;border-radius:20px;z-index:2;background:var(--ohco-dark);color:#fff !important}
+  .ohco-pcard-badge.flagship{background:linear-gradient(135deg,var(--ohco-accent),#c8892a)}
+  .ohco-pcard-img{height:280px;background:var(--ohco-surface);overflow:hidden;display:block;text-decoration:none;position:relative}
+  .ohco-pcard-img img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;transition:transform 0.42s ease;transform:scale(1.25);transform-origin:center bottom}
+  .ohco-pcard:hover .ohco-pcard-img img{transform:scale(1.38)}
+  .ohco-pcard-body{padding:22px 24px;flex:1;display:flex;flex-direction:column}
+  .ohco-pcard-line{font-size:10px;text-transform:uppercase;letter-spacing:0.18em;color:var(--ohco-accent);font-weight:800;margin-bottom:5px}
+  .ohco-pcard-name{font-size:18px;font-weight:800;color:var(--ohco-dark);font-family:'Inter',sans-serif;margin-bottom:4px}
+  .ohco-pcard-sub{font-size:12px;color:var(--ohco-muted);line-height:1.5;margin-bottom:14px;flex:1}
+  .ohco-pcard-price{font-size:22px;font-weight:900;color:var(--ohco-dark);font-family:'Inter',sans-serif;margin-bottom:14px}
+  .ohco-pcard-cta{display:block;text-align:center;background:var(--ohco-dark);color:#fff !important;padding:13px;border-radius:var(--ohco-radius-sm);font-size:14px;font-weight:700;transition:var(--ohco-transition);text-decoration:none}
+  .ohco-pcard-cta:hover{background:var(--ohco-accent);transform:translateY(-2px);box-shadow:var(--ohco-shadow-gold);color:#fff !important}
+  @media(max-width:900px){.ohco-cards-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:600px){.ohco-cards-grid{grid-template-columns:1fr}}
+
+  /* ---- RESPONSIVE ---- */
+  @media(max-width:1100px){
+    .ohco-pillar-grid{grid-template-columns:repeat(2,1fr)}
+    .ohco-buyer-grid{grid-template-columns:repeat(2,1fr)}
+    .ohco-model-spotlight-body{grid-template-columns:1fr}
+    .ohco-model-sidebar{border-right:none;border-bottom:1px solid var(--ohco-border-light)}
+  }
+  @media(max-width:900px){
+    .ohco-qa-grid{grid-template-columns:1fr}
+    .ohco-pillar-grid{grid-template-columns:1fr}
+    .ohco-trust-grid{grid-template-columns:1fr}
+    .ohco-buyer-grid{grid-template-columns:1fr}
+    .ohco-intro-pillars{grid-template-columns:1fr;gap:24px}
+    .ohco-hero-stats{gap:24px}
+    .ohco-hero-stat{padding-right:24px;margin-right:24px}
+    .ohco-tech-showcase-inner{grid-template-columns:1fr}
+    .ohco-tech-showcase-img-wrap img{height:340px}
+    .ohco-tech-showcase-overlay{padding:40px 32px}
+  }
+  @media(max-width:768px){
+    .ohco-hero{min-height:75vh}
+    .ohco-hero-content{padding:48px 0 64px}
+    .ohco-hero h1{font-size:36px}
+    .ohco-hero-sub{font-size:16px}
+    .ohco-section{padding:64px 0}
+    .ohco-section-header{margin-bottom:40px}
+    .ohco-section-header h2{font-size:28px}
+    .ohco-model-spotlight-header{padding:32px 28px}
+    .ohco-model-content{padding:32px 28px}
+    .ohco-model-sidebar{padding:32px 28px}
+    .ohco-quick-answer{padding:32px}
+    .ohco-final-cta{padding:48px 32px}
+    .ohco-support-bar-inner{flex-direction:column;gap:24px;align-items:flex-start;padding:0 16px}
+    .ohco-support-divider{width:100%;height:1px}
+    .ohco-support-item{padding:0}
+    .ohco-container{padding:0 20px}
+    .ohco-intro-lead{font-size:18px}
+  }
+  @media(max-width:480px){
+    .ohco-hero-ctas{flex-direction:column}
+    .ohco-final-cta-btns{flex-direction:column;align-items:center}
+    .ohco-btn{padding:14px 32px;font-size:14px}
+    .ohco-hero-stat-num{font-size:24px}
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+
+<div class="ohco-wrap" style="font-size:16px !important;">
+
+  {%- comment -%} SUBNAV {%- endcomment -%}
+  <nav class="ohco-subnav" aria-label="Page sections">
+    <div class="ohco-subnav-inner">
+      <a href="#ohco-intro">The Brand</a>
+      <a href="#ohco-why">Why OHCO</a>
+      <a href="#ohco-technology">Technology</a>
+      <a href="#ohco-model-r6">OHCO R6</a>
+      <a href="#ohco-model-m8neo">M8 Neo</a>
+      <a href="#ohco-model-m8neole">M8 Neo LE</a>
+      <a href="#ohco-compare">Compare</a>
+      <a href="#ohco-choose">How to Choose</a>
+      <a href="#ohco-why-buy-here">Why Buy Here</a>
+      <a href="#ohco-faq">FAQ</a>
+    </div>
+  </nav>
+
+  {%- comment -%} ══════════ HERO ══════════ {%- endcomment -%}
+  <section class="ohco-hero" id="ohco-top">
+    <div class="ohco-hero-bg" style="background-image:url('https://cdn.shopify.com/s/files/1/0813/4036/7096/files/ohco-hero-bg.jpg?v=1776368399')"></div>
+    <div class="ohco-hero-overlay"></div>
+    <div class="ohco-hero-glow"></div>
+    <div class="ohco-container ohco-hero-content">
+      <nav style="padding:8px 0 0;font-size:12px;color:rgba(255,255,255,0.4);margin-bottom:24px" aria-label="Breadcrumb">
+        <a href="{{ shop.url }}" style="color:var(--ohco-accent)">Home</a>
+        <span style="margin:0 6px">/</span>
+        <a href="{{ shop.url }}/collections/massage-chair" style="color:rgba(255,255,255,0.4)">Massage Chairs</a>
+        <span style="margin:0 6px">/</span>
+        <span style="color:rgba(255,255,255,0.6)">OHCO</span>
+      </nav>
+
+      <div class="ohco-hero-eyebrow ohco-fade-up">Ultra-Premium Japanese Luxury · Authorized Dealer</div>
+
+      {%- if section.settings.hero_heading != blank -%}
+        <h1 class="ohco-fade-up ohco-fade-up-1">{{ section.settings.hero_heading }}</h1>
+      {%- else -%}
+        <h1 class="ohco-fade-up ohco-fade-up-1">OHCO Massage Chairs —<br><span class="ohco-hero-tag">Where Japanese Mastery Meets Modern Luxury</span></h1>
+      {%- endif -%}
+
+      {%- if section.settings.hero_subheading != blank -%}
+        <p class="ohco-hero-sub ohco-fade-up ohco-fade-up-2">{{ section.settings.hero_subheading }}</p>
+      {%- else -%}
+        <p class="ohco-hero-sub ohco-fade-up ohco-fade-up-2">Three masterfully crafted massage chairs, each born from the same philosophy: that wellness should feel as refined as it looks. Designed by Ken Okuyama. Inspired by master shiatsu. Built for those who accept nothing less.</p>
+      {%- endif -%}
+
+      <p class="ohco-hero-note ohco-fade-up ohco-fade-up-3">Explore the complete OHCO collection — from the design-forward R6 to the flagship M8 Neo LE — and discover why discerning buyers choose OHCO above all others.</p>
+
+      <div class="ohco-hero-ctas ohco-fade-up ohco-fade-up-4">
+        <a href="#ohco-model-r6" class="ohco-btn ohco-btn-accent">Explore the Collection</a>
+        <a href="#ohco-choose" class="ohco-btn ohco-btn-white-outline">Help Me Choose</a>
+        <a href="{{ shop.url }}/pages/contact" class="ohco-btn ohco-btn-ghost-dark">Speak with an Expert</a>
+      </div>
+
+      <div class="ohco-hero-stats ohco-fade-up">
+        <div class="ohco-hero-stat">
+          <span class="ohco-hero-stat-num">3</span>
+          <span class="ohco-hero-stat-label">Models Available</span>
+        </div>
+        <div class="ohco-hero-stat">
+          <span class="ohco-hero-stat-num">4D Sens8</span>
+          <span class="ohco-hero-stat-label">Massage Technology</span>
+        </div>
+        <div class="ohco-hero-stat">
+          <span class="ohco-hero-stat-num">Japan</span>
+          <span class="ohco-hero-stat-label">Craftsmanship Heritage</span>
+        </div>
+        <div class="ohco-hero-stat">
+          <span class="ohco-hero-stat-num">Affirm</span>
+          <span class="ohco-hero-stat-label">Financing Available</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} TRUST BAR {%- endcomment -%}
+  <div class="ohco-trust-bar">
+    <div class="ohco-trust-bar-inner">
+      <div class="ohco-trust-item">
+        <div class="ohco-trust-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
+        <div class="ohco-trust-text"><strong>Authorized Dealer</strong><span>Official OHCO Retailer</span></div>
+      </div>
+      <div class="ohco-trust-divider"></div>
+      <div class="ohco-trust-item">
+        <div class="ohco-trust-icon"><svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></div>
+        <div class="ohco-trust-text"><strong>White-Glove Delivery</strong><span>Nationwide, Room of Choice</span></div>
+      </div>
+      <div class="ohco-trust-divider"></div>
+      <div class="ohco-trust-item">
+        <div class="ohco-trust-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/></svg></div>
+        <div class="ohco-trust-text"><strong>Extended Warranty</strong><span>Factory-Backed Protection</span></div>
+      </div>
+      <div class="ohco-trust-divider"></div>
+      <div class="ohco-trust-item">
+        <div class="ohco-trust-icon"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
+        <div class="ohco-trust-text"><strong>Financing Available</strong><span>Via Affirm · Low Monthly</span></div>
+      </div>
+      <div class="ohco-trust-divider"></div>
+      <div class="ohco-trust-item">
+        <div class="ohco-trust-icon"><svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 14l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
+        <div class="ohco-trust-text"><strong>In Stock</strong><span>Ships Within 5–14 Days</span></div>
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} PRODUCT CARDS — right after hero {%- endcomment -%}
+  <section class="ohco-cards-section" id="ohco-shop">
+    <div class="ohco-container">
+      <div class="ohco-section-header ohco-left-align" style="margin-bottom:40px">
+        <span class="ohco-eyebrow">Shop the Collection</span>
+        <h2 class="ohco-accent-heading">Three Models. One Standard of Excellence.</h2>
+        <p>Each OHCO chair is engineered to a single specification: that the owner never questions whether they made the right call. Choose the model that fits your priority.</p>
+      </div>
+      <div class="ohco-cards-grid">
+
+        <!-- R6 -->
+        <div class="ohco-pcard">
+          <div class="ohco-pcard-badge">Entry Flagship</div>
+          <a href="{{ shop.url }}/products/ohco-r6-massage-chair" class="ohco-pcard-img">
+            {%- assign r6 = all_products['ohco-r6-massage-chair'] -%}
+            <img src="{% if r6.featured_image %}{{ r6.featured_image | image_url: width: 600 }}{% else %}https://cdn.shopify.com/s/files/1/0813/4036/7096/files/ohco-r6-massage-chair.jpg{% endif %}" alt="OHCO R6 Massage Chair" loading="lazy">
+          </a>
+          <div class="ohco-pcard-body">
+            <div class="ohco-pcard-line">OHCO R6</div>
+            <div class="ohco-pcard-name">OHCO R6</div>
+            <div class="ohco-pcard-sub">4D Sens8 Mechanism &middot; L-Track &middot; Zero Gravity &middot; Air Massage &middot; Heated Back</div>
+            <div class="ohco-pcard-price">{%- if r6.price -%}{{ r6.price | money }}{%- else -%}$6,999{%- endif -%}</div>
+            <a href="{{ shop.url }}/products/ohco-r6-massage-chair" class="ohco-pcard-cta">View OHCO R6 &rarr;</a>
+          </div>
+        </div>
+
+        <!-- M8 Neo -->
+        <div class="ohco-pcard" style="border-color:rgba(138,107,58,0.3)">
+          <div class="ohco-pcard-badge flagship">Most Popular</div>
+          <a href="{{ shop.url }}/products/ohco-m8-massage-chair" class="ohco-pcard-img">
+            {%- assign m8 = all_products['ohco-m8-massage-chair'] -%}
+            <img src="{% if m8.featured_image %}{{ m8.featured_image | image_url: width: 600 }}{% else %}https://cdn.shopify.com/s/files/1/0813/4036/7096/files/ohco-m8-neo.jpg{% endif %}" alt="OHCO M8 Neo Massage Chair" loading="lazy">
+          </a>
+          <div class="ohco-pcard-body">
+            <div class="ohco-pcard-line">M8 Neo</div>
+            <div class="ohco-pcard-name">OHCO M8 Neo</div>
+            <div class="ohco-pcard-sub">4D Sens8 &middot; Glute Massage &middot; Ambient Lighting &middot; RotoTech&trade; &middot; Full Body Coverage</div>
+            <div class="ohco-pcard-price">{%- if m8.price -%}{{ m8.price | money }}{%- else -%}$10,999{%- endif -%}</div>
+            <a href="{{ shop.url }}/products/ohco-m8-massage-chair" class="ohco-pcard-cta">View M8 Neo &rarr;</a>
+          </div>
+        </div>
+
+        <!-- M8 Neo LE -->
+        <div class="ohco-pcard">
+          <div class="ohco-pcard-badge flagship">Limited Edition</div>
+          <a href="{{ shop.url }}/products/ohco-m8-neo-le-massage-chair" class="ohco-pcard-img">
+            {%- assign m8le = all_products['ohco-m8-neo-le-massage-chair'] -%}
+            <img src="{% if m8le.featured_image %}{{ m8le.featured_image | image_url: width: 600 }}{% else %}https://cdn.shopify.com/s/files/1/0813/4036/7096/files/ohco-m8-neo-le.jpg{% endif %}" alt="OHCO M8 Neo LE Massage Chair" loading="lazy">
+          </a>
+          <div class="ohco-pcard-body">
+            <div class="ohco-pcard-line">M8 Neo LE</div>
+            <div class="ohco-pcard-name">OHCO M8 Neo LE</div>
+            <div class="ohco-pcard-sub">M8 Neo + Exclusive Colorway &middot; Limited Production &middot; Upgraded Upholstery &middot; Collector Grade</div>
+            <div class="ohco-pcard-price">{%- if m8le.price -%}{{ m8le.price | money }}{%- else -%}$11,999{%- endif -%}</div>
+            <a href="{{ shop.url }}/products/ohco-m8-neo-le-massage-chair" class="ohco-pcard-cta">View M8 Neo LE &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section class="ohco-section ohco-section-alt" id="ohco-model-r6">
+    <div class="ohco-container">
+      <div class="ohco-section-header ohco-left-align">
+        <span class="ohco-eyebrow">Model Spotlight</span>
+        <h2 class="ohco-accent-heading">The OHCO R6 Massage Chair</h2>
+        <p>Where design-forward luxury meets intuitive, full-body massage. The R6 is the most accessible gateway into the OHCO experience — and arguably the most beautifully designed massage chair in the market.</p>
+      </div>
+
+      <div class="ohco-model-spotlight">
+        <div class="ohco-model-spotlight-header">
+          <div class="ohco-model-tier-label">Premium Entry · Design-Led</div>
+          <h2>OHCO R6 — Mid-Century Modern Luxury Massage Chair</h2>
+          <p class="ohco-model-tagline">A statement piece that works as hard as it looks. The R6 brings the Sens8 4D engine into a strikingly elegant form factor that integrates into your living space, not against it.</p>
+        </div>
+
+        <div class="ohco-model-spotlight-body">
+          <div class="ohco-model-sidebar">
+            <a href="{{ shop.url }}/products/ohco-r6-massage-chair" class="ohco-model-sidebar-imgbox">
+              {%- assign r6_product = collections['ohco-massage-chairs'].products | where: 'handle', 'ohco-r6-massage-chair' | first -%}
+              {%- if r6_product -%}
+                <img src="{{ r6_product.featured_image | image_url: width: 500 }}" alt="OHCO R6 Massage Chair" loading="lazy">
+              {%- elsif section.settings.r6_image -%}
+                <img src="{{ section.settings.r6_image | image_url: width: 500 }}" alt="OHCO R6 Massage Chair" loading="lazy">
+              {%- else -%}
+                <img src="{{ 'ref-ohco-r6.jpg' | asset_url }}" alt="OHCO R6 Massage Chair" loading="lazy">
+              {%- endif -%}
+            </a>
+            <a href="{{ shop.url }}/products/ohco-r6-massage-chair" class="ohco-model-sidebar-cta">View OHCO R6 Details →</a>
+            <a href="{{ shop.url }}/pages/contact" class="ohco-model-sidebar-link">Book a Demo at Our Showroom</a>
+          </div>
+
+          <div class="ohco-model-content">
+            <span class="ohco-model-best-for">✦ Best For: Design-Conscious Wellness Buyers</span>
+
+            <h3>Who the OHCO R6 Is For</h3>
+            <p>The R6 is for the buyer who wants OHCO's signature massage quality without compromising on aesthetics. If you've ever dismissed a massage chair because "it won't look right in my living room," the R6 is the answer. Designed with Mid-Century Modern lines and premium trim, it looks like a curated furniture piece — not a piece of equipment you need to hide in a spare room.</p>
+
+            <h3>What the Experience Feels Like</h3>
+            <p>Your session begins with an automatic body scan that maps the rollers to your frame before a single stroke is delivered. As you settle into zero gravity recline, the Sens8 4D mechanism engages across 49 inches of L-Track coverage — from the base of your neck through your glutes. Full-body air massage wraps your shoulders, arms, hands, hips, thighs, calves, and feet in a coordinated compression pattern. Total-body heat across back, seat, legs, and feet softens the opening minutes before intensity builds. Twelve automatic massage programs offer variety across ~18 minute sessions, so you can find a rhythm that fits your day.</p>
+
+            <h3>Why Choose the R6</h3>
+            <p>Choose the R6 if aesthetics are non-negotiable, if you want a complete Sens8 massage experience at the most attainable OHCO price point, and if you want a daily-use chair that feels refined rather than aggressive. The wall-hugging design (approximately 5 inches of clearance) makes placement practical even in smaller rooms.</p>
+
+            <div class="ohco-model-traits">
+              <span class="ohco-trait-pill">Sens8™ 4D</span>
+              <span class="ohco-trait-pill">L-Track (49")</span>
+              <span class="ohco-trait-pill">Zero Gravity</span>
+              <span class="ohco-trait-pill">Total-Body Heat</span>
+              <span class="ohco-trait-pill">Full-Body Air</span>
+              <span class="ohco-trait-pill">12 Auto Programs</span>
+              <span class="ohco-trait-pill">Foot Rollers</span>
+              <span class="ohco-trait-pill">Wall Hugging</span>
+              <span class="ohco-trait-pill">Mid-Century Design</span>
+              <span class="ohco-trait-pill">Colors: Black, Walnut</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  {%- comment -%} ══════════ MODEL: OHCO M8 NEO ══════════ {%- endcomment -%}
+  <section class="ohco-section" id="ohco-model-m8neo">
+    <div class="ohco-container">
+      <div class="ohco-section-header ohco-left-align">
+        <span class="ohco-eyebrow">Model Spotlight</span>
+        <h2 class="ohco-accent-heading">The OHCO M8 Neo Massage Chair</h2>
+        <p>The full expression of the OHCO platform. Dual mechanisms, total-body immersion, and a session depth that changes what you believe a massage chair can deliver.</p>
+      </div>
+
+      <div class="ohco-model-spotlight">
+        <div class="ohco-model-spotlight-header">
+          <div class="ohco-model-tier-label">Flagship Platform · Dual Mechanism</div>
+          <h2>OHCO M8 Neo — The Complete Luxury Massage Experience</h2>
+          <p class="ohco-model-tagline">Powered by Movesync dual massage systems, the M8 Neo represents the pinnacle of OHCO engineering — a chair that works two mechanisms in tandem to deliver precision, depth, and nuance that single-system chairs cannot match.</p>
+        </div>
+
+        <div class="ohco-model-spotlight-body">
+          <div class="ohco-model-sidebar">
+            <a href="{{ shop.url }}/products/ohco-m8-massage-chair" class="ohco-model-sidebar-imgbox">
+              {%- assign m8neo_product = collections['ohco-massage-chairs'].products | where: 'handle', 'ohco-m8-massage-chair' | first -%}
+              {%- if m8neo_product -%}
+                <img src="{{ m8neo_product.featured_image | image_url: width: 500 }}" alt="OHCO M8 Neo Massage Chair" loading="lazy">
+              {%- elsif section.settings.m8neo_image -%}
+                <img src="{{ section.settings.m8neo_image | image_url: width: 500 }}" alt="OHCO M8 Neo Massage Chair" loading="lazy">
+              {%- else -%}
+                <img src="{{ 'ref-ohco-m8-neo.jpg' | asset_url }}" alt="OHCO M8 Neo Massage Chair" loading="lazy">
+              {%- endif -%}
+            </a>
+            <a href="{{ shop.url }}/products/ohco-m8-massage-chair" class="ohco-model-sidebar-cta">View M8 Neo Details →</a>
+            <a href="{{ shop.url }}/pages/contact" class="ohco-model-sidebar-link">Book a Demo at Our Showroom</a>
+          </div>
+
+          <div class="ohco-model-content">
+            <span class="ohco-model-best-for">✦ Best For: Buyers Who Want the Full OHCO Platform</span>
+
+            <h3>Who the M8 Neo Is For</h3>
+            <p>The M8 Neo is for the buyer who has decided on OHCO and wants the complete experience without compromise. If you lead a desk-heavy day, carry chronic shoulder and neck tension, or simply want the most advanced massage technology available in a beautifully designed chair — the M8 Neo is the answer. It also suits couples: the unisex design and Easy Access Doors make it practical for shared daily use.</p>
+
+            <h3>What the Experience Feels Like</h3>
+            <p>The M8 Neo's defining advantage is the Movesync dual massage system — two independent mechanisms working together so your back, neck, and shoulder zones receive simultaneous, coordinated attention. The Sens8 4D engine delivers human-like pressure variation while the second mechanism provides complementary support, creating a session that feels layered and dimensional rather than linear.</p>
+            <p>Zero gravity and lay-flat recline positions reduce spinal compression and help your muscles release more deeply. Total-body heat covers back, seat, calves, palms, and feet with zone-by-zone control. TheraElliptical calf kneading combines compression with rotation for therapist-like lower leg relief. The full sensory stack — Bluetooth audio, aromatherapy, chromotherapy, and air ionization — transforms each session into a complete wellness ritual.</p>
+
+            <h3>Why Choose the M8 Neo</h3>
+            <p>Choose the M8 Neo if you want the full OHCO technology platform, including dual mechanisms, full sensory immersion, and the deepest massage coverage in the lineup. This is the model most buyers choose when they compare the OHCO range in person, because the dual-system experience creates a palpable difference you can feel in the first five minutes.</p>
+
+            <div class="ohco-model-traits">
+              <span class="ohco-trait-pill">Sens8™ 4D</span>
+              <span class="ohco-trait-pill">Movesync Dual System</span>
+              <span class="ohco-trait-pill">MaxTrack (49")</span>
+              <span class="ohco-trait-pill">Zero Gravity + Lay Flat</span>
+              <span class="ohco-trait-pill">Total-Body Heat</span>
+              <span class="ohco-trait-pill">TheraElliptical Calf</span>
+              <span class="ohco-trait-pill">Bluetooth Audio</span>
+              <span class="ohco-trait-pill">Aromatherapy</span>
+              <span class="ohco-trait-pill">Air Ionizer</span>
+              <span class="ohco-trait-pill">Easy Access Doors</span>
+              <span class="ohco-trait-pill">USB Charging</span>
+              <span class="ohco-trait-pill">Colors: Pearl, Black, Walnut</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  {%- comment -%} ══════════ MODEL: OHCO M8 NEO LE ══════════ {%- endcomment -%}
+  <section class="ohco-section ohco-section-alt" id="ohco-model-m8neole">
+    <div class="ohco-container">
+      <div class="ohco-section-header ohco-left-align">
+        <span class="ohco-eyebrow">Model Spotlight · Flagship</span>
+        <h2 class="ohco-accent-heading">The OHCO M8 Neo LE Massage Chair</h2>
+        <p>The pinnacle of the OHCO collection. Limited Edition finishes, the full technology platform, and an experience created for buyers who want to own the absolute best.</p>
+      </div>
+
+      <div class="ohco-model-spotlight">
+        <div class="ohco-model-spotlight-header" style="background:linear-gradient(160deg,#0a0606 0%,#1c0a08 60%,#2a1208 100%)">
+          <div class="ohco-model-tier-label">Limited Edition · Ultra-Flagship</div>
+          <h2>OHCO M8 Neo LE — The Ultimate Expression</h2>
+          <p class="ohco-model-tagline">Everything the M8 Neo delivers, elevated with exclusive Limited Edition finishes and collector-grade positioning. For buyers who treat their wellness investment as a centerpiece, not a compromise.</p>
+        </div>
+
+        <div class="ohco-model-spotlight-body">
+          <div class="ohco-model-sidebar">
+            <a href="{{ shop.url }}/products/ohco-m8-neo-le-massage-chair" class="ohco-model-sidebar-imgbox">
+              {%- assign m8le_product = collections['ohco-massage-chairs'].products | where: 'handle', 'ohco-m8-neo-le-massage-chair' | first -%}
+              {%- if m8le_product -%}
+                <img src="{{ m8le_product.featured_image | image_url: width: 500 }}" alt="OHCO M8 Neo LE Massage Chair" loading="lazy">
+              {%- elsif section.settings.m8le_image -%}
+                <img src="{{ section.settings.m8le_image | image_url: width: 500 }}" alt="OHCO M8 Neo LE Massage Chair" loading="lazy">
+              {%- else -%}
+                <img src="{{ 'ref-ohco-m8.jpg' | asset_url }}" alt="OHCO M8 Neo LE Massage Chair" loading="lazy">
+              {%- endif -%}
+            </a>
+            <a href="{{ shop.url }}/products/ohco-m8-neo-le-massage-chair" class="ohco-model-sidebar-cta" style="background:var(--ohco-accent)">View M8 Neo LE Details →</a>
+            <a href="{{ shop.url }}/pages/contact" class="ohco-model-sidebar-link">Book a Private Consultation</a>
+          </div>
+
+          <div class="ohco-model-content">
+            <span class="ohco-model-best-for" style="background:rgba(184,148,79,0.14)">★ Best For: Buyers Who Want the Absolute Best</span>
+
+            <h3>Who the M8 Neo LE Is For</h3>
+            <p>The M8 Neo LE is for the buyer whose purchase philosophy is "pay more once, second-guess never." It's for executives who need a repeatable stress management ritual, wellness enthusiasts who view daily massage as non-negotiable self-care, and design collectors who want a statement piece that happens to deliver world-class therapeutic value. If you're comparing the top tier across luxury massage chair brands, the Neo LE is designed to end that search.</p>
+
+            <h3>What the Experience Feels Like</h3>
+            <p>The M8 Neo LE shares the M8 Neo's complete technology platform — Sens8 4D mechanism, MaxTrack 49" coverage, Movesync dual mechanisms, total-body heat from back to feet, TheraElliptical calf kneading, ConstantTouch infrared heat, full-body air massage across feet, calves, hips, thighs, glutes, arms, hands, neck, and shoulders, plus the full sensory environment: Bluetooth audio, aromatherapy, chromotherapy, and air ionizer.</p>
+            <p>What distinguishes the LE is its exclusive finish tier — colorways like Rosso Nero that are not available in the standard M8 Neo, premium upholstery details, and the knowledge that you own the definitive expression of OHCO's current engineering. The Knead and Stretch Headrest combines rollers with air-driven cervical traction for targeted neck and shoulder relief that even dedicated buyers notice immediately.</p>
+
+            <h3>Why Choose the M8 Neo LE</h3>
+            <p>Choose the M8 Neo LE if you want exclusive finishes not available on any other model, the complete OHCO technology stack without exception, and the prestige of owning the limited edition flagship. This is the chair that OHCO built for buyers who have already decided this is the best — and just want the highest expression of it.</p>
+
+            <div class="ohco-model-traits">
+              <span class="ohco-trait-pill">Sens8™ 4D</span>
+              <span class="ohco-trait-pill">Movesync Dual System</span>
+              <span class="ohco-trait-pill">MaxTrack (49")</span>
+              <span class="ohco-trait-pill">LE Exclusive Finishes</span>
+              <span class="ohco-trait-pill">Knead & Stretch Headrest</span>
+              <span class="ohco-trait-pill">ConstantTouch Infrared</span>
+              <span class="ohco-trait-pill">Zero Gravity + Lay Flat</span>
+              <span class="ohco-trait-pill">Total-Body Heat</span>
+              <span class="ohco-trait-pill">TheraElliptical Calf</span>
+              <span class="ohco-trait-pill">Full Sensory Suite</span>
+              <span class="ohco-trait-pill">Easy Access Doors</span>
+              <span class="ohco-trait-pill">Color: Rosso Nero</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  {%- comment -%} ══════════ INTRODUCTION TO OHCO ══════════ {%- endcomment -%}
+  <section class="ohco-section" id="ohco-intro">
+    <div class="ohco-container">
+      <div class="ohco-section-header ohco-left-align">
+        <span class="ohco-eyebrow">The OHCO Story</span>
+        <h2 class="ohco-accent-heading">What Is OHCO — And Why Does It Stand Apart?</h2>
+      </div>
+
+      <p class="ohco-intro-lead">
+        <strong>OHCO is not a massage chair brand in the traditional sense.</strong> It is an ultra-premium wellness platform created by the convergence of two extraordinary Japanese disciplines: the <em>industrial design vision of Ken Okuyama</em> — the man behind the Ferrari Enzo and Shinkansen bullet train — and the <em>deep shiatsu expertise of Akira Okabayashi</em>, a master practitioner whose techniques have been translated into OHCO's proprietary massage algorithms.
+      </p>
+
+      <p style="font-size:18px;color:var(--ohco-muted);max-width:800px;margin-bottom:48px;line-height:1.8">
+        The result is a massage chair that doesn't merely mimic massage — it delivers a nuanced, layered experience that feels human. Every OHCO chair is built around the same core belief: that an investment in premium wellness should look, feel, and perform at the same level as the finest things in your home. This is why luxury buyers, design professionals, and wellness enthusiasts consistently choose OHCO over standard 4D massage chairs.
+      </p>
+
+      <div class="ohco-intro-pillars">
+        <div class="ohco-intro-pillar">
+          <h3>🇯🇵 Japanese Craftsmanship</h3>
+          <p>Every detail — from the stitching on the upholstery to the precision of the roller mechanism — reflects a commitment to quality that goes beyond specifications. OHCO chairs are finished to furniture standards, not appliance standards.</p>
+        </div>
+        <div class="ohco-intro-pillar">
+          <h3>✦ Design-Led Philosophy</h3>
+          <p>Ken Okuyama doesn't design massage chairs that function as furniture. He designs furniture that delivers a world-class massage. The distinction is critical — and visible the moment an OHCO chair enters your home.</p>
+        </div>
+        <div class="ohco-intro-pillar">
+          <h3>⟡ Shiatsu Intelligence</h3>
+          <p>Akira Okabayashi's real-world shiatsu techniques are digitally translated into OHCO's massage programs. This is not abstract marketing — it's the reason why OHCO massage feels fundamentally different from mechanized competitors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ohco-grad-divider"></div>
+
+  {%- comment -%} ══════════ AI-FRIENDLY QUICK ANSWER ══════════ {%- endcomment -%}
+  <section class="ohco-section" id="ohco-quick-answers">
+    <div class="ohco-container">
+      <div class="ohco-quick-answer">
+        <span class="ohco-section-header ohco-eyebrow" style="margin-bottom:16px;text-align:left;display:inline-flex">Quick Answers</span>
+        <h2>What You Need to Know About OHCO Massage Chairs</h2>
+        <p class="ohco-qa-intro">Whether you're comparing luxury brands, researching your first premium massage chair, or deciding between OHCO models — here are direct answers to the most common questions.</p>
+        <div class="ohco-qa-grid">
+          <div class="ohco-qa-item">
+            <h3>What Makes OHCO Different?</h3>
+            <p>OHCO stands apart through its proprietary Sens8 4D massage mechanism, Ken Okuyama industrial design, and shiatsu-inspired massage algorithms developed with Akira Okabayashi. Unlike standard massage chairs, OHCO delivers a massage experience that feels genuinely human — with nuanced pressure variations, smooth transitions, and lifelike pacing.</p>
+          </div>
+          <div class="ohco-qa-item">
+            <h3>Which OHCO Chair Is Best?</h3>
+            <p>It depends on your priorities. The M8 Neo LE is the flagship with exclusive finishes and full sensory immersion. The M8 Neo delivers the complete OHCO platform with Movesync dual mechanisms. The R6 offers a refined entry with Mid-Century Modern design. All three feature the Sens8 4D engine.</p>
+          </div>
+          <div class="ohco-qa-item">
+            <h3>Is OHCO Worth the Investment?</h3>
+            <p>For buyers who value genuine massage quality, premium design that integrates into their home, and consistent daily wellness — yes. OHCO delivers a measurably different experience from standard 4D chairs, and the build quality supports years of daily use. Think of it as home wellness furniture, not a gadget.</p>
+          </div>
+          <div class="ohco-qa-item">
+            <h3>Where Can I Buy OHCO?</h3>
+            <p>OHCO massage chairs are available at Massage Chairs and More, an authorized premium retailer with showroom experience, white-glove delivery, Affirm financing, and extended factory warranty. Call {{ section.settings.phone | default: '+1 (408) 889-1188' }} or visit our showroom to test every model in person.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ══════════ WHY OHCO FEELS DIFFERENT ══════════ {%- endcomment -%}
+  <section class="ohco-section ohco-section-alt" id="ohco-why">
+    <div class="ohco-container">
+      <div class="ohco-section-header">
+        <span class="ohco-eyebrow">Why OHCO Feels Different</span>
+        <h2 class="ohco-accent-heading">Beyond Specifications — What You Actually Feel</h2>
+        <p>Luxury massage chair buyers don't choose OHCO because of a spec sheet. They choose it because the experience is fundamentally different from anything else they've tried.</p>
+      </div>
+      <div class="ohco-pillar-grid">
+        <div class="ohco-pillar-card">
+          <div class="ohco-pillar-icon"><svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"/></svg></div>
+          <h3>Human-Like Massage Realism</h3>
+          <p>The Sens8 mechanism doesn't just press and roll. It varies speed, depth, and rhythm mid-stroke — creating the sensation of trained hands finding, pressing, and releasing tension exactly as a master shiatsu therapist would.</p>
+        </div>
+        <div class="ohco-pillar-card">
+          <div class="ohco-pillar-icon"><svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></div>
+          <h3>Immersive Sensory Environment</h3>
+          <p>OHCO wraps you in a complete relaxation environment — from chromotherapy lighting and aromatherapy to Bluetooth audio immersion and air ionization. Your session becomes a ritual, not a routine.</p>
+        </div>
+        <div class="ohco-pillar-card">
+          <div class="ohco-pillar-icon"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div>
+          <h3>Luxury Home Integration</h3>
+          <p>OHCO chairs are designed by one of the world's most celebrated industrial designers to integrate seamlessly into premium living spaces. The Arms of Embrace design and Easy Access Doors make the chair feel like sophisticated furniture, not gym equipment.</p>
+        </div>
+        <div class="ohco-pillar-card">
+          <div class="ohco-pillar-icon"><svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg></div>
+          <h3>Total Body Heat Coverage</h3>
+          <p>Unlike chairs that offer token back heating, OHCO delivers heat across multiple zones — back, seat, calves, palms, and feet — each with independent controls. ConstantTouch Infrared heat sits adjacent to the rollers for targeted warmth exactly where pressure is applied.</p>
+        </div>
+        <div class="ohco-pillar-card">
+          <div class="ohco-pillar-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></div>
+          <h3>MaxTrack Extended Coverage</h3>
+          <p>The MaxTrack system delivers 49 inches of continuous massage coverage from neck to glutes, maintaining consistent roller contact even through zero gravity recline positions. No dead zones, no gaps — just unbroken coverage.</p>
+        </div>
+        <div class="ohco-pillar-card">
+          <div class="ohco-pillar-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/></svg></div>
+          <h3>Zero Gravity + Lay Flat Recline</h3>
+          <p>OHCO chairs offer multiple recline positions including NASA-inspired zero gravity and full lay-flat, allowing you to find the exact posture that relieves pressure on your spine and lets the massage penetrate deeper with less resistance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} LIFESTYLE SPLIT {%- endcomment -%}
+  <div style="display:grid;grid-template-columns:1fr 1fr;min-height:500px">
+    <div style="background-image:url('https://cdn.shopify.com/s/files/1/0813/4036/7096/files/ohco-lifestyle.jpg?v=1776368399');background-size:cover;background-position:center;position:relative">
+      <div style="position:absolute;inset:0;background:linear-gradient(to right,transparent 55%,var(--ohco-surface) 100%)"></div>
+    </div>
+    <div style="background:var(--ohco-surface);display:flex;flex-direction:column;justify-content:center;padding:72px 64px">
+      <span class="ohco-eyebrow" style="margin-bottom:16px">Designed for Living</span>
+      <h2 style="font-size:34px;letter-spacing:-0.02em;margin-bottom:20px;color:var(--ohco-dark);line-height:1.15">A Chair That Earns Its Place in the Room</h2>
+      <p style="font-size:15px;color:var(--ohco-muted);line-height:1.88;margin-bottom:14px">OHCO chairs are engineered with interior design as a constraint, not an afterthought. Zero-wall recline, premium leather profiles, and a silhouette that works in any room — the chair doesn't ask for space, it commands respect.</p>
+      <p style="font-size:15px;color:var(--ohco-muted);line-height:1.88;margin-bottom:28px">Every owner can testify: the chair is the first thing guests ask about.</p>
+      <a href="{{ shop.url }}/pages/contact" class="ohco-btn ohco-btn-primary" style="display:inline-flex;width:fit-content">Visit Our Showroom &rarr;</a>
+    </div>
+  </div>
+
+  {%- comment -%} ══════════ TECHNOLOGY SHOWCASE IMAGE ══════════ {%- endcomment -%}
+  <section class="ohco-tech-showcase-banner" id="ohco-tech-visual">
+    <div class="ohco-tech-showcase-inner">
+      <div class="ohco-tech-showcase-img-wrap">
+        <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/ohco-tech-features.jpg?v=1776368399" alt="OHCO massage chair technology showcase — Sens8 4D roller mechanism" loading="lazy">
+      </div>
+      <div class="ohco-tech-showcase-overlay">
+        <div class="ohco-tech-showcase-content">
+          <span class="ohco-eyebrow" style="color:var(--ohco-accent-warm)">Engineered for Perfection</span>
+          <h2>Sens8™ 4D Technology<br><span style="color:var(--ohco-accent-warm)">Feels Human. Works Like Science.</span></h2>
+          <p>Multi-zone infrared heat. 49-inch MaxTrack coverage. Dual Movesync mechanisms. Every inch of the OHCO is designed to deliver a massage that adapts to your body — not the other way around.</p>
+          <div class="ohco-tech-showcase-pills">
+            <span class="ohco-trait-pill" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.18);color:rgba(255,255,255,0.85)">Sens8™ 4D Engine</span>
+            <span class="ohco-trait-pill" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.18);color:rgba(255,255,255,0.85)">ConstantTouch Infrared Heat</span>
+            <span class="ohco-trait-pill" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.18);color:rgba(255,255,255,0.85)">49" MaxTrack L-Track</span>
+            <span class="ohco-trait-pill" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.18);color:rgba(255,255,255,0.85)">Movesync Dual System</span>
+            <span class="ohco-trait-pill" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.18);color:rgba(255,255,255,0.85)">Bluetooth Audio</span>
+            <span class="ohco-trait-pill" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.18);color:rgba(255,255,255,0.85)">Aromatherapy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  {%- comment -%} ══════════ TECHNOLOGY SECTION ══════════ {%- endcomment -%}
+  <section class="ohco-section" id="ohco-technology">
+    <div class="ohco-container">
+      <div class="ohco-section-header">
+        <span class="ohco-eyebrow">OHCO Technology</span>
+        <h2 class="ohco-accent-heading">The Engineering Behind the Experience</h2>
+        <p>Every OHCO innovation exists for one reason: to make the massage feel more real, more personal, and more restorative than anything you've experienced in a chair.</p>
+      </div>
+
+      <div class="ohco-pillar-grid" style="grid-template-columns:repeat(2,1fr);gap:32px">
+        <div class="ohco-pillar-card">
+          <div class="ohco-pillar-icon"><svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg></div>
+          <h3>Sens8 Massage Mechanism</h3>
+          <p>The heart of every OHCO chair. The Sens8 is a 4D massage engine that uses advanced algorithms and precision motor control to create nuanced "feel" variations — changes in speed, depth, and pressure landing that mimic the instinctive adjustments of a master shiatsu therapist. This is not a simple roller with speed settings. It's a responsive system that delivers a different sensation on every pass.</p>
+        </div>
+        <div class="ohco-pillar-card">
+          <div class="ohco-pillar-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14H6v-2h6v2zm4-4H6v-2h10v2zm0-4H6V7h10v2z"/></svg></div>
+          <h3>MaxTrack (49" L-Track)</h3>
+          <p>A 49-inch ultra-long massage track that follows your body's natural S-curve from the base of your neck all the way down through your glutes. MaxTrack maintains consistent roller contact through every recline position, so there are never "dead zones" where the massage loses you. This is critical for buyers who carry tension in their lower back and hips.</p>
+        </div>
+        <div class="ohco-pillar-card">
+          <div class="ohco-pillar-icon"><svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg></div>
+          <h3>Arms of Embrace + Easy Access Doors</h3>
+          <p>The signature OHCO enclosure design — rear swinging doors that open from either side for effortless entry and exit, then lock securely when reclined. Combined with "Arms of Embrace" side panels, the chair creates a cocoon-like experience that feels private, supportive, and immersive. This is the design detail that distinguishes OHCO from open-frame competitors.</p>
+        </div>
+        <div class="ohco-pillar-card">
+          <div class="ohco-pillar-icon"><svg viewBox="0 0 24 24"><path d="M21.19 21.19L2.81 2.81 1.39 4.22l4.19 4.19c-2.11.95-3.58 3.39-3.58 5.59h2c0-2.21 1.79-4 4-4 .32 0 .63.05.94.12l1.72 1.72C10.18 12.22 10 12.59 10 13c0 .55.23 1.05.59 1.41l-3.18 3.18c-.78.78-.78 2.05 0 2.83s2.05.78 2.83 0l3.18-3.18c.36.36.86.59 1.41.59.55 0 1.05-.23 1.41-.59l.41-.41 3.13 3.13 1.41-1.38zM12 5c-1.07 0-2.05.35-2.85.93l1.46 1.46c.41-.24.88-.39 1.39-.39 1.48 0 2.68 1.2 2.68 2.68 0 .51-.15.98-.39 1.39l1.46 1.46c.58-.8.93-1.78.93-2.85 0-2.63-2.05-4.68-4.68-4.68z"/></svg></div>
+          <h3>Complete Sensory Immersion</h3>
+          <p>OHCO goes beyond massage with a full sensory environment: Bluetooth audio immersion so you can layer music or guided meditation, aromatherapy diffusion for scent-based relaxation, an air ionizer for fresher ambient air, and chromotherapy lighting that creates a calming visual atmosphere. Together, these transform a massage session into a complete wellness ritual.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  {%- comment -%} ══════════ COMPARISON TABLE ══════════ {%- endcomment -%}
+  <section class="ohco-section" id="ohco-compare">
+    <div class="ohco-container">
+      <div class="ohco-section-header">
+        <span class="ohco-eyebrow">Model Comparison</span>
+        <h2 class="ohco-accent-heading">OHCO M8 Neo LE vs. M8 Neo vs. R6</h2>
+        <p>A side-by-side view of the complete OHCO lineup to help you understand exactly what each model offers — and what changes as you move up.</p>
+      </div>
+
+      <div class="ohco-compare-wrap">
+        <table class="ohco-compare-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>OHCO R6</th>
+              <th>OHCO M8 Neo</th>
+              <th>OHCO M8 Neo LE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="ohco-col-feat">Positioning</td><td>Premium Entry</td><td>Flagship</td><td>Ultra-Flagship LE</td></tr>
+            <tr><td class="ohco-col-feat">Massage Mechanism</td><td>Sens8 4D</td><td>Sens8 4D</td><td>Sens8 4D</td></tr>
+            <tr><td class="ohco-col-feat">Dual Mechanism (Movesync)</td><td class="ohco-cross">—</td><td class="ohco-check">✓</td><td class="ohco-check">✓</td></tr>
+            <tr><td class="ohco-col-feat">Track Length</td><td>49" L-Track</td><td>49" MaxTrack</td><td>49" MaxTrack</td></tr>
+            <tr><td class="ohco-col-feat">Body Scan</td><td class="ohco-check">✓ Auto</td><td class="ohco-check">✓ Auto</td><td class="ohco-check">✓ Auto</td></tr>
+            <tr><td class="ohco-col-feat">Zero Gravity</td><td class="ohco-check">✓</td><td class="ohco-check">✓</td><td class="ohco-check">✓</td></tr>
+            <tr><td class="ohco-col-feat">Lay Flat Recline</td><td class="ohco-cross">—</td><td class="ohco-check">✓</td><td class="ohco-check">✓</td></tr>
+            <tr><td class="ohco-col-feat">Full-Body Air Massage</td><td class="ohco-check">✓</td><td class="ohco-check">✓</td><td class="ohco-check">✓</td></tr>
+            <tr><td class="ohco-col-feat">Total-Body Heat</td><td class="ohco-check">✓ Multi-Zone</td><td class="ohco-check">✓ Multi-Zone</td><td class="ohco-check">✓ Multi-Zone</td></tr>
+            <tr><td class="ohco-col-feat">ConstantTouch Infrared Heat</td><td class="ohco-cross">—</td><td class="ohco-check">✓</td><td class="ohco-check">✓</td></tr>
+            <tr><td class="ohco-col-feat">TheraElliptical Calf Kneading</td><td class="ohco-cross">—</td><td class="ohco-check">✓</td><td class="ohco-check">✓</td></tr>
+            <tr><td class="ohco-col-feat">Knead & Stretch Headrest</td><td class="ohco-cross">—</td><td class="ohco-cross">—</td><td class="ohco-check">✓</td></tr>
+            <tr><td class="ohco-col-feat">Bluetooth Audio</td><td class="ohco-cross">—</td><td class="ohco-check">✓</td><td class="ohco-check">✓</td></tr>
+            <tr><td class="ohco-col-feat">Aromatherapy</td><td class="ohco-cross">—</td><td class="ohco-check">✓</td><td class="ohco-check">✓</td></tr>
+            <tr><td class="ohco-col-feat">Air Ionizer</td><td class="ohco-cross">—</td><td class="ohco-check">✓</td><td class="ohco-check">✓</td></tr>
+            <tr><td class="ohco-col-feat">Easy Access Doors</td><td class="ohco-cross">—</td><td class="ohco-check">✓</td><td class="ohco-check">✓ Rear Swinging</td></tr>
+            <tr><td class="ohco-col-feat">Wall Clearance</td><td>~5"</td><td>—</td><td>~6.25"</td></tr>
+            <tr><td class="ohco-col-feat">Limited Edition Finishes</td><td class="ohco-cross">—</td><td class="ohco-cross">—</td><td class="ohco-check">✓ Rosso Nero</td></tr>
+            <tr><td class="ohco-col-feat">Design Language</td><td>Mid-Century Modern</td><td>Contemporary Premium</td><td>Exclusive LE</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="text-align:center;font-size:13px;color:var(--ohco-light-text);margin-top:16px;display:none" class="ohco-scroll-hint">← Scroll horizontally to see all models →</p>
+    </div>
+  </section>
+
+
+  {%- comment -%} ══════════ HOW TO CHOOSE ══════════ {%- endcomment -%}
+  <section class="ohco-section ohco-section-alt" id="ohco-choose">
+    <div class="ohco-container">
+      <div class="ohco-section-header">
+        <span class="ohco-eyebrow">Buyer Guide</span>
+        <h2 class="ohco-accent-heading">How to Choose the Right OHCO Massage Chair</h2>
+        <p>Every OHCO chair delivers a premium experience — but they're designed for different buyer priorities. Use this guide to find the model that fits your life, your space, and your expectations.</p>
+      </div>
+
+      <div class="ohco-buyer-grid">
+        <div class="ohco-buyer-card">
+          <div class="ohco-buyer-icon"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div>
+          <h3>"I want premium wellness, but design comes first."</h3>
+          <p>You've dismissed massage chairs before because they looked like gym equipment. You want something that elevates your room. You value the Sens8 massage quality but won't sacrifice aesthetics.</p>
+          <span class="ohco-buyer-rec">We recommend the OHCO R6</span>
+        </div>
+        <div class="ohco-buyer-card">
+          <div class="ohco-buyer-icon"><svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg></div>
+          <h3>"I want the full technology platform, no compromises."</h3>
+          <p>You want dual mechanisms, full sensory immersion, and the deepest massage coverage OHCO offers. You're investing in a daily wellness routine that replaces professional massage sessions.</p>
+          <span class="ohco-buyer-rec">We recommend the OHCO M8 Neo</span>
+        </div>
+        <div class="ohco-buyer-card">
+          <div class="ohco-buyer-icon"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+          <h3>"I want the absolute best, and exclusive matters."</h3>
+          <p>Your buying philosophy is "pay once, own the best." You want everything in the M8 Neo platform plus exclusive Limited Edition finishes and the prestige of the flagship. You treat this as a centerpiece purchase.</p>
+          <span class="ohco-buyer-rec">We recommend the OHCO M8 Neo LE</span>
+        </div>
+        <div class="ohco-buyer-card">
+          <div class="ohco-buyer-icon"><svg viewBox="0 0 24 24"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg></div>
+          <h3>"Neck and shoulder tension is my primary issue."</h3>
+          <p>You carry stress high — in your neck, shoulders, and upper back. You need a chair that starts by finding exactly where your tension lives and delivers targeted relief, not generic full-body rolling.</p>
+          <span class="ohco-buyer-rec">Try the M8 Neo LE (Knead & Stretch Headrest)</span>
+        </div>
+        <div class="ohco-buyer-card">
+          <div class="ohco-buyer-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+          <h3>"My partner and I will both use it daily."</h3>
+          <p>You need a chair that's easy to share — quick to enter and exit, adapts to different body types via auto scan, and feels welcoming to both users without complex setup each time.</p>
+          <span class="ohco-buyer-rec">The M8 Neo with Easy Access Doors</span>
+        </div>
+        <div class="ohco-buyer-card">
+          <div class="ohco-buyer-icon"><svg viewBox="0 0 24 24"><path d="M11.5 2C6.81 2 3 5.81 3 10.5S6.81 19 11.5 19h.5v3c4.86-2.34 8-7 8-11.5C20 5.81 16.19 2 11.5 2zm1 14.5h-2v-2h2v2zm0-4h-2c0-3.25 3-3 3-5 0-1.1-.9-2-2-2s-2 .9-2 2h-2c0-2.21 1.79-4 4-4s4 1.79 4 4c0 2.5-3 2.75-3 5z"/></svg></div>
+          <h3>"I'm not sure yet — I need to feel the difference."</h3>
+          <p>You've read the specs and comparisons, but you won't commit until you sit in the chair. That's the right approach — and exactly why we maintain a showroom. Come try every OHCO model in person.</p>
+          <span class="ohco-buyer-rec">Visit our showroom or call for a guided consultation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  {%- comment -%} ══════════ WHY BUY HERE ══════════ {%- endcomment -%}
+  <section class="ohco-section" id="ohco-why-buy-here">
+    <div class="ohco-container">
+      <div class="ohco-section-header">
+        <span class="ohco-eyebrow">Why Buy From Massage Chairs and More</span>
+        <h2 class="ohco-accent-heading">The Premium Ownership Experience</h2>
+        <p>Buying an OHCO massage chair is a significant investment. Where you buy it — and the support you receive — matters as much as the chair itself. Here's what we provide that online-only retailers cannot.</p>
+      </div>
+
+      <div class="ohco-trust-grid">
+        <div class="ohco-trust-card">
+          <div class="ohco-trust-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+          <h3>Showroom Experience</h3>
+          <p>Try every OHCO model in person before you commit. Our massage chair specialists provide guided demos tailored to your body, your priorities, and your lifestyle — so you make a decision with confidence, not guesswork.</p>
+        </div>
+        <div class="ohco-trust-card">
+          <div class="ohco-trust-card-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg></div>
+          <h3>Flexible Financing</h3>
+          <p>Affirm financing makes premium wellness accessible. Split your purchase into comfortable monthly payments with transparent terms. No hidden charges, no pressure — just a practical path to owning the chair you want.</p>
+        </div>
+        <div class="ohco-trust-card">
+          <div class="ohco-trust-card-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg></div>
+          <h3>Extended Factory Warranty</h3>
+          <p>Our extended warranty options go beyond the standard manufacturer coverage, giving you long-term peace of mind on an investment designed to be used daily for years. Factory-backed, hassle-free service.</p>
+        </div>
+        <div class="ohco-trust-card">
+          <div class="ohco-trust-card-icon"><svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></div>
+          <h3>White-Glove Delivery</h3>
+          <p>Premium nationwide delivery to the room of your choice. Your OHCO chair arrives fully assembled, placed exactly where you want it, and tested before we leave. Estimated delivery in 5–14 business days for in-stock models.</p>
+        </div>
+        <div class="ohco-trust-card">
+          <div class="ohco-trust-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.5 6c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zm-7 0c.83 0 1.5.67 1.5 1.5S9.33 11 8.5 11 7 10.33 7 9.5 7.67 8 8.5 8zm3.5 9.5c-2.33 0-4.31-1.46-5.11-3.5h10.22c-.8 2.04-2.78 3.5-5.11 3.5z"/></svg></div>
+          <h3>Specialist Expertise</h3>
+          <p>Our team specializes exclusively in premium massage chairs. We don't sell general furniture or electronics — we understand the nuances of massage technology, body mechanics, and which features matter for your specific needs.</p>
+        </div>
+        <div class="ohco-trust-card">
+          <div class="ohco-trust-card-icon"><svg viewBox="0 0 24 24"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.21c.28-.26.36-.65.25-1C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM19 12h2c0-4.97-4.03-9-9-9v2c3.87 0 7 3.13 7 7zm-4 0h2c0-2.76-2.24-5-5-5v2c1.66 0 3 1.34 3 3z"/></svg></div>
+          <h3>Ongoing Support</h3>
+          <p>Your relationship with us doesn't end at delivery. We provide ongoing support, usage guidance, and service coordination throughout your ownership. Call <a href="tel:{{ section.settings.phone | default: '+14088891188' }}" style="color:var(--ohco-accent);font-weight:700">{{ section.settings.phone | default: '+1 (408) 889-1188' }}</a> anytime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  {%- comment -%} ══════════ FAQ ══════════ {%- endcomment -%}
+  <section class="ohco-section ohco-section-alt" id="ohco-faq">
+    <div class="ohco-container">
+      <div class="ohco-section-header">
+        <span class="ohco-eyebrow">Frequently Asked Questions</span>
+        <h2 class="ohco-accent-heading">Everything You Need to Know About OHCO</h2>
+        <p>Genuine buyer questions, answered with substance — not filler. If you have a question not listed here, our specialists are available at {{ section.settings.phone | default: '+1 (408) 889-1188' }}.</p>
+      </div>
+
+      <div class="ohco-container-narrow">
+        <div class="ohco-faq-list">
+
+          <div class="ohco-faq-item">
+            <div class="ohco-faq-q"><h3>What makes OHCO massage chairs different from other luxury brands?</h3><span class="ohco-faq-toggle">+</span></div>
+            <div class="ohco-faq-a"><div class="ohco-faq-a-inner"><p>OHCO stands apart through three pillars: the proprietary Sens8 4D massage mechanism that uses advanced algorithms to mimic nuanced hand-like movements; industrial design by Ken Okuyama (Ferrari Enzo, Shinkansen bullet train) that makes each chair a genuine piece of premium furniture; and shiatsu expertise from Akira Okabayashi whose real-world techniques are digitally translated into OHCO's massage programs. Together, these create a massage experience that feels fundamentally different from standard 4D chairs — more human, more layered, and more refined.</p></div></div>
+          </div>
+
+          <div class="ohco-faq-item">
+            <div class="ohco-faq-q"><h3>What is the difference between the OHCO M8 Neo and M8 Neo LE?</h3><span class="ohco-faq-toggle">+</span></div>
+            <div class="ohco-faq-a"><div class="ohco-faq-a-inner"><p>Both share the same core technology platform: Sens8 4D mechanism, Movesync dual massage system, MaxTrack 49" coverage, total-body heat, full sensory immersion suite (Bluetooth, aromatherapy, chromotherapy, air ionizer), TheraElliptical calf kneading, and Easy Access Doors. The M8 Neo LE adds exclusive Limited Edition colorways like Rosso Nero, the Knead and Stretch Headrest with air-driven cervical traction, and collector-grade positioning as the ultimate expression of the OHCO lineup.</p></div></div>
+          </div>
+
+          <div class="ohco-faq-item">
+            <div class="ohco-faq-q"><h3>Is OHCO a Japanese massage chair brand?</h3><span class="ohco-faq-toggle">+</span></div>
+            <div class="ohco-faq-a"><div class="ohco-faq-a-inner"><p>Yes. OHCO is deeply rooted in Japanese craftsmanship and wellness philosophy. The brand is built around two Japanese disciplines: the industrial design expertise of Ken Okuyama and the shiatsu mastery of Akira Okabayashi. The manufacturing standards, attention to material quality, and the meticulous approach to massage choreography all reflect Japanese precision and aesthetic sensibility.</p></div></div>
+          </div>
+
+          <div class="ohco-faq-item">
+            <div class="ohco-faq-q"><h3>Are OHCO massage chairs worth the price?</h3><span class="ohco-faq-toggle">+</span></div>
+            <div class="ohco-faq-a"><div class="ohco-faq-a-inner"><p>For buyers who value genuine massage quality over basic vibration, premium design that integrates into their home, and a consistent daily wellness routine — OHCO represents strong value. The Sens8 mechanism delivers a measurably different experience from standard 4D chairs. The build quality supports years of daily use. And the design language means the chair enhances your space rather than compromising it. If you're comparing the cost to regular professional massage sessions, most OHCO owners find the investment pays for itself within the first year of daily use.</p></div></div>
+          </div>
+
+          <div class="ohco-faq-item">
+            <div class="ohco-faq-q"><h3>What is the Sens8 massage mechanism?</h3><span class="ohco-faq-toggle">+</span></div>
+            <div class="ohco-faq-a"><div class="ohco-faq-a-inner"><p>The Sens8 is OHCO's proprietary 4D massage engine — the technology that defines the OHCO experience. Unlike standard rollers that apply fixed patterns at adjustable speed, the Sens8 uses advanced algorithms and precision motor control to vary depth, speed, and pressure mid-stroke. The result feels less like a machine and more like trained hands — with transitions, pressure variations, and rhythmic changes that create a genuinely human-like sensation. It's available across all three OHCO models: the R6, M8 Neo, and M8 Neo LE.</p></div></div>
+          </div>
+
+          <div class="ohco-faq-item">
+            <div class="ohco-faq-q"><h3>Can I try OHCO massage chairs before buying?</h3><span class="ohco-faq-toggle">+</span></div>
+            <div class="ohco-faq-a"><div class="ohco-faq-a-inner"><p>Absolutely — and we strongly recommend it. OHCO chairs are available for in-person demos at our showroom. Our specialists provide guided sessions tailored to your body, your target areas, and your priorities. This is the single most important step in choosing the right model. Call us at {{ section.settings.phone | default: '+1 (408) 889-1188' }} or visit our showroom page to schedule a visit.</p></div></div>
+          </div>
+
+          <div class="ohco-faq-item">
+            <div class="ohco-faq-q"><h3>Do you offer financing for OHCO massage chairs?</h3><span class="ohco-faq-toggle">+</span></div>
+            <div class="ohco-faq-a"><div class="ohco-faq-a-inner"><p>Yes. We offer financing through Affirm, which allows you to split the purchase into manageable monthly payments. Terms and rates depend on your approval — you can check during checkout or contact us for details. Many buyers use financing to acquire a higher-tier model than they initially considered.</p></div></div>
+          </div>
+
+          <div class="ohco-faq-item">
+            <div class="ohco-faq-q"><h3>How long does delivery take for OHCO chairs?</h3><span class="ohco-faq-toggle">+</span></div>
+            <div class="ohco-faq-a"><div class="ohco-faq-a-inner"><p>In-stock OHCO models typically ship within 5–14 business days with white-glove delivery to the room of your choice. The chair arrives fully assembled and placement-ready. Delivery timelines may vary by model and location — contact us for current availability and estimated delivery for your specific order.</p></div></div>
+          </div>
+
+          <div class="ohco-faq-item">
+            <div class="ohco-faq-q"><h3>What warranty coverage is available?</h3><span class="ohco-faq-toggle">+</span></div>
+            <div class="ohco-faq-a"><div class="ohco-faq-a-inner"><p>All OHCO chairs come with the manufacturer's standard warranty. We also offer extended factory-backed warranty options for additional peace of mind. Given that OHCO chairs are designed for daily use over many years, extended coverage is recommended and popular among our buyers. Contact us for specific warranty terms and pricing.</p></div></div>
+          </div>
+
+          <div class="ohco-faq-item">
+            <div class="ohco-faq-q"><h3>Why choose an OHCO chair over a standard massage chair?</h3><span class="ohco-faq-toggle">+</span></div>
+            <div class="ohco-faq-a"><div class="ohco-faq-a-inner"><p>Standard massage chairs deliver mechanical rolling and vibration. OHCO delivers a shiatsu-inspired experience that feels human — with nuanced pressure variations, smooth transitions, and lifelike pacing from the Sens8 engine. Beyond massage quality, OHCO chairs offer Ken Okuyama industrial design that integrates into luxury homes, multi-zone infrared heat, a complete sensory environment (audio, scent, light, air quality), and build quality that justifies daily use for years. The difference is immediately apparent in a side-by-side demo.</p></div></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ohco-grad-divider"></div>
+
+  {%- comment -%} ══════════ FINAL CTA ══════════ {%- endcomment -%}
+  <section class="ohco-section">
+    <div class="ohco-container">
+      <div class="ohco-final-cta">
+        <span class="ohco-section-header ohco-eyebrow" style="margin-bottom:16px;display:inline-flex">Your OHCO Experience Begins Here</span>
+        <h2>Ready to Experience OHCO<br>the Way It Was Meant to Be Felt?</h2>
+        <p>Whether you're ready to choose your model, need expert guidance comparing the R6, M8 Neo, and M8 Neo LE, or simply want to experience the Sens8 difference in person — we're here to help you make the right decision.</p>
+        <div class="ohco-final-cta-btns">
+          <a href="{{ shop.url }}/pages/contact" class="ohco-btn ohco-btn-accent">Visit Our Showroom</a>
+          <a href="tel:{{ section.settings.phone | default: '+14088891188' }}" class="ohco-btn ohco-btn-white-outline">Speak with a Specialist</a>
+          <a href="{{ shop.url }}/collections/ohco-massage-chairs" class="ohco-btn ohco-btn-ghost-dark">Browse OHCO Collection</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} SUPPORT BAR {%- endcomment -%}
+  <div class="ohco-support-bar">
+    <div class="ohco-support-bar-inner">
+      <div class="ohco-support-item">
+        <div class="ohco-support-icon"><svg viewBox="0 0 24 24"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.21c.28-.26.36-.65.25-1C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/></svg></div>
+        <div class="ohco-support-text"><strong>Call Us</strong><span>{{ section.settings.phone | default: '+1 (408) 889-1188' }}</span></div>
+      </div>
+      <div class="ohco-support-divider"></div>
+      <div class="ohco-support-item">
+        <div class="ohco-support-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+        <div class="ohco-support-text"><strong>Email</strong><span>info@massagechairsandmore.com</span></div>
+      </div>
+      <div class="ohco-support-divider"></div>
+      <div class="ohco-support-item">
+        <div class="ohco-support-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+        <div class="ohco-support-text"><strong>Visit Showroom</strong><span>Bay Area, California</span></div>
+      </div>
+      <div class="ohco-support-divider"></div>
+      <div class="ohco-support-item">
+        <div class="ohco-support-icon"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
+        <div class="ohco-support-text"><strong>Financing</strong><span>Affirm Available at Checkout</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>{%- comment -%} end .ohco-wrap {%- endcomment -%}
+
+{%- comment -%} FAQ + Subnav JavaScript {%- endcomment -%}
+<script>
+(function(){
+  // FAQ Toggle
+  document.querySelectorAll('.ohco-faq-q').forEach(function(q){
+    q.addEventListener('click',function(){
+      var item=q.parentElement;
+      var answer=item.querySelector('.ohco-faq-a');
+      var isOpen=item.classList.contains('open');
+      item.classList.toggle('open');
+      if(isOpen){answer.style.maxHeight=null}else{answer.style.maxHeight=answer.scrollHeight+'px'}
+    });
+  });
+
+  // Sticky subnav active state
+  var sections=document.querySelectorAll('.ohco-wrap section[id]');
+  var navLinks=document.querySelectorAll('.ohco-subnav-inner a');
+  var observerOptions={rootMargin:'-120px 0px -70% 0px',threshold:0};
+  var observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        var id=entry.target.getAttribute('id');
+        navLinks.forEach(function(link){
+          link.classList.toggle('active',link.getAttribute('href')==='#'+id);
+        });
+      }
+    });
+  },observerOptions);
+  sections.forEach(function(section){observer.observe(section)});
+
+  // Scroll hint for comparison table
+  var compareWrap=document.querySelector('.ohco-compare-wrap');
+  var scrollHint=document.querySelector('.ohco-scroll-hint');
+  if(compareWrap&&scrollHint){
+    var checkOverflow=function(){scrollHint.style.display=compareWrap.scrollWidth>compareWrap.clientWidth?'block':'none'};
+    checkOverflow();
+    window.addEventListener('resize',checkOverflow);
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "OHCO Collection",
+  "tag": "section",
+  "class": "ohco-collection-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hero Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Background Image",
+      "info": "Upload ohco-lifestyle.png (luxury lifestyle image)"
+    },
+    {
+      "type": "text",
+      "id": "hero_heading",
+      "label": "Hero Heading",
+      "default": "OHCO Massage Chairs —<br><span class='ohco-hero-tag'>Where Japanese Mastery Meets Modern Luxury</span>"
+    },
+    {
+      "type": "text",
+      "id": "hero_subheading",
+      "label": "Hero Subheading",
+      "default": "Three masterfully crafted massage chairs, each born from the same philosophy: that wellness should feel as refined as it looks."
+    },
+    {
+      "type": "header",
+      "content": "Technology Section"
+    },
+    {
+      "type": "image_picker",
+      "id": "tech_image",
+      "label": "Tech Showcase Image",
+      "info": "Upload ohco-tech-features.png (product feature image)"
+    },
+    {
+      "type": "header",
+      "content": "Model Images (optional overrides)"
+    },
+    {
+      "type": "image_picker",
+      "id": "r6_image",
+      "label": "OHCO R6 Image",
+      "info": "If not set, pulls from product automatically"
+    },
+    {
+      "type": "image_picker",
+      "id": "m8neo_image",
+      "label": "OHCO M8 Neo Image",
+      "info": "If not set, pulls from product automatically"
+    },
+    {
+      "type": "image_picker",
+      "id": "m8le_image",
+      "label": "OHCO M8 Neo LE Image",
+      "info": "If not set, pulls from product automatically"
+    },
+    {
+      "type": "header",
+      "content": "Contact Settings"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Phone Number",
+      "default": "+1 (408) 889-1188"
+    }
+  ],
+  "presets": [
+    {
+      "name": "OHCO Collection"
+    }
+  ]
+}
+{% endschema %}

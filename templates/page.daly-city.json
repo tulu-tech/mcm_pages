@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "daly-city-main": {
+      "type": "page-daly-city",
+      "settings": {}
+    }
+  },
+  "order": [
+    "daly-city-main"
+  ]
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Calibrate — DualTech Pro AI vs Panasonic MAN1</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, -apple-system, sans-serif; background: #1a1a1a; color: #fff; padding: 20px; }
+  h1 { text-align: center; margin-bottom: 20px; font-size: 18px; color: #c3a363; }
+  .container { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; }
+  .chair-panel {
+    position: relative; width: 400px; height: 400px;
+    border: 2px solid #333; border-radius: 12px; overflow: hidden;
+    cursor: crosshair; background: #fff;
+  }
+  .chair-panel img {
+    width: 100%; height: 100%; object-fit: contain;
+  }
+  .dot {
+    position: absolute; width: 12px; height: 12px;
+    border-radius: 50%; border: 2px solid #fff;
+    transform: translate(-50%, -50%); pointer-events: none;
+    z-index: 10;
+  }
+  .dot.left { background: rgba(154,127,74,0.8); }
+  .dot.right { background: rgba(97,112,100,0.8); }
+  .log-panel {
+    margin-top: 30px; background: #111; border-radius: 8px;
+    padding: 20px; max-width: 900px; margin-left: auto; margin-right: auto;
+  }
+  .log-panel h2 { color: #c3a363; margin-bottom: 10px; font-size: 14px; }
+  #log { font-family: monospace; font-size: 13px; white-space: pre-wrap; color: #0f0; }
+  .label-input {
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    background: #222; border: 2px solid #c3a363; border-radius: 12px;
+    padding: 24px; z-index: 100; display: none; text-align: center;
+  }
+  .label-input input {
+    background: #333; color: #fff; border: 1px solid #555;
+    padding: 8px 16px; border-radius: 6px; font-size: 14px; width: 260px;
+  }
+  .label-input button {
+    margin-top: 10px; padding: 8px 20px; background: #c3a363;
+    border: none; border-radius: 6px; color: #000; cursor: pointer; font-weight: 700;
+  }
+  .instructions {
+    text-align: center; margin-bottom: 20px; color: #888; font-size: 13px;
+    line-height: 1.6;
+  }
+  .copy-btn {
+    margin-top: 10px; padding: 6px 16px; background: #c3a363;
+    border: none; border-radius: 6px; color: #000; cursor: pointer; font-weight: 700;
+    margin-left: 12px;
+  }
+  .clear-btn {
+    margin-top: 10px; padding: 6px 16px; background: #e74c3c;
+    border: none; border-radius: 6px; color: #fff; cursor: pointer; font-weight: 700;
+    margin-left: 8px;
+  }
+  .preset-btns {
+    display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
+    margin-bottom: 16px;
+  }
+  .preset-btns button {
+    padding: 5px 10px; background: #333; border: 1px solid #555;
+    color: #aaa; border-radius: 6px; font-size: 11px; cursor: pointer;
+  }
+  .preset-btns button:hover { background: #444; color: #fff; }
+  .preset-btns button.active { background: #c3a363; color: #000; border-color: #c3a363; }
+</style>
+</head>
+<body>
+<h1>🎯 Calibration Tool — DualTech Pro AI vs Panasonic MAN1</h1>
+<p class="instructions">
+  Her koltuk üzerine tıklayın → bölge adı girin (veya aşağıdaki preset butonları kullanın)<br>
+  Koordinatlar otomatik olarak SVG coordinate space'e (1600×980) dönüştürülür.<br>
+  <strong>Sol panel:</strong> DualTech Pro AI (image offset x=220, y=250) &nbsp;|&nbsp;
+  <strong>Sağ panel:</strong> Panasonic MAN1 (image offset x=980, y=250)<br>
+  <em>Bölgeler: Head, Neck, Back, Arms, Glutes, Calves, Feet, Chair Top, Chair Bottom, Chair Left, Chair Right</em>
+</p>
+
+<div class="preset-btns" id="presetBtns">
+  <button data-label="Head">Head</button>
+  <button data-label="Neck">Neck</button>
+  <button data-label="Back">Back</button>
+  <button data-label="Arms">Arms</button>
+  <button data-label="Glutes">Glutes</button>
+  <button data-label="Calves">Calves</button>
+  <button data-label="Feet">Feet</button>
+  <button data-label="Chair Top">Chair Top</button>
+  <button data-label="Chair Bottom">Chair Bottom</button>
+  <button data-label="Chair Left">Chair Left</button>
+  <button data-label="Chair Right">Chair Right</button>
+</div>
+
+<div class="container">
+  <div>
+    <h3 style="text-align:center;color:#9a7f4a;margin-bottom:8px">DualTech Pro AI 4D</h3>
+    <div class="chair-panel" id="panelA" data-side="left" data-offset-x="220" data-offset-y="250">
+      <img src="ref-dualtech.jpg" alt="DualTech Pro AI">
+    </div>
+  </div>
+  <div>
+    <h3 style="text-align:center;color:#617064;margin-bottom:8px">Panasonic MAN1</h3>
+    <div class="chair-panel" id="panelB" data-side="right" data-offset-x="980" data-offset-y="250">
+      <img src="images/panasonic-man1.png" alt="Panasonic MAN1">
+    </div>
+  </div>
+</div>
+
+<div class="log-panel">
+  <h2>📋 Koordinat Logu
+    <button class="copy-btn" onclick="copyLog()">Copy All</button>
+    <button class="clear-btn" onclick="clearLog()">Clear</button>
+  </h2>
+  <div id="log">Henüz tıklama yapılmadı...</div>
+</div>
+
+<div class="label-input" id="labelDialog">
+  <p style="margin-bottom:10px;color:#c3a363">Bölge adı girin:</p>
+  <input type="text" id="labelInput" placeholder="Örn: Head, Back, Arms...">
+  <br>
+  <button onclick="confirmLabel()">Kaydet</button>
+</div>
+
+<script>
+let pendingClick = null;
+let logLines = [];
+let activePreset = null;
+
+// Preset button handling
+document.querySelectorAll('.preset-btns button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.preset-btns button').forEach(b => b.classList.remove('active'));
+    if (activePreset === btn.dataset.label) {
+      activePreset = null;
+    } else {
+      btn.classList.add('active');
+      activePreset = btn.dataset.label;
+    }
+  });
+});
+
+document.querySelectorAll('.chair-panel').forEach(panel => {
+  panel.addEventListener('click', (e) => {
+    const rect = panel.getBoundingClientRect();
+    const px = e.clientX - rect.left;
+    const py = e.clientY - rect.top;
+    const side = panel.dataset.side;
+    const offX = parseInt(panel.dataset.offsetX);
+    const offY = parseInt(panel.dataset.offsetY);
+
+    // Convert to SVG coordinates (1600x980 space)
+    const svgX = Math.round(offX + px);
+    const svgY = Math.round(offY + py);
+
+    pendingClick = { px, py, svgX, svgY, side, panel };
+
+    if (activePreset) {
+      // Use preset label directly
+      document.getElementById('labelInput').value = activePreset;
+      confirmLabel();
+    } else {
+      document.getElementById('labelInput').value = '';
+      document.getElementById('labelDialog').style.display = 'block';
+      document.getElementById('labelInput').focus();
+    }
+  });
+});
+
+document.getElementById('labelInput').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') confirmLabel();
+  if (e.key === 'Escape') {
+    document.getElementById('labelDialog').style.display = 'none';
+    pendingClick = null;
+  }
+});
+
+function confirmLabel() {
+  const label = document.getElementById('labelInput').value.trim() || 'Unknown';
+  const { px, py, svgX, svgY, side, panel } = pendingClick;
+
+  // Place visual dot
+  const dot = document.createElement('div');
+  dot.className = `dot ${side}`;
+  dot.style.left = px + 'px';
+  dot.style.top = py + 'px';
+  dot.title = `${label} → SVG(${svgX},${svgY})`;
+  panel.appendChild(dot);
+
+  // Add small label near dot
+  const lbl = document.createElement('div');
+  lbl.style.cssText = `position:absolute;left:${px+8}px;top:${py-8}px;font-size:10px;color:${side==='left'?'#c3a363':'#617064'};font-weight:700;pointer-events:none;z-index:10;text-shadow:0 1px 2px #000;`;
+  lbl.textContent = label;
+  panel.appendChild(lbl);
+
+  // Log entry
+  const sideName = side === 'left' ? 'DualTech' : 'MAN1    ';
+  const line = `${sideName} | ${label.padEnd(14)} | px(${String(Math.round(px)).padStart(3)},${String(Math.round(py)).padStart(3)}) → SVG(${svgX},${svgY})`;
+  logLines.push(line);
+  document.getElementById('log').textContent = logLines.join('\n');
+
+  document.getElementById('labelDialog').style.display = 'none';
+  pendingClick = null;
+}
+
+function copyLog() {
+  const header = '=== DualTech Pro AI vs Panasonic MAN1 — Calibration Data ===\n';
+  const footer = '\n=== SVG Canvas: 1600×980, viewBox="0 0 1600 980" ===\n';
+  const fullLog = header + logLines.join('\n') + footer;
+  navigator.clipboard.writeText(fullLog).then(() => {
+    alert('Koordinatlar kopyalandı! ✅');
+  });
+}
+
+function clearLog() {
+  if (confirm('Tüm koordinatları silmek istediğinize emin misiniz?')) {
+    logLines = [];
+    document.getElementById('log').textContent = 'Henüz tıklama yapılmadı...';
+    document.querySelectorAll('.dot').forEach(d => d.remove());
+    document.querySelectorAll('.chair-panel div[style]').forEach(d => {
+      if (d.style.fontSize === '10px') d.remove();
+    });
+  }
+}
+</script>
+</body>
+</html>

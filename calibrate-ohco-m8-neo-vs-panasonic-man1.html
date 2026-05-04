@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Calibrate — OHCO M8 NEO vs Panasonic MAN1</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, sans-serif; background: #1a1a1a; color: #fff; padding: 20px; }
+  h1 { text-align: center; margin-bottom: 20px; font-size: 18px; color: #c3a363; }
+  .container { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; }
+  .chair-panel {
+    position: relative; width: 400px; height: 400px;
+    border: 2px solid #333; border-radius: 12px; overflow: hidden;
+    cursor: crosshair;
+  }
+  .chair-panel img {
+    width: 100%; height: 100%; object-fit: contain;
+  }
+  .dot {
+    position: absolute; width: 12px; height: 12px;
+    border-radius: 50%; border: 2px solid #fff;
+    transform: translate(-50%, -50%); pointer-events: none;
+    z-index: 10;
+  }
+  .dot.left { background: rgba(154,127,74,0.8); }
+  .dot.right { background: rgba(97,112,100,0.8); }
+  .dot-label {
+    position: absolute; transform: translate(-50%, -150%);
+    background: rgba(0,0,0,0.8); color: #fff; font-size: 10px;
+    padding: 2px 6px; border-radius: 4px; pointer-events: none;
+    white-space: nowrap; z-index: 11;
+  }
+  .log-panel {
+    margin-top: 30px; background: #111; border-radius: 8px;
+    padding: 20px; max-width: 900px; margin-left: auto; margin-right: auto;
+  }
+  .log-panel h2 { color: #c3a363; margin-bottom: 10px; font-size: 14px; }
+  #log { font-family: monospace; font-size: 13px; white-space: pre-wrap; color: #0f0; }
+  .label-input {
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    background: #222; border: 2px solid #c3a363; border-radius: 12px;
+    padding: 24px; z-index: 100; display: none; text-align: center;
+  }
+  .label-input input {
+    background: #333; color: #fff; border: 1px solid #555;
+    padding: 8px 16px; border-radius: 6px; font-size: 14px; width: 200px;
+  }
+  .label-input button {
+    margin-top: 10px; padding: 8px 20px; background: #c3a363;
+    border: none; border-radius: 6px; color: #000; cursor: pointer; font-weight: 700;
+  }
+  .instructions {
+    text-align: center; margin-bottom: 20px; color: #888; font-size: 13px;
+    line-height: 1.7;
+  }
+  .copy-btn {
+    margin-top: 10px; padding: 6px 16px; background: #c3a363;
+    border: none; border-radius: 6px; color: #000; cursor: pointer; font-weight: 700;
+  }
+  .clear-btn {
+    margin-top: 10px; margin-left: 8px; padding: 6px 16px; background: #c62828;
+    border: none; border-radius: 6px; color: #fff; cursor: pointer; font-weight: 700;
+  }
+  .quick-labels {
+    display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
+    margin-bottom: 20px;
+  }
+  .quick-labels button {
+    padding: 5px 12px; background: #2a2a2a; border: 1px solid #444;
+    border-radius: 6px; color: #ccc; font-size: 11px; cursor: pointer;
+    font-weight: 600;
+  }
+  .quick-labels button:hover { background: #3a3a3a; border-color: #c3a363; }
+  .quick-labels button.used { opacity: 0.35; }
+</style>
+</head>
+<body>
+<h1>🎯 Calibration Tool — OHCO M8 NEO vs Panasonic MAN1</h1>
+<p class="instructions">
+  Her koltuk üzerine tıklayın → bölge adı girin (Head, Back, Arms, Calves, Feet, vb.)<br>
+  Koordinatlar otomatik olarak SVG coordinate space'e (1600×980) dönüştürülür.<br>
+  <strong>Sol panel:</strong> OHCO M8 NEO (image offset x=220, y=250) &nbsp;|&nbsp;
+  <strong>Sağ panel:</strong> Panasonic MAN1 (image offset x=980, y=250)
+</p>
+<div class="quick-labels" id="quickLabels">
+  <span style="color:#666;font-size:11px;align-self:center;">Hızlı Etiket:</span>
+  <button onclick="setQuickLabel(this,'Head')">Head</button>
+  <button onclick="setQuickLabel(this,'Neck')">Neck</button>
+  <button onclick="setQuickLabel(this,'Shoulders')">Shoulders</button>
+  <button onclick="setQuickLabel(this,'Back')">Back</button>
+  <button onclick="setQuickLabel(this,'Arms')">Arms</button>
+  <button onclick="setQuickLabel(this,'Calves')">Calves</button>
+  <button onclick="setQuickLabel(this,'Feet')">Feet</button>
+  <button onclick="setQuickLabel(this,'Chair Top')">Chair Top</button>
+  <button onclick="setQuickLabel(this,'Chair Bottom')">Chair Bottom</button>
+  <button onclick="setQuickLabel(this,'Chair Left')">Chair Left</button>
+  <button onclick="setQuickLabel(this,'Chair Right')">Chair Right</button>
+</div>
+<div class="container">
+  <div>
+    <h3 style="text-align:center;color:#9a7f4a;margin-bottom:8px">OHCO M8 NEO</h3>
+    <div class="chair-panel" id="panelA" data-side="left" data-offset-x="220" data-offset-y="250">
+      <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100.jpg?v=1772325951" alt="OHCO M8 NEO">
+    </div>
+  </div>
+  <div>
+    <h3 style="text-align:center;color:#617064;margin-bottom:8px">Panasonic MAN1</h3>
+    <div class="chair-panel" id="panelB" data-side="right" data-offset-x="980" data-offset-y="250">
+      <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/panasonic-man1.jpg" alt="Panasonic MAN1">
+    </div>
+  </div>
+</div>
+<div class="log-panel">
+  <h2>📋 Koordinat Logu
+    <button class="copy-btn" onclick="copyLog()">Copy All</button>
+    <button class="clear-btn" onclick="clearLog()">Clear</button>
+  </h2>
+  <div id="log">Henüz tıklama yapılmadı...</div>
+</div>
+<div class="label-input" id="labelDialog">
+  <p style="margin-bottom:10px;color:#c3a363">Bölge adı girin:</p>
+  <input type="text" id="labelInput" placeholder="Örn: Head, Back, Arms...">
+  <br>
+  <button onclick="confirmLabel()">Kaydet</button>
+</div>
+<script>
+let pendingClick = null;
+let logLines = [];
+let quickLabel = null;
+
+function setQuickLabel(btn, label) {
+  document.querySelectorAll('.quick-labels button').forEach(b => b.style.borderColor = '#444');
+  btn.style.borderColor = '#c3a363';
+  quickLabel = label;
+}
+
+document.querySelectorAll('.chair-panel').forEach(panel => {
+  panel.addEventListener('click', (e) => {
+    const rect = panel.getBoundingClientRect();
+    const px = e.clientX - rect.left;
+    const py = e.clientY - rect.top;
+    const side = panel.dataset.side;
+    const offX = parseInt(panel.dataset.offsetX);
+    const offY = parseInt(panel.dataset.offsetY);
+    const svgX = Math.round(offX + px);
+    const svgY = Math.round(offY + py);
+
+    pendingClick = { px, py, svgX, svgY, side, panel };
+
+    if (quickLabel) {
+      document.getElementById('labelInput').value = quickLabel;
+      confirmLabel();
+    } else {
+      document.getElementById('labelInput').value = '';
+      document.getElementById('labelDialog').style.display = 'block';
+      document.getElementById('labelInput').focus();
+    }
+  });
+});
+
+document.getElementById('labelInput').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') confirmLabel();
+  if (e.key === 'Escape') document.getElementById('labelDialog').style.display = 'none';
+});
+
+function confirmLabel() {
+  const label = document.getElementById('labelInput').value.trim() || 'Unknown';
+  const { px, py, svgX, svgY, side, panel } = pendingClick;
+
+  const dot = document.createElement('div');
+  dot.className = `dot ${side}`;
+  dot.style.left = px + 'px';
+  dot.style.top = py + 'px';
+  dot.title = label;
+  panel.appendChild(dot);
+
+  const lbl = document.createElement('div');
+  lbl.className = 'dot-label';
+  lbl.style.left = px + 'px';
+  lbl.style.top = py + 'px';
+  lbl.textContent = label;
+  panel.appendChild(lbl);
+
+  const sideName = side === 'left' ? 'OHCO M8 NEO' : 'Panasonic MAN1';
+  const line = `${sideName.padEnd(16)} | ${label.padEnd(14)} | px(${String(Math.round(px)).padStart(3)},${String(Math.round(py)).padStart(3)}) → SVG(${svgX},${svgY})`;
+  logLines.push(line);
+  document.getElementById('log').textContent = logLines.join('\n');
+
+  document.getElementById('labelDialog').style.display = 'none';
+  pendingClick = null;
+}
+
+function copyLog() {
+  navigator.clipboard.writeText(logLines.join('\n')).then(() => {
+    alert('Koordinatlar kopyalandı!');
+  });
+}
+
+function clearLog() {
+  logLines = [];
+  document.getElementById('log').textContent = 'Henüz tıklama yapılmadı...';
+  document.querySelectorAll('.dot, .dot-label').forEach(el => el.remove());
+  document.querySelectorAll('.quick-labels button').forEach(b => {
+    b.style.borderColor = '#444';
+    b.classList.remove('used');
+  });
+  quickLabel = null;
+}
+</script>
+</body>
+</html>

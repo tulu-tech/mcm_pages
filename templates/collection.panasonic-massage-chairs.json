@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "panasonic-collection": {
+      "type": "collection-panasonic",
+      "settings": {}
+    }
+  },
+  "order": [
+    "panasonic-collection"
+  ]
+}

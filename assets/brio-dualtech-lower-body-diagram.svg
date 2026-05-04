@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-label="Lower body and leg massage">
+  <defs>
+    <linearGradient id="bg4" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#fbfaf7"/><stop offset="1" stop-color="#eee6da"/></linearGradient>
+    <filter id="sh4" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#2b2114" flood-opacity=".12"/></filter>
+  </defs>
+  <rect width="1600" height="980" fill="url(#bg4)"/>
+  <rect x="655" y="30" width="290" height="32" rx="16" fill="#0b0b0b"/>
+  <text x="800" y="51" fill="#c3a363" font-family="Inter,sans-serif" font-size="11" font-weight="900" letter-spacing="3" text-anchor="middle">03 · LOWER BODY</text>
+  <text x="800" y="100" fill="#0b0b0b" font-family="Georgia,serif" font-size="38" font-weight="800" text-anchor="middle">Lower body and leg massage</text>
+  <text x="800" y="130" fill="#67605a" font-family="Inter,sans-serif" font-size="16" text-anchor="middle">Calf, foot, and leg massage coverage comparison.</text>
+
+
+  <!-- BRIO SPORT card -->
+  <rect x="60" y="160" width="720" height="620" rx="24" fill="#fff" filter="url(#sh4)"/>
+  <rect x="80" y="180" width="190" height="38" rx="19" fill="#9a7f4a"/>
+  <text x="175" y="205" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">BRIO SPORT</text>
+  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/PositivePosture_BrioSport_Beige_Upright_45.png?v=1772325852" x="220" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- DUALTECH 4D card -->
+  <rect x="820" y="160" width="720" height="620" rx="24" fill="#fff" filter="url(#sh4)"/>
+  <rect x="840" y="180" width="190" height="38" rx="19" fill="#617064"/>
+  <text x="935" y="205" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">DUALTECH 4D</text>
+  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/PositivePosture_DualTech_Slate_315-angle-front.webp?v=1772326033" x="980" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet"/>
+
+  <ellipse cx="497" cy="505" rx="30" ry="25" fill="#9a7f4a" opacity=".10" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4"/>
+  <line x1="527" y1="505" x2="560" y2="505" stroke="#9a7f4a" stroke-width="1.5"/>
+  <rect x="560" y="487" width="180" height="36" rx="12" fill="#9a7f4a" opacity=".10"/>
+  <text x="650" y="507" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="12" font-weight="900" text-anchor="middle">CALF ZONE</text>
+
+  <ellipse cx="511" cy="544" rx="30" ry="25" fill="#9a7f4a" opacity=".10" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4"/>
+  <line x1="541" y1="544" x2="560" y2="544" stroke="#9a7f4a" stroke-width="1.5"/>
+  <rect x="560" y="526" width="180" height="36" rx="12" fill="#9a7f4a" opacity=".10"/>
+  <text x="650" y="546" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="12" font-weight="900" text-anchor="middle">FOOT ZONE</text>
+
+  <ellipse cx="1261" cy="490" rx="30" ry="25" fill="#617064" opacity=".10" stroke="#617064" stroke-width="2" stroke-dasharray="6 4"/>
+  <line x1="1231" y1="490" x2="1181" y2="490" stroke="#617064" stroke-width="1.5"/>
+  <rect x="981" y="472" width="200" height="36" rx="12" fill="#617064" opacity=".10"/>
+  <text x="1081" y="492" fill="#617064" font-family="Inter,sans-serif" font-size="12" font-weight="900" text-anchor="middle">CALF ZONE</text>
+
+  <ellipse cx="1293" cy="540" rx="30" ry="25" fill="#617064" opacity=".10" stroke="#617064" stroke-width="2" stroke-dasharray="6 4"/>
+  <line x1="1263" y1="540" x2="1213" y2="540" stroke="#617064" stroke-width="1.5"/>
+  <rect x="1013" y="522" width="200" height="36" rx="12" fill="#617064" opacity=".10"/>
+  <text x="1113" y="542" fill="#617064" font-family="Inter,sans-serif" font-size="12" font-weight="900" text-anchor="middle">FOOT ZONE</text>
+
+  <rect x="80" y="670" width="680" height="90" rx="16" fill="#f8f5ef"/>
+  <text x="100" y="693" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="900" letter-spacing="2">KEY HIGHLIGHTS</text>
+  <circle cx="105" cy="714" r="5" fill="#9a7f4a"/>
+  <text x="118" y="718" fill="#3c3c3c" font-family="Inter,sans-serif" font-size="13" font-weight="600">Airbag calf compression · Reflexology foot rollers</text>
+  <circle cx="105" cy="736" r="5" fill="#9a7f4a"/>
+  <text x="118" y="740" fill="#3c3c3c" font-family="Inter,sans-serif" font-size="13" font-weight="600">Adjustable calf rest length · Heat therapy option</text>
+
+  <rect x="840" y="670" width="680" height="90" rx="16" fill="#f8f5ef"/>
+  <text x="860" y="693" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="900" letter-spacing="2">KEY HIGHLIGHTS</text>
+  <circle cx="865" cy="714" r="5" fill="#617064"/>
+  <text x="878" y="718" fill="#3c3c3c" font-family="Inter,sans-serif" font-size="13" font-weight="600">Kneading + air calf massage · Shiatsu foot rollers</text>
+  <circle cx="865" cy="736" r="5" fill="#617064"/>
+  <text x="878" y="740" fill="#3c3c3c" font-family="Inter,sans-serif" font-size="13" font-weight="600">Extendable ottoman · Triple-layer foot massage</text>
+
+</svg>

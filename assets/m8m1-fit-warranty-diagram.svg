@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 980" width="1600" height="980">
+<defs>
+  <radialGradient id="bg" cx="50%" cy="30%"><stop offset="0%" stop-color="#1a1a1e"/><stop offset="100%" stop-color="#0d0d10"/></radialGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <radialGradient id="hO" cx="50%" cy="50%"><stop offset="0%" stop-color="#9a7f4a" stop-opacity=".18"/><stop offset="100%" stop-color="#9a7f4a" stop-opacity="0"/></radialGradient>
+  <radialGradient id="hP" cx="50%" cy="50%"><stop offset="0%" stop-color="#617064" stop-opacity=".18"/><stop offset="100%" stop-color="#617064" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1600" height="980" fill="url(#bg)"/>
+<text x="800" y="58" text-anchor="middle" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="13" font-weight="900" letter-spacing="3">FIT & WARRANTY</text>
+<text x="800" y="86" text-anchor="middle" fill="#555" font-family="Inter,sans-serif" font-size="11">Physical dimensions, height range, and weight capacity</text>
+<text x="420" y="228" text-anchor="middle" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2">OHCO M8 NEO</text>
+<text x="1180" y="228" text-anchor="middle" fill="#617064" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2">PANASONIC MAN1</text>
+<circle cx="800" cy="450" r="32" fill="#1a1a1e" stroke="#333" stroke-width="2"/>
+<text x="800" y="456" text-anchor="middle" fill="#9a7f4a" font-family="Georgia,serif" font-size="20" font-weight="700">VS</text>
+<image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100.jpg?v=1772325951" x="220" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet" opacity=".92"/>
+<image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/panasonic-man1.jpg" x="980" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet" opacity=".92"/>
+<rect x="313" y="339" width="224" height="224" rx="14" fill="none" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="8 5" opacity=".35"/><line x1="557" y1="339" x2="557" y2="563" stroke="#9a7f4a" stroke-width="1.5"/><line x1="549" y1="339" x2="565" y2="339" stroke="#9a7f4a" stroke-width="1.5"/><line x1="549" y1="563" x2="565" y2="563" stroke="#9a7f4a" stroke-width="1.5"/><rect x="20" y="326" width="149.2" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
+<text x="30" y="342" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Height: 5'1″ — 6'4″</text><rect x="20" y="366" width="142.39999999999998" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
+<text x="30" y="382" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Weight: 265 lb max</text><rect x="20" y="406" width="122" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
+<text x="30" y="422" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Wall Hug: 6.25″</text><rect x="20" y="446" width="176.4" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
+<text x="30" y="462" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Zero Gravity + Lay Flat</text><rect x="20" y="496" width="169.6" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
+<text x="30" y="512" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">KEY: Easy Access Doors</text><rect x="20" y="536" width="142.39999999999998" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
+<text x="30" y="552" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Ken Okuyama Design</text><rect x="1059" y="307" width="263" height="285" rx="14" fill="none" stroke="#617064" stroke-width="2" stroke-dasharray="8 5" opacity=".35"/><line x1="1342" y1="307" x2="1342" y2="592" stroke="#617064" stroke-width="1.5"/><line x1="1334" y1="307" x2="1350" y2="307" stroke="#617064" stroke-width="1.5"/><line x1="1334" y1="592" x2="1350" y2="592" stroke="#617064" stroke-width="1.5"/><rect x="1420" y="326" width="149.2" height="24" rx="6" fill="#617064" opacity=".10"/>
+<text x="1430" y="342" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Height: 4'8″ — 6'2″</text><rect x="1420" y="366" width="142.39999999999998" height="24" rx="6" fill="#617064" opacity=".10"/>
+<text x="1430" y="382" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Weight: 264 lb max</text><rect x="1420" y="406" width="169.6" height="24" rx="6" fill="#617064" opacity=".10"/>
+<text x="1430" y="422" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Confirm wall clearance</text><rect x="1420" y="446" width="142.39999999999998" height="24" rx="6" fill="#617064" opacity=".10"/>
+<text x="1430" y="462" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Touchscreen Remote</text><rect x="1420" y="496" width="183.2" height="24" rx="6" fill="#617064" opacity=".10"/>
+<text x="1430" y="512" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">KEY: 1260P Acupoint Scan</text><rect x="1420" y="536" width="196.79999999999998" height="24" rx="6" fill="#617064" opacity=".10"/>
+<text x="1430" y="552" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Engineered in Osaka, Japan</text></svg>

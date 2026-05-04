@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "pleasanton-main": {
+      "type": "page-pleasanton",
+      "settings": {}
+    }
+  },
+  "order": [
+    "pleasanton-main"
+  ]
+}

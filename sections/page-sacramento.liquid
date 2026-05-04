@@ -1,0 +1,1209 @@
+{%- comment -%}
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  SECTION: page-sacramento.liquid                            ║
+  ║  Template: templates/page.sacramento.json                   ║
+  ║  Page handle: sacramento-showroom                           ║
+  ║                                                              ║
+  ║  HOW TO INSTALL:                                             ║
+  ║  1. Upload this file to /sections/page-sacramento.liquid    ║
+  ║  2. Upload templates/page.sacramento.json                   ║
+  ║  3. In Shopify Admin, assign that template to the page      ║
+  ║     with handle "sacramento-showroom"                       ║
+  ╚══════════════════════════════════════════════════════════════╝
+{%- endcomment -%}
+
+{%- comment -%} ── JSON-LD SCHEMA ── {%- endcomment -%}
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Massage Chairs and More — Sacramento",
+    "url": "{{ shop.url }}/pages/sacramento-showroom",
+    "telephone": "+19168880180",
+    "email": "info@massagechairsandmore.com",
+    "image": "https://cdn.shopify.com/s/files/1/0813/4036/7096/files/sacramento-showroom-hero.jpg",
+    "priceRange": "$$$$",
+    "hasMap": "https://maps.app.goo.gl/P5uoNiF8W7RGT4Jb9",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1151 Galleria Blvd, Suite #2058",
+      "addressLocality": "Roseville",
+      "addressRegion": "CA",
+      "postalCode": "95678",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 38.7712,
+      "longitude": -121.2640
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "10:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "10:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "11:00", "closes": "19:00" }
+    ],
+    "areaServed": ["Sacramento","Roseville","Rocklin","Granite Bay","Folsom","El Dorado Hills","Davis","Elk Grove","Citrus Heights","Rancho Cordova"],
+    "sameAs": [
+      "https://www.instagram.com/massagechairsandmore",
+      "https://www.facebook.com/massagechairsandmore"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Where can I try massage chairs in Sacramento?","acceptedAnswer":{"@type":"Answer","text":"Massage Chairs and More is Sacramento's premier destination for experiencing luxury massage chairs in person. Our showroom features OHCO, Panasonic, Positive Posture, D.Core, and Koyo — all fully operational for side-by-side comparison with expert guidance."}},
+      {"@type":"Question","name":"What is the best massage chair store in Sacramento?","acceptedAnswer":{"@type":"Answer","text":"Massage Chairs and More is widely recognized as the best massage chair store in the Greater Sacramento area. We carry the region's widest curated selection of premium brands with certified specialists on-site to help you find the perfect chair."}},
+      {"@type":"Question","name":"Can I compare OHCO, Panasonic, Positive Posture, D.Core, and Koyo in person in Sacramento?","acceptedAnswer":{"@type":"Answer","text":"Yes. Our Sacramento showroom is one of the very few places in the region where you can sit in, compare, and experience all five elite brands side by side in a single visit."}},
+      {"@type":"Question","name":"Are luxury massage chairs worth it?","acceptedAnswer":{"@type":"Answer","text":"A premium massage chair is one of the highest-return wellness investments you can make. Most customers recover the cost within 18–24 months compared to regular massage therapy sessions, while gaining on-demand relaxation and daily tension relief."}},
+      {"@type":"Question","name":"Can I book a massage chair appointment in Sacramento?","acceptedAnswer":{"@type":"Answer","text":"Yes. Call us at (916) 888-0180 to schedule a private appointment, or walk in during showroom hours. A booked appointment gives you dedicated one-on-one time with a specialist for a personalized guided comparison."}},
+      {"@type":"Question","name":"Do you serve customers in Roseville, Folsom, and Rocklin?","acceptedAnswer":{"@type":"Answer","text":"Yes. Our Sacramento showroom serves the entire Greater Sacramento region — Roseville, Rocklin, Granite Bay, Folsom, El Dorado Hills, Davis, Elk Grove, and beyond."}},
+      {"@type":"Question","name":"Do you offer financing for massage chairs in Sacramento?","acceptedAnswer":{"@type":"Answer","text":"Yes. We offer flexible financing options. Monthly payment plans can make a $6,000–$9,000 chair far more attainable than most customers expect. Ask our team about current promotions."}}
+    ]
+  }
+]
+</script>
+
+<style>
+  /* Google Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700;1,800&display=swap');
+
+  /* =============================================================
+     SHOPIFY THEME OVERRIDES — page-sacramento.liquid
+     Breaks page out of theme container for full-bleed layout.
+  ============================================================= */
+
+  .template-page main,
+  .template-page .main-content,
+  .template-page #MainContent,
+  .template-page .page-width,
+  .template-page .container { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+
+  /* Hide Shopify theme footer — keep our custom .sc-footer */
+  .template-page .site-footer,
+  .template-page footer.footer,
+  .template-page .footer:not(.sc-footer),
+  .template-page #shopify-section-footer,
+  .template-page [id^="shopify-section"][id$="footer"],
+  .template-page .site-footer__inner { display: none !important; }
+
+  /* Full-bleed sections */
+  .sc-hero,
+  .sc-stats,
+  .sc-section,
+  .sc-section-alt,
+  .sc-dark,
+  .sc-cta-band,
+  .sc-final-cta,
+  .sc-comp-strip,
+  .sc-footer {
+    width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+  }
+  .sc-section,
+  .sc-section-alt { padding-left: 0; padding-right: 0; }
+
+  .template-page .content-for-layout { padding-top: 0 !important; margin-top: 0 !important; }
+
+  /* =============================================================
+     CRITICAL: ABSOLUTE px FONT OVERRIDES
+     Prevents Shopify theme root font-size from distorting layout.
+  ============================================================= */
+  .sc-wrap {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #1a1a1a;
+    line-height: 1.75;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  .sc-wrap * { box-sizing: border-box; margin: 0; padding: 0; }
+  .sc-wrap p    { font-size: 15px; line-height: 1.8; }
+  .sc-wrap li   { font-size: 14px; line-height: 1.65; }
+  .sc-wrap a    { text-decoration: none; }
+  .sc-wrap h1   { font-size: clamp(34px, 5vw, 64px); line-height: 1.06; font-weight: 800; letter-spacing: -0.03em; font-family: 'Playfair Display', Georgia, serif; }
+  .sc-wrap h2   { font-size: clamp(24px, 2.8vw, 36px); line-height: 1.15; font-weight: 800; letter-spacing: -0.025em; font-family: 'Playfair Display', Georgia, serif; }
+  .sc-wrap h3   { font-size: clamp(16px, 1.8vw, 20px); line-height: 1.3; font-weight: 700; }
+  .sc-wrap h4   { font-size: 13px; line-height: 1.35; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+  .sc-wrap img  { max-width: 100%; display: block; }
+
+  /* ── CSS VARIABLES ── */
+  .sc-wrap {
+    --sc-bg:          #ffffff;
+    --sc-surface:     #f4f1ed;
+    --sc-dark:        #0d0d0d;
+    --sc-muted:       #5c5c5c;
+    --sc-muted2:      #909090;
+    --sc-accent:      #9a8050;
+    --sc-accent-h:    #7d6a40;
+    --sc-accent-warm: #c4a464;
+    --sc-accent-pale: rgba(154,128,80,0.10);
+    --sc-border:      #e4e0d8;
+    --sc-radius:      18px;
+    --sc-radius-sm:   10px;
+    --sc-shadow:      0 6px 24px rgba(0,0,0,0.07);
+    --sc-shadow-lg:   0 18px 48px rgba(0,0,0,0.13);
+    --sc-transition:  all 0.28s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  /* ── LAYOUT ── */
+  .sc-container    { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+  .sc-container-sm { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
+  .sc-section      { padding: 5rem 0; }
+  .sc-section-alt  { background: var(--sc-surface); }
+
+
+
+  /* ── HERO ── */
+  .sc-hero { position: relative; min-height: 90vh; display: flex; align-items: center; overflow: hidden; background: #0a0a10; }
+  .sc-hero-bg { position: absolute; inset: 0; z-index: 0; }
+  .sc-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; filter: brightness(0.46) saturate(0.9); animation: scHeroZoom 12s ease-in-out infinite alternate; }
+  @keyframes scHeroZoom { from { transform: scale(1); } to { transform: scale(1.04); } }
+  .sc-hero-overlay { position: absolute; inset: 0; z-index: 1;
+    background:
+      linear-gradient(to right, rgba(4,4,8,0.88) 0%, rgba(4,4,8,0.55) 55%, rgba(4,4,8,0.15) 100%),
+      linear-gradient(to top,   rgba(4,4,8,0.85) 0%, transparent 55%);
+  }
+  .sc-hero-content { position: relative; z-index: 2; padding: 4.5rem 0 5rem; width: 100%; }
+  .sc-hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 50px; margin-bottom: 1.5rem; letter-spacing: 0.04em; }
+  .sc-hero-badge-dot { width: 7px; height: 7px; background: #4ade80; border-radius: 50%; animation: scPulse 2s ease-in-out infinite; flex-shrink: 0; }
+  @keyframes scPulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .sc-hero h1 { color: #fff; max-width: 780px; margin-bottom: 1.25rem; }
+  .sc-hero h1 em { color: var(--sc-accent-warm); font-style: italic; }
+  .sc-hero-lead { font-size: 18px; color: rgba(255,255,255,0.78); max-width: 620px; margin-bottom: 2.5rem; line-height: 1.7; }
+  .sc-hero-btns { display: flex; gap: 0.875rem; flex-wrap: wrap; margin-bottom: 2.25rem; }
+  .sc-hero-trust { display: flex; gap: 1.75rem; flex-wrap: wrap; }
+  .sc-hero-trust-item { display: flex; align-items: center; gap: 6px; font-size: 13px; color: rgba(255,255,255,0.60); font-weight: 600; }
+  .sc-hero-trust-item::before { content: '✓'; color: var(--sc-accent-warm); font-weight: 900; }
+
+  /* ── STICKY CTAs ── */
+  .sc-sticky-cta { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 998; display: flex; flex-direction: column; gap: 0.6rem; transition: opacity 0.35s; }
+  .sc-sticky-btn { display: inline-flex; align-items: center; gap: 8px; padding: 0.8rem 1.5rem; border-radius: 50px; font-size: 14px; font-weight: 700; white-space: nowrap; box-shadow: 0 8px 24px rgba(0,0,0,0.25); transition: var(--sc-transition); cursor: pointer; font-family: 'Inter', sans-serif; text-decoration: none !important; }
+  .sc-sticky-btn svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+  .sc-sticky-call { background: #0d0d0d; color: #fff !important; }
+  .sc-sticky-call:hover { background: #222; transform: translateY(-2px); color: #fff !important; }
+  .sc-sticky-dir { background: var(--sc-accent); color: #fff !important; }
+  .sc-sticky-dir:hover { background: var(--sc-accent-h); transform: translateY(-2px); color: #fff !important; }
+
+  /* ── BUTTONS ── */
+  .sc-btn { display: inline-flex; align-items: center; justify-content: center; gap: 7px; padding: 0.85rem 1.875rem; font-size: 15px; font-weight: 700; border-radius: 50px; transition: var(--sc-transition); border: 2px solid transparent; cursor: pointer; font-family: 'Inter', sans-serif; letter-spacing: 0.01em; white-space: nowrap; text-decoration: none !important; }
+  .sc-btn svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+  .sc-btn-primary { background: var(--sc-accent); color: #fff !important; border-color: var(--sc-accent); }
+  .sc-btn-primary:hover { background: var(--sc-accent-h); border-color: var(--sc-accent-h); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(154,128,80,0.35); color: #fff !important; }
+  .sc-btn-dark { background: var(--sc-dark); color: #fff !important; border-color: var(--sc-dark); }
+  .sc-btn-dark:hover { background: #222; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.22); color: #fff !important; }
+  .sc-btn-outline { background: transparent; border: 2px solid rgba(255,255,255,0.35); color: #fff !important; }
+  .sc-btn-outline:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.7); }
+
+  /* ── EYEBROW / LABELS ── */
+  .sc-eyebrow { display: block; font-size: 11px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sc-accent); margin-bottom: 0.875rem; }
+  .sc-section-header { margin-bottom: 3rem; }
+  .sc-section-header.center { text-align: center; }
+  .sc-section-header p { font-size: 17px; color: var(--sc-muted); max-width: 680px; line-height: 1.8; margin-top: 0.75rem; }
+  .sc-section-header.center p { margin-left: auto; margin-right: auto; }
+
+  /* ── STATS BAR ── */
+  .sc-stats { background: #0d0d0d; }
+  .sc-stats-inner { display: flex; justify-content: center; flex-wrap: wrap; }
+  .sc-stat { padding: 1.5rem 3rem; text-align: center; border-right: 1px solid rgba(255,255,255,0.08); }
+  .sc-stat:last-child { border-right: none; }
+  .sc-stat-num { font-size: 32px; font-weight: 900; color: #fff; display: block; line-height: 1; font-family: 'Inter', sans-serif; letter-spacing: -0.04em; }
+  .sc-stat-num span { color: var(--sc-accent-warm); }
+  .sc-stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(255,255,255,0.38); margin-top: 5px; font-weight: 700; display: block; }
+
+  /* ── WHY VISIT ── */
+  .sc-why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .sc-why-img { position: relative; border-radius: var(--sc-radius); overflow: hidden; box-shadow: var(--sc-shadow-lg); }
+  .sc-why-img img { width: 100%; height: 520px; object-fit: cover; object-position: center; display: block; transition: transform 0.6s ease; }
+  .sc-why-img:hover img { transform: scale(1.03); }
+  .sc-why-badge { position: absolute; bottom: 1.75rem; left: 1.75rem; right: 1.75rem; background: rgba(10,10,14,0.85); backdrop-filter: blur(10px); border-radius: 12px; padding: 1rem 1.25rem; display: flex; align-items: center; gap: 0.875rem; border: 1px solid rgba(255,255,255,0.1); }
+  .sc-why-badge-icon { width: 36px; height: 36px; background: var(--sc-accent); border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .sc-why-badge-icon svg { width: 18px; height: 18px; fill: #fff; }
+  .sc-why-badge-text strong { display: block; font-size: 14px; color: #fff; }
+  .sc-why-badge-text span { font-size: 12px; color: rgba(255,255,255,0.55); }
+  .sc-why-reasons { display: flex; flex-direction: column; gap: 1.125rem; margin-top: 2rem; }
+  .sc-reason { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 1.25rem; background: #fff; border: 1px solid var(--sc-border); border-radius: 12px; transition: var(--sc-transition); }
+  .sc-reason:hover { border-color: var(--sc-accent); box-shadow: 0 4px 16px rgba(154,128,80,0.12); }
+  .sc-reason-icon { width: 38px; height: 38px; background: var(--sc-accent-pale); border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .sc-reason-icon svg { width: 18px; height: 18px; fill: var(--sc-accent); }
+  .sc-reason strong { display: block; font-size: 14px; margin-bottom: 2px; }
+  .sc-reason span { font-size: 13px; color: var(--sc-muted); line-height: 1.6; }
+
+  /* ── COMPARISON STRIP ── */
+  .sc-comp-strip { background: linear-gradient(135deg, #08080f 0%, #0e0c18 60%, #090b10 100%); padding: 5rem 0; position: relative; overflow: hidden; }
+  .sc-comp-strip::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(154,128,80,0.10) 0%, transparent 60%); pointer-events: none; }
+  .sc-comp-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: center; }
+  .sc-comp-text h2 { color: #fff; font-size: clamp(22px, 2.8vw, 34px); margin-bottom: 1.25rem; line-height: 1.15; letter-spacing: -0.025em; }
+  .sc-comp-text h2 em { color: var(--sc-accent-warm); font-style: italic; }
+  .sc-comp-text p { color: rgba(255,255,255,0.62); font-size: 15px; line-height: 1.8; margin-bottom: 1.5rem; }
+  .sc-comp-pills { display: flex; flex-wrap: wrap; gap: 0.625rem; margin-bottom: 2rem; }
+  .sc-comp-pill { display: inline-flex; align-items: center; gap: 5px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); padding: 5px 13px; border-radius: 50px; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.78); }
+  .sc-comp-pill::before { content: ''; width: 6px; height: 6px; background: var(--sc-accent); border-radius: 50%; flex-shrink: 0; }
+  .sc-comp-brands { display: grid; grid-template-columns: 1fr 1fr; gap: 0.875rem; }
+  .sc-comp-tile { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.5rem; text-align: center; transition: var(--sc-transition); }
+  .sc-comp-tile:hover { border-color: rgba(154,128,80,0.35); background: rgba(154,128,80,0.06); }
+  .sc-comp-tile-name { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; margin-bottom: 4px; }
+  .sc-comp-tile-note { font-size: 12px; color: rgba(255,255,255,0.42); line-height: 1.5; }
+  .sc-comp-tile.sc-span { grid-column: 1 / -1; }
+
+  /* ── BRANDS ── */
+  .sc-brands-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .sc-brand-card { background: #fff; border: 1px solid var(--sc-border); border-radius: var(--sc-radius); padding: 2rem 2.25rem; transition: var(--sc-transition); position: relative; overflow: hidden; }
+  .sc-brand-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--sc-accent); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+  .sc-brand-card:hover { transform: translateY(-5px); box-shadow: var(--sc-shadow-lg); }
+  .sc-brand-card:hover::before { transform: scaleX(1); }
+  .sc-brand-card-full { grid-column: 1 / -1; max-width: 600px; margin: 0 auto; width: 100%; }
+  .sc-brand-card-dark { background: linear-gradient(135deg, #111 0%, #1c1c1c 100%); border-color: rgba(154,128,80,0.25); }
+  .sc-brand-card-dark::before { background: linear-gradient(90deg, var(--sc-accent), var(--sc-accent-warm)); }
+  .sc-brand-card-dark .sc-brand-name { color: #fff; }
+  .sc-brand-card-dark .sc-brand-tag { color: var(--sc-accent-warm); background: rgba(154,128,80,0.15); }
+  .sc-brand-card-dark p { color: rgba(255,255,255,0.62); }
+  .sc-brand-card-dark .sc-brand-ideal { color: rgba(255,255,255,0.42); }
+  .sc-brand-card-dark .sc-brand-ideal strong { color: rgba(255,255,255,0.88); }
+  .sc-brand-card-dark .sc-brand-card-footer { border-top-color: rgba(255,255,255,0.1); }
+  .sc-brand-card-dark .sc-brand-arrow { background: rgba(255,255,255,0.1); }
+  .sc-brand-card-dark .sc-brand-arrow svg { fill: #fff; }
+  .sc-brand-card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+  .sc-brand-name { font-size: 22px; font-weight: 900; color: var(--sc-dark); letter-spacing: -0.02em; text-transform: uppercase; }
+  .sc-brand-tag { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--sc-accent); background: var(--sc-accent-pale); padding: 4px 10px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
+  .sc-brand-card p { font-size: 14px; color: var(--sc-muted); line-height: 1.8; margin-bottom: 0.875rem; }
+  .sc-brand-card-footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 0.875rem; border-top: 1px solid var(--sc-border); margin-top: 0.5rem; }
+  .sc-brand-ideal { font-size: 13px; color: var(--sc-muted); }
+  .sc-brand-ideal strong { color: var(--sc-dark); }
+  .sc-brand-arrow { width: 34px; height: 34px; background: var(--sc-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: var(--sc-transition); text-decoration: none !important; }
+  .sc-brand-arrow svg { width: 16px; height: 16px; fill: #fff; }
+  .sc-brand-arrow:hover { background: var(--sc-accent); transform: scale(1.1); }
+
+  /* ── VISIT STEPS ── */
+  .sc-dark { background: linear-gradient(135deg, #08080f 0%, #0e0c18 60%, #090b10 100%); }
+  .sc-steps { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; }
+  .sc-step { padding: 2.5rem 1.5rem; border-right: 1px solid rgba(255,255,255,0.07); text-align: center; }
+  .sc-step:last-child { border-right: none; }
+  .sc-step-circle { width: 60px; height: 60px; background: rgba(255,255,255,0.07); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 24px; border: 1px solid rgba(255,255,255,0.1); transition: var(--sc-transition); }
+  .sc-step:hover .sc-step-circle { background: var(--sc-accent); border-color: var(--sc-accent); }
+  .sc-step h4 { font-size: 12px; color: #fff; margin-bottom: 0.5rem; letter-spacing: 0.04em; }
+  .sc-step p { font-size: 12px; color: rgba(255,255,255,0.48); line-height: 1.7; }
+
+  /* ── TECHNOLOGY GRID ── */
+  .sc-tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .sc-tech-card { background: #fff; border: 1px solid var(--sc-border); border-radius: var(--sc-radius); padding: 1.75rem; transition: var(--sc-transition); position: relative; overflow: hidden; }
+  .sc-tech-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--sc-accent), var(--sc-accent-warm)); transform: translateY(100%); transition: transform 0.3s ease; }
+  .sc-tech-card:hover { transform: translateY(-5px); box-shadow: var(--sc-shadow); }
+  .sc-tech-card:hover::after { transform: translateY(0); }
+  .sc-tech-pill { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: var(--sc-accent); background: var(--sc-accent-pale); padding: 3px 9px; border-radius: 20px; display: inline-block; margin-bottom: 0.75rem; }
+  .sc-tech-icon { font-size: 28px; margin-bottom: 0.75rem; display: block; }
+  .sc-tech-card h3 { font-size: 16px; margin-bottom: 0.625rem; }
+  .sc-tech-card p { font-size: 13px; color: var(--sc-muted); line-height: 1.8; margin: 0; }
+
+  /* ── AUDIENCE GRID ── */
+  .sc-audience-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+  .sc-audience-card { background: #fff; border: 1px solid var(--sc-border); border-radius: var(--sc-radius); padding: 1.75rem 1.5rem; text-align: center; transition: var(--sc-transition); }
+  .sc-audience-card:hover { transform: translateY(-5px); box-shadow: var(--sc-shadow-lg); border-color: var(--sc-accent); }
+  .sc-audience-icon { font-size: 2rem; margin-bottom: 0.875rem; display: block; }
+  .sc-audience-card h4 { font-size: 14px; margin-bottom: 0.4rem; }
+  .sc-audience-card p { font-size: 13px; color: var(--sc-muted); line-height: 1.6; }
+
+  /* ── ONLINE VS SHOWROOM SPLIT ── */
+  .sc-exp-split { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .sc-exp-img { border-radius: var(--sc-radius); overflow: hidden; box-shadow: var(--sc-shadow-lg); }
+  .sc-exp-img img { width: 100%; height: 420px; object-fit: cover; display: block; transition: transform 0.6s ease; }
+  .sc-exp-img:hover img { transform: scale(1.03); }
+  .sc-exp-lead { font-size: 17px; color: var(--sc-muted); line-height: 1.8; margin-top: 0.875rem; }
+  .sc-feat-list { list-style: none; padding: 0; margin: 1.25rem 0 2rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .sc-feat-list li { display: flex; align-items: flex-start; gap: 8px; font-size: 14px; color: var(--sc-muted); line-height: 1.55; }
+  .sc-feat-list li::before { content: '✓'; color: var(--sc-accent); font-weight: 900; font-size: 12px; flex-shrink: 0; margin-top: 2px; }
+
+  /* ── SERVICE AREA GRID ── */
+  .sc-local-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+  .sc-local-card { background: #fff; border: 1px solid var(--sc-border); border-radius: var(--sc-radius); padding: 1.5rem 1.75rem; transition: var(--sc-transition); }
+  .sc-local-card:hover { border-color: var(--sc-accent); box-shadow: var(--sc-shadow); }
+  .sc-local-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 0.35rem; }
+  .sc-local-card p { font-size: 13px; color: var(--sc-muted); line-height: 1.65; }
+  .sc-local-dist { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--sc-accent); margin-top: 0.5rem; }
+
+  /* ── CTA BAND ── */
+  .sc-cta-band { background: var(--sc-accent); padding: 3rem 2rem; }
+  .sc-cta-band-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+  .sc-cta-band h2 { font-size: clamp(20px, 2.4vw, 28px); color: #fff; margin-bottom: 0.25rem; }
+  .sc-cta-band p { font-size: 15px; color: rgba(255,255,255,0.78); margin: 0; }
+  .sc-cta-band-btns { display: flex; gap: 0.875rem; flex-wrap: wrap; }
+  .sc-btn-band-white { display: inline-flex; align-items: center; gap: 7px; background: #fff; color: var(--sc-accent) !important; padding: 0.85rem 1.75rem; font-size: 15px; font-weight: 700; border-radius: 50px; white-space: nowrap; text-decoration: none !important; transition: var(--sc-transition); }
+  .sc-btn-band-white:hover { background: #f8f4ee; transform: translateY(-2px); }
+  .sc-btn-band-outline { display: inline-flex; align-items: center; gap: 7px; background: transparent; color: #fff !important; border: 2px solid rgba(255,255,255,0.6); padding: 0.85rem 1.75rem; font-size: 15px; font-weight: 700; border-radius: 50px; white-space: nowrap; text-decoration: none !important; transition: var(--sc-transition); }
+  .sc-btn-band-outline:hover { background: rgba(255,255,255,0.12); border-color: #fff; }
+
+  /* ── LOCATION + MAP ── */
+  .sc-location-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 3rem; align-items: start; }
+  .sc-info-block { display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid var(--sc-border); }
+  .sc-info-block:last-child { border-bottom: none; }
+  .sc-info-icon { width: 42px; height: 42px; background: var(--sc-accent-pale); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .sc-info-icon svg { width: 20px; height: 20px; fill: var(--sc-accent); }
+  .sc-info-text h4 { font-size: 11px; color: var(--sc-muted2); margin-bottom: 0.35rem; }
+  .sc-info-text a { font-size: 15px; font-weight: 600; color: var(--sc-dark); display: block; line-height: 1.5; }
+  .sc-info-text a:hover { color: var(--sc-accent); }
+  .sc-info-text p { font-size: 14px; color: var(--sc-muted); margin: 0; line-height: 1.65; }
+  .sc-parking-note { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--sc-muted2); margin-top: 0.5rem; background: var(--sc-surface); padding: 5px 10px; border-radius: 20px; }
+  .sc-parking-note svg { width: 13px; height: 13px; fill: var(--sc-muted2); flex-shrink: 0; }
+  .sc-hours-table { border-collapse: collapse; width: 100%; margin-top: 0.375rem; }
+  .sc-hours-table td { font-size: 14px; padding: 3px 0; color: var(--sc-muted); }
+  .sc-hours-table td:first-child { font-weight: 600; color: var(--sc-dark); padding-right: 1.5rem; white-space: nowrap; }
+  .sc-map-wrap { position: relative; border-radius: var(--sc-radius); overflow: hidden; box-shadow: var(--sc-shadow-lg); }
+  .sc-map-wrap iframe { width: 100%; height: 380px; border: 0; display: block; }
+  .sc-directions-btn { display: flex; align-items: center; justify-content: center; gap: 8px; background: #0d0d0d; color: #fff !important; padding: 1rem 1.5rem; font-size: 15px; font-weight: 700; transition: background 0.2s; text-decoration: none !important; }
+  .sc-directions-btn svg { width: 18px; height: 18px; fill: #fff; }
+  .sc-directions-btn:hover { background: #1a1a1a; color: #fff !important; }
+  .sc-reviews-btn { display: flex; align-items: center; justify-content: center; gap: 7px; background: var(--sc-surface); color: var(--sc-muted) !important; padding: 0.75rem 1.5rem; font-size: 14px; font-weight: 600; transition: var(--sc-transition); text-decoration: none !important; border-top: 1px solid var(--sc-border); }
+  .sc-reviews-btn svg { width: 15px; height: 15px; fill: var(--sc-accent-warm); }
+  .sc-reviews-btn:hover { color: var(--sc-accent) !important; background: #ede9e0; }
+
+  /* ── FAQ ── */
+  .sc-faq-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 0 3rem; }
+  .sc-faq-item { border-bottom: 1px solid var(--sc-border); }
+  .sc-faq-q { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0; cursor: pointer; gap: 1rem; }
+  .sc-faq-q h3 { font-size: 15px; font-weight: 700; margin: 0; line-height: 1.4; font-family: 'Inter', sans-serif; transition: color 0.2s; }
+  .sc-faq-q:hover h3 { color: var(--sc-accent); }
+  .sc-faq-toggle { width: 24px; height: 24px; fill: var(--sc-muted2); flex-shrink: 0; transition: transform 0.3s; }
+  .sc-faq-item.sc-open .sc-faq-toggle { transform: rotate(45deg); }
+  .sc-faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .sc-faq-a p { font-size: 14px; color: var(--sc-muted); line-height: 1.8; padding-bottom: 1.25rem; margin: 0; }
+
+  /* ── FINAL CTA ── */
+  .sc-final-cta { background: linear-gradient(135deg, #050505 0%, #180f08 60%, #050505 100%); padding: 6rem 2rem; position: relative; overflow: hidden; }
+  .sc-final-cta::before { content: ''; position: absolute; top: -40%; right: -8%; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(154,128,80,0.12) 0%, transparent 70%); pointer-events: none; }
+  .sc-final-cta-inner { max-width: 860px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+  .sc-final-cta h2 { color: #fff; margin-bottom: 1rem; }
+  .sc-final-cta h2 em { color: var(--sc-accent-warm); font-style: italic; }
+  .sc-final-cta p { font-size: 17px; color: rgba(255,255,255,0.6); line-height: 1.8; max-width: 620px; margin: 0 auto 2.5rem; }
+  .sc-final-cta-btns { display: flex; justify-content: center; gap: 0.875rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+  .sc-trust-row { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+  .sc-trust-item { display: flex; align-items: center; gap: 6px; font-size: 13px; color: rgba(255,255,255,0.45); font-weight: 600; }
+  .sc-trust-item svg { width: 14px; height: 14px; fill: var(--sc-accent); }
+
+  /* ── FOOTER ── */
+  .sc-footer { background: #0d0d0d; padding: 4rem 0 2rem; }
+  .sc-footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+  .sc-footer-brand { font-size: 16px; font-weight: 800; color: #fff; display: block; margin-bottom: 0.875rem; }
+  .sc-footer-grid > div > p { font-size: 13px; color: rgba(255,255,255,0.38); line-height: 1.8; }
+  .sc-footer-grid h4 { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(255,255,255,0.38); margin-bottom: 1rem; }
+  .sc-footer-grid a { display: block; font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 0.5rem; transition: color 0.2s; }
+  .sc-footer-grid a:hover { color: #fff; }
+  .sc-footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .sc-footer-bottom span { font-size: 12px; color: rgba(255,255,255,0.28); }
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:1100px) {
+    .sc-location-grid { grid-template-columns: 1fr; }
+    .sc-brands-grid { grid-template-columns: 1fr; }
+    .sc-brand-card-full { max-width: 100%; }
+    .sc-tech-grid { grid-template-columns: repeat(2,1fr); }
+    .sc-steps { grid-template-columns: repeat(3,1fr); }
+    .sc-steps .sc-step:nth-child(3) { border-right: none; }
+    .sc-footer-grid { grid-template-columns: 1fr 1fr; }
+    .sc-comp-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .sc-audience-grid { grid-template-columns: repeat(2,1fr); }
+    .sc-local-grid { grid-template-columns: repeat(2,1fr); }
+  }
+  @media(max-width:900px) {
+    .sc-hero { min-height: 75vh; }
+    .sc-why-grid, .sc-exp-split { grid-template-columns: 1fr; }
+    .sc-faq-columns { grid-template-columns: 1fr; }
+    .sc-section { padding: 3.5rem 0; }
+    .sc-stat { padding: 1.25rem 2rem; }
+    .sc-cta-band-inner { flex-direction: column; text-align: center; }
+  }
+  @media(max-width:640px) {
+    .sc-container, .sc-container-sm { padding: 0 1.25rem; }
+    .sc-hero-content { padding: 3rem 0 3.5rem; }
+    .sc-steps { grid-template-columns: 1fr 1fr; }
+    .sc-steps .sc-step:nth-child(2n) { border-right: none; }
+    .sc-steps .sc-step:nth-child(3) { border-right: 1px solid rgba(255,255,255,0.07); }
+    .sc-tech-grid, .sc-audience-grid, .sc-local-grid { grid-template-columns: 1fr; }
+    .sc-footer-grid { grid-template-columns: 1fr; }
+
+    .sc-sticky-cta { bottom: 1rem; right: 1rem; }
+  }
+</style>
+
+<div class="sc-wrap">
+
+
+
+  {%- comment -%} ── STICKY CTAs ── {%- endcomment -%}
+  <div class="sc-sticky-cta" id="sc-sticky-cta">
+    <a href="tel:+19168880180" class="sc-sticky-btn sc-sticky-call" id="sc-sticky-call-btn">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      Call Now
+    </a>
+    <a href="https://maps.app.goo.gl/P5uoNiF8W7RGT4Jb9" target="_blank" rel="noopener" class="sc-sticky-btn sc-sticky-dir" id="sc-sticky-dir-btn">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      Get Directions
+    </a>
+  </div>
+
+  {%- comment -%} ══════════ HERO ══════════ {%- endcomment -%}
+  <section class="sc-hero" id="sc-hero" aria-labelledby="sc-hero-heading">
+    <div class="sc-hero-bg">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/sacramento-showroom-hero.jpg?v=1776634618"
+        alt=""
+        aria-hidden="true"
+        fetchpriority="high"
+        width="2000"
+        height="1200"
+      >
+    </div>
+    <div class="sc-hero-overlay"></div>
+    <div class="sc-container sc-hero-content">
+      <div class="sc-hero-badge">
+        <span class="sc-hero-badge-dot"></span>
+        Sacramento, CA &middot; Greater Sacramento Region
+      </div>
+      <h1 id="sc-hero-heading">
+        Greater Sacramento&rsquo;s<br>
+        <em>Luxury Massage Chair</em><br>
+        Destination Showroom
+      </h1>
+      <p class="sc-hero-lead">Compare OHCO, Panasonic, Positive Posture, D.Core, and Koyo side by side &mdash; all in one visit. Expert guidance, zero sales pressure, and the clarity that only hands-on experience can provide.</p>
+      <div class="sc-hero-btns">
+        <a href="tel:+19168880180" class="sc-btn sc-btn-primary" id="sc-hero-appt-btn">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          Book a Showroom Appointment
+        </a>
+        <a href="#sc-location" class="sc-btn sc-btn-outline" id="sc-hero-visit-btn">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Visit &amp; Get Directions
+        </a>
+        <a href="https://maps.app.goo.gl/P5uoNiF8W7RGT4Jb9" target="_blank" rel="noopener" class="sc-btn sc-btn-dark" id="sc-hero-dir-btn">
+          <svg viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9a.996.996 0 00-1.41 0l-9 9a.996.996 0 000 1.41l9 9c.39.39 1.02.39 1.41 0l9-9a.996.996 0 000-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>
+          Get Directions
+        </a>
+      </div>
+      <div class="sc-hero-trust">
+        <span class="sc-hero-trust-item">Try before you buy</span>
+        <span class="sc-hero-trust-item">5 elite brands &mdash; one showroom</span>
+        <span class="sc-hero-trust-item">Flexible financing available</span>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ── STATS BAR ── {%- endcomment -%}
+  <div class="sc-stats" aria-label="Sacramento showroom quick facts">
+    <div class="sc-stats-inner">
+      <div class="sc-stat">
+        <span class="sc-stat-num">20<span>+</span></span>
+        <span class="sc-stat-label">Chairs on the Floor</span>
+      </div>
+      <div class="sc-stat">
+        <span class="sc-stat-num">5</span>
+        <span class="sc-stat-label">Premium Brands</span>
+      </div>
+      <div class="sc-stat">
+        <span class="sc-stat-num">15<span>+</span></span>
+        <span class="sc-stat-label">Years of Expertise</span>
+      </div>
+      <div class="sc-stat">
+        <span class="sc-stat-num">5<span>&#9733;</span></span>
+        <span class="sc-stat-label">Google Rating</span>
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} ══════════ WHY VISIT ══════════ {%- endcomment -%}
+  <section class="sc-section" id="sc-why-visit" aria-labelledby="sc-why-heading">
+    <div class="sc-container">
+      <div class="sc-why-grid">
+        <div class="sc-why-img">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/sacramento-showroom-comparison.jpg?v=1776634618"
+            alt="Expert specialist guiding a couple through comparing two premium massage chairs at the Sacramento showroom"
+            loading="lazy"
+            width="800"
+            height="900"
+          >
+          <div class="sc-why-badge">
+            <div class="sc-why-badge-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+            <div class="sc-why-badge-text">
+              <strong>Greater Sacramento&rsquo;s only multi-brand showroom</strong>
+              <span>OHCO &middot; Panasonic &middot; Positive Posture &middot; D.Core &middot; Koyo</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <span class="sc-eyebrow">Why Visit In Person</span>
+          <h2 id="sc-why-heading">Sacramento&rsquo;s Premier Destination for Massage Chair Comparison</h2>
+          <p class="sc-exp-lead">If you&rsquo;re seriously considering a premium massage chair, there&rsquo;s one question worth asking before ordering online: <em>how do you know it&rsquo;s the right one?</em> Our Sacramento showroom exists to answer that question &mdash; in person, with expert guidance, and with no guesswork involved.</p>
+          <div class="sc-why-reasons">
+            <div class="sc-reason">
+              <div class="sc-reason-icon"><svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg></div>
+              <div>
+                <strong>Compare Five Elite Brands in One Visit</strong>
+                <span>OHCO, Panasonic, Positive Posture, D.Core, and Koyo &mdash; all on the showroom floor, fully operational and ready for side-by-side comparison.</span>
+              </div>
+            </div>
+            <div class="sc-reason">
+              <div class="sc-reason-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+              <div>
+                <strong>Expert Matching, Not Sales Pressure</strong>
+                <span>Our certified specialists listen to your comfort goals, body type, and lifestyle &mdash; then guide you toward the chair that genuinely fits you best.</span>
+              </div>
+            </div>
+            <div class="sc-reason">
+              <div class="sc-reason-icon"><svg viewBox="0 0 24 24"><path d="M11.5 2C6.81 2 3 5.81 3 10.5S6.81 19 11.5 19h.5v3c4.86-2.34 8-7 8-11.5C20 5.81 16.19 2 11.5 2zm1 14.5h-2v-2h2v2zm0-4h-2c0-3.25 3-3 3-5 0-1.1-.9-2-2-2s-2 .9-2 2h-2c0-2.21 1.79-4 4-4s4 1.79 4 4c0 2.5-3 2.75-3 5z"/></svg></div>
+              <div>
+                <strong>Reduce Decision Fatigue Dramatically</strong>
+                <span>One focused showroom visit replaces weeks of online research &mdash; and leaves you with real confidence instead of more questions.</span>
+              </div>
+            </div>
+            <div class="sc-reason">
+              <div class="sc-reason-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+              <div>
+                <strong>Worth the Drive from Roseville, Folsom &amp; Beyond</strong>
+                <span>Customers visit from Roseville, Rocklin, Granite Bay, El Dorado Hills, Davis, and Elk Grove &mdash; because there&rsquo;s no equivalent showroom experience in the region.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ══════════ COMPARISON ADVANTAGE STRIP ══════════ {%- endcomment -%}
+  <div class="sc-comp-strip" id="sc-compare" aria-labelledby="sc-compare-heading">
+    <div class="sc-container">
+      <div class="sc-comp-inner">
+        <div class="sc-comp-text">
+          <span class="sc-eyebrow" style="color:var(--sc-accent-warm);">The Comparison Advantage</span>
+          <h2 id="sc-compare-heading">One Showroom.<br><em>Five Premium Brands.</em><br>One Clear Decision.</h2>
+          <p>Most massage chair buyers spend weeks researching online and still feel uncertain. Our Sacramento showroom eliminates that cycle entirely. You sit in each chair. You feel the difference between 4D massage arms and standard systems. You discover which zero gravity position genuinely relieves your back. All in a single, structured, expert-guided visit.</p>
+          <p>That clarity is what separates confident buyers from reluctant ones &mdash; and it&rsquo;s what our showroom is specifically designed to deliver.</p>
+          <div class="sc-comp-pills">
+            <span class="sc-comp-pill">Side-by-side comparison</span>
+            <span class="sc-comp-pill">Guided brand walkthroughs</span>
+            <span class="sc-comp-pill">Feel the 4D difference</span>
+            <span class="sc-comp-pill">Zero-guesswork purchasing</span>
+            <span class="sc-comp-pill">Body-specific matching</span>
+            <span class="sc-comp-pill">No-pressure environment</span>
+          </div>
+          <a href="tel:+19168880180" class="sc-btn sc-btn-primary" id="sc-comp-book-btn">Book Your Comparison Visit</a>
+        </div>
+        <div class="sc-comp-brands">
+          <div class="sc-comp-tile">
+            <div class="sc-comp-tile-name">OHCO</div>
+            <div class="sc-comp-tile-note">Sculptural luxury &amp; Japanese craftsmanship</div>
+          </div>
+          <div class="sc-comp-tile">
+            <div class="sc-comp-tile-name">Panasonic</div>
+            <div class="sc-comp-tile-note">Precision body scan &amp; deep tissue engineering</div>
+          </div>
+          <div class="sc-comp-tile">
+            <div class="sc-comp-tile-name">D.Core</div>
+            <div class="sc-comp-tile-note">Refined Japanese design &amp; elite comfort</div>
+          </div>
+          <div class="sc-comp-tile">
+            <div class="sc-comp-tile-name">Positive Posture</div>
+            <div class="sc-comp-tile-note">Daily wellness &amp; restorative comfort balance</div>
+          </div>
+          <div class="sc-comp-tile sc-span">
+            <div class="sc-comp-tile-name">Koyo</div>
+            <div class="sc-comp-tile-note">Japanese heritage performance &amp; trusted premium value</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} ══════════ BRANDS ══════════ {%- endcomment -%}
+  <section class="sc-section sc-section-alt" id="sc-brands" aria-labelledby="sc-brands-heading">
+    <div class="sc-container">
+      <div class="sc-section-header center">
+        <span class="sc-eyebrow">What We Carry</span>
+        <h2 id="sc-brands-heading">Explore the Brands Available in Our Sacramento Showroom</h2>
+        <p>Each brand occupies a distinct position in the premium massage chair landscape. Our specialists will help you understand which one aligns with your comfort goals, daily lifestyle, and long-term wellness vision.</p>
+      </div>
+      <div class="sc-brands-grid">
+
+        {%- comment -%} OHCO {%- endcomment -%}
+        <div class="sc-brand-card" id="sc-brand-ohco">
+          <div class="sc-brand-card-header">
+            <div class="sc-brand-name">OHCO</div>
+            <span class="sc-brand-tag">Ultra Premium</span>
+          </div>
+          <p>OHCO represents the pinnacle of massage chair craftsmanship &mdash; a fusion of Japanese artistry, immersive sensory engineering, and sculptural design that sets it apart from every other brand on the market. Each OHCO chair is conceived as a luxury object first and a wellness instrument second.</p>
+          <p>The 4D roller system moves with a fluidity and precision that must be experienced to be believed, simulating the hands of a skilled therapist with an accuracy that digital specs cannot convey. Sitting in an OHCO chair in our Sacramento showroom is the only way to truly understand why it commands its position.</p>
+          <div class="sc-brand-card-footer">
+            <div class="sc-brand-ideal"><strong>Best for:</strong> Those who want the ultimate in luxury design, craftsmanship, and performance without compromise.</div>
+            <a href="{{ shop.url }}/collections/ohco" class="sc-brand-arrow" aria-label="Browse OHCO chairs"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
+          </div>
+        </div>
+
+        {%- comment -%} Panasonic {%- endcomment -%}
+        <div class="sc-brand-card" id="sc-brand-panasonic">
+          <div class="sc-brand-card-header">
+            <div class="sc-brand-name">Panasonic</div>
+            <span class="sc-brand-tag">Precision Engineering</span>
+          </div>
+          <p>Panasonic brings decades of Japanese precision engineering to the massage chair category. Their proprietary body scan technology maps your spine in real time, adapting every session to your exact physiology with a level of accuracy that sets the therapeutic standard.</p>
+          <p>The deep tissue experience inside a Panasonic chair is consistently described by Sacramento customers as transformative &mdash; especially for those managing chronic back tension, persistent stress, or the cumulative fatigue of a demanding professional life.</p>
+          <div class="sc-brand-card-footer">
+            <div class="sc-brand-ideal"><strong>Best for:</strong> Buyers who prioritize therapeutic precision, advanced spine mapping, and deeply credible engineering pedigree.</div>
+            <a href="{{ shop.url }}/collections/panasonic" class="sc-brand-arrow" aria-label="Browse Panasonic chairs"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
+          </div>
+        </div>
+
+        {%- comment -%} Positive Posture {%- endcomment -%}
+        <div class="sc-brand-card" id="sc-brand-positive-posture">
+          <div class="sc-brand-card-header">
+            <div class="sc-brand-name" style="font-size:18px;">Positive Posture</div>
+            <span class="sc-brand-tag">Daily Wellness</span>
+          </div>
+          <p>Positive Posture delivers exceptional daily comfort and restorative full-body wellness without sacrificing construction quality or the intelligence of its massage programming. For buyers who want a chair they&rsquo;ll genuinely use every single day, Positive Posture strikes an ideal balance.</p>
+          <p>Their chairs earn consistent praise from Sacramento customers who appreciate intuitive controls and a deeply comfortable zero gravity recline experience that doesn&rsquo;t require a manual to enjoy.</p>
+          <div class="sc-brand-card-footer">
+            <div class="sc-brand-ideal"><strong>Best for:</strong> Buyers who want practical luxury &mdash; premium quality, intelligent comfort, and a chair built for daily use.</div>
+            <a href="{{ shop.url }}/collections/positive-posture" class="sc-brand-arrow" aria-label="Browse Positive Posture chairs"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
+          </div>
+        </div>
+
+        {%- comment -%} D.Core — dark featured card {%- endcomment -%}
+        <div class="sc-brand-card sc-brand-card-dark" id="sc-brand-dcore">
+          <div class="sc-brand-card-header">
+            <div class="sc-brand-name">D.Core</div>
+            <span class="sc-brand-tag">Japanese Refined</span>
+          </div>
+          <p>D.Core is a sophisticated choice for buyers who won&rsquo;t settle for anything ordinary &mdash; a brand defined by elegant Japanese-inspired design language, high-end comfort engineering, and a refined sensory experience that places it firmly in the elite tier.</p>
+          <p>What distinguishes D.Core in our Sacramento showroom is the quiet confidence it projects. The aesthetics are precise. The massage experience is immersive. The materials are selected with a discerning eye. D.Core occupies a distinct, compelling space in the premium category.</p>
+          <div class="sc-brand-card-footer">
+            <div class="sc-brand-ideal"><strong>Best for:</strong> Sophisticated buyers seeking premium Japanese-influenced design and a refined alternative to the expected choices.</div>
+            <a href="{{ shop.url }}/collections/d-core" class="sc-brand-arrow" aria-label="Browse D.Core chairs"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
+          </div>
+        </div>
+
+        {%- comment -%} Koyo — full width {%- endcomment -%}
+        <div class="sc-brand-card sc-brand-card-full" id="sc-brand-koyo">
+          <div class="sc-brand-card-header">
+            <div class="sc-brand-name">Koyo</div>
+            <span class="sc-brand-tag">Trusted Performance</span>
+          </div>
+          <p style="max-width:760px;">Koyo brings a proud Japanese heritage to the massage chair category, offering trusted long-term performance within a refined and accessible premium framework. For buyers who want the assurance of established massage engineering and a build quality that holds up to years of daily use, Koyo delivers with integrity.</p>
+          <p style="max-width:760px;">Many Sacramento customers are drawn to Koyo after discovering it in our showroom &mdash; because it offers a compelling combination of comfort, reliability, and value without sacrificing the massage experience.</p>
+          <div class="sc-brand-card-footer">
+            <div class="sc-brand-ideal"><strong>Best for:</strong> Buyers who want long-term quality, trusted Japanese performance credentials, and an honest premium value proposition.</div>
+            <a href="{{ shop.url }}/collections/koyo" class="sc-brand-arrow" aria-label="Browse Koyo chairs"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ══════════ VISIT STEPS ══════════ {%- endcomment -%}
+  <section class="sc-section sc-dark" id="sc-steps" aria-labelledby="sc-steps-heading">
+    <div class="sc-container">
+      <div class="sc-section-header center">
+        <span class="sc-eyebrow" style="color:var(--sc-accent-warm);">Your Showroom Visit</span>
+        <h2 id="sc-steps-heading" style="color:#fff;">What to Expect When You Visit Our Sacramento Showroom</h2>
+        <p style="color:rgba(255,255,255,0.5);">Every visit is guided, unhurried, and personalized. We&rsquo;ve designed the experience to remove uncertainty and replace it with genuine clarity.</p>
+      </div>
+      <div class="sc-steps">
+        <div class="sc-step">
+          <div class="sc-step-circle">&#128075;</div>
+          <h4>Welcome &amp; Consultation</h4>
+          <p>A specialist greets you and learns your comfort goals, health context, and what brought you in.</p>
+        </div>
+        <div class="sc-step">
+          <div class="sc-step-circle">&#127919;</div>
+          <h4>Comfort Goals Discussion</h4>
+          <p>We discuss deep back relief, daily stress release, recovery support, or simply finding the most relaxing chair.</p>
+        </div>
+        <div class="sc-step">
+          <div class="sc-step-circle">&#128208;</div>
+          <h4>Guided Brand Comparison</h4>
+          <p>Your specialist walks you through key differences between relevant brands &mdash; explaining what you&rsquo;re feeling and why.</p>
+        </div>
+        <div class="sc-step">
+          <div class="sc-step-circle">&#10024;</div>
+          <h4>Trial of Multiple Chairs</h4>
+          <p>You sit in, experience, and compare each chair that matches your profile. No rushing. No pressure.</p>
+        </div>
+        <div class="sc-step">
+          <div class="sc-step-circle">&#9878;&#65039;</div>
+          <h4>Narrowing to Best Fit</h4>
+          <p>Together, you narrow the field to the one or two chairs best matching your body, preferences, and investment level.</p>
+        </div>
+        <div class="sc-step">
+          <div class="sc-step-circle">&#128640;</div>
+          <h4>Recommendation &amp; Next Steps</h4>
+          <p>We discuss financing, delivery, and setup &mdash; then help you move forward with complete confidence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ── CTA BAND #1 ── {%- endcomment -%}
+  <div class="sc-cta-band">
+    <div class="sc-cta-band-inner">
+      <div>
+        <h2>Ready to Compare Brands in Person?</h2>
+        <p>Visit our Sacramento showroom &mdash; walk in or call to book a private appointment.</p>
+      </div>
+      <div class="sc-cta-band-btns">
+        <a href="tel:+19168880180" class="sc-btn-band-white" id="sc-cta-band-call-1">Call the Sacramento Showroom</a>
+        <a href="#sc-location" class="sc-btn-band-outline" id="sc-cta-band-loc-1">View Location &amp; Hours</a>
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} ══════════ TECHNOLOGY ══════════ {%- endcomment -%}
+  <section class="sc-section sc-section-alt" id="sc-technology" aria-labelledby="sc-tech-heading">
+    <div class="sc-container">
+      <div class="sc-section-header center">
+        <span class="sc-eyebrow">Understanding the Technology</span>
+        <h2 id="sc-tech-heading">What Makes Premium Massage Chairs Premium</h2>
+        <p>The difference between a $500 chair and a $9,000 chair is not just features &mdash; it&rsquo;s the engineering philosophy behind every system.</p>
+      </div>
+      <div class="sc-tech-grid">
+        <div class="sc-tech-card" id="sc-tech-4d">
+          <span class="sc-tech-pill">4D Technology</span>
+          <span class="sc-tech-icon">&#127919;</span>
+          <h3>4D Massage Arms</h3>
+          <p>4D rollers move forward, backward, side to side, and at variable speed &mdash; mimicking the nuanced pressure and rhythm of human hands far more closely than 2D or 3D systems. The result is an experience that feels deeply therapeutic rather than mechanical.</p>
+        </div>
+        <div class="sc-tech-card" id="sc-tech-scan">
+          <span class="sc-tech-pill">Body Scan</span>
+          <span class="sc-tech-icon">&#128302;</span>
+          <h3>Automatic Body Scan Technology</h3>
+          <p>Advanced scanning maps the contours of your spine and shoulder width before each session, calibrating roller position, pressure zones, and coverage range to match your exact physiology. Panasonic&rsquo;s scanning system is widely considered the benchmark.</p>
+        </div>
+        <div class="sc-tech-card" id="sc-tech-zerog">
+          <span class="sc-tech-pill">Zero Gravity</span>
+          <span class="sc-tech-icon">&#127760;</span>
+          <h3>Zero Gravity Recline</h3>
+          <p>Developed from NASA research, zero gravity positioning elevates your legs above your heart, distributing body weight evenly, decompressing the lumbar spine, and significantly amplifying the benefits of every massage stroke.</p>
+        </div>
+        <div class="sc-tech-card" id="sc-tech-air">
+          <span class="sc-tech-pill">Air Compression</span>
+          <span class="sc-tech-icon">&#128168;</span>
+          <h3>Full-Body Air Compression</h3>
+          <p>Strategically placed airbags inflate and deflate in programmed sequences to apply rhythmic compression to shoulders, arms, hips, calves, and feet &mdash; enhancing circulation and creating full-body coverage beyond the spinal roller track.</p>
+        </div>
+        <div class="sc-tech-card" id="sc-tech-heat">
+          <span class="sc-tech-pill">Heat Therapy</span>
+          <span class="sc-tech-icon">&#128293;</span>
+          <h3>Heat Therapy Zones</h3>
+          <p>Intelligent heating elements in the lumbar and calf zones relax tight muscles before and during the massage, improving tissue elasticity and allowing the rollers to work more effectively &mdash; especially important for chronic tension relief.</p>
+        </div>
+        <div class="sc-tech-card" id="sc-tech-ltrack">
+          <span class="sc-tech-pill">Coverage</span>
+          <span class="sc-tech-icon">&#128260;</span>
+          <h3>L-Track Full-Body Coverage</h3>
+          <p>L-track systems extend the roller track beneath the seat, adding comprehensive coverage of the glutes and upper thighs &mdash; crucial for anyone managing sciatic tension, hip inflammation, or lower body fatigue from athletic activity or prolonged sitting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ══════════ WHO THIS IS FOR ══════════ {%- endcomment -%}
+  <section class="sc-section" id="sc-audience" aria-labelledby="sc-audience-heading">
+    <div class="sc-container">
+      <div class="sc-section-header center">
+        <span class="sc-eyebrow">Who Visits Our Showroom</span>
+        <h2 id="sc-audience-heading">Who This Sacramento Showroom Is Designed For</h2>
+        <p>Our customers come from every corner of the Greater Sacramento region with different goals, different budgets, and one thing in common: they want to make the right decision before committing to a high-ticket wellness investment.</p>
+      </div>
+      <div class="sc-audience-grid">
+        <div class="sc-audience-card">
+          <span class="sc-audience-icon">&#127968;</span>
+          <h4>Luxury Homeowners</h4>
+          <p>Buyers investing in premium home wellness who want a chair that performs as well as it looks.</p>
+        </div>
+        <div class="sc-audience-card">
+          <span class="sc-audience-icon">&#128188;</span>
+          <h4>Busy Professionals</h4>
+          <p>Sacramento executives and entrepreneurs who need daily stress relief and restorative recovery without leaving home.</p>
+        </div>
+        <div class="sc-audience-card">
+          <span class="sc-audience-icon">&#129728;</span>
+          <h4>Wellness-Focused Individuals</h4>
+          <p>Health-conscious buyers who prioritize daily full-body wellness, tension relief, and long-term recovery support.</p>
+        </div>
+        <div class="sc-audience-card">
+          <span class="sc-audience-icon">&#127947;</span>
+          <h4>Active &amp; Recovery-Minded</h4>
+          <p>Athletes and fitness enthusiasts who use massage chairs to accelerate recovery and reduce muscle fatigue.</p>
+        </div>
+        <div class="sc-audience-card">
+          <span class="sc-audience-icon">&#128145;</span>
+          <h4>Couples Deciding Together</h4>
+          <p>Partners who need a chair that works for both body types and want to agree on the right choice together before purchasing.</p>
+        </div>
+        <div class="sc-audience-card">
+          <span class="sc-audience-icon">&#127873;</span>
+          <h4>Gift Buyers</h4>
+          <p>Those investing in a premium gift for a partner, parent, or family member &mdash; with absolute confidence in their selection.</p>
+        </div>
+        <div class="sc-audience-card">
+          <span class="sc-audience-icon">&#128269;</span>
+          <h4>Serious Researchers</h4>
+          <p>Buyers who have done online research and need the in-person experience to move from informed to truly confident.</p>
+        </div>
+        <div class="sc-audience-card">
+          <span class="sc-audience-icon">&#11088;</span>
+          <h4>High-Intent Premium Buyers</h4>
+          <p>Customers who know they want the best &mdash; and want their investment validated by genuine, hands-on expertise.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ══════════ SHOWROOM VS ONLINE ══════════ {%- endcomment -%}
+  <section class="sc-section sc-section-alt" id="sc-vs-online" aria-labelledby="sc-vs-heading">
+    <div class="sc-container">
+      <div class="sc-exp-split">
+        <div class="sc-exp-img">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/sacramento-why-visit.jpg?v=1776634618"
+            alt="Man relaxing in a premium massage chair at the Sacramento showroom with a calm expression, other chairs visible in background"
+            loading="lazy"
+            width="800"
+            height="700"
+          >
+        </div>
+        <div>
+          <span class="sc-eyebrow">Showroom vs. Online</span>
+          <h2 id="sc-vs-heading">Why Visiting Our Sacramento Showroom Is a Smarter Move Than Buying Online</h2>
+          <p class="sc-exp-lead">Buying a premium massage chair online without trying it is one of the most common sources of buyer&rsquo;s remorse in the wellness space. Our Sacramento showroom exists to close that gap permanently.</p>
+          <ul class="sc-feat-list">
+            <li>Test actual massage quality &mdash; rollers, pressure depth, arm precision &mdash; not just read about it</li>
+            <li>Feel the zero gravity experience on your own spine, not a recorded testimonial</li>
+            <li>Understand the real difference between 3D and 4D massage programs</li>
+            <li>Compare upholstery materials, build quality, and control interfaces in person</li>
+            <li>Eliminate the risk of a $6,000&ndash;$12,000 return or regret-filled ownership experience</li>
+            <li>Get matched to the right brand for your body type &mdash; not just the highest-reviewed option</li>
+          </ul>
+          <a href="tel:+19168880180" class="sc-btn sc-btn-primary" id="sc-vs-call-btn">Book a Comparison Visit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ══════════ SERVICE AREA ══════════ {%- endcomment -%}
+  <section class="sc-section" id="sc-service-area" aria-labelledby="sc-service-heading">
+    <div class="sc-container">
+      <div class="sc-section-header center">
+        <span class="sc-eyebrow">Greater Sacramento Region</span>
+        <h2 id="sc-service-heading">Serving Sacramento and the Surrounding Communities</h2>
+        <p>Our Sacramento showroom is the region&rsquo;s destination for premium massage chair comparison. Customers drive in from across the Greater Sacramento area &mdash; because there&rsquo;s simply no equivalent experience anywhere closer.</p>
+      </div>
+      <div class="sc-local-grid">
+        <div class="sc-local-card">
+          <h4>&#128205; Sacramento</h4>
+          <p>Our home market. Premium massage chairs for Sacramento&rsquo;s discerning buyers, wellness-minded households, and executive professionals.</p>
+          <span class="sc-local-dist">Home Location</span>
+        </div>
+        <div class="sc-local-card">
+          <h4>&#128205; Roseville</h4>
+          <p>Roseville buyers regularly visit for the region&rsquo;s best luxury massage chair selection &mdash; OHCO, Panasonic, D.Core, and more.</p>
+          <span class="sc-local-dist">~25 min drive</span>
+        </div>
+        <div class="sc-local-card">
+          <h4>&#128205; Rocklin</h4>
+          <p>Premium massage chairs near Rocklin. Experience and compare elite brands in person before making a high-ticket wellness investment.</p>
+          <span class="sc-local-dist">~30 min drive</span>
+        </div>
+        <div class="sc-local-card">
+          <h4>&#128205; Granite Bay</h4>
+          <p>Granite Bay&rsquo;s luxury homeowners and wellness-focused residents visit for curated premium brand comparison.</p>
+          <span class="sc-local-dist">~30 min drive</span>
+        </div>
+        <div class="sc-local-card">
+          <h4>&#128205; Folsom</h4>
+          <p>Folsom residents discover the difference between massage chair brands with a single, expertly guided visit.</p>
+          <span class="sc-local-dist">~30 min drive</span>
+        </div>
+        <div class="sc-local-card">
+          <h4>&#128205; El Dorado Hills</h4>
+          <p>El Dorado Hills buyers seeking luxury massage chairs in person find our showroom worth every minute of the drive.</p>
+          <span class="sc-local-dist">~35 min drive</span>
+        </div>
+        <div class="sc-local-card">
+          <h4>&#128205; Davis</h4>
+          <p>Davis professionals and lifestyle-focused households visit for premium massage chair guidance without the pressure of online buying.</p>
+          <span class="sc-local-dist">~25 min drive</span>
+        </div>
+        <div class="sc-local-card">
+          <h4>&#128205; Elk Grove</h4>
+          <p>Elk Grove customers make the short trip to experience Sacramento&rsquo;s only destination showroom for elite massage chair brands.</p>
+          <span class="sc-local-dist">~20 min drive</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ══════════ LOCATION + MAP ══════════ {%- endcomment -%}
+  <section class="sc-section sc-section-alt" id="sc-location" aria-labelledby="sc-location-heading">
+    <div class="sc-container">
+      <div class="sc-section-header">
+        <span class="sc-eyebrow">Find Us</span>
+        <h2 id="sc-location-heading">Visit the Sacramento Showroom</h2>
+        <p>Conveniently located in Sacramento with easy access from Roseville, Rocklin, Folsom, Davis, and Elk Grove. Free parking available on-site.</p>
+      </div>
+      <div class="sc-location-grid">
+        <div>
+          <div class="sc-info-block">
+            <div class="sc-info-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            <div class="sc-info-text">
+              <h4>Address</h4>
+              <a href="https://maps.app.goo.gl/P5uoNiF8W7RGT4Jb9" target="_blank" rel="noopener">1151 Galleria Blvd, Suite #2058<br>Roseville, CA 95678</a>
+              <div class="sc-parking-note">
+                <svg viewBox="0 0 24 24"><path d="M13 3H6v18h4v-6h3c3.31 0 6-2.69 6-6s-2.69-6-6-6zm.2 8H10V7h3.2c1.1 0 2 .9 2 2s-.9 2-2 2z"/></svg>
+                Free parking available on-site
+              </div>
+            </div>
+          </div>
+          <div class="sc-info-block">
+            <div class="sc-info-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+            <div class="sc-info-text">
+              <h4>Phone &amp; Email</h4>
+              <a href="tel:+19168880180">+1 (916) 888-0180</a>
+              <a href="mailto:info@massagechairsandmore.com" style="margin-top:0.4rem;font-size:13px;color:var(--sc-muted2);">info@massagechairsandmore.com</a>
+            </div>
+          </div>
+          <div class="sc-info-block">
+            <div class="sc-info-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
+            <div class="sc-info-text">
+              <h4>Showroom Hours</h4>
+              <table class="sc-hours-table">
+                <tr><td>Monday &ndash; Friday</td><td>10:00 AM &ndash; 9:00 PM</td></tr>
+                <tr><td>Saturday</td><td>10:00 AM &ndash; 9:00 PM</td></tr>
+                <tr><td>Sunday</td><td>11:00 AM &ndash; 7:00 PM</td></tr>
+              </table>
+            </div>
+          </div>
+          <div class="sc-info-block">
+            <div class="sc-info-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            <div class="sc-info-text">
+              <h4>Serving the Greater Sacramento Region</h4>
+              <p>Sacramento &middot; Roseville &middot; Rocklin &middot; Granite Bay &middot; Folsom &middot; El Dorado Hills &middot; Davis &middot; Elk Grove &middot; Citrus Heights &middot; Rancho Cordova</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sc-map-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1592614.8644855367!2d-121.26943200000001!3d38.77343!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809b2159ccdc7079%3A0xd725556e83c6d83b!2sMassage%20Chairs%20%26%20More!5e0!3m2!1sen!2str!4v1776639541623!5m2!1sen!2str"
+            title="Massage Chairs and More Sacramento Showroom"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <a href="https://maps.app.goo.gl/P5uoNiF8W7RGT4Jb9" target="_blank" rel="noopener" class="sc-directions-btn" id="sc-get-directions-btn">
+            <svg viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9a.996.996 0 00-1.41 0l-9 9a.996.996 0 000 1.41l9 9c.39.39 1.02.39 1.41 0l9-9a.996.996 0 000-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>
+            Get Directions to Our Sacramento Showroom
+          </a>
+          <a href="https://maps.app.goo.gl/P5uoNiF8W7RGT4Jb9" target="_blank" rel="noopener" class="sc-reviews-btn" id="sc-reviews-btn">
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            Read Our Google Reviews
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ── CTA BAND #2 ── {%- endcomment -%}
+  <div class="sc-cta-band">
+    <div class="sc-cta-band-inner">
+      <div>
+        <h2>See the Difference Between Brands In Person</h2>
+        <p>One guided visit does what months of online research cannot. Book your Sacramento appointment today.</p>
+      </div>
+      <div class="sc-cta-band-btns">
+        <a href="tel:+19168880180" class="sc-btn-band-white" id="sc-cta-band-call-2">Call the Sacramento Showroom</a>
+        <a href="{{ shop.url }}/pages/our-stores" class="sc-btn-band-outline" id="sc-cta-band-stores-2">View All Showroom Locations</a>
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} ══════════ FAQ ══════════ {%- endcomment -%}
+  <section class="sc-section" id="sc-faq" aria-labelledby="sc-faq-heading">
+    <div class="sc-container-sm">
+      <div class="sc-section-header center">
+        <span class="sc-eyebrow">Frequently Asked Questions</span>
+        <h2 id="sc-faq-heading">Massage Chairs in Sacramento &mdash; Your Questions Answered</h2>
+        <p>Everything you need to know before visiting our Sacramento showroom or making your premium massage chair decision.</p>
+      </div>
+      <div class="sc-faq-columns">
+        <div>
+          <div class="sc-faq-item" id="sc-faq-1">
+            <div class="sc-faq-q">
+              <h3>Where can I try massage chairs in Sacramento?</h3>
+              <svg class="sc-faq-toggle" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <div class="sc-faq-a"><p>Massage Chairs and More is Sacramento&rsquo;s premier destination for experiencing luxury massage chairs in person. Our showroom features fully operational chairs from OHCO, Panasonic, Positive Posture, D.Core, and Koyo &mdash; all available for side-by-side comparison with expert guidance.</p></div>
+          </div>
+          <div class="sc-faq-item" id="sc-faq-2">
+            <div class="sc-faq-q">
+              <h3>What is the best massage chair store in Sacramento?</h3>
+              <svg class="sc-faq-toggle" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <div class="sc-faq-a"><p>Massage Chairs and More is widely recognized as the best massage chair store in the Greater Sacramento area. We carry the region&rsquo;s widest curated selection of premium brands with certified specialists on-site to help you find exactly the right chair for your body, lifestyle, and investment level.</p></div>
+          </div>
+          <div class="sc-faq-item" id="sc-faq-3">
+            <div class="sc-faq-q">
+              <h3>Can I compare OHCO, Panasonic, Positive Posture, D.Core, and Koyo in person near Sacramento?</h3>
+              <svg class="sc-faq-toggle" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <div class="sc-faq-a"><p>Yes. Our Sacramento showroom is one of the very few places in the greater region where you can sit in, compare, and experience all five elite brands side by side in a single visit. Our specialists guide you through the meaningful differences so you can make a genuinely informed decision.</p></div>
+          </div>
+          <div class="sc-faq-item" id="sc-faq-4">
+            <div class="sc-faq-q">
+              <h3>Are luxury massage chairs worth it?</h3>
+              <svg class="sc-faq-toggle" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <div class="sc-faq-a"><p>A premium massage chair is one of the highest-return wellness investments you can make. Most customers recover the cost within 18&ndash;24 months compared to regular massage therapy sessions &mdash; while gaining on-demand relaxation and daily tension relief available around the clock.</p></div>
+          </div>
+          <div class="sc-faq-item" id="sc-faq-5">
+            <div class="sc-faq-q">
+              <h3>What is the difference between a 4D massage chair and a zero gravity massage chair?</h3>
+              <svg class="sc-faq-toggle" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <div class="sc-faq-a"><p>4D refers to the massage arm&rsquo;s range of motion &mdash; forward, backward, side to side, and variable speed. Zero gravity is a reclining position where your legs are elevated above your heart, decompressing the spine and amplifying the massage&rsquo;s effectiveness. Many premium chairs in our Sacramento showroom offer both simultaneously.</p></div>
+          </div>
+          <div class="sc-faq-item" id="sc-faq-6">
+            <div class="sc-faq-q">
+              <h3>Which massage chair brand is best for me?</h3>
+              <svg class="sc-faq-toggle" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <div class="sc-faq-a"><p>OHCO is for buyers who want the ultimate in luxury design. Panasonic excels in precision body scanning and deep therapeutic performance. Positive Posture offers the best daily comfort balance. D.Core delivers refined Japanese aesthetics for sophisticated buyers. Koyo provides trusted Japanese performance at an accessible premium value. The only sure way to know is to visit our Sacramento showroom and try them.</p></div>
+          </div>
+        </div>
+        <div>
+          <div class="sc-faq-item" id="sc-faq-7">
+            <div class="sc-faq-q">
+              <h3>Can I book a massage chair appointment in Sacramento?</h3>
+              <svg class="sc-faq-toggle" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <div class="sc-faq-a"><p>Yes. You&rsquo;re welcome to walk in during showroom hours, or call us at (916) 888-0180 to schedule a private appointment. A booked appointment gives you dedicated one-on-one time with a specialist and an unhurried guided comparison &mdash; ideal for serious buyers ready to make a confident decision.</p></div>
+          </div>
+          <div class="sc-faq-item" id="sc-faq-8">
+            <div class="sc-faq-q">
+              <h3>Why should I visit a showroom before buying a massage chair?</h3>
+              <svg class="sc-faq-toggle" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <div class="sc-faq-a"><p>A premium massage chair is a $3,000&ndash;$15,000+ investment, and every person&rsquo;s experience is different. Height, shoulder width, spinal curvature, pressure sensitivity, and comfort preferences all affect which chair is truly right for you. Visiting our Sacramento showroom removes guesswork and gives you complete purchase confidence.</p></div>
+          </div>
+          <div class="sc-faq-item" id="sc-faq-9">
+            <div class="sc-faq-q">
+              <h3>Which premium massage chair brands are available near Sacramento?</h3>
+              <svg class="sc-faq-toggle" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <div class="sc-faq-a"><p>Our Sacramento showroom carries OHCO, Panasonic, Positive Posture, D.Core, and Koyo &mdash; five of the most respected premium massage chair brands in the United States. All are fully operational on the showroom floor, ready for side-by-side comparison. We also serve Roseville, Rocklin, Folsom, El Dorado Hills, Granite Bay, Davis, and Elk Grove.</p></div>
+          </div>
+          <div class="sc-faq-item" id="sc-faq-10">
+            <div class="sc-faq-q">
+              <h3>Is it better to compare massage chairs in person before buying?</h3>
+              <svg class="sc-faq-toggle" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <div class="sc-faq-a"><p>Absolutely. The differences between premium massage chair brands are significant and only truly appreciable through direct experience. The depth of the massage rollers, the precision of the body scan, the feel of the upholstery &mdash; none of these come through in product descriptions. Side-by-side comparison at our Sacramento showroom turns a complicated decision into a clear, confident one.</p></div>
+          </div>
+          <div class="sc-faq-item" id="sc-faq-11">
+            <div class="sc-faq-q">
+              <h3>Do you serve customers in Roseville, Folsom, and Rocklin?</h3>
+              <svg class="sc-faq-toggle" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <div class="sc-faq-a"><p>Yes. Our Sacramento showroom serves the entire Greater Sacramento region, including Roseville, Rocklin, Granite Bay, Folsom, El Dorado Hills, Davis, Elk Grove, Citrus Heights, and beyond. Many customers consider the trip well worth it &mdash; because comparing five elite massage chair brands in one visit is an experience unavailable anywhere else in the region.</p></div>
+          </div>
+          <div class="sc-faq-item" id="sc-faq-12">
+            <div class="sc-faq-q">
+              <h3>Do you offer financing for massage chairs in Sacramento?</h3>
+              <svg class="sc-faq-toggle" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <div class="sc-faq-a"><p>Yes. We offer flexible financing options to make premium wellness more financially accessible. Monthly payment plans can make a $6,000&ndash;$9,000 chair far more attainable than most customers expect. Ask our Sacramento showroom team about current financing promotions when you visit or call us at (916) 888-0180.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ══════════ FINAL CTA ══════════ {%- endcomment -%}
+  <section class="sc-final-cta" id="sc-final-cta" aria-labelledby="sc-final-heading">
+    <div class="sc-final-cta-inner">
+      <span class="sc-eyebrow" style="color:var(--sc-accent-warm);">Ready to Find Your Chair?</span>
+      <h2 id="sc-final-heading">The Smartest Next Step Is<br><em>Sitting in the Chair</em></h2>
+      <p>Stop researching. Stop second-guessing. One visit to our Sacramento showroom gives you the hands-on clarity that weeks of online research cannot. Come compare OHCO, Panasonic, Positive Posture, D.Core, and Koyo &mdash; with an expert by your side and zero pressure to decide.</p>
+      <div class="sc-final-cta-btns">
+        <a href="tel:+19168880180" class="sc-btn sc-btn-primary" id="sc-final-call-btn">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          Book a Showroom Appointment
+        </a>
+        <a href="#sc-location" class="sc-btn sc-btn-outline" id="sc-final-visit-btn">Visit Our Sacramento Showroom</a>
+        <a href="{{ shop.url }}/collections/massage-chair" class="sc-btn sc-btn-dark" id="sc-final-browse-btn">Browse All Massage Chairs</a>
+      </div>
+      <div class="sc-trust-row">
+        <div class="sc-trust-item"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>Try before you buy</div>
+        <div class="sc-trust-item"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>Zero sales pressure</div>
+        <div class="sc-trust-item"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>Expert specialist guidance</div>
+        <div class="sc-trust-item"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>Flexible financing available</div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ══════════ FOOTER ══════════ {%- endcomment -%}
+  <footer class="sc-footer" aria-label="Site footer">
+    <div class="sc-container">
+      <div class="sc-footer-grid">
+        <div>
+          <span class="sc-footer-brand">Massage Chairs and More</span>
+          <p>Greater Sacramento&rsquo;s destination showroom for premium massage chairs. Carrying OHCO, Panasonic, Positive Posture, D.Core, and Koyo &mdash; five elite brands available for side-by-side comparison in one expert-guided visit.</p>
+        </div>
+        <div>
+          <h4>Shop by Brand</h4>
+          <a href="{{ shop.url }}/collections/ohco">OHCO</a>
+          <a href="{{ shop.url }}/collections/panasonic">Panasonic</a>
+          <a href="{{ shop.url }}/collections/positive-posture">Positive Posture</a>
+          <a href="{{ shop.url }}/collections/d-core">D.Core</a>
+          <a href="{{ shop.url }}/collections/koyo">Koyo</a>
+        </div>
+        <div>
+          <h4>Our Showrooms</h4>
+          <a href="{{ shop.url }}/pages/sacramento-showroom">Sacramento</a>
+          <a href="{{ shop.url }}/pages/pleasanton-showroom">Pleasanton</a>
+          <a href="{{ shop.url }}/pages/santa-clara-showroom">Santa Clara</a>
+          <a href="{{ shop.url }}/pages/our-stores">All Locations</a>
+        </div>
+        <div>
+          <h4>Learn More</h4>
+          <a href="{{ shop.url }}/collections/massage-chair">All Massage Chairs</a>
+          <a href="#sc-technology">Massage Chair Technology</a>
+          <a href="#sc-faq">FAQs</a>
+          <a href="{{ shop.url }}/pages/contact">Contact Us</a>
+        </div>
+      </div>
+      <div class="sc-footer-bottom">
+        <span>&copy; {{ 'now' | date: '%Y' }} Massage Chairs and More. All rights reserved.</span>
+        <span>Sacramento&rsquo;s Premier Luxury Massage Chair Showroom</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+{%- comment -%} ── JAVASCRIPT ── {%- endcomment -%}
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.sc-faq-item').forEach(function(item) {
+    item.querySelector('.sc-faq-q').addEventListener('click', function() {
+      var isOpen = item.classList.contains('sc-open');
+      document.querySelectorAll('.sc-faq-item.sc-open').forEach(function(o) { o.classList.remove('sc-open'); });
+      if (!isOpen) { item.classList.add('sc-open'); }
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Sacramento Showroom",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "panasonic-man1-vs-dcore2-main": {
+      "type": "page-panasonic-man1-vs-dcore2",
+      "settings": {}
+    }
+  },
+  "order": [
+    "panasonic-man1-vs-dcore2-main"
+  ]
+}

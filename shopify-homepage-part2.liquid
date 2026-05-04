@@ -1,0 +1,293 @@
+<div class="mcm-home">
+
+<!-- MORE PRODUCTS -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="eyebrow">Full Collection</span>
+            <h2>More Premium Massage Chairs for Sale</h2>
+            <p>Explore our complete selection of massage chairs across every brand, price range, and feature set.</p>
+        </div>
+        <div class="compact-grid">
+            {%- assign compact_handles = 'positive-posture-massage-chair-brio-plus,koyo-303ts-massage-chair,positive-posture-brio-sport-massage-chair,panasonic-mak1-massage-chair,d-core-stratus-jp-massage-chair,d-core-cirrus-jp-massage-chair,ohco-r6-massage-chair,ohco-m8-neo-le-massage-chair' | split: ',' -%}
+            {%- for handle in compact_handles -%}
+              {%- assign p = all_products[handle] -%}
+              {%- if p.title != blank -%}
+              <a href="{{ p.url }}" class="compact-card">
+                <img class="compact-card-img" src="{{ p.featured_image | image_url: width: 900 }}" alt="{{ p.featured_image.alt | default: p.title | escape }}">
+                <div class="compact-card-body">
+                    <h4>{{ p.title }}</h4>
+                    <span class="price-sale">{{ p.price | money }}</span>
+                </div>
+              </a>
+              {%- endif -%}
+            {%- endfor -%}
+        </div>
+        <div style="text-align:center; margin-top:40px;">
+            <a href="/collections/massage-chair" class="btn btn-outline">Browse Full Collection</a>
+        </div>
+    </div>
+</section>
+
+<!-- HOW TO CHOOSE -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="eyebrow">Decision Support</span>
+            <h2>How to Choose the Best Massage Chair for Your Home</h2>
+            <p>The best massage chair is not the one with the longest feature list. It is the one that fits your body, feels right daily, and works with your home.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                <h3>Comfort &amp; Body Fit</h3>
+                <p>Does the chair suit your height, shoulder width, and preferred pressure? A premium massage chair should feel personalized.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58a.49.49 0 00.12-.61l-1.92-3.32a.49.49 0 00-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 00-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58a.49.49 0 00-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6A3.6 3.6 0 1115.6 12 3.611 3.611 0 0112 15.6z"/></svg></div>
+                <h3>Features That Matter</h3>
+                <p>Zero gravity, 4D rollers, stretching, heat, or full-body air compression? Focus on what genuinely improves your daily experience.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div>
+                <h3>Home Compatibility</h3>
+                <p>Will it work in your room — visually and physically? The best home massage chair blends with your space.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M22 12l-4-4v3H3v2h15v3l4-4z"/></svg></div>
+                <h3>Zero Gravity Recline</h3>
+                <p>A lighter, suspended seating position many find more comfortable and immersive during a full body massage.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg></div>
+                <h3>3D and 4D Roller Control</h3>
+                <p>Affects how adjustable, nuanced, and personalized the massage feels — the defining difference in premium chairs.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
+                <h3>Long-Term Confidence</h3>
+                <p>Delivery, setup, warranty, and brand reputation matter just as much as the massage itself.</p>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:48px;">
+            <a href="/blogs/news/how-to-choose-the-best-massage-chair" class="btn btn-outline">Read Our Buying Guide</a>
+        </div>
+    </div>
+</section>
+
+<!-- LIFESTYLE CATEGORIES -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="eyebrow">Shop by Need</span>
+            <h2>Find the Right Massage Chair by Lifestyle</h2>
+            <p>Many buyers make a smarter decision when they stop shopping by model number and start shopping by how they want the chair to fit into daily life.</p>
+        </div>
+        <div class="lifestyle-grid">
+            <div class="lifestyle-card">
+                <div class="lifestyle-card-img">
+                    <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/lifestyle-unwinding.jpg?v=1774630561" alt="Person relaxing in premium massage chair in cozy living room">
+                </div>
+                <div class="lifestyle-card-body">
+                    <h3>For Daily Unwinding</h3>
+                    <p>A calm, full-body massage experience for buyers who want regular comfort and an easier at-home wellness routine with a premium massage recliner.</p>
+                </div>
+            </div>
+            <div class="lifestyle-card">
+                <div class="lifestyle-card-img">
+                    <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/lifestyle-recovery.jpg?v=1774630561" alt="Athletic person recovering in massage chair in home gym">
+                </div>
+                <div class="lifestyle-card-body">
+                    <h3>For Deeper Recovery</h3>
+                    <p>A stronger direction for buyers who prefer deeper pressure, more advanced roller control, and greater customization in their zero gravity massage chair.</p>
+                </div>
+            </div>
+            <div class="lifestyle-card">
+                <div class="lifestyle-card-img">
+                    <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/lifestyle-design.jpg?v=1774630561" alt="Sleek massage chair in luxury minimalist living room">
+                </div>
+                <div class="lifestyle-card-body">
+                    <h3>For Design-Conscious Homes</h3>
+                    <p>A luxury massage chair choice that feels substantial without visually overwhelming the space — perfect for modern interiors.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BUYING STEPS -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="eyebrow">Your Journey</span>
+            <h2>The Massage Chairs and More Buying Experience</h2>
+            <p>Buying a premium massage chair should not feel rushed, confusing, or overly technical. Here is how we make it easier.</p>
+        </div>
+        <div class="steps-grid">
+            <div class="step-item"><div class="step-num">1</div><h4>Visit or Connect</h4><p>Start with a showroom visit or a conversation about what you're looking for in a massage chair.</p></div>
+            <div class="step-item"><div class="step-num">2</div><h4>Compare the Right Options</h4><p>Narrow the field based on body fit, comfort, features, and your home needs.</p></div>
+            <div class="step-item"><div class="step-num">3</div><h4>Choose With Clarity</h4><p>Understand differences between premium massage chairs without unnecessary complexity.</p></div>
+            <div class="step-item"><div class="step-num">4</div><h4>Enjoy Premium Ownership</h4><p>White-glove delivery, setup, manufacturer warranty, and ongoing service support.</p></div>
+        </div>
+        <div style="text-align:center; margin-top:32px;">
+            <a href="/pages/contact" class="btn btn-primary">Start Your Search</a>
+        </div>
+    </div>
+</section>
+
+<!-- SEO CONTENT BLOCK -->
+<section class="section section-alt">
+    <div class="container-narrow">
+        <div class="section-header">
+            <h2>Premium Comfort, Recovery, and Everyday Wellness</h2>
+        </div>
+        <div style="max-width:800px; margin:0 auto;">
+            <p style="margin-bottom:20px; font-size:16px !important; line-height:1.7;">A great massage recliner or luxury massage chair should do more than offer features. It should support your body, fit your space, and become part of a routine you genuinely enjoy. That is why our selection focuses on products that bring together comfort, recovery, design, and long-term value.</p>
+            <p style="margin-bottom:20px; font-size:16px !important; line-height:1.7;">We offer carefully chosen wellness solutions across multiple categories, including massage chairs, recliners, foot massage products, and office seating. If you are exploring massage chairs for sale or comparing premium home wellness products, our goal is to help you shop with more confidence and less confusion.</p>
+            <h3 style="font-size:20px !important; margin:32px 0 16px; font-family:'Playfair Display',serif;">Not Sure Which Chair Is Right for You?</h3>
+            <p style="margin-bottom:20px; font-size:16px !important; line-height:1.7;">Choosing the right chair can feel overwhelming when every model claims to be the best. The truth is that the best massage chair is the one that matches your body, your preferences, and the way you want to relax at home.</p>
+            <p>If you want help narrowing down your options, read our guide, <a href="/blogs/news/how-to-choose-the-best-massage-chair" style="color:var(--accent);font-weight:600;">How to Choose the Best Massage Chair</a>. It walks through the key things to consider before buying, including massage style, design preferences, recovery needs, and why trying trusted brands matters.</p>
+        </div>
+    </div>
+</section>
+
+<!-- BLOG -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="eyebrow">Expert Insights</span>
+            <h2>Inspiration &amp; Buying Guides</h2>
+            <p>Expert insights, wellness tips, and helpful guides to help you choose the right massage chair.</p>
+        </div>
+        <div class="blog-grid">
+            <a href="/blogs/news/the-best-massage-chair-for-short-person-panasonic-man1" class="blog-card">
+                <div class="blog-card-icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                <div class="blog-card-body">
+                    <h3>The Best Massage Chair for Short People: Panasonic MAN1</h3>
+                    <p>Finding the right fit when you're shorter can be challenging. Here's why the Panasonic MAN1 stands out.</p>
+                    <span class="blog-read">Continue Reading →</span>
+                </div>
+            </a>
+            <a href="/blogs/news/how-to-choose-the-best-massage-chair" class="blog-card">
+                <div class="blog-card-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg></div>
+                <div class="blog-card-body">
+                    <h3>How to Choose The Best Massage Chair</h3>
+                    <p>Everything you need to know before making your first premium massage chair purchase.</p>
+                    <span class="blog-read">Continue Reading →</span>
+                </div>
+            </a>
+            <a href="/blogs/news/how-frequently-should-you-use-your-massage-chair" class="blog-card">
+                <div class="blog-card-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
+                <div class="blog-card-body">
+                    <h3>How Frequently Should You Use Your Massage Chair?</h3>
+                    <p>Understanding the right frequency to maximize health benefits and chair longevity.</p>
+                    <span class="blog-read">Continue Reading →</span>
+                </div>
+            </a>
+        </div>
+        <div style="text-align:center; margin-top:48px;">
+            <a href="/blogs/news" class="btn btn-outline">View All Articles →</a>
+        </div>
+    </div>
+</section>
+
+<!-- PREMIUM SUPPORT BAR -->
+<div class="support-bar">
+    <div class="container">
+        <div class="support-bar-inner">
+            <div class="support-item">
+                <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                <span>White-Glove Delivery</span>
+            </div>
+            <div class="support-item">
+                <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+                <span>In-House Service</span>
+            </div>
+            <div class="support-item">
+                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                <span>Manufacturer Warranty</span>
+            </div>
+            <div class="support-item">
+                <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+                <span>Expert Consultation</span>
+            </div>
+            <div class="support-item">
+                <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                <span>Setup Included</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FAQ -->
+<section class="section">
+    <div class="container-narrow">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div style="border-top:1px solid var(--border);">
+            <div class="faq-item">
+                <h3>Are massage chairs worth it?</h3>
+                <p>A premium massage chair is worth it for buyers who want regular at-home comfort, relaxation, and a more convenient wellness routine. The real value depends on comfort, fit, feature quality, and the ownership experience around delivery, warranty, and support.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What is the best massage chair for home use?</h3>
+                <p>The best massage chair for home use depends on body fit, preferred massage feel, room compatibility, and feature priorities such as zero gravity, 3D or 4D rollers, stretching, heat, and full-body air compression.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Where can I try massage chairs near me?</h3>
+                <p>Buyers can compare premium massage chairs in person at the Massage Chairs and More showroom, where multiple brands and models from Panasonic, OHCO, D.Core, KOYO, and Positive Posture can be tested side by side.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is a zero gravity massage chair worth it?</h3>
+                <p>For many buyers, zero gravity is one of the most noticeable comfort features because it creates a more reclined, floating position that can make the session feel more immersive and relaxing.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How much does a good massage chair cost?</h3>
+                <p>A good massage chair can vary widely in price depending on engineering, features, brand, fit, and support. Premium buyers should evaluate total ownership value — including delivery, warranty, and service — not price alone.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What brands of massage chairs do you carry?</h3>
+                <p>Massage Chairs and More is an authorized dealer for Panasonic, OHCO, D.Core, KOYO, and Positive Posture — six premium global brands representing the best in Japanese and international massage chair engineering.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do premium massage chairs come with delivery and warranty?</h3>
+                <p>Premium purchases at Massage Chairs and More include white-glove delivery and setup, manufacturer-backed warranty, and in-house service support as part of the buying experience.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section" style="padding-bottom:48px;">
+    <div class="container">
+        <div class="final-cta">
+            <span class="eyebrow">Premium Massage Chair Destination</span>
+            <h2>Compare the World's Best Massage Chairs and Buy With Confidence</h2>
+            <p>Experience the difference between models, explore premium brands side by side, and choose a massage chair that fits your body, your home, and your expectations.</p>
+            <div class="final-cta-btns">
+                <a href="/pages/contact" class="btn btn-primary">Visit Our Showroom</a>
+                <a href="/collections/massage-chair" class="btn btn-white-outline">Shop All Massage Chairs</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div><!-- end .mcm-home -->
+
+<!-- FAQ SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Are massage chairs worth it?","acceptedAnswer":{"@type":"Answer","text":"A premium massage chair is worth it for buyers who want regular at-home comfort, relaxation, and a more convenient wellness routine. The real value depends on comfort, fit, feature quality, and the ownership experience around delivery, warranty, and support."}},
+    {"@type":"Question","name":"What is the best massage chair for home use?","acceptedAnswer":{"@type":"Answer","text":"The best massage chair for home use depends on body fit, preferred massage feel, room compatibility, and feature priorities such as zero gravity, 3D or 4D rollers, stretching, heat, and full-body air compression."}},
+    {"@type":"Question","name":"Where can I try massage chairs near me?","acceptedAnswer":{"@type":"Answer","text":"Buyers can compare premium massage chairs in person at the Massage Chairs and More showroom, where multiple brands and models from Panasonic, OHCO, D.Core, KOYO, and Positive Posture can be tested side by side."}},
+    {"@type":"Question","name":"Is a zero gravity massage chair worth it?","acceptedAnswer":{"@type":"Answer","text":"For many buyers, zero gravity is one of the most noticeable comfort features because it creates a more reclined, floating position that can make the session feel more immersive and relaxing."}},
+    {"@type":"Question","name":"How much does a good massage chair cost?","acceptedAnswer":{"@type":"Answer","text":"A good massage chair can vary widely in price depending on engineering, features, brand, fit, and support. Premium buyers should evaluate total ownership value, not price alone."}},
+    {"@type":"Question","name":"What brands of massage chairs do you carry?","acceptedAnswer":{"@type":"Answer","text":"Massage Chairs and More is an authorized dealer for Panasonic, OHCO, D.Core, KOYO, and Positive Posture — six premium global brands representing the best in Japanese and international massage chair engineering."}},
+    {"@type":"Question","name":"Do premium massage chairs come with delivery and warranty?","acceptedAnswer":{"@type":"Answer","text":"Premium purchases at Massage Chairs and More include white-glove delivery and setup, manufacturer-backed warranty, and in-house service support as part of the buying experience."}}
+  ]
+}
+</script>

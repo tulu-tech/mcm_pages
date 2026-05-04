@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Calibrate — OHCO M8 NEO vs D.Core 2</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, sans-serif; background: #1a1a1a; color: #fff; padding: 20px; }
+  h1 { text-align: center; margin-bottom: 20px; font-size: 18px; color: #c3a363; }
+  .container { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; }
+  .chair-panel {
+    position: relative; width: 400px; height: 400px;
+    border: 2px solid #333; border-radius: 12px; overflow: hidden;
+    cursor: crosshair; background: #0d0d0d;
+  }
+  .chair-panel img {
+    width: 100%; height: 100%; object-fit: contain;
+  }
+  .dot {
+    position: absolute; width: 12px; height: 12px;
+    border-radius: 50%; border: 2px solid #fff;
+    transform: translate(-50%, -50%); pointer-events: none;
+    z-index: 10;
+  }
+  .dot.left { background: rgba(154,127,74,0.8); }
+  .dot.right { background: rgba(97,112,100,0.8); }
+  .dot-label {
+    position: absolute; transform: translate(-50%, -150%);
+    background: rgba(0,0,0,0.75); color: #fff; font-size: 9px;
+    padding: 2px 5px; border-radius: 3px; pointer-events: none;
+    white-space: nowrap; z-index: 11;
+  }
+  .log-panel {
+    margin-top: 30px; background: #111; border-radius: 8px;
+    padding: 20px; max-width: 900px; margin-left: auto; margin-right: auto;
+  }
+  .log-panel h2 { color: #c3a363; margin-bottom: 10px; font-size: 14px; display: flex; align-items: center; gap: 12px; }
+  #log { font-family: monospace; font-size: 13px; white-space: pre-wrap; color: #0f0; min-height: 60px; }
+  .label-input {
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    background: #222; border: 2px solid #c3a363; border-radius: 12px;
+    padding: 24px; z-index: 100; display: none; text-align: center;
+  }
+  .label-input input {
+    background: #333; color: #fff; border: 1px solid #555;
+    padding: 8px 16px; border-radius: 6px; font-size: 14px; width: 240px;
+  }
+  .label-input button {
+    margin-top: 10px; padding: 8px 20px; background: #c3a363;
+    border: none; border-radius: 6px; color: #000; cursor: pointer; font-weight: 700;
+  }
+  .label-input .presets { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; justify-content: center; }
+  .label-input .presets button {
+    padding: 5px 10px; font-size: 11px; background: #333; color: #ccc;
+    border: 1px solid #555; border-radius: 4px; margin: 0;
+  }
+  .label-input .presets button:hover { background: #444; color: #fff; }
+  .instructions {
+    text-align: center; margin-bottom: 20px; color: #888; font-size: 13px; line-height: 1.6;
+  }
+  .copy-btn {
+    padding: 6px 16px; background: #c3a363;
+    border: none; border-radius: 6px; color: #000; cursor: pointer; font-weight: 700; font-size: 12px;
+  }
+  .clear-btn {
+    padding: 6px 16px; background: #aa3333;
+    border: none; border-radius: 6px; color: #fff; cursor: pointer; font-weight: 700; font-size: 12px;
+  }
+  .grid-overlay {
+    position: absolute; inset: 0; pointer-events: none; z-index: 5;
+  }
+  .grid-overlay.show {
+    background:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .toggle-row {
+    display: flex; gap: 12px; justify-content: center; margin-bottom: 16px;
+  }
+  .toggle-row label {
+    display: flex; align-items: center; gap: 6px; font-size: 12px; color: #888; cursor: pointer;
+  }
+  .crosshair {
+    position: absolute; pointer-events: none; z-index: 6; display: none;
+  }
+  .crosshair-h {
+    position: absolute; left: 0; right: 0; height: 1px;
+    background: rgba(195,163,99,0.35);
+  }
+  .crosshair-v {
+    position: absolute; top: 0; bottom: 0; width: 1px;
+    background: rgba(195,163,99,0.35);
+  }
+  .coord-tooltip {
+    position: absolute; pointer-events: none; z-index: 12;
+    background: rgba(0,0,0,0.85); color: #0f0; font-family: monospace;
+    font-size: 11px; padding: 3px 7px; border-radius: 4px;
+    transform: translate(12px, -50%); white-space: nowrap; display: none;
+  }
+</style>
+</head>
+<body>
+<h1>🎯 Calibration Tool — OHCO M8 NEO vs D.Core 2</h1>
+<p class="instructions">
+  Her koltuk üzerine tıklayın → bölge adı girin veya preset butonlarından seçin<br>
+  Koordinatlar otomatik olarak SVG coordinate space'e (1600×980) dönüştürülür.<br>
+  <strong style="color:#9a7f4a">Sol panel:</strong> OHCO M8 NEO (image offset x=220, y=250) &nbsp;|&nbsp;
+  <strong style="color:#617064">Sağ panel:</strong> D.Core 2 (image offset x=980, y=250)
+</p>
+
+<div class="toggle-row">
+  <label><input type="checkbox" id="gridToggle"> Grid overlay</label>
+  <label><input type="checkbox" id="crosshairToggle" checked> Crosshair</label>
+</div>
+
+<div class="container">
+  <div>
+    <h3 style="text-align:center;color:#9a7f4a;margin-bottom:8px">OHCO M8 NEO</h3>
+    <div class="chair-panel" id="panelA" data-side="left" data-offset-x="220" data-offset-y="250">
+      <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100.jpg?v=1772325951&width=1200" alt="OHCO M8 NEO" crossorigin="anonymous">
+      <div class="grid-overlay" id="gridA"></div>
+      <div class="crosshair" id="crosshairA"><div class="crosshair-h"></div><div class="crosshair-v"></div></div>
+      <div class="coord-tooltip" id="tooltipA"></div>
+    </div>
+  </div>
+  <div>
+    <h3 style="text-align:center;color:#617064;margin-bottom:8px">D.Core 2</h3>
+    <div class="chair-panel" id="panelB" data-side="right" data-offset-x="980" data-offset-y="250">
+      <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/asd2.jpg?v=1772565432&width=1200" alt="D.Core 2" crossorigin="anonymous">
+      <div class="grid-overlay" id="gridB"></div>
+      <div class="crosshair" id="crosshairB"><div class="crosshair-h"></div><div class="crosshair-v"></div></div>
+      <div class="coord-tooltip" id="tooltipB"></div>
+    </div>
+  </div>
+</div>
+
+<div class="log-panel">
+  <h2>📋 Koordinat Logu
+    <button class="copy-btn" onclick="copyLog()">📋 Copy All</button>
+    <button class="copy-btn" onclick="copyForAI()">🤖 Copy AI Prompt</button>
+    <button class="clear-btn" onclick="clearLog()">🗑 Clear</button>
+  </h2>
+  <div id="log">Henüz tıklama yapılmadı...</div>
+</div>
+
+<div class="label-input" id="labelDialog">
+  <p style="margin-bottom:8px;color:#c3a363;font-weight:700">Bölge adı girin:</p>
+  <div class="presets" id="presetBtns">
+    <button onclick="setPreset('Head')">Head</button>
+    <button onclick="setPreset('Back')">Back</button>
+    <button onclick="setPreset('Shoulders')">Shoulders</button>
+    <button onclick="setPreset('Arms')">Arms</button>
+    <button onclick="setPreset('Calves')">Calves</button>
+    <button onclick="setPreset('Feet')">Feet</button>
+    <button onclick="setPreset('Chair Top')">Chair Top</button>
+    <button onclick="setPreset('Chair Bottom')">Chair Bottom</button>
+    <button onclick="setPreset('Chair Left')">Chair Left</button>
+    <button onclick="setPreset('Chair Right')">Chair Right</button>
+    <button onclick="setPreset('Mechanism')">Mechanism</button>
+    <button onclick="setPreset('Heat Zone')">Heat Zone</button>
+    <button onclick="setPreset('Control')">Control</button>
+  </div>
+  <input type="text" id="labelInput" placeholder="Veya özel isim yazın...">
+  <br>
+  <button onclick="confirmLabel()">Kaydet</button>
+  <button onclick="cancelLabel()" style="background:#555;color:#fff;margin-left:6px">İptal</button>
+</div>
+
+<script>
+let pendingClick = null;
+let logLines = [];
+let points = { left: [], right: [] };
+
+// Grid toggle
+document.getElementById('gridToggle').addEventListener('change', (e) => {
+  document.querySelectorAll('.grid-overlay').forEach(g => {
+    g.classList.toggle('show', e.target.checked);
+  });
+});
+
+// Crosshair + tooltip on hover
+document.querySelectorAll('.chair-panel').forEach(panel => {
+  const side = panel.dataset.side;
+  const ch = panel.querySelector('.crosshair');
+  const tt = panel.querySelector('.coord-tooltip');
+  const offX = parseInt(panel.dataset.offsetX);
+  const offY = parseInt(panel.dataset.offsetY);
+
+  panel.addEventListener('mousemove', (e) => {
+    if (!document.getElementById('crosshairToggle').checked) return;
+    const rect = panel.getBoundingClientRect();
+    const px = e.clientX - rect.left;
+    const py = e.clientY - rect.top;
+    ch.style.display = 'block';
+    ch.querySelector('.crosshair-h').style.top = py + 'px';
+    ch.querySelector('.crosshair-v').style.left = px + 'px';
+    tt.style.display = 'block';
+    tt.style.left = px + 'px';
+    tt.style.top = py + 'px';
+    tt.textContent = `SVG(${Math.round(offX + px)}, ${Math.round(offY + py)})`;
+  });
+
+  panel.addEventListener('mouseleave', () => {
+    ch.style.display = 'none';
+    tt.style.display = 'none';
+  });
+
+  panel.addEventListener('click', (e) => {
+    const rect = panel.getBoundingClientRect();
+    const px = e.clientX - rect.left;
+    const py = e.clientY - rect.top;
+    const svgX = Math.round(offX + px);
+    const svgY = Math.round(offY + py);
+
+    pendingClick = { px, py, svgX, svgY, side, panel };
+
+    document.getElementById('labelInput').value = '';
+    document.getElementById('labelDialog').style.display = 'block';
+    document.getElementById('labelInput').focus();
+  });
+});
+
+document.getElementById('labelInput').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') confirmLabel();
+  if (e.key === 'Escape') cancelLabel();
+});
+
+function setPreset(val) {
+  document.getElementById('labelInput').value = val;
+  confirmLabel();
+}
+
+function confirmLabel() {
+  if (!pendingClick) return;
+  const label = document.getElementById('labelInput').value.trim() || 'Unknown';
+  const { px, py, svgX, svgY, side, panel } = pendingClick;
+
+  // Place visual dot
+  const dot = document.createElement('div');
+  dot.className = `dot ${side}`;
+  dot.style.left = px + 'px';
+  dot.style.top = py + 'px';
+  panel.appendChild(dot);
+
+  // Place label above dot
+  const lbl = document.createElement('div');
+  lbl.className = 'dot-label';
+  lbl.style.left = px + 'px';
+  lbl.style.top = py + 'px';
+  lbl.textContent = label;
+  panel.appendChild(lbl);
+
+  // Store point
+  points[side].push({ label, px: Math.round(px), py: Math.round(py), svgX, svgY });
+
+  // Log entry
+  const sideName = side === 'left' ? 'OHCO M8 NEO' : 'D.Core 2';
+  const line = `${sideName.padEnd(14)} | ${label.padEnd(14)} | px(${String(Math.round(px)).padStart(3)},${String(Math.round(py)).padStart(3)}) → SVG(${svgX},${svgY})`;
+  logLines.push(line);
+  document.getElementById('log').textContent = logLines.join('\n');
+
+  document.getElementById('labelDialog').style.display = 'none';
+  pendingClick = null;
+}
+
+function cancelLabel() {
+  document.getElementById('labelDialog').style.display = 'none';
+  pendingClick = null;
+}
+
+function copyLog() {
+  navigator.clipboard.writeText(logLines.join('\n')).then(() => {
+    alert('Koordinatlar kopyalandı!');
+  });
+}
+
+function copyForAI() {
+  let prompt = `## Kalibrasyon Verileri — OHCO M8 NEO vs D.Core 2\n\n`;
+  prompt += `**OHCO M8 NEO (Sol — offset x=220, y=250):**\n`;
+  points.left.forEach(p => {
+    prompt += `- ${p.label}: SVG(${p.svgX},${p.svgY})\n`;
+  });
+  prompt += `\n**D.Core 2 (Sağ — offset x=980, y=250):**\n`;
+  points.right.forEach(p => {
+    prompt += `- ${p.label}: SVG(${p.svgX},${p.svgY})\n`;
+  });
+  navigator.clipboard.writeText(prompt).then(() => {
+    alert('AI prompt formatında kopyalandı!');
+  });
+}
+
+function clearLog() {
+  if (!confirm('Tüm koordinatlar silinecek. Emin misiniz?')) return;
+  logLines = [];
+  points = { left: [], right: [] };
+  document.getElementById('log').textContent = 'Henüz tıklama yapılmadı...';
+  document.querySelectorAll('.dot, .dot-label').forEach(el => el.remove());
+}
+</script>
+</body>
+</html>

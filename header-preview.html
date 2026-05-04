@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCM Header Preview — Dropdown Navigation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    :root {
+      --mcm-accent:        #b8944f;
+      --mcm-accent-hover:  #a07e3f;
+      --mcm-accent-light:  rgba(184,148,79,0.08);
+      --mcm-dark:          #1a1a1a;
+      --mcm-text:          #2d2d2d;
+      --mcm-muted:         #5a5a5a;
+      --mcm-border:        #e8e4de;
+      --mcm-surface:       #f9f8f6;
+      --mcm-white:         #ffffff;
+      --mcm-transition:    all 0.28s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+
+    /* ── TOP BAR ── */
+    #mcm-top-bar {
+      background: var(--mcm-dark);
+      color: rgba(255,255,255,0.85);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      position: relative;
+      z-index: 500;
+    }
+    .mcm-top-inner {
+      max-width: 1400px; margin: 0 auto;
+      padding: 9px 32px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .mcm-top-left, .mcm-top-right { display: flex; align-items: center; gap: 6px; }
+    .mcm-top-center {
+      position: absolute; left: 50%; transform: translateX(-50%);
+      font-weight: 600; letter-spacing: 0.04em;
+      color: var(--mcm-accent); font-size: 11.5px;
+    }
+    #mcm-top-bar svg { width: 13px; height: 13px; fill: var(--mcm-accent); flex-shrink: 0; vertical-align: middle; }
+    #mcm-top-bar a { color: rgba(255,255,255,0.85); text-decoration: none; transition: color 0.2s; }
+    #mcm-top-bar a:hover { color: var(--mcm-accent); }
+
+    /* ── MAIN HEADER ── */
+    #mcm-site-header {
+      position: sticky; top: 0; z-index: 490;
+      background: var(--mcm-white);
+      border-bottom: 1px solid var(--mcm-border);
+      transition: var(--mcm-transition);
+    }
+    #mcm-site-header.mcm-scrolled {
+      box-shadow: 0 2px 24px rgba(0,0,0,0.07);
+      border-bottom-color: transparent;
+    }
+    .mcm-header-inner {
+      max-width: 1400px; margin: 0 auto;
+      padding: 0 32px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 96px; transition: height 0.3s ease;
+    }
+    #mcm-site-header.mcm-scrolled .mcm-header-inner { height: 72px; }
+
+    /* ── LOGO ── */
+    .mcm-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .mcm-logo img { height: 92px; width: auto; display: block; transition: height 0.3s ease; }
+    #mcm-site-header.mcm-scrolled .mcm-logo img { height: 70px; }
+
+    /* ── NAV ── */
+    .mcm-nav { display: flex; align-items: center; height: 100%; flex: 1; justify-content: center; gap: 0; }
+    .mcm-nav-item { position: relative; height: 96px; display: flex; align-items: center; }
+    #mcm-site-header.mcm-scrolled .mcm-nav-item { height: 72px; }
+    .mcm-nav-link {
+      font-size: 14.5px; font-weight: 600; color: var(--mcm-muted);
+      text-decoration: none; padding: 0 18px; height: 100%;
+      display: flex; align-items: center; gap: 5px;
+      transition: color 0.25s; position: relative; letter-spacing: 0.01em; white-space: nowrap;
+    }
+    .mcm-nav-link::after {
+      content: ''; position: absolute; bottom: 0; left: 18px; right: 18px;
+      height: 2px; background: var(--mcm-accent);
+      transform: scaleX(0); transition: transform 0.25s ease; transform-origin: center;
+    }
+    .mcm-nav-link:hover { color: var(--mcm-dark); }
+    .mcm-nav-item:hover .mcm-nav-link::after { transform: scaleX(1); }
+    .mcm-nav-link svg.mcm-caret {
+      width: 11px; height: 11px; fill: currentColor;
+      transition: transform 0.25s ease; flex-shrink: 0; opacity: 0.65;
+    }
+    .mcm-nav-item:hover .mcm-nav-link svg.mcm-caret { transform: rotate(180deg); }
+
+    /* ── DROPDOWN ── */
+    .mcm-dropdown {
+      position: absolute; top: 100%; left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      min-width: 240px;
+      background: var(--mcm-white);
+      border: 1px solid var(--mcm-border);
+      border-top: 2.5px solid var(--mcm-accent);
+      border-radius: 0 0 14px 14px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.09);
+      opacity: 0; visibility: hidden;
+      transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+      z-index: 600; padding: 10px 0;
+    }
+    .mcm-nav-item:hover .mcm-dropdown {
+      opacity: 1; visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+    .mcm-drop-label {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.13em; color: var(--mcm-accent);
+      padding: 8px 20px 4px; display: block;
+    }
+    .mcm-drop-divider { height: 1px; background: var(--mcm-border); margin: 6px 0; }
+    .mcm-drop-link {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 14px; font-weight: 500; color: var(--mcm-text);
+      text-decoration: none; padding: 9px 20px;
+      transition: var(--mcm-transition); white-space: nowrap;
+    }
+    .mcm-drop-link:hover { background: var(--mcm-accent-light); color: var(--mcm-accent); padding-left: 26px; }
+    .mcm-drop-link svg { display: none; }
+    .mcm-drop-viewall {
+      font-weight: 700; font-size: 13px; color: var(--mcm-accent);
+      border-top: 1px solid var(--mcm-border); margin-top: 6px;
+      padding-top: 10px; text-transform: uppercase; letter-spacing: 0.06em;
+    }
+    .mcm-drop-viewall:hover { background: var(--mcm-accent); color: var(--mcm-white); padding-left: 20px; }
+
+    /* ── ACTIONS ── */
+    .mcm-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+    .mcm-cta-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      background: var(--mcm-accent); color: var(--mcm-white);
+      font-size: 13px; font-weight: 700;
+      height: 42px; padding: 0 22px;
+      border-radius: 50px; text-decoration: none;
+      transition: var(--mcm-transition); letter-spacing: 0.03em;
+      white-space: nowrap; line-height: 1;
+      border: 2px solid transparent;
+    }
+    .mcm-cta-btn:hover { background: transparent; color: var(--mcm-accent); border-color: var(--mcm-accent); }
+    .mcm-icon-btn {
+      display: flex; align-items: center; justify-content: center;
+      width: 42px; height: 42px; border-radius: 50%;
+      background: transparent; border: none; cursor: pointer;
+      transition: var(--mcm-transition); text-decoration: none;
+      color: inherit; position: relative; flex-shrink: 0;
+    }
+    .mcm-icon-btn svg { width: 21px; height: 21px; fill: var(--mcm-muted); transition: fill 0.2s; }
+    .mcm-icon-btn:hover { background: var(--mcm-accent-light); }
+    .mcm-icon-btn:hover svg { fill: var(--mcm-accent); }
+    .mcm-cart-badge {
+      position: absolute; top: 4px; right: 2px;
+      background: var(--mcm-accent); color: white;
+      font-size: 9.5px; font-weight: 800;
+      width: 17px; height: 17px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; line-height: 1;
+    }
+    .mcm-hamburger {
+      display: none; flex-direction: column; justify-content: center; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 8px; width: 40px; height: 40px;
+    }
+    .mcm-hamburger span { display: block; width: 22px; height: 2px; background: var(--mcm-dark); border-radius: 2px; transition: var(--mcm-transition); }
+
+    /* ── SEARCH OVERLAY ── */
+    .mcm-search-overlay {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+      z-index: 700; opacity: 0; visibility: hidden;
+      transform: translateY(-100%); transition: all 0.32s cubic-bezier(0.4,0,0.2,1);
+    }
+    .mcm-search-overlay.mcm-search--open { opacity: 1; visibility: visible; transform: translateY(0); }
+    .mcm-search-inner { max-width: 720px; margin: 0 auto; padding: 28px 32px; display: flex; align-items: center; gap: 16px; }
+    .mcm-search-form { flex: 1; display: flex; align-items: center; background: var(--mcm-surface); border: 1.5px solid var(--mcm-border); border-radius: 50px; overflow: hidden; transition: border-color 0.2s; }
+    .mcm-search-form:focus-within { border-color: var(--mcm-accent); }
+    .mcm-search-input { flex: 1; border: none; background: transparent; padding: 13px 22px; font-size: 15px; font-family: 'Inter', sans-serif; color: var(--mcm-dark); outline: none; }
+    .mcm-search-input::placeholder { color: #aaa; }
+    .mcm-search-submit { width: 46px; height: 46px; background: var(--mcm-accent); border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; margin: 3px; flex-shrink: 0; }
+    .mcm-search-submit svg { width: 19px; height: 19px; fill: white; }
+    .mcm-search-submit:hover { background: var(--mcm-accent-hover); }
+    .mcm-search-close-btn { background: none; border: none; font-size: 22px; cursor: pointer; color: var(--mcm-muted); padding: 4px 8px; border-radius: 8px; transition: color 0.2s; line-height: 1; }
+    .mcm-search-close-btn:hover { color: var(--mcm-dark); }
+
+    /* ── MOBILE DRAWER ── */
+    .mcm-drawer {
+      position: fixed; top: 0; left: -100%;
+      width: 340px; max-width: 92vw; height: 100vh;
+      background: var(--mcm-white); z-index: 800;
+      transition: left 0.35s cubic-bezier(0.4,0,0.2,1);
+      display: flex; flex-direction: column;
+      box-shadow: 10px 0 50px rgba(0,0,0,0.12);
+      overflow-y: auto;
+    }
+    .mcm-drawer.mcm-drawer--open { left: 0; }
+    .mcm-drawer-mask {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.45);
+      z-index: 799; opacity: 0; visibility: hidden;
+      transition: all 0.3s; backdrop-filter: blur(3px);
+    }
+    .mcm-drawer-mask.mcm-mask--active { opacity: 1; visibility: visible; }
+    .mcm-drawer-top { display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; border-bottom: 1px solid var(--mcm-border); flex-shrink: 0; }
+    .mcm-drawer-top img { height: 38px; width: auto; }
+    .mcm-drawer-x { background: none; border: none; font-size: 22px; cursor: pointer; color: var(--mcm-muted); padding: 4px 8px; border-radius: 8px; line-height: 1; }
+    .mcm-drawer-body { flex: 1; padding: 6px 0; }
+    .mcm-drawer-plain { display: block; font-size: 15px; font-weight: 600; color: var(--mcm-text); text-decoration: none; padding: 13px 20px; border-bottom: 1px solid var(--mcm-border); }
+    .mcm-drawer-plain:hover { background: var(--mcm-accent-light); color: var(--mcm-accent); }
+    .mcm-drawer-group { border-bottom: 1px solid var(--mcm-border); }
+    .mcm-drawer-toggle { display: flex; justify-content: space-between; align-items: center; width: 100%; font-size: 15px; font-weight: 600; color: var(--mcm-text); padding: 13px 20px; background: none; border: none; cursor: pointer; font-family: 'Inter', sans-serif; }
+    .mcm-drawer-toggle:hover { background: var(--mcm-accent-light); }
+    .mcm-drawer-toggle svg { width: 18px; height: 18px; fill: var(--mcm-muted); transition: transform 0.3s; }
+    .mcm-drawer-toggle.is-open svg { transform: rotate(180deg); }
+    .mcm-drawer-sub { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; background: var(--mcm-surface); }
+    .mcm-drawer-sub.is-open { max-height: 600px; }
+    .mcm-drawer-sub-link { display: block; font-size: 13.5px; font-weight: 500; color: var(--mcm-muted); text-decoration: none; padding: 10px 20px 10px 32px; transition: var(--mcm-transition); border-bottom: 1px solid rgba(232,228,222,0.5); }
+    .mcm-drawer-sub-link:last-child { border-bottom: none; }
+    .mcm-drawer-sub-link:hover { color: var(--mcm-accent); padding-left: 38px; }
+    .mcm-drawer-sub-label { display: block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--mcm-accent); padding: 10px 20px 4px 32px; }
+    .mcm-drawer-foot { padding: 20px; border-top: 1px solid var(--mcm-border); flex-shrink: 0; }
+    .mcm-drawer-foot-cta { display: block; text-align: center; background: var(--mcm-accent); color: white; padding: 12px; border-radius: 50px; font-weight: 700; font-size: 13.5px; text-decoration: none; margin-bottom: 16px; }
+    .mcm-drawer-foot-cta:hover { background: var(--mcm-accent-hover); }
+    .mcm-drawer-contact { display: flex; flex-direction: column; gap: 8px; }
+    .mcm-drawer-contact a { font-size: 12.5px; color: var(--mcm-muted); text-decoration: none; }
+    .mcm-drawer-contact a:hover { color: var(--mcm-accent); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .mcm-nav { display: none; }
+      .mcm-cta-btn { display: none; }
+      .mcm-hamburger { display: flex; }
+      .mcm-top-center { display: none; }
+    }
+    @media (max-width: 768px) {
+      .mcm-top-inner { padding: 8px 16px; font-size: 11px; }
+      .mcm-header-inner { padding: 0 16px; height: 78px; }
+      .mcm-logo img { height: 64px; }
+    }
+    @media (max-width: 480px) {
+      .mcm-top-left { display: none; }
+      .mcm-top-right { margin: 0 auto; }
+    }
+
+    /* Demo content */
+    .demo-content {
+      height: 200vh;
+      background: linear-gradient(180deg, #f9f8f6 0%, #ffffff 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+      padding-top: 80px; gap: 16px;
+    }
+    .demo-content h2 { font-family: 'Inter', sans-serif; color: #333; font-size: 20px; font-weight: 600; }
+    .demo-content p { font-family: 'Inter', sans-serif; color: #888; font-size: 14px; }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div id="mcm-top-bar">
+  <div class="mcm-top-inner">
+    <div class="mcm-top-left">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      <a href="tel:+14088891188">+1 408 889 1188</a>
+    </div>
+    <div class="mcm-top-center">✨ Free White-Glove Delivery on All Massage Chairs</div>
+    <div class="mcm-top-right">
+      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      <a href="mailto:info@massagechairsandmore.com">info@massagechairsandmore.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN HEADER -->
+<header id="mcm-site-header">
+  <div class="mcm-header-inner">
+
+    <!-- LOGO -->
+    <a href="/" class="mcm-logo" aria-label="Massage Chairs and More">
+      <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/MCM_Logo_1.png?v=1776444159" alt="Massage Chairs and More" width="160" height="54">
+    </a>
+
+    <!-- DESKTOP NAV -->
+    <nav class="mcm-nav" aria-label="Main navigation">
+
+      <!-- 1. MASSAGE CHAIRS -->
+      <div class="mcm-nav-item">
+        <a href="/collections/massage-chair" class="mcm-nav-link">
+          Massage Chairs
+          <svg class="mcm-caret" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+        </a>
+        <div class="mcm-dropdown">
+          <span class="mcm-drop-label">Shop by Brand</span>
+          <a href="/collections/d-core-massage-chairs" class="mcm-drop-link">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 18a8 8 0 110-16 8 8 0 010 16z"/></svg>
+            D.Core
+          </a>
+          <a href="/collections/panasonic-massage-chairs" class="mcm-drop-link">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 18a8 8 0 110-16 8 8 0 010 16z"/></svg>
+            Panasonic
+          </a>
+          <a href="/collections/positive-posture-massage-chairs" class="mcm-drop-link">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 18a8 8 0 110-16 8 8 0 010 16z"/></svg>
+            Positive Posture
+          </a>
+          <a href="/collections/ohco" class="mcm-drop-link">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 18a8 8 0 110-16 8 8 0 010 16z"/></svg>
+            OHCO
+          </a>
+          <a href="/collections/koyo-massage-chairs" class="mcm-drop-link">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 18a8 8 0 110-16 8 8 0 010 16z"/></svg>
+            KOYO
+          </a>
+          <div class="mcm-drop-divider"></div>
+          <a href="/collections/massage-chair" class="mcm-drop-link mcm-drop-viewall">View All Massage Chairs →</a>
+        </div>
+      </div>
+
+      <!-- 2. RECLINERS -->
+      <div class="mcm-nav-item">
+        <a href="/collections/recliners-massage-chairs" class="mcm-nav-link">
+          Recliners
+          <svg class="mcm-caret" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+        </a>
+        <div class="mcm-dropdown">
+          <span class="mcm-drop-label">Featured Recliners</span>
+          <a href="/products/varier-gravity-balans-gravity-recliner-kneeling-chair" class="mcm-drop-link">
+            <svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 00-2 2v14l4-4h12a2 2 0 002-2V5a2 2 0 00-2-2z"/></svg>
+            Varier Gravity Balans
+          </a>
+          <a href="/products/positive-posture-zero-gravity-recliner" class="mcm-drop-link">
+            <svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 00-2 2v14l4-4h12a2 2 0 002-2V5a2 2 0 00-2-2z"/></svg>
+            Positive Posture Zero Gravity
+          </a>
+          <div class="mcm-drop-divider"></div>
+          <a href="/collections/recliners-massage-chairs" class="mcm-drop-link mcm-drop-viewall">View All Recliners →</a>
+        </div>
+      </div>
+
+      <!-- 3. FOOT MASSAGE -->
+      <div class="mcm-nav-item">
+        <a href="/collections/foot-massage-machine" class="mcm-nav-link">
+          Foot Massage
+          <svg class="mcm-caret" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+        </a>
+        <div class="mcm-dropdown">
+          <span class="mcm-drop-label">Featured Models</span>
+          <a href="/products/neklon-yt850-foot-massager-machine" class="mcm-drop-link">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+            Neklon YT-850
+          </a>
+          <a href="/products/neklon-k16-foot-massager-machine" class="mcm-drop-link">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+            Neklon K-16
+          </a>
+          <div class="mcm-drop-divider"></div>
+          <a href="/collections/foot-massage-machine" class="mcm-drop-link mcm-drop-viewall">View All Foot Massagers →</a>
+        </div>
+      </div>
+
+      <!-- 4. OFFICE CHAIRS -->
+      <div class="mcm-nav-item">
+        <a href="/collections/office-chairs" class="mcm-nav-link">
+          Office Chairs
+          <svg class="mcm-caret" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+        </a>
+        <div class="mcm-dropdown">
+          <span class="mcm-drop-label">Featured Models</span>
+          <a href="/products/varier-move-active-sitting-saddle-stool" class="mcm-drop-link">
+            <svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.86.18-1a3 3 0 00-6 0c0 .14.11.56.18 1H10c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/></svg>
+            Varier Move Saddle Stool
+          </a>
+          <a href="/products/variable-balans-kneeling-chair" class="mcm-drop-link">
+            <svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.86.18-1a3 3 0 00-6 0c0 .14.11.56.18 1H10c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/></svg>
+            Variable Balans Kneeling Chair
+          </a>
+          <a href="/products/ekstrem-chair-for-sale" class="mcm-drop-link">
+            <svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.86.18-1a3 3 0 00-6 0c0 .14.11.56.18 1H10c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/></svg>
+            Ekstrem Chair
+          </a>
+          <div class="mcm-drop-divider"></div>
+          <a href="/collections/office-chairs" class="mcm-drop-link mcm-drop-viewall">View All Office Chairs →</a>
+        </div>
+      </div>
+
+      <!-- 5. OUR STORES -->
+      <div class="mcm-nav-item">
+        <a href="/pages/our-stores" class="mcm-nav-link">Our Stores</a>
+      </div>
+
+    </nav>
+
+    <!-- ACTIONS -->
+    <div class="mcm-actions">
+      <a href="/pages/our-stores" class="mcm-cta-btn">Visit Showroom</a>
+      <button class="mcm-icon-btn" id="mcm-search-open" aria-label="Search">
+        <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      </button>
+      <a href="/account" class="mcm-icon-btn" aria-label="Account">
+        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+      </a>
+      <a href="/cart" class="mcm-icon-btn" aria-label="Cart">
+        <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0020 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+        <span class="mcm-cart-badge">2</span>
+      </a>
+      <button class="mcm-hamburger" id="mcm-hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Search overlay -->
+  <div class="mcm-search-overlay" id="mcm-search-overlay">
+    <div class="mcm-search-inner">
+      <form action="/search" method="get" class="mcm-search-form">
+        <input type="search" name="q" placeholder="Search massage chairs, brands…" class="mcm-search-input" autocomplete="off">
+        <button type="submit" class="mcm-search-submit">
+          <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        </button>
+      </form>
+      <button class="mcm-search-close-btn" id="mcm-search-close">✕</button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE DRAWER -->
+<div class="mcm-drawer" id="mcm-drawer">
+  <div class="mcm-drawer-top">
+    <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/MCM_Logo_1.png?v=1776444159" alt="MCM" height="38">
+    <button class="mcm-drawer-x" id="mcm-drawer-close">✕</button>
+  </div>
+  <div class="mcm-drawer-body">
+    <div class="mcm-drawer-group">
+      <button class="mcm-drawer-toggle" data-target="mcm-sub-massage">Massage Chairs <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+      <div class="mcm-drawer-sub" id="mcm-sub-massage">
+        <span class="mcm-drawer-sub-label">Shop by Brand</span>
+        <a href="/collections/d-core-massage-chairs" class="mcm-drawer-sub-link">D.Core</a>
+        <a href="/collections/panasonic-massage-chairs" class="mcm-drawer-sub-link">Panasonic</a>
+        <a href="/collections/positive-posture-massage-chairs" class="mcm-drawer-sub-link">Positive Posture</a>
+        <a href="/collections/ohco" class="mcm-drawer-sub-link">OHCO</a>
+        <a href="/collections/koyo-massage-chairs" class="mcm-drawer-sub-link">KOYO</a>
+        <a href="/collections/massage-chair" class="mcm-drawer-sub-link" style="font-weight:700;color:#b8944f;">View All →</a>
+      </div>
+    </div>
+    <div class="mcm-drawer-group">
+      <button class="mcm-drawer-toggle" data-target="mcm-sub-recliners">Recliners <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+      <div class="mcm-drawer-sub" id="mcm-sub-recliners">
+        <a href="/products/varier-gravity-balans-gravity-recliner-kneeling-chair" class="mcm-drawer-sub-link">Varier Gravity Balans</a>
+        <a href="/products/positive-posture-zero-gravity-recliner" class="mcm-drawer-sub-link">Positive Posture Zero Gravity</a>
+        <a href="/collections/recliners-massage-chairs" class="mcm-drawer-sub-link" style="font-weight:700;color:#b8944f;">View All →</a>
+      </div>
+    </div>
+    <div class="mcm-drawer-group">
+      <button class="mcm-drawer-toggle" data-target="mcm-sub-foot">Foot Massage <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+      <div class="mcm-drawer-sub" id="mcm-sub-foot">
+        <a href="/products/neklon-yt850-foot-massager-machine" class="mcm-drawer-sub-link">Neklon YT-850</a>
+        <a href="/products/neklon-k16-foot-massager-machine" class="mcm-drawer-sub-link">Neklon K-16</a>
+        <a href="/collections/foot-massage-machine" class="mcm-drawer-sub-link" style="font-weight:700;color:#b8944f;">View All →</a>
+      </div>
+    </div>
+    <div class="mcm-drawer-group">
+      <button class="mcm-drawer-toggle" data-target="mcm-sub-office">Office Chairs <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+      <div class="mcm-drawer-sub" id="mcm-sub-office">
+        <a href="/products/varier-move-active-sitting-saddle-stool" class="mcm-drawer-sub-link">Varier Move Saddle Stool</a>
+        <a href="/products/variable-balans-kneeling-chair" class="mcm-drawer-sub-link">Variable Balans Kneeling Chair</a>
+        <a href="/products/ekstrem-chair-for-sale" class="mcm-drawer-sub-link">Ekstrem Chair</a>
+        <a href="/collections/office-chairs" class="mcm-drawer-sub-link" style="font-weight:700;color:#b8944f;">View All →</a>
+      </div>
+    </div>
+    <a href="/pages/our-stores" class="mcm-drawer-plain">Our Stores</a>
+  </div>
+  <div class="mcm-drawer-foot">
+    <a href="/pages/our-stores" class="mcm-drawer-foot-cta">Visit Our Showroom</a>
+    <div class="mcm-drawer-contact">
+      <a href="tel:+14088891188">📞 +1 408 889 1188</a>
+      <a href="mailto:info@massagechairsandmore.com">✉️ info@massagechairsandmore.com</a>
+    </div>
+  </div>
+</div>
+<div class="mcm-drawer-mask" id="mcm-drawer-mask"></div>
+
+<!-- DEMO CONTENT -->
+<div class="demo-content">
+  <h2>↓ Hover over nav items to see dropdowns</h2>
+  <p>Scroll down to test sticky header behaviour</p>
+</div>
+
+<script>
+  const header = document.getElementById('mcm-site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('mcm-scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  const searchOverlay = document.getElementById('mcm-search-overlay');
+  document.getElementById('mcm-search-open').addEventListener('click', () => {
+    searchOverlay.classList.add('mcm-search--open');
+    requestAnimationFrame(() => searchOverlay.querySelector('input').focus());
+  });
+  document.getElementById('mcm-search-close').addEventListener('click', () => {
+    searchOverlay.classList.remove('mcm-search--open');
+  });
+
+  const drawer = document.getElementById('mcm-drawer');
+  const mask   = document.getElementById('mcm-drawer-mask');
+  const burger = document.getElementById('mcm-hamburger');
+  document.getElementById('mcm-hamburger').addEventListener('click', () => {
+    drawer.classList.add('mcm-drawer--open');
+    mask.classList.add('mcm-mask--active');
+    document.body.style.overflow = 'hidden';
+  });
+  function closeDrawer() {
+    drawer.classList.remove('mcm-drawer--open');
+    mask.classList.remove('mcm-mask--active');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('mcm-drawer-close').addEventListener('click', closeDrawer);
+  mask.addEventListener('click', closeDrawer);
+
+  document.querySelectorAll('.mcm-drawer-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.target);
+      const isOpen = target.classList.contains('is-open');
+      document.querySelectorAll('.mcm-drawer-sub').forEach(s => s.classList.remove('is-open'));
+      document.querySelectorAll('.mcm-drawer-toggle').forEach(b => b.classList.remove('is-open'));
+      if (!isOpen) { target.classList.add('is-open'); btn.classList.add('is-open'); }
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,1075 @@
+{%- comment -%}
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  SECTION: collection-koyo.liquid                             ║
+  ║  Template: templates/collection.koyo-massage-chairs.json     ║
+  ║  Collection handle: koyo-massage-chairs                      ║
+  ╚══════════════════════════════════════════════════════════════╝
+{%- endcomment -%}
+
+<script type="application/ld+json">
+[{
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "KOYO Massage Chairs",
+    "description": "KOYO 303TS massage chair — made in Japan with Servo 4D mechanism, anthropoid silicone massage heads, hybrid SL-Track, zero gravity recline, auto body scan, full-body air massage, foot rollers, and Bluetooth. Available in Black, Pearl, and Walnut.",
+    "url": "{{ canonical_url }}",
+    "mainEntity": {
+        "@type": "Brand",
+        "name": "KOYO",
+        "description": "KOYO is a made-in-Japan premium massage chair brand built on a comfort-first philosophy. The 303TS uses a Servo 4D mechanism with anthropoid silicone massage heads, precision brushless motor, hybrid SL-Track, and auto body scan — engineering that prioritizes how the massage feels over how impressive the spec list reads."
+    }
+},
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ shop.url }}"},
+        {"@type": "ListItem", "position": 2, "name": "Massage Chairs", "item": "{{ shop.url }}/collections/massage-chair"},
+        {"@type": "ListItem", "position": 3, "name": "KOYO Massage Chairs", "item": "{{ canonical_url }}"}
+    ]
+},
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {"@type":"Question","name":"What makes KOYO massage chairs different from other brands?","acceptedAnswer":{"@type":"Answer","text":"KOYO's primary differentiation is its combination of made-in-Japan manufacturing with a comfort-first engineering philosophy. The Servo 4D system with anthropoid silicone massage heads — which flex like thumbs rather than rolling as rigid spheres — produces a more human, organic contact feel. The precision brushless motor runs quieter and longer. Auto body scan personalizes every session to your body profile."}},
+        {"@type":"Question","name":"Is the KOYO 303TS actually made in Japan?","acceptedAnswer":{"@type":"Answer","text":"Yes. The KOYO 303TS is manufactured in Japan. The brand's identity is built around Japanese manufacturing standards, comfort-first engineering, and long-term reliability. This is not a marketing claim — it is fundamental to how the chair is built and why it performs as it does over years of daily use."}},
+        {"@type":"Question","name":"What colors does the KOYO 303TS come in?","acceptedAnswer":{"@type":"Answer","text":"The KOYO 303TS is available in Black (versatile, refined, works in any interior), Pearl (bright and modern, ideal for light or contemporary spaces), and Walnut (warm finish with wood accent tones, ideal for classic or warm-toned interiors). All three finishes are in stock with identical performance."}},
+        {"@type":"Question","name":"Who is the KOYO 303TS best for?","acceptedAnswer":{"@type":"Answer","text":"The 303TS is best for desk workers carrying upper back tension, active buyers who want recovery support, home buyers who want a premium chair that integrates beautifully, shared households wanting personalized experience for multiple users, and long-term buyers who want Japanese build confidence. Recommended height: 5'0\" to 6'0\". Max weight: 265 lbs / 120 kg."}},
+        {"@type":"Question","name":"Where can I buy an authentic KOYO massage chair?","acceptedAnswer":{"@type":"Answer","text":"KOYO massage chairs are available at Massage Chairs and More — an authorized KOYO dealer with showroom locations in the San Francisco Bay Area, Affirm financing, extended factory warranty, and white-glove delivery nationwide. Call +1 (408) 889-1188 or visit our showroom."}}
+    ]
+}]
+</script>
+
+<style>
+  /* ============================================
+     KOYO COLLECTION — MADE IN JAPAN EDITORIAL
+     Massage Chairs and More Design System
+     All units in PX for Shopify compatibility
+     ============================================ */
+
+  :root {
+    --ky-bg: #fdfcfa;
+    --ky-surface: #f8f5f0;
+    --ky-surface-alt: #f2ede6;
+    --ky-surface-warm: #faf7f2;
+    --ky-dark: #1a1612;
+    --ky-dark2: #0e0c09;
+    --ky-text: #2e2a25;
+    --ky-muted: #5c574f;
+    --ky-light-text: #8e887e;
+    --ky-accent: #7a6040;
+    --ky-accent-hover: #5f4a2e;
+    --ky-accent-light: rgba(122,96,64,0.08);
+    --ky-accent-warm: #b08448;
+    --ky-border: #e8e0d4;
+    --ky-border-light: #f0ebe2;
+    --ky-white: #ffffff;
+    --ky-card-shadow: 0 2px 16px rgba(0,0,0,0.04);
+    --ky-card-shadow-hover: 0 16px 48px rgba(0,0,0,0.09);
+    --ky-shadow-bronze: 0 8px 32px rgba(122,96,64,0.20);
+    --ky-radius: 14px;
+    --ky-radius-sm: 9px;
+    --ky-radius-lg: 22px;
+    --ky-radius-xl: 30px;
+    --ky-transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  .ky-wrap *,.ky-wrap *::before,.ky-wrap *::after{box-sizing:border-box;margin:0;padding:0}
+  .ky-wrap{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--ky-bg);color:var(--ky-text);line-height:1.78;font-size:16px !important;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .ky-wrap h1,.ky-wrap h2,.ky-wrap h3,.ky-wrap h4{color:var(--ky-dark);line-height:1.2;font-weight:700}
+  .ky-wrap h1,.ky-wrap h2{font-family:'Playfair Display',Georgia,serif}
+  .ky-wrap a{color:inherit;text-decoration:none}
+  .ky-wrap img{max-width:100%;display:block}
+  .ky-wrap p{font-size:15px;color:var(--ky-muted);line-height:1.8}
+
+  .ky-container{max-width:1300px;margin:0 auto;padding:0 32px}
+  .ky-container-narrow{max-width:880px;margin:0 auto;padding:0 32px}
+
+  @keyframes kyFadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes kyShimmer{0%,100%{opacity:0.45}50%{opacity:1}}
+  @keyframes kyPulseDot{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:0.55}}
+  @keyframes kyGradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  @keyframes kyGrainFloat{0%{transform:translate(0,0) rotate(0deg)}33%{transform:translate(3px,-3px) rotate(1deg)}66%{transform:translate(-3px,3px) rotate(-1deg)}100%{transform:translate(0,0) rotate(0deg)}}
+
+  .ky-fade-up{animation:kyFadeUp 0.7s ease both}
+  .ky-fade-up-1{animation-delay:0.1s}
+  .ky-fade-up-2{animation-delay:0.22s}
+  .ky-fade-up-3{animation-delay:0.34s}
+  .ky-fade-up-4{animation-delay:0.46s}
+
+  /* SUBNAV */
+  .ky-subnav{background:rgba(253,252,250,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--ky-border-light);overflow-x:auto;scrollbar-width:none}
+  .ky-subnav::-webkit-scrollbar{display:none}
+  .ky-subnav-inner{display:flex;padding:0 32px;min-width:max-content}
+  .ky-subnav-inner a{display:block;padding:12px 18px;font-size:12px;font-weight:700;color:var(--ky-muted);border-bottom:2.5px solid transparent;white-space:nowrap;transition:var(--ky-transition);text-transform:uppercase;letter-spacing:0.08em;text-decoration:none}
+  .ky-subnav-inner a:hover,.ky-subnav-inner a.active{color:var(--ky-dark);border-bottom-color:var(--ky-accent)}
+
+  /* BUTTONS */
+  .ky-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 38px;font-size:15px;font-weight:700;border-radius:50px;text-decoration:none;transition:var(--ky-transition);border:2px solid transparent;cursor:pointer;letter-spacing:0.02em;font-family:'Inter',sans-serif}
+  .ky-btn-primary{background:var(--ky-dark);color:#fff !important;border-color:var(--ky-dark)}
+  .ky-btn-primary:hover{background:var(--ky-accent);border-color:var(--ky-accent);transform:translateY(-2px);box-shadow:var(--ky-shadow-bronze);color:#fff !important}
+  .ky-btn-accent{background:var(--ky-accent);color:#fff !important;border-color:var(--ky-accent)}
+  .ky-btn-accent:hover{background:var(--ky-accent-hover);border-color:var(--ky-accent-hover);transform:translateY(-2px);box-shadow:var(--ky-shadow-bronze);color:#fff !important}
+  .ky-btn-outline{background:transparent;color:var(--ky-dark) !important;border:2px solid var(--ky-border)}
+  .ky-btn-outline:hover{border-color:var(--ky-accent);color:var(--ky-accent) !important;transform:translateY(-1px)}
+  .ky-btn-white-outline{background:transparent;color:#fff !important;border:2px solid rgba(255,255,255,0.45)}
+  .ky-btn-white-outline:hover{border-color:#fff;background:rgba(255,255,255,0.10);transform:translateY(-1px);color:#fff !important}
+  .ky-btn-ghost-dark{background:rgba(255,255,255,0.07);color:#fff !important;border:1.5px solid rgba(255,255,255,0.28)}
+  .ky-btn-ghost-dark:hover{background:rgba(255,255,255,0.14);border-color:rgba(255,255,255,0.45);color:#fff !important}
+  .ky-btn-sm{padding:11px 24px;font-size:14px !important}
+  .ky-model-sidebar-cta{color:#fff !important}
+  .ky-model-sidebar-cta:hover{color:#fff !important}
+
+  /* SECTIONS */
+  .ky-section{padding:96px 0}
+  .ky-section-alt{background:var(--ky-surface)}
+  .ky-section-warm{background:var(--ky-surface-warm)}
+  .ky-section-header{text-align:center;margin-bottom:64px}
+  .ky-section-header .ky-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ky-accent);margin-bottom:16px;font-weight:700}
+  .ky-section-header .ky-eyebrow::before{content:'';width:20px;height:2px;background:linear-gradient(90deg,var(--ky-accent),var(--ky-accent-warm));border-radius:2px}
+  .ky-section-header h2{font-size:44px !important;margin-bottom:16px;letter-spacing:-0.02em}
+  .ky-section-header p{font-size:18px;color:var(--ky-muted);max-width:700px;margin:0 auto;line-height:1.82}
+  .ky-section-header.ky-left-align{text-align:left}
+  .ky-section-header.ky-left-align p{margin:0}
+
+  .ky-accent-heading::after{content:'';display:block;width:48px;height:3px;margin-top:12px;background:linear-gradient(90deg,var(--ky-accent),var(--ky-accent-warm));border-radius:4px}
+  .ky-section-header .ky-accent-heading::after{margin-left:auto;margin-right:auto}
+  .ky-section-header.ky-left-align .ky-accent-heading::after{margin-left:0}
+
+  .ky-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ky-accent);margin-bottom:16px;font-weight:700}
+  .ky-eyebrow::before{content:'';width:20px;height:2px;background:linear-gradient(90deg,var(--ky-accent),var(--ky-accent-warm));border-radius:2px}
+
+  /* HERO */
+  .ky-hero{position:relative;min-height:94vh;display:flex;align-items:center;background:var(--ky-dark2);overflow:hidden}
+  .ky-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 30%;opacity:0.42;z-index:0}
+  .ky-hero-grain{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.048'/%3E%3C/svg%3E");z-index:1;opacity:0.5;animation:kyGrainFloat 8s linear infinite;pointer-events:none}
+  .ky-hero-overlay{position:absolute;inset:0;background:linear-gradient(115deg,rgba(8,6,3,0.92) 18%,rgba(15,10,5,0.68) 55%,rgba(40,25,8,0.30) 100%);z-index:2}
+  .ky-hero-glow{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(122,96,64,0.10) 0%,transparent 70%);right:-150px;top:-100px;z-index:2;animation:kyShimmer 6s ease-in-out infinite}
+  .ky-hero-stripe{position:absolute;left:0;bottom:0;width:100%;height:3px;background:linear-gradient(90deg,var(--ky-accent),var(--ky-accent-warm),transparent 70%);z-index:3}
+  .ky-hero-content{position:relative;z-index:4;padding:80px 0 96px}
+  .ky-hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ky-accent-warm);font-weight:700;margin-bottom:26px;background:rgba(122,96,64,0.09);padding:6px 16px;border-radius:50px;border:1px solid rgba(122,96,64,0.18)}
+  .ky-hero-eyebrow::before{content:'●';font-size:7px;animation:kyPulseDot 2.8s infinite}
+  .ky-hero h1{font-size:64px !important;color:#fff;max-width:820px;margin-bottom:26px;font-weight:700;line-height:1.07;letter-spacing:-0.025em;text-shadow:0 4px 32px rgba(0,0,0,0.35)}
+  .ky-hero-tag{display:inline;background:linear-gradient(135deg,var(--ky-accent-warm),#d4a96a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .ky-hero-sub{font-size:18px;color:rgba(255,255,255,0.74);max-width:620px;margin-bottom:10px;font-weight:400;line-height:1.75}
+  .ky-hero-note{font-size:15px;color:rgba(255,255,255,0.42);max-width:560px;margin-bottom:42px;line-height:1.7}
+  .ky-hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px}
+  .ky-hero-stats{display:flex;gap:0;padding-top:40px;border-top:1px solid rgba(255,255,255,0.07);flex-wrap:wrap}
+  .ky-hero-stat{padding-right:40px;margin-right:40px;border-right:1px solid rgba(255,255,255,0.07)}
+  .ky-hero-stat:last-child{border-right:none;margin-right:0}
+  .ky-hero-stat-num{font-size:28px;font-weight:900;color:#fff;display:block;line-height:1;margin-bottom:5px;background:linear-gradient(135deg,#fff,rgba(255,255,255,0.65));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-family:'Inter',sans-serif}
+  .ky-hero-stat-label{font-size:12px;color:rgba(255,255,255,0.38);text-transform:uppercase;letter-spacing:0.13em;font-weight:600}
+
+  /* TRUST BAR */
+  .ky-trust-bar{background:var(--ky-surface);border-bottom:1px solid var(--ky-border-light);padding:44px 0}
+  .ky-trust-bar-inner{display:flex;justify-content:center;align-items:center;flex-wrap:wrap}
+  .ky-trust-item{display:flex;align-items:center;gap:14px;padding:8px 32px;transition:var(--ky-transition)}
+  .ky-trust-item:hover{transform:translateY(-3px)}
+  .ky-trust-icon{width:50px;height:50px;background:var(--ky-accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:var(--ky-transition)}
+  .ky-trust-item:hover .ky-trust-icon{background:var(--ky-accent)}
+  .ky-trust-item:hover .ky-trust-icon svg{fill:#fff}
+  .ky-trust-icon svg{width:23px;height:23px;fill:var(--ky-accent);transition:fill 0.3s}
+  .ky-trust-text strong{font-size:15px;font-weight:700;color:var(--ky-dark);display:block;line-height:1.3}
+  .ky-trust-text span{font-size:12px;color:var(--ky-light-text)}
+  .ky-trust-divider{width:1px;height:44px;background:var(--ky-border);flex-shrink:0}
+
+  /* PRODUCT CARDS — Color Variants */
+  .ky-shop-section{background:var(--ky-bg);padding:80px 0}
+  .ky-shop-header{text-align:center;margin-bottom:48px}
+  .ky-shop-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ky-accent);margin-bottom:14px;font-weight:700}
+  .ky-shop-eyebrow::before{content:'';width:20px;height:2px;background:var(--ky-accent);border-radius:2px}
+  .ky-shop-header h2{font-size:36px !important;font-family:'Playfair Display',serif;margin-bottom:12px;color:var(--ky-dark)}
+  .ky-shop-header p{font-size:16px;color:var(--ky-muted);max-width:700px;margin:0 auto}
+  .ky-product-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .ky-product-card{background:var(--ky-white);border-radius:var(--ky-radius-xl);overflow:hidden;border:1px solid var(--ky-border);transition:var(--ky-transition);position:relative;display:flex;flex-direction:column;box-shadow:var(--ky-card-shadow)}
+  .ky-product-card:hover{transform:translateY(-7px);box-shadow:var(--ky-card-shadow-hover);border-color:rgba(122,96,64,0.2)}
+  .ky-product-card-badge{position:absolute;top:14px;left:14px;z-index:2;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.14em;padding:5px 12px;border-radius:50px;background:var(--ky-dark);color:#fff}
+  .ky-badge-sale{background:linear-gradient(135deg,var(--ky-accent),var(--ky-accent-warm))}
+  .ky-badge-popular{background:var(--ky-dark)}
+  .ky-badge-instock{background:#2d6a4f}
+  .ky-product-card-img{background:var(--ky-surface);padding:36px 24px 16px;display:flex;align-items:center;justify-content:center;min-height:220px;border-bottom:1px solid var(--ky-border-light);overflow:hidden;text-decoration:none}
+  .ky-product-card-img img{width:100%;max-height:200px;object-fit:contain;mix-blend-mode:multiply;transition:transform 0.45s ease}
+  .ky-product-card:hover .ky-product-card-img img{transform:scale(1.06)}
+  .ky-product-card-body{padding:26px 28px;flex:1;display:flex;flex-direction:column}
+  .ky-product-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px}
+  .ky-product-card-name{font-size:18px;font-weight:700;color:var(--ky-dark);font-family:'Inter',sans-serif;line-height:1.3}
+  .ky-product-card-swatch{width:22px;height:22px;border-radius:50%;border:2.5px solid var(--ky-border-light);flex-shrink:0}
+  .ky-product-card-tagline{font-size:14px;color:var(--ky-muted);line-height:1.7;margin-bottom:16px;flex:1}
+  .ky-spec-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+  .ky-spec-chip{font-size:11px;font-weight:700;padding:4px 10px;border-radius:50px;background:var(--ky-surface);border:1px solid var(--ky-border);color:var(--ky-muted)}
+  .ky-product-card-meta{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px}
+  .ky-product-card-pricing{display:flex;flex-direction:column}
+  .ky-product-price-was{font-size:12px;color:var(--ky-light-text);text-decoration:line-through}
+  .ky-product-price-now{font-size:26px;font-weight:900;color:var(--ky-dark);font-family:'Inter',sans-serif}
+  .ky-product-savings{font-size:12px;font-weight:700;color:var(--ky-accent);background:var(--ky-accent-light);padding:3px 8px;border-radius:20px}
+  .ky-product-card-cta{display:block;text-align:center;background:var(--ky-dark);color:#fff !important;padding:13px;border-radius:var(--ky-radius-sm);font-size:14px;font-weight:700;transition:var(--ky-transition);letter-spacing:0.02em;text-decoration:none;margin-bottom:8px}
+  .ky-product-card-cta:hover{background:var(--ky-accent);transform:translateY(-2px);box-shadow:var(--ky-shadow-bronze);color:#fff !important}
+  .ky-product-card-cta.ky-cta-secondary{background:transparent;color:var(--ky-muted);border:1.5px solid var(--ky-border);font-size:13px;padding:10px}
+  .ky-product-card-cta.ky-cta-secondary:hover{border-color:var(--ky-accent);color:var(--ky-accent);background:var(--ky-accent-light);box-shadow:none;transform:none}
+  @media(max-width:900px){.ky-product-cards{grid-template-columns:1fr 1fr}}
+  @media(max-width:600px){.ky-product-cards{grid-template-columns:1fr}}
+
+  /* INTRO */
+  .ky-intro-lead{font-size:21px;color:var(--ky-text);line-height:1.82;margin-bottom:44px;max-width:820px}
+  .ky-intro-lead strong{color:var(--ky-dark);font-weight:700}
+  .ky-intro-lead em{font-style:italic;color:var(--ky-accent)}
+  .ky-intro-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:56px}
+  .ky-intro-pillar{padding:30px 26px;border-left:3px solid var(--ky-accent);background:linear-gradient(135deg,var(--ky-accent-light),transparent);border-radius:0 var(--ky-radius-sm) var(--ky-radius-sm) 0}
+  .ky-intro-pillar h3{font-size:16px !important;font-family:'Inter',sans-serif;font-weight:700;margin-bottom:8px;color:var(--ky-dark)}
+  .ky-intro-pillar p{font-size:14px;color:var(--ky-muted);line-height:1.72;margin:0}
+
+  /* JAPAN HERITAGE BANNER */
+  .ky-japan-banner{background:linear-gradient(135deg,#0d0b08 0%,#1a1208 50%,#0d0b08 100%);padding:96px 0;position:relative;overflow:hidden}
+  .ky-japan-banner::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");z-index:0;opacity:0.6}
+  .ky-japan-banner::after{content:'';position:absolute;right:-200px;top:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(122,96,64,0.07) 0%,transparent 70%);z-index:0}
+  .ky-japan-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+  .ky-japan-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ky-accent-warm);font-weight:700;margin-bottom:22px}
+  .ky-japan-eyebrow::before{content:'';width:20px;height:2px;background:linear-gradient(90deg,var(--ky-accent),var(--ky-accent-warm));border-radius:2px}
+  .ky-japan-inner h2{color:#fff;font-size:38px !important;margin-bottom:20px;letter-spacing:-0.02em;line-height:1.12;font-family:'Playfair Display',serif}
+  .ky-japan-inner p{color:rgba(255,255,255,0.62);font-size:16px;line-height:1.87;margin-bottom:16px}
+  .ky-japan-points{list-style:none;margin-top:24px}
+  .ky-japan-points li{display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,0.7);font-size:14px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);line-height:1.6}
+  .ky-japan-points li:last-child{border-bottom:none}
+  .ky-japan-points li::before{content:'✦';color:var(--ky-accent-warm);font-size:8px;margin-top:5px;flex-shrink:0}
+  .ky-japan-stats{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .ky-japan-stat{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:var(--ky-radius);padding:28px 24px;transition:var(--ky-transition)}
+  .ky-japan-stat:hover{background:rgba(122,96,64,0.08);border-color:rgba(122,96,64,0.18);transform:translateY(-3px)}
+  .ky-japan-stat-num{font-size:30px;font-weight:900;background:linear-gradient(135deg,var(--ky-accent-warm),#d4a96a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;line-height:1.1;margin-bottom:8px;font-family:'Inter',sans-serif}
+  .ky-japan-stat-label{font-size:13px;color:rgba(255,255,255,0.5);font-weight:600;line-height:1.45}
+
+  /* PILLAR CARDS */
+  .ky-pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .ky-pillar-card{background:var(--ky-white);border:1px solid var(--ky-border);border-radius:var(--ky-radius-lg);padding:34px;transition:var(--ky-transition);position:relative;overflow:hidden}
+  .ky-pillar-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--ky-accent),var(--ky-accent-warm));transform:scaleX(0);transform-origin:left;transition:transform 0.32s}
+  .ky-pillar-card:hover::before{transform:scaleX(1)}
+  .ky-pillar-card:hover{transform:translateY(-5px);box-shadow:var(--ky-card-shadow-hover);border-color:transparent}
+  .ky-pillar-icon{width:52px;height:52px;background:var(--ky-accent-light);border-radius:15px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;transition:var(--ky-transition)}
+  .ky-pillar-card:hover .ky-pillar-icon{background:linear-gradient(135deg,var(--ky-accent),var(--ky-accent-warm))}
+  .ky-pillar-icon svg{width:24px;height:24px;fill:var(--ky-accent);transition:fill 0.3s}
+  .ky-pillar-card:hover .ky-pillar-icon svg{fill:#fff}
+  .ky-pillar-card h3{font-size:16px;margin-bottom:10px;font-family:'Inter',sans-serif;color:var(--ky-dark)}
+  .ky-pillar-card p{font-size:14px;color:var(--ky-muted);margin:0;line-height:1.75}
+
+  /* SPOTLIGHT */
+  .ky-spotlight{border-radius:var(--ky-radius-xl);overflow:hidden;border:1px solid var(--ky-border);background:var(--ky-white);box-shadow:var(--ky-card-shadow);transition:box-shadow 0.38s}
+  .ky-spotlight:hover{box-shadow:var(--ky-card-shadow-hover)}
+  .ky-spotlight-header{background:linear-gradient(155deg,#0d0a06 0%,#1b1208 100%);padding:44px 52px;position:relative;overflow:hidden}
+  .ky-spotlight-header::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(122,96,64,0.08) 0%,transparent 70%);right:-80px;top:-80px;pointer-events:none}
+  .ky-spotlight-header::before{content:'';position:absolute;bottom:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--ky-accent),var(--ky-accent-warm),transparent 80%)}
+  .ky-model-tier{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.2em;color:var(--ky-accent-warm);margin-bottom:10px;display:inline-flex;align-items:center;gap:8px}
+  .ky-model-tier::before{content:'';width:16px;height:2px;background:var(--ky-accent);border-radius:2px}
+  .ky-spotlight-header h2{color:#fff;font-size:36px !important;margin-bottom:10px;letter-spacing:-0.02em}
+  .ky-model-tagline{color:rgba(255,255,255,0.52);font-size:16px !important;max-width:600px;line-height:1.72;margin:0}
+  .ky-spotlight-body{display:grid;grid-template-columns:390px 1fr;gap:0}
+  .ky-spotlight-sidebar{background:var(--ky-surface);padding:38px;display:flex;flex-direction:column;border-right:1px solid var(--ky-border-light)}
+  .ky-spotlight-imgbox{background:var(--ky-white);border-radius:var(--ky-radius);padding:32px 24px;margin-bottom:24px;overflow:hidden;display:flex;align-items:center;justify-content:center;min-height:260px;border:1px solid var(--ky-border-light)}
+  .ky-spotlight-imgbox img{width:100%;max-height:280px;object-fit:contain;mix-blend-mode:multiply;transition:transform 0.42s ease}
+  .ky-spotlight:hover .ky-spotlight-imgbox img{transform:scale(1.04)}
+  .ky-price-was{font-size:13px;color:var(--ky-light-text);text-decoration:line-through;margin-bottom:4px}
+  .ky-price-tag{font-size:30px;font-weight:900;color:var(--ky-dark);font-family:'Inter',sans-serif;margin-bottom:6px;line-height:1}
+  .ky-price-note{font-size:13px;color:var(--ky-light-text);margin-bottom:20px;line-height:1.5}
+  .ky-model-sidebar-cta{display:block;text-align:center;background:var(--ky-dark);color:#fff !important;padding:13px;border-radius:var(--ky-radius-sm);font-size:14px;font-weight:700;transition:var(--ky-transition);letter-spacing:0.02em;margin-bottom:10px;text-decoration:none}
+  .ky-model-sidebar-cta:hover{background:var(--ky-accent);transform:translateY(-2px);box-shadow:var(--ky-shadow-bronze);color:#fff}
+  .ky-model-sidebar-cta.secondary{background:transparent;color:var(--ky-muted);border:1.5px solid var(--ky-border);font-size:13px}
+  .ky-model-sidebar-cta.secondary:hover{border-color:var(--ky-accent);color:var(--ky-accent);background:var(--ky-accent-light);box-shadow:none;transform:none}
+  .ky-color-chips{display:flex;gap:8px;margin-top:16px;align-items:center}
+  .ky-color-label{font-size:12px;color:var(--ky-light-text);font-weight:600}
+  .ky-color-chip{width:22px;height:22px;border-radius:50%;border:2.5px solid var(--ky-border);cursor:pointer;transition:var(--ky-transition)}
+  .ky-color-chip:hover{transform:scale(1.18);border-color:var(--ky-accent)}
+  .ky-chip-black{background:#1a1713}
+  .ky-chip-pearl{background:#f5f1ec}
+  .ky-chip-walnut{background:#7a5230}
+  .ky-spotlight-content{padding:38px 46px}
+  .ky-model-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.13em;color:var(--ky-accent);background:var(--ky-accent-light);padding:5px 13px;border-radius:50px;margin-bottom:20px;border:1px solid rgba(122,96,64,0.18)}
+  .ky-spotlight-content h3{font-size:18px;margin-bottom:12px;font-family:'Inter',sans-serif;color:var(--ky-dark)}
+  .ky-spotlight-content p{font-size:15px;color:var(--ky-muted);line-height:1.86;margin-bottom:14px}
+  .ky-feature-list{list-style:none;margin-top:16px}
+  .ky-feature-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ky-muted);padding:6px 0;border-bottom:1px solid var(--ky-border-light);line-height:1.6}
+  .ky-feature-list li:last-child{border-bottom:none}
+  .ky-feature-list li::before{content:'✦';color:var(--ky-accent);font-size:8px;margin-top:5px;flex-shrink:0}
+  .ky-trait-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+  .ky-trait-pill{font-size:12px;font-weight:700;padding:5px 12px;border-radius:20px;background:var(--ky-surface);border:1px solid var(--ky-border);color:var(--ky-muted);transition:var(--ky-transition)}
+  .ky-trait-pill:hover{background:var(--ky-accent-light);border-color:var(--ky-accent);color:var(--ky-accent)}
+
+  /* FEATURES GRID */
+  .ky-features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+  .ky-feat-panel{padding:44px 48px;border-right:1px solid var(--ky-border-light);border-bottom:1px solid var(--ky-border-light);transition:var(--ky-transition)}
+  .ky-feat-panel:nth-child(even){border-right:none}
+  .ky-feat-panel:nth-last-child(-n+2){border-bottom:none}
+  .ky-feat-panel:hover{background:var(--ky-surface-warm)}
+  .ky-feat-num{font-size:11px;font-weight:800;letter-spacing:0.2em;color:var(--ky-accent);margin-bottom:14px}
+  .ky-feat-panel h3{font-size:18px;font-family:'Playfair Display',serif;font-weight:600;margin-bottom:12px;color:var(--ky-dark)}
+  .ky-feat-panel p{font-size:14px;color:var(--ky-muted);line-height:1.78;margin:0}
+
+  /* COMPARISON CALLOUT */
+  .ky-comparison-callout{background:var(--ky-surface-alt);border-radius:var(--ky-radius-lg);padding:40px 48px;border-left:4px solid var(--ky-accent);position:relative}
+  .ky-comparison-callout h3{font-family:'Playfair Display',serif;font-size:22px;margin-bottom:16px;color:var(--ky-dark)}
+  .ky-comparison-callout p{font-size:15px;color:var(--ky-muted);line-height:1.85;margin-bottom:12px}
+  .ky-comparison-callout p:last-child{margin-bottom:0}
+  .ky-comparison-eyebrow{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ky-accent);font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .ky-comparison-eyebrow::before{content:'';width:16px;height:2px;background:var(--ky-accent);border-radius:2px;display:inline-block}
+
+  /* BUYER CARDS */
+  .ky-buyer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .ky-buyer-card{background:var(--ky-white);border:1px solid var(--ky-border);border-radius:var(--ky-radius-lg);padding:34px;transition:var(--ky-transition);position:relative;overflow:hidden}
+  .ky-buyer-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--ky-accent),var(--ky-accent-warm));transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+  .ky-buyer-card:hover::after{transform:scaleX(1)}
+  .ky-buyer-card:hover{border-color:rgba(122,96,64,0.22);box-shadow:var(--ky-card-shadow-hover);transform:translateY(-4px)}
+  .ky-buyer-icon{width:50px;height:50px;background:var(--ky-accent-light);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;transition:var(--ky-transition)}
+  .ky-buyer-card:hover .ky-buyer-icon{background:var(--ky-accent)}
+  .ky-buyer-icon svg{width:24px;height:24px;fill:var(--ky-accent);transition:fill 0.3s}
+  .ky-buyer-card:hover .ky-buyer-icon svg{fill:#fff}
+  .ky-buyer-card h3{font-size:16px;margin-bottom:10px;font-family:'Inter',sans-serif;color:var(--ky-dark)}
+  .ky-buyer-card p{font-size:14px;color:var(--ky-muted);margin:0;line-height:1.75}
+  .ky-buyer-rec{display:flex;align-items:center;gap:6px;margin-top:14px;font-size:12px;font-weight:800;color:var(--ky-accent)}
+  .ky-buyer-rec::before{content:'→'}
+
+  /* QUICK ANSWERS */
+  .ky-quick-answer{background:linear-gradient(145deg,#100d08 0%,#1e1509 100%);border-radius:var(--ky-radius-xl);padding:56px;border:1px solid rgba(122,96,64,0.14);position:relative;overflow:hidden}
+  .ky-quick-answer::before{content:'';position:absolute;width:450px;height:450px;border-radius:50%;background:radial-gradient(circle,rgba(122,96,64,0.07) 0%,transparent 70%);right:-120px;bottom:-120px;pointer-events:none}
+  .ky-quick-answer h2{color:#fff;margin-bottom:8px;font-size:32px !important}
+  .ky-qa-intro{color:rgba(255,255,255,0.52);font-size:16px;max-width:600px;margin-bottom:40px;line-height:1.78}
+  .ky-qa-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .ky-qa-item{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:var(--ky-radius);padding:26px;transition:var(--ky-transition)}
+  .ky-qa-item:hover{background:rgba(122,96,64,0.06);border-color:rgba(122,96,64,0.18);transform:translateY(-2px)}
+  .ky-qa-item h3{color:var(--ky-accent-warm);font-size:13px;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:12px;font-weight:800;font-family:'Inter',sans-serif}
+  .ky-qa-item p{font-size:15px;color:rgba(255,255,255,0.65);line-height:1.82;margin:0}
+
+  /* TESTIMONIALS */
+  .ky-testimonials-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .ky-testimonial-card{background:var(--ky-white);border:1px solid var(--ky-border);border-radius:var(--ky-radius-lg);padding:32px;transition:var(--ky-transition);position:relative}
+  .ky-testimonial-card::before{content:'"';position:absolute;top:20px;right:24px;font-size:60px;font-family:'Playfair Display',serif;color:var(--ky-border);line-height:1}
+  .ky-testimonial-card:hover{box-shadow:var(--ky-card-shadow-hover);transform:translateY(-3px)}
+  .ky-testimonial-card p{font-size:15px;color:var(--ky-muted);line-height:1.8;margin-bottom:16px;font-style:italic}
+  .ky-testimonial-meta{font-size:12px;font-weight:700;color:var(--ky-accent);text-transform:uppercase;letter-spacing:0.12em}
+  .ky-stars{color:var(--ky-accent-warm);font-size:14px;margin-bottom:12px}
+
+  /* TRUST GRID */
+  .ky-trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+  .ky-trust-card{background:var(--ky-white);border:1px solid var(--ky-border);border-radius:var(--ky-radius-lg);padding:32px;transition:var(--ky-transition)}
+  .ky-trust-card:hover{transform:translateY(-5px);box-shadow:var(--ky-card-shadow-hover);border-color:rgba(122,96,64,0.2)}
+  .ky-trust-card-icon{width:50px;height:50px;background:var(--ky-accent-light);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;transition:var(--ky-transition)}
+  .ky-trust-card:hover .ky-trust-card-icon{background:linear-gradient(135deg,var(--ky-accent),var(--ky-accent-warm))}
+  .ky-trust-card-icon svg{width:24px;height:24px;fill:var(--ky-accent);transition:fill 0.3s}
+  .ky-trust-card:hover .ky-trust-card-icon svg{fill:#fff}
+  .ky-trust-card h3{font-size:16px;margin-bottom:10px;font-family:'Inter',sans-serif;color:var(--ky-dark)}
+  .ky-trust-card p{font-size:14px;color:var(--ky-muted);margin:0;line-height:1.75}
+
+  /* FAQ */
+  .ky-faq-list{border-top:1px solid var(--ky-border)}
+  .ky-faq-item{border-bottom:1px solid var(--ky-border)}
+  .ky-faq-q{display:flex;justify-content:space-between;align-items:center;padding:24px 0;cursor:pointer;gap:16px;user-select:none}
+  .ky-faq-q h3{font-size:16px !important;font-family:'Inter',sans-serif;font-weight:700;margin:0;flex:1;line-height:1.4;transition:color 0.2s;color:var(--ky-dark)}
+  .ky-faq-q:hover h3{color:var(--ky-accent)}
+  .ky-faq-toggle{width:36px;height:36px;border-radius:50%;background:var(--ky-surface);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:300;color:var(--ky-accent);flex-shrink:0;transition:var(--ky-transition)}
+  .ky-faq-item.open .ky-faq-toggle{background:var(--ky-accent);color:#fff;transform:rotate(45deg)}
+  .ky-faq-a{max-height:0;overflow:hidden;transition:max-height 0.38s cubic-bezier(0.4,0,0.2,1)}
+  .ky-faq-a-inner{padding:0 0 28px}
+  .ky-faq-a-inner p{font-size:16px;color:var(--ky-muted);line-height:1.87;margin:0}
+
+  /* FINAL CTA */
+  .ky-final-cta{background:linear-gradient(155deg,#0d0a06 0%,#1b1208 100%);border-radius:var(--ky-radius-xl);padding:80px 64px;color:#fff;position:relative;overflow:hidden;text-align:center}
+  .ky-final-cta::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--ky-accent),var(--ky-accent-warm),var(--ky-accent));background-size:200% 100%;animation:kyGradientShift 5s ease infinite}
+  .ky-final-cta::after{content:'';position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(122,96,64,0.07) 0%,transparent 70%);bottom:-200px;right:-100px;pointer-events:none}
+  .ky-final-cta .ky-eyebrow{color:var(--ky-accent-warm)}
+  .ky-final-cta h2{color:#fff;font-size:40px !important;margin-bottom:16px;line-height:1.15}
+  .ky-final-cta p{color:rgba(255,255,255,0.62);font-size:16px !important;max-width:680px;margin:0 auto 40px;line-height:1.82}
+  .ky-final-cta-btns{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+
+  /* SUPPORT BAR */
+  .ky-support-bar{background:var(--ky-white);padding:64px 0;border-top:1px solid var(--ky-border-light);border-bottom:1px solid var(--ky-border-light)}
+  .ky-support-bar-inner{display:flex;justify-content:center;align-items:center;flex-wrap:wrap}
+  .ky-support-item{display:flex;align-items:center;gap:16px;padding:8px 40px;transition:var(--ky-transition)}
+  .ky-support-item:hover{transform:translateY(-3px)}
+  .ky-support-icon{width:52px;height:52px;background:var(--ky-accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:var(--ky-transition)}
+  .ky-support-item:hover .ky-support-icon{background:var(--ky-accent)}
+  .ky-support-item:hover .ky-support-icon svg{fill:#fff}
+  .ky-support-icon svg{width:24px;height:24px;fill:var(--ky-accent);transition:fill 0.3s}
+  .ky-support-text strong{font-size:15px;font-weight:700;color:var(--ky-dark);display:block;line-height:1.3}
+  .ky-support-text span{font-size:13px;color:var(--ky-light-text)}
+  .ky-support-divider{width:1px;height:48px;background:var(--ky-border);flex-shrink:0}
+
+  .ky-grad-divider{height:1px;background:linear-gradient(90deg,transparent,var(--ky-border),transparent)}
+  .ky-bronze-band{height:4px;background:linear-gradient(90deg,var(--ky-accent-hover),var(--ky-accent),var(--ky-accent-warm),var(--ky-accent),transparent);opacity:0.45}
+
+  /* LIFESTYLE SPLIT */
+  .ky-lifestyle-split{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:var(--ky-radius-xl);overflow:hidden;border:1px solid var(--ky-border)}
+  .ky-lifestyle-img{min-height:500px;background-size:cover;background-position:center;position:relative}
+  .ky-lifestyle-img::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,var(--ky-white) 100%)}
+  .ky-lifestyle-text{background:var(--ky-white);padding:64px 56px;display:flex;flex-direction:column;justify-content:center}
+  .ky-lifestyle-text h2{font-size:36px !important;margin-bottom:20px;letter-spacing:-0.02em}
+  .ky-lifestyle-text p{font-size:15px;color:var(--ky-muted);line-height:1.85;margin-bottom:16px}
+  .ky-lifestyle-items{list-style:none;margin:24px 0}
+  .ky-lifestyle-items li{display:flex;gap:10px;font-size:14px;color:var(--ky-muted);padding:8px 0;border-bottom:1px solid var(--ky-border-light);line-height:1.6;align-items:flex-start}
+  .ky-lifestyle-items li:last-child{border-bottom:none}
+  .ky-lifestyle-items li::before{content:'✦';color:var(--ky-accent);font-size:8px;margin-top:5px;flex-shrink:0}
+
+  /* RESPONSIVE */
+  @media(max-width:1100px){
+    .ky-pillar-grid{grid-template-columns:repeat(2,1fr)}
+    .ky-buyer-grid{grid-template-columns:repeat(2,1fr)}
+    .ky-spotlight-body{grid-template-columns:1fr}
+    .ky-spotlight-sidebar{border-right:none;border-bottom:1px solid var(--ky-border-light)}
+    .ky-testimonials-strip{grid-template-columns:repeat(2,1fr)}
+    .ky-trust-grid{grid-template-columns:repeat(2,1fr)}
+    .ky-features-grid{grid-template-columns:1fr}
+    .ky-feat-panel{border-right:none}
+    .ky-japan-inner{grid-template-columns:1fr;gap:48px}
+    .ky-lifestyle-split{grid-template-columns:1fr}
+    .ky-lifestyle-img{min-height:340px}
+    .ky-lifestyle-img::after{background:linear-gradient(180deg,transparent 60%,var(--ky-white) 100%)}
+    .ky-qa-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:900px){
+    .ky-pillar-grid{grid-template-columns:1fr}
+    .ky-trust-grid{grid-template-columns:1fr}
+    .ky-buyer-grid{grid-template-columns:1fr}
+    .ky-intro-pillars{grid-template-columns:1fr;gap:20px}
+  }
+  @media(max-width:768px){
+    .ky-hero{min-height:78vh}
+    .ky-hero-content{padding:48px 0 64px}
+    .ky-hero h1{font-size:34px}
+    .ky-section{padding:64px 0}
+    .ky-section-header{margin-bottom:40px}
+    .ky-spotlight-header{padding:32px 24px}
+    .ky-spotlight-content{padding:32px 24px}
+    .ky-spotlight-sidebar{padding:32px 24px}
+    .ky-quick-answer{padding:32px 24px}
+    .ky-final-cta{padding:48px 32px}
+    .ky-container{padding:0 20px}
+    .ky-comparison-callout{padding:28px 24px}
+    .ky-lifestyle-text{padding:40px 32px}
+    .ky-testimonials-strip{grid-template-columns:1fr}
+  }
+  @media(max-width:480px){
+    .ky-hero-ctas,.ky-final-cta-btns{flex-direction:column;align-items:center}
+    .ky-btn{padding:14px 28px;font-size:14px}
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+
+<div class="ky-wrap" style="font-size:16px !important;">
+
+  {%- comment -%} SUBNAV {%- endcomment -%}
+  <nav class="ky-subnav" aria-label="Page sections">
+    <div class="ky-subnav-inner">
+      <a href="#ky-intro">The Brand</a>
+      <a href="#ky-japan">Made in Japan</a>
+      <a href="#ky-why">Why KOYO</a>
+      <a href="#ky-model">The 303TS</a>
+      <a href="#ky-features">Features</a>
+      <a href="#ky-is-for-you">Is It For You?</a>
+      <a href="#ky-quick">Quick Answers</a>
+      <a href="#ky-why-buy-here">Why Buy Here</a>
+      <a href="#ky-faq">FAQ</a>
+    </div>
+  </nav>
+
+  {%- comment -%} HERO {%- endcomment -%}
+  <section class="ky-hero" id="ky-top">
+    <div class="ky-hero-bg" style="background-image:url('https://cdn.shopify.com/s/files/1/0813/4036/7096/files/koyo-hero.jpg?v=1776368421')"></div>
+    <div class="ky-hero-grain"></div>
+    <div class="ky-hero-overlay"></div>
+    <div class="ky-hero-glow"></div>
+    <div class="ky-hero-stripe"></div>
+    <div class="ky-container ky-hero-content">
+      <nav style="padding:8px 0 0;font-size:12px;color:rgba(255,255,255,0.4);margin-bottom:24px" aria-label="Breadcrumb">
+        <a href="{{ shop.url }}" style="color:var(--ky-accent-warm)">Home</a>
+        <span style="margin:0 6px">/</span>
+        <a href="{{ shop.url }}/collections/massage-chair" style="color:rgba(255,255,255,0.4)">Massage Chairs</a>
+        <span style="margin:0 6px">/</span>
+        <span style="color:rgba(255,255,255,0.6)">KOYO</span>
+      </nav>
+
+      <div class="ky-hero-eyebrow ky-fade-up">Made in Japan · Comfort-First Premium · Authorized Dealer</div>
+
+      {%- if section.settings.hero_heading != blank -%}
+        <h1 class="ky-fade-up ky-fade-up-1">{{ section.settings.hero_heading }}</h1>
+      {%- else -%}
+        <h1 class="ky-fade-up ky-fade-up-1">KOYO Massage Chairs —<br><span class="ky-hero-tag">Where Japanese Craftsmanship Meets Everyday Comfort</span></h1>
+      {%- endif -%}
+
+      <p class="ky-hero-sub ky-fade-up ky-fade-up-2">Discover the KOYO 303TS — a made-in-Japan massage chair built around one unwavering idea: that a truly great massage should feel beautifully natural, be simple to use every day, and reward the people who deserve it most.</p>
+
+      <p class="ky-hero-note ky-fade-up ky-fade-up-3">Servo 4D massage · Anthropoid silicone heads · Hybrid SL-Track · Zero gravity · Auto body scan · Full-body air massage · Foot rollers · Bluetooth audio</p>
+
+      <div class="ky-hero-ctas ky-fade-up ky-fade-up-4">
+        <a href="#ky-model" class="ky-btn ky-btn-accent">Explore the 303TS</a>
+        <a href="#ky-is-for-you" class="ky-btn ky-btn-white-outline">Is It Right For Me?</a>
+        <a href="{{ shop.url }}/pages/contact" class="ky-btn ky-btn-ghost-dark">Book a Showroom Demo</a>
+      </div>
+
+      <div class="ky-hero-stats ky-fade-up">
+        <div class="ky-hero-stat"><span class="ky-hero-stat-num">Made in Japan</span><span class="ky-hero-stat-label">Origin &amp; Quality Standard</span></div>
+        <div class="ky-hero-stat"><span class="ky-hero-stat-num">Servo 4D</span><span class="ky-hero-stat-label">Human-Feel Massage</span></div>
+        <div class="ky-hero-stat"><span class="ky-hero-stat-num">In Stock</span><span class="ky-hero-stat-label">Ships 5–14 Days</span></div>
+        <div class="ky-hero-stat"><span class="ky-hero-stat-num">Affirm</span><span class="ky-hero-stat-label">Financing Available</span></div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} TRUST BAR {%- endcomment -%}
+  <div class="ky-trust-bar">
+    <div class="ky-trust-bar-inner">
+      <div class="ky-trust-item"><div class="ky-trust-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div><div class="ky-trust-text"><strong>Authorized KOYO Dealer</strong><span>Official Specialist Retailer</span></div></div>
+      <div class="ky-trust-divider"></div>
+      <div class="ky-trust-item"><div class="ky-trust-icon"><svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></div><div class="ky-trust-text"><strong>White-Glove Delivery</strong><span>Nationwide · Room of Choice</span></div></div>
+      <div class="ky-trust-divider"></div>
+      <div class="ky-trust-item"><div class="ky-trust-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/></svg></div><div class="ky-trust-text"><strong>Extended Warranty</strong><span>Factory-Backed Protection</span></div></div>
+      <div class="ky-trust-divider"></div>
+      <div class="ky-trust-item"><div class="ky-trust-icon"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div><div class="ky-trust-text"><strong>Financing Available</strong><span>Via Affirm · Easy Payments</span></div></div>
+      <div class="ky-trust-divider"></div>
+      <div class="ky-trust-item"><div class="ky-trust-icon"><svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 14l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div><div class="ky-trust-text"><strong>In Stock</strong><span>Ships Within 5–14 Days</span></div></div>
+    </div>
+  </div>
+
+  {%- comment -%} PRODUCT CARDS — 3 COLORS {%- endcomment -%}
+  <section class="ky-shop-section" id="ky-shop">
+    <div class="ky-container">
+      <div class="ky-shop-header">
+        <div class="ky-shop-eyebrow">Shop the KOYO 303TS</div>
+        <h2>One Chair. Three Finishes. Perfect for Your Space.</h2>
+        <p>The KOYO 303TS is available in three distinct colorways — each with identical performance, a different aesthetic character.</p>
+      </div>
+      <div class="ky-product-cards">
+
+        <!-- BLACK -->
+        <div class="ky-product-card">
+          <div class="ky-product-card-badge ky-badge-sale">Save $2,001</div>
+          <a href="{{ shop.url }}/products/koyo-303ts-massage-chair?color=Black" class="ky-product-card-img">
+            <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/black-Artboard-1-100.jpg?v=1772325806" alt="KOYO 303TS Massage Chair — Black" loading="lazy">
+          </a>
+          <div class="ky-product-card-body">
+            <div class="ky-product-card-top">
+              <div class="ky-product-card-name">KOYO 303TS<br>Black</div>
+              <div class="ky-product-card-swatch" style="background:#1a1713" title="Black"></div>
+            </div>
+            <p class="ky-product-card-tagline">The essential, versatile finish. Works seamlessly in modern, minimalist, or classic interiors — a chair that disappears into any room while delivering the full KOYO experience.</p>
+            <div class="ky-spec-chips">
+              <span class="ky-spec-chip">Servo 4D</span>
+              <span class="ky-spec-chip">SL-Track</span>
+              <span class="ky-spec-chip">Zero Gravity</span>
+              <span class="ky-spec-chip">Foot Rollers</span>
+              <span class="ky-spec-chip">Bluetooth</span>
+            </div>
+            <div class="ky-product-card-meta">
+              <div class="ky-product-card-pricing">
+                <span class="ky-product-price-was">Was $10,000</span>
+                <span class="ky-product-price-now" id="ky-price-black">$7,999</span>
+              </div>
+              <span class="ky-product-savings">Save $2,001</span>
+            </div>
+            <a href="{{ shop.url }}/products/koyo-303ts-massage-chair?color=Black" class="ky-product-card-cta">Shop Black →</a>
+
+          </div>
+        </div>
+
+        <!-- PEARL -->
+        <div class="ky-product-card" style="border-color:rgba(122,96,64,0.22)">
+          <div class="ky-product-card-badge ky-badge-popular">Most Popular</div>
+          <a href="{{ shop.url }}/products/koyo-303ts-massage-chair?color=Pearl" class="ky-product-card-img" style="background:#f5f0e8">
+            <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/beige-Artboard-1-100.jpg?v=1772325806" alt="KOYO 303TS Massage Chair — Pearl" loading="lazy">
+          </a>
+          <div class="ky-product-card-body">
+            <div class="ky-product-card-top">
+              <div class="ky-product-card-name">KOYO 303TS<br>Pearl</div>
+              <div class="ky-product-card-swatch" style="background:#f0ebe0;border-color:var(--ky-border)" title="Pearl"></div>
+            </div>
+            <p class="ky-product-card-tagline">Bright, modern, and light. The Pearl finish integrates beautifully with white walls, light oak, and contemporary Scandinavian or minimalist interiors without adding visual weight.</p>
+            <div class="ky-spec-chips">
+              <span class="ky-spec-chip">Servo 4D</span>
+              <span class="ky-spec-chip">SL-Track</span>
+              <span class="ky-spec-chip">Zero Gravity</span>
+              <span class="ky-spec-chip">Foot Rollers</span>
+              <span class="ky-spec-chip">Bluetooth</span>
+            </div>
+            <div class="ky-product-card-meta">
+              <div class="ky-product-card-pricing">
+                <span class="ky-product-price-was">Was $10,000</span>
+                <span class="ky-product-price-now" id="ky-price-pearl">$7,999</span>
+              </div>
+              <span class="ky-product-savings">Save $2,001</span>
+            </div>
+            <a href="{{ shop.url }}/products/koyo-303ts-massage-chair?color=Pearl" class="ky-product-card-cta">Shop Pearl →</a>
+
+          </div>
+        </div>
+
+        <!-- WALNUT -->
+        <div class="ky-product-card">
+          <div class="ky-product-card-badge ky-badge-instock">In Stock</div>
+          <a href="{{ shop.url }}/products/koyo-303ts-massage-chair?color=Walnut" class="ky-product-card-img" style="background:#f0e8dc">
+            <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/brown-Artboard-1-100.jpg?v=1772325806" alt="KOYO 303TS Massage Chair — Walnut" loading="lazy">
+          </a>
+          <div class="ky-product-card-body">
+            <div class="ky-product-card-top">
+              <div class="ky-product-card-name">KOYO 303TS<br>Walnut</div>
+              <div class="ky-product-card-swatch" style="background:#7a5230" title="Walnut"></div>
+            </div>
+            <p class="ky-product-card-tagline">Warm, grounded, and premium. The Walnut finish with wood accent tones sits naturally in living rooms, dens, and warm-toned interiors — reads as furniture, not gadget.</p>
+            <div class="ky-spec-chips">
+              <span class="ky-spec-chip">Servo 4D</span>
+              <span class="ky-spec-chip">SL-Track</span>
+              <span class="ky-spec-chip">Zero Gravity</span>
+              <span class="ky-spec-chip">Foot Rollers</span>
+              <span class="ky-spec-chip">Bluetooth</span>
+            </div>
+            <div class="ky-product-card-meta">
+              <div class="ky-product-card-pricing">
+                <span class="ky-product-price-was">Was $10,000</span>
+                <span class="ky-product-price-now" id="ky-price-walnut">$7,999</span>
+              </div>
+              <span class="ky-product-savings">Save $2,001</span>
+            </div>
+            <a href="{{ shop.url }}/products/koyo-303ts-massage-chair?color=Walnut" class="ky-product-card-cta">Shop Walnut →</a>
+
+          </div>
+        </div>
+
+      </div>
+      <div style="text-align:center;margin-top:32px">
+        <p style="font-size:14px;color:var(--ky-muted);margin-bottom:16px">All three finishes include identical performance, features, and warranty. Choice is purely aesthetic.</p>
+        <a href="{{ shop.url }}/pages/contact" class="ky-btn ky-btn-outline ky-btn-sm">Not sure which finish? Ask a specialist →</a>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} BRAND INTRO {%- endcomment -%}
+  <section class="ky-section" id="ky-intro">
+    <div class="ky-container">
+      <div class="ky-section-header ky-left-align" style="margin-bottom:40px">
+        <span class="ky-eyebrow">The KOYO Brand</span>
+        <h2 class="ky-accent-heading">Comfort With Purpose.<br>Built in Japan.</h2>
+      </div>
+      <p class="ky-intro-lead">In a market full of massage chairs that compete on spec sheets, button counts, and aggressive feature lists, <strong>KOYO takes a different approach</strong>. The brand was built on a deceptively simple premise: <em>a premium massage chair should feel genuinely good every single time you sit in it</em> — not just on the first demo, not just on the highest setting, but consistently, day after day.</p>
+      <p class="ky-intro-lead" style="margin-top:0">That philosophy runs through everything KOYO makes — from the choice of materials to the engineering of the massage mechanism to the simplicity of the controls. It is not about performance theater. It is about <strong>real, human-feel comfort, built to a Japanese standard of quality</strong>, and designed to become a trusted part of your home wellness routine for years.</p>
+      <div class="ky-intro-pillars">
+        <div class="ky-intro-pillar"><h3>Comfort First</h3><p>Every engineering decision in a KOYO chair is made in service of the massage feeling better — not looking more impressive on a spec list. The 303TS delivers warmth, presence, and genuine therapeutic feel before anything else.</p></div>
+        <div class="ky-intro-pillar"><h3>Made in Japan</h3><p>KOYO massage chairs are manufactured in Japan, where build quality, material consistency, and long-term reliability are non-negotiables. This is not a marketing claim — it is a standard that shapes every element of how the chair performs over years of daily use.</p></div>
+        <div class="ky-intro-pillar"><h3>Approachable Premium</h3><p>KOYO is not luxury for luxury's sake. It is refined premium ownership for buyers who want the real thing — a chair that performs beautifully, looks considered in any room, and stays intuitive from the first session to the thousandth.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ky-grad-divider"></div>
+
+  {%- comment -%} JAPAN HERITAGE {%- endcomment -%}
+  <section class="ky-japan-banner" id="ky-japan">
+    <div class="ky-container">
+      <div class="ky-japan-inner">
+        <div>
+          <div class="ky-japan-eyebrow">Made in Japan</div>
+          <h2>Why Japanese Manufacturing Changes Everything</h2>
+          <p>There is a reason buyers specifically search for massage chairs made in Japan. It is not nostalgia — it is a measurable expectation of quality. Japan's manufacturing culture is built around precision, consistency, and long-term integrity rather than short-term cost efficiency.</p>
+          <p>In practice, this means KOYO massage chairs are designed and built to perform the same way on day 1,000 as they do on day 1. The brushless motor runs with minimal friction and noise. The silicone massage heads are formulated to maintain their feel over years of use. The chassis and upholstery are assembled to tolerances that translate into longevity you can feel rather than just claim.</p>
+          <p>When you compare a KOYO chair to a commodity massage chair, the difference is quiet confidence — the kind of quality you only truly appreciate once you have lived with it.</p>
+          <ul class="ky-japan-points">
+            <li>Precision engineering culture prioritizes long-term reliability over short-term cost</li>
+            <li>Brushless motor technology delivers quieter, smoother, longer-lasting performance</li>
+            <li>Anthropoid silicone heads engineered to retain feel and response over years of sessions</li>
+            <li>Tight build tolerances translate into a chair that sounds, moves, and feels premium daily</li>
+            <li>Subject to Japanese quality assurance standards before leaving the factory</li>
+          </ul>
+        </div>
+        <div class="ky-japan-stats">
+          <div class="ky-japan-stat"><span class="ky-japan-stat-num">Made<br>in Japan</span><span class="ky-japan-stat-label">Manufactured to Japanese quality standards</span></div>
+          <div class="ky-japan-stat"><span class="ky-japan-stat-num">Servo<br>4D</span><span class="ky-japan-stat-label">Human-feel massage mechanism</span></div>
+          <div class="ky-japan-stat"><span class="ky-japan-stat-num">Brushless<br>Motor</span><span class="ky-japan-stat-label">Quieter, more consistent long-term performance</span></div>
+          <div class="ky-japan-stat"><span class="ky-japan-stat-num">3 Colors</span><span class="ky-japan-stat-label">Black · Pearl · Walnut</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} WHY KOYO FEELS DIFFERENT {%- endcomment -%}
+  <section class="ky-section ky-section-alt" id="ky-why">
+    <div class="ky-container">
+      <div class="ky-section-header">
+        <span class="ky-eyebrow">Why KOYO</span>
+        <h2 class="ky-accent-heading">The Quiet Confidence of a Chair Built for Real Life</h2>
+        <p>KOYO is not positioned as a lifestyle statement or a show of technological complexity. It is built for people who have done their research, know what they want, and are ready to live with a chair that rewards their decision every day.</p>
+      </div>
+      <div class="ky-pillar-grid">
+        <div class="ky-pillar-card"><div class="ky-pillar-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L20 8l-9 9z"/></svg></div><h3>Human-Feel Massage That Earns Trust</h3><p>The Servo 4D mechanism with anthropoid silicone massage heads moves with deliberate, organic variation — closer to a therapist's hands than any standard roller system. Buyers describe sessions as "lifelike" precisely because the engineering prioritized feel over spec numbers.</p></div>
+        <div class="ky-pillar-card"><div class="ky-pillar-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 10l-9 9z"/></svg></div><h3>Simple Enough for Real Daily Use</h3><p>Complexity is the enemy of daily use. KOYO's touchscreen remote and fingertip control dial let you begin a session in seconds — you sit down, select what you need, and the chair does the rest without navigating an overwhelming menu system.</p></div>
+        <div class="ky-pillar-card"><div class="ky-pillar-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div><h3>A Chair That Stays with Your Home</h3><p>KOYO 303TS is available in Black, Pearl, and Walnut — genuine finish differences that allow the chair to integrate with modern, bright, or warm interior styles. This is a chair designed to belong in a room, not compete with it.</p></div>
+        <div class="ky-pillar-card"><div class="ky-pillar-icon"><svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg></div><h3>Full Body. Every Session.</h3><p>From neck to feet, the 303TS covers the full body with no significant gaps. The hybrid SL-Track follows your natural spine through to the thighs. Full-body air compression wraps arms, shoulders, legs, and seat. Foot rollers engage the soles. Heat warms the calves and low back.</p></div>
+        <div class="ky-pillar-card"><div class="ky-pillar-icon"><svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg></div><h3>Personalized from Seat One</h3><p>Auto body scan technology reads your spine position and dimensions at the start of every session, adjusting the roller path to match your body before any program begins. Your massage is personalized to you — not a generic template adjusted slightly for your height.</p></div>
+        <div class="ky-pillar-card"><div class="ky-pillar-icon"><svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg></div><h3>Calm Ownership. Quiet Operation.</h3><p>The brushless motor technology powers the KOYO 303TS with significantly less noise, less vibration, and significantly longer expected service life. The result is a chair that feels premium in all the right ways — including just sitting in a room with it running.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ky-bronze-band"></div>
+
+  {%- comment -%} MODEL SPOTLIGHT {%- endcomment -%}
+  <section class="ky-section" id="ky-model">
+    <div class="ky-container">
+      <div class="ky-section-header" style="margin-bottom:48px">
+        <span class="ky-eyebrow">The KOYO 303TS</span>
+        <h2 class="ky-accent-heading">The Chair That Does Not Ask You to Compromise</h2>
+        <p>One model. Built to be exactly right. The KOYO 303TS is a made-in-Japan premium massage chair designed for buyers who want the genuine article — human-feel massage, full-body coverage, and long-term comfort confidence.</p>
+      </div>
+
+      <div class="ky-spotlight" id="ky-303ts">
+        <div class="ky-spotlight-header">
+          <div class="ky-model-tier">KOYO · Signature Model · Made in Japan</div>
+          <h2>KOYO 303TS Massage Chair</h2>
+          <p class="ky-model-tagline">Servo 4D · Anthropoid Silicone Heads · Hybrid SL-Track · Zero Gravity · Auto Body Scan · Full Body Coverage · Bluetooth · Black, Pearl &amp; Walnut</p>
+        </div>
+        <div class="ky-spotlight-body">
+          <div class="ky-spotlight-sidebar">
+            <div class="ky-spotlight-imgbox">
+              <img id="ky-main-img" src="https://massagechairsandmore.com/cdn/shop/files/KOYO-303TS.png?width=600" alt="KOYO 303TS Massage Chair" loading="lazy">
+            </div>
+            <div class="ky-price-was">Was $10,000</div>
+            <div class="ky-price-tag" id="ky-main-price">$7,999</div>
+            <div class="ky-price-note">Or finance with Affirm · Extended factory warranty available</div>
+            <a href="{{ shop.url }}/products/koyo-303ts-massage-chair" class="ky-model-sidebar-cta">Explore the KOYO 303TS →</a>
+            <a href="{{ shop.url }}/pages/contact" class="ky-model-sidebar-cta secondary">Book Showroom Demo</a>
+            <div class="ky-color-chips">
+              <span class="ky-color-label">Colors:</span>
+              <div class="ky-color-chip ky-chip-black" title="Black"></div>
+              <div class="ky-color-chip ky-chip-pearl" title="Pearl"></div>
+              <div class="ky-color-chip ky-chip-walnut" title="Walnut"></div>
+            </div>
+            <p style="font-size:12px;color:var(--ky-light-text);margin-top:8px">Black · Pearl · Walnut</p>
+          </div>
+          <div class="ky-spotlight-content">
+            <div class="ky-model-badge">★ Best For: Daily Decompression &amp; Full-Body Comfort</div>
+            <h3>What Makes the 303TS the Defining KOYO Experience</h3>
+            <p>The KOYO 303TS is not a chair for buyers who want to be impressed by a feature list. It is a chair for people who want to sit down after a long day and feel held, relieved, and genuinely restored — with none of the complexity or compromises that fill cheaper alternatives.</p>
+            <p>At its core is the Servo 4D massage mechanism with precision-engineered anthropoid silicone massage heads. These heads are shaped and formulated to behave like real thumbs and knuckles — with soft flex at the edges and firm pressure at the center — creating a massage that does not simply vibrate or roll, but presses, releases, kneads, and glides with organic variation that standard massage chairs cannot replicate.</p>
+            <p>The hybrid SL-Track follows the natural curve of your spine from neck through the lower back and into the upper thigh. Combined with zero gravity recline, your mass redistributes across the chair in a way that makes session pressure feel deeper and more effective without requiring higher intensity.</p>
+            <ul class="ky-feature-list">
+              <li><strong>Servo 4D Massage —</strong> Controlled depth, speed, and movement variation for a genuinely lifelike massage feel</li>
+              <li><strong>Anthropoid Silicone Massage Heads —</strong> Shaped like human hands; soft at the edge, firm at the center, flexible under pressure</li>
+              <li><strong>Precision Brushless Motor —</strong> Quieter, smoother, longer-lasting than standard brushed motors</li>
+              <li><strong>Hybrid SL-Track —</strong> Continuous coverage from cervical spine through lumbar and upper thigh</li>
+              <li><strong>Auto Body Scan —</strong> Personalized roller placement from the first second of every session</li>
+              <li><strong>Zero Gravity Recline —</strong> Optimal position for deep decompression and even pressure distribution</li>
+              <li><strong>Calf &amp; Low Back Heat —</strong> Targeted warmth that loosens tissue before and during massage</li>
+              <li><strong>Full Body Air Massage —</strong> Coverage across arms, shoulders, seat, hips, legs, and feet</li>
+              <li><strong>Foot Rollers —</strong> Dedicated sole massage for tired, loaded feet</li>
+              <li><strong>Bluetooth Sound System —</strong> Stream your own audio seamlessly during sessions</li>
+              <li><strong>Touchscreen Remote &amp; Dial Control —</strong> Clean, fast, intuitive session management</li>
+            </ul>
+            <div class="ky-trait-pills">
+              <span class="ky-trait-pill">Made in Japan</span>
+              <span class="ky-trait-pill">Zero Gravity</span>
+              <span class="ky-trait-pill">Servo 4D</span>
+              <span class="ky-trait-pill">Foot Rollers</span>
+              <span class="ky-trait-pill">Heat Therapy</span>
+              <span class="ky-trait-pill">Air Massage</span>
+              <span class="ky-trait-pill">Body Scan</span>
+              <span class="ky-trait-pill">Bluetooth</span>
+              <span class="ky-trait-pill">Brushless Motor</span>
+              <span class="ky-trait-pill">SL-Track</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} LIFESTYLE SPLIT {%- endcomment -%}
+  <section class="ky-section ky-section-alt">
+    <div class="ky-container">
+      <div class="ky-lifestyle-split">
+          <div class="ky-lifestyle-img" style="background-image:url('https://cdn.shopify.com/s/files/1/0813/4036/7096/files/koyo-interior.jpg?v=1776368420')" role="img" aria-label="KOYO 303TS in a warm home interior"></div>
+        <div class="ky-lifestyle-text">
+          <span class="ky-eyebrow">The 303TS Experience</span>
+          <h2>A Chair That Earns Its Place in Your Home</h2>
+          <p>There is a particular kind of purchase that you get right once in a decade or so — and you know it from the first moment of use. The KOYO 303TS is that kind of purchase for the right buyer.</p>
+          <p>It is not about the feature count. It is about how the chair makes you feel at the end of the day. When you recline into zero gravity, the weight of the day shifts. When the rollers begin their first scan-guided pass, the contact is immediate and accurate. When the silicone heads work into your upper back, the pressure has a quality to it that standard chairs simply do not achieve.</p>
+          <p>And because the brushless motor runs quietly, because the touchscreen remote is genuinely simple, and because the auto body scan removes any guesswork — you return to it. Day after day.</p>
+          <ul class="ky-lifestyle-items">
+            <li>Perfect for desk workers, commuters, and those holding tension in the upper back</li>
+            <li>Ideal for recovery-focused buyers who train, stand for work, or walk long distances</li>
+            <li>Designed for shared households — fast intensity controls let each user tune the session</li>
+            <li>Available in Black, Pearl, and Walnut to match any interior design direction</li>
+            <li>Recommended height: 5'0" to 6'0" · Max user weight: 265 lbs / 120 kg</li>
+          </ul>
+          <div style="margin-top:28px">
+            <a href="{{ shop.url }}/products/koyo-303ts-massage-chair" class="ky-btn ky-btn-primary">Shop the KOYO 303TS</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} FEATURES IN DEPTH {%- endcomment -%}
+  <section class="ky-section" id="ky-features">
+    <div class="ky-container">
+      <div class="ky-section-header">
+        <span class="ky-eyebrow">Technology Made Human</span>
+        <h2 class="ky-accent-heading">What the KOYO 303TS Actually Does For You</h2>
+        <p>Great massage chair technology disappears into the experience. These are not features to be impressed by — they are the reasons the 303TS feels the way it does when you are actually sitting in it.</p>
+      </div>
+      <div style="border:1px solid var(--ky-border);border-radius:var(--ky-radius-xl);overflow:hidden">
+        <div class="ky-features-grid">
+          <div class="ky-feat-panel"><div class="ky-feat-num">01 — MECHANISM</div><h3>Servo 4D: Where the Feel Actually Lives</h3><p>The 4D designation means the massage mechanism moves in four dimensions: up-down, side-to-side, in-out depth, and speed variation. But the word "servo" changes everything. Servo-controlled movement means the mechanism responds to programmed variation with genuine precision — depth increases are measured and controlled, not mechanical approximations. Combined with the anthropoid silicone heads, the result is massage movement that feels intentional and organic rather than mechanical and repetitive.</p></div>
+          <div class="ky-feat-panel"><div class="ky-feat-num">02 — CONTACT POINTS</div><h3>Anthropoid Silicone Heads: Engineered for Human Feel</h3><p>Most massage chair roller heads are rigid spheres. The 303TS uses silicone massage heads shaped to mimic the geometry of a real hand's thumb and knuckle: firm in the center for pressure, softly compliant at the edges for natural transition. This means contact with your spine, shoulder blades, and neck feels graduated rather than blunt — a subtle engineering choice with a very direct effect on how the massage feels.</p></div>
+          <div class="ky-feat-panel"><div class="ky-feat-num">03 — TRACK SYSTEM</div><h3>Hybrid SL-Track: Coverage Without Dead Zones</h3><p>The hybrid SL-Track follows the natural double-curve of your spine — first the S-curve from your neck through your lumbar vertebrae, then the L-extension into the upper hamstring area. This continuous path means the roller does not stop at your tailbone and leave the most stress-carrying muscles of the hip untouched. When combined with zero gravity recline, the contact is maintained across the full track length without loss of pressure.</p></div>
+          <div class="ky-feat-panel"><div class="ky-feat-num">04 — PERSONALIZATION</div><h3>Auto Body Scan: Your Session, Shaped to You</h3><p>Before any massage program begins, the 303TS scans you. It measures your shoulder height and spine dimensions, then calculates a roller path that matches your actual body profile. For buyers who share the chair with a partner of different height or build, the auto scan means both users get a personalized experience — not one that represents a compromise.</p></div>
+          <div class="ky-feat-panel"><div class="ky-feat-num">05 — RECLINE &amp; HEAT</div><h3>Zero Gravity + Heat: The Difference Between Relaxed and Deeply Relaxed</h3><p>Zero gravity recline positions your body so your knees are slightly elevated above your heart, redistributing your weight and reducing compressive force on your spinal discs. Sessions in zero gravity feel noticeably deeper — the same intensity setting delivers more decompression because your skeleton is no longer fighting gravity. Layer in calf and low back heat, and the muscles begin loosening before the massage intensity needs to work for it.</p></div>
+          <div class="ky-feat-panel"><div class="ky-feat-num">06 — FULL BODY &amp; AUDIO</div><h3>Air Massage, Foot Rollers &amp; Bluetooth: A Complete Session</h3><p>Full-body air compression wraps the arms, shoulders, seat, hips, legs, and feet in programmed compression cycles — enhancing circulation and contributing a satisfying sense of total physical engagement. Foot rollers work the soles with rolling and kneading motion. The Bluetooth sound system connects your phone seamlessly, letting you use the chair as a multi-sensory decompression experience during every session.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ky-grad-divider"></div>
+
+  {%- comment -%} COMPARISON CALLOUT {%- endcomment -%}
+  <section class="ky-section ky-section-warm">
+    <div class="ky-container-narrow">
+      <div class="ky-comparison-callout">
+        <div class="ky-comparison-eyebrow">KOYO vs The Alternatives</div>
+        <h3>Where KOYO Sits in the Wider Premium Landscape</h3>
+        <p>Understanding where KOYO sits helps buyers make better decisions. KOYO is not trying to be OHCO — which leads with ultra-luxury design theater and prestige positioning. It is not trying to be Panasonic — which stakes its identity on clinical precision engineering and deep-tissue authority. It is not D.Core — which prioritizes furniture-grade aesthetics and organic quietude above all else.</p>
+        <p><strong>KOYO is its own category:</strong> made-in-Japan comfort-first sophistication. The 303TS is for buyers who want genuine Japanese build quality, a human-feel massage that invites daily use, full-body coverage without excessive complexity, and an ownership experience defined by trust and reassurance rather than specification anxiety.</p>
+        <p>If you are deciding between KOYO and a generic mass-market chair, the comparison ends immediately — the quality, feel, and durability difference is fundamental. If you are comparing KOYO to other premium Japanese chairs, the decision comes down to what you prioritize: clinical precision (Panasonic), quiet luxury aesthetics (D.Core), or approachable everyday-premium comfort (KOYO). There is no wrong choice — only the right fit.</p>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} IS IT FOR YOU {%- endcomment -%}
+  <section class="ky-section ky-section-alt" id="ky-is-for-you">
+    <div class="ky-container">
+      <div class="ky-section-header">
+        <span class="ky-eyebrow">Who It's For</span>
+        <h2 class="ky-accent-heading">Is the KOYO 303TS Right for You?</h2>
+        <p>A premium massage chair is a considered purchase. The right chair depends on how you live, what you need from it, and what kind of ownership experience you want. Here is how the 303TS fits different buyers.</p>
+      </div>
+      <div class="ky-buyer-grid">
+        <div class="ky-buyer-card"><div class="ky-buyer-icon"><svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.34C18 2.07 15.93 0 13.34 0c-1.28 0-2.36.43-3.34 1.19C9.02.43 7.94 0 6.66 0 4.07 0 2 2.07 2 4.66c0 .46.11.9.18 1.34H0v14c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/></svg></div><h3>The Daily Desk Worker</h3><p>You sit for 6–10 hours a day. Shoulder rounding, neck tension, and lumbar compression are familiar companions by mid-afternoon. The 303TS's auto body scan, SL-Track coverage, and zero gravity recline were designed for exactly this pattern.</p><div class="ky-buyer-rec">Recommended — excellent upper back and neck coverage</div></div>
+        <div class="ky-buyer-card"><div class="ky-buyer-icon"><svg viewBox="0 0 24 24"><path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/></svg></div><h3>The Active Recovery Buyer</h3><p>You train, run, cycle, or are on your feet at work. The foot rollers, full-body air compression, and calf heat in the 303TS are meaningful tools for recovery — not cosmetic additions. Buyers post-workout report notably faster muscle recovery.</p><div class="ky-buyer-rec">Recommended — foot rollers + air massage are genuinely effective</div></div>
+        <div class="ky-buyer-card"><div class="ky-buyer-icon"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div><h3>The Premium Home Buyer</h3><p>You are investing in your home environment. With three genuine color options and a form language that reads as premium rather than clinical, the 303TS earns its place in a living room or home wellness space.</p><div class="ky-buyer-rec">Recommended — especially in Pearl or Walnut finishes</div></div>
+        <div class="ky-buyer-card"><div class="ky-buyer-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div><h3>The Shared Household</h3><p>You and your partner or family members want to use the same chair. The auto body scan adjusts for each user's dimensions at the start of every session. Fast intensity controls let very different users find their preferred feel in seconds.</p><div class="ky-buyer-rec">Recommended — body scan makes multi-user ownership seamless</div></div>
+        <div class="ky-buyer-card"><div class="ky-buyer-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg></div><h3>The Long-Term Reliability Buyer</h3><p>You are buying once and want a chair that performs consistently for years. Made-in-Japan manufacturing, a brushless motor, and Japanese quality standards are not marketing words for this buyer — they are selection criteria.</p><div class="ky-buyer-rec">Highly recommended — Japanese quality = sustained performance</div></div>
+        <div class="ky-buyer-card"><div class="ky-buyer-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div><h3>The First-Time Premium Buyer</h3><p>You have not owned a chair at this level before. The KOYO 303TS is an ideal first premium chair — the auto scan, intuitive remote, and comprehensive but accessible programs mean you are getting full value from session one.</p><div class="ky-buyer-rec">Excellent entry — straightforward, rewarding, genuinely premium</div></div>
+      </div>
+      <div style="margin-top:48px;text-align:center">
+        <p style="font-size:16px;color:var(--ky-muted);margin-bottom:20px">Not sure the 303TS is the right fit? Our specialists have helped thousands of buyers find the right chair for their lifestyle and budget.</p>
+        <a href="{{ shop.url }}/pages/contact" class="ky-btn ky-btn-primary">Speak with a Chair Specialist</a>
+        <a href="#ky-faq" class="ky-btn ky-btn-outline" style="margin-left:16px">Browse Common Questions</a>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} TESTIMONIALS {%- endcomment -%}
+  <section class="ky-section ky-section-warm" id="ky-reviews">
+    <div class="ky-container">
+      <div class="ky-section-header">
+        <span class="ky-eyebrow">What Buyers Say</span>
+        <h2 class="ky-accent-heading">Heard From the KOYO 303TS Community</h2>
+      </div>
+      <div class="ky-testimonials-strip">
+        <div class="ky-testimonial-card"><div class="ky-stars">★★★★★</div><p>My back and glutes usually feel like they've been compressed all day. The SL-Track coverage gave me a more complete session than most chairs in this category. I didn't expect the foot rollers to feel that substantive either.</p><div class="ky-testimonial-meta">Verified Buyer · KOYO 303TS · Black</div></div>
+        <div class="ky-testimonial-card"><div class="ky-stars">★★★★★</div><p>The full-body air massage and zero gravity combination made it feel versatile enough for both work stress and post-workout tightness — something most chairs at this price don't achieve.</p><div class="ky-testimonial-meta">Verified Buyer · KOYO 303TS · Pearl</div></div>
+        <div class="ky-testimonial-card"><div class="ky-stars">★★★★★</div><p>The anthropoid silicone massage heads gave the chair a more lifelike feel. I'm very sensitive to rough rollers, and this chair handled my upper back without any of the harshness I'd experienced in other premium chairs.</p><div class="ky-testimonial-meta">Verified Buyer · KOYO 303TS · Walnut</div></div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} QUICK ANSWERS {%- endcomment -%}
+  <section class="ky-section" id="ky-quick">
+    <div class="ky-container">
+      <div class="ky-quick-answer">
+        <span class="ky-eyebrow" style="margin-bottom:16px">Quick Answers · KOYO 303TS Explained</span>
+        <h2>Quick Answers — KOYO 303TS</h2>
+        <p class="ky-qa-intro">The questions buyers most often ask about KOYO massage chairs, answered directly and completely.</p>
+        <div class="ky-qa-grid">
+          <div class="ky-qa-item"><h3>What Makes KOYO Different?</h3><p>KOYO chairs are made in Japan with a comfort-first philosophy. The 303TS uses a Servo 4D mechanism with anthropoid silicone massage heads — shaped like human hands — alongside a precision brushless motor that runs quieter and longer than standard massage chair motors. The engineering prioritizes how the massage feels over how impressive the spec list reads.</p></div>
+          <div class="ky-qa-item"><h3>Is the 303TS Worth It?</h3><p>Yes — for the right buyer. If Japanese build quality, a human-feel massage, full-body coverage, and long-term ownership confidence matter to you, the 303TS delivers strong value at $7,999. It outperforms generic massage chairs by a significant margin and holds its own confidently alongside other premium Japanese chairs at higher price points.</p></div>
+          <div class="ky-qa-item"><h3>Is KOYO a Japanese Brand?</h3><p>Yes. KOYO massage chairs are made in Japan. The brand's entire identity is built around Japanese manufacturing standards, comfort-first engineering, and the kind of long-term reliability that Japanese production culture is internationally recognized for.</p></div>
+          <div class="ky-qa-item"><h3>Who Is the 303TS Best For?</h3><p>The 303TS is best for desk workers carrying upper back tension, active buyers who want recovery support, home buyers who want a premium chair that integrates beautifully, shared households wanting a personalized experience, and long-term buyers who want Japanese build confidence. Recommended height: 5'0" to 6'0". Max weight: 265 lbs.</p></div>
+          <div class="ky-qa-item"><h3>Where Can I Buy KOYO?</h3><p>Massage Chairs and More is an authorized KOYO dealer with showroom locations where you can experience the 303TS in person. Financing is available through Affirm, extended factory warranty is available, and delivery ships within 5–14 business days. Call {{ section.settings.phone | default: '+1 (408) 889-1188' }}.</p></div>
+          <div class="ky-qa-item"><h3>What Colors Does the 303TS Come In?</h3><p>The KOYO 303TS is available in Black (versatile, refined), Pearl (bright and modern, ideal for light or contemporary spaces), and Walnut (warm finish with wood accent tones). All three finishes are in stock with identical performance, features, and warranty.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} WHY BUY HERE {%- endcomment -%}
+  <section class="ky-section ky-section-alt" id="ky-why-buy-here">
+    <div class="ky-container">
+      <div class="ky-section-header">
+        <span class="ky-eyebrow">Why Massage Chairs and More</span>
+        <h2 class="ky-accent-heading">The Right Retailer Makes the Right Chair Even Better</h2>
+        <p>Buying a premium massage chair from the right dealer is as important as choosing the right chair. Our expertise, support infrastructure, and physical showroom give you confidence at every stage of ownership.</p>
+      </div>
+      <div class="ky-trust-grid">
+        <div class="ky-trust-card"><div class="ky-trust-card-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div><h3>Authorized KOYO Dealer</h3><p>We are an official KOYO retailer, which means your purchase comes with full manufacturer warranty support, genuine KOYO product, and none of the risks of gray-market or unauthorized channels. Your investment is protected from day one.</p></div>
+        <div class="ky-trust-card"><div class="ky-trust-card-icon"><svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 14l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div><h3>Showroom Experience</h3><p>You can sit in the KOYO 303TS before you buy. Our showroom specialists will guide you through a demo — zero gravity, zero gravity with heat, foot rollers, air compression — so your purchase decision is based on actual feel, not marketing language.</p></div>
+        <div class="ky-trust-card"><div class="ky-trust-card-icon"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div><h3>Financing Through Affirm</h3><p>Spread the cost of your KOYO 303TS over time with financing through Affirm. Monthly payment options make premium home wellness accessible without requiring a single full-price outlay. Ask our team for current rate options when you inquire.</p></div>
+        <div class="ky-trust-card"><div class="ky-trust-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/></svg></div><h3>Extended Factory Warranty</h3><p>Choose extended factory warranty protection for your KOYO 303TS for complete long-term ownership peace of mind. When you are investing in a premium made-in-Japan massage chair, the right warranty coverage is the final piece of a confident purchasing decision.</p></div>
+        <div class="ky-trust-card"><div class="ky-trust-card-icon"><svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></div><h3>White-Glove Delivery</h3><p>Your KOYO 303TS will be delivered to the room of your choice by trained delivery specialists, with setup included. You will not be expected to manage a large freight shipment alone. Estimated delivery is 5–14 business days from purchase confirmation.</p></div>
+        <div class="ky-trust-card"><div class="ky-trust-card-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div><h3>Expert Guidance Available</h3><p>Our massage chair specialists are available by phone, email, and in-store to answer questions before, during, and after your purchase. We help buyers compare models, understand fit, configure financing, and navigate warranty options.</p></div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} SUPPORT BAR {%- endcomment -%}
+  <div class="ky-support-bar">
+    <div class="ky-support-bar-inner">
+      <div class="ky-support-item"><div class="ky-support-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div><div class="ky-support-text"><strong>{{ section.settings.phone | default: '+1 (408) 889-1188' }}</strong><span>Mon–Sat, 10am–6pm PT</span></div></div>
+      <div class="ky-support-divider"></div>
+      <div class="ky-support-item"><div class="ky-support-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div><div class="ky-support-text"><strong>info@massagechairsandmore.com</strong><span>Respond within 1 business day</span></div></div>
+      <div class="ky-support-divider"></div>
+      <div class="ky-support-item"><div class="ky-support-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div><div class="ky-support-text"><strong>Visit Our Showroom</strong><span>SF Bay Area · By Appointment</span></div></div>
+      <div class="ky-support-divider"></div>
+      <div class="ky-support-item"><div class="ky-support-icon"><svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 14l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div><div class="ky-support-text"><strong>Book a Demo Appointment</strong><span>Try the 303TS in person before buying</span></div></div>
+    </div>
+  </div>
+
+  {%- comment -%} FAQ {%- endcomment -%}
+  <section class="ky-section ky-section-warm" id="ky-faq">
+    <div class="ky-container-narrow">
+      <div class="ky-section-header">
+        <span class="ky-eyebrow">Frequently Asked Questions</span>
+        <h2 class="ky-accent-heading">Everything You Need to Know About KOYO</h2>
+        <p>Real buyer questions, answered thoroughly and honestly. If your question is not here, call or email us directly — our specialists are happy to help.</p>
+      </div>
+      <div class="ky-faq-list">
+        <div class="ky-faq-item"><div class="ky-faq-q" onclick="kyToggleFaq(this)"><h3>What makes KOYO massage chairs different from other brands at this price?</h3><span class="ky-faq-toggle">+</span></div><div class="ky-faq-a"><div class="ky-faq-a-inner"><p>KOYO's primary differentiation is its combination of made-in-Japan manufacturing with a comfort-first engineering philosophy. The Servo 4D system with anthropoid silicone massage heads is meaningfully different from standard massage chair rollers — the heads flex like thumbs and knuckles rather than rolling as rigid spheres, which translates into a more natural, organic contact feel. The precision brushless motor runs quieter and longer than standard brushed motors. Auto body scan personalization means the chair adjusts to your body profile, not an average template.</p></div></div></div>
+        <div class="ky-faq-item"><div class="ky-faq-q" onclick="kyToggleFaq(this)"><h3>Is the KOYO 303TS actually made in Japan?</h3><span class="ky-faq-toggle">+</span></div><div class="ky-faq-a"><div class="ky-faq-a-inner"><p>Yes. The KOYO 303TS is manufactured in Japan. The brand's identity is built around Japanese manufacturing standards, comfort-first engineering, and long-term reliability. Japan's production culture emphasizes precision and consistency — which translates into a chair that sounds, moves, and feels premium through years of daily use.</p></div></div></div>
+        <div class="ky-faq-item"><div class="ky-faq-q" onclick="kyToggleFaq(this)"><h3>What is the Servo 4D mechanism and how is it different from regular 4D?</h3><span class="ky-faq-toggle">+</span></div><div class="ky-faq-a"><div class="ky-faq-a-inner"><p>The 4D designation means the massage mechanism moves in four dimensions: up-down, side-to-side, in-out depth, and speed variation. The word "servo" changes everything. Servo-controlled movement means the mechanism responds to programmed variation with genuine precision — depth increases are measured and controlled, not mechanical approximations. Combined with anthropoid silicone heads, the result is massage movement that feels intentional and organic rather than mechanical and repetitive.</p></div></div></div>
+        <div class="ky-faq-item"><div class="ky-faq-q" onclick="kyToggleFaq(this)"><h3>What colors does the KOYO 303TS come in and what are the differences?</h3><span class="ky-faq-toggle">+</span></div><div class="ky-faq-a"><div class="ky-faq-a-inner"><p>The KOYO 303TS is available in three genuine finish options — all with identical performance: Black (the most versatile, works in any interior style), Pearl (bright and modern, ideal for white walls, light oak, or Scandinavian interiors), and Walnut (warm, grounded, with wood accent tones — reads as furniture in classic or warm-toned rooms). The choice is purely aesthetic.</p></div></div></div>
+        <div class="ky-faq-item"><div class="ky-faq-q" onclick="kyToggleFaq(this)"><h3>What are the size and weight recommendations for the KOYO 303TS?</h3><span class="ky-faq-toggle">+</span></div><div class="ky-faq-a"><div class="ky-faq-a-inner"><p>The KOYO 303TS is designed for users between 5'0" and 6'0" tall, with a maximum recommended user weight of 265 lbs (120 kg). For buyers outside this range, our specialists can recommend alternative models that may better fit your dimensions — visit our showroom or call for guidance.</p></div></div></div>
+        <div class="ky-faq-item"><div class="ky-faq-q" onclick="kyToggleFaq(this)"><h3>Can I try the KOYO 303TS before buying?</h3><span class="ky-faq-toggle">+</span></div><div class="ky-faq-a"><div class="ky-faq-a-inner"><p>Absolutely — and we strongly recommend it. The difference between reading about the Servo 4D mechanism and anthropoid silicone heads, and actually feeling a session with them, is substantial. Our showroom carries the KOYO 303TS available for guided demos. Call {{ section.settings.phone | default: '+1 (408) 889-1188' }} to schedule a visit or book an appointment online.</p></div></div></div>
+        <div class="ky-faq-item"><div class="ky-faq-q" onclick="kyToggleFaq(this)"><h3>Do you offer financing for the KOYO 303TS?</h3><span class="ky-faq-toggle">+</span></div><div class="ky-faq-a"><div class="ky-faq-a-inner"><p>Yes — we offer financing through Affirm, which splits the purchase into manageable monthly payments with transparent terms. Rates and approval depend on your situation. Contact us for details, or check terms during checkout.</p></div></div></div>
+        <div class="ky-faq-item"><div class="ky-faq-q" onclick="kyToggleFaq(this)"><h3>How long does delivery take and what does white-glove delivery include?</h3><span class="ky-faq-toggle">+</span></div><div class="ky-faq-a"><div class="ky-faq-a-inner"><p>In-stock KOYO 303TS models typically ship within 5–14 business days via white-glove delivery nationwide. This means delivery to the room of your choice, fully assembled placement, and a test-before-we-leave guarantee. Timelines may vary by region. Contact us at {{ section.settings.phone | default: '+1 (408) 889-1188' }} for current availability.</p></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} FINAL CTA {%- endcomment -%}
+  <section class="ky-section">
+    <div class="ky-container">
+      <div class="ky-final-cta">
+        <span class="ky-eyebrow">Your KOYO Journey Begins Here</span>
+        <h2>Ready to Experience the KOYO 303TS<br>in Person?</h2>
+        <p>The difference between reading about Servo 4D and anthropoid silicone heads — and feeling a session with them — is significant and immediate. Our showroom lets you experience the full 303TS in all three colorways, guided by specialists who know the chair from the inside out.</p>
+        <div class="ky-final-cta-btns">
+          <a href="{{ shop.url }}/pages/contact" class="ky-btn ky-btn-accent">Visit Our Showroom</a>
+          <a href="{{ shop.url }}/products/koyo-303ts-massage-chair" class="ky-btn ky-btn-white-outline">Shop the KOYO 303TS</a>
+          <a href="tel:+14088891188" class="ky-btn ky-btn-ghost-dark">Call {{ section.settings.phone | default: '+1 (408) 889-1188' }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+/* DYNAMIC PRICE from Shopify API */
+function kyFormatPrice(cents) {
+  return '$' + (cents / 100).toLocaleString('en-US', {minimumFractionDigits:0,maximumFractionDigits:0});
+}
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('/products/koyo-303ts-massage-chair.js')
+    .then(function(r) { return r.ok ? r.json() : Promise.reject(); })
+    .then(function(data) {
+      if (!data || !data.price) return;
+      var price = kyFormatPrice(data.price);
+      ['ky-price-black','ky-price-pearl','ky-price-walnut','ky-main-price'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) el.textContent = price;
+      });
+      if (data.featured_image) {
+        var img = document.getElementById('ky-main-img');
+        if (img) { img.src = 'https:' + data.featured_image; img.alt = data.title; }
+      }
+    })
+    .catch(function() {});
+});
+
+/* FAQ ACCORDION */
+function kyToggleFaq(el) {
+  var item = el.closest('.ky-faq-item');
+  var answer = item.querySelector('.ky-faq-a');
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.ky-faq-item.open').forEach(function(o) {
+    o.classList.remove('open');
+    o.querySelector('.ky-faq-a').style.maxHeight = '0';
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
+}
+
+/* SUBNAV ACTIVE STATE */
+var kyLinks = document.querySelectorAll('.ky-subnav-inner a');
+var kySections = document.querySelectorAll('section[id]');
+var kyObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      kyLinks.forEach(function(link) {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + entry.target.id) link.classList.add('active');
+      });
+    }
+  });
+}, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+kySections.forEach(function(s) { kyObs.observe(s); });
+
+/* SCROLL ANIMATIONS */
+var kyFadeEls = document.querySelectorAll('.ky-pillar-card,.ky-buyer-card,.ky-trust-card,.ky-testimonial-card,.ky-japan-stat');
+var kyScrollObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      kyScrollObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+kyFadeEls.forEach(function(el) {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+  kyScrollObs.observe(el);
+});
+</script>
+
+{% schema %}
+{
+  "name": "KOYO Collection",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "lifestyle_image",
+      "label": "Lifestyle Split Image"
+    },
+    {
+      "type": "text",
+      "id": "hero_heading",
+      "label": "Hero Heading Override"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Phone Number",
+      "default": "+1 (408) 889-1188"
+    }
+  ],
+  "presets": [
+    {
+      "name": "KOYO Collection"
+    }
+  ]
+}
+{% endschema %}

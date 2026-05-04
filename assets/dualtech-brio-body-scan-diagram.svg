@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-label="Body Scan — DualTech 4D vs Brio+">
+  <defs>
+    <linearGradient id="bg3" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#fbfaf7"/><stop offset="1" stop-color="#eee6da"/></linearGradient>
+    <filter id="sh3" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#2b2114" flood-opacity=".12"/></filter>
+  </defs>
+  <rect width="1600" height="980" fill="url(#bg3)"/>
+  <text x="800" y="56" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="13" font-weight="900" letter-spacing="4" text-anchor="middle">BODY SCAN TECHNOLOGY</text>
+  <text x="800" y="100" fill="#0b0b0b" font-family="Georgia,serif" font-size="40" font-weight="800" text-anchor="middle">Intelligent Body Scan vs Automatic Body Scan</text>
+  <text x="800" y="132" fill="#67605a" font-family="Inter,sans-serif" font-size="16" text-anchor="middle">Both chairs scan your body at session start — check shoulder alignment after scanning</text>
+
+  <!-- DualTech Card -->
+  <rect x="60" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh3)"/>
+  <rect x="80" y="185" width="200" height="38" rx="19" fill="#9a7f4a"/>
+  <text x="180" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">DUALTECH 4D DUAL</text>
+  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/PositivePosture_DualTech_Linen_315-Angle-front.webp?v=1772326033&amp;width=1200" x="220" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- Scan zone: head(353,331) down to back(390,387) -->
+  <ellipse cx="370" cy="355" rx="50" ry="60" fill="#2f4c5c" opacity=".08"/>
+  <ellipse cx="370" cy="355" rx="50" ry="60" fill="none" stroke="#2f4c5c" stroke-width="2" stroke-dasharray="8 4" opacity=".5"/>
+  <!-- Scan pulse rings -->
+  <circle cx="370" cy="355" r="30" fill="none" stroke="#9a7f4a" stroke-width="1" opacity=".3"/>
+  <circle cx="370" cy="355" r="45" fill="none" stroke="#9a7f4a" stroke-width="1" opacity=".2"/>
+  <circle cx="370" cy="355" r="60" fill="none" stroke="#9a7f4a" stroke-width="0.5" opacity=".12"/>
+  <!-- Scan marker -->
+  <circle cx="353" cy="331" r="6" fill="#9a7f4a"/>
+  <circle cx="372" cy="358" r="6" fill="#9a7f4a"/>
+  <circle cx="390" cy="387" r="6" fill="#9a7f4a"/>
+  <!-- Scan line connecting points -->
+  <polyline points="353,331 372,358 390,387" fill="none" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="4 3"/>
+
+  <!-- Label -->
+  <rect x="80" y="300" width="180" height="50" rx="10" fill="#9a7f4a" opacity=".08"/>
+  <text x="90" y="320" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="13" font-weight="800">INTELLIGENT BODY SCAN</text>
+  <text x="90" y="338" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="10" opacity=".7">Maps body shape &amp; size</text>
+  <line x1="260" y1="325" x2="325" y2="340" stroke="#9a7f4a" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <rect x="80" y="690" width="680" height="24" rx="4" fill="#9a7f4a" opacity=".06"/>
+  <text x="420" y="707" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle">Scans body shape · Adjusts roller position · Maps size at session start</text>
+
+  <!-- Brio+ Card -->
+  <rect x="820" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh3)"/>
+  <rect x="840" y="185" width="170" height="38" rx="19" fill="#617064"/>
+  <text x="925" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">BRIO+ MASSAGE</text>
+  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100-14-1.jpg?v=1772325831&amp;width=1200" x="980" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- Scan zone: head(1127,365) to back(1169,407) -->
+  <ellipse cx="1148" cy="385" rx="50" ry="55" fill="#617064" opacity=".08"/>
+  <ellipse cx="1148" cy="385" rx="50" ry="55" fill="none" stroke="#617064" stroke-width="2" stroke-dasharray="8 4" opacity=".5"/>
+  <circle cx="1148" cy="385" r="30" fill="none" stroke="#617064" stroke-width="1" opacity=".3"/>
+  <circle cx="1148" cy="385" r="45" fill="none" stroke="#617064" stroke-width="1" opacity=".2"/>
+  <circle cx="1148" cy="385" r="60" fill="none" stroke="#617064" stroke-width="0.5" opacity=".12"/>
+  <circle cx="1127" cy="365" r="6" fill="#617064"/>
+  <circle cx="1148" cy="389" r="6" fill="#617064"/>
+  <circle cx="1169" cy="407" r="6" fill="#617064"/>
+  <polyline points="1127,365 1148,389 1169,407" fill="none" stroke="#617064" stroke-width="2" stroke-dasharray="4 3"/>
+
+  <rect x="1310" y="330" width="185" height="50" rx="10" fill="#617064" opacity=".08"/>
+  <text x="1320" y="350" fill="#617064" font-family="Inter,sans-serif" font-size="13" font-weight="800">AUTOMATIC BODY SCAN</text>
+  <text x="1320" y="368" fill="#617064" font-family="Inter,sans-serif" font-size="10" opacity=".7">Aligns to shoulder height</text>
+  <line x1="1305" y1="355" x2="1198" y2="385" stroke="#617064" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <rect x="840" y="690" width="680" height="24" rx="4" fill="#617064" opacity=".06"/>
+  <text x="1180" y="707" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle">Auto-aligns session · Shoulder position detection · Body type mapping</text>
+
+  <circle cx="800" cy="440" r="32" fill="#14110f"/>
+  <text x="800" y="447" fill="#e5c379" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">VS</text>
+  <rect x="500" y="760" width="600" height="70" rx="16" fill="#14110f"/>
+  <text x="800" y="797" fill="#e5c379" font-family="Inter,sans-serif" font-size="13" font-weight="800" letter-spacing="1" text-anchor="middle">CHECK ROLLER ALIGNMENT AFTER BODY SCAN</text>
+  <text x="800" y="818" fill="rgba(255,255,255,.5)" font-family="Inter,sans-serif" font-size="11" text-anchor="middle">Does the scan accurately find your shoulders? Test both in person.</text>
+  <text x="800" y="920" fill="#b0a898" font-family="Inter,sans-serif" font-size="11" text-anchor="middle">massagechairsandmore.com · (408) 889-1188 · Sacramento Showroom</text>
+</svg>

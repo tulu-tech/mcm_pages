@@ -1,0 +1,453 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+.shopify-section:has(.au){background:transparent !important;background-color:transparent !important}
+.shopify-section:has(.au) > .shopify-section__wrapper{background:transparent !important}
+.shopify-section:has(.au) .page-width{background:transparent !important;max-width:100% !important;padding:0 !important}
+.shopify-section:has(.au) [class*="section-"]:not(.au):not([class*="au-"]){background:transparent !important}
+.au{--dark:#111;--text:#2a2a2a;--muted:#5c5c5c;--light:#919191;--surface:#f8f6f3;--surface2:#f0ece6;--accent:#b8944f;--accent2:#d4b06a;--border:#e5e0d8;--white:#fff;--r:14px;--r2:22px;--sh:0 4px 24px rgba(0,0,0,.06);--sh2:0 24px 64px rgba(0,0,0,.10);--t:all .35s cubic-bezier(.4,0,.2,1);font-family:'Inter',sans-serif !important;color:#2a2a2a !important;font-size:16px !important;line-height:1.75 !important;-webkit-font-smoothing:antialiased}
+.au *,.au *::before,.au *::after{box-sizing:border-box !important}
+.au h1,.au h2,.au h3,.au h4{font-family:'Playfair Display',Georgia,serif !important;color:#111 !important;line-height:1.2 !important;font-weight:700 !important;margin:0 !important;font-style:normal !important}
+.au p{font-size:16px !important;line-height:1.8 !important;margin:0 !important;font-style:normal !important}
+.au a{text-decoration:none !important;color:inherit !important}
+.au img{max-width:100%;display:block}
+.au-c{max-width:1160px;margin:0 auto;padding:0 36px}
+.au-smol{max-width:720px;margin:0 auto;padding:0 36px}
+.au-tag{display:inline-block;font-size:11px !important;font-weight:700 !important;letter-spacing:.22em !important;text-transform:uppercase !important;color:var(--accent) !important;font-style:normal !important}
+@keyframes auUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.au-in{opacity:1;transform:none}
+.au-in.au-on{opacity:1;transform:none}
+
+/* ===== HERO ===== */
+.au-hero{position:relative;height:92vh;min-height:580px;max-height:900px;display:flex;align-items:flex-end;overflow:hidden;background:#111}
+.au-hero-bg{position:absolute;inset:0;z-index:0}
+.au-hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.38)}
+.au-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,8,5,.88) 0%,rgba(10,8,5,.35) 55%,rgba(10,8,5,.08) 100%);z-index:1}
+.au-hero-body{position:relative;z-index:2;padding:0 36px 72px;max-width:1160px;margin:0 auto;width:100%}
+.au-hero-body .au-tag{margin-bottom:20px;opacity:.85;display:block}
+.au-hero h1{font-size:56px !important;color:#fff !important;max-width:820px;letter-spacing:-.025em !important;margin-bottom:36px !important;font-style:normal !important;font-weight:700 !important;line-height:1.15 !important;font-family:'Playfair Display',Georgia,serif !important}
+.au-hero-foot{display:flex;align-items:center;gap:48px;border-top:1px solid rgba(255,255,255,.12);padding-top:24px;max-width:700px}
+.au-hero-num{display:flex;flex-direction:column}
+.au-hero-num strong{font-size:28px !important;font-weight:800 !important;color:#b8944f !important;line-height:1 !important;font-family:'Playfair Display',serif !important}
+.au-hero-num span{font-size:11px !important;color:rgba(255,255,255,.5) !important;text-transform:uppercase;letter-spacing:.12em;margin-top:4px !important}
+.au-hero-divider{width:1px;height:40px;background:rgba(255,255,255,.15);flex-shrink:0}
+
+/* ===== OPENING STORY ===== */
+.au-open{padding:100px 0 80px;background:var(--white)}
+.au-open-inner{display:grid;grid-template-columns:1fr 420px;gap:80px;align-items:start}
+.au-open-text .au-tag{margin-bottom:20px}
+.au-open-text h2{font-size:clamp(28px,3vw,42px) !important;letter-spacing:-.02em;margin-bottom:28px !important;line-height:1.15 !important}
+.au-open-text p{color:var(--muted);font-size:17px !important;margin-bottom:20px !important}
+.au-open-aside{position:sticky;top:40px}
+.au-open-img{border-radius:var(--r2);overflow:hidden;margin-bottom:24px}
+.au-open-img img{width:100%;height:380px;object-fit:cover}
+.au-open-pull{background:var(--surface);border-radius:var(--r);padding:28px 28px 24px;border-left:3px solid var(--accent)}
+.au-open-pull p{font-family:'Playfair Display',Georgia,serif !important;font-size:17px !important;font-style:italic !important;color:var(--dark) !important;line-height:1.6 !important;margin:0 0 12px !important}
+.au-open-pull cite{font-size:11px !important;font-weight:700 !important;color:var(--accent) !important;letter-spacing:.15em;text-transform:uppercase;font-style:normal !important}
+
+/* ===== DIVIDER FULL IMG ===== */
+.au-full-img{height:460px;overflow:hidden;position:relative}
+.au-full-img img{width:100%;height:100%;object-fit:cover}
+.au-full-img-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(10,8,5,.65) 0%,transparent 60%);display:flex;align-items:center}
+.au-full-img-text{padding:0 72px;max-width:560px}
+.au-full-img-text p{font-family:'Playfair Display',Georgia,serif !important;font-size:clamp(20px,2.5vw,30px) !important;font-style:italic !important;color:#fff !important;line-height:1.5 !important;margin:0 0 16px !important}
+.au-full-img-text cite{font-size:11px !important;font-weight:700 !important;color:var(--accent) !important;letter-spacing:.18em;text-transform:uppercase;font-style:normal !important}
+
+/* ===== HOW WE WORK ===== */
+.au-how{padding:100px 0;background:var(--surface)}
+.au-how-hdr{margin-bottom:64px}
+.au-how-hdr .au-tag{margin-bottom:16px}
+.au-how-hdr h2{font-size:clamp(26px,3vw,40px) !important;letter-spacing:-.02em;max-width:560px}
+.au-how-body{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.au-how-item{padding:40px 48px 40px 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:48px 1fr;gap:24px;align-items:start}
+.au-how-item:nth-child(odd){border-right:1px solid var(--border);padding-right:0}
+.au-how-item:nth-child(even){padding-left:48px}
+.au-how-item:nth-last-child(1),.au-how-item:nth-last-child(2){border-bottom:none}
+.au-how-num{font-size:13px !important;font-weight:700 !important;color:var(--accent) !important;font-family:'Playfair Display',serif !important;padding-top:2px}
+.au-how-content h3{font-size:18px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;margin-bottom:8px !important;color:var(--dark) !important}
+.au-how-content p{font-size:15px !important;color:var(--muted) !important;line-height:1.65 !important}
+
+/* ===== BRANDS ===== */
+.au-brands{padding:100px 0;background:var(--dark)}
+.au-brands-hdr{margin-bottom:64px}
+.au-brands-hdr .au-tag{color:var(--accent);margin-bottom:16px}
+.au-brands-hdr h2{font-size:clamp(26px,3vw,40px) !important;color:#fff !important;letter-spacing:-.02em;max-width:600px}
+.au-brands-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.au-brand{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);border-radius:var(--r2);padding:44px 40px;transition:var(--t)}
+.au-brand:hover{border-color:rgba(184,148,79,.4);background:rgba(184,148,79,.04)}
+.au-brand-label{font-size:11px !important;font-weight:700 !important;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;display:block}
+.au-brand h3{font-size:24px !important;color:#fff !important;margin-bottom:12px !important}
+.au-brand p{font-size:15px !important;color:rgba(255,255,255,.55) !important;line-height:1.7 !important;margin-bottom:24px !important}
+.au-brand-chips{display:flex;flex-wrap:wrap;gap:8px;padding-top:4px}
+.au-chip{font-size:11px !important;font-weight:600 !important;color:var(--accent2) !important;border:1px solid rgba(184,148,79,.22);padding:5px 14px;border-radius:50px;background:rgba(184,148,79,.07)}
+.au-brand-divider{height:1px;background:rgba(255,255,255,.06);margin:28px 0}
+.au-brand-note{font-size:14px !important;color:rgba(255,255,255,.4) !important;font-style:italic !important;line-height:1.6 !important;margin:0 !important}
+
+/* ===== DELIVERY STORY ===== */
+.au-delivery{padding:100px 0;background:var(--surface2)}
+.au-delivery-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.au-delivery-img{border-radius:var(--r2);overflow:hidden;box-shadow:var(--sh2)}
+.au-delivery-img img{width:100%;height:480px;object-fit:cover}
+.au-delivery-text .au-tag{margin-bottom:16px;display:block}
+.au-delivery-text h2{font-size:clamp(26px,3vw,38px) !important;letter-spacing:-.02em;margin-bottom:24px !important}
+.au-delivery-text p{color:var(--muted);font-size:16px !important;margin-bottom:18px !important}
+
+/* ===== PROMISE (EDITORIAL) ===== */
+.au-promise{padding:120px 0;background:var(--dark);position:relative;overflow:hidden}
+.au-promise::before{content:'';position:absolute;top:-20%;left:-10%;width:700px;height:700px;background:radial-gradient(circle,rgba(184,148,79,.05) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.au-promise-body{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
+.au-promise-left .au-tag{margin-bottom:20px;color:var(--accent)}
+.au-promise-left h2{font-size:clamp(28px,3.5vw,48px) !important;color:#fff !important;letter-spacing:-.03em;line-height:1.15 !important;margin-bottom:28px !important;font-style:italic !important}
+.au-promise-left p{font-size:17px !important;color:rgba(255,255,255,.6) !important;line-height:1.8 !important;margin-bottom:20px !important}
+.au-promise-right{display:flex;flex-direction:column;gap:20px}
+.au-promise-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:var(--r);padding:28px 28px 26px;transition:var(--t)}
+.au-promise-item:hover{border-color:rgba(184,148,79,.3)}
+.au-promise-item h4{font-size:16px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;color:#fff !important;margin-bottom:8px !important}
+.au-promise-item p{font-size:14px !important;color:rgba(255,255,255,.5) !important;line-height:1.65 !important}
+
+/* ===== SHOWROOMS ===== */
+.au-rooms{padding:100px 0;background:var(--surface)}
+.au-rooms-hdr{margin-bottom:56px}
+.au-rooms-hdr .au-tag{margin-bottom:14px}
+.au-rooms-hdr h2{font-size:clamp(26px,3vw,40px) !important;letter-spacing:-.02em;margin-bottom:12px !important}
+.au-rooms-hdr p{font-size:17px !important;color:var(--muted)}
+.au-rooms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.au-room{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:28px 24px;display:flex;flex-direction:column;gap:12px;transition:var(--t);position:relative;overflow:hidden}
+.au-room::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transition:transform .4s ease;transform-origin:left}
+.au-room:hover::before{transform:scaleX(1)}
+.au-room:hover{border-color:var(--accent);box-shadow:var(--sh2);transform:translateY(-4px)}
+.au-room h3{font-size:17px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;color:var(--dark) !important}
+.au-room-d{display:flex;align-items:flex-start;gap:9px;font-size:13px !important;color:var(--muted) !important;line-height:1.5 !important}
+.au-room-d svg{width:14px;height:14px;fill:var(--accent);flex-shrink:0;margin-top:2px}
+.au-room-d a{color:var(--muted) !important;font-size:13px !important;transition:var(--t)}
+.au-room-d a:hover{color:var(--accent) !important}
+.au-room-btns{margin-top:auto;padding-top:16px;display:flex;gap:8px}
+.au-room-btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px !important;border-radius:50px;font-size:13px !important;font-weight:700 !important;font-family:'Inter',sans-serif !important;transition:var(--t);text-decoration:none !important}
+.au-room-btn-d{background:#111 !important;color:#ffffff !important}
+.au-room-btn-d:hover{background:var(--accent) !important}
+.au-room-btn-c{border:1.5px solid var(--border) !important;color:var(--dark) !important;background:transparent !important}
+.au-room-btn-c:hover{border-color:var(--accent) !important;color:var(--accent) !important}
+.au-room-btn svg{width:12px;height:12px;fill:currentColor}
+.au-room-sp{background:var(--dark) !important;grid-column:span 3}
+.au-room-sp h3{color:#fff !important}
+.au-room-sp .au-room-d{color:rgba(255,255,255,.55) !important}
+.au-room-sp .au-room-d a{color:rgba(255,255,255,.55) !important}
+.au-room-sp .au-room-d a:hover{color:var(--accent) !important}
+.au-room-sp .au-room-btn-d{background:var(--accent) !important}
+.au-room-sp .au-room-btn-c{border-color:rgba(255,255,255,.15) !important;color:rgba(255,255,255,.7) !important}
+.au-room-sp-badge{display:inline-block;font-size:10px !important;font-weight:700 !important;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);background:rgba(184,148,79,.14);padding:4px 12px;border-radius:50px;margin-bottom:6px}
+.au-room-sp-inner{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+
+/* ===== CTA ===== */
+.au-cta{padding:100px 0}
+.au-cta-inner{background:var(--accent);border-radius:var(--r2);padding:72px 64px;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;position:relative;overflow:hidden}
+.au-cta-inner::before{content:'';position:absolute;top:-40%;right:-8%;width:480px;height:480px;background:radial-gradient(circle,rgba(255,255,255,.1) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.au-cta-left h2{font-size:clamp(26px,3vw,38px) !important;color:#fff !important;margin-bottom:14px !important;position:relative;z-index:1}
+.au-cta-left p{font-size:17px !important;color:rgba(255,255,255,.82) !important;max-width:480px;position:relative;z-index:1}
+.au-cta-right{display:flex;flex-direction:column;gap:12px;flex-shrink:0;position:relative;z-index:1}
+.au-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 32px !important;font-size:15px !important;font-weight:700 !important;font-family:'Inter',sans-serif !important;border-radius:50px !important;text-decoration:none !important;transition:var(--t);white-space:nowrap;cursor:pointer}
+.au-btn-dk{background:#111 !important;color:#ffffff !important;border:2px solid var(--dark) !important}
+.au-btn-dk:hover{background:#000 !important;transform:translateY(-2px)}
+.au-btn-ol{background:transparent !important;color:#fff !important;border:2px solid rgba(255,255,255,.45) !important}
+.au-btn-ol:hover{border-color:#fff !important;background:rgba(255,255,255,.1) !important}
+.au-btn svg{width:16px;height:16px;fill:currentColor}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .au-open-inner{grid-template-columns:1fr;gap:48px}
+  .au-open-aside{position:static}
+  .au-open-img img{height:300px}
+  .au-brands-grid{grid-template-columns:1fr}
+  .au-delivery-grid{gap:48px}
+  .au-promise-body{gap:48px}
+  .au-rooms-grid{grid-template-columns:repeat(2,1fr)}
+  .au-room-sp{grid-column:span 2}
+  .au-how-item:nth-child(odd){padding-right:0}
+  .au-how-item:nth-child(even){padding-left:36px}
+}
+@media(max-width:768px){
+  .au-c,.au-smol{padding:0 20px !important}
+  .au-hero{height:80vh;min-height:480px}
+  .au-hero-body{padding:0 20px 52px}
+  .au-hero h1{font-size:36px !important;margin-bottom:24px !important}
+  .au-hero-foot{gap:24px;flex-wrap:wrap}
+  .au-hero-num strong{font-size:22px !important}
+  .au-open{padding:64px 0 56px}
+  .au-open-inner{grid-template-columns:1fr !important;gap:36px}
+  .au-open-text h2{font-size:26px !important}
+  .au-open-text p{font-size:16px !important}
+  .au-open-img img{height:240px}
+  .au-full-img{height:320px}
+  .au-full-img-text{padding:0 28px}
+  .au-full-img-text p{font-size:18px !important}
+  .au-how{padding:64px 0}
+  .au-how-body{grid-template-columns:1fr !important}
+  .au-how-item{padding:28px 0 !important;border-right:none !important;grid-template-columns:36px 1fr;gap:16px}
+  .au-how-item:nth-last-child(2){border-bottom:1px solid var(--border) !important}
+  .au-brands{padding:64px 0}
+  .au-brands-grid{grid-template-columns:1fr !important}
+  .au-brand{padding:32px 24px}
+  .au-brand h3{font-size:20px !important}
+  .au-delivery{padding:64px 0}
+  .au-delivery-grid{grid-template-columns:1fr !important;gap:36px}
+  .au-delivery-img img{height:260px}
+  .au-delivery-img{border-radius:16px}
+  .au-delivery-text h2{font-size:26px !important}
+  .au-promise{padding:72px 0}
+  .au-promise-body{grid-template-columns:1fr !important;gap:40px}
+  .au-promise-left h2{font-size:28px !important}
+  .au-promise-item{padding:22px 20px}
+  .au-rooms{padding:64px 0}
+  .au-rooms-grid{grid-template-columns:1fr !important;gap:14px}
+  .au-room-sp{grid-column:span 1 !important}
+  .au-room-sp-inner{grid-template-columns:1fr !important;gap:12px}
+  .au-cta{padding:48px 0}
+  .au-cta-inner{grid-template-columns:1fr !important;gap:28px;padding:44px 24px !important;border-radius:16px !important}
+  .au-cta-left h2{font-size:24px !important}
+  .au-cta-left p{font-size:15px !important}
+  .au-cta-right{flex-direction:column;width:100%}
+  .au-btn{justify-content:center !important;padding:14px 24px !important}
+}
+@media(max-width:480px){
+  .au-c,.au-smol{padding:0 16px !important}
+  .au-hero{height:75vh}
+  .au-hero-body{padding:0 16px 44px}
+  .au-hero h1{font-size:26px !important}
+  .au-hero-foot{gap:16px}
+  .au-hero-num strong{font-size:20px !important}
+  .au-open-text h2{font-size:24px !important}
+  .au-brand{padding:26px 18px}
+  .au-promise-left h2{font-size:24px !important}
+  .au-cta-inner{padding:36px 18px !important}
+}
+</style>
+
+<div class="au">
+
+<!-- HERO -->
+<section class="au-hero">
+  <div class="au-hero-bg">
+    <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/about-hero-showroom-v2.jpg?v=1774841035" alt="Massage Chairs and More Showroom" loading="eager">
+  </div>
+  <div class="au-hero-body">
+    <span class="au-tag">About Massage Chairs and More</span>
+    <h1 style="color:#ffffff !important;font-family:'Playfair Display',Georgia,serif !important;font-size:56px !important;font-weight:700 !important;line-height:1.15 !important;font-style:normal !important">We started this because we kept seeing people make the wrong call&nbsp;— and regret it.</h1>
+    <div class="au-hero-foot">
+      <div class="au-hero-num"><strong>20</strong><span>Years in the Industry</span></div>
+      <div class="au-hero-divider"></div>
+      <div class="au-hero-num"><strong>4</strong><span>California Showrooms</span></div>
+      <div class="au-hero-divider"></div>
+      <div class="au-hero-num"><strong>1000s</strong><span>Customers Helped</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- OPENING STORY -->
+<section class="au-open" style="padding:100px 0 80px;background:#ffffff">
+  <div class="au-c">
+    <div class="au-open-inner au-in">
+      <div class="au-open-text">
+        <span class="au-tag">The Story</span>
+        <h2>Nearly 20 years ago, Matt opened the first store with a simple idea.</h2>
+        <p>Most people shopping for a massage chair were overwhelmed. The category was noisy — big brands, confusing specs, pushy salespeople, and prices that ranged from $500 to $15,000 with no clear reason why.</p>
+        <p>Matt had been in the industry long enough to know one thing: the right chair for someone isn't the most expensive one. It's the one that fits their body, their space, and how they actually live. That insight became the foundation of Massage Chairs and More.</p>
+        <p>Five showrooms later, across three malls and two decades, the approach hasn't changed much. Come in, try them side by side, and leave with a decision that feels calm — not pressured. We've helped thousands of customers through that moment. And we've learned that certainty, not inventory, is what people really come in looking for.</p>
+      </div>
+      <div class="au-open-aside au-in">
+        <div class="au-open-img">
+          <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/about-team-consultation-v2.jpg?v=1774841366" alt="MCM Team Consulting with Customer" loading="lazy">
+        </div>
+        <div class="au-open-pull">
+          <p>"People aren't shopping for a chair. They're shopping for certainty — because they don't want to regret a big decision."</p>
+          <cite>— Matt, Founder</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS & PHILOSOPHY -->
+<div style="padding:100px 0;background:#f0ece6;border-top:1px solid #e5e0d8">
+  <div style="max-width:1160px;margin:0 auto;padding:0 36px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start">
+      <div>
+        <span style="display:block;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8944f;margin-bottom:20px;font-family:'Inter',sans-serif">What We Carry</span>
+        <h2 style="color:#111 !important;font-size:38px !important;font-family:'Playfair Display',Georgia,serif !important;font-weight:700 !important;line-height:1.15 !important;margin-bottom:24px !important;letter-spacing:-.02em">Every chair on our floor earned its place.</h2>
+        <p style="color:#5c5c5c !important;font-size:16px !important;line-height:1.8 !important;margin-bottom:18px !important;font-family:'Inter',sans-serif !important">We don't carry everything — on purpose. Matt has tested hundreds of chairs over twenty years. The ones on our floor are the ones that held up: in build quality, in real-world performance, in what customers actually say six months later.</p>
+        <p style="color:#5c5c5c !important;font-size:16px !important;line-height:1.8 !important;margin-bottom:28px !important;font-family:'Inter',sans-serif !important">If a brand stops performing, it comes off the floor. If a new one proves itself, it earns a spot. It's not about carrying the most names — it's about standing behind every chair we sell.</p>
+        <div style="padding:24px;background:#ffffff;border-radius:12px;border-left:3px solid #b8944f">
+          <p style="font-family:'Playfair Display',Georgia,serif !important;font-size:17px !important;font-style:italic !important;color:#111 !important;line-height:1.6 !important;margin:0 0 10px !important">"The win isn't the fanciest model. It's the chair that fits your body and your life so well you stop thinking about it — and just use it."</p>
+          <span style="font-size:11px;font-weight:700;color:#b8944f;letter-spacing:.15em;text-transform:uppercase;font-family:'Inter',sans-serif">— Matt, Founder</span>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:600;color:#111;letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #d5cfc7;font-family:'Inter',sans-serif">Brands We Trust</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div style="background:#ffffff;border-radius:10px;padding:20px 18px;text-align:center;border:1px solid #e5e0d8">
+            <span style="font-size:15px !important;font-weight:700 !important;color:#111 !important;font-family:'Inter',sans-serif !important;letter-spacing:.02em">OHCO</span>
+          </div>
+          <div style="background:#ffffff;border-radius:10px;padding:20px 18px;text-align:center;border:1px solid #e5e0d8">
+            <span style="font-size:15px !important;font-weight:700 !important;color:#111 !important;font-family:'Inter',sans-serif !important;letter-spacing:.02em">Positive Posture</span>
+          </div>
+          <div style="background:#ffffff;border-radius:10px;padding:20px 18px;text-align:center;border:1px solid #e5e0d8">
+            <span style="font-size:15px !important;font-weight:700 !important;color:#111 !important;font-family:'Inter',sans-serif !important;letter-spacing:.02em">Panasonic</span>
+          </div>
+          <div style="background:#ffffff;border-radius:10px;padding:20px 18px;text-align:center;border:1px solid #e5e0d8">
+            <span style="font-size:15px !important;font-weight:700 !important;color:#111 !important;font-family:'Inter',sans-serif !important;letter-spacing:.02em">Brio</span>
+          </div>
+          <div style="background:#ffffff;border-radius:10px;padding:20px 18px;text-align:center;border:1px solid #e5e0d8">
+            <span style="font-size:15px !important;font-weight:700 !important;color:#111 !important;font-family:'Inter',sans-serif !important;letter-spacing:.02em">KOYO</span>
+          </div>
+          <div style="background:#ffffff;border-radius:10px;padding:20px 18px;text-align:center;border:1px solid #e5e0d8">
+            <span style="font-size:15px !important;font-weight:700 !important;color:#111 !important;font-family:'Inter',sans-serif !important;letter-spacing:.02em">D.Core</span>
+          </div>
+          <div style="background:#ffffff;border-radius:10px;padding:20px 18px;text-align:center;border:1px solid #e5e0d8;grid-column:span 2">
+            <span style="font-size:15px !important;font-weight:700 !important;color:#111 !important;font-family:'Inter',sans-serif !important;letter-spacing:.02em">DualTech</span>
+          </div>
+        </div>
+        <p style="font-size:13px !important;color:#919191 !important;font-style:italic !important;line-height:1.6 !important;margin-top:20px !important;font-family:'Inter',sans-serif !important">Four showrooms across California — Walnut Creek, Santa Clara, Daly City, and Roseville. Come try them side by side.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DELIVERY SECTION -->
+<section class="au-delivery" style="padding:100px 0;background:#f0ece6">
+  <div class="au-c">
+    <div class="au-delivery-grid au-in">
+      <div class="au-delivery-img">
+        <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/about-delivery-nationwide.jpg?v=1774838750" alt="White-glove massage chair delivery" loading="lazy">
+      </div>
+      <div class="au-delivery-text">
+        <span class="au-tag" style="margin-bottom:16px;display:block">California & Beyond</span>
+        <h2 style="color:#111111 !important;font-size:34px !important;font-family:'Playfair Display',Georgia,serif !important;font-weight:700 !important;line-height:1.2 !important;margin-bottom:24px !important">We know this customer. Long commutes. Desk pain. A mental load that doesn't stop.</h2>
+        <p style="color:#5c5c5c !important;font-size:16px !important;line-height:1.8 !important;margin-bottom:18px !important">California built this business. The specific stress of living here — the commutes, the desk tension, the pace — shaped how we listen and what we recommend. We understand it because we've been in the middle of it for twenty years.</p>
+        <p style="color:#5c5c5c !important;font-size:16px !important;line-height:1.8 !important;margin-bottom:0 !important">But the customers we've helped aren't only here. We deliver and set up nationwide — to Florida, New York, Texas — with the same white-glove care our walk-in customers get in person. It's not complicated. It's just doing it right.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMISE -->
+<div style="padding:100px 0;border-top:1px solid #e5e0d8;border-bottom:1px solid #e5e0d8">
+  <div style="max-width:1160px;margin:0 auto;padding:0 36px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start">
+      <div>
+        <span style="display:block;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8944f;margin-bottom:20px;font-family:'Inter',sans-serif">What We Won't Do</span>
+        <h2 style="color:#111 !important;font-size:40px !important;font-family:'Playfair Display',Georgia,serif !important;font-weight:700 !important;line-height:1.15 !important;font-style:italic !important;margin-bottom:28px !important;letter-spacing:-.02em">We'd rather lose a sale than lose your trust.</h2>
+        <p style="color:#5c5c5c !important;font-size:17px !important;line-height:1.8 !important;margin-bottom:20px !important;font-family:'Inter',sans-serif !important">This isn't a tagline. It's a decision Matt made early on, and it shaped everything: how the stores are run, how the team is trained, what gets said on a slow Tuesday when no one's watching.</p>
+        <p style="color:#5c5c5c !important;font-size:17px !important;line-height:1.8 !important;font-family:'Inter',sans-serif !important">The massage chair industry has plenty of noise. We decided a long time ago not to add to it.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0">
+        <div style="padding:28px 0 28px 28px;border-left:3px solid #b8944f;border-bottom:1px solid #e5e0d8">
+          <h4 style="color:#111 !important;font-size:16px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;margin-bottom:8px !important">No fake urgency</h4>
+          <p style="color:#5c5c5c !important;font-size:14px !important;line-height:1.65 !important;font-family:'Inter',sans-serif !important">No countdown clocks, no "today only" pressure. If the chair is right for you, it'll still be right tomorrow.</p>
+        </div>
+        <div style="padding:28px 0 28px 28px;border-left:3px solid #b8944f;border-bottom:1px solid #e5e0d8">
+          <h4 style="color:#111 !important;font-size:16px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;margin-bottom:8px !important">No competitor trash talk</h4>
+          <p style="color:#5c5c5c !important;font-size:14px !important;line-height:1.65 !important;font-family:'Inter',sans-serif !important">We don't win by making others look bad. We win by being genuinely useful — and letting you decide.</p>
+        </div>
+        <div style="padding:28px 0 28px 28px;border-left:3px solid #b8944f;border-bottom:1px solid #e5e0d8">
+          <h4 style="color:#111 !important;font-size:16px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;margin-bottom:8px !important">No sloppy explanations</h4>
+          <p style="color:#5c5c5c !important;font-size:14px !important;line-height:1.65 !important;font-family:'Inter',sans-serif !important">If we can't explain why something matters to your specific situation, we don't say it.</p>
+        </div>
+        <div style="padding:28px 0 28px 28px;border-left:3px solid #b8944f">
+          <h4 style="color:#111 !important;font-size:16px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;margin-bottom:8px !important">No promises we can't keep</h4>
+          <p style="color:#5c5c5c !important;font-size:14px !important;line-height:1.65 !important;font-family:'Inter',sans-serif !important">Massage has real benefits — relaxation, stress reduction, pain management. We talk about those. We don't promise miracles.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT MASSAGE ACTUALLY DOES -->
+<section class="au-beliefs" style="padding:100px 0;background:#f8f6f3">
+  <div class="au-c">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start">
+      <div class="au-in">
+        <span class="au-tag" style="margin-bottom:16px;display:block">What We Believe</span>
+        <h2 style="font-size:38px !important;letter-spacing:-.02em;margin-bottom:28px !important;font-family:'Playfair Display',Georgia,serif !important;color:#111 !important;line-height:1.2 !important;font-weight:700 !important">What massage actually does — without the hype.</h2>
+        <p style="color:#5c5c5c;font-size:17px !important;margin-bottom:18px !important;line-height:1.8 !important">We've seen too many stores overpromise. "This chair will change your life." "It cures back pain." The claims get bigger every year, and customers end up cynical — or worse, disappointed.</p>
+        <p style="color:#5c5c5c;font-size:17px !important;margin-bottom:18px !important;line-height:1.8 !important">So we stick to what's real. Regular massage — done consistently — helps with stress, with tension, with sleep, with recovery. The Mayo Clinic talks about it. Sports medicine talks about it. Our customers talk about it. It's not a miracle. It's a routine that works when you actually use it.</p>
+        <p style="color:#5c5c5c;font-size:17px !important;margin-bottom:0 !important;line-height:1.8 !important">The chair that gets used is the one that's in the right spot at the right time, that feels right the moment you sit down, that doesn't take any convincing. That's the chair we're trying to help you find.</p>
+      </div>
+      <div class="au-in" style="display:flex;flex-direction:column;gap:20px">
+        <div style="background:#fff;border:1px solid #e5e0d8;border-radius:14px;padding:32px 28px">
+          <h3 style="font-size:17px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;color:#111 !important;margin-bottom:10px !important">Stress &amp; relaxation</h3>
+          <p style="font-size:15px !important;color:#5c5c5c !important;line-height:1.7 !important">The most consistent thing we hear: people just feel calmer. Less reactive. Better at coping with the same workload. That's real — and it's enough reason for most people to keep using it.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #e5e0d8;border-radius:14px;padding:32px 28px">
+          <h3 style="font-size:17px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;color:#111 !important;margin-bottom:10px !important">Tension &amp; muscle recovery</h3>
+          <p style="font-size:15px !important;color:#5c5c5c !important;line-height:1.7 !important">Desk pain, neck stiffness, lower back tension — these are the everyday complaints. Regular massage doesn't eliminate the source, but it gives the body somewhere to reset. Most people notice the difference within a few weeks.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #e5e0d8;border-radius:14px;padding:32px 28px">
+          <h3 style="font-size:17px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;color:#111 !important;margin-bottom:10px !important">Sleep &amp; mental load</h3>
+          <p style="font-size:15px !important;color:#5c5c5c !important;line-height:1.7 !important">Ten minutes in the chair before bed. That's it. A lot of our customers end up using it less for pain and more just to signal to their body that the day is done. That's not nothing.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Matt quote bar -->
+    <div style="margin-top:56px;background:#111;border-radius:16px;padding:44px 48px;display:flex;gap:32px;align-items:flex-start">
+      <svg style="width:32px;height:32px;fill:#b8944f;flex-shrink:0;margin-top:6px" viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+      <div>
+        <p style="font-family:'Playfair Display',Georgia,serif !important;font-size:20px !important;font-style:italic !important;color:#fff !important;line-height:1.65 !important;margin:0 0 16px !important">"This isn't about a miracle. It's about a routine you can return to — especially on the days you're running on empty. The chair that earns its spot is the one that asks nothing of you and still gives something back."</p>
+        <span style="font-size:11px !important;font-weight:700 !important;color:#b8944f !important;letter-spacing:.15em;text-transform:uppercase">— Matt, Founder</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE THINK ABOUT THE SALE -->
+<section style="padding:100px 0;background:#fff">
+  <div class="au-c">
+    <div style="max-width:720px;margin:0 auto;text-align:center" class="au-in">
+      <span class="au-tag" style="margin-bottom:16px;display:block">The Sales Philosophy</span>
+      <h2 style="font-size:40px !important;letter-spacing:-.025em;margin-bottom:24px !important;font-family:'Playfair Display',Georgia,serif !important;color:#111 !important;line-height:1.2 !important;font-weight:700 !important">We don't "handle" people. We take them seriously.</h2>
+      <p style="font-size:18px !important;color:#5c5c5c !important;line-height:1.8 !important;margin:0 !important">There's a version of this business that would've been easier: high pressure, big incentives, close the deal and move on. We chose the other version. Slower, smaller margins on some sales, more conversations that don't end in a purchase. But people come back. And they send their friends.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:56px" class="au-in">
+      <div style="background:#f8f6f3;border-radius:14px;padding:36px 28px">
+        <div style="font-size:36px !important;font-weight:800 !important;color:#b8944f !important;font-family:'Playfair Display',serif !important;line-height:1 !important;margin-bottom:12px !important">01</div>
+        <h3 style="font-size:17px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;color:#111 !important;margin-bottom:10px !important;line-height:1.3 !important">The first five minutes are just listening</h3>
+        <p style="font-size:15px !important;color:#5c5c5c !important;line-height:1.65 !important">Before we recommend anything, we want to understand what's actually going on — physically, practically, financially. That changes everything about what comes next.</p>
+      </div>
+      <div style="background:#f8f6f3;border-radius:14px;padding:36px 28px">
+        <div style="font-size:36px !important;font-weight:800 !important;color:#b8944f !important;font-family:'Playfair Display',serif !important;line-height:1 !important;margin-bottom:12px !important">02</div>
+        <h3 style="font-size:17px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;color:#111 !important;margin-bottom:10px !important;line-height:1.3 !important">We'd rather say "not yet" than close too early</h3>
+        <p style="font-size:15px !important;color:#5c5c5c !important;line-height:1.65 !important">If someone isn't ready — financially or just emotionally — we say so. A sale that creates regret isn't a win for anyone. We'd rather they come back in six months ready than leave feeling pushed.</p>
+      </div>
+      <div style="background:#f8f6f3;border-radius:14px;padding:36px 28px">
+        <div style="font-size:36px !important;font-weight:800 !important;color:#b8944f !important;font-family:'Playfair Display',serif !important;line-height:1 !important;margin-bottom:12px !important">03</div>
+        <h3 style="font-size:17px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;color:#111 !important;margin-bottom:10px !important;line-height:1.3 !important">The relationship doesn't end at checkout</h3>
+        <p style="font-size:15px !important;color:#5c5c5c !important;line-height:1.65 !important">We follow up. We answer questions that come up two weeks later. We're the same people you talked to in the store — still reachable, still invested in whether you actually love the chair.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT KEEPS PEOPLE COMING BACK -->
+<section style="padding:100px 0;background:#111;position:relative;overflow:hidden">
+  <div style="position:absolute;top:-20%;right:-5%;width:600px;height:600px;background:radial-gradient(circle,rgba(184,148,79,.05) 0%,transparent 70%);border-radius:50%;pointer-events:none"></div>
+  <div class="au-c" style="position:relative;z-index:1">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center" class="au-in">
+      <div>
+        <span class="au-tag" style="margin-bottom:20px;display:block">What Keeps People Coming Back</span>
+        <h2 style="font-size:40px !important;color:#fff !important;letter-spacing:-.025em;margin-bottom:28px !important;font-family:'Playfair Display',Georgia,serif !important;line-height:1.2 !important;font-weight:700 !important">Referrals and repeat customers are the only metric that matters to us.</h2>
+        <p style="font-size:17px !important;color:rgba(255,255,255,.6) !important;line-height:1.8 !important;margin-bottom:20px !important">We've never spent much on advertising. Most of our business comes from people who came in, had a good experience, and told someone about it. That's the only kind of growth that compounds honestly.</p>
+        <p style="font-size:17px !important;color:rgba(255,255,255,.6) !important;line-height:1.8 !important;margin-bottom:0 !important">When someone comes back three years later because they're buying a chair for a parent, or a friend walks in saying "my coworker said I had to come here" — that's the measure. Not the quarterly number. Not the conversion rate. The reason someone trusted us enough to attach their name to a recommendation.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:4px">
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:32px 28px;margin-bottom:16px">
+          <p style="font-family:'Playfair Display',Georgia,serif !important;font-size:18px !important;font-style:italic !important;color:#fff !important;line-height:1.65 !important;margin:0 0 14px !important">"When someone feels respected, their guard drops — and that's when the right decision becomes possible. Not before."</p>
+          <span style="font-size:11px !important;font-weight:700 !important;color:#b8944f !important;letter-spacing:.15em;text-transform:uppercase">— Matt, Founder</span>
+        </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:32px 28px">
+          <p style="font-family:'Playfair Display',Georgia,serif !important;font-size:18px !important;font-style:italic !important;color:#fff !important;line-height:1.65 !important;margin:0 0 14px !important">"I'd rather lose a sale than win it the wrong way. We've had that conversation a hundred times internally. The answer is always the same."</p>
+          <span style="font-size:11px !important;font-weight:700 !important;color:#b8944f !important;letter-spacing:.15em;text-transform:uppercase">— Matt, Founder</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>

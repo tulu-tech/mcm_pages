@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-label="Massage Engine Diagram — Brio+ vs Solara">
+  <defs>
+    <linearGradient id="bg2" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#f7f9f9"/><stop offset="1" stop-color="#e8ede6"/></linearGradient>
+    <filter id="sh2" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#1a2e30" flood-opacity=".12"/></filter>
+  </defs>
+  <rect width="1600" height="980" fill="url(#bg2)"/>
+  <text x="800" y="56" fill="#3f5f64" font-family="Inter,sans-serif" font-size="13" font-weight="900" letter-spacing="4" text-anchor="middle">MASSAGE CHAIRS &amp; MORE — MECHANISM BREAKDOWN</text>
+  <text x="800" y="100" fill="#0b0b0b" font-family="Georgia,serif" font-size="40" font-weight="800" text-anchor="middle">Massage Engine Comparison</text>
+  <text x="800" y="132" fill="#67605a" font-family="Inter,sans-serif" font-size="16" text-anchor="middle">Track system · Roller count · 4D vs standard — what drives the massage feel</text>
+
+  <!-- ========== BRIO+ Card ========== -->
+  <rect x="60" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh2)"/>
+  <rect x="80" y="185" width="260" height="38" rx="19" fill="#3f5f64"/>
+  <text x="210" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">BRIO+ · 4D ENGINE</text>
+  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100-14-1.jpg?v=1772325831" x="220" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- L-Track zone from Head(374,369) to Lower Back(432,438) -->
+  <path d="M374,369 Q390,388 402,407 Q417,423 432,438" fill="none" stroke="#3f5f64" stroke-width="4" stroke-dasharray="8 4" opacity=".7"/>
+  <circle cx="374" cy="369" r="6" fill="#3f5f64"/>
+  <circle cx="432" cy="438" r="6" fill="#3f5f64"/>
+
+  <line x1="374" y1="369" x2="140" y2="300" stroke="#3f5f64" stroke-width="1.5"/>
+  <rect x="80" y="288" width="120" height="52" rx="8" fill="#3f5f64" opacity=".08"/>
+  <text x="140" y="307" fill="#3f5f64" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">L-TRACK</text>
+  <text x="140" y="327" fill="#3f5f64" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle">Neck → Glutes</text>
+
+  <line x1="402" y1="407" x2="560" y2="355" stroke="#3f5f64" stroke-width="1.5"/>
+  <rect x="560" y="342" width="160" height="52" rx="8" fill="#3f5f64" opacity=".08"/>
+  <text x="640" y="361" fill="#3f5f64" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">INTELLIGENT 4D</text>
+  <text x="640" y="381" fill="#3f5f64" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle">Soft → Firm adjust</text>
+
+  <line x1="432" y1="438" x2="565" y2="460" stroke="#3f5f64" stroke-width="1.5"/>
+  <rect x="565" y="447" width="155" height="52" rx="8" fill="#3f5f64" opacity=".08"/>
+  <text x="643" y="466" fill="#3f5f64" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">HEATED ROLLERS</text>
+  <text x="643" y="486" fill="#3f5f64" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle">Hot-stone sensation</text>
+
+  <!-- Brio+ specs bar -->
+  <rect x="80" y="690" width="680" height="26" rx="6" fill="#3f5f64" opacity=".06"/>
+  <text x="420" y="708" fill="#3f5f64" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle">10 Programs · 9 Manual Types · Auto Body Scan · Chromotherapy</text>
+
+  <!-- ========== SOLARA Card ========== -->
+  <rect x="820" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh2)"/>
+  <rect x="840" y="185" width="280" height="38" rx="19" fill="#a66f3d"/>
+  <text x="980" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">SOLARA · 4-ROLLER</text>
+  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/1.jpg?v=1772326021" x="980" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- SL-Track zone from Head(1128,367) to Lower Back(1178,441) -->
+  <path d="M1128,367 Q1140,389 1151,412 Q1165,427 1178,441" fill="none" stroke="#a66f3d" stroke-width="4" stroke-dasharray="8 4" opacity=".7"/>
+  <circle cx="1128" cy="367" r="6" fill="#a66f3d"/>
+  <circle cx="1178" cy="441" r="6" fill="#a66f3d"/>
+
+  <line x1="1128" y1="367" x2="900" y2="300" stroke="#a66f3d" stroke-width="1.5"/>
+  <rect x="840" y="288" width="120" height="52" rx="8" fill="#a66f3d" opacity=".08"/>
+  <text x="900" y="307" fill="#a66f3d" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">SL-TRACK</text>
+  <text x="900" y="327" fill="#a66f3d" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle">Neck → Hamstrings</text>
+
+  <line x1="1151" y1="412" x2="1320" y2="360" stroke="#a66f3d" stroke-width="1.5"/>
+  <rect x="1320" y="347" width="160" height="52" rx="8" fill="#a66f3d" opacity=".08"/>
+  <text x="1400" y="366" fill="#a66f3d" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">4-ROLLER ENGINE</text>
+  <text x="1400" y="386" fill="#a66f3d" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle">Steady contact glide</text>
+
+  <line x1="1178" y1="441" x2="1325" y2="460" stroke="#a66f3d" stroke-width="1.5"/>
+  <rect x="1325" y="447" width="155" height="52" rx="8" fill="#a66f3d" opacity=".08"/>
+  <text x="1403" y="466" fill="#a66f3d" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">BACK + CALF HEAT</text>
+  <text x="1403" y="486" fill="#a66f3d" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle">Warmer sessions</text>
+
+  <!-- Solara specs bar -->
+  <rect x="840" y="690" width="680" height="26" rx="6" fill="#a66f3d" opacity=".06"/>
+  <text x="1180" y="708" fill="#a66f3d" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle">Simple Touch Controller · Wireless Charging · Bluetooth® Speakers</text>
+
+  <!-- VS Badge -->
+  <circle cx="800" cy="445" r="32" fill="#0b0b0b"/>
+  <text x="800" y="453" fill="#fff" font-family="Georgia,serif" font-size="22" font-weight="700" text-anchor="middle">VS</text>
+
+  <!-- Bottom CTA -->
+  <rect x="520" y="780" width="560" height="56" rx="28" fill="#3f5f64"/>
+  <text x="800" y="814" fill="#fff" font-family="Inter,sans-serif" font-size="16" font-weight="800" letter-spacing="1" text-anchor="middle">FEEL THE DIFFERENCE IN PERSON →</text>
+  <text x="800" y="870" fill="#888" font-family="Inter,sans-serif" font-size="13" text-anchor="middle">massagechairsandmore.com · Pleasanton · Santa Clara · Daly City · Sacramento</text>
+</svg>

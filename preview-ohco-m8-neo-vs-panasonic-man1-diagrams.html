@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SVG Diagrams — OHCO M8 NEO vs Panasonic MAN1</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0c;color:#fff;font-family:Inter,sans-serif;padding:40px 20px}
+h1{text-align:center;font-size:28px;color:#c3a363;margin-bottom:8px}
+.sub{text-align:center;color:#666;font-size:13px;margin-bottom:50px}
+.diagram{max-width:1200px;margin:0 auto 60px;background:#111;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.diagram h2{padding:20px 24px 0;color:#c3a363;font-size:16px;letter-spacing:.1em;text-transform:uppercase}
+.diagram p.desc{padding:4px 24px 16px;color:#888;font-size:13px}
+.diagram svg{display:block;width:100%;height:auto}
+</style>
+</head>
+<body>
+<h1>OHCO M8 NEO vs Panasonic MAN1</h1>
+<p class="sub">6 SVG Annotation Diagrams — Calibrated Coordinates</p>
+<div id="app"></div>
+
+<script>
+const G = '#9a7f4a', GG = '#617064', IMG_A = 'https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100.jpg?v=1772325951', IMG_B = 'https://cdn.shopify.com/s/files/1/0813/4036/7096/files/panasonic-man1.jpg';
+const O = {head:[375,374],back:[395,413],glutes:[428,450],calves:[503,488],feet:[520,529],top:[343,339],bot:[487,563],left:[313,450],right:[537,431]};
+const P = {head:[1129,355],back:[1143,405],glutes:[1188,456],calves:[1252,519],feet:[1313,555],top:[1095,307],bot:[1295,592],left:[1059,445],right:[1322,429]};
+
+function base(title, subtitle) {
+  return `<defs>
+  <radialGradient id="bg" cx="50%" cy="30%"><stop offset="0%" stop-color="#1a1a1e"/><stop offset="100%" stop-color="#0d0d10"/></radialGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1600" height="980" fill="url(#bg)"/>
+<text x="800" y="60" text-anchor="middle" fill="#c3a363" font-family="Inter,sans-serif" font-size="13" font-weight="900" letter-spacing="3">${title}</text>
+<text x="800" y="90" text-anchor="middle" fill="#555" font-family="Inter,sans-serif" font-size="11">${subtitle}</text>
+<!-- Brand labels -->
+<text x="420" y="230" text-anchor="middle" fill="${G}" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2">OHCO M8 NEO</text>
+<text x="1180" y="230" text-anchor="middle" fill="${GG}" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2">PANASONIC MAN1</text>
+<!-- VS badge -->
+<circle cx="800" cy="450" r="32" fill="#1a1a1e" stroke="#333" stroke-width="2"/>
+<text x="800" y="456" text-anchor="middle" fill="#c3a363" font-family="Cormorant Garamond,serif" font-size="20" font-weight="700">VS</text>
+<!-- Chair images -->
+<image href="${IMG_A}" x="220" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet" opacity=".92"/>
+<image href="${IMG_B}" x="980" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet" opacity=".92"/>`;
+}
+
+function marker(x, y, color, r=28) {
+  return `<circle cx="${x}" cy="${y}" r="${r}" fill="none" stroke="${color}" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
+<circle cx="${x}" cy="${y}" r="5" fill="${color}" opacity=".9"/>`;
+}
+
+function label(x, y, text, color, align='start') {
+  const w = text.length * 7 + 20, rx = align === 'end' ? x - w - 4 : x + 4;
+  return `<rect x="${rx}" y="${y-14}" width="${w}" height="24" rx="6" fill="${color}" opacity=".12"/>
+<text x="${align === 'end' ? rx + 10 : rx + 10}" y="${y+2}" fill="${color}" font-family="Inter,sans-serif" font-size="11" font-weight="800">${text}</text>`;
+}
+
+function conn(x1, y1, x2, y2, color) {
+  return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${color}" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/>`;
+}
+
+function bbox(x, y, w, h, color) {
+  return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="14" fill="none" stroke="${color}" stroke-width="2" stroke-dasharray="8 5" opacity=".35"/>`;
+}
+
+const diagrams = [
+  // 1. Feature Map
+  { title: 'FEATURE MAP', sub: 'Full-body zone overview — 5 annotation points per chair', fn: () => {
+    const zones = [
+      {k:'head', lbl:'Knead & Stretch Headrest', lblP:'Junetsu Ultra Kneading'},
+      {k:'back', lbl:'Sens8 + MaxTrack 49″', lblP:'Real Pro Ultra H.I.'},
+      {k:'glutes', lbl:'Movesync Dual System', lblP:'1260P Body Scan'},
+      {k:'calves', lbl:'TheraElliptical Calf', lblP:'Wrap-Around Calf'},
+      {k:'feet', lbl:'Foot Rollers + Air', lblP:'Reflexology Foot'}
+    ];
+    let s = '';
+    zones.forEach((z, i) => {
+      const oy = 320 + i * 52;
+      s += marker(O[z.k][0], O[z.k][1], G);
+      s += conn(O[z.k][0], O[z.k][1], 190, oy, G);
+      s += label(30, oy, z.lbl, G);
+      s += marker(P[z.k][0], P[z.k][1], GG);
+      s += conn(P[z.k][0], P[z.k][1], 1410, oy, GG);
+      s += label(1410, oy, z.lblP, GG);
+    });
+    return s;
+  }},
+
+  // 2. Massage Engine
+  { title: 'MASSAGE ENGINE', sub: 'Roller path and mechanism comparison', fn: () => {
+    let s = '';
+    // OHCO spine path
+    s += `<path d="M${O.head[0]} ${O.head[1]} C${O.head[0]+10} ${O.back[1]} ${O.back[0]+5} ${O.glutes[1]-10} ${O.glutes[0]} ${O.glutes[1]}" fill="none" stroke="${G}" stroke-width="3" stroke-dasharray="8 4" opacity=".6"/>`;
+    s += marker(O.head[0], O.head[1], G, 22);
+    s += marker(O.back[0], O.back[1], G, 32);
+    s += marker(O.glutes[0], O.glutes[1], G, 22);
+    // OHCO track highlight
+    s += `<ellipse cx="${O.back[0]}" cy="${O.back[1]}" rx="45" ry="70" fill="${G}" opacity=".08" stroke="${G}" stroke-width="1.5" stroke-dasharray="6 3"/>`;
+    s += conn(O.back[0], O.back[1], 170, 380, G);
+    s += label(20, 380, 'MaxTrack 49″ Ultra-Long', G);
+    s += conn(O.head[0], O.head[1], 170, 340, G);
+    s += label(20, 340, 'Sens8 Massage Mechanism', G);
+    s += conn(O.glutes[0], O.glutes[1], 170, 420, G);
+    s += label(20, 420, 'Movesync Dual System', G);
+    // Panasonic spine path
+    s += `<path d="M${P.head[0]} ${P.head[1]} C${P.head[0]+10} ${P.back[1]} ${P.back[0]+5} ${P.glutes[1]-10} ${P.glutes[0]} ${P.glutes[1]}" fill="none" stroke="${GG}" stroke-width="3" stroke-dasharray="8 4" opacity=".6"/>`;
+    s += marker(P.head[0], P.head[1], GG, 22);
+    s += marker(P.back[0], P.back[1], GG, 32);
+    s += marker(P.glutes[0], P.glutes[1], GG, 22);
+    s += `<ellipse cx="${P.back[0]}" cy="${P.back[1]}" rx="45" ry="70" fill="${GG}" opacity=".08" stroke="${GG}" stroke-width="1.5" stroke-dasharray="6 3"/>`;
+    s += conn(P.back[0], P.back[1], 1420, 380, GG);
+    s += label(1420, 380, 'Real Pro Ultra H.I.', GG);
+    s += conn(P.head[0], P.head[1], 1420, 340, GG);
+    s += label(1420, 340, 'Pressure-Sensing Rollers', GG);
+    s += conn(P.glutes[0], P.glutes[1], 1420, 420, GG);
+    s += label(1420, 420, 'SL-Track Coverage', GG);
+    return s;
+  }},
+
+  // 3. Body Scan
+  { title: 'BODY SCAN & DETECTION', sub: 'How each chair maps your body before the massage begins', fn: () => {
+    let s = '';
+    // OHCO scan area
+    s += `<ellipse cx="${(O.head[0]+O.back[0])/2}" cy="${(O.head[1]+O.glutes[1])/2}" rx="55" ry="85" fill="${G}" opacity=".06" stroke="${G}" stroke-width="1.5" stroke-dasharray="10 5"/>`;
+    s += `<ellipse cx="${(O.head[0]+O.back[0])/2}" cy="${(O.head[1]+O.glutes[1])/2}" rx="35" ry="55" fill="${G}" opacity=".08" stroke="${G}" stroke-width="1" stroke-dasharray="4 3"/>`;
+    s += marker(O.head[0], O.head[1], G, 20);
+    s += marker(O.back[0], O.back[1], G, 20);
+    s += conn(O.head[0]-30, O.head[1]-10, 170, 350, G);
+    s += label(20, 350, 'Back AutoScan', G);
+    s += conn(O.back[0]-20, O.back[1]+20, 170, 400, G);
+    s += label(20, 400, 'Spine Curve Detection', G);
+    // Panasonic scan area - more detailed
+    s += `<ellipse cx="${(P.head[0]+P.back[0])/2}" cy="${(P.head[1]+P.glutes[1])/2}" rx="55" ry="85" fill="${GG}" opacity=".06" stroke="${GG}" stroke-width="1.5" stroke-dasharray="10 5"/>`;
+    s += `<ellipse cx="${(P.head[0]+P.back[0])/2}" cy="${(P.head[1]+P.glutes[1])/2}" rx="35" ry="55" fill="${GG}" opacity=".08" stroke="${GG}" stroke-width="1" stroke-dasharray="4 3"/>`;
+    // Scan points grid on Panasonic
+    for (let i = 0; i < 5; i++) {
+      const cy = P.head[1] + i * 25;
+      s += `<circle cx="${P.back[0]-10}" cy="${cy}" r="3" fill="${GG}" opacity=".4"/>`;
+      s += `<circle cx="${P.back[0]+10}" cy="${cy}" r="3" fill="${GG}" opacity=".4"/>`;
+    }
+    s += marker(P.head[0], P.head[1], GG, 20);
+    s += marker(P.back[0], P.back[1], GG, 20);
+    s += conn(P.head[0]+30, P.head[1]-10, 1420, 350, GG);
+    s += label(1420, 350, '1260P Acupoint Body Scan', GG);
+    s += conn(P.back[0]+20, P.back[1]+20, 1420, 400, GG);
+    s += label(1420, 400, '6-Position Microprocessor', GG);
+    s += conn(P.glutes[0], P.glutes[1], 1420, 450, GG);
+    s += label(1420, 450, 'Pressure-Sensing Rollers', GG);
+    return s;
+  }},
+
+  // 4. Lower Body
+  { title: 'LOWER BODY', sub: 'Arms, calves, and feet — often the deciding factor in a demo', fn: () => {
+    let s = '';
+    // OHCO lower body
+    s += marker(O.glutes[0], O.glutes[1], G, 24);
+    s += marker(O.calves[0], O.calves[1], G, 28);
+    s += marker(O.feet[0], O.feet[1], G, 24);
+    // Highlight zone
+    s += `<ellipse cx="${(O.calves[0]+O.feet[0])/2}" cy="${(O.calves[1]+O.feet[1])/2}" rx="50" ry="45" fill="${G}" opacity=".06" stroke="${G}" stroke-width="1" stroke-dasharray="6 4"/>`;
+    s += conn(O.glutes[0], O.glutes[1], 170, 370, G);
+    s += label(20, 370, 'Arms of Embrace (12 air cells)', G);
+    s += conn(O.calves[0], O.calves[1], 170, 420, G);
+    s += label(20, 420, 'TheraElliptical Calf Kneading', G);
+    s += conn(O.feet[0], O.feet[1], 170, 470, G);
+    s += label(20, 470, 'Back Calf + Foot Rollers', G);
+    // Panasonic lower body
+    s += marker(P.glutes[0], P.glutes[1], GG, 24);
+    s += marker(P.calves[0], P.calves[1], GG, 28);
+    s += marker(P.feet[0], P.feet[1], GG, 24);
+    s += `<ellipse cx="${(P.calves[0]+P.feet[0])/2}" cy="${(P.calves[1]+P.feet[1])/2}" rx="50" ry="45" fill="${GG}" opacity=".06" stroke="${GG}" stroke-width="1" stroke-dasharray="6 4"/>`;
+    s += conn(P.glutes[0], P.glutes[1], 1420, 370, GG);
+    s += label(1420, 370, 'Shaped Palm Massage', GG);
+    s += conn(P.calves[0], P.calves[1], 1420, 420, GG);
+    s += label(1420, 420, 'Bodygrip + Wrap-Around Calf', GG);
+    s += conn(P.feet[0], P.feet[1], 1420, 470, GG);
+    s += label(1420, 470, 'Reflexology Foot Massage', GG);
+    return s;
+  }},
+
+  // 5. Heat & Programs
+  { title: 'HEAT & SENSORY PROGRAMS', sub: 'Warmth distribution and session design', fn: () => {
+    let s = '';
+    // OHCO heat zones - radial warm glow
+    s += `<radialGradient id="heatO" cx="50%" cy="50%"><stop offset="0%" stop-color="${G}" stop-opacity=".18"/><stop offset="100%" stop-color="${G}" stop-opacity="0"/></radialGradient>`;
+    s += `<ellipse cx="${O.back[0]}" cy="${O.back[1]}" rx="60" ry="80" fill="url(#heatO)"/>`;
+    s += `<ellipse cx="${O.calves[0]}" cy="${O.calves[1]}" rx="40" ry="35" fill="url(#heatO)"/>`;
+    s += marker(O.back[0], O.back[1], '#d4824a', 30);
+    s += marker(O.calves[0], O.calves[1], '#d4824a', 22);
+    s += marker(O.head[0], O.head[1], G, 18);
+    s += conn(O.back[0], O.back[1], 170, 360, '#d4824a');
+    s += label(20, 360, 'ConstantTouch Infrared Heat', '#d4824a');
+    s += conn(O.head[0], O.head[1], 170, 320, G);
+    s += label(20, 320, 'Chromotherapy + Aromatherapy', G);
+    s += label(20, 410, '18 Sessions · ~18 min each', G);
+    s += label(20, 450, 'Bluetooth Audio Immersion', G);
+    s += label(20, 490, 'Air Ionizer + USB Power', G);
+    // Panasonic heat
+    s += `<radialGradient id="heatP" cx="50%" cy="50%"><stop offset="0%" stop-color="${GG}" stop-opacity=".18"/><stop offset="100%" stop-color="${GG}" stop-opacity="0"/></radialGradient>`;
+    s += `<ellipse cx="${P.back[0]}" cy="${P.back[1]}" rx="40" ry="55" fill="url(#heatP)"/>`;
+    s += marker(P.back[0], P.back[1], '#d4824a', 26);
+    s += marker(P.head[0], P.head[1], GG, 18);
+    s += conn(P.back[0], P.back[1], 1420, 360, '#d4824a');
+    s += label(1420, 360, 'Infrared-Heated Rollers', '#d4824a');
+    s += conn(P.head[0], P.head[1], 1420, 320, GG);
+    s += label(1420, 320, 'Touchscreen Remote', GG);
+    s += label(1420, 410, '12 Auto Sessions · 10-30 min', GG);
+    s += label(1420, 450, 'Bluetooth Audio + USB', GG);
+    return s;
+  }},
+
+  // 6. Fit & Warranty
+  { title: 'FIT & WARRANTY', sub: 'Physical dimensions, height range, and weight capacity', fn: () => {
+    let s = '';
+    // OHCO bounding box
+    const oW = O.right[0] - O.left[0], oH = O.bot[1] - O.top[1];
+    s += bbox(O.left[0], O.top[1], oW, oH, G);
+    // Height measurement line
+    s += `<line x1="${O.right[0]+20}" y1="${O.top[1]}" x2="${O.right[0]+20}" y2="${O.bot[1]}" stroke="${G}" stroke-width="1.5"/>`;
+    s += `<line x1="${O.right[0]+12}" y1="${O.top[1]}" x2="${O.right[0]+28}" y2="${O.top[1]}" stroke="${G}" stroke-width="1.5"/>`;
+    s += `<line x1="${O.right[0]+12}" y1="${O.bot[1]}" x2="${O.right[0]+28}" y2="${O.bot[1]}" stroke="${G}" stroke-width="1.5"/>`;
+    s += label(20, 340, 'Height: 5\'1″ — 6\'4″', G);
+    s += label(20, 380, 'Weight: 265 lb max', G);
+    s += label(20, 420, 'Wall Hug: 6.25″', G);
+    s += label(20, 460, 'Zero Gravity + Lay Flat', G);
+    s += label(20, 510, 'KEY: Easy Access Doors', G);
+    s += label(20, 550, 'Ken Okuyama Design', G);
+    // Panasonic bounding box
+    const pW = P.right[0] - P.left[0], pH = P.bot[1] - P.top[1];
+    s += bbox(P.left[0], P.top[1], pW, pH, GG);
+    s += `<line x1="${P.right[0]+20}" y1="${P.top[1]}" x2="${P.right[0]+20}" y2="${P.bot[1]}" stroke="${GG}" stroke-width="1.5"/>`;
+    s += `<line x1="${P.right[0]+12}" y1="${P.top[1]}" x2="${P.right[0]+28}" y2="${P.top[1]}" stroke="${GG}" stroke-width="1.5"/>`;
+    s += `<line x1="${P.right[0]+12}" y1="${P.bot[1]}" x2="${P.right[0]+28}" y2="${P.bot[1]}" stroke="${GG}" stroke-width="1.5"/>`;
+    s += label(1420, 340, 'Height: 4\'8″ — 6\'2″', GG);
+    s += label(1420, 380, 'Weight: 264 lb max', GG);
+    s += label(1420, 420, 'Confirm wall clearance', GG);
+    s += label(1420, 460, 'Touchscreen Remote', GG);
+    s += label(1420, 510, 'KEY: 1260P Acupoint Scan', GG);
+    s += label(1420, 550, 'Engineered in Osaka, Japan', GG);
+    return s;
+  }}
+];
+
+const app = document.getElementById('app');
+const titles = ['01 · FEATURE MAP','02 · MASSAGE ENGINE','03 · BODY SCAN & DETECTION','04 · LOWER BODY','05 · HEAT & SENSORY PROGRAMS','06 · FIT & WARRANTY'];
+
+diagrams.forEach((d, i) => {
+  const div = document.createElement('div');
+  div.className = 'diagram';
+  div.innerHTML = `<h2>${titles[i]}</h2><p class="desc">${d.sub}</p>
+<svg viewBox="0 0 1600 980" xmlns="http://www.w3.org/2000/svg">
+${base(d.title, d.sub)}
+${d.fn()}
+</svg>`;
+  app.appendChild(div);
+});
+</script>
+</body>
+</html>

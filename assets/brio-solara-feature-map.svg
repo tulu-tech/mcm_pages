@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-label="Feature Zone Map — Brio+ vs Solara">
+  <defs>
+    <linearGradient id="bg1" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#f7f9f9"/><stop offset="1" stop-color="#e8ede6"/></linearGradient>
+    <filter id="sh1" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#1a2e30" flood-opacity=".12"/></filter>
+  </defs>
+  <rect width="1600" height="980" fill="url(#bg1)"/>
+  <text x="800" y="56" fill="#3f5f64" font-family="Inter,sans-serif" font-size="13" font-weight="900" letter-spacing="4" text-anchor="middle">MASSAGE CHAIRS &amp; MORE — FEATURE ZONE MAP</text>
+  <text x="800" y="100" fill="#0b0b0b" font-family="Georgia,serif" font-size="40" font-weight="800" text-anchor="middle">Compare one body zone at a time</text>
+  <text x="800" y="132" fill="#67605a" font-family="Inter,sans-serif" font-size="16" text-anchor="middle">Real product images · Tap a zone to compare Brio+ and Solara side by side</text>
+
+  <!--
+    USER-CALIBRATED COORDINATES (from calibrate-brio-plus-vs-solara.html):
+    BRIO+:   Head(374,369) Neck(386,392) Back(402,407) LowerBack(432,438) Calves(480,494) Feet(500,540)
+    SOLARA:  Head(1128,367) Neck(1139,397) Back(1151,412) LowerBack(1178,441) Calves(1223,517) Feet(1244,560)
+  -->
+
+  <!-- ========== BRIO+ Card ========== -->
+  <rect x="60" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh1)"/>
+  <rect x="80" y="185" width="180" height="38" rx="19" fill="#3f5f64"/>
+  <text x="170" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">BRIO+</text>
+  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100-14-1.jpg?v=1772325831" x="220" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- Head (374, 369) → callout left -->
+  <circle cx="374" cy="369" r="20" fill="none" stroke="#3f5f64" stroke-width="2.5" stroke-dasharray="4 3"/>
+  <line x1="354" y1="364" x2="200" y2="310" stroke="#3f5f64" stroke-width="1.5"/>
+  <rect x="80" y="296" width="150" height="28" rx="8" fill="#3f5f64" opacity=".12"/>
+  <text x="155" y="315" fill="#3f5f64" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">Intelligent 4D</text>
+
+  <!-- Back (402, 407) → callout right -->
+  <circle cx="402" cy="407" r="26" fill="none" stroke="#3f5f64" stroke-width="2.5" stroke-dasharray="4 3"/>
+  <line x1="428" y1="400" x2="545" y2="365" stroke="#3f5f64" stroke-width="1.5"/>
+  <rect x="545" y="351" width="175" height="28" rx="8" fill="#3f5f64" opacity=".12"/>
+  <text x="633" y="370" fill="#3f5f64" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">L-Track · Body Scan</text>
+
+  <!-- Lower Back (432, 438) → callout left -->
+  <circle cx="432" cy="438" r="20" fill="none" stroke="#3f5f64" stroke-width="2.5" stroke-dasharray="4 3"/>
+  <line x1="412" y1="443" x2="195" y2="458" stroke="#3f5f64" stroke-width="1.5"/>
+  <rect x="80" y="446" width="140" height="28" rx="8" fill="#3f5f64" opacity=".12"/>
+  <text x="150" y="465" fill="#3f5f64" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">Heated Rollers</text>
+
+  <!-- Calves (480, 494) → callout right -->
+  <circle cx="480" cy="494" r="22" fill="none" stroke="#3f5f64" stroke-width="2.5" stroke-dasharray="4 3"/>
+  <line x1="502" y1="488" x2="570" y2="470" stroke="#3f5f64" stroke-width="1.5"/>
+  <rect x="570" y="456" width="155" height="28" rx="8" fill="#3f5f64" opacity=".12"/>
+  <text x="648" y="475" fill="#3f5f64" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">Heat + Air Massage</text>
+
+  <!-- Feet (500, 540) → callout right -->
+  <circle cx="500" cy="540" r="18" fill="none" stroke="#3f5f64" stroke-width="2.5" stroke-dasharray="4 3"/>
+  <line x1="518" y1="534" x2="575" y2="520" stroke="#3f5f64" stroke-width="1.5"/>
+  <rect x="575" y="506" width="170" height="28" rx="8" fill="#3f5f64" opacity=".12"/>
+  <text x="660" y="525" fill="#3f5f64" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">Touch Foot Rollers</text>
+
+  <rect x="80" y="695" width="680" height="18" rx="4" fill="#3f5f64" opacity=".06"/>
+  <text x="420" y="708" fill="#3f5f64" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle">Intelligent 4D · L-Track · Heated Rollers · Wall-Hugging · $4,999</text>
+
+  <!-- ========== SOLARA Card ========== -->
+  <rect x="820" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh1)"/>
+  <rect x="840" y="185" width="180" height="38" rx="19" fill="#a66f3d"/>
+  <text x="930" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">SOLARA</text>
+  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/1.jpg?v=1772326021" x="980" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- Head (1128, 367) → callout left -->
+  <circle cx="1128" cy="367" r="20" fill="none" stroke="#a66f3d" stroke-width="2.5" stroke-dasharray="4 3"/>
+  <line x1="1108" y1="362" x2="960" y2="310" stroke="#a66f3d" stroke-width="1.5"/>
+  <rect x="840" y="296" width="145" height="28" rx="8" fill="#a66f3d" opacity=".12"/>
+  <text x="913" y="315" fill="#a66f3d" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">4-Roller Engine</text>
+
+  <!-- Back (1151, 412) → callout right -->
+  <circle cx="1151" cy="412" r="26" fill="none" stroke="#a66f3d" stroke-width="2.5" stroke-dasharray="4 3"/>
+  <line x1="1177" y1="405" x2="1310" y2="370" stroke="#a66f3d" stroke-width="1.5"/>
+  <rect x="1310" y="356" width="170" height="28" rx="8" fill="#a66f3d" opacity=".12"/>
+  <text x="1395" y="375" fill="#a66f3d" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">SL-Track Coverage</text>
+
+  <!-- Lower Back (1178, 441) → callout left -->
+  <circle cx="1178" cy="441" r="20" fill="none" stroke="#a66f3d" stroke-width="2.5" stroke-dasharray="4 3"/>
+  <line x1="1158" y1="446" x2="960" y2="458" stroke="#a66f3d" stroke-width="1.5"/>
+  <rect x="840" y="446" width="140" height="28" rx="8" fill="#a66f3d" opacity=".12"/>
+  <text x="910" y="465" fill="#a66f3d" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">Back Heat</text>
+
+  <!-- Calves (1223, 517) → callout right -->
+  <circle cx="1223" cy="517" r="22" fill="none" stroke="#a66f3d" stroke-width="2.5" stroke-dasharray="4 3"/>
+  <line x1="1245" y1="511" x2="1315" y2="493" stroke="#a66f3d" stroke-width="1.5"/>
+  <rect x="1315" y="479" width="155" height="28" rx="8" fill="#a66f3d" opacity=".12"/>
+  <text x="1393" y="498" fill="#a66f3d" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">Calf Heat + Air</text>
+
+  <!-- Feet (1244, 560) → callout right -->
+  <circle cx="1244" cy="560" r="18" fill="none" stroke="#a66f3d" stroke-width="2.5" stroke-dasharray="4 3"/>
+  <line x1="1262" y1="554" x2="1320" y2="540" stroke="#a66f3d" stroke-width="1.5"/>
+  <rect x="1320" y="526" width="170" height="28" rx="8" fill="#a66f3d" opacity=".12"/>
+  <text x="1405" y="545" fill="#a66f3d" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">Dual-Speed Rollers</text>
+
+  <rect x="840" y="695" width="680" height="18" rx="4" fill="#a66f3d" opacity=".06"/>
+  <text x="1180" y="708" fill="#a66f3d" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle">SL-Track · Zero Gravity® · Heat · Bluetooth · No Assembly · $2,499</text>
+
+  <!-- ========== Bottom CTA ========== -->
+  <rect x="520" y="780" width="560" height="56" rx="28" fill="#3f5f64"/>
+  <text x="800" y="814" fill="#fff" font-family="Inter,sans-serif" font-size="16" font-weight="800" letter-spacing="1" text-anchor="middle">BOOK A SIDE-BY-SIDE DEMO →</text>
+  <text x="800" y="870" fill="#888" font-family="Inter,sans-serif" font-size="13" text-anchor="middle">massagechairsandmore.com · Pleasanton · Santa Clara · Daly City · Sacramento</text>
+
+  <!-- VS Badge -->
+  <circle cx="800" cy="445" r="32" fill="#0b0b0b"/>
+  <text x="800" y="453" fill="#fff" font-family="Georgia,serif" font-size="22" font-weight="700" text-anchor="middle">VS</text>
+</svg>

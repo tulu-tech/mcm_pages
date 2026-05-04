@@ -1,0 +1,158 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+.au{font-family:'Inter',sans-serif !important;color:#2a2a2a !important;font-size:16px !important;line-height:1.75 !important;-webkit-font-smoothing:antialiased;--accent:#b8944f;--accent2:#d4b06a;--surface:#f8f6f3;--border:#e5e0d8;--dark:#111;--muted:#5c5c5c;--r:14px}
+.au *,.au *::before,.au *::after{box-sizing:border-box !important}
+.au h1,.au h2,.au h3,.au h4{font-family:'Playfair Display',Georgia,serif !important;color:#111 !important;line-height:1.2 !important;font-weight:700 !important;margin:0 !important;font-style:normal !important}
+.au p{font-size:16px !important;line-height:1.8 !important;margin:0 !important;font-style:normal !important}
+.au a{text-decoration:none !important;color:inherit !important}
+.au-c{max-width:1160px;margin:0 auto;padding:0 36px}
+.au-tag{display:inline-block;font-size:11px !important;font-weight:700 !important;letter-spacing:.22em !important;text-transform:uppercase !important;color:#b8944f !important;font-style:normal !important}
+.au-in{opacity:1;transform:none}
+.au-rooms{padding:100px 0;background:#f8f6f3}.au-rooms-hdr{margin-bottom:56px}.au-rooms-hdr h2{font-size:38px !important;letter-spacing:-.02em;margin-bottom:12px !important}.au-rooms-hdr p{font-size:17px !important;color:#5c5c5c}.au-rooms-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.au-room{background:#fff;border:1px solid #e5e0d8;border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;transition:all .35s ease;position:relative;overflow:hidden}.au-room::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:#b8944f;transform:scaleX(0);transition:transform .4s ease;transform-origin:left}.au-room:hover::before{transform:scaleX(1)}.au-room:hover{border-color:#b8944f;box-shadow:0 24px 64px rgba(0,0,0,.10);transform:translateY(-4px)}.au-room h3{font-size:17px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;color:#111 !important}.au-room-d{display:flex;align-items:flex-start;gap:9px;font-size:13px !important;color:#5c5c5c !important;line-height:1.5 !important}.au-room-d svg{width:14px;height:14px;fill:#b8944f;flex-shrink:0;margin-top:2px}.au-room-d a{color:#5c5c5c !important;font-size:13px !important;transition:all .35s ease}.au-room-d a:hover{color:#b8944f !important}.au-room-btns{margin-top:auto;padding-top:16px;display:flex;gap:8px}.au-room-btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px !important;border-radius:50px;font-size:13px !important;font-weight:700 !important;font-family:'Inter',sans-serif !important;transition:all .35s ease;text-decoration:none !important}.au-room-btn-d{background:#111 !important;color:#ffffff !important}.au-room-btn-d:hover{background:#b8944f !important}.au-room-btn-c{border:1.5px solid #e5e0d8 !important;color:#111 !important;background:transparent !important}.au-room-btn-c:hover{border-color:#b8944f !important;color:#b8944f !important}.au-room-btn svg{width:12px;height:12px;fill:currentColor}
+.au-cta{padding:100px 0}.au-cta-inner{background:#b8944f;border-radius:22px;padding:72px 64px;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;position:relative;overflow:hidden}.au-cta-inner::before{content:"";position:absolute;top:-40%;right:-8%;width:480px;height:480px;background:radial-gradient(circle,rgba(255,255,255,.1) 0%,transparent 70%);border-radius:50%;pointer-events:none}.au-cta-left h2{font-size:36px !important;color:#fff !important;margin-bottom:14px !important;position:relative;z-index:1}.au-cta-left p{font-size:17px !important;color:rgba(255,255,255,.82) !important;max-width:480px;position:relative;z-index:1}.au-cta-right{display:flex;flex-direction:column;gap:12px;flex-shrink:0;position:relative;z-index:1}.au-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 32px !important;font-size:15px !important;font-weight:700 !important;font-family:'Inter',sans-serif !important;border-radius:50px !important;text-decoration:none !important;transition:all .35s ease;white-space:nowrap;cursor:pointer}.au-btn-dk{background:#111 !important;color:#ffffff !important;border:2px solid #111 !important}.au-btn-dk:hover{background:#000 !important;transform:translateY(-2px)}.au-btn-ol{background:transparent !important;color:#fff !important;border:2px solid rgba(255,255,255,.45) !important}.au-btn-ol:hover{border-color:#fff !important;background:rgba(255,255,255,.1) !important}.au-btn svg{width:16px;height:16px;fill:currentColor}
+@media(max-width:768px){.au-c{padding:0 20px !important}.au-rooms{padding:64px 0}.au-rooms-grid{grid-template-columns:1fr !important;gap:14px}.au-cta{padding:48px 0}.au-cta-inner{grid-template-columns:1fr !important;gap:28px;padding:44px 24px !important;border-radius:16px !important}.au-cta-left h2{font-size:24px !important}.au-cta-right{flex-direction:column;width:100%}.au-btn{justify-content:center !important}}
+@media(max-width:480px){.au-c{padding:0 16px !important}}
+</style>
+<div class="au">
+<!-- THE CALIFORNIA CUSTOMER -->
+<section style="padding:100px 0;background:#f8f6f3">
+  <div class="au-c">
+    <div style="display:grid;grid-template-columns:520px 1fr;gap:80px;align-items:start">
+      <div class="au-in">
+        <span class="au-tag" style="margin-bottom:16px;display:block">Who Walks Through the Door</span>
+        <h2 style="font-size:40px !important;letter-spacing:-.025em;margin-bottom:28px !important;font-family:'Playfair Display',Georgia,serif !important;color:#111 !important;line-height:1.2 !important;font-weight:700 !important">We know this customer. We've been watching them walk in for twenty years.</h2>
+        <p style="color:#5c5c5c;font-size:17px !important;margin-bottom:18px !important;line-height:1.8 !important">They're usually not in pain, exactly. It's more like they're carrying something — a workload that never fully empties, a commute that adds an hour to every day, a body that's been asked to perform at a desk for eight, nine, ten hours and hasn't been given anywhere to recover.</p>
+        <p style="color:#5c5c5c;font-size:17px !important;margin-bottom:18px !important;line-height:1.8 !important">California has its own specific version of this. The Bay Area runs hot. The traffic is real. The mental load of high-performance environments — tech, finance, healthcare — doesn't stop when you leave the office. It follows you home, and the body ends up holding most of it.</p>
+        <p style="color:#5c5c5c;font-size:17px !important;margin-bottom:0 !important;line-height:1.8 !important">We've learned to recognize it immediately. The person who isn't sure what they need yet — they just know they need something. That's usually where the best conversations start.</p>
+      </div>
+      <div class="au-in" style="padding-top:8px">
+        <div style="padding:28px 0 28px;border-bottom:1px solid #e5e0d8">
+          <div style="font-size:11px !important;font-weight:700 !important;letter-spacing:.18em;text-transform:uppercase;color:#b8944f;margin-bottom:10px">The tech worker</div>
+          <p style="font-size:15px !important;color:#5c5c5c !important;line-height:1.7 !important;margin:0 !important">Six hours of meetings, two hours of deep work, one hour of email. Neck tight, shoulders up around their ears. They come in thinking they want a massage chair. They actually need a signal to stop.</p>
+        </div>
+        <div style="padding:28px 0 28px;border-bottom:1px solid #e5e0d8">
+          <div style="font-size:11px !important;font-weight:700 !important;letter-spacing:.18em;text-transform:uppercase;color:#b8944f;margin-bottom:10px">The parent</div>
+          <p style="font-size:15px !important;color:#5c5c5c !important;line-height:1.7 !important;margin:0 !important">Work is full. The kids are full. There's no quiet hour anywhere in the day. They're not looking for luxury — they're looking for ten minutes that belong to them.</p>
+        </div>
+        <div style="padding:28px 0 28px;border-bottom:1px solid #e5e0d8">
+          <div style="font-size:11px !important;font-weight:700 !important;letter-spacing:.18em;text-transform:uppercase;color:#b8944f;margin-bottom:10px">The person recovering</div>
+          <p style="font-size:15px !important;color:#5c5c5c !important;line-height:1.7 !important;margin:0 !important">Post-surgery, chronic back issues, athletic recovery. They've been told massage helps. They want to know if it actually will — for their specific situation, not in general.</p>
+        </div>
+        <div style="padding:28px 0 0">
+          <div style="font-size:11px !important;font-weight:700 !important;letter-spacing:.18em;text-transform:uppercase;color:#b8944f;margin-bottom:10px">The one buying for someone else</div>
+          <p style="font-size:15px !important;color:#5c5c5c !important;line-height:1.7 !important;margin:0 !important">A spouse, a parent, a partner who's been struggling. They're carrying some guilt about not being able to fix it themselves. They want to get this right.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 20 YEARS OF LEARNING -->
+<section style="padding:100px 0;background:#fff">
+  <div class="au-c">
+    <div style="max-width:720px;margin:0 auto 64px" class="au-in">
+      <span class="au-tag" style="margin-bottom:16px;display:block">Twenty Years</span>
+      <h2 style="font-size:40px !important;letter-spacing:-.025em;margin-bottom:24px !important;font-family:'Playfair Display',Georgia,serif !important;color:#111 !important;line-height:1.2 !important;font-weight:700 !important">What twenty years in one industry teaches you.</h2>
+      <p style="font-size:18px !important;color:#5c5c5c !important;line-height:1.8 !important;margin:0 !important">Not lessons from a book. Things we got wrong, figured out slowly, and eventually stopped needing to relearn.</p>
+    </div>
+    <div class="au-in">
+      <div style="display:grid;grid-template-columns:140px 1fr;gap:40px;padding:40px 0;border-bottom:1px solid #e5e0d8;align-items:start">
+        <div style="font-size:13px !important;font-weight:700 !important;color:#b8944f !important;font-family:'Playfair Display',serif !important">Early on</div>
+        <div><h3 style="font-size:18px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;color:#111 !important;margin-bottom:10px !important;line-height:1.3 !important">We used to lead with features. We learned to lead with questions.</h3><p style="font-size:16px !important;color:#5c5c5c !important;line-height:1.75 !important;margin:0 !important">The instinct when you know a product well is to talk about it. Body scan, zero gravity, 3D rollers — the vocabulary comes fast. What we learned is that none of it means anything until you understand what's actually going on with the person in front of you. The features become relevant after the listening. Not before.</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:140px 1fr;gap:40px;padding:40px 0;border-bottom:1px solid #e5e0d8;align-items:start">
+        <div style="font-size:13px !important;font-weight:700 !important;color:#b8944f !important;font-family:'Playfair Display',serif !important">A few years in</div>
+        <div><h3 style="font-size:18px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;color:#111 !important;margin-bottom:10px !important;line-height:1.3 !important">The most expensive chair isn't always the right one. We had to get comfortable saying that.</h3><p style="font-size:16px !important;color:#5c5c5c !important;line-height:1.75 !important;margin:0 !important">There's always pressure — conscious or not — to sell up. More features, higher price, bigger margin. At some point we made a decision to just stop. If an $1,800 chair is what someone needs, that's what we say. The customers who trust you for that come back. And they tell people.</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:140px 1fr;gap:40px;padding:40px 0;border-bottom:1px solid #e5e0d8;align-items:start">
+        <div style="font-size:13px !important;font-weight:700 !important;color:#b8944f !important;font-family:'Playfair Display',serif !important">After a decade</div>
+        <div><h3 style="font-size:18px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;color:#111 !important;margin-bottom:10px !important;line-height:1.3 !important">The real question isn't "which chair." It's "will you actually use it."</h3><p style="font-size:16px !important;color:#5c5c5c !important;line-height:1.75 !important;margin:0 !important">We started asking about space earlier. About daily routine. About whether the chair would be in a room people actually spend time in, or stuck in a corner that becomes invisible within a month. A great chair that never gets used is a terrible purchase.</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:140px 1fr;gap:40px;padding:40px 0;align-items:start">
+        <div style="font-size:13px !important;font-weight:700 !important;color:#b8944f !important;font-family:'Playfair Display',serif !important">Now</div>
+        <div><h3 style="font-size:18px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;color:#111 !important;margin-bottom:10px !important;line-height:1.3 !important">We measure success differently than we used to.</h3><p style="font-size:16px !important;color:#5c5c5c !important;line-height:1.75 !important;margin:0 !important">It used to be units, revenue, month-over-month. Those things still matter. But the number we pay attention to now is how many people come back, refer someone, or call to say they're still using the chair three years later. That's the signal. Everything else is noise.</p></div>
+      </div>
+    </div>
+    <div style="margin-top:56px;padding:44px 48px;background:#111;border-radius:16px;text-align:center" class="au-in">
+      <p style="font-family:'Playfair Display',Georgia,serif !important;font-size:22px !important;font-style:italic !important;color:#fff !important;line-height:1.6 !important;margin:0 0 20px !important;max-width:680px;display:block;margin-left:auto;margin-right:auto">"We don't measure success by transactions. We measure it by the moment someone realizes — 'I can feel better, and I know what to do next.'"</p>
+      <span style="font-size:11px !important;font-weight:700 !important;color:#b8944f !important;letter-spacing:.18em;text-transform:uppercase">— Matt, Founder</span>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWROOMS -->
+<section class="au-rooms">
+
+  <div class="au-c">
+    <div class="au-rooms-hdr au-in">
+      <span class="au-tag">Find Us</span>
+      <h2>Four showrooms across California.</h2>
+      <p>Come in and try them yourself. No appointment needed, no pressure expected.</p>
+    </div>
+    <div class="au-rooms-grid">
+      <div class="au-room au-in">
+        <h3>Walnut Creek</h3>
+        <div class="au-room-d"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><a href="https://maps.app.goo.gl/81a5QJwKfQZevtbw5" target="_blank">1198 Broadway Plaza, Walnut Creek, CA 94596</a></div>
+        <div class="au-room-d"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:+14088891188">+1 (408) 889-1188</a></div>
+        <div class="au-room-btns">
+          <a href="https://maps.app.goo.gl/81a5QJwKfQZevtbw5" target="_blank" class="au-room-btn au-room-btn-d" style="color:#fff !important"><svg viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9a.996.996 0 00-1.41 0l-9 9a.996.996 0 000 1.41l9 9c.39.39 1.02.39 1.41 0l9-9a.996.996 0 000-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>Directions</a>
+          <a href="tel:+14088891188" class="au-room-btn au-room-btn-c">Call</a>
+        </div>
+      </div>
+      <div class="au-room au-in">
+        <h3>Santa Clara</h3>
+        <div class="au-room-d"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><a href="https://maps.app.goo.gl/M4q7oMSRn35WUBd58" target="_blank">2855 Stevens Creek Blvd, Ste #1091, Santa Clara, CA 95050</a></div>
+        <div class="au-room-d"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:+14088891188">+1 (408) 889-1188</a></div>
+        <div class="au-room-btns">
+          <a href="https://maps.app.goo.gl/M4q7oMSRn35WUBd58" target="_blank" class="au-room-btn au-room-btn-d" style="color:#fff !important"><svg viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9a.996.996 0 00-1.41 0l-9 9a.996.996 0 000 1.41l9 9c.39.39 1.02.39 1.41 0l9-9a.996.996 0 000-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>Directions</a>
+          <a href="tel:+14088891188" class="au-room-btn au-room-btn-c">Call</a>
+        </div>
+      </div>
+      <div class="au-room au-in">
+        <h3>Sacramento</h3>
+        <div class="au-room-d"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><a href="https://maps.app.goo.gl/uPrqs5vL7PVosqQu6" target="_blank">Sacramento, CA</a></div>
+        <div class="au-room-d"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:+14088891188">+1 (408) 889-1188</a></div>
+        <div class="au-room-btns">
+          <a href="https://maps.app.goo.gl/uPrqs5vL7PVosqQu6" target="_blank" class="au-room-btn au-room-btn-d" style="color:#fff !important"><svg viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9a.996.996 0 00-1.41 0l-9 9a.996.996 0 000 1.41l9 9c.39.39 1.02.39 1.41 0l9-9a.996.996 0 000-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>Directions</a>
+          <a href="tel:+14088891188" class="au-room-btn au-room-btn-c">Call</a>
+        </div>
+      </div>
+      <div class="au-room au-in">
+        <h3>Roseville</h3>
+        <div class="au-room-d"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><a href="https://maps.app.goo.gl/FfiVdNygEA1BUaW4A" target="_blank">1151 Galleria Blvd, Ste #2058, Roseville, CA 95678</a></div>
+        <div class="au-room-d"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:+14088891188">+1 (408) 889-1188</a></div>
+        <div class="au-room-btns">
+          <a href="https://maps.app.goo.gl/FfiVdNygEA1BUaW4A" target="_blank" class="au-room-btn au-room-btn-d" style="color:#fff !important"><svg viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9a.996.996 0 00-1.41 0l-9 9a.996.996 0 000 1.41l9 9c.39.39 1.02.39 1.41 0l9-9a.996.996 0 000-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>Directions</a>
+          <a href="tel:+14088891188" class="au-room-btn au-room-btn-c">Call</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="au-cta">
+  <div class="au-c">
+    <div class="au-cta-inner au-in">
+      <div class="au-cta-left">
+        <h2>The best way to choose is to try.</h2>
+        <p>Visit any of our five showrooms and sit in the chairs yourself. No script, no pressure — just an honest conversation and a decision that feels right.</p>
+      </div>
+      <div class="au-cta-right">
+        <a href="/collections/massage-chair" class="au-btn au-btn-dk" style="color:#fff !important">
+          <svg viewBox="0 0 24 24"><path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/></svg>
+          Browse Chairs
+        </a>
+        <a href="/pages/contact" class="au-btn au-btn-ol">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Find a Showroom
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+

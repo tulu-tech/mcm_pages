@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-label="Fit and Warranty — DualTech 4D vs Brio+">
+  <defs>
+    <linearGradient id="bg6" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#fbfaf7"/><stop offset="1" stop-color="#eee6da"/></linearGradient>
+    <filter id="sh6" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#2b2114" flood-opacity=".12"/></filter>
+  </defs>
+  <rect width="1600" height="980" fill="url(#bg6)"/>
+  <text x="800" y="56" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="13" font-weight="900" letter-spacing="4" text-anchor="middle">FIT, DIMENSIONS &amp; WARRANTY</text>
+  <text x="800" y="100" fill="#0b0b0b" font-family="Georgia,serif" font-size="40" font-weight="800" text-anchor="middle">Which One Fits Your Body and Room?</text>
+  <text x="800" y="132" fill="#67605a" font-family="Inter,sans-serif" font-size="16" text-anchor="middle">Bring room measurements · Test body fit, recline, calf pocket, and entry/exit in person</text>
+
+  <!-- DualTech Card -->
+  <rect x="60" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh6)"/>
+  <rect x="80" y="185" width="200" height="38" rx="19" fill="#9a7f4a"/>
+  <text x="180" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">DUALTECH 4D DUAL</text>
+  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/PositivePosture_DualTech_Linen_315-Angle-front.webp?v=1772326033&amp;width=1200" x="220" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- Bounding box: top(326,301) bottom(517,576) left(282,424) right(585,408) -->
+  <rect x="272" y="291" width="323" height="295" rx="14" fill="none" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="8 5" opacity=".35"/>
+
+  <!-- Height measurement line -->
+  <line x1="610" y1="301" x2="610" y2="576" stroke="#9a7f4a" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="600" y1="301" x2="620" y2="301" stroke="#9a7f4a" stroke-width="1.5"/>
+  <line x1="600" y1="576" x2="620" y2="576" stroke="#9a7f4a" stroke-width="1.5"/>
+
+  <!-- Height label -->
+  <rect x="625" y="420" width="130" height="44" rx="8" fill="#9a7f4a" opacity=".08"/>
+  <text x="690" y="438" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">HEIGHT RANGE</text>
+  <text x="690" y="456" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="13" font-weight="900" text-anchor="middle">5'0" – 6'4"</text>
+
+  <!-- Key specs box -->
+  <rect x="80" y="600" width="320" height="100" rx="12" fill="#9a7f4a" opacity=".06"/>
+  <text x="95" y="622" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">KEY HIGHLIGHTS</text>
+  <text x="95" y="640" fill="#67605a" font-family="Inter,sans-serif" font-size="10">• Wall clearance: 3 inches</text>
+  <text x="95" y="656" fill="#67605a" font-family="Inter,sans-serif" font-size="10">• Weight limit: 265 lb · Chair: 198 lb</text>
+  <text x="95" y="672" fill="#67605a" font-family="Inter,sans-serif" font-size="10">• Warranty: 3-year limited · On-site Y1</text>
+  <text x="95" y="688" fill="#67605a" font-family="Inter,sans-serif" font-size="10">• Controls: Tablet remote · Bluetooth · LED</text>
+
+  <!-- Wall clearance icon -->
+  <rect x="430" y="600" width="120" height="100" rx="12" fill="#14110f"/>
+  <text x="490" y="638" fill="#e5c379" font-family="Inter,sans-serif" font-size="36" font-weight="900" text-anchor="middle">3"</text>
+  <text x="490" y="660" fill="rgba(255,255,255,.6)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="1">WALL</text>
+  <text x="490" y="674" fill="rgba(255,255,255,.6)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="1">CLEARANCE</text>
+
+  <!-- Brio+ Card -->
+  <rect x="820" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh6)"/>
+  <rect x="840" y="185" width="170" height="38" rx="19" fill="#617064"/>
+  <text x="925" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">BRIO+ MASSAGE</text>
+  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100-14-1.jpg?v=1772325831&amp;width=1200" x="980" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- Bounding box: top(1082,342) bottom(1240,573) left(1074,448) right(1296,421) -->
+  <rect x="1064" y="332" width="242" height="251" rx="14" fill="none" stroke="#617064" stroke-width="2" stroke-dasharray="8 5" opacity=".35"/>
+
+  <!-- Height measurement line -->
+  <line x1="1330" y1="342" x2="1330" y2="573" stroke="#617064" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="1320" y1="342" x2="1340" y2="342" stroke="#617064" stroke-width="1.5"/>
+  <line x1="1320" y1="573" x2="1340" y2="573" stroke="#617064" stroke-width="1.5"/>
+
+  <!-- Height label -->
+  <rect x="1350" y="440" width="130" height="44" rx="8" fill="#617064" opacity=".08"/>
+  <text x="1415" y="458" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">HEIGHT RANGE</text>
+  <text x="1415" y="476" fill="#617064" font-family="Inter,sans-serif" font-size="13" font-weight="900" text-anchor="middle">5'0" – 6'5"</text>
+
+  <!-- Key specs box -->
+  <rect x="840" y="600" width="320" height="100" rx="12" fill="#617064" opacity=".06"/>
+  <text x="855" y="622" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">KEY HIGHLIGHTS</text>
+  <text x="855" y="640" fill="#67605a" font-family="Inter,sans-serif" font-size="10">• Wall clearance: 4 inches</text>
+  <text x="855" y="656" fill="#67605a" font-family="Inter,sans-serif" font-size="10">• Weight limit: 265 lb · Chair: 251 lb</text>
+  <text x="855" y="672" fill="#67605a" font-family="Inter,sans-serif" font-size="10">• Warranty: 3-year limited in-home</text>
+  <text x="855" y="688" fill="#67605a" font-family="Inter,sans-serif" font-size="10">• Controls: Remote · USB · Chromotherapy</text>
+
+  <!-- Wall clearance icon -->
+  <rect x="1190" y="600" width="120" height="100" rx="12" fill="#14110f"/>
+  <text x="1250" y="638" fill="#e5c379" font-family="Inter,sans-serif" font-size="36" font-weight="900" text-anchor="middle">4"</text>
+  <text x="1250" y="660" fill="rgba(255,255,255,.6)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="1">WALL</text>
+  <text x="1250" y="674" fill="rgba(255,255,255,.6)" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="1">CLEARANCE</text>
+
+  <circle cx="800" cy="440" r="32" fill="#14110f"/>
+  <text x="800" y="447" fill="#e5c379" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">VS</text>
+  <rect x="500" y="760" width="600" height="70" rx="16" fill="#14110f"/>
+  <text x="800" y="797" fill="#e5c379" font-family="Inter,sans-serif" font-size="13" font-weight="800" letter-spacing="1" text-anchor="middle">TEST THE CHAIR AS FURNITURE, NOT JUST EQUIPMENT</text>
+  <text x="800" y="818" fill="rgba(255,255,255,.5)" font-family="Inter,sans-serif" font-size="11" text-anchor="middle">Compare body fit · Recline angle · Wall clearance · Room placement · Entry/exit comfort</text>
+  <text x="800" y="920" fill="#b0a898" font-family="Inter,sans-serif" font-size="11" text-anchor="middle">massagechairsandmore.com · (408) 889-1188 · Sacramento Showroom</text>
+</svg>

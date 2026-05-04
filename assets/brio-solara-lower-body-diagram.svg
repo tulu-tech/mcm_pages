@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-label="Lower Body Diagram — Brio+ vs Solara">
+  <defs>
+    <linearGradient id="bg4" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#f7f9f9"/><stop offset="1" stop-color="#e8ede6"/></linearGradient>
+    <filter id="sh4" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#1a2e30" flood-opacity=".12"/></filter>
+  </defs>
+  <rect width="1600" height="980" fill="url(#bg4)"/>
+  <text x="800" y="56" fill="#3f5f64" font-family="Inter,sans-serif" font-size="13" font-weight="900" letter-spacing="4" text-anchor="middle">MASSAGE CHAIRS &amp; MORE — LOWER BODY COMPARISON</text>
+  <text x="800" y="100" fill="#0b0b0b" font-family="Georgia,serif" font-size="40" font-weight="800" text-anchor="middle">Calves, Feet &amp; Lower Body</text>
+  <text x="800" y="132" fill="#67605a" font-family="Inter,sans-serif" font-size="16" text-anchor="middle">Air compression · Foot rollers · Heat zones — where recovery meets relief</text>
+
+  <!-- ========== BRIO+ Card ========== -->
+  <rect x="60" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh4)"/>
+  <rect x="80" y="185" width="300" height="38" rx="19" fill="#3f5f64"/>
+  <text x="230" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">BRIO+ · LOWER BODY</text>
+  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100-14-1.jpg?v=1772325831" x="220" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- Calves zone (480, 494) -->
+  <circle cx="480" cy="494" r="24" fill="none" stroke="#3f5f64" stroke-width="3" stroke-dasharray="5 3"/>
+  <line x1="504" y1="488" x2="570" y2="420" stroke="#3f5f64" stroke-width="1.5"/>
+  <rect x="570" y="398" width="170" height="70" rx="8" fill="#3f5f64" opacity=".08"/>
+  <text x="655" y="418" fill="#3f5f64" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">CALF ZONE</text>
+  <text x="655" y="437" fill="#3f5f64" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle">Air compression</text>
+  <text x="655" y="455" fill="#3f5f64" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle">+ heat support</text>
+
+  <!-- Feet zone (500, 540) -->
+  <circle cx="500" cy="540" r="22" fill="none" stroke="#3f5f64" stroke-width="3" stroke-dasharray="5 3"/>
+  <line x1="522" y1="545" x2="575" y2="530" stroke="#3f5f64" stroke-width="1.5"/>
+  <rect x="575" y="505" width="170" height="70" rx="8" fill="#3f5f64" opacity=".08"/>
+  <text x="660" y="525" fill="#3f5f64" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">INTELLIGENT TOUCH</text>
+  <text x="660" y="544" fill="#3f5f64" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle">Foot rollers designed</text>
+  <text x="660" y="562" fill="#3f5f64" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle">to avoid overstimulation</text>
+
+  <!-- Full body air callout -->
+  <rect x="80" y="400" width="120" height="52" rx="8" fill="#3f5f64" opacity=".08"/>
+  <text x="140" y="419" fill="#3f5f64" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">FULL-BODY AIR</text>
+  <text x="140" y="439" fill="#3f5f64" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle">Head to feet</text>
+
+  <rect x="80" y="695" width="680" height="18" rx="4" fill="#3f5f64" opacity=".06"/>
+  <text x="420" y="708" fill="#3f5f64" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle">Heat in lower back, calves, and feet · Full-body air massage</text>
+
+  <!-- ========== SOLARA Card ========== -->
+  <rect x="820" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh4)"/>
+  <rect x="840" y="185" width="320" height="38" rx="19" fill="#a66f3d"/>
+  <text x="1000" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">SOLARA · LOWER BODY</text>
+  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/1.jpg?v=1772326021" x="980" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- Calves zone (1223, 517) -->
+  <circle cx="1223" cy="517" r="24" fill="none" stroke="#a66f3d" stroke-width="3" stroke-dasharray="5 3"/>
+  <line x1="1247" y1="511" x2="1320" y2="430" stroke="#a66f3d" stroke-width="1.5"/>
+  <rect x="1320" y="408" width="170" height="70" rx="8" fill="#a66f3d" opacity=".08"/>
+  <text x="1405" y="428" fill="#a66f3d" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">CALF HEAT</text>
+  <text x="1405" y="447" fill="#a66f3d" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle">Back + calves heat</text>
+  <text x="1405" y="465" fill="#a66f3d" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle">Air compression wrap</text>
+
+  <!-- Feet zone (1244, 560) -->
+  <circle cx="1244" cy="560" r="22" fill="none" stroke="#a66f3d" stroke-width="3" stroke-dasharray="5 3"/>
+  <line x1="1266" y1="565" x2="1325" y2="540" stroke="#a66f3d" stroke-width="1.5"/>
+  <rect x="1325" y="515" width="170" height="70" rx="8" fill="#a66f3d" opacity=".08"/>
+  <text x="1410" y="535" fill="#a66f3d" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">DUAL-SPEED FOOT</text>
+  <text x="1410" y="554" fill="#a66f3d" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle">Bi-directional rollers</text>
+  <text x="1410" y="572" fill="#a66f3d" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle">Multiple angles</text>
+
+  <!-- Air compression callout -->
+  <rect x="840" y="400" width="130" height="52" rx="8" fill="#a66f3d" opacity=".08"/>
+  <text x="905" y="419" fill="#a66f3d" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">AIR COMPRESS</text>
+  <text x="905" y="439" fill="#a66f3d" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle">Arms to feet</text>
+
+  <rect x="840" y="695" width="680" height="18" rx="4" fill="#a66f3d" opacity=".06"/>
+  <text x="1180" y="708" fill="#a66f3d" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle">Bi-directional foot rollers · Calf heat · Full-body air compression</text>
+
+  <!-- VS Badge -->
+  <circle cx="800" cy="445" r="32" fill="#0b0b0b"/>
+  <text x="800" y="453" fill="#fff" font-family="Georgia,serif" font-size="22" font-weight="700" text-anchor="middle">VS</text>
+
+  <!-- Bottom CTA -->
+  <rect x="520" y="780" width="560" height="56" rx="28" fill="#3f5f64"/>
+  <text x="800" y="814" fill="#fff" font-family="Inter,sans-serif" font-size="16" font-weight="800" letter-spacing="1" text-anchor="middle">TEST THE LOWER BODY FEEL →</text>
+  <text x="800" y="870" fill="#888" font-family="Inter,sans-serif" font-size="13" text-anchor="middle">massagechairsandmore.com · Pleasanton · Santa Clara · Daly City · Sacramento</text>
+</svg>

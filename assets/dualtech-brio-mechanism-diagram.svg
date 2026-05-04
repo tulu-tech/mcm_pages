@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-label="Massage Mechanism — DualTech 4D vs Brio+">
+  <defs>
+    <linearGradient id="bg2" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#f8f7f3"/><stop offset="1" stop-color="#eae5db"/></linearGradient>
+    <filter id="sh2" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#2b2114" flood-opacity=".12"/></filter>
+  </defs>
+  <rect width="1600" height="980" fill="url(#bg2)"/>
+  <text x="800" y="56" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="13" font-weight="900" letter-spacing="4" text-anchor="middle">MASSAGE MECHANISM COMPARISON</text>
+  <text x="800" y="100" fill="#0b0b0b" font-family="Georgia,serif" font-size="40" font-weight="800" text-anchor="middle">Dual Mechanism vs Refined 4D Engine</text>
+  <text x="800" y="132" fill="#67605a" font-family="Inter,sans-serif" font-size="16" text-anchor="middle">Two different approaches to full-body coverage — neither is automatically better</text>
+
+  <!-- DualTech Card -->
+  <rect x="60" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh2)"/>
+  <rect x="80" y="185" width="200" height="38" rx="19" fill="#9a7f4a"/>
+  <text x="180" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">DUALTECH 4D DUAL</text>
+  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/PositivePosture_DualTech_Linen_315-Angle-front.webp?v=1772326033&amp;width=1200" x="220" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- Upper 4D zone ellipse: neck(372,358) to back(390,387) -->
+  <ellipse cx="381" cy="370" rx="40" ry="50" fill="#2f4c5c" opacity=".12" stroke="#2f4c5c" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="80" y="340" fill="#2f4c5c" font-family="Inter,sans-serif" font-size="12" font-weight="800">UPPER 4D</text>
+  <text x="80" y="356" fill="#2f4c5c" font-family="Inter,sans-serif" font-size="10" opacity=".7">Neck · Upper Back · Lumbar</text>
+  <line x1="165" y1="348" x2="345" y2="365" stroke="#2f4c5c" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- Lower RotoTech zone: glutes(455,458) -->
+  <ellipse cx="455" cy="458" rx="35" ry="30" fill="#a47d43" opacity=".12" stroke="#a47d43" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="560" y="445" fill="#a47d43" font-family="Inter,sans-serif" font-size="12" font-weight="800">ROTOTECH</text>
+  <text x="560" y="461" fill="#a47d43" font-family="Inter,sans-serif" font-size="10" opacity=".7">Glute-Focused Massage</text>
+  <line x1="555" y1="453" x2="490" y2="458" stroke="#a47d43" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- Connection arrow between zones -->
+  <line x1="390" y1="415" x2="445" y2="435" stroke="#14110f" stroke-width="1.5" stroke-dasharray="3 3" opacity=".3"/>
+  <circle cx="418" cy="425" r="8" fill="#14110f" opacity=".08"/>
+  <text x="418" y="429" fill="#14110f" font-family="Inter,sans-serif" font-size="7" font-weight="900" text-anchor="middle" opacity=".5">+</text>
+
+  <!-- DualTech summary -->
+  <rect x="80" y="690" width="680" height="24" rx="4" fill="#9a7f4a" opacity=".06"/>
+  <text x="420" y="707" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle">Two specialized mechanisms working together · SL-Track · Body Scan · 12 programs</text>
+
+  <!-- Brio+ Card -->
+  <rect x="820" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh2)"/>
+  <rect x="840" y="185" width="170" height="38" rx="19" fill="#617064"/>
+  <text x="925" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">BRIO+ MASSAGE</text>
+  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100-14-1.jpg?v=1772325831&amp;width=1200" x="980" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- Full L-Track zone: neck(1148,389) through back(1169,407) to glutes(1201,447) -->
+  <ellipse cx="1170" cy="410" rx="45" ry="75" fill="#533c46" opacity=".10" stroke="#533c46" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="1320" y="375" fill="#533c46" font-family="Inter,sans-serif" font-size="12" font-weight="800">HEATED 4D L-TRACK</text>
+  <text x="1320" y="391" fill="#533c46" font-family="Inter,sans-serif" font-size="10" opacity=".7">Neck to Glutes · Single System</text>
+  <line x1="1315" y1="383" x2="1215" y2="405" stroke="#533c46" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- Heat indicator on rollers -->
+  <circle cx="1169" cy="407" r="16" fill="none" stroke="#c44" stroke-width="1.5" stroke-dasharray="3 2" opacity=".5"/>
+  <text x="845" y="410" fill="#c44" font-family="Inter,sans-serif" font-size="11" font-weight="800">🔥 HEATED ROLLERS</text>
+  <text x="845" y="426" fill="#c44" font-family="Inter,sans-serif" font-size="10" opacity=".6">Warmth at the roller contact</text>
+  <line x1="960" y1="418" x2="1153" y2="410" stroke="#c44" stroke-width="1" stroke-dasharray="4 3" opacity=".4"/>
+
+  <!-- Brio+ summary -->
+  <rect x="840" y="690" width="680" height="24" rx="4" fill="#617064" opacity=".06"/>
+  <text x="1180" y="707" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle">Refined choreography · Heated rollers · L-Track · Body Scan · 10 programs</text>
+
+  <!-- VS badge -->
+  <circle cx="800" cy="440" r="32" fill="#14110f"/>
+  <text x="800" y="447" fill="#e5c379" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">VS</text>
+
+  <!-- Bottom -->
+  <rect x="500" y="760" width="600" height="70" rx="16" fill="#14110f"/>
+  <text x="800" y="797" fill="#e5c379" font-family="Inter,sans-serif" font-size="13" font-weight="800" letter-spacing="1" text-anchor="middle">FEEL THE DIFFERENCE IN THE SHOWROOM</text>
+  <text x="800" y="818" fill="rgba(255,255,255,.5)" font-family="Inter,sans-serif" font-size="11" text-anchor="middle">Watch the pressure transition between mechanisms during a side-by-side demo</text>
+  <text x="800" y="920" fill="#b0a898" font-family="Inter,sans-serif" font-size="11" text-anchor="middle">massagechairsandmore.com · (408) 889-1188 · Sacramento Showroom</text>
+</svg>

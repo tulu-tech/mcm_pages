@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "santa-clara-main": {
+      "type": "page-santa-clara",
+      "settings": {}
+    }
+  },
+  "order": [
+    "santa-clara-main"
+  ]
+}

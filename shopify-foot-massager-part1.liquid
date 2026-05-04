@@ -1,0 +1,371 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900');@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800');
+:root{--bg:#fff;--surface:#f9f8f6;--surface-alt:#f3f1ed;--dark:#1a1a1a;--text:#2d2d2d;--muted:#5a5a5a;--light-text:#8a8a8a;--accent:#b8944f;--accent-hover:#a07e3f;--accent-light:rgba(184,148,79,.08);--border:#e8e4de;--border-light:#f0ece6;--white:#fff;--card-shadow:0 4px 20px rgba(0,0,0,.04);--card-shadow-hover:0 20px 50px rgba(0,0,0,.10);--radius:16px;--radius-sm:10px;--radius-lg:24px;--transition:all .3s cubic-bezier(.4,0,.2,1)}
+.mcm-foot *,.mcm-foot *::before,.mcm-foot *::after{box-sizing:border-box;margin:0;padding:0}
+.mcm-foot{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif !important;color:var(--text) !important;line-height:1.7 !important;font-size:16px !important;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.mcm-foot h1,.mcm-foot h2,.mcm-foot h3,.mcm-foot h4,.mcm-foot h5{color:var(--dark) !important;line-height:1.2 !important;font-weight:700 !important}
+.mcm-foot h1,.mcm-foot h2{font-family:'Playfair Display',Georgia,serif !important}
+.mcm-foot a{color:inherit;text-decoration:none}
+.mcm-foot img{max-width:100%;display:block}
+.mcm-foot .container{max-width:1280px;margin:0 auto;padding:0 32px !important}
+.mcm-foot .container-narrow{max-width:900px;margin:0 auto;padding:0 32px !important}
+.mcm-foot .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 36px !important;font-size:15px !important;font-weight:700 !important;border-radius:50px;text-decoration:none !important;transition:var(--transition);border:2px solid transparent;cursor:pointer;letter-spacing:.02em;font-family:'Inter',sans-serif !important;line-height:1.4 !important}
+.mcm-foot .btn-primary{background:var(--accent) !important;color:#ffffff !important;border-color:var(--accent) !important}
+.mcm-foot .btn-primary:hover{background:var(--accent-hover) !important;border-color:var(--accent-hover) !important;transform:translateY(-2px);box-shadow:0 10px 30px rgba(184,148,79,.25)}
+.mcm-foot .btn-dark{background:var(--dark) !important;color:#ffffff !important;border-color:var(--dark) !important}
+.mcm-foot .btn-dark:hover{background:transparent !important;color:var(--dark) !important}
+.mcm-foot .btn-outline{background:transparent !important;color:var(--dark) !important;border:2px solid var(--border) !important}
+.mcm-foot .btn-outline:hover{border-color:var(--accent) !important;color:var(--accent) !important}
+.mcm-foot .btn-white-outline{background:transparent !important;color:#ffffff !important;border:2px solid rgba(255,255,255,.4) !important}
+.mcm-foot .btn-white-outline:hover{border-color:#ffffff !important;background:rgba(255,255,255,.1) !important}
+.mcm-foot a.btn,.mcm-foot a.btn:link,.mcm-foot a.btn:visited{text-decoration:none !important}
+.mcm-foot a.btn-primary,.mcm-foot a.btn-primary:link,.mcm-foot a.btn-primary:visited,.mcm-foot a.btn-primary:active{color:#ffffff !important}
+.mcm-foot a.btn-dark,.mcm-foot a.btn-dark:link,.mcm-foot a.btn-dark:visited,.mcm-foot a.btn-dark:active{color:#ffffff !important}
+.mcm-foot a.btn-white-outline,.mcm-foot a.btn-white-outline:link,.mcm-foot a.btn-white-outline:visited{color:#ffffff !important}
+.mcm-foot .hero{position:relative;min-height:75vh;display:flex;align-items:center;background:var(--dark);overflow:hidden}
+.mcm-foot .hero-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.mcm-foot .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,12,8,.72) 0%,rgba(15,12,8,.4) 60%,rgba(15,12,8,.25) 100%);z-index:1}
+.mcm-foot .hero .container{position:relative;z-index:2}
+.mcm-foot .hero-content{max-width:680px;padding:64px 0 !important}
+.mcm-foot .hero-eyebrow{display:inline-block;font-size:12px !important;letter-spacing:3px !important;text-transform:uppercase;color:var(--accent) !important;margin-bottom:20px !important;font-weight:700 !important;font-family:'Inter',sans-serif !important}
+.mcm-foot .hero h1{font-size:clamp(36px,5vw,60px) !important;color:#ffffff !important;margin-bottom:20px !important;font-weight:700 !important;line-height:1.1 !important;letter-spacing:-.02em}
+.mcm-foot .hero p{font-size:18px !important;color:rgba(255,255,255,.85) !important;max-width:540px;margin-bottom:36px !important;line-height:1.7 !important}
+.mcm-foot .hero-btns{display:flex;gap:16px !important;flex-wrap:wrap}
+.mcm-foot .trust-bar{background:var(--surface);border-bottom:1px solid var(--border-light);padding:40px 0 !important}
+.mcm-foot .trust-bar-inner{display:flex;justify-content:center;align-items:center;gap:0;flex-wrap:wrap}
+.mcm-foot .trust-item{display:flex;align-items:center;gap:12px !important;padding:8px 32px !important;transition:var(--transition)}
+.mcm-foot .trust-item:hover{transform:translateY(-2px)}
+.mcm-foot .trust-icon{width:44px;height:44px;background:var(--accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mcm-foot .trust-icon svg{width:22px;height:22px;fill:var(--accent)}
+.mcm-foot .trust-text{display:flex;flex-direction:column}
+.mcm-foot .trust-text strong{font-size:14px !important;font-weight:700 !important;color:var(--dark) !important;line-height:1.3 !important}
+.mcm-foot .trust-text span{font-size:12px !important;color:var(--light-text) !important;font-weight:400;line-height:1.4 !important}
+.mcm-foot .trust-divider{width:1px;height:40px;background:var(--border);flex-shrink:0}
+.mcm-foot .section{padding:80px 0 !important}
+.mcm-foot .section-alt{background:var(--surface)}
+.mcm-foot .section-header{text-align:center;margin-bottom:56px !important}
+.mcm-foot .section-header .eyebrow{display:inline-block;font-size:11px !important;letter-spacing:3px !important;text-transform:uppercase;color:var(--accent) !important;margin-bottom:14px !important;font-weight:700 !important;font-family:'Inter',sans-serif !important}
+.mcm-foot .section-header h2{font-size:clamp(28px,3.5vw,40px) !important;margin-bottom:14px !important;letter-spacing:-.02em}
+.mcm-foot .section-header p{font-size:17px !important;color:var(--muted) !important;max-width:620px;margin:0 auto;line-height:1.7 !important}
+.mcm-foot .product-showcase{display:grid;grid-template-columns:repeat(2,1fr);gap:40px !important;max-width:960px;margin:0 auto}
+.mcm-foot .product-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius);overflow:hidden;transition:var(--transition);position:relative}
+.mcm-foot .product-card:hover{transform:translateY(-6px);box-shadow:var(--card-shadow-hover);border-color:var(--accent)}
+.mcm-foot .product-badge{position:absolute;top:14px;left:14px;background:var(--accent);color:#ffffff !important;font-size:11px !important;font-weight:700 !important;padding:5px 14px;border-radius:50px;text-transform:uppercase;letter-spacing:1px;z-index:2}
+.mcm-foot .product-card-img{width:100%;height:300px;object-fit:contain;padding:32px !important;background:var(--white)}
+.mcm-foot .product-card-body{padding:24px 28px 28px !important}
+.mcm-foot .product-card-brand{font-size:11px !important;font-weight:700 !important;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent) !important;margin-bottom:8px}
+.mcm-foot .product-card-body h3{font-size:19px !important;margin-bottom:12px;line-height:1.3 !important;font-family:'Inter',sans-serif !important;font-weight:700 !important}
+.mcm-foot .product-features{list-style:none;padding:0 !important;margin:0 0 16px !important}
+.mcm-foot .product-features li{font-size:13px !important;color:var(--muted) !important;padding:4px 0 !important;padding-left:20px !important;position:relative;line-height:1.5 !important}
+.mcm-foot .product-features li::before{content:'✓';position:absolute;left:0;color:var(--accent);font-weight:700;font-size:13px}
+.mcm-foot .product-prices{display:flex;align-items:baseline;gap:8px;margin-bottom:16px}
+.mcm-foot .price-sale{font-size:22px !important;font-weight:800 !important;color:var(--dark) !important}
+.mcm-foot .price-compare{font-size:14px !important;color:var(--light-text) !important;text-decoration:line-through;font-weight:400}
+.mcm-foot .product-card-link{display:block;text-align:center;background:var(--dark) !important;color:#ffffff !important;padding:13px !important;border-radius:var(--radius-sm);font-weight:700 !important;font-size:14px !important;transition:var(--transition);letter-spacing:.02em;text-decoration:none !important}
+.mcm-foot a.product-card-link,.mcm-foot a.product-card-link:link,.mcm-foot a.product-card-link:visited,.mcm-foot a.product-card-link:active{color:#ffffff !important}
+.mcm-foot .product-card-link:hover{background:var(--accent) !important}
+.mcm-foot .compare-table{width:100%;border-collapse:collapse;background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border-light);max-width:800px;margin:0 auto}
+.mcm-foot .compare-table th,.mcm-foot .compare-table td{padding:14px 20px !important;text-align:left;border-bottom:1px solid var(--border-light);font-size:14px !important;line-height:1.5 !important;vertical-align:top}
+.mcm-foot .compare-table th{background:var(--surface);font-weight:700 !important;color:var(--dark) !important;white-space:nowrap;width:30%}
+.mcm-foot .compare-table td{color:var(--text) !important}
+.mcm-foot .compare-table thead th{background:var(--dark);color:#ffffff !important;font-size:15px !important;font-weight:700 !important;border-bottom:none}
+.mcm-foot .compare-table tbody tr:last-child td,.mcm-foot .compare-table tbody tr:last-child th{border-bottom:none}
+.mcm-foot .compare-table .highlight{color:var(--accent) !important;font-weight:700 !important}
+.mcm-foot .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px !important}
+.mcm-foot .feature-card{background:var(--surface);padding:32px !important;border-radius:var(--radius);border:1px solid var(--border-light);transition:var(--transition)}
+.mcm-foot .feature-card:hover{border-color:var(--accent);box-shadow:var(--card-shadow);transform:translateY(-4px)}
+.mcm-foot .feature-icon{width:56px;height:56px;background:var(--accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:18px !important}
+.mcm-foot .feature-icon svg{width:26px;height:26px;fill:var(--accent)}
+.mcm-foot .feature-card:hover .feature-icon{background:var(--accent)}
+.mcm-foot .feature-card:hover .feature-icon svg{fill:#ffffff}
+.mcm-foot .feature-card h3{font-size:16px !important;margin-bottom:6px;font-family:'Inter',sans-serif !important}
+.mcm-foot .feature-card p{font-size:14px !important;margin:0;color:var(--muted) !important;line-height:1.6 !important}
+.mcm-foot .use-case-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px !important}
+.mcm-foot .use-case-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius);padding:28px 24px !important;text-align:center;transition:var(--transition);text-decoration:none !important}
+.mcm-foot .use-case-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:var(--card-shadow-hover)}
+.mcm-foot .use-case-card svg{width:36px;height:36px;fill:var(--accent);margin:0 auto 14px;display:block}
+.mcm-foot .use-case-card h4{font-size:15px !important;margin-bottom:6px;font-family:'Inter',sans-serif !important;color:var(--dark) !important}
+.mcm-foot .use-case-card p{font-size:13px !important;margin:0;color:var(--muted) !important;line-height:1.5 !important}
+.mcm-foot .value-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px !important}
+.mcm-foot .value-card{background:var(--white);padding:28px !important;border-radius:var(--radius);border:1px solid var(--border-light);transition:var(--transition);text-align:center}
+.mcm-foot .value-card:hover{border-color:var(--accent);box-shadow:var(--card-shadow)}
+.mcm-foot .value-card svg{width:32px;height:32px;fill:var(--accent);margin:0 auto 12px;display:block}
+.mcm-foot .value-card h4{font-size:15px !important;margin-bottom:6px;font-family:'Inter',sans-serif !important}
+.mcm-foot .value-card p{font-size:13px !important;margin:0;color:var(--muted) !important;line-height:1.5 !important}
+.mcm-foot .showroom-banner{background:var(--surface);border-radius:var(--radius-lg);border:1px solid var(--border);position:relative;overflow:hidden;display:flex;align-items:stretch}
+.mcm-foot .showroom-banner::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--accent),#d4b06a,var(--accent));z-index:1}
+.mcm-foot .showroom-banner-img{flex:0 0 45%;overflow:hidden}
+.mcm-foot .showroom-banner-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.mcm-foot .showroom-banner:hover .showroom-banner-img img{transform:scale(1.04)}
+.mcm-foot .showroom-banner-text{flex:1;padding:56px 48px !important;display:flex;flex-direction:column;justify-content:center}
+.mcm-foot .showroom-banner h2{font-size:clamp(24px,3vw,36px) !important;margin-bottom:14px !important}
+.mcm-foot .showroom-banner p{font-size:16px !important;color:var(--muted) !important;max-width:500px;margin:0 0 28px !important;line-height:1.7 !important}
+.mcm-foot .faq-item{padding:28px 0 !important;border-bottom:1px solid var(--border)}
+.mcm-foot .faq-item:last-child{border-bottom:none}
+.mcm-foot .faq-item h3{font-size:16px !important;margin-bottom:8px !important;font-family:'Inter',sans-serif !important}
+.mcm-foot .faq-item p{font-size:15px !important;margin:0;color:var(--muted) !important;line-height:1.7 !important}
+.mcm-foot .final-cta{background:var(--dark);border-radius:var(--radius-lg);padding:64px 56px !important;color:#ffffff !important;position:relative;overflow:hidden}
+.mcm-foot .final-cta::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--accent),#d4b06a,var(--accent))}
+.mcm-foot .final-cta .eyebrow{color:var(--accent) !important}
+.mcm-foot .final-cta h2{color:#ffffff !important;font-size:clamp(24px,3vw,36px) !important;margin-bottom:14px !important;line-height:1.15 !important}
+.mcm-foot .final-cta p{color:rgba(255,255,255,.75) !important;font-size:16px !important;max-width:600px;margin-bottom:28px !important}
+.mcm-foot .final-cta-btns{display:flex;flex-wrap:wrap;gap:14px !important}
+.mcm-foot .support-bar{background:var(--dark);padding:48px 0 !important}
+.mcm-foot .support-bar-inner{display:flex;justify-content:center;gap:56px !important;flex-wrap:wrap;text-align:center}
+.mcm-foot .support-item{color:#ffffff !important}
+.mcm-foot .support-item svg{width:28px;height:28px;fill:var(--accent);margin:0 auto 8px;display:block}
+.mcm-foot .support-item span{font-weight:700 !important;font-size:13px !important;color:#ffffff !important}
+/* Tablet */
+@media(max-width:1024px){
+.mcm-foot .product-showcase{grid-template-columns:repeat(2,1fr) !important;max-width:700px !important}
+.mcm-foot .features-grid{grid-template-columns:repeat(2,1fr) !important}
+.mcm-foot .use-case-grid{grid-template-columns:repeat(2,1fr) !important}
+.mcm-foot .value-grid{grid-template-columns:repeat(2,1fr) !important}
+}
+/* Mobile */
+@media(max-width:768px){
+.mcm-foot .container{padding:0 16px !important}
+.mcm-foot .container-narrow{padding:0 16px !important}
+.mcm-foot .hero{min-height:60vh !important}
+.mcm-foot .hero-content{padding:40px 0 !important}
+.mcm-foot .hero h1{font-size:28px !important;line-height:1.15 !important}
+.mcm-foot .hero p{font-size:15px !important}
+.mcm-foot .hero-eyebrow{font-size:10px !important}
+.mcm-foot .hero-btns{flex-direction:column !important;align-items:flex-start !important}
+.mcm-foot .trust-bar{padding:24px 0 !important}
+.mcm-foot .trust-bar-inner{flex-direction:column !important;gap:14px !important;align-items:flex-start !important;padding:0 16px !important}
+.mcm-foot .trust-divider{width:100% !important;height:1px !important}
+.mcm-foot .trust-item{padding:0 !important}
+.mcm-foot .section{padding:48px 0 !important}
+.mcm-foot .section-header{margin-bottom:32px !important}
+.mcm-foot .section-header h2{font-size:24px !important}
+.mcm-foot .section-header p{font-size:15px !important}
+.mcm-foot .product-showcase{grid-template-columns:1fr !important;max-width:440px !important;gap:20px !important}
+.mcm-foot .product-card-img{height:220px !important;padding:24px !important}
+.mcm-foot .features-grid{grid-template-columns:1fr !important;gap:12px !important}
+.mcm-foot .feature-card{padding:24px !important}
+.mcm-foot .use-case-grid{grid-template-columns:1fr 1fr !important;gap:12px !important}
+.mcm-foot .use-case-card{padding:20px 16px !important}
+.mcm-foot .value-grid{grid-template-columns:1fr 1fr !important;gap:12px !important}
+.mcm-foot .value-card{padding:20px !important}
+.mcm-foot .compare-table th,.mcm-foot .compare-table td{padding:10px 12px !important;font-size:13px !important}
+.mcm-foot .showroom-banner{flex-direction:column !important;border-radius:16px !important}
+.mcm-foot .showroom-banner-img{flex:none !important;height:200px !important}
+.mcm-foot .showroom-banner-text{padding:28px 20px !important;text-align:center !important}
+.mcm-foot .showroom-banner h2{font-size:22px !important}
+.mcm-foot .showroom-banner p{font-size:14px !important}
+.mcm-foot .faq-item{padding:20px 0 !important}
+.mcm-foot .faq-item h3{font-size:15px !important}
+.mcm-foot .faq-item p{font-size:14px !important}
+.mcm-foot .final-cta{padding:36px 20px !important;border-radius:16px !important}
+.mcm-foot .final-cta h2{font-size:22px !important}
+.mcm-foot .final-cta p{font-size:14px !important}
+.mcm-foot .final-cta-btns{flex-direction:column !important;align-items:center !important;gap:10px !important}
+.mcm-foot .final-cta .btn{width:100% !important;max-width:300px !important;justify-content:center !important}
+.mcm-foot .support-bar{padding:32px 0 !important}
+.mcm-foot .support-bar-inner{gap:20px !important;justify-content:flex-start !important;padding:0 16px !important}
+.mcm-foot .support-item span{font-size:12px !important}
+.mcm-foot .btn{padding:12px 28px !important;font-size:14px !important}
+}
+/* Small phones */
+@media(max-width:480px){
+.mcm-foot .hero{min-height:55vh !important}
+.mcm-foot .hero h1{font-size:24px !important}
+.mcm-foot .hero p{font-size:14px !important}
+.mcm-foot .use-case-grid{grid-template-columns:1fr !important}
+.mcm-foot .value-grid{grid-template-columns:1fr !important}
+.mcm-foot .section-header h2{font-size:22px !important}
+.mcm-foot .final-cta{padding:28px 16px !important}
+.mcm-foot .final-cta h2{font-size:20px !important}
+.mcm-foot .btn{padding:11px 24px !important;font-size:13px !important}
+}
+/* Extra small */
+@media(max-width:360px){
+.mcm-foot .container{padding:0 12px !important}
+.mcm-foot .hero h1{font-size:22px !important}
+.mcm-foot .section-header h2{font-size:20px !important}
+.mcm-foot .btn{padding:10px 20px !important;font-size:12px !important}
+}
+</style>
+
+<div class="mcm-foot">
+
+<!-- HERO -->
+<section class="hero">
+    <img class="hero-bg" src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/foot-massager-hero.jpg" alt="Woman relaxing with premium foot massager in cozy living room">
+    <div class="container">
+        <div class="hero-content">
+            <span class="hero-eyebrow">Premium Foot Massage Machines</span>
+            <h1>Premium Foot Massagers for Daily Relief</h1>
+            <p>Targeted heat, deep kneading, and soothing compression for tired feet. Come home to comfort that works — starting at $349.</p>
+            <div class="hero-btns">
+                <a href="#foot-products" class="btn btn-primary">Shop Foot Massagers</a>
+                <a href="/pages/contact" class="btn btn-white-outline">Visit Our Showroom</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+    <div class="container">
+        <div class="trust-bar-inner">
+            <div class="trust-item">
+                <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+                <div class="trust-text"><strong>Curated Selection</strong><span>Premium wellness products only</span></div>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+                <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></div>
+                <div class="trust-text"><strong>Free Shipping</strong><span>Delivered to your door</span></div>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+                <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
+                <div class="trust-text"><strong>Financing Available</strong><span>Affirm — pay over time</span></div>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+                <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg></div>
+                <div class="trust-text"><strong>Showroom Support</strong><span>Try before you buy</span></div>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-item">
+                <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
+                <div class="trust-text"><strong>Warranty Included</strong><span>Factory-backed coverage</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PRODUCT SHOWCASE -->
+<section class="section section-alt" id="foot-products">
+    <div class="container">
+        <div class="section-header">
+            <span class="eyebrow">Our Foot Massagers</span>
+            <h2>Compare Foot Massager Models</h2>
+            <p>Two premium options designed for different needs. Both deliver heat, targeted pressure, and daily comfort you can feel in minutes.</p>
+        </div>
+        <div class="product-showcase">
+            {%- assign p1 = all_products['neklon-yt850-foot-massager-machine'] -%}
+            {%- if p1.title != blank -%}
+            <div class="product-card">
+                <span class="product-badge">Best Value</span>
+                <img class="product-card-img" src="{{ p1.featured_image | image_url: width: 900 }}" alt="{{ p1.featured_image.alt | default: p1.title | escape }}">
+                <div class="product-card-body">
+                    <div class="product-card-brand">{{ p1.vendor }}</div>
+                    <h3>{{ p1.title }}</h3>
+                    <ul class="product-features">
+                        <li>Heat + deep-tissue kneading</li>
+                        <li>Foot and ankle coverage</li>
+                        <li>Air compression</li>
+                        <li>3 massage modes, adjustable intensity</li>
+                    </ul>
+                    <div class="product-prices">
+                        <span class="price-sale">{{ p1.price | money }}</span>
+                        {%- if p1.compare_at_price > p1.price -%}
+                        <span class="price-compare">{{ p1.compare_at_price | money }}</span>
+                        {%- endif -%}
+                    </div>
+                    <a href="{{ p1.url }}" class="product-card-link">View Details</a>
+                </div>
+            </div>
+            {%- endif -%}
+
+            {%- assign p2 = all_products['neklon-k16-foot-massager-machine'] -%}
+            {%- if p2.title != blank -%}
+            <div class="product-card">
+                <span class="product-badge">Most Features</span>
+                <img class="product-card-img" src="{{ p2.featured_image | image_url: width: 900 }}" alt="{{ p2.featured_image.alt | default: p2.title | escape }}">
+                <div class="product-card-body">
+                    <div class="product-card-brand">{{ p2.vendor }}</div>
+                    <h3>{{ p2.title }}</h3>
+                    <ul class="product-features">
+                        <li>Shiatsu, vibration, rolling, squeezing</li>
+                        <li>Foot, calf, and ankle coverage</li>
+                        <li>Heat therapy</li>
+                        <li>Multiple combo modes</li>
+                    </ul>
+                    <div class="product-prices">
+                        <span class="price-sale">{{ p2.price | money }}</span>
+                        {%- if p2.compare_at_price > p2.price -%}
+                        <span class="price-compare">{{ p2.compare_at_price | money }}</span>
+                        {%- endif -%}
+                    </div>
+                    <a href="{{ p2.url }}" class="product-card-link">View Details</a>
+                </div>
+            </div>
+            {%- endif -%}
+        </div>
+    </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="eyebrow">Side-by-Side</span>
+            <h2>Which Foot Massager Is Right for You?</h2>
+            <p>A clear comparison to help you choose the best foot massager machine for your daily routine.</p>
+        </div>
+        <div style="overflow-x:auto;">
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Neklon YT850</th>
+                    <th>Neklon K16</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><th>Price</th><td class="highlight">$349</td><td>$499</td></tr>
+                <tr><th>Massage Type</th><td>Deep-tissue kneading</td><td>Shiatsu + vibration + rolling + squeezing</td></tr>
+                <tr><th>Heat</th><td>Yes</td><td>Yes</td></tr>
+                <tr><th>Air Compression</th><td>Yes</td><td>Yes</td></tr>
+                <tr><th>Coverage</th><td>Feet + ankles</td><td class="highlight">Feet + calves + ankles</td></tr>
+                <tr><th>Modes</th><td>3 rhythmic modes</td><td>Multiple combo modes</td></tr>
+                <tr><th>Intensity Control</th><td>Adjustable</td><td>3 levels</td></tr>
+                <tr><th>Best For</th><td>Focused foot relief, value shoppers</td><td>Full lower-leg coverage, feature seekers</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <div style="text-align:center; margin-top:40px;">
+            <a href="/pages/contact" class="btn btn-outline">Need Help Choosing? Talk to an Expert</a>
+        </div>
+    </div>
+</section>
+
+<!-- SHOP BY NEED -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="eyebrow">Shop by Need</span>
+            <h2>Find the Right Foot Massager for Your Lifestyle</h2>
+            <p>Not sure where to start? Match your daily routine to the right foot massage machine for home use.</p>
+        </div>
+        <div class="use-case-grid">
+            <a href="/products/neklon-yt850-foot-massager-machine" class="use-case-card">
+                <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/></svg>
+                <h4>Tired Feet After Work</h4>
+                <p>Quick daily relief with heat and deep kneading after long shifts.</p>
+            </a>
+            <a href="/products/neklon-k16-foot-massager-machine" class="use-case-card">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/></svg>
+                <h4>Daily Relaxation Routine</h4>
+                <p>Multi-mode shiatsu + heat for a calm, repeatable evening reset.</p>
+            </a>
+            <a href="/products/neklon-yt850-foot-massager-machine" class="use-case-card">
+                <svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.11-.31.18-.65.18-1a3 3 0 00-5.17-2.07L12 4.24l-.83-1.31A3 3 0 006 5c0 .35.07.69.18 1H4c-1.1 0-2 .9-2 2v3c0 .55.45 1 1 1h1v5c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-5h1c.55 0 1-.45 1-1V8c0-1.1-.9-2-2-2z"/></svg>
+                <h4>Gift for a Loved One</h4>
+                <p>A thoughtful, practical wellness gift starting at $349.</p>
+            </a>
+            <a href="/products/neklon-k16-foot-massager-machine" class="use-case-card">
+                <svg viewBox="0 0 24 24"><path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.954 8.954 0 0013 21c4.97 0 9-4.03 9-9s-4.03-9-9-9z"/></svg>
+                <h4>Deeper Recovery</h4>
+                <p>Foot + calf coverage with shiatsu, rolling, and compression.</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+</div><!-- end .mcm-foot Part 1 -->

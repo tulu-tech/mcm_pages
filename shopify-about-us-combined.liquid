@@ -1,0 +1,337 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap');
+:root{--gld:#b8944f;--dk:#111;--mid:#5c5c5c;--bg1:#f8f6f3;--bg2:#f0ece6;--bdr:#e5e0d8;--wh:#fff}
+.au{font-family:'Inter',sans-serif !important;color:#2a2a2a !important;font-size:16px !important;line-height:1.75 !important;-webkit-font-smoothing:antialiased}
+.au h1,.au h2,.au h3,.au h4{font-family:'Playfair Display',Georgia,serif !important;color:var(--dk) !important;line-height:1.2 !important;font-weight:700 !important;margin:0 !important}
+.au p{font-size:16px !important;line-height:1.8 !important;margin:0 !important}
+.au a{text-decoration:none !important;color:inherit !important}
+.au img{max-width:100%;display:block}
+.au-c{max-width:1160px;margin:0 auto;padding:0 36px}
+.au-tag{display:block;font-size:11px !important;font-weight:700 !important;letter-spacing:.2em !important;text-transform:uppercase !important;color:var(--gld) !important;margin-bottom:16px}
+/* HERO */
+.au-hero{position:relative;height:90vh;min-height:520px;max-height:860px;display:flex;align-items:flex-end;overflow:hidden;background:#111}
+.au-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.35)}
+.au-hero-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,6,4,.9) 0%,rgba(8,6,4,.3) 55%,transparent 100%)}
+.au-hero-bd{position:relative;z-index:2;padding:0 36px 64px;max-width:1160px;margin:0 auto;width:100%}
+.au-hero-ft{display:flex;align-items:center;gap:40px;border-top:1px solid rgba(255,255,255,.12);padding-top:22px;margin-top:32px;flex-wrap:wrap}
+.au-hero-n strong{font-size:26px !important;font-weight:800 !important;color:var(--gld) !important;display:block;font-family:'Playfair Display',serif !important}
+.au-hero-n span{font-size:10px !important;color:rgba(255,255,255,.45) !important;text-transform:uppercase;letter-spacing:.12em}
+.au-hero-dv{width:1px;height:36px;background:rgba(255,255,255,.15)}
+/* ROOMS */
+.au-rooms-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.au-room{background:#fff;border:1px solid var(--bdr);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden}
+.au-room::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gld);transform:scaleX(0);transition:transform .35s ease;transform-origin:left}
+.au-room:hover::before{transform:scaleX(1)}
+.au-room h3{font-size:16px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;color:#111 !important}
+.au-rd{display:flex;align-items:flex-start;gap:8px;font-size:13px !important;color:var(--mid) !important;line-height:1.5 !important}
+.au-rd svg{width:13px;height:13px;fill:var(--gld);flex-shrink:0;margin-top:2px}
+.au-rd a{color:var(--mid) !important;font-size:13px !important}
+.au-rd a:hover{color:var(--gld) !important}
+.au-rbtns{margin-top:auto;padding-top:14px;display:flex;gap:8px}
+.au-rbtn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:5px;padding:9px !important;border-radius:50px;font-size:12px !important;font-weight:700 !important;font-family:'Inter',sans-serif !important;text-decoration:none !important}
+.au-rbtn-d{background:#111 !important;color:#fff !important}
+.au-rbtn-d:hover{background:var(--gld) !important}
+.au-rbtn-c{border:1.5px solid var(--bdr) !important;color:#111 !important;background:transparent !important}
+.au-rbtn-c:hover{border-color:var(--gld) !important;color:var(--gld) !important}
+.au-rbtn svg{width:11px;height:11px;fill:currentColor}
+/* CTA */
+.au-cta-in{background:var(--gld);border-radius:20px;padding:60px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;position:relative;overflow:hidden}
+.au-cta-in::before{content:'';position:absolute;top:-40%;right:-5%;width:400px;height:400px;background:radial-gradient(circle,rgba(255,255,255,.1) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.au-cta-in h2{font-size:32px !important;color:#fff !important;margin-bottom:12px !important;position:relative;z-index:1}
+.au-cta-in p{font-size:16px !important;color:rgba(255,255,255,.82) !important;position:relative;z-index:1}
+.au-cta-r{display:flex;flex-direction:column;gap:10px;flex-shrink:0;position:relative;z-index:1}
+.au-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:14px 28px !important;font-size:14px !important;font-weight:700 !important;font-family:'Inter',sans-serif !important;border-radius:50px !important;text-decoration:none !important;cursor:pointer;white-space:nowrap}
+.au-btn-dk{background:#111 !important;color:#fff !important;border:2px solid #111 !important}
+.au-btn-dk:hover{background:#000 !important}
+.au-btn-ol{background:transparent !important;color:#fff !important;border:2px solid rgba(255,255,255,.45) !important}
+.au-btn-ol:hover{border-color:#fff !important}
+.au-btn svg{width:15px;height:15px;fill:currentColor}
+/* MOBILE */
+@media(max-width:768px){
+  .au-c{padding:0 20px !important}
+  .au-hero{height:75vh;min-height:440px}
+  .au-hero-bd{padding:0 20px 48px}
+  .au-hero-ft{gap:20px}
+  .au-rooms-grid{grid-template-columns:1fr !important}
+  .au-cta-in{grid-template-columns:1fr !important;gap:24px;padding:36px 24px !important;border-radius:16px !important}
+  .au-cta-r{flex-direction:row;flex-wrap:wrap}
+  .au-btn{flex:1;justify-content:center !important}
+}
+@media(max-width:480px){
+  .au-c{padding:0 16px !important}
+  .au-hero-bd{padding:0 16px 40px}
+}
+</style>
+
+<div class="au">
+
+<!-- HERO -->
+<div class="au-hero">
+  <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/about-hero-showroom-v2.jpg?v=1774841035" alt="MCM Showroom" loading="eager">
+  <div class="au-hero-ov"></div>
+  <div class="au-hero-bd">
+    <span class="au-tag" style="color:rgba(184,148,79,.85) !important;margin-bottom:18px">About Massage Chairs and More</span>
+    <h1 style="color:#fff !important;font-size:clamp(28px,5vw,52px) !important;max-width:780px;letter-spacing:-.025em !important;font-style:normal !important;line-height:1.12 !important">We started this because we kept seeing people make the wrong call — and regret it.</h1>
+    <div class="au-hero-ft">
+      <div class="au-hero-n"><strong>20</strong><span>Years in the Industry</span></div>
+      <div class="au-hero-dv"></div>
+      <div class="au-hero-n"><strong>4</strong><span>California Showrooms</span></div>
+      <div class="au-hero-dv"></div>
+      <div class="au-hero-n"><strong>1000s</strong><span>Customers Helped</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- OPENING STORY -->
+<div style="padding:80px 0;background:#fff">
+  <div class="au-c">
+    <div style="display:grid;grid-template-columns:1fr 400px;gap:72px;align-items:start">
+      <div>
+        <span class="au-tag">The Story</span>
+        <h2 style="font-size:clamp(24px,3vw,38px) !important;letter-spacing:-.02em;margin-bottom:24px !important;line-height:1.15 !important">Nearly 20 years ago, Matt opened the first store with a simple idea.</h2>
+        <p style="color:var(--mid);font-size:17px !important;margin-bottom:18px !important">Most people shopping for a massage chair were overwhelmed. The category was noisy — big brands, confusing specs, pushy salespeople, and prices that ranged from $500 to $15,000 with no clear reason why.</p>
+        <p style="color:var(--mid);font-size:17px !important;margin-bottom:18px !important">Matt had been in the industry long enough to know one thing: the right chair for someone isn't the most expensive one. It's the one that fits their body, their space, and how they actually live. That insight became the foundation of Massage Chairs and More.</p>
+        <p style="color:var(--mid);font-size:17px !important">Four showrooms later, across two decades, the approach hasn't changed. Come in, try them side by side, and leave with a decision that feels calm — not pressured.</p>
+      </div>
+      <div style="position:sticky;top:40px">
+        <div style="border-radius:20px;overflow:hidden;margin-bottom:20px">
+          <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/about-team-consultation-v2.jpg?v=1774841366" alt="Matt consulting with customer" loading="lazy" style="width:100%;height:360px;object-fit:cover">
+        </div>
+        <div style="background:var(--bg1);border-radius:12px;padding:24px;border-left:3px solid var(--gld)">
+          <p style="font-family:'Playfair Display',Georgia,serif !important;font-size:16px !important;font-style:italic !important;color:#111 !important;line-height:1.6 !important;margin-bottom:10px !important">"People aren't shopping for a chair. They're shopping for certainty."</p>
+          <cite style="font-size:11px !important;font-weight:700 !important;color:var(--gld) !important;letter-spacing:.15em;text-transform:uppercase;font-style:normal !important">— Matt, Founder</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BRANDS -->
+<div style="padding:80px 0;background:var(--bg2);border-top:1px solid var(--bdr)">
+  <div class="au-c">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start">
+      <div>
+        <span class="au-tag">What We Carry</span>
+        <h2 style="font-size:clamp(24px,3vw,36px) !important;letter-spacing:-.02em;margin-bottom:22px !important">Every chair on our floor earned its place.</h2>
+        <p style="color:var(--mid);font-size:16px !important;margin-bottom:16px !important">We don't carry everything — on purpose. Matt has tested hundreds of chairs over twenty years. The ones on our floor held up: in build quality, real-world performance, and what customers say six months later.</p>
+        <p style="color:var(--mid);font-size:16px !important;margin-bottom:24px !important">If a brand stops performing, it comes off the floor. It's not about carrying the most names — it's about standing behind every chair we sell.</p>
+        <div style="padding:22px;background:#fff;border-radius:12px;border-left:3px solid var(--gld)">
+          <p style="font-family:'Playfair Display',Georgia,serif !important;font-size:16px !important;font-style:italic !important;color:#111 !important;line-height:1.6 !important;margin-bottom:8px !important">"The win isn't the fanciest model. It's the chair that fits your body so well you stop thinking about it — and just use it."</p>
+          <span style="font-size:11px;font-weight:700;color:var(--gld);letter-spacing:.15em;text-transform:uppercase;font-family:'Inter',sans-serif">— Matt, Founder</span>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:12px;font-weight:700;color:#111;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--bdr);font-family:'Inter',sans-serif">Brands We Trust</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <div style="background:#fff;border-radius:10px;padding:18px;text-align:center;border:1px solid var(--bdr)"><span style="font-size:14px !important;font-weight:700 !important;color:#111 !important;font-family:'Inter',sans-serif !important">OHCO</span></div>
+          <div style="background:#fff;border-radius:10px;padding:18px;text-align:center;border:1px solid var(--bdr)"><span style="font-size:14px !important;font-weight:700 !important;color:#111 !important;font-family:'Inter',sans-serif !important">Positive Posture</span></div>
+          <div style="background:#fff;border-radius:10px;padding:18px;text-align:center;border:1px solid var(--bdr)"><span style="font-size:14px !important;font-weight:700 !important;color:#111 !important;font-family:'Inter',sans-serif !important">Panasonic</span></div>
+          <div style="background:#fff;border-radius:10px;padding:18px;text-align:center;border:1px solid var(--bdr)"><span style="font-size:14px !important;font-weight:700 !important;color:#111 !important;font-family:'Inter',sans-serif !important">Brio</span></div>
+          <div style="background:#fff;border-radius:10px;padding:18px;text-align:center;border:1px solid var(--bdr)"><span style="font-size:14px !important;font-weight:700 !important;color:#111 !important;font-family:'Inter',sans-serif !important">KOYO</span></div>
+          <div style="background:#fff;border-radius:10px;padding:18px;text-align:center;border:1px solid var(--bdr)"><span style="font-size:14px !important;font-weight:700 !important;color:#111 !important;font-family:'Inter',sans-serif !important">D.Core</span></div>
+          <div style="background:#fff;border-radius:10px;padding:18px;text-align:center;border:1px solid var(--bdr);grid-column:span 2"><span style="font-size:14px !important;font-weight:700 !important;color:#111 !important;font-family:'Inter',sans-serif !important">DualTech</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DELIVERY -->
+<div style="padding:80px 0;background:#fff">
+  <div class="au-c">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center">
+      <div style="border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.1)">
+        <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/about-delivery-nationwide.jpg?v=1774838750" alt="White-glove delivery" loading="lazy" style="width:100%;height:440px;object-fit:cover">
+      </div>
+      <div>
+        <span class="au-tag">California &amp; Beyond</span>
+        <h2 style="font-size:clamp(22px,2.8vw,34px) !important;letter-spacing:-.02em;margin-bottom:20px !important;color:#111 !important">We know this customer. Long commutes. Desk pain. A mental load that doesn't stop.</h2>
+        <p style="color:var(--mid);font-size:16px !important;margin-bottom:16px !important">California built this business. The specific stress of living here — the commutes, the desk tension, the pace — shaped how we listen and what we recommend.</p>
+        <p style="color:var(--mid);font-size:16px !important">But the customers we've helped aren't only here. We deliver and set up nationwide — to Florida, New York, Texas — with the same white-glove care our walk-in customers get in person.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT WE WON'T DO -->
+<div style="padding:80px 0;background:var(--bg1);border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr)">
+  <div class="au-c">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start">
+      <div>
+        <span class="au-tag">What We Won't Do</span>
+        <h2 style="font-size:clamp(24px,3vw,38px) !important;letter-spacing:-.02em;margin-bottom:22px !important;font-style:italic !important">We'd rather lose a sale than lose your trust.</h2>
+        <p style="color:var(--mid);font-size:16px !important;margin-bottom:16px !important">This isn't a tagline. It's a decision Matt made early on, and it shaped everything: how the stores are run, how the team is trained, what gets said on a slow Tuesday when no one's watching.</p>
+        <p style="color:var(--mid);font-size:16px !important">The massage chair industry has plenty of noise. We decided a long time ago not to add to it.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0">
+        <div style="padding:22px 0 22px 24px;border-left:3px solid var(--gld);border-bottom:1px solid var(--bdr)">
+          <h4 style="font-size:15px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;color:#111 !important;margin-bottom:6px !important">No fake urgency</h4>
+          <p style="color:var(--mid) !important;font-size:14px !important;line-height:1.65 !important;font-family:'Inter',sans-serif !important">No countdown clocks, no "today only" pressure. If the chair is right for you, it'll still be right tomorrow.</p>
+        </div>
+        <div style="padding:22px 0 22px 24px;border-left:3px solid var(--gld);border-bottom:1px solid var(--bdr)">
+          <h4 style="font-size:15px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;color:#111 !important;margin-bottom:6px !important">No competitor trash talk</h4>
+          <p style="color:var(--mid) !important;font-size:14px !important;line-height:1.65 !important;font-family:'Inter',sans-serif !important">We don't win by making others look bad. We win by being genuinely useful — and letting you decide.</p>
+        </div>
+        <div style="padding:22px 0 22px 24px;border-left:3px solid var(--gld);border-bottom:1px solid var(--bdr)">
+          <h4 style="font-size:15px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;color:#111 !important;margin-bottom:6px !important">No sloppy explanations</h4>
+          <p style="color:var(--mid) !important;font-size:14px !important;line-height:1.65 !important;font-family:'Inter',sans-serif !important">If we can't explain why something matters to your specific situation, we don't say it.</p>
+        </div>
+        <div style="padding:22px 0 0 24px;border-left:3px solid var(--gld)">
+          <h4 style="font-size:15px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;color:#111 !important;margin-bottom:6px !important">No promises we can't keep</h4>
+          <p style="color:var(--mid) !important;font-size:14px !important;line-height:1.65 !important;font-family:'Inter',sans-serif !important">Massage has real benefits — relaxation, stress reduction, pain management. We talk about those. We don't promise miracles.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW WE THINK -->
+<div style="padding:80px 0;background:#fff">
+  <div class="au-c">
+    <div style="max-width:680px;margin:0 auto 56px;text-align:center">
+      <span class="au-tag" style="text-align:center">The Sales Philosophy</span>
+      <h2 style="font-size:clamp(24px,3vw,36px) !important;letter-spacing:-.02em;margin-bottom:18px !important">We don't "handle" people. We take them seriously.</h2>
+      <p style="font-size:17px !important;color:var(--mid) !important;line-height:1.8 !important">There's a version of this business that would've been easier: high pressure, big incentives, close the deal and move on. We chose the other version.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px">
+      <div style="background:var(--bg1);border-radius:14px;padding:32px 26px">
+        <div style="font-size:32px !important;font-weight:800 !important;color:var(--gld) !important;font-family:'Playfair Display',serif !important;line-height:1 !important;margin-bottom:12px !important">01</div>
+        <h3 style="font-size:16px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;color:#111 !important;margin-bottom:8px !important;line-height:1.3 !important">The first five minutes are just listening</h3>
+        <p style="font-size:14px !important;color:var(--mid) !important;line-height:1.65 !important">Before we recommend anything, we want to understand what's actually going on — physically, practically, financially.</p>
+      </div>
+      <div style="background:var(--bg1);border-radius:14px;padding:32px 26px">
+        <div style="font-size:32px !important;font-weight:800 !important;color:var(--gld) !important;font-family:'Playfair Display',serif !important;line-height:1 !important;margin-bottom:12px !important">02</div>
+        <h3 style="font-size:16px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;color:#111 !important;margin-bottom:8px !important;line-height:1.3 !important">We'd rather say "not yet" than close too early</h3>
+        <p style="font-size:14px !important;color:var(--mid) !important;line-height:1.65 !important">A sale that creates regret isn't a win for anyone. We'd rather they come back in six months ready.</p>
+      </div>
+      <div style="background:var(--bg1);border-radius:14px;padding:32px 26px">
+        <div style="font-size:32px !important;font-weight:800 !important;color:var(--gld) !important;font-family:'Playfair Display',serif !important;line-height:1 !important;margin-bottom:12px !important">03</div>
+        <h3 style="font-size:16px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;color:#111 !important;margin-bottom:8px !important;line-height:1.3 !important">The relationship doesn't end at checkout</h3>
+        <p style="font-size:14px !important;color:var(--mid) !important;line-height:1.65 !important">We follow up. We answer questions. We're the same people you talked to in the store — still reachable.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 20 YEARS -->
+<div style="padding:80px 0;background:var(--bg1);border-top:1px solid var(--bdr)">
+  <div class="au-c">
+    <div style="max-width:700px;margin:0 auto 56px">
+      <span class="au-tag">Twenty Years</span>
+      <h2 style="font-size:clamp(24px,3vw,36px) !important;letter-spacing:-.025em;margin-bottom:16px !important">What twenty years in one industry teaches you.</h2>
+      <p style="font-size:17px !important;color:var(--mid) !important;line-height:1.8 !important">Not lessons from a book. Things we got wrong, figured out slowly, and eventually stopped needing to relearn.</p>
+    </div>
+    <div>
+      <div style="display:grid;grid-template-columns:120px 1fr;gap:32px;padding:32px 0;border-bottom:1px solid var(--bdr);align-items:start">
+        <div style="font-size:13px !important;font-weight:700 !important;color:var(--gld) !important;font-family:'Playfair Display',serif !important">Early on</div>
+        <div><h3 style="font-size:17px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;color:#111 !important;margin-bottom:8px !important;line-height:1.3 !important">We used to lead with features. We learned to lead with questions.</h3><p style="font-size:15px !important;color:var(--mid) !important;line-height:1.75 !important">The instinct when you know a product well is to talk about it. What we learned is that none of it means anything until you understand what's going on with the person in front of you.</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:120px 1fr;gap:32px;padding:32px 0;border-bottom:1px solid var(--bdr);align-items:start">
+        <div style="font-size:13px !important;font-weight:700 !important;color:var(--gld) !important;font-family:'Playfair Display',serif !important">A few years in</div>
+        <div><h3 style="font-size:17px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;color:#111 !important;margin-bottom:8px !important;line-height:1.3 !important">The most expensive chair isn't always the right one.</h3><p style="font-size:15px !important;color:var(--mid) !important;line-height:1.75 !important">There's always pressure to sell up. At some point we made a decision to just stop. If an $1,800 chair is what someone needs, that's what we say. The customers who trust you for that come back.</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:120px 1fr;gap:32px;padding:32px 0;border-bottom:1px solid var(--bdr);align-items:start">
+        <div style="font-size:13px !important;font-weight:700 !important;color:var(--gld) !important;font-family:'Playfair Display',serif !important">After a decade</div>
+        <div><h3 style="font-size:17px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;color:#111 !important;margin-bottom:8px !important;line-height:1.3 !important">The real question isn't "which chair." It's "will you actually use it."</h3><p style="font-size:15px !important;color:var(--mid) !important;line-height:1.75 !important">We started asking about space earlier. About daily routine. A great chair that never gets used is a terrible purchase.</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:120px 1fr;gap:32px;padding:32px 0;align-items:start">
+        <div style="font-size:13px !important;font-weight:700 !important;color:var(--gld) !important;font-family:'Playfair Display',serif !important">Now</div>
+        <div><h3 style="font-size:17px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;color:#111 !important;margin-bottom:8px !important;line-height:1.3 !important">We measure success differently than we used to.</h3><p style="font-size:15px !important;color:var(--mid) !important;line-height:1.75 !important">The number we pay attention to now is how many people come back, refer someone, or call to say they're still using the chair three years later. That's the signal.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SHOWROOMS -->
+<div style="padding:80px 0;background:#fff;border-top:1px solid var(--bdr)">
+  <div class="au-c">
+    <div style="margin-bottom:48px">
+      <span class="au-tag">Find Us</span>
+      <h2 style="font-size:clamp(24px,3vw,36px) !important;letter-spacing:-.02em;margin-bottom:10px !important;color:#111 !important">Four showrooms across California.</h2>
+      <p style="font-size:16px !important;color:var(--mid) !important">Come in and try them yourself. No appointment needed, no pressure expected.</p>
+    </div>
+    <div class="au-rooms-grid">
+      <div class="au-room">
+        <h3>Walnut Creek</h3>
+        <div class="au-rd"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><a href="https://maps.app.goo.gl/81a5QJwKfQZevtbw5" target="_blank">1198 Broadway Plaza, Walnut Creek, CA 94596</a></div>
+        <div class="au-rd"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:+14088891188">+1 (408) 889-1188</a></div>
+        <div class="au-rbtns">
+          <a href="https://maps.app.goo.gl/81a5QJwKfQZevtbw5" target="_blank" class="au-rbtn au-rbtn-d" style="color:#fff !important"><svg viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9a1 1 0 00-1.41 0l-9 9a1 1 0 000 1.41l9 9a1 1 0 001.41 0l9-9a1 1 0 000-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>Directions</a>
+          <a href="tel:+14088891188" class="au-rbtn au-rbtn-c">Call</a>
+        </div>
+      </div>
+      <div class="au-room">
+        <h3>Santa Clara</h3>
+        <div class="au-rd"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><a href="https://maps.app.goo.gl/M4q7oMSRn35WUBd58" target="_blank">2855 Stevens Creek Blvd, Ste #1091, Santa Clara, CA 95050</a></div>
+        <div class="au-rd"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:+14088891188">+1 (408) 889-1188</a></div>
+        <div class="au-rbtns">
+          <a href="https://maps.app.goo.gl/M4q7oMSRn35WUBd58" target="_blank" class="au-rbtn au-rbtn-d" style="color:#fff !important"><svg viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9a1 1 0 00-1.41 0l-9 9a1 1 0 000 1.41l9 9a1 1 0 001.41 0l9-9a1 1 0 000-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>Directions</a>
+          <a href="tel:+14088891188" class="au-rbtn au-rbtn-c">Call</a>
+        </div>
+      </div>
+      <div class="au-room">
+        <h3>Sacramento</h3>
+        <div class="au-rd"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><a href="https://maps.app.goo.gl/uPrqs5vL7PVosqQu6" target="_blank">Sacramento, CA</a></div>
+        <div class="au-rd"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:+14088891188">+1 (408) 889-1188</a></div>
+        <div class="au-rbtns">
+          <a href="https://maps.app.goo.gl/uPrqs5vL7PVosqQu6" target="_blank" class="au-rbtn au-rbtn-d" style="color:#fff !important"><svg viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9a1 1 0 00-1.41 0l-9 9a1 1 0 000 1.41l9 9a1 1 0 001.41 0l9-9a1 1 0 000-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>Directions</a>
+          <a href="tel:+14088891188" class="au-rbtn au-rbtn-c">Call</a>
+        </div>
+      </div>
+      <div class="au-room">
+        <h3>Roseville</h3>
+        <div class="au-rd"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><a href="https://maps.app.goo.gl/FfiVdNygEA1BUaW4A" target="_blank">1151 Galleria Blvd, Ste #2058, Roseville, CA 95678</a></div>
+        <div class="au-rd"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:+14088891188">+1 (408) 889-1188</a></div>
+        <div class="au-rbtns">
+          <a href="https://maps.app.goo.gl/FfiVdNygEA1BUaW4A" target="_blank" class="au-rbtn au-rbtn-d" style="color:#fff !important"><svg viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9a1 1 0 00-1.41 0l-9 9a1 1 0 000 1.41l9 9a1 1 0 001.41 0l9-9a1 1 0 000-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>Directions</a>
+          <a href="tel:+14088891188" class="au-rbtn au-rbtn-c">Call</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<style>
+@media(max-width:768px){
+  .au-story-grid,.au-brands-grid-inner,.au-delivery-grid,.au-wont-grid,.au-think-grid,.au-years-row{grid-template-columns:1fr !important}
+  .au-story-aside{position:static !important}
+  .au-brands-grid-brands{grid-template-columns:1fr 1fr !important}
+  .au-think-grid>div,.au-years-row>div:first-child{margin-bottom:0}
+}
+</style>
+<div style="padding:80px 0">
+  <div class="au-c">
+    <div class="au-cta-in">
+      <div>
+        <h2 style="color:#fff !important;font-size:clamp(22px,3vw,32px) !important;margin-bottom:12px !important">The best way to choose is to try.</h2>
+        <p style="color:rgba(255,255,255,.82) !important;font-size:16px !important;max-width:440px">Visit any of our four showrooms and sit in the chairs yourself. No script, no pressure — just an honest conversation.</p>
+      </div>
+      <div class="au-cta-r">
+        <a href="/collections/massage-chair" class="au-btn au-btn-dk" style="color:#fff !important">
+          <svg viewBox="0 0 24 24"><path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/></svg>Browse Chairs
+        </a>
+        <a href="/pages/contact" class="au-btn au-btn-ol">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Find a Showroom
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE RESPONSIVE OVERRIDES -->
+<style>
+@media(max-width:768px){
+  [style*="grid-template-columns:1fr 400px"],[style*="grid-template-columns:1fr 1fr"],[style*="grid-template-columns:1fr 1fr 1fr"],[style*="grid-template-columns:120px 1fr"],[style*="grid-template-columns:1fr auto"]{grid-template-columns:1fr !important}
+  [style*="height:360px"],[style*="height:440px"]{height:240px !important}
+  [style*="position:sticky"]{position:static !important}
+  [style*="padding:80px 0"]{padding:56px 0 !important}
+  [style*="padding:60px"]{padding:36px 24px !important}
+  .au-rooms-grid{grid-template-columns:1fr !important}
+}
+@media(max-width:480px){
+  [style*="padding:80px 0"]{padding:48px 0 !important}
+}
+</style>
+
+</div>

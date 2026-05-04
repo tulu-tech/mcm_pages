@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-label="Body Scan Diagram — Panasonic MAN1 vs D.Core 2">
+  <defs>
+    <linearGradient id="bg3" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#fbfaf7"/><stop offset="1" stop-color="#eee6da"/></linearGradient>
+    <filter id="sh3" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#2b2114" flood-opacity=".12"/></filter>
+  </defs>
+  <rect width="1600" height="980" fill="url(#bg3)"/>
+  <text x="800" y="56" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="13" font-weight="900" letter-spacing="4" text-anchor="middle">MASSAGE CHAIRS &amp; MORE — BODY SCAN &amp; PRESSURE</text>
+  <text x="800" y="100" fill="#0b0b0b" font-family="Georgia,serif" font-size="40" font-weight="800" text-anchor="middle">Scan, pressure, and fit</text>
+  <text x="800" y="132" fill="#67605a" font-family="Inter,sans-serif" font-size="16" text-anchor="middle">Body scanning accuracy, pressure sensing, and how each chair finds your body</text>
+
+  <!-- MAN1 Card -->
+  <rect x="60" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh3)"/>
+  <rect x="80" y="185" width="210" height="38" rx="19" fill="#9a7f4a"/>
+  <text x="185" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">PANASONIC MAN1</text>
+  <image href="https://massagechairsandmore.com/cdn/shop/files/Artboard-1.png?v=1772489014&amp;width=1200" x="220" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- MAN1 scan zone overlay -->
+  <ellipse cx="370" cy="375" rx="55" ry="85" fill="#9a7f4a" opacity=".08" stroke="#9a7f4a" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <!-- Scan pulse rings -->
+  <circle cx="356" cy="353" r="15" fill="none" stroke="#9a7f4a" stroke-width="1" opacity=".4"/>
+  <circle cx="356" cy="353" r="25" fill="none" stroke="#9a7f4a" stroke-width="1" opacity=".25"/>
+  <circle cx="379" cy="398" r="15" fill="none" stroke="#9a7f4a" stroke-width="1" opacity=".4"/>
+  <circle cx="379" cy="398" r="25" fill="none" stroke="#9a7f4a" stroke-width="1" opacity=".25"/>
+
+  <line x1="425" y1="375" x2="545" y2="340" stroke="#9a7f4a" stroke-width="1.5"/>
+  <rect x="545" y="310" width="220" height="90" rx="10" fill="#9a7f4a" opacity=".08"/>
+  <text x="560" y="335" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="13" font-weight="800">1260P Acupoint Body Scan</text>
+  <text x="560" y="355" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="10" font-weight="600" opacity=".8">Pressure-sensing rollers</text>
+  <text x="560" y="373" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="10" font-weight="600" opacity=".8">Real-time force feedback</text>
+  <text x="560" y="391" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="10" font-weight="600" opacity=".8">6-position microprocessor</text>
+
+  <rect x="80" y="695" width="680" height="18" rx="4" fill="#9a7f4a" opacity=".06"/>
+  <text x="420" y="708" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle">Precision scan → Real-time pressure response → Targeted massage</text>
+
+  <!-- D.Core 2 Card -->
+  <rect x="820" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh3)"/>
+  <rect x="840" y="185" width="160" height="38" rx="19" fill="#617064"/>
+  <text x="920" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">D.CORE 2</text>
+  <image href="https://massagechairsandmore.com/cdn/shop/files/asd2.jpg?v=1772565432&amp;width=1200" x="980" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- D.Core 2 scan zone overlay -->
+  <ellipse cx="1135" cy="375" rx="55" ry="85" fill="#617064" opacity=".08" stroke="#617064" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <circle cx="1110" cy="345" r="15" fill="none" stroke="#617064" stroke-width="1" opacity=".4"/>
+  <circle cx="1110" cy="345" r="25" fill="none" stroke="#617064" stroke-width="1" opacity=".25"/>
+  <circle cx="1150" cy="401" r="15" fill="none" stroke="#617064" stroke-width="1" opacity=".4"/>
+  <circle cx="1150" cy="401" r="25" fill="none" stroke="#617064" stroke-width="1" opacity=".25"/>
+
+  <line x1="1190" y1="375" x2="1310" y2="340" stroke="#617064" stroke-width="1.5"/>
+  <rect x="1310" y="310" width="200" height="90" rx="10" fill="#617064" opacity=".08"/>
+  <text x="1325" y="335" fill="#617064" font-family="Inter,sans-serif" font-size="13" font-weight="800">3D+ True Shiatsu Feel</text>
+  <text x="1325" y="355" fill="#617064" font-family="Inter,sans-serif" font-size="10" font-weight="600" opacity=".8">Textured silicone heads</text>
+  <text x="1325" y="373" fill="#617064" font-family="Inter,sans-serif" font-size="10" font-weight="600" opacity=".8">Independent top-hand movement</text>
+  <text x="1325" y="391" fill="#617064" font-family="Inter,sans-serif" font-size="10" font-weight="600" opacity=".8">Confirm scan in showroom</text>
+
+  <rect x="840" y="695" width="680" height="18" rx="4" fill="#617064" opacity=".06"/>
+  <text x="1180" y="708" fill="#617064" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle">Layered contact → Softer shiatsu pattern → Composed feel</text>
+
+  <!-- VS badge -->
+  <circle cx="800" cy="450" r="32" fill="#1a1814"/>
+  <text x="800" y="456" fill="#e7c77d" font-family="Inter,sans-serif" font-size="16" font-weight="900" text-anchor="middle">VS</text>
+
+  <text x="800" y="940" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="700" letter-spacing="3" text-anchor="middle">MASSAGECHAIRSANDMORE.COM</text>
+</svg>

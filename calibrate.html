@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head><title>Coordinate Calibration</title>
+<style>
+body { margin: 0; padding: 20px; background: #f5f5f5; font-family: Inter, sans-serif; }
+.container { display: flex; gap: 40px; }
+.panel { position: relative; width: 400px; height: 400px; background: #fff; border: 2px solid #ccc; }
+.panel img { width: 400px; height: 400px; object-fit: contain; display: block; }
+.panel canvas { position: absolute; top: 0; left: 0; pointer-events: none; }
+.panel .coords { position: absolute; top: 5px; right: 5px; background: rgba(0,0,0,.8); color: #0f0; font-size: 12px; padding: 4px 8px; border-radius: 4px; font-family: monospace; }
+h2 { margin: 0 0 10px; font-size: 14px; }
+.log { margin-top: 20px; background: #1a1a1a; color: #0f0; padding: 12px; font-family: monospace; font-size: 12px; max-height: 300px; overflow-y: auto; border-radius: 8px; white-space: pre; }
+p { font-size: 13px; color: #666; margin-top: 4px; }
+</style>
+</head>
+<body>
+<h1>🎯 Coordinate Calibration Tool</h1>
+<p>Hover over each chair to see exact image coordinates. Click to log a point. These are the SVG coordinates when image is at x=220/980, y=250, w=400, h=400.</p>
+<div class="container">
+  <div>
+    <h2>OHCO M8 NEO (image renders at SVG x=220..620, y=250..650)</h2>
+    <div class="panel" id="ohco">
+      <img src="ref-ohco-m8-neo.jpg" />
+      <canvas width="400" height="400" id="ohco-canvas"></canvas>
+      <div class="coords" id="ohco-coords">—</div>
+    </div>
+  </div>
+  <div>
+    <h2>PANASONIC MAN1 (image renders at SVG x=980..1380, y=250..650)</h2>
+    <div class="panel" id="pan">
+      <img src="images/panasonic-man1.png" />
+      <canvas width="400" height="400" id="pan-canvas"></canvas>
+      <div class="coords" id="pan-coords">—</div>
+    </div>
+  </div>
+</div>
+<div class="log" id="log">Click on body parts to log coordinates...\n</div>
+<script>
+function setup(panelId, canvasId, coordsId, svgOffsetX) {
+  const panel = document.getElementById(panelId);
+  const canvas = document.getElementById(canvasId);
+  const ctx = canvas.getContext('2d');
+  const coordsEl = document.getElementById(coordsId);
+  
+  // Draw grid
+  ctx.strokeStyle = 'rgba(255,0,0,0.15)';
+  ctx.lineWidth = 0.5;
+  for (let i = 0; i <= 400; i += 40) {
+    ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, 400); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(0, i); ctx.lineTo(400, i); ctx.stroke();
+  }
+  // Grid labels
+  ctx.fillStyle = 'rgba(255,0,0,0.5)';
+  ctx.font = '9px monospace';
+  for (let i = 0; i <= 400; i += 40) {
+    ctx.fillText(Math.round(i/4) + '%', i + 2, 10);
+    ctx.fillText(Math.round(i/4) + '%', 2, i + 10);
+  }
+  
+  // Crosshair lines
+  ctx.strokeStyle = 'rgba(0,255,0,0.2)';
+  ctx.setLineDash([2, 2]);
+  ctx.beginPath(); ctx.moveTo(200, 0); ctx.lineTo(200, 400); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(0, 200); ctx.lineTo(400, 200); ctx.stroke();
+  ctx.setLineDash([]);
+  
+  panel.addEventListener('mousemove', (e) => {
+    const rect = panel.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const pctX = Math.round(x / 4);
+    const pctY = Math.round(y / 4);
+    const svgX = svgOffsetX + x;
+    const svgY = 250 + y;
+    coordsEl.textContent = `px(${x},${y}) pct(${pctX}%,${pctY}%) SVG(${svgX},${svgY})`;
+  });
+  
+  panel.addEventListener('click', (e) => {
+    const rect = panel.getBoundingClientRect();
+    const x = Math.round(e.clientX - rect.left);
+    const y = Math.round(e.clientY - rect.top);
+    const svgX = svgOffsetX + x;
+    const svgY = 250 + y;
+    const name = panelId === 'ohco' ? 'OHCO' : 'PANASONIC';
+    const logEl = document.getElementById('log');
+    logEl.textContent += `${name}: px(${x},${y}) → SVG(${svgX}, ${svgY})\n`;
+    logEl.scrollTop = logEl.scrollHeight;
+    
+    // Draw marker
+    ctx.fillStyle = 'rgba(255,255,0,0.8)';
+    ctx.beginPath(); ctx.arc(x, y, 5, 0, Math.PI*2); ctx.fill();
+    ctx.strokeStyle = '#ff0';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    ctx.fillStyle = '#000';
+    ctx.font = '10px monospace';
+    ctx.fillText(`(${svgX},${svgY})`, x + 8, y + 4);
+  });
+}
+
+setup('ohco', 'ohco-canvas', 'ohco-coords', 220);
+setup('pan', 'pan-canvas', 'pan-coords', 980);
+</script>
+</body>
+</html>

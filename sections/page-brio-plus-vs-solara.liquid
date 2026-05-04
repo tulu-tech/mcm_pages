@@ -1,0 +1,1240 @@
+{%- comment -%}
+  SECTION: page-brio-plus-vs-solara.liquid
+  Template: templates/page.brio-plus-vs-solara.json
+  Suggested URL slug: /compare/brio-plus-vs-solara
+
+  SEO title:
+  Brio+ vs Solara | Positive Posture Massage Chair Comparison
+
+  Meta description:
+  Compare the Brio+ vs Solara massage chairs at Massage Chairs & More. See price,
+  features, massage style, zero gravity, fit, space needs, warranty, and which
+  Positive Posture chair is right for you.
+
+  Canonical product URLs verified live:
+  Brio+: /products/positive-posture-massage-chair-brio-plus
+  Solara: /products/positive-posture-massage-chair-solara
+{%- endcomment -%}
+
+{%- assign p_brio = all_products['positive-posture-massage-chair-brio-plus'] -%}
+{%- assign p_solara = all_products['positive-posture-massage-chair-solara'] -%}
+
+{%- assign url_brio = shop.url | append: '/products/positive-posture-massage-chair-brio-plus' -%}
+{%- assign url_solara = shop.url | append: '/products/positive-posture-massage-chair-solara' -%}
+{%- assign url_compare = shop.url | append: '/compare' -%}
+{%- assign url_massage_chairs = shop.url | append: '/collections/massage-chair' -%}
+{%- assign url_positive_posture = shop.url | append: '/collections/positive-posture-massage-chairs' -%}
+{%- assign url_contact = shop.url | append: '/pages/contact' -%}
+{%- assign phone_href = 'tel:+14088891188' -%}
+{%- assign phone_label = '+1 (408) 889-1188' -%}
+{%- assign url_current_fallback = shop.url | append: '/compare/brio-plus-vs-solara' -%}
+{%- assign url_current = canonical_url | default: url_current_fallback -%}
+
+{%- assign brio_price = '$4,999' -%}
+{%- assign brio_was = '$9,999' -%}
+{%- if p_brio != blank and p_brio.price > 0 -%}
+  {%- assign brio_price = p_brio.price | money_without_trailing_zeros -%}
+{%- endif -%}
+{%- if p_brio != blank and p_brio.compare_at_price > p_brio.price -%}
+  {%- assign brio_was = p_brio.compare_at_price | money_without_trailing_zeros -%}
+{%- endif -%}
+
+{%- assign solara_price = '$2,499' -%}
+{%- assign solara_was = '$4,000' -%}
+{%- if p_solara != blank and p_solara.price > 0 -%}
+  {%- assign solara_price = p_solara.price | money_without_trailing_zeros -%}
+{%- endif -%}
+{%- if p_solara != blank and p_solara.compare_at_price > p_solara.price -%}
+  {%- assign solara_was = p_solara.compare_at_price | money_without_trailing_zeros -%}
+{%- endif -%}
+
+{%- assign img_brio = 'https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100-14-1.jpg?v=1772325831&width=1200' -%}
+{%- if p_brio != blank and p_brio.featured_image != blank -%}
+  {%- assign img_brio = p_brio.featured_image | image_url: width: 1200 -%}
+{%- endif -%}
+{%- assign img_brio_card = img_brio -%}
+{%- assign img_brio_heat = 'https://cdn.shopify.com/s/files/1/0813/4036/7096/files/positive-posture-brio-plus-heating-massage-05.webp?v=1772813808&width=1400' -%}
+{%- assign img_brio_air = 'https://cdn.shopify.com/s/files/1/0813/4036/7096/files/positive-posture-brio-plus-air-massage-zones-04.png?v=1772813786&width=1400' -%}
+{%- assign img_brio_recline = 'https://cdn.shopify.com/s/files/1/0813/4036/7096/files/positive-posture-brio-plus-full-recline-side-03.png?v=1772813733&width=1400' -%}
+{%- assign img_brio_upright = 'https://cdn.shopify.com/s/files/1/0813/4036/7096/files/positive-posture-brio-plus-upright-side-02.png?v=1772813662&width=1400' -%}
+
+{%- assign img_solara = 'https://cdn.shopify.com/s/files/1/0813/4036/7096/files/1.jpg?v=1772326021&width=1200' -%}
+{%- if p_solara != blank and p_solara.featured_image != blank -%}
+  {%- assign img_solara = p_solara.featured_image | image_url: width: 1200 -%}
+{%- endif -%}
+{%- assign img_solara_card = img_solara -%}
+{%- assign img_solara_recline = 'https://cdn.shopify.com/s/files/1/0813/4036/7096/files/positive-posture-solara-recline-tablet-03.png?v=1772808507&width=1400' -%}
+{%- assign img_solara_foot = 'https://cdn.shopify.com/s/files/1/0813/4036/7096/files/positive-posture-solara-leg-foot-massage-02.png?v=1772808459&width=1400' -%}
+{%- assign img_solara_remote = 'https://cdn.shopify.com/s/files/1/0813/4036/7096/files/positive-posture-solara-touchscreen-remote-04.png?v=1772808714&width=1400' -%}
+{%- assign img_solara_lifestyle = 'https://cdn.shopify.com/s/files/1/0813/4036/7096/files/positive-posture-solara-lifestyle-recline-05.png?v=1772808688&width=1400' -%}
+{%- assign img_solara_upright = 'https://cdn.shopify.com/s/files/1/0813/4036/7096/files/positive-posture-solara-upright-lifestyle-06.png?v=1772808747&width=1400' -%}
+{%- assign img_showroom = 'https://cdn.shopify.com/s/files/1/0813/4036/7096/files/showroom-hero.jpg?v=1774834874&width=1800' -%}
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Brio+ vs Solara: Which Positive Posture Massage Chair Is Right for You?",
+    "headline": "Brio+ vs Solara: Which Positive Posture Massage Chair Is Right for You?",
+    "description": "Compare the Brio+ vs Solara massage chairs at Massage Chairs & More. See price, features, massage style, zero gravity, fit, space needs, warranty, and which Positive Posture chair is right for you.",
+    "url": {{ url_current | json }},
+    "image": [
+      {{ img_brio | json }},
+      {{ img_solara | json }}
+    ],
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Massage Chairs & More",
+      "url": {{ shop.url | json }}
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Massage Chairs & More",
+      "url": {{ shop.url | json }},
+      "telephone": "+14088891188"
+    },
+    "about": [
+      { "@type": "Thing", "name": "Positive Posture Brio+ massage chair", "url": {{ url_brio | json }} },
+      { "@type": "Thing", "name": "Positive Posture Solara massage chair", "url": {{ url_solara | json }} }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ shop.url | json }} },
+      { "@type": "ListItem", "position": 2, "name": "Compare", "item": {{ url_compare | json }} },
+      { "@type": "ListItem", "position": 3, "name": "Brio+ vs Solara", "item": {{ url_current | json }} }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Brio+ vs Solara massage chairs",
+    "numberOfItems": 2,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Thing",
+          "name": "Positive Posture Brio+",
+          "url": {{ url_brio | json }},
+          "image": {{ img_brio | json }},
+          "description": "Premium Positive Posture 4D massage chair with Intelligent 4D Massage, heated rollers, automatic body scan, L-track coverage, full-body air massage, True Zero Gravity, and broad user fit up to 6 feet 5 inches."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Thing",
+          "name": "Positive Posture Solara",
+          "url": {{ url_solara | json }},
+          "image": {{ img_solara | json }},
+          "description": "Compact Positive Posture massage chair with SL-track coverage, full-body air massage, heated massage, bi-directional foot rollers, True Zero Gravity, wireless phone charging, USB charging, and very small wall clearance."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Is the Brio+ better than the Solara?","acceptedAnswer":{"@type":"Answer","text":"Brio+ is better for buyers who want a more premium 4D massage experience, heated rollers, refined choreography, more programs, and broader fit. Solara is better for buyers who want compact entry-value comfort."}},
+      {"@type":"Question","name":"Is the Solara good enough for daily relaxation?","acceptedAnswer":{"@type":"Answer","text":"Yes. Solara can be a strong everyday relaxation choice for buyers who want SL-track coverage, zero gravity, heat, air massage, foot rollers, and simple controls at a lower price point."}},
+      {"@type":"Question","name":"Is the Brio+ worth the higher price?","acceptedAnswer":{"@type":"Answer","text":"Brio+ may be worth it if the buyer values Intelligent 4D Massage, heated rollers, automatic body scan, more manual and program options, broader user fit, and a fuller premium massage experience."}},
+      {"@type":"Question","name":"Which chair is better for smaller rooms?","acceptedAnswer":{"@type":"Answer","text":"Solara is better for smaller rooms because it is smaller, lighter, and requires approximately 0.6 inches of wall clearance."}},
+      {"@type":"Question","name":"Which chair is better for taller users?","acceptedAnswer":{"@type":"Answer","text":"Brio+ is better for taller users because it supports users up to 6 feet 5 inches, while Solara supports users up to 6 feet 0 inches."}},
+      {"@type":"Question","name":"Which chair has better heat features?","acceptedAnswer":{"@type":"Answer","text":"Brio+ has heated rollers and infrared heat in the lower back, calves, and feet. Solara has heated massage for the back and calves. Heat feel is subjective, so the best next step is a showroom demo."}},
+      {"@type":"Question","name":"Which chair has better foot massage?","acceptedAnswer":{"@type":"Answer","text":"Both offer foot rollers. Solara has bi-directional dual-speed foot rollers, while Brio+ has Intelligent Touch foot rollers. The best choice depends on preferred pressure and foot fit."}},
+      {"@type":"Question","name":"What is the price difference between Brio+ and Solara?","acceptedAnswer":{"@type":"Answer","text":"Current Shopify pricing should be confirmed before purchase. The Brio+ currently displays a higher price band than Solara, while Solara is the lower entry-value choice."}},
+      {"@type":"Question","name":"Can I try both at Massage Chairs & More?","acceptedAnswer":{"@type":"Answer","text":"Yes. Massage Chairs & More is the place to compare the Brio+ and Solara in person with expert guidance, room-fit discussion, delivery clarity, and service support."}},
+      {"@type":"Question","name":"Which one should I buy?","acceptedAnswer":{"@type":"Answer","text":"Choose Solara if you want a compact, affordable, easy-to-use daily relaxation chair. Choose Brio+ if you want a premium 4D upgrade with stronger customization, heated rollers, broader fit, and deeper full-body comfort. The best final choice comes from trying both."}}
+    ]
+  }
+  {%- if p_brio != blank -%}
+  ,
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": {{ p_brio.title | default: 'Positive Posture Brio+ Massage Chair' | json }},
+    "url": {{ url_brio | json }},
+    "image": {{ img_brio | json }},
+    "brand": { "@type": "Brand", "name": "Positive Posture" }
+    {%- if p_brio.price > 0 -%}
+    ,
+    "offers": {
+      "@type": "Offer",
+      "url": {{ url_brio | json }},
+      "priceCurrency": "USD",
+      "price": {{ p_brio.price | money_without_currency | remove: ',' | json }}
+    }
+    {%- endif -%}
+  }
+  {%- endif -%}
+  {%- if p_solara != blank -%}
+  ,
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": {{ p_solara.title | default: 'Positive Posture Solara Massage Chair' | json }},
+    "url": {{ url_solara | json }},
+    "image": {{ img_solara | json }},
+    "brand": { "@type": "Brand", "name": "Positive Posture" }
+    {%- if p_solara.price > 0 -%}
+    ,
+    "offers": {
+      "@type": "Offer",
+      "url": {{ url_solara | json }},
+      "priceCurrency": "USD",
+      "price": {{ p_solara.price | money_without_currency | remove: ',' | json }}
+    }
+    {%- endif -%}
+  }
+  {%- endif -%}
+]
+</script>
+
+<style>
+  .bsvs-wrap,.bsvs-wrap *,.bsvs-wrap *::before,.bsvs-wrap *::after{box-sizing:border-box}
+  .bsvs-wrap{--bsvs-bg:#fbfaf7;--bsvs-paper:#fff;--bsvs-ink:#1f2421;--bsvs-soft:#626c66;--bsvs-muted:#7b837f;--bsvs-line:#e7e1d7;--bsvs-line2:#d8cec0;--bsvs-brio:#3f5f64;--bsvs-solara:#a66f3d;--bsvs-gold:#b6915b;--bsvs-green:#667a61;--bsvs-charcoal:#151816;--bsvs-cream:#f3eee5;--bsvs-sage:#e7eee6;--bsvs-clay:#f1e2d5;--bsvs-shadow:0 20px 55px rgba(31,36,33,.11);--bsvs-shadow-soft:0 12px 34px rgba(31,36,33,.08);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bsvs-bg);color:var(--bsvs-ink);line-height:1.7;overflow:hidden}
+  .bsvs-wrap img{display:block;max-width:100%;height:auto}
+  .bsvs-wrap a{color:inherit;text-decoration:none}
+  .bsvs-wrap p{margin:0;color:var(--bsvs-soft);font-size:16px;line-height:1.75}
+  .bsvs-wrap strong{color:var(--bsvs-ink)}
+  .bsvs-wrap em{font-style:italic;color:var(--bsvs-ink)}
+  .bsvs-wrap h1,.bsvs-wrap h2,.bsvs-wrap h3,.bsvs-wrap h4{margin:0;color:var(--bsvs-ink);line-height:1.08;letter-spacing:0}
+  .bsvs-wrap h1,.bsvs-wrap h2{font-family:"Playfair Display",Georgia,serif}
+  .bsvs-container{max-width:1240px;margin:0 auto;padding:0 28px}
+  .bsvs-narrow{max-width:920px;margin:0 auto;padding:0 28px}
+  .bsvs-section{padding:88px 0}
+  .bsvs-section--paper{background:var(--bsvs-paper)}
+  .bsvs-section--cream{background:var(--bsvs-cream)}
+  .bsvs-section-head{max-width:870px;margin:0 auto 34px;text-align:center}
+  .bsvs-section-head.bsvs-left{text-align:left;margin-left:0}
+  .bsvs-eyebrow{display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;color:var(--bsvs-gold);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.12em}
+  .bsvs-eyebrow::before{content:"";width:32px;height:1px;background:currentColor}
+  .bsvs-section-head h2{font-size:clamp(32px,5vw,58px);margin-bottom:16px}
+  .bsvs-section-head p{font-size:18px}
+  .bsvs-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:13px 22px;border-radius:4px;border:1px solid transparent;font-weight:850;font-size:14px;line-height:1;text-align:center;transition:transform .2s ease,background .2s ease,border-color .2s ease,color .2s ease,box-shadow .2s ease}
+  .bsvs-btn:hover{transform:translateY(-2px)}
+  .bsvs-btn--dark{background:var(--bsvs-charcoal);color:#fff;box-shadow:0 12px 28px rgba(21,24,22,.18)}
+  .bsvs-btn--gold{background:var(--bsvs-gold);color:#fff;box-shadow:0 12px 28px rgba(182,145,91,.23)}
+  .bsvs-btn--light{background:#fff;color:var(--bsvs-ink);border-color:rgba(255,255,255,.65)}
+  .bsvs-btn--outline{background:transparent;color:var(--bsvs-ink);border-color:var(--bsvs-line2)}
+  .bsvs-btn--ghost{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.3)}
+
+  .bsvs-hero{position:relative;min-height:720px;background:linear-gradient(135deg,#171b18 0%,#2c342f 54%,#57442d 100%);color:#fff;padding:54px 0 44px}
+  .bsvs-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 20%,rgba(182,145,91,.38),transparent 36%),linear-gradient(90deg,rgba(0,0,0,.58),rgba(0,0,0,.12));pointer-events:none}
+  .bsvs-breadcrumb{position:relative;z-index:2;margin-bottom:32px;color:rgba(255,255,255,.62);font-size:13px}
+  .bsvs-breadcrumb a{color:rgba(255,255,255,.8);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+  .bsvs-hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(420px,.98fr);gap:36px;align-items:center}
+  .bsvs-hero-copy h1{max-width:760px;color:#fff;font-size:clamp(42px,6.7vw,84px);margin-bottom:22px}
+  .bsvs-hero-copy p{max-width:720px;color:rgba(255,255,255,.82);font-size:19px;line-height:1.75}
+  .bsvs-hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .bsvs-trust{margin-top:18px;color:rgba(255,255,255,.72);font-size:14px}
+  .bsvs-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;max-width:780px}
+  .bsvs-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);backdrop-filter:blur(10px);border-radius:999px;padding:9px 12px;color:rgba(255,255,255,.86);font-size:12px;font-weight:800}
+  .bsvs-dot{width:7px;height:7px;border-radius:999px;background:var(--bsvs-gold)}
+  .bsvs-hero-stage{position:relative;min-height:520px}
+  .bsvs-hero-card{position:absolute;background:rgba(255,255,255,.94);border:1px solid rgba(255,255,255,.55);box-shadow:0 28px 70px rgba(0,0,0,.25);border-radius:8px;overflow:hidden}
+  .bsvs-hero-card img{width:100%;height:100%;object-fit:contain;background:linear-gradient(180deg,#fff,#f7f2ea)}
+  .bsvs-hero-card--brio{top:10px;right:0;width:58%;height:380px;z-index:2}
+  .bsvs-hero-card--solara{bottom:24px;left:0;width:56%;height:340px;z-index:1}
+  .bsvs-hero-label{position:absolute;left:16px;top:16px;background:var(--bsvs-charcoal);color:#fff;border-radius:999px;padding:8px 11px;font-size:12px;font-weight:900}
+  .bsvs-vs{position:absolute;left:44%;top:47%;z-index:3;width:78px;height:78px;border-radius:999px;background:var(--bsvs-gold);color:#fff;display:grid;place-items:center;font-family:"Playfair Display",Georgia,serif;font-size:30px;font-weight:800;box-shadow:0 16px 35px rgba(0,0,0,.28)}
+  .bsvs-quickbar{position:relative;z-index:3;margin-top:38px}
+  .bsvs-quickbar-inner{display:grid;grid-template-columns:repeat(5,1fr);background:#fff;color:var(--bsvs-ink);border-radius:8px;box-shadow:var(--bsvs-shadow);overflow:hidden}
+  .bsvs-quickbar-item{padding:18px;border-right:1px solid var(--bsvs-line)}
+  .bsvs-quickbar-item:last-child{border-right:0}
+  .bsvs-quickbar-item span{display:block;color:var(--bsvs-muted);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+  .bsvs-quickbar-item strong{display:block;margin-top:4px;font-size:15px;line-height:1.25}
+
+  .bsvs-visual-suite{background:linear-gradient(180deg,#f7f3ec 0%,#fbfaf7 100%);padding:88px 0 78px;border-bottom:1px solid var(--bsvs-line)}
+  .bsvs-visual-intro{max-width:1120px;margin:0 auto 44px;padding:0 28px}
+  .bsvs-visual-intro h2{font-size:clamp(40px,6vw,72px);margin-bottom:14px}
+  .bsvs-visual-intro p{max-width:780px;font-size:18px}
+  .bsvs-visual-story{max-width:1240px;margin:0 auto 34px;padding:34px 28px 0;border-top:1px solid rgba(31,36,33,.08)}
+  .bsvs-visual-story:first-of-type{border-top:0;padding-top:0}
+  .bsvs-visual-topline{display:grid;grid-template-columns:70px 1fr;gap:18px;align-items:end;margin-bottom:20px}
+  .bsvs-visual-number{color:var(--bsvs-gold);font-size:15px;font-weight:950;letter-spacing:.12em}
+  .bsvs-visual-title h3{font-size:clamp(30px,4.4vw,50px);margin-bottom:8px}
+  .bsvs-visual-title p{font-size:16.5px}
+  .bsvs-map-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+  .bsvs-map-card{background:#fff;border:1px solid var(--bsvs-line);border-radius:8px;box-shadow:0 22px 58px rgba(31,36,33,.12);overflow:hidden}
+  .bsvs-map-media{position:relative;min-height:440px;display:grid;place-items:center;padding:42px 34px 96px;background:radial-gradient(circle at 50% 44%,#fff 0%,#fff 42%,#f5f0e7 100%)}
+  .bsvs-map-media img{position:relative;z-index:1;max-height:315px;object-fit:contain;filter:drop-shadow(0 16px 18px rgba(31,36,33,.12))}
+  .bsvs-map-media--wide img{max-height:350px}
+  .bsvs-map-pill{position:absolute;z-index:3;top:24px;left:24px;border:1px solid var(--bsvs-line2);background:rgba(255,255,255,.86);backdrop-filter:blur(6px);border-radius:999px;padding:8px 14px;color:var(--bsvs-brio);font-size:12px;font-weight:950;letter-spacing:.1em;text-transform:uppercase}
+  .bsvs-map-card--solara .bsvs-map-pill{color:var(--bsvs-solara)}
+  .bsvs-map-overlay{position:absolute;inset:0;z-index:2;width:100%;height:100%;pointer-events:none}
+  .bsvs-map-overlay path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .bsvs-map-overlay .bsvs-path-brio{stroke:rgba(63,95,100,.72);stroke-width:10}
+  .bsvs-map-overlay .bsvs-path-solara{stroke:rgba(166,111,61,.74);stroke-width:10}
+  .bsvs-map-overlay .bsvs-zone{fill:rgba(182,145,91,.78)}
+  .bsvs-map-overlay .bsvs-zone-green{fill:rgba(102,122,97,.78)}
+  .bsvs-map-overlay .bsvs-ring{fill:none;stroke:rgba(182,145,91,.22);stroke-width:4}
+  .bsvs-map-overlay .bsvs-ring-green{fill:none;stroke:rgba(102,122,97,.22);stroke-width:4}
+  .bsvs-map-overlay .bsvs-glow{fill:rgba(182,145,91,.12)}
+  .bsvs-map-overlay .bsvs-glow-green{fill:rgba(102,122,97,.12)}
+  .bsvs-map-caption{position:absolute;z-index:4;left:26px;right:26px;bottom:24px;background:rgba(255,255,255,.9);border:1px solid var(--bsvs-line);border-radius:8px;padding:15px 18px;box-shadow:0 10px 24px rgba(31,36,33,.08)}
+  .bsvs-map-caption strong{display:block;font-family:"Playfair Display",Georgia,serif;font-size:21px;line-height:1.15;margin-bottom:4px}
+  .bsvs-map-caption span{display:block;color:var(--bsvs-soft);font-size:14px;line-height:1.45}
+  .bsvs-visual-notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:22px}
+  .bsvs-note-card{background:rgba(255,255,255,.78);border:1px solid var(--bsvs-line);border-radius:8px;padding:20px}
+  .bsvs-note-card h4{font-size:20px;margin-bottom:10px;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  .bsvs-note-card ul{margin:0;padding:0;list-style:none;display:grid;gap:9px}
+  .bsvs-note-card li{position:relative;padding-left:22px;color:var(--bsvs-soft);font-size:15px;line-height:1.55}
+  .bsvs-note-card li::before{content:"";position:absolute;left:0;top:.65em;width:8px;height:8px;border-radius:999px;background:var(--bsvs-gold)}
+  .bsvs-note-card--brio li::before{background:var(--bsvs-brio)}
+  .bsvs-note-card--solara li::before{background:var(--bsvs-solara)}
+  .bsvs-mini-comparison{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}
+  .bsvs-mini-comparison div{background:#fff;border:1px solid var(--bsvs-line);border-radius:8px;padding:13px 14px}
+  .bsvs-mini-comparison strong{display:block;font-size:13px;line-height:1.2;margin-bottom:4px}
+  .bsvs-mini-comparison span{display:block;color:var(--bsvs-muted);font-size:12px;line-height:1.35}
+
+  .bsvs-product-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+  .bsvs-product{background:#fff;border:1px solid var(--bsvs-line);border-radius:8px;box-shadow:var(--bsvs-shadow-soft);overflow:hidden}
+  .bsvs-product-media{height:360px;background:linear-gradient(180deg,#fff,#f4efe7);display:grid;place-items:center;padding:20px;position:relative}
+  .bsvs-product-media img{max-height:320px;object-fit:contain}
+  .bsvs-product-tag{position:absolute;top:18px;left:18px;border-radius:999px;padding:8px 11px;color:#fff;font-size:12px;font-weight:900}
+  .bsvs-product-tag--brio{background:var(--bsvs-brio)}
+  .bsvs-product-tag--solara{background:var(--bsvs-solara)}
+  .bsvs-product-body{padding:28px}
+  .bsvs-product-body h2{font-size:34px;margin-bottom:10px}
+  .bsvs-product-price{display:flex;gap:12px;align-items:baseline;margin:16px 0}
+  .bsvs-product-price s{color:var(--bsvs-muted);font-weight:700}
+  .bsvs-product-price strong{font-size:28px;color:var(--bsvs-gold)}
+  .bsvs-mini-list{display:grid;gap:10px;margin:18px 0 22px;padding:0;list-style:none}
+  .bsvs-mini-list li{position:relative;padding-left:24px;color:var(--bsvs-soft);font-size:15px;line-height:1.55}
+  .bsvs-mini-list li::before{content:"";position:absolute;left:0;top:.65em;width:8px;height:8px;border-radius:99px;background:var(--bsvs-gold)}
+  .bsvs-product-actions{display:flex;flex-wrap:wrap;gap:10px}
+
+  .bsvs-verdict{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:28px}
+  .bsvs-verdict-card{background:#fff;border:1px solid var(--bsvs-line);border-radius:8px;padding:28px;box-shadow:var(--bsvs-shadow-soft)}
+  .bsvs-verdict-card h3{font-size:30px;margin-bottom:16px}
+  .bsvs-verdict-card ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+  .bsvs-verdict-card li{position:relative;padding-left:28px;color:var(--bsvs-soft);font-size:15.5px;line-height:1.65}
+  .bsvs-verdict-card li::before{content:"+";position:absolute;left:0;top:0;color:var(--bsvs-gold);font-weight:900}
+  .bsvs-summary-line{margin-top:24px;background:var(--bsvs-charcoal);color:#fff;border-radius:8px;padding:22px 26px}
+  .bsvs-summary-line p{color:rgba(255,255,255,.82)}
+
+  .bsvs-table-wrap{overflow-x:auto;border:1px solid var(--bsvs-line);border-radius:8px;background:#fff;box-shadow:var(--bsvs-shadow-soft)}
+  .bsvs-table-note{font-size:13px;color:var(--bsvs-muted);margin:0 0 12px;text-align:right}
+  .bsvs-table{width:100%;min-width:880px;border-collapse:collapse}
+  .bsvs-table th,.bsvs-table td{padding:17px 18px;border-bottom:1px solid var(--bsvs-line);text-align:left;vertical-align:top;font-size:14.5px;line-height:1.55}
+  .bsvs-table thead th{position:sticky;top:0;background:var(--bsvs-charcoal);color:#fff;z-index:1;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+  .bsvs-table tbody tr:last-child td{border-bottom:0}
+  .bsvs-table tbody td:first-child{font-weight:900;color:var(--bsvs-ink);width:24%}
+  .bsvs-table a{text-decoration:underline;text-underline-offset:3px;color:var(--bsvs-brio);font-weight:900}
+  .bsvs-check{font-weight:900;color:var(--bsvs-green)}
+
+  .bsvs-feel-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch}
+  .bsvs-feel-card{background:#fff;border:1px solid var(--bsvs-line);border-radius:8px;padding:28px;position:relative;overflow:hidden;box-shadow:var(--bsvs-shadow-soft)}
+  .bsvs-feel-card::before{content:"";position:absolute;inset:0 0 auto;height:8px;background:var(--bsvs-solara)}
+  .bsvs-feel-card--brio::before{background:var(--bsvs-brio)}
+  .bsvs-feel-card h3{font-size:31px;margin:12px 0 14px}
+  .bsvs-meter{display:grid;gap:12px;margin-top:22px}
+  .bsvs-meter-row{display:grid;grid-template-columns:135px 1fr 44px;align-items:center;gap:10px}
+  .bsvs-meter-row span{font-size:12px;color:var(--bsvs-muted);font-weight:850;text-transform:uppercase;letter-spacing:.06em}
+  .bsvs-meter-bar{height:10px;background:#ece7df;border-radius:99px;overflow:hidden}
+  .bsvs-meter-fill{height:100%;border-radius:99px;background:var(--bsvs-solara)}
+  .bsvs-feel-card--brio .bsvs-meter-fill{background:var(--bsvs-brio)}
+
+  .bsvs-value-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;margin-top:30px}
+  .bsvs-value-card{padding:30px;border-radius:8px;background:#fff;border:1px solid var(--bsvs-line);box-shadow:var(--bsvs-shadow-soft)}
+  .bsvs-value-card h3{font-size:28px;margin-bottom:12px}
+  .bsvs-payfor{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:28px}
+  .bsvs-payfor-item{background:#fff;border:1px solid var(--bsvs-line);border-radius:8px;padding:16px;min-height:124px}
+  .bsvs-payfor-item strong{display:block;font-size:15px;line-height:1.2;margin-bottom:8px}
+  .bsvs-payfor-item span{font-size:13px;color:var(--bsvs-muted);line-height:1.45}
+
+  .bsvs-price-module{background:linear-gradient(135deg,#fff 0%,#f7efe6 100%);border:1px solid var(--bsvs-line);border-radius:8px;padding:30px;box-shadow:var(--bsvs-shadow-soft)}
+  .bsvs-price-bars{display:grid;gap:20px;margin-top:24px}
+  .bsvs-price-row{display:grid;grid-template-columns:150px 1fr 160px;gap:18px;align-items:center}
+  .bsvs-price-row strong{font-size:18px}
+  .bsvs-price-track{height:38px;background:#e8dfd4;border-radius:999px;overflow:hidden;position:relative}
+  .bsvs-price-fill{height:100%;border-radius:999px;display:flex;align-items:center;justify-content:flex-end;padding-right:14px;color:#fff;font-weight:900;font-size:13px}
+  .bsvs-price-fill--solara{width:36%;background:var(--bsvs-solara)}
+  .bsvs-price-fill--brio{width:82%;background:var(--bsvs-brio)}
+  .bsvs-price-values s{display:block;color:var(--bsvs-muted);font-weight:750}
+  .bsvs-price-values span{font-size:23px;color:var(--bsvs-ink);font-weight:950}
+
+  .bsvs-deep-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+  .bsvs-feature-col{background:#fff;border:1px solid var(--bsvs-line);border-radius:8px;box-shadow:var(--bsvs-shadow-soft);overflow:hidden}
+  .bsvs-feature-hero{height:330px;background:#f3eee5;display:grid;place-items:center;padding:18px}
+  .bsvs-feature-hero img{max-height:300px;object-fit:contain}
+  .bsvs-feature-head{padding:26px 26px 0}
+  .bsvs-feature-head h3{font-size:33px;margin-bottom:8px}
+  .bsvs-feature-list{display:grid;gap:12px;padding:24px 26px 30px}
+  .bsvs-feature{border:1px solid var(--bsvs-line);border-radius:8px;padding:16px;background:linear-gradient(180deg,#fff,#fbf8f2)}
+  .bsvs-feature strong{display:block;margin-bottom:6px;font-size:15.5px}
+  .bsvs-feature p{font-size:14.5px;line-height:1.6}
+  .bsvs-demo-note{margin-top:10px;display:block;color:var(--bsvs-gold);font-size:12px;font-weight:850;text-transform:uppercase;letter-spacing:.06em}
+
+  .bsvs-fit-layout{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:34px;align-items:center}
+  .bsvs-fit-media{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .bsvs-fit-img{background:#fff;border:1px solid var(--bsvs-line);border-radius:8px;min-height:300px;display:grid;place-items:center;padding:16px;box-shadow:var(--bsvs-shadow-soft)}
+  .bsvs-fit-img img{max-height:260px;object-fit:contain}
+  .bsvs-fit-copy h2{font-size:clamp(34px,5vw,58px);margin-bottom:16px}
+  .bsvs-diagram{display:grid;gap:16px;margin-top:24px}
+  .bsvs-diagram-card{background:#fff;border:1px solid var(--bsvs-line);border-radius:8px;padding:18px}
+  .bsvs-diagram-card strong{display:flex;justify-content:space-between;gap:14px;margin-bottom:11px;font-size:14px}
+  .bsvs-clearance{height:24px;background:#eee7de;border-radius:999px;position:relative;overflow:hidden}
+  .bsvs-clearance span{display:block;height:100%;border-radius:999px;background:var(--bsvs-solara)}
+  .bsvs-clearance .bsvs-brio-fill{background:var(--bsvs-brio)}
+  .bsvs-range{height:12px;background:#eee7de;border-radius:999px;position:relative;margin-top:14px}
+  .bsvs-range span{display:block;height:100%;border-radius:999px;background:var(--bsvs-brio)}
+  .bsvs-range .bsvs-solara-fill{width:58%;background:var(--bsvs-solara)}
+
+  .bsvs-scenarios{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .bsvs-scenario{background:#fff;border:1px solid var(--bsvs-line);border-radius:8px;padding:22px;box-shadow:var(--bsvs-shadow-soft)}
+  .bsvs-scenario h3{font-size:20px;line-height:1.22;margin-bottom:14px}
+  .bsvs-rec{display:inline-flex;margin-bottom:11px;border-radius:999px;background:var(--bsvs-charcoal);color:#fff;padding:7px 10px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.07em}
+  .bsvs-rec--solara{background:var(--bsvs-solara)}
+  .bsvs-rec--brio{background:var(--bsvs-brio)}
+  .bsvs-rec--mcm{background:var(--bsvs-gold)}
+
+  .bsvs-reactions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .bsvs-reaction{background:#fff;border:1px solid var(--bsvs-line);border-radius:8px;padding:22px;box-shadow:var(--bsvs-shadow-soft)}
+  .bsvs-reaction span{display:inline-flex;margin-bottom:12px;border-radius:999px;background:var(--bsvs-sage);color:var(--bsvs-green);padding:7px 10px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.07em}
+  .bsvs-reaction p{font-family:"Playfair Display",Georgia,serif;color:var(--bsvs-ink);font-size:22px;line-height:1.35}
+
+  .bsvs-answer{background:var(--bsvs-charcoal);color:#fff;border-radius:8px;padding:34px;box-shadow:var(--bsvs-shadow)}
+  .bsvs-answer h2{color:#fff;font-size:40px;margin-bottom:14px}
+  .bsvs-answer p{color:rgba(255,255,255,.82);font-size:17px}
+
+  .bsvs-showroom{position:relative;background:#111;color:#fff;overflow:hidden}
+  .bsvs-showroom-bg{position:absolute;inset:0;background-position:center;background-size:cover;opacity:.35}
+  .bsvs-showroom::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.34))}
+  .bsvs-showroom-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr .85fr;gap:32px;align-items:center;min-height:560px;padding:84px 0}
+  .bsvs-showroom h2{color:#fff;font-size:clamp(38px,5vw,66px);margin-bottom:16px}
+  .bsvs-showroom p{color:rgba(255,255,255,.82);font-size:18px}
+  .bsvs-showroom-actions{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0}
+  .bsvs-confidence{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:22px}
+  .bsvs-confidence div{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);border-radius:8px;padding:13px;font-size:14px;font-weight:800;color:rgba(255,255,255,.88)}
+  .bsvs-showroom-products{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .bsvs-showroom-products div{background:rgba(255,255,255,.92);border-radius:8px;min-height:270px;display:grid;place-items:center;padding:16px}
+  .bsvs-showroom-products img{max-height:250px;object-fit:contain}
+
+  .bsvs-faq{display:grid;gap:12px}
+  .bsvs-faq details{background:#fff;border:1px solid var(--bsvs-line);border-radius:8px;box-shadow:var(--bsvs-shadow-soft);overflow:hidden}
+  .bsvs-faq summary{cursor:pointer;list-style:none;padding:20px 54px 20px 22px;font-weight:900;color:var(--bsvs-ink);position:relative}
+  .bsvs-faq summary::-webkit-details-marker{display:none}
+  .bsvs-faq summary::after{content:"+";position:absolute;right:22px;top:18px;color:var(--bsvs-gold);font-size:24px;line-height:1}
+  .bsvs-faq details[open] summary::after{content:"-"}
+  .bsvs-faq-body{padding:0 22px 22px}
+
+  .bsvs-links{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+  .bsvs-link-card{background:#fff;border:1px solid var(--bsvs-line);border-radius:8px;padding:18px;box-shadow:var(--bsvs-shadow-soft)}
+  .bsvs-link-card h3{font-size:18px;margin-bottom:8px}
+  .bsvs-link-card p{font-size:13.5px;line-height:1.55;margin-bottom:12px}
+  .bsvs-link-card a{color:var(--bsvs-gold);font-weight:900;text-decoration:underline;text-underline-offset:3px}
+
+  .bsvs-mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;background:rgba(255,255,255,.96);border-top:1px solid var(--bsvs-line);box-shadow:0 -10px 24px rgba(0,0,0,.12);padding:10px}
+  .bsvs-mobile-cta-inner{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .bsvs-mobile-cta .bsvs-btn{min-height:44px;padding:10px 12px;font-size:13px}
+
+  @media(max-width:1100px){
+    .bsvs-hero-grid,.bsvs-fit-layout,.bsvs-showroom-inner{grid-template-columns:1fr}
+    .bsvs-hero-stage{min-height:480px}
+    .bsvs-quickbar-inner{grid-template-columns:repeat(2,1fr)}
+    .bsvs-map-grid,.bsvs-visual-notes{grid-template-columns:1fr}
+    .bsvs-map-media{min-height:390px}
+    .bsvs-payfor{grid-template-columns:repeat(3,1fr)}
+    .bsvs-scenarios,.bsvs-reactions,.bsvs-links{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:760px){
+    .bsvs-container,.bsvs-narrow{padding:0 18px}
+    .bsvs-section{padding:62px 0}
+    .bsvs-visual-suite{padding:60px 0 54px}
+    .bsvs-visual-intro,.bsvs-visual-story{padding-left:18px;padding-right:18px}
+    .bsvs-visual-topline{grid-template-columns:1fr;gap:6px}
+    .bsvs-map-media{min-height:340px;padding:52px 16px 104px}
+    .bsvs-map-media img{max-height:230px}
+    .bsvs-map-media--wide img{max-height:250px}
+    .bsvs-map-caption{left:14px;right:14px;bottom:14px;padding:13px 14px}
+    .bsvs-map-caption strong{font-size:18px}
+    .bsvs-mini-comparison{grid-template-columns:1fr}
+    .bsvs-hero{min-height:auto;padding:34px 0 28px}
+    .bsvs-hero-copy h1{font-size:42px}
+    .bsvs-hero-copy p{font-size:16px}
+    .bsvs-hero-stage{min-height:420px}
+    .bsvs-hero-card--brio{width:74%;height:270px}
+    .bsvs-hero-card--solara{width:70%;height:250px}
+    .bsvs-vs{width:60px;height:60px;font-size:24px;left:39%;top:48%}
+    .bsvs-quickbar-inner,.bsvs-product-grid,.bsvs-verdict,.bsvs-feel-grid,.bsvs-value-grid,.bsvs-deep-grid,.bsvs-fit-media,.bsvs-confidence,.bsvs-showroom-products,.bsvs-links{grid-template-columns:1fr}
+    .bsvs-product-media{height:300px}
+    .bsvs-price-row{grid-template-columns:1fr;gap:8px}
+    .bsvs-payfor,.bsvs-scenarios,.bsvs-reactions{grid-template-columns:1fr}
+    .bsvs-table-note{text-align:left}
+    .bsvs-showroom-inner{padding:64px 0}
+    .bsvs-mobile-cta{display:block}
+    .bsvs-wrap{padding-bottom:72px}
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<div class="bsvs-wrap">
+  <section class="bsvs-hero" id="bsvs-top">
+    <div class="bsvs-container">
+      <nav class="bsvs-breadcrumb" aria-label="Breadcrumb">
+        <a href="{{ shop.url }}">Home</a> / <a href="{{ url_compare }}">Compare</a> / <span>Brio+ vs Solara</span>
+      </nav>
+      <div class="bsvs-hero-grid">
+        <div class="bsvs-hero-copy">
+          <span class="bsvs-eyebrow">Positive Posture Massage Chair Comparison</span>
+          <h1>Brio+ vs Solara: Which Positive Posture Massage Chair Is Right for You?</h1>
+          <p>Two Positive Posture massage chairs. Two very different buying decisions. The Solara is a compact, economical relaxation chair with strong everyday comfort features, while the Brio+ is a premium 4D upgrade with heated rollers, refined massage choreography, broader body fit, and deeper full-body customization.</p>
+          <div class="bsvs-hero-ctas">
+            <a class="bsvs-btn bsvs-btn--gold" href="{{ url_contact }}">Compare Them In Person</a>
+            <a class="bsvs-btn bsvs-btn--ghost" href="#bsvs-products">View Product Details</a>
+            <a class="bsvs-btn bsvs-btn--light" href="{{ phone_href }}">Call {{ phone_label }}</a>
+          </div>
+          <div class="bsvs-trust">Try the Brio+ and Solara side by side at Massage Chairs &amp; More before deciding.</div>
+          <div class="bsvs-badges" aria-label="Quick comparison badges">
+            <span class="bsvs-badge"><span class="bsvs-dot"></span>Solara: Best entry value</span>
+            <span class="bsvs-badge"><span class="bsvs-dot"></span>Brio+: Best premium 4D upgrade</span>
+            <span class="bsvs-badge"><span class="bsvs-dot"></span>Solara: Best for compact spaces</span>
+            <span class="bsvs-badge"><span class="bsvs-dot"></span>Brio+: Best for broader fit</span>
+            <span class="bsvs-badge"><span class="bsvs-dot"></span>Compare in person before buying</span>
+          </div>
+        </div>
+        <div class="bsvs-hero-stage" aria-label="Brio+ and Solara side by side visual comparison">
+          <a class="bsvs-hero-card bsvs-hero-card--brio" href="{{ url_brio }}">
+            <span class="bsvs-hero-label">Brio+ Premium 4D</span>
+            <img src="{{ img_brio }}" alt="Brio+ vs Solara massage chair comparison" loading="eager">
+          </a>
+          <a class="bsvs-hero-card bsvs-hero-card--solara" href="{{ url_solara }}">
+            <span class="bsvs-hero-label">Solara Entry Value</span>
+            <img src="{{ img_solara }}" alt="Solara compact zero gravity massage chair" loading="eager">
+          </a>
+          <div class="bsvs-vs">vs</div>
+        </div>
+      </div>
+      <div class="bsvs-quickbar" aria-label="Brio+ vs Solara quick decision points">
+        <div class="bsvs-quickbar-inner">
+          <div class="bsvs-quickbar-item"><span>Price Path</span><strong>Solara starts lower</strong></div>
+          <div class="bsvs-quickbar-item"><span>Massage Feel</span><strong>Brio+ adds 4D depth</strong></div>
+          <div class="bsvs-quickbar-item"><span>Room Fit</span><strong>Solara is compact</strong></div>
+          <div class="bsvs-quickbar-item"><span>User Fit</span><strong>Brio+ up to 6'5"</strong></div>
+          <div class="bsvs-quickbar-item"><span>Best Next Step</span><strong>Try both in one visit</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bsvs-visual-suite" id="bsvs-feature-maps">
+    <div class="bsvs-visual-intro">
+      <span class="bsvs-eyebrow">Generated Visual Buyer Guide</span>
+      <h2>Visual Feature Maps Using the Real Brio+ and Solara Chairs</h2>
+      <p>These comparison visuals use official product images as the base, then add editorial overlays to explain the features shoppers usually need to feel in person: massage engine, heat, lower-body zones, recline, room fit, controls, and design.</p>
+    </div>
+
+    <div class="bsvs-visual-story">
+      <div class="bsvs-visual-topline">
+        <div class="bsvs-visual-number">01</div>
+        <div class="bsvs-visual-title">
+          <h3>Massage Engine and Track Personality</h3>
+          <p>Roller path, massage depth, and mechanism feel compared one chair at a time.</p>
+        </div>
+      </div>
+      <div class="bsvs-map-grid">
+        <article class="bsvs-map-card bsvs-map-card--brio">
+          <div class="bsvs-map-media bsvs-map-media--wide">
+            <span class="bsvs-map-pill">Positive Posture Brio+</span>
+            <img src="{{ img_brio_upright }}" alt="Brio+ massage chair visual map showing Intelligent 4D Massage and L-track coverage" loading="lazy">
+            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true">
+              <path class="bsvs-path-brio" d="M300 78 C346 136 353 208 326 270 C304 320 294 354 318 394"/>
+              <circle class="bsvs-glow-green" cx="300" cy="116" r="46"/><circle class="bsvs-ring-green" cx="300" cy="116" r="32"/><circle class="bsvs-zone-green" cx="300" cy="116" r="13"/>
+              <circle class="bsvs-glow-green" cx="331" cy="234" r="42"/><circle class="bsvs-ring-green" cx="331" cy="234" r="28"/><circle class="bsvs-zone-green" cx="331" cy="234" r="13"/>
+              <circle class="bsvs-glow-green" cx="311" cy="355" r="46"/><circle class="bsvs-ring-green" cx="311" cy="355" r="32"/><circle class="bsvs-zone-green" cx="311" cy="355" r="13"/>
+            </svg>
+            <div class="bsvs-map-caption"><strong>Intelligent 4D + L-Track</strong><span>Deeper, more adjustable pressure from neck through glutes.</span></div>
+          </div>
+        </article>
+        <article class="bsvs-map-card bsvs-map-card--solara">
+          <div class="bsvs-map-media bsvs-map-media--wide">
+            <span class="bsvs-map-pill">Positive Posture Solara</span>
+            <img src="{{ img_solara_upright }}" alt="Solara massage chair visual map showing SL-track coverage" loading="lazy">
+            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true">
+              <path class="bsvs-path-solara" d="M303 90 C350 146 346 207 311 269 C288 312 270 350 288 390"/>
+              <circle class="bsvs-glow" cx="306" cy="118" r="44"/><circle class="bsvs-ring" cx="306" cy="118" r="30"/><circle class="bsvs-zone" cx="306" cy="118" r="13"/>
+              <circle class="bsvs-glow" cx="313" cy="244" r="42"/><circle class="bsvs-ring" cx="313" cy="244" r="28"/><circle class="bsvs-zone" cx="313" cy="244" r="13"/>
+              <circle class="bsvs-glow" cx="286" cy="358" r="44"/><circle class="bsvs-ring" cx="286" cy="358" r="30"/><circle class="bsvs-zone" cx="286" cy="358" r="13"/>
+            </svg>
+            <div class="bsvs-map-caption"><strong>Solara Engine + SL-Track</strong><span>Straightforward everyday coverage from neck to upper hamstrings.</span></div>
+          </div>
+        </article>
+      </div>
+      <div class="bsvs-visual-notes">
+        <div class="bsvs-note-card bsvs-note-card--brio">
+          <h4>Brio+ massage personality</h4>
+          <ul>
+            <li>Intelligent 4D Massage is the premium upgrade signal.</li>
+            <li>Automatic body scan helps align the chair before the session deepens.</li>
+            <li>Best demo question: does the 4D depth feel worth the upgrade?</li>
+          </ul>
+        </div>
+        <div class="bsvs-note-card bsvs-note-card--solara">
+          <h4>Solara massage personality</h4>
+          <ul>
+            <li>SL-track coverage keeps the experience simple and approachable.</li>
+            <li>Preset sessions make it easy to start a daily relaxation routine.</li>
+            <li>Best demo question: is this enough comfort without the premium mechanism?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="bsvs-visual-story">
+      <div class="bsvs-visual-topline">
+        <div class="bsvs-visual-number">02</div>
+        <div class="bsvs-visual-title">
+          <h3>Heat and Roller Feel</h3>
+          <p>Warmth matters because two chairs can both have heat, yet feel very different in a live demo.</p>
+        </div>
+      </div>
+      <div class="bsvs-map-grid">
+        <article class="bsvs-map-card bsvs-map-card--brio">
+          <div class="bsvs-map-media">
+            <span class="bsvs-map-pill">Brio+ Heated Rollers</span>
+            <img src="{{ img_brio_heat }}" alt="Brio+ heated roller and infrared heat zone visual comparison" loading="lazy">
+            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true">
+              <circle class="bsvs-glow-green" cx="302" cy="148" r="54"/><circle class="bsvs-ring-green" cx="302" cy="148" r="39"/><circle class="bsvs-zone-green" cx="302" cy="148" r="15"/>
+              <circle class="bsvs-glow-green" cx="354" cy="292" r="48"/><circle class="bsvs-ring-green" cx="354" cy="292" r="34"/><circle class="bsvs-zone-green" cx="354" cy="292" r="14"/>
+              <circle class="bsvs-glow-green" cx="412" cy="346" r="42"/><circle class="bsvs-ring-green" cx="412" cy="346" r="28"/><circle class="bsvs-zone-green" cx="412" cy="346" r="13"/>
+            </svg>
+            <div class="bsvs-map-caption"><strong>Roller Heat + Infrared Zones</strong><span>Back, lower back, calves, and feet should be felt in showroom.</span></div>
+          </div>
+        </article>
+        <article class="bsvs-map-card bsvs-map-card--solara">
+          <div class="bsvs-map-media">
+            <span class="bsvs-map-pill">Solara Heated Massage</span>
+            <img src="{{ img_solara_recline }}" alt="Solara heated back and calf massage zone visual comparison" loading="lazy">
+            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true">
+              <circle class="bsvs-glow" cx="306" cy="163" r="54"/><circle class="bsvs-ring" cx="306" cy="163" r="39"/><circle class="bsvs-zone" cx="306" cy="163" r="15"/>
+              <circle class="bsvs-glow" cx="419" cy="330" r="52"/><circle class="bsvs-ring" cx="419" cy="330" r="36"/><circle class="bsvs-zone" cx="419" cy="330" r="15"/>
+            </svg>
+            <div class="bsvs-map-caption"><strong>Back + Calf Heat</strong><span>Warmer everyday comfort without the Brio+ heated roller upgrade.</span></div>
+          </div>
+        </article>
+      </div>
+      <div class="bsvs-mini-comparison">
+        <div><strong>Brio+ heat story</strong><span>Premium sensation: heated rollers plus lower-body heat.</span></div>
+        <div><strong>Solara heat story</strong><span>Comfort-forward warmth for back and calves.</span></div>
+        <div><strong>Showroom test</strong><span>Ask which heat feel you would use daily, not which spec sounds bigger.</span></div>
+      </div>
+    </div>
+
+    <div class="bsvs-visual-story">
+      <div class="bsvs-visual-topline">
+        <div class="bsvs-visual-number">03</div>
+        <div class="bsvs-visual-title">
+          <h3>Lower Body, Air Massage, and Foot Rollers</h3>
+          <p>Foot fit and air compression are highly personal, so this is one of the most important side-by-side demo moments.</p>
+        </div>
+      </div>
+      <div class="bsvs-map-grid">
+        <article class="bsvs-map-card bsvs-map-card--brio">
+          <div class="bsvs-map-media">
+            <span class="bsvs-map-pill">Brio+ Full-Body Air</span>
+            <img src="{{ img_brio_air }}" alt="Brio+ full-body air massage and Intelligent Touch foot rollers visual map" loading="lazy">
+            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true">
+              <circle class="bsvs-glow-green" cx="238" cy="145" r="42"/><circle class="bsvs-ring-green" cx="238" cy="145" r="28"/><circle class="bsvs-zone-green" cx="238" cy="145" r="12"/>
+              <circle class="bsvs-glow-green" cx="362" cy="178" r="42"/><circle class="bsvs-ring-green" cx="362" cy="178" r="28"/><circle class="bsvs-zone-green" cx="362" cy="178" r="12"/>
+              <circle class="bsvs-glow-green" cx="408" cy="330" r="48"/><circle class="bsvs-ring-green" cx="408" cy="330" r="34"/><circle class="bsvs-zone-green" cx="408" cy="330" r="13"/>
+            </svg>
+            <div class="bsvs-map-caption"><strong>Air Zones + Intelligent Touch Feet</strong><span>Compare squeeze, release, foot pressure, and calf placement.</span></div>
+          </div>
+        </article>
+        <article class="bsvs-map-card bsvs-map-card--solara">
+          <div class="bsvs-map-media">
+            <span class="bsvs-map-pill">Solara Foot Rollers</span>
+            <img src="{{ img_solara_foot }}" alt="Solara full body air massage and bi-directional dual speed foot rollers visual map" loading="lazy">
+            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true">
+              <circle class="bsvs-glow" cx="230" cy="160" r="42"/><circle class="bsvs-ring" cx="230" cy="160" r="28"/><circle class="bsvs-zone" cx="230" cy="160" r="12"/>
+              <circle class="bsvs-glow" cx="352" cy="250" r="46"/><circle class="bsvs-ring" cx="352" cy="250" r="32"/><circle class="bsvs-zone" cx="352" cy="250" r="13"/>
+              <circle class="bsvs-glow" cx="415" cy="344" r="48"/><circle class="bsvs-ring" cx="415" cy="344" r="34"/><circle class="bsvs-zone" cx="415" cy="344" r="13"/>
+            </svg>
+            <div class="bsvs-map-caption"><strong>Dual-Speed Foot Rollers</strong><span>Bi-directional foot rollers plus air massage for everyday lower-body comfort.</span></div>
+          </div>
+        </article>
+      </div>
+      <div class="bsvs-visual-notes">
+        <div class="bsvs-note-card bsvs-note-card--brio">
+          <h4>What to notice in Brio+</h4>
+          <ul>
+            <li>Whether foot pressure feels controlled across the full session.</li>
+            <li>How the full-body air massage pairs with 4D roller depth.</li>
+            <li>Whether calf and foot heat improve your perceived comfort.</li>
+          </ul>
+        </div>
+        <div class="bsvs-note-card bsvs-note-card--solara">
+          <h4>What to notice in Solara</h4>
+          <ul>
+            <li>Whether the dual-speed foot rollers feel gentle enough or active enough.</li>
+            <li>How shoulder, arm, hand, calf, and foot air zones fit your body.</li>
+            <li>Whether the simpler lower-body setup fits your daily routine.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="bsvs-visual-story">
+      <div class="bsvs-visual-topline">
+        <div class="bsvs-visual-number">04</div>
+        <div class="bsvs-visual-title">
+          <h3>Zero Gravity, Wall Clearance, and Body Fit</h3>
+          <p>This is where room size and user height often decide the purchase before feature lists do.</p>
+        </div>
+      </div>
+      <div class="bsvs-map-grid">
+        <article class="bsvs-map-card bsvs-map-card--brio">
+          <div class="bsvs-map-media">
+            <span class="bsvs-map-pill">Brio+ Larger Fit</span>
+            <img src="{{ img_brio_recline }}" alt="Brio+ zero gravity wall clearance and taller user fit visual map" loading="lazy">
+            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true">
+              <path class="bsvs-path-brio" d="M134 332 C230 288 315 275 450 298"/>
+              <circle class="bsvs-glow-green" cx="150" cy="332" r="38"/><circle class="bsvs-ring-green" cx="150" cy="332" r="26"/><circle class="bsvs-zone-green" cx="150" cy="332" r="12"/>
+              <circle class="bsvs-glow-green" cx="448" cy="298" r="38"/><circle class="bsvs-ring-green" cx="448" cy="298" r="26"/><circle class="bsvs-zone-green" cx="448" cy="298" r="12"/>
+            </svg>
+            <div class="bsvs-map-caption"><strong>4" Wall Clearance + 6'5" Fit</strong><span>Larger footprint, broader height range, stronger premium recline presence.</span></div>
+          </div>
+        </article>
+        <article class="bsvs-map-card bsvs-map-card--solara">
+          <div class="bsvs-map-media">
+            <span class="bsvs-map-pill">Solara Compact Fit</span>
+            <img src="{{ img_solara_lifestyle }}" alt="Solara zero gravity compact wall hugging visual map" loading="lazy">
+            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true">
+              <path class="bsvs-path-solara" d="M151 338 C249 292 352 289 470 318"/>
+              <circle class="bsvs-glow" cx="154" cy="338" r="38"/><circle class="bsvs-ring" cx="154" cy="338" r="26"/><circle class="bsvs-zone" cx="154" cy="338" r="12"/>
+              <circle class="bsvs-glow" cx="470" cy="318" r="38"/><circle class="bsvs-ring" cx="470" cy="318" r="26"/><circle class="bsvs-zone" cx="470" cy="318" r="12"/>
+            </svg>
+            <div class="bsvs-map-caption"><strong>0.6" Wall Clearance + 6'0" Fit</strong><span>Compact placement advantage for smaller rooms and relaxation corners.</span></div>
+          </div>
+        </article>
+      </div>
+      <div class="bsvs-mini-comparison">
+        <div><strong>Room placement</strong><span>Solara is easier when wall space is tight.</span></div>
+        <div><strong>Height confidence</strong><span>Brio+ is stronger for taller users and mixed-height households.</span></div>
+        <div><strong>Demo task</strong><span>Sit, recline, exit, and check footrest reach before deciding.</span></div>
+      </div>
+    </div>
+
+    <div class="bsvs-visual-story">
+      <div class="bsvs-visual-topline">
+        <div class="bsvs-visual-number">05</div>
+        <div class="bsvs-visual-title">
+          <h3>Controls, Charging, Lighting, and Home Design</h3>
+          <p>The best massage chair is the one that fits your room and stays easy enough to use every day.</p>
+        </div>
+      </div>
+      <div class="bsvs-map-grid">
+        <article class="bsvs-map-card bsvs-map-card--brio">
+          <div class="bsvs-map-media bsvs-map-media--wide">
+            <span class="bsvs-map-pill">Brio+ Premium Details</span>
+            <img src="{{ img_brio_card }}" alt="Brio+ diamond stitch upholstery USB power port and chromotherapy visual map" loading="lazy">
+            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true">
+              <circle class="bsvs-glow-green" cx="250" cy="138" r="42"/><circle class="bsvs-ring-green" cx="250" cy="138" r="28"/><circle class="bsvs-zone-green" cx="250" cy="138" r="12"/>
+              <circle class="bsvs-glow-green" cx="364" cy="196" r="42"/><circle class="bsvs-ring-green" cx="364" cy="196" r="28"/><circle class="bsvs-zone-green" cx="364" cy="196" r="12"/>
+              <circle class="bsvs-glow-green" cx="400" cy="312" r="42"/><circle class="bsvs-ring-green" cx="400" cy="312" r="28"/><circle class="bsvs-zone-green" cx="400" cy="312" r="12"/>
+            </svg>
+            <div class="bsvs-map-caption"><strong>Remote + USB + Diamond Stitch</strong><span>Classic premium styling with more program and manual control.</span></div>
+          </div>
+        </article>
+        <article class="bsvs-map-card bsvs-map-card--solara">
+          <div class="bsvs-map-media bsvs-map-media--wide">
+            <span class="bsvs-map-pill">Solara Daily Details</span>
+            <img src="{{ img_solara_remote }}" alt="Solara simple touch controller wireless charging and USB charging visual map" loading="lazy">
+            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true">
+              <circle class="bsvs-glow" cx="250" cy="142" r="44"/><circle class="bsvs-ring" cx="250" cy="142" r="30"/><circle class="bsvs-zone" cx="250" cy="142" r="13"/>
+              <circle class="bsvs-glow" cx="360" cy="210" r="44"/><circle class="bsvs-ring" cx="360" cy="210" r="30"/><circle class="bsvs-zone" cx="360" cy="210" r="13"/>
+              <circle class="bsvs-glow" cx="432" cy="304" r="44"/><circle class="bsvs-ring" cx="432" cy="304" r="30"/><circle class="bsvs-zone" cx="432" cy="304" r="13"/>
+            </svg>
+            <div class="bsvs-map-caption"><strong>Touch Control + Wireless Charging</strong><span>Simple controls, wireless phone charging, USB, accent lighting, and softer exterior design.</span></div>
+          </div>
+        </article>
+      </div>
+      <div class="bsvs-visual-notes">
+        <div class="bsvs-note-card bsvs-note-card--brio">
+          <h4>Brio+ home experience</h4>
+          <ul>
+            <li>More control depth for shoppers who like manual customization.</li>
+            <li>Diamond stitch upholstery creates a more classic premium massage chair look.</li>
+            <li>USB charging and chromotherapy support a more complete session setup.</li>
+          </ul>
+        </div>
+        <div class="bsvs-note-card bsvs-note-card--solara">
+          <h4>Solara home experience</h4>
+          <ul>
+            <li>Simple touch controls reduce friction for everyday use.</li>
+            <li>Wireless phone charging and USB charging keep the chair living-room friendly.</li>
+            <li>Fabric exterior and accent lighting make it easier to place visually.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bsvs-section bsvs-section--paper" id="bsvs-products">
+    <div class="bsvs-container">
+      <div class="bsvs-section-head">
+        <span class="bsvs-eyebrow">Product Shortlist</span>
+        <h2>Positive Posture Brio+ vs Positive Posture Solara</h2>
+        <p>This is a focused massage chair comparison for shoppers deciding between the Brio+ massage chair and the Solara massage chair, not a generic list of best massage chairs.</p>
+      </div>
+      <div class="bsvs-product-grid">
+        <article class="bsvs-product">
+          <div class="bsvs-product-media">
+            <span class="bsvs-product-tag bsvs-product-tag--brio">Premium 4D Upgrade</span>
+            <img src="{{ img_brio_card }}" alt="Brio+ massage chair at Massage Chairs &amp; More" loading="lazy">
+          </div>
+          <div class="bsvs-product-body">
+            <h2>Positive Posture Brio+</h2>
+            <p>The Brio Plus massage chair is the premium upgrade path for customers who want Intelligent 4D Massage, heated rollers, automatic body scan, L-track coverage, more programs, more manual options, and a broader body-fit range.</p>
+            <div class="bsvs-product-price"><s>{{ brio_was }}</s><strong>{{ brio_price }}</strong></div>
+            <ul class="bsvs-mini-list">
+              <li>Best for a more premium full body massage chair experience.</li>
+              <li>Intelligent 4D Massage adapts depth from soft to firm.</li>
+              <li>Heated rollers create a warmer, more hands-on back massage sensation.</li>
+              <li>Broader user fit confidence from 5'0" to 6'5".</li>
+            </ul>
+            <div class="bsvs-product-actions">
+              <a class="bsvs-btn bsvs-btn--dark" href="{{ url_brio }}">View Brio+</a>
+              <a class="bsvs-btn bsvs-btn--outline" href="{{ url_contact }}">Try Brio+</a>
+            </div>
+          </div>
+        </article>
+        <article class="bsvs-product">
+          <div class="bsvs-product-media">
+            <span class="bsvs-product-tag bsvs-product-tag--solara">Compact Entry Value</span>
+            <img src="{{ img_solara_card }}" alt="Solara massage chair at Massage Chairs &amp; More" loading="lazy">
+          </div>
+          <div class="bsvs-product-body">
+            <h2>Positive Posture Solara</h2>
+            <p>The Positive Posture Solara is the compact, economical choice for customers who want an SL track massage chair with simple controls, True Zero Gravity, full-body air massage, heat, foot rollers, wireless charging, and small-space placement.</p>
+            <div class="bsvs-product-price"><s>{{ solara_was }}</s><strong>{{ solara_price }}</strong></div>
+            <ul class="bsvs-mini-list">
+              <li>Best for compact rooms, apartments, bedrooms, and easy daily use.</li>
+              <li>SL-track coverage from neck to back, glutes, and upper hamstrings.</li>
+              <li>Wireless phone charging, USB charging, accent lighting, and simple touch controls.</li>
+              <li>Very small wall clearance helps reduce placement risk.</li>
+            </ul>
+            <div class="bsvs-product-actions">
+              <a class="bsvs-btn bsvs-btn--gold" href="{{ url_solara }}">View Solara</a>
+              <a class="bsvs-btn bsvs-btn--outline" href="{{ url_contact }}">Try Solara</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bsvs-section bsvs-section--cream" id="bsvs-verdict">
+    <div class="bsvs-container">
+      <div class="bsvs-section-head">
+        <span class="bsvs-eyebrow">Quick Verdict</span>
+        <h2>Do You Want Compact Entry Comfort or a Premium 4D Upgrade?</h2>
+      </div>
+      <div class="bsvs-verdict">
+        <article class="bsvs-verdict-card">
+          <h3>Choose the Solara if:</h3>
+          <ul>
+            <li>You want the more affordable Positive Posture massage chair.</li>
+            <li>You want a compact chair that is easier to place in smaller rooms.</li>
+            <li>You want SL-track coverage from neck to glutes and upper hamstrings.</li>
+            <li>You want full-body air massage, heated massage, bi-directional dual-speed foot rollers, True Zero Gravity, simple touch controls, wireless phone charging, USB charging, accent lighting, and a design-forward exterior.</li>
+            <li>You want an economical daily relaxation chair without stepping into the higher premium price range.</li>
+            <li>You are comfortable with a smaller user range and lighter-duty positioning.</li>
+          </ul>
+        </article>
+        <article class="bsvs-verdict-card">
+          <h3>Choose the Brio+ if:</h3>
+          <ul>
+            <li>You want the more premium full-body Positive Posture experience.</li>
+            <li>You want Intelligent 4D Massage that adapts depth from soft to firm.</li>
+            <li>You want refined massage choreography and hundreds of manual combinations.</li>
+            <li>You want heated rollers for a hot-stone style sensation.</li>
+            <li>You want automatic body scan, L-track coverage, full-body air massage, Intelligent Touch foot rollers, True Zero Gravity, infrared heat, chromotherapy, diamond stitch upholstery, USB charging, and an intuitive remote.</li>
+            <li>You want a stronger fit range for taller users up to 6'5".</li>
+            <li>You want a top-selling premium value model.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="bsvs-summary-line">
+        <p><strong>The Solara is the more compact and affordable comfort choice. The Brio+ is the more premium 4D upgrade.</strong> The right decision depends on your body fit, room space, massage intensity preference, and budget.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bsvs-section bsvs-section--paper" id="bsvs-table">
+    <div class="bsvs-container">
+      <div class="bsvs-section-head">
+        <span class="bsvs-eyebrow">At a Glance</span>
+        <h2>Brio+ vs Solara Massage Chairs: Full Comparison Table</h2>
+        <p>Use this responsive table to compare massage chairs by price, massage style, fit, coverage, heat, zero gravity, and showroom demo priorities.</p>
+      </div>
+      <p class="bsvs-table-note">Swipe sideways on mobile to compare every category.</p>
+      <div class="bsvs-table-wrap">
+        <table class="bsvs-table">
+          <thead>
+            <tr><th>Category</th><th>Brio+</th><th>Solara</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Product link</td><td><a href="{{ url_brio }}">View Brio+ product page</a></td><td><a href="{{ url_solara }}">View Solara product page</a></td></tr>
+            <tr><td>Current price band</td><td><s>{{ brio_was }}</s> &rarr; <strong>{{ brio_price }}</strong></td><td><s>{{ solara_was }}</s> &rarr; <strong>{{ solara_price }}</strong></td></tr>
+            <tr><td>MCM priority</td><td>Top seller, premium value path</td><td>Entry/value segment</td></tr>
+            <tr><td>Best for</td><td>Premium 4D full-body customization</td><td>Compact, economical daily relaxation</td></tr>
+            <tr><td>Massage personality</td><td>Deeper, more refined, more adjustable</td><td>Straightforward, approachable, comfort-first</td></tr>
+            <tr><td>Core technology</td><td>Intelligent 4D Massage with refined massage choreography</td><td>Solara Massage Engine with easy daily programs</td></tr>
+            <tr><td>Track design</td><td>L-track design from neck to glutes; an L track massage chair for broader back and seat coverage</td><td>SL-track from neck to back, glutes, and upper hamstrings; an SL track massage chair for compact coverage</td></tr>
+            <tr><td>Body scanning</td><td>Automatic body scan massage chair positioning</td><td>Confirm body-fit feel in showroom</td></tr>
+            <tr><td>Neck and shoulder focus</td><td>Stronger customization with Intelligent 4D depth and manual options</td><td>Comfortable everyday upper-back coverage</td></tr>
+            <tr><td>Glute/hamstring coverage</td><td>L-track to glutes, 47" stroke length</td><td>SL-track to glutes and upper hamstrings, 44" back stroke range</td></tr>
+            <tr><td>Calf and foot massage</td><td>Intelligent Touch Foot Rollers; lower-leg heat zones</td><td>Bi-directional dual-speed foot rollers; calf heat</td></tr>
+            <tr><td>Arm/hand massage</td><td>Full-body air massage function</td><td>Full body air massage for shoulders, arms, hands, calves, and feet</td></tr>
+            <tr><td>Heat</td><td>Heated rollers plus infrared heat in lower back, calves, and feet</td><td>Heated massage for back and calves</td></tr>
+            <tr><td>Recline / zero gravity</td><td>True Zero Gravity, automatic reclining, approximately 120 to 160 degrees</td><td>True Zero Gravity recline, approximately 113 to 149 degrees</td></tr>
+            <tr><td>Wall clearance</td><td>Approximately 4"</td><td>Approximately 0.6" / 1.5 cm</td></tr>
+            <tr><td>User height range</td><td>5'0" to 6'5"</td><td>5'0" to 6'0"</td></tr>
+            <tr><td>User weight limit</td><td>265 lbs</td><td>Recommended 220 lbs max</td></tr>
+            <tr><td>Chair dimensions</td><td>80" L x 33.5" W x 48" H</td><td>Upright: 48.5" L x 28.5" W x 45" H; reclined: 59" L x 28.5" W x 38" H</td></tr>
+            <tr><td>Chair weight</td><td>251 lbs</td><td>162 lbs</td></tr>
+            <tr><td>Program count</td><td>10 programmed massage sessions</td><td>8 preset sessions plus Full Body Air</td></tr>
+            <tr><td>Manual controls</td><td>9 manual options and hundreds of manual combinations</td><td>6 manual sessions plus foot rollers</td></tr>
+            <tr><td>Design style</td><td>Diamond stitch upholstery, synthetic leather, classic premium massage chair recliner presence</td><td>Fabric-upholstered exterior, textured synthetic leather interior, accent lighting, design-forward compact form</td></tr>
+            <tr><td>Warranty/service confidence</td><td>3-year limited in-home warranty where confirmed; confirm current terms with MCM</td><td>3-year limited warranty; first year includes on-site service in most US/Canada locations where applicable; confirm current terms with MCM</td></tr>
+            <tr><td>Best buyer profile</td><td>Buyer who wants a premium massage chair and long-term customization</td><td>Buyer who wants compact entry value and easy daily relaxation</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="bsvs-section bsvs-section--cream" id="bsvs-feel">
+    <div class="bsvs-container">
+      <div class="bsvs-section-head">
+        <span class="bsvs-eyebrow">Massage Feel</span>
+        <h2>How the Massage Feels: Premium 4D Upgrade vs Compact Everyday Comfort</h2>
+        <p>If you are trying to compare luxury massage chairs for back pain, stiffness, or daily tension, the smartest next step is to test comfort, pressure, body fit, and massage style in person. For medical concerns, consult a healthcare professional.</p>
+      </div>
+      <div class="bsvs-feel-grid">
+        <article class="bsvs-feel-card bsvs-feel-card--brio">
+          <h3>Brio+ Feel</h3>
+          <p>The Brio+ feels more premium, deeper, and more customizable. Intelligent 4D Massage adapts depth from soft to firm, while heated rollers create a warmer, more hands-on back massage sensation. Refined massage choreography and manual combinations make it better for buyers who want variety, depth, and long-term customization.</p>
+          <div class="bsvs-meter">
+            <div class="bsvs-meter-row"><span>Depth</span><div class="bsvs-meter-bar"><div class="bsvs-meter-fill" style="width:88%"></div></div><span>88%</span></div>
+            <div class="bsvs-meter-row"><span>Variety</span><div class="bsvs-meter-bar"><div class="bsvs-meter-fill" style="width:92%"></div></div><span>92%</span></div>
+            <div class="bsvs-meter-row"><span>Fit range</span><div class="bsvs-meter-bar"><div class="bsvs-meter-fill" style="width:90%"></div></div><span>90%</span></div>
+          </div>
+        </article>
+        <article class="bsvs-feel-card">
+          <h3>Solara Feel</h3>
+          <p>The Solara feels more compact, straightforward, and approachable. It is designed around easy daily relaxation, simple controls, zero gravity, SL-track coverage, air massage, heat, and foot rollers. It is a strong fit for buyers who want massage-chair comfort without a larger premium investment.</p>
+          <div class="bsvs-meter">
+            <div class="bsvs-meter-row"><span>Simplicity</span><div class="bsvs-meter-bar"><div class="bsvs-meter-fill" style="width:92%"></div></div><span>92%</span></div>
+            <div class="bsvs-meter-row"><span>Compact</span><div class="bsvs-meter-bar"><div class="bsvs-meter-fill" style="width:96%"></div></div><span>96%</span></div>
+            <div class="bsvs-meter-row"><span>Value</span><div class="bsvs-meter-bar"><div class="bsvs-meter-fill" style="width:94%"></div></div><span>94%</span></div>
+          </div>
+        </article>
+      </div>
+      <div class="bsvs-summary-line">
+        <p>Specs can narrow the choice. A side-by-side demo usually makes the decision clearer.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bsvs-section bsvs-section--paper" id="bsvs-upgrade">
+    <div class="bsvs-container">
+      <div class="bsvs-section-head">
+        <span class="bsvs-eyebrow">Buyer Strategy</span>
+        <h2>Entry Value vs Premium Upgrade: What Are You Really Paying For?</h2>
+      </div>
+      <div class="bsvs-value-grid">
+        <article class="bsvs-value-card">
+          <h3>Solara: Compact Entry Comfort</h3>
+          <p>Solara gives customers a lower entry point into Positive Posture with compact dimensions, easy controls, zero gravity, heated massage, foot rollers, wireless charging, USB charging, and strong everyday comfort.</p>
+        </article>
+        <article class="bsvs-value-card">
+          <h3>Brio+: Premium 4D Upgrade</h3>
+          <p>Brio+ costs more because it adds a more premium 4D massage mechanism, refined choreography, heated rollers, more body coverage, more manual and program options, broader height fit, and a fuller high-end massage experience.</p>
+        </article>
+      </div>
+      <div class="bsvs-payfor" aria-label="What to compare in person">
+        <div class="bsvs-payfor-item"><strong>Pressure</strong><span>Compare soft, medium, and firmer settings before choosing.</span></div>
+        <div class="bsvs-payfor-item"><strong>Roller Feel</strong><span>Test the Brio+ heated rollers beside Solara's simpler engine.</span></div>
+        <div class="bsvs-payfor-item"><strong>Body Fit</strong><span>Check shoulders, hips, seat depth, and calf placement.</span></div>
+        <div class="bsvs-payfor-item"><strong>Room Fit</strong><span>Measure wall clearance, recline path, and entry/exit space.</span></div>
+        <div class="bsvs-payfor-item"><strong>Daily Use</strong><span>Choose the chair you will actually use without friction.</span></div>
+        <div class="bsvs-payfor-item"><strong>Budget</strong><span>Decide whether the Brio+ upgrade feels worth it for your body.</span></div>
+      </div>
+      <div class="bsvs-summary-line">
+        <p>Neither option is automatically better for everyone. Try both in person and decide whether the Brio+ upgrade feels worth it for your body.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bsvs-section bsvs-section--cream" id="bsvs-price">
+    <div class="bsvs-container">
+      <div class="bsvs-price-module">
+        <div class="bsvs-section-head bsvs-left">
+          <span class="bsvs-eyebrow">Massage Chair Price Comparison</span>
+          <h2>Solara Entry Price vs Brio+ Premium Upgrade</h2>
+          <p>The Solara is the clear entry-value choice and is best for customers who want an affordable massage chair with strong everyday comfort features. The Brio+ costs significantly more and should be framed as a premium upgrade, not just a higher-priced alternative.</p>
+        </div>
+        <div class="bsvs-price-bars">
+          <div class="bsvs-price-row">
+            <strong>Solara</strong>
+            <div class="bsvs-price-track"><div class="bsvs-price-fill bsvs-price-fill--solara">{{ solara_price }}</div></div>
+            <div class="bsvs-price-values"><s>{{ solara_was }}</s><span>{{ solara_price }}</span></div>
+          </div>
+          <div class="bsvs-price-row">
+            <strong>Brio+</strong>
+            <div class="bsvs-price-track"><div class="bsvs-price-fill bsvs-price-fill--brio">{{ brio_price }}</div></div>
+            <div class="bsvs-price-values"><s>{{ brio_was }}</s><span>{{ brio_price }}</span></div>
+          </div>
+        </div>
+        <p style="margin-top:24px">The better frame is not cheap vs expensive. It is <strong>compact entry comfort vs premium 4D upgrade</strong>. Visit Massage Chairs &amp; More to compare feel, fit, pressure, design, room placement, delivery, warranty, and service before deciding. Confirm current massage chair price details before purchase.</p>
+        <div class="bsvs-hero-ctas">
+          <a class="bsvs-btn bsvs-btn--dark" href="{{ url_contact }}">Compare in Showroom</a>
+          <a class="bsvs-btn bsvs-btn--outline" href="{{ phone_href }}">Call About Pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bsvs-section bsvs-section--paper" id="bsvs-features">
+    <div class="bsvs-container">
+      <div class="bsvs-section-head">
+        <span class="bsvs-eyebrow">Feature Deep Dive</span>
+        <h2>What Each Positive Posture Massage Chair Adds to Your Daily Routine</h2>
+      </div>
+      <div class="bsvs-deep-grid">
+        <article class="bsvs-feature-col">
+          <div class="bsvs-feature-hero">
+            <img src="{{ img_brio_heat }}" alt="Brio+ massage chair with heated rollers and 4D massage" loading="lazy">
+          </div>
+          <div class="bsvs-feature-head">
+            <h3>Brio+ Feature Blocks</h3>
+            <p>Best if you want the stronger premium 4D massage chair experience and broader fit confidence.</p>
+          </div>
+          <div class="bsvs-feature-list">
+            <div class="bsvs-feature"><strong>Intelligent 4D Massage</strong><p>Adjusts depth from soft to firm for a more nuanced session.</p><span class="bsvs-demo-note">Demo: test pressure range.</span></div>
+            <div class="bsvs-feature"><strong>Refined Massage Choreography</strong><p>Programs feel structured and repeatable rather than random.</p><span class="bsvs-demo-note">Demo: compare program flow.</span></div>
+            <div class="bsvs-feature"><strong>Heated Rollers</strong><p>Warmth follows the roller path for a hot-stone style sensation.</p><span class="bsvs-demo-note">Demo: feel heat timing.</span></div>
+            <div class="bsvs-feature"><strong>Automatic Body Scan</strong><p>Helps the chair map shoulder position and body height.</p><span class="bsvs-demo-note">Demo: confirm shoulder alignment.</span></div>
+            <div class="bsvs-feature"><strong>L-Track Design</strong><p>Supports coverage from neck down through glutes.</p><span class="bsvs-demo-note">Demo: check lower-back and glute contact.</span></div>
+            <div class="bsvs-feature"><strong>Full-Body Air Massage</strong><p>Compression supports the wrap-and-release feel across key zones.</p><span class="bsvs-demo-note">Demo: adjust air intensity.</span></div>
+            <div class="bsvs-feature"><strong>Intelligent Touch Foot Rollers</strong><p>Foot rollers provide targeted contact without needing a separate device.</p><span class="bsvs-demo-note">Demo: check foot fit.</span></div>
+            <div class="bsvs-feature"><strong>Infrared Heat</strong><p>Lower back, calf, and foot heat support a warmer relaxation routine.</p><span class="bsvs-demo-note">Demo: compare warmth zones.</span></div>
+            <div class="bsvs-feature"><strong>True Zero Gravity</strong><p>Recline changes weight distribution and session feel.</p><span class="bsvs-demo-note">Demo: test entry, exit, and recline.</span></div>
+            <div class="bsvs-feature"><strong>Automatic Reclining Function</strong><p>Moves the chair into position with less manual effort.</p><span class="bsvs-demo-note">Demo: watch wall clearance.</span></div>
+            <div class="bsvs-feature"><strong>Diamond Stitch Upholstery</strong><p>Gives the chair a more classic premium presence.</p><span class="bsvs-demo-note">Demo: compare home aesthetic.</span></div>
+            <div class="bsvs-feature"><strong>Chromotherapy</strong><p>Ambient lighting adds a calmer session environment.</p><span class="bsvs-demo-note">Demo: view in room lighting.</span></div>
+            <div class="bsvs-feature"><strong>USB Power Port</strong><p>Keeps your phone powered during longer sessions.</p><span class="bsvs-demo-note">Demo: check armrest access.</span></div>
+            <div class="bsvs-feature"><strong>Intuitive Remote Control</strong><p>Gives more program control without a steep learning curve.</p><span class="bsvs-demo-note">Demo: navigate programs.</span></div>
+            <div class="bsvs-feature"><strong>10 Programmed Sessions</strong><p>More prebuilt variety for different daily preferences.</p><span class="bsvs-demo-note">Demo: sample two programs.</span></div>
+            <div class="bsvs-feature"><strong>Hundreds of Manual Massage Combinations</strong><p>Fine-tuning helps long-term owners avoid one-note sessions.</p><span class="bsvs-demo-note">Demo: build one manual routine.</span></div>
+            <div class="bsvs-feature"><strong>Broad User Fit up to 6'5"</strong><p>Better fit confidence for taller users and mixed-height households.</p><span class="bsvs-demo-note">Demo: confirm calf and shoulder fit.</span></div>
+          </div>
+        </article>
+        <article class="bsvs-feature-col">
+          <div class="bsvs-feature-hero">
+            <img src="{{ img_solara_recline }}" alt="Solara compact zero gravity massage chair" loading="lazy">
+          </div>
+          <div class="bsvs-feature-head">
+            <h3>Solara Feature Blocks</h3>
+            <p>Best if you want a compact, economical, easy-to-use massage chair.</p>
+          </div>
+          <div class="bsvs-feature-list">
+            <div class="bsvs-feature"><strong>Compact Wall-Hugging Design</strong><p>Approximately 0.6" wall clearance helps small rooms work.</p><span class="bsvs-demo-note">Demo: discuss room placement.</span></div>
+            <div class="bsvs-feature"><strong>SL-Track Massage</strong><p>Follows the body line from neck to upper hamstrings.</p><span class="bsvs-demo-note">Demo: feel track continuity.</span></div>
+            <div class="bsvs-feature"><strong>Solara Massage Engine</strong><p>Prioritizes steady, approachable everyday comfort.</p><span class="bsvs-demo-note">Demo: test first program.</span></div>
+            <div class="bsvs-feature"><strong>Full Body Air Massage</strong><p>Compression supports shoulders, arms, hands, calves, and feet.</p><span class="bsvs-demo-note">Demo: adjust air zones.</span></div>
+            <div class="bsvs-feature"><strong>Heated Massage</strong><p>Back and calf heat add a warmer baseline to daily sessions.</p><span class="bsvs-demo-note">Demo: compare heat feel.</span></div>
+            <div class="bsvs-feature"><strong>Bi-Directional Dual Speed Foot Rollers</strong><p>Two speeds and two directions help personalize foot pressure.</p><span class="bsvs-demo-note">Demo: try both speeds.</span></div>
+            <div class="bsvs-feature"><strong>True Zero Gravity Recline</strong><p>Lets users settle into a more relaxed reclined posture.</p><span class="bsvs-demo-note">Demo: check recline comfort.</span></div>
+            <div class="bsvs-feature"><strong>Simple Touch Integrated Controller</strong><p>Low learning curve for quick daily starts.</p><span class="bsvs-demo-note">Demo: start a session yourself.</span></div>
+            <div class="bsvs-feature"><strong>Wireless Phone Charger</strong><p>Place your phone down and keep the setup clean.</p><span class="bsvs-demo-note">Demo: check charger location.</span></div>
+            <div class="bsvs-feature"><strong>USB Charging Port</strong><p>Extra charging flexibility for daily use.</p><span class="bsvs-demo-note">Demo: confirm reach.</span></div>
+            <div class="bsvs-feature"><strong>Accent Lighting</strong><p>Adds a softer living-room presence.</p><span class="bsvs-demo-note">Demo: view with room lights.</span></div>
+            <div class="bsvs-feature"><strong>Adjustable Headrest Pillow</strong><p>Helps users tune comfort around the head and neck area.</p><span class="bsvs-demo-note">Demo: adjust pillow position.</span></div>
+            <div class="bsvs-feature"><strong>Removable Seat Pad</strong><p>Lets users shift between lounging and massage intensity.</p><span class="bsvs-demo-note">Demo: compare with and without pad.</span></div>
+            <div class="bsvs-feature"><strong>Design-Forward Fabric Exterior</strong><p>Feels less equipment-like in bedrooms and relaxation corners.</p><span class="bsvs-demo-note">Demo: compare finishes.</span></div>
+            <div class="bsvs-feature"><strong>8 Preset Sessions plus Full Body Air</strong><p>Enough guided options for straightforward daily relaxation.</p><span class="bsvs-demo-note">Demo: pick your default session.</span></div>
+            <div class="bsvs-feature"><strong>Economical Entry Price</strong><p>Lower price makes the Positive Posture massage chair decision easier for value-focused buyers.</p><span class="bsvs-demo-note">Demo: compare value to use case.</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bsvs-section bsvs-section--cream" id="bsvs-home-fit">
+    <div class="bsvs-container">
+      <div class="bsvs-fit-layout">
+        <div class="bsvs-fit-copy">
+          <span class="bsvs-eyebrow">Design and Home Fit</span>
+          <h2>Which One Fits Better in Your Home?</h2>
+          <p><strong>Solara</strong> is more compact, narrower, lighter, and easier to place. Its 0.6" wall-hugging clearance is a major advantage for small spaces, while its fabric-upholstered exterior and accent lighting give it a softer, design-forward look.</p>
+          <p style="margin-top:14px"><strong>Brio+</strong> is larger, more substantial, and more premium. Diamond stitch upholstery and a full-size form create a classic luxury massage chair presence. It is the better fit for taller users based on the 5'0" to 6'5" user range.</p>
+          <div class="bsvs-diagram">
+            <div class="bsvs-diagram-card">
+              <strong><span>Wall clearance</span><span>Solara 0.6" / Brio+ 4"</span></strong>
+              <div class="bsvs-clearance"><span style="width:15%"></span></div>
+              <div class="bsvs-clearance" style="margin-top:8px"><span class="bsvs-brio-fill" style="width:82%"></span></div>
+            </div>
+            <div class="bsvs-diagram-card">
+              <strong><span>User height range</span><span>Solara to 6'0" / Brio+ to 6'5"</span></strong>
+              <div class="bsvs-range"><span class="bsvs-solara-fill"></span></div>
+              <div class="bsvs-range"><span style="width:90%"></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="bsvs-fit-media">
+          <div class="bsvs-fit-img"><img src="{{ img_solara_upright }}" alt="Solara compact zero gravity massage chair in a room" loading="lazy"></div>
+          <div class="bsvs-fit-img"><img src="{{ img_brio_upright }}" alt="Brio+ massage chair upright side view for home fit comparison" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="bsvs-summary-line">
+        <p>The best-looking chair is not always the best-fitting chair. Test body fit, recline angle, foot and calf placement, shoulder position, wall clearance, entry and exit comfort, and room placement in person.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bsvs-section bsvs-section--paper" id="bsvs-decision">
+    <div class="bsvs-container">
+      <div class="bsvs-section-head">
+        <span class="bsvs-eyebrow">Decision Guide</span>
+        <h2>Who Should Choose Which?</h2>
+      </div>
+      <div class="bsvs-scenarios">
+        <article class="bsvs-scenario"><h3>I want the most affordable Positive Posture chair.</h3><span class="bsvs-rec bsvs-rec--solara">Solara</span><p>Lower price band, compact design, and strong everyday comfort features.</p></article>
+        <article class="bsvs-scenario"><h3>I want the better premium massage experience.</h3><span class="bsvs-rec bsvs-rec--brio">Brio+</span><p>Intelligent 4D Massage, heated rollers, refined choreography, body scan, and more manual/program options.</p></article>
+        <article class="bsvs-scenario"><h3>I have a smaller room.</h3><span class="bsvs-rec bsvs-rec--solara">Solara</span><p>Smaller dimensions, lighter weight, and approximately 0.6" wall clearance.</p></article>
+        <article class="bsvs-scenario"><h3>I am taller or want broader fit confidence.</h3><span class="bsvs-rec bsvs-rec--brio">Brio+</span><p>Brio+ supports users up to 6'5", while Solara supports users up to 6'0".</p></article>
+        <article class="bsvs-scenario"><h3>I want simple controls and easy daily use.</h3><span class="bsvs-rec bsvs-rec--solara">Solara</span><p>Simple Touch Integrated Controller, compact comfort, zero gravity, and easy entry-value positioning.</p></article>
+        <article class="bsvs-scenario"><h3>I want more customization and massage variety.</h3><span class="bsvs-rec bsvs-rec--brio">Brio+</span><p>10 programmed sessions, 9 manual options, hundreds of manual combinations, and refined massage choreography.</p></article>
+        <article class="bsvs-scenario"><h3>I am unsure whether the upgrade is worth it.</h3><span class="bsvs-rec bsvs-rec--mcm">Visit MCM</span><p>Compare both side by side and decide whether the difference in 4D massage, heated rollers, body fit, and program variety feels worth the price difference.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bsvs-section bsvs-section--cream" id="bsvs-reactions">
+    <div class="bsvs-container">
+      <div class="bsvs-section-head">
+        <span class="bsvs-eyebrow">Showroom Demo Signals</span>
+        <h2>What Customers Often Notice During Side-by-Side Demos</h2>
+        <p>These are common demo reactions, not verified reviews. They are included to help you understand how shoppers often process Brio+ vs Solara massage chairs in person.</p>
+      </div>
+      <div class="bsvs-reactions">
+        <article class="bsvs-reaction"><span>Entry Value</span><p>"The Solara felt easier to say yes to: compact, simple, and comfortable without feeling overwhelming."</p></article>
+        <article class="bsvs-reaction"><span>Premium Upgrade</span><p>"The Brio+ felt like a real upgrade. The heated rollers and 4D massage made the difference obvious."</p></article>
+        <article class="bsvs-reaction"><span>Demo Moment</span><p>"I came in thinking about price, but the demo helped me understand what I was gaining with Brio+."</p></article>
+        <article class="bsvs-reaction"><span>Small Space</span><p>"The Solara made more sense for my bedroom because it took up much less space."</p></article>
+        <article class="bsvs-reaction"><span>Fit Confidence</span><p>"The Brio+ felt better for my height and gave me more massage options."</p></article>
+        <article class="bsvs-reaction"><span>Heated Rollers</span><p>"Trying both made the decision less about specs and more about what I would actually use every day."</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bsvs-section bsvs-section--paper" id="bsvs-ai-summary">
+    <div class="bsvs-narrow">
+      <div class="bsvs-answer">
+        <h2>AI Overview Summary: Brio+ vs Solara</h2>
+        <p>The Solara is generally better for buyers who want a compact and affordable Positive Posture massage chair with SL-track coverage, full-body air massage, heated massage, bi-directional foot rollers, True Zero Gravity, wireless phone charging, USB charging, simple touch controls, accent lighting, and a very small wall clearance. The Brio+ is generally better for buyers who want a more premium 4D massage chair with Intelligent 4D Massage, refined massage choreography, heated rollers, automatic body scan, L-track coverage, full-body air massage, Intelligent Touch foot rollers, True Zero Gravity, chromotherapy, more programs, more manual options, and broader fit for users up to 6'5". Solara is the better entry-value choice, while Brio+ is the better premium upgrade. The safest way to choose is to compare both in person at Massage Chairs &amp; More and test comfort, pressure, fit, heat, room placement, and daily-use expectations.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bsvs-showroom" id="bsvs-showroom">
+    <div class="bsvs-showroom-bg" style="background-image:url('{{ img_showroom }}')"></div>
+    <div class="bsvs-container">
+      <div class="bsvs-showroom-inner">
+        <div>
+          <span class="bsvs-eyebrow">Showroom CTA</span>
+          <h2>Compare the Brio+ and Solara Side by Side</h2>
+          <p>Choosing between the Brio+ and Solara is difficult online because the real question is whether the premium upgrade feels worth it to your body. At Massage Chairs &amp; More, you can try both Positive Posture chairs in person, compare pressure, recline, body fit, heat, foot rollers, air massage, controls, room placement, delivery, installation, warranty, and service support before deciding.</p>
+          <div class="bsvs-showroom-actions">
+            <a class="bsvs-btn bsvs-btn--gold" href="{{ url_contact }}">Book a Side-by-Side Demo</a>
+            <a class="bsvs-btn bsvs-btn--ghost" href="{{ url_brio }}">View Brio+</a>
+            <a class="bsvs-btn bsvs-btn--ghost" href="{{ url_solara }}">View Solara</a>
+            <a class="bsvs-btn bsvs-btn--light" href="{{ phone_href }}">Call Massage Chairs &amp; More</a>
+          </div>
+          <div class="bsvs-confidence">
+            <div>Compare both chairs in one visit</div>
+            <div>Get expert guidance without pressure</div>
+            <div>Understand delivery, installation, warranty, and service</div>
+            <div>Make a premium purchase with confidence</div>
+          </div>
+        </div>
+        <div class="bsvs-showroom-products" aria-label="Brio+ and Solara side by side showroom comparison">
+          <div><img src="{{ img_brio_recline }}" alt="Brio+ and Solara side by side showroom comparison - Brio+ recline" loading="lazy"></div>
+          <div><img src="{{ img_solara_lifestyle }}" alt="Compare Positive Posture massage chairs in person" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bsvs-section bsvs-section--paper" id="bsvs-faq">
+    <div class="bsvs-container">
+      <div class="bsvs-section-head">
+        <span class="bsvs-eyebrow">FAQ</span>
+        <h2>Brio+ vs Solara FAQ</h2>
+      </div>
+      <div class="bsvs-faq">
+        <details><summary>Is the Brio+ better than the Solara?</summary><div class="bsvs-faq-body"><p>Brio+ is better for buyers who want a more premium 4D massage experience, heated rollers, refined choreography, more programs, and broader fit. Solara is better for buyers who want compact entry-value comfort.</p></div></details>
+        <details><summary>Is the Solara good enough for daily relaxation?</summary><div class="bsvs-faq-body"><p>Yes, Solara can be a strong everyday relaxation choice for buyers who want SL-track coverage, zero gravity, heat, air massage, foot rollers, and simple controls at a lower price point.</p></div></details>
+        <details><summary>Is the Brio+ worth the higher price?</summary><div class="bsvs-faq-body"><p>Brio+ may be worth it if the buyer values Intelligent 4D Massage, heated rollers, automatic body scan, more manual/program options, broader user fit, and a fuller premium massage experience.</p></div></details>
+        <details><summary>Which chair is better for smaller rooms?</summary><div class="bsvs-faq-body"><p>Solara is better for smaller rooms because it is smaller, lighter, and requires approximately 0.6" wall clearance.</p></div></details>
+        <details><summary>Which chair is better for taller users?</summary><div class="bsvs-faq-body"><p>Brio+ is better for taller users because it supports users up to 6'5", while Solara supports users up to 6'0".</p></div></details>
+        <details><summary>Which chair has better heat features?</summary><div class="bsvs-faq-body"><p>Brio+ has heated rollers and infrared heat in the lower back, calves, and feet. Solara has heated massage for the back and calves. Heat feel is subjective, so compare both in person.</p></div></details>
+        <details><summary>Which chair has better foot massage?</summary><div class="bsvs-faq-body"><p>Both offer foot rollers. Solara has bi-directional dual-speed foot rollers, while Brio+ has Intelligent Touch foot rollers. The best choice depends on preferred pressure and foot fit.</p></div></details>
+        <details><summary>What is the price difference between Brio+ and Solara?</summary><div class="bsvs-faq-body"><p>Current Shopify pricing displays Brio+ at <s>{{ brio_was }}</s> &rarr; {{ brio_price }} and Solara at <s>{{ solara_was }}</s> &rarr; {{ solara_price }}. Confirm current pricing with Massage Chairs &amp; More before purchase.</p></div></details>
+        <details><summary>Can I try both at Massage Chairs &amp; More?</summary><div class="bsvs-faq-body"><p>Yes. Massage Chairs &amp; More is the place to compare both in person with expert guidance, room-fit discussion, delivery clarity, and service support.</p></div></details>
+        <details><summary>Which one should I buy?</summary><div class="bsvs-faq-body"><p>Choose Solara if you want a compact, affordable, easy-to-use daily relaxation chair. Choose Brio+ if you want a premium 4D upgrade with stronger customization, heated rollers, broader fit, and deeper full-body comfort. The best final choice comes from trying both.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="bsvs-section bsvs-section--cream" id="bsvs-links">
+    <div class="bsvs-container">
+      <div class="bsvs-section-head">
+        <span class="bsvs-eyebrow">Internal Links</span>
+        <h2>Continue Comparing With Confidence</h2>
+      </div>
+      <div class="bsvs-links">
+        <article class="bsvs-link-card"><h3>Brio+ Product Page</h3><p>Review current price, images, colors, and purchase options.</p><a href="{{ url_brio }}">View Brio+</a></article>
+        <article class="bsvs-link-card"><h3>Solara Product Page</h3><p>Review compact dimensions, features, colors, and purchase options.</p><a href="{{ url_solara }}">View Solara</a></article>
+        <article class="bsvs-link-card"><h3>Positive Posture Collection</h3><p>Explore Positive Posture massage chairs without leaving the brand.</p><a href="{{ url_positive_posture }}">View collection</a></article>
+        <article class="bsvs-link-card"><h3>All Massage Chairs</h3><p>View all massage chairs or compare more premium massage chairs.</p><a href="{{ url_massage_chairs }}">View all massage chairs</a></article>
+        <article class="bsvs-link-card"><h3>Showroom / Contact</h3><p>Ask about demos, delivery, installation, warranty, and service.</p><a href="{{ url_contact }}">Visit showroom</a></article>
+      </div>
+      <p style="margin-top:24px"><strong>Search terms answered on this page:</strong> Brio+ vs Solara, Brio+ vs Solara massage chairs, Brio+ massage chair, Brio Plus massage chair, Positive Posture Brio+, Solara massage chair, Positive Posture Solara, Positive Posture massage chair, Positive Posture massage chairs, 4D massage chair, SL track massage chair, L track massage chair, body scan massage chair, zero gravity massage chair, full body massage chair, massage chair recliner, premium massage chair, luxury massage chair, massage chair comparison, compare massage chairs, massage chair price comparison, massage chair price, best massage chair, best massage chairs, massage chair reviews, and massage chairs near me.</p>
+    </div>
+  </section>
+
+  <div class="bsvs-mobile-cta" aria-label="Mobile comparison actions">
+    <div class="bsvs-mobile-cta-inner">
+      <a class="bsvs-btn bsvs-btn--dark" href="{{ url_contact }}">Book Demo</a>
+      <a class="bsvs-btn bsvs-btn--gold" href="{{ phone_href }}">Call</a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Brio+ vs Solara Compare",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Brio+ vs Solara Compare"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "ohco-collection": {
+      "type": "collection-ohco",
+      "settings": {}
+    }
+  },
+  "order": [
+    "ohco-collection"
+  ]
+}

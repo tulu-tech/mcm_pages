@@ -1,0 +1,1193 @@
+{%- comment -%}
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  SECTION: page-santa-clara.liquid                           ║
+  ║  Template: templates/page.santa-clara.json                  ║
+  ║  Page handle: santa-clara-showroom                          ║
+  ║                                                              ║
+  ║  HOW TO INSTALL:                                             ║
+  ║  1. Upload this file to /sections/page-santa-clara.liquid   ║
+  ║  2. Upload templates/page.santa-clara.json                  ║
+  ║  3. In Shopify Admin → Pages, create/find the page with     ║
+  ║     handle "santa-clara-showroom" and assign the template   ║
+  ║     "page.santa-clara"                                      ║
+  ║                                                              ║
+  ║  IMAGES (upload to Shopify CDN Files):                       ║
+  ║  · santa-clara-showroom-hero.jpg                            ║
+  ║  · santa-clara-customer-consultation.jpg                    ║
+  ║  · santa-clara-brand-comparison.jpg                         ║
+  ╚══════════════════════════════════════════════════════════════╝
+{%- endcomment -%}
+
+{%- comment -%} ── JSON-LD SCHEMA ── {%- endcomment -%}
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Massage Chairs and More — Santa Clara",
+    "url": "{{ shop.url }}/pages/santa-clara-showroom",
+    "telephone": "+14088891188",
+    "email": "info@massagechairsandmore.com",
+    "image": "https://cdn.shopify.com/s/files/1/0813/4036/7096/files/santa-clara-showroom-hero.jpg",
+    "priceRange": "$$$$",
+    "hasMap": "https://maps.app.goo.gl/3ouzQFA5WDpeVyr39",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2855 Stevens Creek Blvd, Suite 1091",
+      "addressLocality": "Santa Clara",
+      "addressRegion": "CA",
+      "postalCode": "95050",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 37.3239,
+      "longitude": -121.9496
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "10:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "10:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "11:00", "closes": "19:00" }
+    ],
+    "areaServed": ["Santa Clara","San Jose","Cupertino","Sunnyvale","Mountain View","Palo Alto","Saratoga","Los Gatos","Campbell","Los Altos"],
+    "sameAs": [
+      "https://www.instagram.com/massagechairsandmore",
+      "https://www.facebook.com/massagechairsandmore"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Where can I try massage chairs in Santa Clara?","acceptedAnswer":{"@type":"Answer","text":"Massage Chairs and More at Westfield Valley Fair (2855 Stevens Creek Blvd, Suite 1091, Santa Clara, CA 95050) is the premier destination for trying luxury massage chairs in person in the South Bay. We carry OHCO, Panasonic, Positive Posture, D.Core, and Koyo — all fully operational and available for guided demonstrations."}},
+      {"@type":"Question","name":"What is the best massage chair store in Santa Clara?","acceptedAnswer":{"@type":"Answer","text":"Massage Chairs and More at Westfield Valley Fair is widely recognized as the best massage chair store in Santa Clara. We carry the South Bay's widest curated selection of premium brands with certified specialists on-site and a zero-pressure guided experience."}},
+      {"@type":"Question","name":"Can I compare OHCO, Panasonic, Positive Posture, D.Core, and Koyo in person?","acceptedAnswer":{"@type":"Answer","text":"Yes. Our Santa Clara showroom is one of the very few places in California where you can experience all five of these elite brands side by side on the same visit. Our specialists guide you through practical comparisons so you leave with real clarity."}},
+      {"@type":"Question","name":"Are luxury massage chairs worth the investment?","acceptedAnswer":{"@type":"Answer","text":"For most customers in Santa Clara, San Jose, and Cupertino — absolutely yes. A premium massage chair delivers on-demand tension relief, daily restorative comfort, and wellness support available any hour of the day. Most chairs pay for themselves within 18–24 months compared to regular therapy visits."}},
+      {"@type":"Question","name":"What is the difference between 4D and zero gravity massage chairs?","acceptedAnswer":{"@type":"Answer","text":"4D refers to the massage arm's range of motion — forward, backward, side to side, plus variable speed — mimicking human hands. Zero gravity is the reclining position with legs elevated above the heart, decompressing the spine. Many premium chairs in our Santa Clara showroom combine both technologies."}},
+      {"@type":"Question","name":"Can I book a massage chair appointment in Santa Clara?","acceptedAnswer":{"@type":"Answer","text":"Yes. Walk in anytime during showroom hours, or call (408) 889-1188 to schedule a private guided appointment. A booked appointment gives you dedicated one-on-one time with a specialist and a personalized recommendation."}},
+      {"@type":"Question","name":"Where is the Massage Chairs and More Santa Clara showroom?","acceptedAnswer":{"@type":"Answer","text":"We are located inside Westfield Valley Fair at 2855 Stevens Creek Blvd, Suite 1091, Santa Clara, CA 95050. Hours: Mon–Fri 10 AM–9 PM, Sat 10 AM–9 PM, Sun 11 AM–7 PM. Free parking throughout Valley Fair."}},
+      {"@type":"Question","name":"Which massage chair brands are available in Santa Clara?","acceptedAnswer":{"@type":"Answer","text":"Our Santa Clara showroom carries OHCO, Panasonic, Positive Posture, D.Core, and Koyo — five of the most respected premium massage chair brands in the United States. Every chair is fully operational for live, guided demonstrations."}}
+    ]
+  }
+]
+</script>
+
+<style>
+  /* =============================================================
+     SHOPIFY THEME OVERRIDES — page-santa-clara.liquid
+     Breaks out of theme page container, suppresses native footer.
+     All classes scoped to .sc-wrap to avoid conflicts.
+  ============================================================= */
+
+  /* Hide theme native footer on this template — protect our .sc-footer */
+  .template-page .site-footer,
+  .template-page footer.footer,
+  .template-page .footer:not(.sc-footer),
+  .template-page #shopify-section-footer,
+  .template-page [id^="shopify-section-footer"],
+  .template-page .site-footer__inner,
+  .template-page footer:not(.sc-footer) { display: none !important; }
+  .sc-footer { display: block !important; }
+
+  /* Break page content to full width */
+  .template-page main,
+  .template-page .main-content,
+  .template-page #MainContent,
+  .template-page .page-width,
+  .template-page .container,
+  .template-page .rte,
+  .template-page .shopify-section,
+  .template-page [id^="shopify-section"],
+  .template-page .page-width--narrow { max-width: 100% !important; padding: 0 !important; margin: 0 !important; width: 100% !important; }
+
+  /* Full-bleed wrapper — robust negative-margin technique */
+  .sc-bleed {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+
+  .template-page .content-for-layout { padding-top: 0 !important; margin-top: 0 !important; }
+
+  /* =============================================================
+     BASE — absolute px fonts, never rem
+  ============================================================= */
+  .sc-wrap {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #1a1a1a;
+    line-height: 1.75;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  .sc-wrap * { box-sizing: border-box; margin: 0; padding: 0; }
+  .sc-wrap p   { font-size: 15px; line-height: 1.8; }
+  .sc-wrap li  { font-size: 14px; line-height: 1.65; }
+  .sc-wrap a   { text-decoration: none; }
+  .sc-wrap h1  { font-size: clamp(34px, 5vw, 64px); line-height: 1.07; font-weight: 800; letter-spacing: -0.03em; font-family: 'Playfair Display', Georgia, serif; }
+  .sc-wrap h2  { font-size: clamp(24px, 2.8vw, 38px); line-height: 1.15; font-weight: 800; letter-spacing: -0.025em; font-family: 'Playfair Display', Georgia, serif; }
+  .sc-wrap h3  { font-size: clamp(16px, 1.8vw, 20px); line-height: 1.3; font-weight: 700; }
+  .sc-wrap h4  { font-size: 13px; line-height: 1.35; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+  .sc-wrap img { max-width: 100%; display: block; }
+
+  /* ── CSS VARIABLES ── */
+  .sc-wrap {
+    --sc-bg:          #ffffff;
+    --sc-surface:     #f4f1ed;
+    --sc-dark:        #0d0d0d;
+    --sc-dark2:       #1a1a1a;
+    --sc-muted:       #5c5c5c;
+    --sc-muted2:      #909090;
+    --sc-accent:      #9a8050;
+    --sc-accent-h:    #7d6a40;
+    --sc-accent-warm: #c4a464;
+    --sc-accent-pale: rgba(154,128,80,0.10);
+    --sc-border:      #e4e0d8;
+    --sc-border2:     #ccc8be;
+    --sc-radius:      18px;
+    --sc-radius-sm:   10px;
+    --sc-shadow:      0 6px 24px rgba(0,0,0,0.07);
+    --sc-shadow-lg:   0 18px 48px rgba(0,0,0,0.13);
+    --sc-transition:  all 0.28s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  /* ── LAYOUT ── */
+  .sc-container    { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+  .sc-container-sm { max-width: 860px;  margin: 0 auto; padding: 0 2rem; }
+  .sc-section      { padding: 5rem 0; }
+  .sc-section-alt  { background: var(--sc-surface); }
+  .sc-dark         { background: linear-gradient(135deg, #08080f 0%, #0e0c18 60%, #090b10 100%); }
+
+
+
+  /* ── STICKY CTAs ── */
+  .sc-sticky-cta { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 998; display: flex; flex-direction: column; gap: 0.6rem; transition: opacity 0.35s; }
+  .sc-sticky-btn { display: inline-flex; align-items: center; gap: 8px; padding: 0.8rem 1.5rem; border-radius: 50px; font-size: 14px; font-weight: 700; white-space: nowrap; box-shadow: 0 8px 24px rgba(0,0,0,0.25); transition: var(--sc-transition); cursor: pointer; font-family: 'Inter', sans-serif; text-decoration: none !important; }
+  .sc-sticky-btn svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+  .sc-sticky-call { background: #0d0d0d; color: #fff !important; }
+  .sc-sticky-call:hover { background: #222; transform: translateY(-2px); color: #fff !important; }
+  .sc-sticky-dir { background: var(--sc-accent); color: #fff !important; }
+  .sc-sticky-dir:hover { background: var(--sc-accent-h); transform: translateY(-2px); color: #fff !important; }
+
+  /* ── BUTTONS ── */
+  .sc-btn { display: inline-flex; align-items: center; justify-content: center; gap: 7px; padding: 0.85rem 1.875rem; font-size: 15px; font-weight: 700; border-radius: 50px; transition: var(--sc-transition); border: 2px solid transparent; cursor: pointer; font-family: 'Inter', sans-serif; letter-spacing: 0.01em; white-space: nowrap; text-decoration: none !important; }
+  .sc-btn svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+  .sc-btn-primary { background: var(--sc-accent); color: #fff !important; border-color: var(--sc-accent); }
+  .sc-btn-primary:hover { background: var(--sc-accent-h); border-color: var(--sc-accent-h); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(154,128,80,0.35); color: #fff !important; }
+  .sc-btn-dark { background: var(--sc-dark); color: #fff !important; border-color: var(--sc-dark); }
+  .sc-btn-dark:hover { background: #222; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.22); color: #fff !important; }
+  .sc-btn-outline { background: transparent; color: #fff !important; border: 2px solid rgba(255,255,255,0.35); }
+  .sc-btn-outline:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.7); }
+
+  /* ── EYEBROW ── */
+  .sc-eyebrow { display: block; font-size: 11px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sc-accent); margin-bottom: 0.875rem; }
+  .sc-section-header { margin-bottom: 3rem; }
+  .sc-section-header.center { text-align: center; }
+  .sc-section-header p { font-size: 17px; color: var(--sc-muted); max-width: 680px; line-height: 1.8; margin-top: 0.75rem; }
+  .sc-section-header.center p { margin-left: auto; margin-right: auto; }
+
+  /* ── HERO ── */
+  .sc-hero { position: relative; min-height: 90vh; display: flex; align-items: center; overflow: hidden; background: #0a0a10; }
+  .sc-hero-bg { position: absolute; inset: 0; z-index: 0; }
+  .sc-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block; filter: brightness(0.46) saturate(0.88); animation: scHeroZoom 12s ease-in-out infinite alternate; }
+  @keyframes scHeroZoom { from { transform: scale(1); } to { transform: scale(1.04); } }
+  .sc-hero-overlay { position: absolute; inset: 0; z-index: 1;
+    background:
+      linear-gradient(to right, rgba(4,4,8,0.90) 0%, rgba(4,4,8,0.55) 55%, rgba(4,4,8,0.12) 100%),
+      linear-gradient(to top,   rgba(4,4,8,0.88) 0%, transparent 55%);
+  }
+  .sc-hero-content { position: relative; z-index: 2; padding: 4.5rem 0 5rem; width: 100%; }
+  .sc-hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 50px; margin-bottom: 1.5rem; letter-spacing: 0.04em; }
+  .sc-hero-badge-dot { width: 7px; height: 7px; background: #4ade80; border-radius: 50%; animation: scPulse 2s ease-in-out infinite; flex-shrink: 0; }
+  @keyframes scPulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .sc-hero h1 { color: #fff; max-width: 780px; margin-bottom: 1.25rem; }
+  .sc-hero h1 em { color: var(--sc-accent-warm); font-style: italic; }
+  .sc-hero-lead { font-size: 18px; color: rgba(255,255,255,0.78); max-width: 620px; margin-bottom: 2.5rem; line-height: 1.7; }
+  .sc-hero-btns { display: flex; gap: 0.875rem; flex-wrap: wrap; margin-bottom: 2rem; }
+  .sc-hero-trust { display: flex; gap: 2rem; flex-wrap: wrap; }
+  .sc-hero-trust-item { display: flex; align-items: center; gap: 7px; color: rgba(255,255,255,0.60); font-size: 13px; font-weight: 600; }
+  .sc-hero-trust-item svg { width: 14px; height: 14px; fill: var(--sc-accent-warm); flex-shrink: 0; }
+
+  /* ── STATS BAR ── */
+  .sc-stats { background: #0d0d0d; }
+  .sc-stats-inner { display: flex; justify-content: center; flex-wrap: wrap; }
+  .sc-stat { padding: 1.5rem 3rem; text-align: center; border-right: 1px solid rgba(255,255,255,0.08); }
+  .sc-stat:last-child { border-right: none; }
+  .sc-stat-num { font-size: 32px; font-weight: 900; color: #fff; display: block; line-height: 1; font-family: 'Inter', sans-serif; letter-spacing: -0.04em; }
+  .sc-stat-num span { color: var(--sc-accent-warm); }
+  .sc-stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(255,255,255,0.38); margin-top: 5px; font-weight: 700; display: block; }
+
+  /* ── LOCATION / MAP ── */
+  .sc-location-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 3rem; align-items: start; }
+  .sc-info-block { display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid var(--sc-border); }
+  .sc-info-block:last-child { border-bottom: none; }
+  .sc-info-icon { width: 42px; height: 42px; background: var(--sc-accent-pale); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .sc-info-icon svg { width: 20px; height: 20px; fill: var(--sc-accent); }
+  .sc-info-text h4 { font-size: 11px; color: var(--sc-muted2); margin-bottom: 0.35rem; }
+  .sc-info-text a { font-size: 15px; font-weight: 600; color: var(--sc-dark); display: block; line-height: 1.5; }
+  .sc-info-text a:hover { color: var(--sc-accent); }
+  .sc-info-text p { font-size: 14px; color: var(--sc-muted); margin: 0; line-height: 1.65; }
+  .sc-parking-note { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--sc-muted2); margin-top: 0.5rem; background: var(--sc-surface); padding: 5px 10px; border-radius: 20px; }
+  .sc-parking-note svg { width: 13px; height: 13px; fill: var(--sc-muted2); flex-shrink: 0; }
+  .sc-hours-table { border-collapse: collapse; width: 100%; margin-top: 0.375rem; }
+  .sc-hours-table td { font-size: 14px; padding: 3px 0; color: var(--sc-muted); }
+  .sc-hours-table td:first-child { font-weight: 600; color: var(--sc-dark); padding-right: 1.5rem; white-space: nowrap; }
+  .sc-map-wrap { position: relative; border-radius: var(--sc-radius); overflow: hidden; box-shadow: var(--sc-shadow-lg); }
+  .sc-map-wrap iframe { width: 100%; height: 380px; border: 0; display: block; }
+  .sc-directions-btn { display: flex; align-items: center; justify-content: center; gap: 8px; background: #0d0d0d; color: #fff !important; padding: 1rem 1.5rem; font-size: 15px; font-weight: 700; transition: background 0.2s; text-decoration: none !important; }
+  .sc-directions-btn svg { width: 18px; height: 18px; fill: #fff; }
+  .sc-directions-btn:hover { background: var(--sc-accent); color: #fff !important; }
+
+  /* ── WHY VISIT ── */
+  .sc-why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .sc-why-img { position: relative; border-radius: var(--sc-radius); overflow: hidden; box-shadow: var(--sc-shadow-lg); }
+  .sc-why-img img { width: 100%; height: 520px; object-fit: cover; object-position: center 20%; display: block; }
+  .sc-why-badge { position: absolute; bottom: 1.75rem; left: 1.75rem; right: 1.75rem; background: rgba(10,10,14,0.85); backdrop-filter: blur(10px); border-radius: 12px; padding: 1rem 1.25rem; display: flex; align-items: center; gap: 0.875rem; border: 1px solid rgba(255,255,255,0.1); }
+  .sc-why-badge-icon { width: 36px; height: 36px; background: var(--sc-accent); border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .sc-why-badge-icon svg { width: 18px; height: 18px; fill: #fff; }
+  .sc-why-badge-text strong { display: block; font-size: 14px; color: #fff; }
+  .sc-why-badge-text span { font-size: 12px; color: rgba(255,255,255,0.55); }
+  .sc-why-reasons { display: flex; flex-direction: column; gap: 1.125rem; margin-top: 2rem; }
+  .sc-reason { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 1.25rem; background: #fff; border: 1px solid var(--sc-border); border-radius: 12px; transition: var(--sc-transition); }
+  .sc-reason:hover { border-color: var(--sc-accent); box-shadow: 0 4px 16px rgba(154,128,80,0.12); }
+  .sc-reason-icon { width: 38px; height: 38px; background: var(--sc-accent-pale); border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .sc-reason-icon svg { width: 18px; height: 18px; fill: var(--sc-accent); }
+  .sc-reason strong { display: block; font-size: 14px; margin-bottom: 2px; }
+  .sc-reason span { font-size: 13px; color: var(--sc-muted); line-height: 1.6; }
+
+  /* ── CTA BAND ── */
+  .sc-cta-band { background: var(--sc-accent); padding: 3rem 2rem; }
+  .sc-cta-band-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+  .sc-cta-band h2 { font-size: clamp(20px, 2.4vw, 28px); color: #fff; margin-bottom: 0.25rem; }
+  .sc-cta-band p { font-size: 15px; color: rgba(255,255,255,0.78); margin: 0; }
+  .sc-cta-band-btns { display: flex; gap: 0.875rem; flex-wrap: wrap; }
+  .sc-btn-band-white { display: inline-flex; align-items: center; gap: 7px; background: #fff; color: var(--sc-accent) !important; padding: 0.85rem 1.75rem; font-size: 15px; font-weight: 700; border-radius: 50px; white-space: nowrap; text-decoration: none !important; transition: var(--sc-transition); }
+  .sc-btn-band-white:hover { background: #f8f4ee; transform: translateY(-2px); }
+  .sc-btn-band-outline { display: inline-flex; align-items: center; gap: 7px; background: transparent; color: #fff !important; border: 2px solid rgba(255,255,255,0.6); padding: 0.85rem 1.75rem; font-size: 15px; font-weight: 700; border-radius: 50px; white-space: nowrap; text-decoration: none !important; transition: var(--sc-transition); }
+  .sc-btn-band-outline:hover { background: rgba(255,255,255,0.12); border-color: #fff; }
+
+  /* ── BRANDS ── */
+  .sc-brands-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .sc-brand-card { background: #fff; border: 1px solid var(--sc-border); border-radius: var(--sc-radius); padding: 2rem 2.25rem; transition: var(--sc-transition); position: relative; overflow: hidden; }
+  .sc-brand-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--sc-accent); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+  .sc-brand-card:hover { transform: translateY(-5px); box-shadow: var(--sc-shadow-lg); }
+  .sc-brand-card:hover::before { transform: scaleX(1); }
+  .sc-brand-card-full { grid-column: 1 / -1; }
+  .sc-brand-card-dark { background: linear-gradient(135deg, #111014 0%, #1a1820 100%); border-color: rgba(154,128,80,0.2); }
+  .sc-brand-card-dark .sc-brand-name { color: #fff; }
+  .sc-brand-card-dark .sc-brand-tag { background: rgba(196,164,100,0.15); color: var(--sc-accent-warm); }
+  .sc-brand-card-dark p { color: rgba(255,255,255,0.60); }
+  .sc-brand-card-dark .sc-brand-card-footer { border-top-color: rgba(255,255,255,0.1); }
+  .sc-brand-card-dark .sc-brand-ideal { color: rgba(255,255,255,0.38); }
+  .sc-brand-card-dark .sc-brand-ideal strong { color: rgba(255,255,255,0.80); }
+  .sc-brand-card-dark .sc-brand-arrow { background: rgba(255,255,255,0.08); }
+  .sc-brand-card-dark .sc-brand-arrow svg { fill: #fff; }
+  .sc-brand-card-dark:hover .sc-brand-arrow { background: var(--sc-accent); }
+  .sc-brand-card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+  .sc-brand-name { font-size: 22px; font-weight: 900; color: var(--sc-dark); letter-spacing: -0.02em; text-transform: uppercase; }
+  .sc-brand-tag { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--sc-accent); background: var(--sc-accent-pale); padding: 4px 10px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
+  .sc-brand-card p { font-size: 14px; color: var(--sc-muted); line-height: 1.8; margin-bottom: 0.875rem; }
+  .sc-brand-card-footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 0.875rem; border-top: 1px solid var(--sc-border); margin-top: 0.5rem; }
+  .sc-brand-ideal { font-size: 13px; color: var(--sc-muted); }
+  .sc-brand-ideal strong { color: var(--sc-dark); }
+  .sc-brand-arrow { width: 34px; height: 34px; background: var(--sc-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: var(--sc-transition); text-decoration: none !important; }
+  .sc-brand-arrow svg { width: 16px; height: 16px; fill: #fff; }
+  .sc-brand-arrow:hover { background: var(--sc-accent); transform: scale(1.1); }
+
+  /* ── VISIT STEPS ── */
+  .sc-steps { display: grid; grid-template-columns: repeat(5,1fr); gap: 0; }
+  .sc-step { padding: 2.5rem 2rem; border-right: 1px solid rgba(255,255,255,0.07); text-align: center; }
+  .sc-step:last-child { border-right: none; }
+  .sc-step-circle { width: 64px; height: 64px; background: rgba(255,255,255,0.07); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.125rem; font-size: 28px; border: 1px solid rgba(255,255,255,0.1); transition: var(--sc-transition); }
+  .sc-step:hover .sc-step-circle { background: var(--sc-accent); border-color: var(--sc-accent); }
+  .sc-step h4 { font-size: 13px; color: #fff; margin-bottom: 0.5rem; letter-spacing: 0.04em; }
+  .sc-step p { font-size: 13px; color: rgba(255,255,255,0.48); line-height: 1.7; }
+
+  /* ── TECHNOLOGY ── */
+  .sc-tech-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+  .sc-tech-card { background: #fff; border: 1px solid var(--sc-border); border-radius: var(--sc-radius); padding: 1.75rem; transition: var(--sc-transition); }
+  .sc-tech-card:hover { transform: translateY(-5px); box-shadow: var(--sc-shadow); border-color: rgba(154,128,80,0.3); }
+  .sc-tech-pill { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: var(--sc-accent); background: var(--sc-accent-pale); padding: 3px 9px; border-radius: 20px; display: inline-block; margin-bottom: 0.75rem; }
+  .sc-tech-icon { font-size: 28px; margin-bottom: 0.75rem; display: block; }
+  .sc-tech-card h3 { font-size: 16px; margin-bottom: 0.625rem; }
+  .sc-tech-card p { font-size: 13px; color: var(--sc-muted); line-height: 1.8; margin: 0; }
+
+  /* ── WHY BUY LOCAL (split) ── */
+  .sc-exp-split { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .sc-exp-img { border-radius: var(--sc-radius); overflow: hidden; box-shadow: var(--sc-shadow-lg); }
+  .sc-exp-img img { width: 100%; height: 420px; object-fit: cover; display: block; transition: transform 0.6s ease; }
+  .sc-exp-img:hover img { transform: scale(1.03); }
+  .sc-feat-list { list-style: none; padding: 0; margin: 1.25rem 0 1.75rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .sc-feat-list li { display: flex; align-items: flex-start; gap: 8px; font-size: 14px; color: var(--sc-muted); line-height: 1.55; }
+  .sc-feat-list li::before { content: '✓'; color: var(--sc-accent); font-weight: 900; font-size: 12px; flex-shrink: 0; margin-top: 2px; }
+  .sc-exp-lead { font-size: 17px; color: var(--sc-muted); line-height: 1.8; margin-top: 0.875rem; }
+
+  /* ── LOCAL COVERAGE GRID ── */
+  .sc-local-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .sc-local-card { background: #fff; border: 1px solid var(--sc-border); border-radius: 14px; padding: 1.5rem 1.75rem; transition: var(--sc-transition); }
+  .sc-local-card:hover { border-color: var(--sc-accent); box-shadow: var(--sc-shadow); }
+  .sc-local-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 0.4rem; letter-spacing: 0; text-transform: none; color: var(--sc-dark); }
+  .sc-local-card p { font-size: 13px; color: var(--sc-muted); line-height: 1.65; margin: 0; }
+  .sc-local-distance { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--sc-accent); margin-top: 0.6rem; }
+
+  /* ── AUDIENCE GRID ── */
+  .sc-audience-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  .sc-audience-card { background: #fff; border: 1px solid var(--sc-border); border-radius: var(--sc-radius); padding: 2rem 1.75rem; text-align: center; transition: var(--sc-transition); }
+  .sc-audience-card:hover { transform: translateY(-5px); box-shadow: var(--sc-shadow-lg); border-color: var(--sc-accent); }
+  .sc-audience-icon { font-size: 2.2rem; margin-bottom: 0.875rem; display: block; }
+  .sc-audience-card h4 { font-size: 14px; font-weight: 700; letter-spacing: 0; text-transform: none; margin-bottom: 0.4rem; color: var(--sc-dark); }
+  .sc-audience-card p { font-size: 13px; color: var(--sc-muted); line-height: 1.6; margin: 0; }
+
+  /* ── FAQ ── */
+  .sc-faq-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 0 3rem; }
+  .sc-faq-item { border-bottom: 1px solid var(--sc-border); }
+  .sc-faq-q { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0; cursor: pointer; gap: 1rem; }
+  .sc-faq-q h3 { font-size: 15px; font-weight: 700; margin: 0; line-height: 1.4; font-family: 'Inter', sans-serif; transition: color 0.2s; }
+  .sc-faq-q:hover h3 { color: var(--sc-accent); }
+  .sc-faq-toggle { width: 24px; height: 24px; fill: var(--sc-muted2); flex-shrink: 0; transition: transform 0.3s; }
+  .sc-faq-item.sc-open .sc-faq-toggle { transform: rotate(45deg); }
+  .sc-faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .sc-faq-a p { font-size: 14px; color: var(--sc-muted); line-height: 1.8; padding-bottom: 1.25rem; margin: 0; }
+
+  /* ── FINAL CTA ── */
+  .sc-final-cta { background: linear-gradient(135deg, #050505 0%, #180f08 60%, #050505 100%); padding: 6rem 2rem; position: relative; overflow: hidden; }
+  .sc-final-cta::before { content: ''; position: absolute; top: -40%; right: -8%; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(154,128,80,0.12) 0%, transparent 70%); pointer-events: none; }
+  .sc-final-cta-inner { max-width: 860px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+  .sc-final-cta h2 { color: #fff; margin-bottom: 1rem; }
+  .sc-final-cta h2 em { color: var(--sc-accent-warm); font-style: italic; }
+  .sc-final-cta p { font-size: 17px; color: rgba(255,255,255,0.60); line-height: 1.8; max-width: 620px; margin: 0 auto 2.5rem; }
+  .sc-final-cta-btns { display: flex; justify-content: center; gap: 0.875rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+  .sc-trust-row { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+  .sc-trust-item { display: flex; align-items: center; gap: 6px; font-size: 13px; color: rgba(255,255,255,0.45); font-weight: 600; }
+  .sc-trust-item svg { width: 14px; height: 14px; fill: var(--sc-accent); }
+
+  /* ── FOOTER ── */
+  .sc-footer { background: #0d0d0d; padding: 4rem 0 2rem; }
+  .sc-footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+  .sc-footer-brand { font-size: 16px; font-weight: 800; color: #fff; letter-spacing: -0.01em; display: block; margin-bottom: 0.875rem; }
+  .sc-footer-grid > div > p { font-size: 13px; color: rgba(255,255,255,0.38); line-height: 1.8; }
+  .sc-footer-grid h4 { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(255,255,255,0.38); margin-bottom: 1rem; }
+  .sc-footer-grid a { display: block; font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 0.5rem; transition: color 0.2s; }
+  .sc-footer-grid a:hover { color: #fff; }
+  .sc-footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .sc-footer-bottom span { font-size: 12px; color: rgba(255,255,255,0.28); }
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:1100px) {
+    .sc-location-grid { grid-template-columns: 1fr; }
+    .sc-brands-grid { grid-template-columns: 1fr; }
+    .sc-brand-card-full { grid-column: auto; }
+    .sc-tech-grid { grid-template-columns: repeat(2,1fr); }
+    .sc-steps { grid-template-columns: repeat(3,1fr); }
+    .sc-steps .sc-step:nth-child(3) { border-right: none; }
+    .sc-footer-grid { grid-template-columns: 1fr 1fr; }
+    .sc-audience-grid { grid-template-columns: repeat(2, 1fr); }
+    .sc-local-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media(max-width:900px) {
+    .sc-hero { min-height: 75vh; }
+    .sc-why-grid { grid-template-columns: 1fr; }
+    .sc-exp-split { grid-template-columns: 1fr; }
+    .sc-faq-columns { grid-template-columns: 1fr; }
+    .sc-section { padding: 3.5rem 0; }
+    .sc-stat { padding: 1.25rem 2rem; }
+    .sc-cta-band-inner { flex-direction: column; text-align: center; }
+  }
+  @media(max-width:640px) {
+    .sc-container { padding: 0 1.25rem; }
+    .sc-hero-content { padding: 3rem 0 3.5rem; }
+    .sc-steps { grid-template-columns: 1fr 1fr; }
+    .sc-steps .sc-step:nth-child(2n) { border-right: none; }
+    .sc-steps .sc-step:nth-child(3) { border-right: 1px solid rgba(255,255,255,0.07); }
+    .sc-tech-grid { grid-template-columns: 1fr; }
+    .sc-footer-grid { grid-template-columns: 1fr; }
+
+    .sc-sticky-cta { bottom: 1rem; right: 1rem; }
+    .sc-audience-grid { grid-template-columns: 1fr; }
+    .sc-local-grid { grid-template-columns: 1fr; }
+    .sc-hero-btns { flex-direction: column; }
+    .sc-hero-trust { gap: 1.25rem; }
+  }
+</style>
+
+<div class="sc-wrap">
+
+
+
+
+  {%- comment -%} ── STICKY CTAs ── {%- endcomment -%}
+  <div class="sc-sticky-cta" id="sc-sticky-cta">
+    <a href="tel:+14088891188" class="sc-sticky-btn sc-sticky-call" id="sc-sticky-call-btn">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      Call Now
+    </a>
+    <a href="https://maps.app.goo.gl/3ouzQFA5WDpeVyr39" target="_blank" rel="noopener" class="sc-sticky-btn sc-sticky-dir" id="sc-sticky-dir-btn">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      Get Directions
+    </a>
+  </div>
+
+  {%- comment -%} ══════════ HERO ══════════ {%- endcomment -%}
+  <div class="sc-bleed">
+    <section class="sc-hero" id="sc-hero" aria-labelledby="sc-hero-heading">
+      <div class="sc-hero-bg">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/santa-clara-showroom-hero.jpg"
+          alt=""
+          aria-hidden="true"
+          fetchpriority="high"
+          width="2000"
+          height="1200"
+        >
+      </div>
+      <div class="sc-hero-overlay"></div>
+      <div class="sc-hero-content">
+        <div class="sc-container">
+          <div class="sc-hero-badge">
+            <span class="sc-hero-badge-dot"></span>
+            Santa Clara, CA &middot; Westfield Valley Fair
+          </div>
+          <h1 id="sc-hero-heading">
+            South Bay&rsquo;s Premier<br>
+            <em>Luxury Massage Chair</em><br>
+            Showroom
+          </h1>
+          <p class="sc-hero-lead">Experience OHCO, Panasonic, Positive Posture, D.Core, and Koyo massage chairs in person &mdash; with expert guidance and zero sales pressure. The smartest decision starts with sitting in the right chair.</p>
+          <div class="sc-hero-btns">
+            <a href="#sc-location" class="sc-btn sc-btn-primary" id="sc-hero-visit-btn">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              Visit Our Santa Clara Showroom
+            </a>
+            <a href="tel:+14088891188" class="sc-btn sc-btn-outline" id="sc-hero-call-btn">
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              Book an Appointment
+            </a>
+            <a href="https://maps.app.goo.gl/3ouzQFA5WDpeVyr39" target="_blank" rel="noopener" class="sc-btn sc-btn-dark" id="sc-hero-dir-btn">
+              <svg viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9a.996.996 0 00-1.41 0l-9 9a.996.996 0 000 1.41l9 9c.39.39 1.02.39 1.41 0l9-9a.996.996 0 000-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>
+              Get Directions
+            </a>
+          </div>
+          <div class="sc-hero-trust">
+            <div class="sc-hero-trust-item">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              Try before you buy
+            </div>
+            <div class="sc-hero-trust-item">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              5 elite brands under one roof
+            </div>
+            <div class="sc-hero-trust-item">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+              Flexible financing available
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  {%- comment -%} ── STATS BAR ── {%- endcomment -%}
+  <div class="sc-bleed" style="background:#0d0d0d;">
+    <div class="sc-stats-inner">
+      <div class="sc-stat">
+        <span class="sc-stat-num">20<span>+</span></span>
+        <span class="sc-stat-label">Chairs on the Floor</span>
+      </div>
+      <div class="sc-stat">
+        <span class="sc-stat-num">5</span>
+        <span class="sc-stat-label">Premium Brands</span>
+      </div>
+      <div class="sc-stat">
+        <span class="sc-stat-num">15<span>+</span></span>
+        <span class="sc-stat-label">Years of Expertise</span>
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} ══════════ LOCATION + MAP ══════════ {%- endcomment -%}
+  <section class="sc-section sc-section-alt" id="sc-location" aria-labelledby="sc-location-heading">
+    <div class="sc-container">
+      <div class="sc-section-header center">
+        <span class="sc-eyebrow">Find Us</span>
+        <h2 id="sc-location-heading">Visit the Santa Clara Showroom</h2>
+        <p>Conveniently located inside Westfield Valley Fair &mdash; easily accessible from San Jose, Cupertino, Sunnyvale, and across the South Bay. Free parking throughout the complex.</p>
+      </div>
+
+      <div class="sc-location-grid">
+        <div>
+          <div class="sc-info-block">
+            <div class="sc-info-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            <div class="sc-info-text">
+              <h4>Address</h4>
+              <a href="https://maps.app.goo.gl/3ouzQFA5WDpeVyr39" target="_blank" rel="noopener">2855 Stevens Creek Blvd, Suite 1091<br>Santa Clara, CA 95050</a>
+              <div class="sc-parking-note">
+                <svg viewBox="0 0 24 24"><path d="M13 3H6v18h4v-6h3c3.31 0 6-2.69 6-6s-2.69-6-6-6zm.2 8H10V7h3.2c1.1 0 2 .9 2 2s-.9 2-2 2z"/></svg>
+                Free parking throughout Westfield Valley Fair
+              </div>
+            </div>
+          </div>
+          <div class="sc-info-block">
+            <div class="sc-info-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+            <div class="sc-info-text">
+              <h4>Phone &amp; Email</h4>
+              <a href="tel:+14088891188">+1 (408) 889-1188</a>
+              <a href="mailto:info@massagechairsandmore.com" style="margin-top:0.4rem; font-size:13px; color:var(--sc-muted2);">info@massagechairsandmore.com</a>
+            </div>
+          </div>
+          <div class="sc-info-block">
+            <div class="sc-info-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
+            <div class="sc-info-text">
+              <h4>Showroom Hours</h4>
+              <table class="sc-hours-table">
+                <tr><td>Monday &ndash; Friday</td><td>10:00 AM &ndash; 9:00 PM</td></tr>
+                <tr><td>Saturday</td><td>10:00 AM &ndash; 9:00 PM</td></tr>
+                <tr><td>Sunday</td><td>11:00 AM &ndash; 7:00 PM</td></tr>
+              </table>
+            </div>
+          </div>
+          <div class="sc-info-block">
+            <div class="sc-info-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            <div class="sc-info-text">
+              <h4>Serving the South Bay</h4>
+              <p>Santa Clara &middot; San Jose &middot; Cupertino &middot; Sunnyvale &middot; Mountain View &middot; Palo Alto &middot; Saratoga &middot; Los Gatos &middot; Campbell &middot; Los Altos</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sc-map-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d808459.2213296378!2d-123.5913894!3d37.6716778!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcb72d5893899%3A0xa7d7899fbfeada52!2sMassage%20Chairs%20%26%20More!5e0!3m2!1sen!2str!4v1776632791859!5m2!1sen!2str"
+            title="Massage Chairs and More Santa Clara Showroom &ndash; Westfield Valley Fair"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <a href="https://maps.app.goo.gl/3ouzQFA5WDpeVyr39" target="_blank" rel="noopener" class="sc-directions-btn" id="sc-get-directions-btn">
+            <svg viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9a.996.996 0 00-1.41 0l-9 9a.996.996 0 000 1.41l9 9c.39.39 1.02.39 1.41 0l9-9a.996.996 0 000-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>
+            Get Directions to Santa Clara Showroom
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ══════════ WHY VISIT ══════════ {%- endcomment -%}
+  <section class="sc-section" id="sc-why-visit" aria-labelledby="sc-why-heading">
+    <div class="sc-container">
+      <div class="sc-why-grid">
+        <div class="sc-why-img">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/santa-clara-customer-consultation.jpg"
+            alt="Expert wellness consultant guiding a customer through a guided massage chair trial at the Santa Clara showroom"
+            loading="lazy"
+            width="800"
+            height="1000"
+          >
+          <div class="sc-why-badge">
+            <div class="sc-why-badge-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+            <div class="sc-why-badge-text">
+              <strong>Zero-Pressure, Expert-Guided Experience</strong>
+              <span>Try any chair &mdash; for as long as you need</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <span class="sc-eyebrow">Why Visit In Person</span>
+          <h2 id="sc-why-heading">A Premium Massage Chair Is a Decision You Feel &mdash; Not One You Read About</h2>
+          <p class="sc-exp-lead">Shopping for a luxury massage chair online is like choosing a mattress by reading its description. No product page can replicate what your body tells you when you recline into a full zero gravity position and feel the chair respond in real time.</p>
+          <div class="sc-why-reasons">
+            <div class="sc-reason">
+              <div class="sc-reason-icon"><svg viewBox="0 0 24 24"><path d="M21 6.5l-4-4-8.5 8.5-2 5 5-2L21 6.5z"/></svg></div>
+              <div>
+                <strong>Personalized Body Scan &amp; Chair Fitting</strong>
+                <span>Each chair&rsquo;s automated body scan calibrates for your height, shoulder width, and spinal curve &mdash; so from the first moment, the massage meets your body, not a default profile.</span>
+              </div>
+            </div>
+            <div class="sc-reason">
+              <div class="sc-reason-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+              <div>
+                <strong>Side-by-Side Brand Comparison on Live Chairs</strong>
+                <span>Feel the real difference between OHCO, Panasonic, D.Core, Positive Posture and Koyo. No spec sheet conveys what 15 minutes in the right chair does.</span>
+              </div>
+            </div>
+            <div class="sc-reason">
+              <div class="sc-reason-icon"><svg viewBox="0 0 24 24"><path d="M11.5 2C6.81 2 3 5.81 3 10.5S6.81 19 11.5 19h.5v3c4.86-2.34 8-7 8-11.5C20 5.81 16.19 2 11.5 2zm1 14.5h-2v-2h2v2zm0-4h-2c0-3.25 3-3 3-5 0-1.1-.9-2-2-2s-2 .9-2 2h-2c0-2.21 1.79-4 4-4s4 1.79 4 4c0 2.5-3 2.75-3 5z"/></svg></div>
+              <div>
+                <strong>Expert Guidance &mdash; No Commission Pressure</strong>
+                <span>Our specialists are trained to identify the right chair for your body, wellness goals, and budget &mdash; even when that means recommending a mid-range option.</span>
+              </div>
+            </div>
+            <div class="sc-reason">
+              <div class="sc-reason-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg></div>
+              <div>
+                <strong>Flexible Financing &amp; White-Glove Delivery</strong>
+                <span>Monthly payment plans available, white-glove in-home delivery, and professional setup included across the South Bay.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ── CTA BAND 1 ── {%- endcomment -%}
+  <div class="sc-bleed">
+    <div class="sc-cta-band">
+      <div class="sc-cta-band-inner">
+        <div>
+          <h2>Ready to Find Your Perfect Chair?</h2>
+          <p>Compare OHCO, Panasonic, Positive Posture, D.Core &amp; Koyo &mdash; all in one Santa Clara showroom</p>
+        </div>
+        <div class="sc-cta-band-btns">
+          <a href="tel:+14088891188" class="sc-btn-band-white" id="sc-cta-band-1-call">Call (408) 889-1188</a>
+          <a href="#sc-location" class="sc-btn-band-outline" id="sc-cta-band-1-visit">Visit the Showroom</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} ══════════ BRANDS ══════════ {%- endcomment -%}
+  <section class="sc-section sc-section-alt" id="sc-brands" aria-labelledby="sc-brands-heading">
+    <div class="sc-container">
+      <div class="sc-section-header center">
+        <span class="sc-eyebrow">What We Carry</span>
+        <h2 id="sc-brands-heading">Five World-Class Massage Chair Brands. One Santa Clara Showroom.</h2>
+        <p>Every brand was selected for engineering integrity, therapeutic excellence, and long-term ownership satisfaction. Compare them all in person &mdash; side by side.</p>
+      </div>
+
+      <div class="sc-brands-grid">
+        {%- comment -%} OHCO {%- endcomment -%}
+        <div class="sc-brand-card" id="sc-brand-ohco">
+          <div class="sc-brand-card-header">
+            <div class="sc-brand-name">OHCO</div>
+            <span class="sc-brand-tag">Ultra-Premium Luxury</span>
+          </div>
+          <p>OHCO represents the convergence of Japanese craftsmanship and Silicon Valley precision. Drawing on a philosophy that wellness and artistry are inseparable, OHCO chairs &mdash; including the celebrated M.8 and R6 &mdash; deliver a deeply intuitive full-body massage experience wrapped in materials that rival high-end furniture.</p>
+          <p>With advanced 4D massage technology, full L-track coverage, and a zero gravity recline that disappears into any living room, OHCO is the chair that customers travel across the Bay Area specifically to experience. See it live at our Santa Clara showroom.</p>
+          <div class="sc-brand-card-footer">
+            <div class="sc-brand-ideal"><strong>Ideal for:</strong> Design-forward homeowners, luxury buyers, gift shoppers, statement wellness investments.</div>
+            <a href="{{ shop.url }}/collections/ohco" class="sc-brand-arrow" aria-label="Browse OHCO massage chairs"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
+          </div>
+        </div>
+
+        {%- comment -%} Panasonic {%- endcomment -%}
+        <div class="sc-brand-card" id="sc-brand-panasonic">
+          <div class="sc-brand-card-header">
+            <div class="sc-brand-name">Panasonic</div>
+            <span class="sc-brand-tag">Therapeutic Precision</span>
+          </div>
+          <p>Panasonic has spent over five decades studying human anatomy to build chairs that don&rsquo;t just feel good &mdash; they work. Their advanced body scan technology maps your unique spinal geometry in seconds, calibrating the massage rollers with surgical precision at exactly the zones that need it most.</p>
+          <p>The Panasonic MAN1 and MAF1 are benchmarks for deep tissue relief, particularly for desk professionals managing lumbar fatigue or postural strain. If performance and scientific rigor define your standard, Panasonic is the brand to experience first.</p>
+          <div class="sc-brand-card-footer">
+            <div class="sc-brand-ideal"><strong>Ideal for:</strong> Tech professionals, chronic back pain, athletes in recovery, buyers prioritizing therapeutic depth.</div>
+            <a href="{{ shop.url }}/collections/panasonic" class="sc-brand-arrow" aria-label="Browse Panasonic massage chairs"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
+          </div>
+        </div>
+
+        {%- comment -%} Positive Posture {%- endcomment -%}
+        <div class="sc-brand-card" id="sc-brand-positive-posture">
+          <div class="sc-brand-card-header">
+            <div class="sc-brand-name" style="font-size:18px;">Positive Posture</div>
+            <span class="sc-brand-tag">Comfort &amp; Wellness</span>
+          </div>
+          <p>Positive Posture was built around a conviction that daily recovery should be genuinely accessible &mdash; not technically intimidating or clinically cold. Their chairs prioritize earned comfort at every level: intuitive controls, whisper-quiet air systems, heat-enriched lumbar and calf therapy, and ergonomic profiles designed for extended, relaxed daily use.</p>
+          <p>These are the chairs that customers come home to every evening after demanding days in Silicon Valley offices. Accessible luxury at its most restorative &mdash; the kind that earns a permanent place in the living room within the first week.</p>
+          <div class="sc-brand-card-footer">
+            <div class="sc-brand-ideal"><strong>Ideal for:</strong> Daily wellness routines, families, seniors, professionals seeking restorative stress relief.</div>
+            <a href="{{ shop.url }}/collections/positive-posture" class="sc-brand-arrow" aria-label="Browse Positive Posture chairs"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
+          </div>
+        </div>
+
+        {%- comment -%} Koyo {%- endcomment -%}
+        <div class="sc-brand-card" id="sc-brand-koyo">
+          <div class="sc-brand-card-header">
+            <div class="sc-brand-name">Koyo</div>
+            <span class="sc-brand-tag">Trusted Performance</span>
+          </div>
+          <p>Koyo has earned a strong reputation in the premium segment by delivering sophisticated massage performance without unnecessary complexity. Built around L-track coverage, precise 4D roller systems, intelligent body scanning, and heat therapy, Koyo consistently surprises buyers who discover them for the first time.</p>
+          <p>For South Bay buyers entering premium massage chair ownership, or those seeking maximum performance per dollar from a credible, reliable brand, Koyo chairs consistently deliver the long-term satisfaction that earns referrals.</p>
+          <div class="sc-brand-card-footer">
+            <div class="sc-brand-ideal"><strong>Ideal for:</strong> First-time premium buyers, practical luxury shoppers, long-term comfort seekers.</div>
+            <a href="{{ shop.url }}/collections/koyo" class="sc-brand-arrow" aria-label="Browse Koyo chairs"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
+          </div>
+        </div>
+
+        {%- comment -%} D.Core — full width featured {%- endcomment -%}
+        <div class="sc-brand-card sc-brand-card-full sc-brand-card-dark" id="sc-brand-dcore">
+          <div class="sc-brand-card-header">
+            <div class="sc-brand-name">D.Core</div>
+            <span class="sc-brand-tag">Japanese-Inspired Refinement</span>
+          </div>
+          <p style="max-width:860px;">D.Core was conceived to occupy a specific, rare position in the premium massage chair world: the intersection of elevated Japanese-inspired aesthetics and uncompromising massage performance. For buyers who find most luxury chairs either too clinical or too understated, D.Core offers something genuinely different &mdash; a chair that commands its environment with understated confidence while delivering a deeply refined massage experience.</p>
+          <p style="max-width:860px;">Every element of the D.Core experience is considered: the way the materials present and age gracefully, the sophistication of the control interface, the precision with which the massage program builds from surface relaxation to deeper tissue release. It is a serious choice for buyers comparing elite brands who want a chair that earns its place in a premium living space &mdash; not just functionally, but aesthetically. See D.Core in person at our Santa Clara showroom.</p>
+          <div class="sc-brand-card-footer">
+            <div class="sc-brand-ideal"><strong>Ideal for:</strong> Design-conscious luxury buyers, interior-focused homeowners, buyers seeking refined Japanese-inspired aesthetics alongside serious massage performance.</div>
+            <a href="{{ shop.url }}/collections/d-core" class="sc-brand-arrow" aria-label="Browse D.Core chairs"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ══════════ VISIT STEPS ══════════ {%- endcomment -%}
+  <div class="sc-bleed">
+    <section class="sc-section sc-dark" id="sc-steps" aria-labelledby="sc-steps-heading">
+    <div class="sc-container">
+      <div class="sc-section-header center">
+        <span class="sc-eyebrow" style="color:var(--sc-accent-warm);">Your Visit, Step by Step</span>
+        <h2 id="sc-steps-heading" style="color:#fff;">What to Expect at the Santa Clara Showroom</h2>
+        <p style="color:rgba(255,255,255,0.50);">From the moment you walk through the door, your time is treated as the most important appointment of the day.</p>
+      </div>
+      <div class="sc-steps">
+        <div class="sc-step">
+          <div class="sc-step-circle">&#128075;</div>
+          <h4>Welcome &amp; Wellness Consultation</h4>
+          <p>We start with a genuine conversation &mdash; your tension areas, lifestyle, and health goals. This shapes every chair we show you.</p>
+        </div>
+        <div class="sc-step">
+          <div class="sc-step-circle">&#128208;</div>
+          <h4>Comfort Preference &amp; Body Fitting</h4>
+          <p>We discuss your priorities: deep tissue vs. gentle relief, heat, air compression, recline depth. Each chair is adjusted to your dimensions.</p>
+        </div>
+        <div class="sc-step">
+          <div class="sc-step-circle">&#10024;</div>
+          <h4>Guided Chair Trial</h4>
+          <p>You&rsquo;ll experience 2&ndash;4 chairs curated to your profile. No rushingm, full program cycles while we explain what you&rsquo;re feeling.</p>
+        </div>
+        <div class="sc-step">
+          <div class="sc-step-circle">&#9878;&#65039;</div>
+          <h4>Side-by-Side Comparison</h4>
+          <p>We compare massage intensity, coverage, heat, and air compression between your shortlist. Most customers feel a clear preference emerge here.</p>
+        </div>
+        <div class="sc-step">
+          <div class="sc-step-circle">&#127919;</div>
+          <h4>Expert Recommendation</h4>
+          <p>A clear, honest recommendation based on what your body responded to &mdash; not margins. Take your time. No pressure, ever.</p>
+        </div>
+      </div>
+    </div>
+    </section>
+  </div>
+
+  {%- comment -%} ══════════ TECHNOLOGY ══════════ {%- endcomment -%}
+  <section class="sc-section" id="sc-technology" aria-labelledby="sc-tech-heading">
+    <div class="sc-container">
+      <div class="sc-section-header center">
+        <span class="sc-eyebrow">Understanding the Technology</span>
+        <h2 id="sc-tech-heading">What Separates a Premium Massage Chair from Everything Else</h2>
+        <p>The technology vocabulary that separates a $500 chair from a $9,000 one &mdash; and why each feature meaningfully impacts your daily experience.</p>
+      </div>
+      <div class="sc-tech-grid">
+        <div class="sc-tech-card" id="sc-tech-4d">
+          <span class="sc-tech-pill">Advanced Massage</span>
+          <span class="sc-tech-icon">&#129306;</span>
+          <h3>4D Massage Technology</h3>
+          <p>A <strong>4D massage arm</strong> moves in four dimensions &mdash; forward, backward, side to side, and variable speed &mdash; enabling rollers to replicate the nuanced pressure and release patterns of a skilled human therapist. You feel the difference immediately compared to 3D or 2D systems.</p>
+        </div>
+        <div class="sc-tech-card" id="sc-tech-body-scan">
+          <span class="sc-tech-pill">Smart Technology</span>
+          <span class="sc-tech-icon">&#128225;</span>
+          <h3>Automatic Body Scan</h3>
+          <p>Before every session, <strong>body scan technology</strong> maps your spinal length, shoulder width, and body curvature, calibrating roller positioning so the massage zones align precisely with your anatomy &mdash; not an averaged profile.</p>
+        </div>
+        <div class="sc-tech-card" id="sc-tech-zero-gravity">
+          <span class="sc-tech-pill">Spinal Relief</span>
+          <span class="sc-tech-icon">&#128640;</span>
+          <h3>Zero Gravity Recline</h3>
+          <p><strong>Zero gravity positioning</strong> elevates your legs above your heart &mdash; the neutral body position originally developed by NASA. Your spine decompresses naturally, and the massage penetrates more deeply at the same pressure settings.</p>
+        </div>
+        <div class="sc-tech-card" id="sc-tech-ltrack">
+          <span class="sc-tech-pill">Full Coverage</span>
+          <span class="sc-tech-icon">&#128260;</span>
+          <h3>L-Track vs. S-Track</h3>
+          <p>An <strong>L-track</strong> extends the massage rail from the neck down through the seat to reach the glutes and hamstrings &mdash; critical for sciatic tension and hip flexor tightness. An <strong>S-track</strong> covers only the spine&rsquo;s natural curve. All elite brands here use L-track.</p>
+        </div>
+        <div class="sc-tech-card" id="sc-tech-air">
+          <span class="sc-tech-pill">Full-Body Compression</span>
+          <span class="sc-tech-icon">&#128168;</span>
+          <h3>Air Compression Massage</h3>
+          <p><strong>Air compression systems</strong> use inflatable chambers across the shoulders, arms, hips, calves and feet to apply rhythmic compression and release, promoting circulation and reducing muscle tension throughout the extremities.</p>
+        </div>
+        <div class="sc-tech-card" id="sc-tech-heat">
+          <span class="sc-tech-pill">Soothing Warmth</span>
+          <span class="sc-tech-icon">&#127777;&#65039;</span>
+          <h3>Heat Therapy</h3>
+          <p><strong>Heat therapy</strong> positioned along the lumbar region and calves loosens muscle tissue during massage, allowing rollers and air compression to work more effectively while adding a deeply soothing layer to every evening session.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ══════════ WHO THIS IS FOR ══════════ {%- endcomment -%}
+  <section class="sc-section sc-section-alt" id="sc-audience" aria-labelledby="sc-audience-heading">
+    <div class="sc-container">
+      <div class="sc-section-header center">
+        <span class="sc-eyebrow">Who Visits Our Showroom</span>
+        <h2 id="sc-audience-heading">A Premium Experience for Every Kind of Buyer</h2>
+        <p>Our Santa Clara showroom serves a wide range of high-intent visitors from across the South Bay &mdash; each with a different reason, and each arriving with decisions that deserve clarity.</p>
+      </div>
+      <div class="sc-audience-grid">
+        <div class="sc-audience-card" id="sc-audience-professionals">
+          <span class="sc-audience-icon">&#128188;</span>
+          <h4>Busy South Bay Professionals</h4>
+          <p>Tech executives and engineers seeking daily decompression after demanding hours at a desk or in meetings.</p>
+        </div>
+        <div class="sc-audience-card" id="sc-audience-homeowners">
+          <span class="sc-audience-icon">&#127968;</span>
+          <h4>Wellness-Focused Homeowners</h4>
+          <p>Buyers in Saratoga, Los Gatos, and Palo Alto who view a luxury massage chair as a meaningful long-term home wellness investment.</p>
+        </div>
+        <div class="sc-audience-card" id="sc-audience-relief">
+          <span class="sc-audience-icon">&#129496;</span>
+          <h4>Stress Relief Seekers</h4>
+          <p>Anyone managing daily tension, postural fatigue, or the physical cost of modern work &mdash; looking for restorative comfort on demand.</p>
+        </div>
+        <div class="sc-audience-card" id="sc-audience-luxury">
+          <span class="sc-audience-icon">&#10024;</span>
+          <h4>Luxury Shoppers</h4>
+          <p>Discerning buyers for whom design quality, material refinement, and overall ownership experience matter as much as performance.</p>
+        </div>
+        <div class="sc-audience-card" id="sc-audience-recovery">
+          <span class="sc-audience-icon">&#127939;</span>
+          <h4>Recovery-Focused Buyers</h4>
+          <p>Athletes and fitness enthusiasts looking for a serious performance recovery tool to integrate into their daily routine.</p>
+        </div>
+        <div class="sc-audience-card" id="sc-audience-gifters">
+          <span class="sc-audience-icon">&#127873;</span>
+          <h4>Gift Buyers</h4>
+          <p>Spouses and family members purchasing a meaningful gift &mdash; often for a partner, parent, or someone who deserves a premium wellness investment.</p>
+        </div>
+        <div class="sc-audience-card" id="sc-audience-researchers">
+          <span class="sc-audience-icon">&#128269;</span>
+          <h4>Brand Researchers</h4>
+          <p>Shoppers who have done their research online and want to validate their shortlist by sitting in the chairs before committing to a $5,000&ndash;$12,000 purchase.</p>
+        </div>
+        <div class="sc-audience-card" id="sc-audience-seniors">
+          <span class="sc-audience-icon">&#128155;</span>
+          <h4>Seniors &amp; Families</h4>
+          <p>Multigenerational households seeking a safe, comfortable wellness tool that offers lasting restorative comfort for multiple body types.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ══════════ WHY BUY LOCAL ══════════ {%- endcomment -%}
+  <section class="sc-section" id="sc-why-local" aria-labelledby="sc-local-buy-heading">
+    <div class="sc-container">
+      <div class="sc-exp-split">
+        <div class="sc-exp-img">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/santa-clara-brand-comparison.jpg"
+            alt="Side-by-side premium massage chair brand comparison at the Santa Clara showroom"
+            loading="lazy"
+            width="800"
+            height="600"
+          >
+        </div>
+        <div>
+          <span class="sc-eyebrow">Why Visit Instead of Buying Online</span>
+          <h2 id="sc-local-buy-heading">The Smartest High-Ticket Decision Starts With Sitting in the Chair</h2>
+          <p class="sc-exp-lead">Buying a premium massage chair online without a trial is one of the most common sources of buyer regret in the luxury wellness category. A chair that sounds perfect in a description may feel firm where you need softness, or miss coverage where your body needs it most.</p>
+          <ul class="sc-feat-list">
+            <li>Eliminate guesswork &mdash; your body responds immediately when the chair is right</li>
+            <li>Compare OHCO, Panasonic, Positive Posture, D.Core and Koyo side by side on the same afternoon</li>
+            <li>Get expert guidance on which features actually matter for your specific needs</li>
+            <li>Understand 4D massage, zero gravity, and L-track coverage through direct experience</li>
+            <li>Leave with complete confidence in your purchase &mdash; no return stress or second-guessing</li>
+            <li>Benefit from white-glove delivery, in-home setup, and local after-sale support</li>
+          </ul>
+          <div style="display:flex; gap:0.875rem; flex-wrap:wrap;">
+            <a href="#sc-location" class="sc-btn sc-btn-primary" id="sc-local-visit-btn">Visit the Santa Clara Showroom</a>
+            <a href="tel:+14088891188" class="sc-btn sc-btn-dark" id="sc-local-call-btn">Call to Book a Trial</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ══════════ SOUTH BAY COVERAGE ══════════ {%- endcomment -%}
+  <section class="sc-section sc-section-alt" id="sc-south-bay" aria-labelledby="sc-southbay-heading">
+    <div class="sc-container">
+      <div class="sc-section-header center">
+        <span class="sc-eyebrow">The South Bay&rsquo;s Destination Showroom</span>
+        <h2 id="sc-southbay-heading">Serving Santa Clara, San Jose &amp; the Entire Silicon Valley</h2>
+        <p>Our Santa Clara showroom at Westfield Valley Fair is the most accessible premium massage chair destination for communities across the South Bay.</p>
+      </div>
+      <div class="sc-local-grid">
+        <div class="sc-local-card" id="sc-local-santa-clara">
+          <h4>📍 Santa Clara</h4>
+          <p>Our home. Located centrally in Westfield Valley Fair, the showroom is as convenient for Santa Clara residents as a weekend visit to the mall. Drop in anytime during regular hours.</p>
+          <span class="sc-local-distance">Primary Location</span>
+        </div>
+        <div class="sc-local-card" id="sc-local-san-jose">
+          <h4>📍 San Jose</h4>
+          <p>Whether you&rsquo;re coming from Willow Glen, Almaden Valley, or downtown San Jose, Valley Fair is an easy and familiar destination for your massage chair trial.</p>
+          <span class="sc-local-distance">~10 min drive</span>
+        </div>
+        <div class="sc-local-card" id="sc-local-cupertino">
+          <h4>📍 Cupertino</h4>
+          <p>Apple campus professionals and Cupertino residents will find our Santa Clara showroom is the closest expert destination for comparing luxury massage chairs in person.</p>
+          <span class="sc-local-distance">~10 min drive</span>
+        </div>
+        <div class="sc-local-card" id="sc-local-sunnyvale">
+          <h4>📍 Sunnyvale</h4>
+          <p>Sunnyvale residents looking for the best massage chair store nearby will find our Santa Clara showroom is a convenient and comprehensive choice.</p>
+          <span class="sc-local-distance">~12 min drive</span>
+        </div>
+        <div class="sc-local-card" id="sc-local-mountain-view">
+          <h4>📍 Mountain View</h4>
+          <p>Mountain View residents often visit our Santa Clara showroom to discover how a premium massage chair transforms a daily recovery and decompression routine.</p>
+          <span class="sc-local-distance">~15 min drive</span>
+        </div>
+        <div class="sc-local-card" id="sc-local-palo-alto">
+          <h4>📍 Palo Alto</h4>
+          <p>Palo Alto buyers seeking luxury massage chairs in the South Bay find our Santa Clara showroom to be the most curated, expert-led destination in the region.</p>
+          <span class="sc-local-distance">~18 min drive</span>
+        </div>
+        <div class="sc-local-card" id="sc-local-saratoga">
+          <h4>📍 Saratoga</h4>
+          <p>Saratoga residents with an eye for premium quality gravitate naturally to our showroom &mdash; particularly for OHCO and D.Core, which pair beautifully with luxury home environments.</p>
+          <span class="sc-local-distance">~15 min drive</span>
+        </div>
+        <div class="sc-local-card" id="sc-local-los-gatos">
+          <h4>📍 Los Gatos</h4>
+          <p>Los Gatos buyers looking for a premium massage chair showroom will find our Santa Clara location is a short, pleasant drive and well worth the visit.</p>
+          <span class="sc-local-distance">~18 min drive</span>
+        </div>
+        <div class="sc-local-card" id="sc-local-bay-area">
+          <h4>📍 Broader Bay Area</h4>
+          <p>Buyers traveling from San Francisco, the Peninsula, or the East Bay increasingly choose our Santa Clara showroom for its comprehensive brand range and guided trial experience.</p>
+          <span class="sc-local-distance">Serving the Full Bay Area</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ── CTA BAND 2 ── {%- endcomment -%}
+  <div class="sc-bleed">
+    <div class="sc-cta-band">
+      <div class="sc-cta-band-inner">
+        <div>
+          <h2>Compare Premium Massage Chairs in Person</h2>
+          <p>OHCO &middot; Panasonic &middot; Positive Posture &middot; D.Core &middot; Koyo &mdash; all waiting for you in Santa Clara</p>
+        </div>
+        <div class="sc-cta-band-btns">
+          <a href="https://maps.app.goo.gl/3ouzQFA5WDpeVyr39" target="_blank" rel="noopener" class="sc-btn-band-white" id="sc-cta-band-2-dir">Get Directions</a>
+          <a href="tel:+14088891188" class="sc-btn-band-outline" id="sc-cta-band-2-call">Call (408) 889-1188</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} ══════════ FAQ ══════════ {%- endcomment -%}
+  <section class="sc-section sc-section-alt" id="sc-faq" aria-labelledby="sc-faq-heading">
+    <div class="sc-container-sm">
+      <div class="sc-section-header center">
+        <span class="sc-eyebrow">Frequently Asked Questions</span>
+        <h2 id="sc-faq-heading">Everything You Want to Know Before You Visit</h2>
+        <p>Answers to the questions we hear most from buyers across Santa Clara, San Jose, Cupertino, and the broader South Bay.</p>
+      </div>
+
+      <div class="sc-faq-columns">
+        <div>
+          <div class="sc-faq-item" id="sc-faq-1">
+            <div class="sc-faq-q">
+              <h3>Where can I try massage chairs in Santa Clara?</h3>
+              <svg class="sc-faq-toggle" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <div class="sc-faq-a"><p>Massage Chairs and More at Westfield Valley Fair (2855 Stevens Creek Blvd, Suite 1091, Santa Clara, CA 95050) is the premier destination for experiencing premium massage chairs in person in the South Bay. We carry OHCO, Panasonic, Positive Posture, D.Core, and Koyo &mdash; all fully operational for guided demonstrations. Walk in during showroom hours or call (408) 889-1188 to schedule a private appointment.</p></div>
+          </div>
+          <div class="sc-faq-item" id="sc-faq-2">
+            <div class="sc-faq-q">
+              <h3>What is the best massage chair store in Santa Clara?</h3>
+              <svg class="sc-faq-toggle" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <div class="sc-faq-a"><p>Massage Chairs and More at Westfield Valley Fair is widely recognized as the best massage chair store in Santa Clara. We offer the South Bay&rsquo;s widest curated selection of premium brands &mdash; OHCO, Panasonic, Positive Posture, D.Core, and Koyo &mdash; with certified specialists on-site and a zero-pressure guided experience.</p></div>
+          </div>
+          <div class="sc-faq-item" id="sc-faq-3">
+            <div class="sc-faq-q">
+              <h3>Can I compare OHCO, Panasonic, Positive Posture, D.Core, and Koyo in person?</h3>
+              <svg class="sc-faq-toggle" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <div class="sc-faq-a"><p>Yes &mdash; our Santa Clara showroom is one of the very few places in California where you can sit in and compare all five of these elite brands side by side on the same visit. Our specialists guide you through practical, meaningful comparisons so you leave with real clarity, not more questions.</p></div>
+          </div>
+          <div class="sc-faq-item" id="sc-faq-4">
+            <div class="sc-faq-q">
+              <h3>Are luxury massage chairs worth the investment?</h3>
+              <svg class="sc-faq-toggle" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <div class="sc-faq-a"><p>For most of our customers in Santa Clara, San Jose, and Cupertino &mdash; deeply yes. A premium massage chair delivers on-demand tension relief, daily restorative comfort, and wellness support available any hour of the day. Most premium chairs pay for themselves within 18&ndash;24 months compared to regular therapy visits, while offering considerably greater convenience.</p></div>
+          </div>
+          <div class="sc-faq-item" id="sc-faq-5">
+            <div class="sc-faq-q">
+              <h3>What is the difference between 4D and zero gravity massage chairs?</h3>
+              <svg class="sc-faq-toggle" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <div class="sc-faq-a"><p>4D refers to the massage arm&rsquo;s range of motion &mdash; forward, backward, side to side, and variable speed &mdash; allowing for a more human-like, nuanced massage. Zero gravity is the reclining position: your legs elevated above your heart, decompressing the spine. Many premium chairs in our Santa Clara showroom offer both features at the same time.</p></div>
+          </div>
+          <div class="sc-faq-item" id="sc-faq-6">
+            <div class="sc-faq-q">
+              <h3>Which massage chair brand is best for me?</h3>
+              <svg class="sc-faq-toggle" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <div class="sc-faq-a"><p>The right brand depends on your body, lifestyle, and priorities. OHCO is ideal if design and immersive luxury are paramount. Panasonic excels for therapeutic precision and back pain management. Positive Posture is perfect for daily comfort and restorative routines. D.Core is the choice for buyers who want Japanese-inspired refinement alongside genuine performance. Koyo offers excellent functionality and long-term reliability at accessible premium pricing. The only way to truly know is to visit us and try them.</p></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="sc-faq-item" id="sc-faq-7">
+            <div class="sc-faq-q">
+              <h3>Can I book a massage chair appointment in Santa Clara?</h3>
+              <svg class="sc-faq-toggle" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <div class="sc-faq-a"><p>Absolutely. Walk in anytime during our showroom hours, or call (408) 889-1188 to schedule a private appointment. A booked appointment gives you dedicated one-on-one time with a specialist, an unhurried trial experience, and a personalized recommendation &mdash; ideal for serious buyers comparing 3&ndash;5 models.</p></div>
+          </div>
+          <div class="sc-faq-item" id="sc-faq-8">
+            <div class="sc-faq-q">
+              <h3>Do I need to visit a showroom before buying a massage chair?</h3>
+              <svg class="sc-faq-toggle" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <div class="sc-faq-a"><p>You don&rsquo;t have to &mdash; but most customers who skip the showroom and buy online tell us they wish they hadn&rsquo;t. At $3,000 to $15,000+, a premium massage chair is a significant investment. Every person&rsquo;s body responds differently to different chairs. Visiting our Santa Clara showroom removes all guesswork and gives you complete confidence the moment you decide.</p></div>
+          </div>
+          <div class="sc-faq-item" id="sc-faq-9">
+            <div class="sc-faq-q">
+              <h3>What should I look for in a premium massage chair?</h3>
+              <svg class="sc-faq-toggle" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <div class="sc-faq-a"><p>Key features to evaluate: track type (L-track for full-body coverage), massage arm dimension (4D for the most nuanced feel), automatic body scan precision, zero gravity recline positions, air compression coverage, heat therapy zones, and build quality. Our Santa Clara specialists will walk you through each feature in a way that connects directly to your body and lifestyle.</p></div>
+          </div>
+          <div class="sc-faq-item" id="sc-faq-10">
+            <div class="sc-faq-q">
+              <h3>Which massage chair brands are available in Santa Clara?</h3>
+              <svg class="sc-faq-toggle" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <div class="sc-faq-a"><p>Our Santa Clara showroom at Westfield Valley Fair carries five premium brands: OHCO, Panasonic, Positive Posture, D.Core, and Koyo. Every chair is fully operational and available for a hands-on, guided demonstration on the same visit. We are one of the few showrooms in California where you can experience all five in person.</p></div>
+          </div>
+          <div class="sc-faq-item" id="sc-faq-11">
+            <div class="sc-faq-q">
+              <h3>Where is the Massage Chairs and More Santa Clara showroom?</h3>
+              <svg class="sc-faq-toggle" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <div class="sc-faq-a"><p>We are located inside Westfield Valley Fair at 2855 Stevens Creek Blvd, Suite 1091, Santa Clara, CA 95050. Hours: Mon&ndash;Fri 10 AM&ndash;9 PM, Sat 10 AM&ndash;9 PM, Sun 11 AM&ndash;7 PM. Free parking throughout Valley Fair. Phone: (408) 889-1188.</p></div>
+          </div>
+          <div class="sc-faq-item" id="sc-faq-12">
+            <div class="sc-faq-q">
+              <h3>Does Massage Chairs and More offer financing in Santa Clara?</h3>
+              <svg class="sc-faq-toggle" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </div>
+            <div class="sc-faq-a"><p>Yes. We offer flexible financing options so premium wellness is accessible to more households. Monthly payment plans can make a $6,000&ndash;$9,000 chair considerably more attainable. Ask our Santa Clara team about current financing offers when you visit, or call (408) 889-1188 to discuss before your appointment.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- comment -%} ══════════ FINAL CTA ══════════ {%- endcomment -%}
+  <div class="sc-bleed">
+    <section class="sc-final-cta" id="sc-book-appointment" aria-labelledby="sc-final-cta-heading">
+    <div class="sc-final-cta-inner">
+      <span class="sc-eyebrow" style="color:var(--sc-accent);">Santa Clara Showroom</span>
+      <h2 id="sc-final-cta-heading">The Right Chair Is<br><em>Waiting for You</em></h2>
+      <p>Visit Westfield Valley Fair in Santa Clara and experience OHCO, Panasonic, Positive Posture, D.Core, and Koyo massage chairs in person. Your body will tell you what your shortlist cannot.</p>
+      <div class="sc-final-cta-btns">
+        <a href="tel:+14088891188" class="sc-btn sc-btn-primary" id="sc-final-call-btn">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          Call to Book an Appointment
+        </a>
+        <a href="#sc-location" class="sc-btn sc-btn-outline" id="sc-final-visit-btn">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Showroom Hours &amp; Location
+        </a>
+        <a href="https://maps.app.goo.gl/3ouzQFA5WDpeVyr39" target="_blank" rel="noopener" class="sc-btn sc-btn-dark" id="sc-final-dir-btn">
+          <svg viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9a.996.996 0 00-1.41 0l-9 9a.996.996 0 000 1.41l9 9c.39.39 1.02.39 1.41 0l9-9a.996.996 0 000-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>
+          Get Directions
+        </a>
+      </div>
+      <div class="sc-trust-row">
+        <div class="sc-trust-item"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Try before you buy</div>
+        <div class="sc-trust-item"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Zero pressure, expert guidance</div>
+        <div class="sc-trust-item"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> 5 elite brands under one roof</div>
+        <div class="sc-trust-item"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Flexible financing available</div>
+      </div>
+    </div>
+    </section>
+  </div>
+
+  {%- comment -%} ══════════ FOOTER ══════════ {%- endcomment -%}
+  <div class="sc-bleed">
+    <footer class="sc-footer" aria-label="Site footer">
+    <div class="sc-container">
+      <div class="sc-footer-grid">
+        <div>
+          <span class="sc-footer-brand">Massage Chairs and More</span>
+          <p>The South Bay&rsquo;s destination for luxury massage chairs &mdash; OHCO, Panasonic, Positive Posture, D.Core, and Koyo. Experience the difference in person at our Santa Clara and Pleasanton showrooms.</p>
+        </div>
+        <div>
+          <h4>Brands</h4>
+          <a href="{{ shop.url }}/collections/ohco">OHCO Massage Chairs</a>
+          <a href="{{ shop.url }}/collections/panasonic">Panasonic Massage Chairs</a>
+          <a href="{{ shop.url }}/collections/positive-posture">Positive Posture</a>
+          <a href="{{ shop.url }}/collections/d-core">D.Core Massage Chairs</a>
+          <a href="{{ shop.url }}/collections/koyo">Koyo Massage Chairs</a>
+        </div>
+        <div>
+          <h4>Showrooms</h4>
+          <a href="{{ shop.url }}/pages/santa-clara-showroom">Santa Clara &ndash; Valley Fair</a>
+          <a href="{{ shop.url }}/pages/pleasanton-showroom">Pleasanton &ndash; Stoneridge Mall</a>
+          <a href="{{ shop.url }}/pages/our-stores">All Locations</a>
+        </div>
+        <div>
+          <h4>Santa Clara Location</h4>
+          <a href="https://maps.app.goo.gl/3ouzQFA5WDpeVyr39" target="_blank" rel="noopener">2855 Stevens Creek Blvd<br>Suite 1091, Santa Clara, CA 95050</a>
+          <a href="tel:+14088891188">+1 (408) 889-1188</a>
+          <a href="mailto:info@massagechairsandmore.com">info@massagechairsandmore.com</a>
+        </div>
+      </div>
+      <div class="sc-footer-bottom">
+        <span>&copy; {{ 'now' | date: '%Y' }} Massage Chairs and More. All rights reserved.</span>
+        <span>Premium Massage Chair Showroom &mdash; Santa Clara, CA</span>
+      </div>
+    </div>
+    </footer>
+  </div>
+
+</div>{%- comment -%} /.sc-wrap {%- endcomment -%}
+
+<script>
+  // FAQ Accordion
+  document.querySelectorAll('.sc-faq-item').forEach(function(item) {
+    item.querySelector('.sc-faq-q').addEventListener('click', function() {
+      var isOpen = item.classList.contains('sc-open');
+      document.querySelectorAll('.sc-faq-item.sc-open').forEach(function(o) { o.classList.remove('sc-open'); });
+      if (!isOpen) item.classList.add('sc-open');
+    });
+  });
+
+  // Sticky CTA — show after scrolling past hero on mobile
+  var stickyCta = document.getElementById('sc-sticky-cta');
+  if (stickyCta && window.innerWidth <= 640) {
+    stickyCta.style.opacity = '0';
+    stickyCta.style.pointerEvents = 'none';
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > window.innerHeight * 0.6) {
+        stickyCta.style.opacity = '1';
+        stickyCta.style.pointerEvents = 'auto';
+      } else {
+        stickyCta.style.opacity = '0';
+        stickyCta.style.pointerEvents = 'none';
+      }
+    }, { passive: true });
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Santa Clara Showroom",
+  "settings": []
+}
+{% endschema %}

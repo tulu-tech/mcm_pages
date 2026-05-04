@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "brio-sport-vs-dualtech-4d-main": {
+      "type": "page-brio-sport-vs-dualtech-4d",
+      "settings": {}
+    }
+  },
+  "order": [
+    "brio-sport-vs-dualtech-4d-main"
+  ]
+}

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Showrooms – Massage Chairs and More</title>
+    <meta name="description" content="Visit our California showrooms or contact our massage chair experts. Try premium massage chairs in person at Santa Clara, Pleasanton, Daly City & Sacramento.">
+    <link rel="icon" href="https://massagechairsandmore.com/cdn/shop/files/logo-1.png?v=1772377758&width=32" type="image/png">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+<!-- ==================== HERO ==================== -->
+<section class="contact-hero" id="contact-hero">
+    <div class="contact-hero-bg">
+        <img src="images/showroom-hero.png" alt="Massage Chairs and More Showroom">
+    </div>
+    <div class="container">
+        <span class="eyebrow">Contact & Showrooms</span>
+        <h1>Experience Premium<br>Comfort In Person</h1>
+        <p>Visit one of our California showrooms or reach out to our massage chair experts. We're here to help you find the perfect chair.</p>
+    </div>
+</section>
+
+<!-- ==================== QUICK CONTACT BAR ==================== -->
+<div class="quick-contact">
+    <div class="quick-contact-inner">
+        <a href="tel:+14088891188" class="quick-contact-item" id="qc-phone">
+            <div class="qc-icon">
+                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            </div>
+            <div class="qc-text">
+                <small>Call Us</small>
+                <strong>+1 (408) 889-1188</strong>
+            </div>
+        </a>
+        <a href="mailto:info@massagechairsandmore.com" class="quick-contact-item" id="qc-email">
+            <div class="qc-icon">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </div>
+            <div class="qc-text">
+                <small>Email Us</small>
+                <strong>info@massagechairsandmore.com</strong>
+            </div>
+        </a>
+        <a href="https://maps.app.goo.gl/EnjULYhp9izCiwtY9" target="_blank" class="quick-contact-item" id="qc-location">
+            <div class="qc-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </div>
+            <div class="qc-text">
+                <small>Visit Us</small>
+                <strong>4 Showrooms in California</strong>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- ==================== MAIN: FORM + INFO ==================== -->
+<section class="contact-main">
+    <div class="container">
+        <div class="contact-grid">
+
+            <!-- LEFT: CONTACT FORM -->
+            <div class="contact-form-wrapper fade-up" id="contact-form-section">
+                <div class="form-header">
+                    <h2>Drop Us a Line</h2>
+                    <p>Have a question about a specific model? Need help choosing? We'll get back to you within 24 hours.</p>
+                </div>
+                <form class="contact-form" id="contact-form" action="#" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact-name">Your Name *</label>
+                            <input type="text" id="contact-name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email Address *</label>
+                            <input type="email" id="contact-email" name="email" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact-phone">Phone Number</label>
+                            <input type="tel" id="contact-phone" name="phone" placeholder="+1 (xxx) xxx-xxxx">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Subject</label>
+                            <select id="contact-subject" name="subject">
+                                <option value="" disabled selected>Select a topic</option>
+                                <option value="product">Product Inquiry</option>
+                                <option value="showroom">Showroom Visit</option>
+                                <option value="pricing">Pricing & Financing</option>
+                                <option value="support">After-Sales Support</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Your Message *</label>
+                        <textarea id="contact-message" name="message" placeholder="Tell us how we can help you..." required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit" id="form-submit-btn">
+                        Send Message
+                        <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                    </button>
+                </form>
+            </div>
+
+            <!-- RIGHT: CONTACT INFO -->
+            <div class="contact-info-side fade-up">
+                <!-- Phone Card -->
+                <div class="info-card" id="info-phone">
+                    <div class="info-card-header">
+                        <div class="info-card-icon">
+                            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        </div>
+                        <h3>Customer Support</h3>
+                    </div>
+                    <p>Speak directly with our massage chair specialists for personalized recommendations.</p>
+                    <p style="margin-top: 0.5rem;"><a href="tel:+14088891188">+1 (408) 889-1188</a></p>
+                </div>
+
+                <!-- Email Card -->
+                <div class="info-card" id="info-email">
+                    <div class="info-card-header">
+                        <div class="info-card-icon">
+                            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        </div>
+                        <h3>Email Us</h3>
+                    </div>
+                    <p>Send us your questions anytime. We typically respond within 24 hours on business days.</p>
+                    <p style="margin-top: 0.5rem;"><a href="mailto:info@massagechairsandmore.com">info@massagechairsandmore.com</a></p>
+                </div>
+
+                <!-- Hours Card -->
+                <div class="info-card" id="info-hours">
+                    <div class="info-card-header">
+                        <div class="info-card-icon">
+                            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                        </div>
+                        <h3>Showroom Hours</h3>
+                    </div>
+                    <div class="info-hours">
+                        <div class="info-hours-row"><span>Monday – Friday</span><span>10:00 AM – 9:00 PM</span></div>
+                        <div class="info-hours-row"><span>Saturday</span><span>10:00 AM – 9:00 PM</span></div>
+                        <div class="info-hours-row"><span>Sunday</span><span>11:00 AM – 7:00 PM</span></div>
+                    </div>
+                </div>
+
+                <!-- Showroom Tip -->
+                <div class="info-card" id="info-tip" style="background: var(--dark); border-color: transparent;">
+                    <div class="info-card-header">
+                        <div class="info-card-icon" style="background: rgba(184,148,79,0.2);">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        </div>
+                        <h3 style="color: var(--white);">Not Sure Which Chair?</h3>
+                    </div>
+                    <p style="color: rgba(255,255,255,0.7);">Visit one of our showrooms and try them in person. Our team will walk you through the differences between models and help you find the right fit for your space, comfort, and budget.</p>
+                    <a href="https://massagechairsandmore.com/blogs/news/how-to-choose-the-best-massage-chair" style="display:inline-flex;align-items:center;gap:6px;margin-top:1rem;color:var(--accent);font-weight:700;font-size:0.9rem;">
+                        Read Buying Guide
+                        <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:var(--accent);"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SHOWROOMS ==================== -->
+<section class="showrooms-section" id="showrooms">
+    <div class="container">
+        <div class="showrooms-header fade-up">
+            <span class="eyebrow">Our Locations</span>
+            <h2>Visit Our Showrooms</h2>
+            <p>Experience the world's best massage chairs in person. Our expert team is ready to help you find the perfect fit.</p>
+        </div>
+
+        <div class="showrooms-grid">
+            <!-- Santa Clara -->
+            <div class="showroom-card fade-up" id="showroom-santa-clara">
+                <span class="showroom-card-badge flagship">★ Flagship</span>
+                <h3>Santa Clara</h3>
+                <div class="showroom-detail">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <a href="https://maps.app.goo.gl/EnjULYhp9izCiwtY9" target="_blank">2855 Stevens Creek Blvd, Westfield Valley Fair Mall Ste #1091, Santa Clara, CA 95050</a>
+                </div>
+                <div class="showroom-detail">
+                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    <a href="tel:+14088891188">+1 (408) 889-1188</a>
+                </div>
+                <div class="showroom-actions">
+                    <a href="https://maps.app.goo.gl/EnjULYhp9izCiwtY9" target="_blank" class="showroom-btn showroom-btn-primary">
+                        <svg viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9a.996.996 0 00-1.41 0l-9 9a.996.996 0 000 1.41l9 9c.39.39 1.02.39 1.41 0l9-9a.996.996 0 000-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>
+                        Directions
+                    </a>
+                    <a href="tel:+14088891188" class="showroom-btn showroom-btn-outline">Call</a>
+                </div>
+            </div>
+
+            <!-- Pleasanton -->
+            <div class="showroom-card fade-up" id="showroom-pleasanton">
+                <span class="showroom-card-badge">Showroom</span>
+                <h3>Pleasanton</h3>
+                <div class="showroom-detail">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <a href="https://maps.app.goo.gl/ftAchCdqAZQ4NK8s9" target="_blank">1 Stoneridge Mall, STE B108, Pleasanton, CA 94588</a>
+                </div>
+                <div class="showroom-detail">
+                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    <a href="tel:+14088891188">+1 (408) 889-1188</a>
+                </div>
+                <div class="showroom-actions">
+                    <a href="https://maps.app.goo.gl/ftAchCdqAZQ4NK8s9" target="_blank" class="showroom-btn showroom-btn-primary">
+                        <svg viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9a.996.996 0 00-1.41 0l-9 9a.996.996 0 000 1.41l9 9c.39.39 1.02.39 1.41 0l9-9a.996.996 0 000-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>
+                        Directions
+                    </a>
+                    <a href="tel:+14088891188" class="showroom-btn showroom-btn-outline">Call</a>
+                </div>
+            </div>
+
+            <!-- Daly City -->
+            <div class="showroom-card fade-up" id="showroom-daly-city">
+                <span class="showroom-card-badge">Showroom</span>
+                <h3>Daly City</h3>
+                <div class="showroom-detail">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <a href="https://share.google/8Vq7wWm1woKgDI1Ko" target="_blank">3 Serramonte Center STE #G606, Daly City, CA 94015</a>
+                </div>
+                <div class="showroom-detail">
+                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    <a href="tel:+14088891188">+1 (408) 889-1188</a>
+                </div>
+                <div class="showroom-actions">
+                    <a href="https://share.google/8Vq7wWm1woKgDI1Ko" target="_blank" class="showroom-btn showroom-btn-primary">
+                        <svg viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9a.996.996 0 00-1.41 0l-9 9a.996.996 0 000 1.41l9 9c.39.39 1.02.39 1.41 0l9-9a.996.996 0 000-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>
+                        Directions
+                    </a>
+                    <a href="tel:+14088891188" class="showroom-btn showroom-btn-outline">Call</a>
+                </div>
+            </div>
+
+            <!-- Sacramento -->
+            <div class="showroom-card fade-up" id="showroom-sacramento">
+                <span class="showroom-card-badge">Showroom</span>
+                <h3>Sacramento</h3>
+                <div class="showroom-detail">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <a href="https://maps.app.goo.gl/uYrJQp6tHNbdeTfL6" target="_blank">1151 Galleria Blvd, Ste #2058, Roseville, CA 95678</a>
+                </div>
+                <div class="showroom-detail">
+                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    <a href="tel:+14088891188">+1 (408) 889-1188</a>
+                </div>
+                <div class="showroom-actions">
+                    <a href="https://maps.app.goo.gl/uYrJQp6tHNbdeTfL6" target="_blank" class="showroom-btn showroom-btn-primary">
+                        <svg viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9a.996.996 0 00-1.41 0l-9 9a.996.996 0 000 1.41l9 9c.39.39 1.02.39 1.41 0l9-9a.996.996 0 000-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>
+                        Directions
+                    </a>
+                    <a href="tel:+14088891188" class="showroom-btn showroom-btn-outline">Call</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== MAP ==================== -->
+<section class="map-section" id="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d404812.3!2d-122.286158!3d37.5478329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1smassage+chairs+%26+more+ca!5e0!3m2!1sen!2sus!4v1711686000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Massage Chairs and More Store Locations"></iframe>
+</section>
+
+<!-- ==================== CTA BANNER ==================== -->
+<section class="contact-cta">
+    <div class="container">
+        <div class="cta-banner fade-up">
+            <span class="eyebrow">Ready to Experience the Difference?</span>
+            <h2>Find Your Perfect<br>Massage Chair Today</h2>
+            <p>Our experts have helped thousands of customers find their ideal massage chair. Let us help you next.</p>
+            <div class="cta-btns">
+                <a href="https://massagechairsandmore.com/collections/massage-chair" class="btn btn-accent">
+                    <svg viewBox="0 0 24 24"><path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/></svg>
+                    Browse Collection
+                </a>
+                <a href="tel:+14088891188" class="btn btn-white-outline">
+                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    Call an Expert
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SCRIPTS ==================== -->
+<script>
+// Intersection Observer for scroll animations
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.classList.add('visible');
+            }, index * 100);
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Form submission with feedback
+const form = document.getElementById('contact-form');
+const submitBtn = document.getElementById('form-submit-btn');
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    submitBtn.innerHTML = `
+        <svg viewBox="0 0 24 24" style="animation: spin 1s linear infinite;"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>
+        Sending...
+    `;
+    submitBtn.disabled = true;
+
+    setTimeout(() => {
+        submitBtn.innerHTML = `
+            <svg viewBox="0 0 24 24" style="fill:white;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            Message Sent!
+        `;
+        submitBtn.style.background = '#2d8a4e';
+        form.reset();
+        setTimeout(() => {
+            submitBtn.innerHTML = `Send Message <svg viewBox="0 0 24 24" style="fill:white;width:18px;height:18px;"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>`;
+            submitBtn.style.background = '';
+            submitBtn.disabled = false;
+        }, 3000);
+    }, 1500);
+});
+
+// Add spin keyframes
+const style = document.createElement('style');
+style.textContent = '@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }';
+document.head.appendChild(style);
+</script>
+
+</body>
+</html>

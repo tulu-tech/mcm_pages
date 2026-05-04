@@ -1,0 +1,405 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+.cp-wrap{--bg:#fff;--surface:#f9f8f6;--dark:#1a1a1a;--text:#2d2d2d;--muted:#5a5a5a;--light-text:#8a8a8a;--accent:#b8944f;--accent-hover:#a07e3f;--accent-light:rgba(184,148,79,.08);--accent-glow:rgba(184,148,79,.15);--border:#e8e4de;--border-light:#f0ece6;--white:#fff;--card-shadow:0 4px 20px rgba(0,0,0,.04);--card-shadow-hover:0 20px 50px rgba(0,0,0,.10);--radius:16px;--radius-sm:10px;--radius-lg:24px;--transition:all .3s cubic-bezier(.4,0,.2,1);font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif !important;color:var(--text);line-height:1.7 !important;-webkit-font-smoothing:antialiased;font-size:16px !important}
+.cp-wrap *,.cp-wrap *::before,.cp-wrap *::after{box-sizing:border-box !important}
+.cp-wrap h1,.cp-wrap h2,.cp-wrap h3,.cp-wrap h4{color:var(--dark);line-height:1.2 !important;font-weight:700 !important;margin:0}
+.cp-wrap h1,.cp-wrap h2{font-family:'Playfair Display',Georgia,serif !important}
+.cp-wrap p{font-size:16px !important;line-height:1.7 !important;margin:0}
+.cp-wrap a{color:inherit;text-decoration:none !important}
+.cp-wrap img{max-width:100%;display:block}
+.cp-container{max-width:1280px;margin:0 auto;padding:0 32px}
+@keyframes cpFadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes cpSpin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.cp-fade{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.cp-fade.cp-visible{opacity:1;transform:translateY(0)}
+
+/* ===== HERO ===== */
+.cp-hero{position:relative;min-height:55vh;display:flex;align-items:center;overflow:hidden;background:var(--dark)}
+.cp-hero-bg{position:absolute;inset:0;z-index:0}
+.cp-hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.4)}
+.cp-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,12,8,.75) 0%,rgba(15,12,8,.4) 60%,rgba(15,12,8,.3) 100%);z-index:1}
+.cp-hero .cp-container{position:relative;z-index:2;text-align:center;padding:80px 32px}
+.cp-hero .cp-eyebrow{display:inline-block;font-size:12px !important;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;font-weight:700 !important;animation:cpFadeUp .8s ease forwards}
+.cp-hero h1{font-size:54px !important;color:var(--white) !important;margin-bottom:20px !important;letter-spacing:-.02em;animation:cpFadeUp .8s ease .15s forwards;opacity:0}
+.cp-hero p{font-size:18px !important;color:rgba(255,255,255,.8) !important;max-width:600px;margin:0 auto !important;animation:cpFadeUp .8s ease .3s forwards;opacity:0}
+
+/* ===== QUICK CONTACT ===== */
+.cp-quick{background:var(--white);border-bottom:1px solid var(--border-light);position:relative;z-index:10;margin-top:-48px}
+.cp-quick-inner{display:grid;grid-template-columns:repeat(3,1fr);max-width:960px;margin:0 auto;border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.12);background:var(--white)}
+.cp-quick-item{display:flex;align-items:center;gap:16px;padding:24px 32px;transition:var(--transition);text-decoration:none !important;color:var(--text) !important;border-right:1px solid var(--border-light)}
+.cp-quick-item:last-child{border-right:none}
+.cp-quick-item:hover{background:var(--accent-light)}
+.cp-quick-item:hover .cp-qi{background:var(--accent)}
+.cp-quick-item:hover .cp-qi svg{fill:var(--white)}
+.cp-qi{width:48px;height:48px;background:var(--accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:var(--transition)}
+.cp-qi svg{width:22px;height:22px;fill:var(--accent);transition:var(--transition)}
+.cp-qt{display:flex;flex-direction:column}
+.cp-qt small{font-size:11px !important;text-transform:uppercase;letter-spacing:.1em;color:var(--light-text) !important;font-weight:600 !important}
+.cp-qt strong{font-size:15px !important;font-weight:700 !important;color:var(--dark) !important}
+
+/* ===== SHOWROOMS ===== */
+.cp-showrooms{padding:80px 0;background:var(--surface)}
+.cp-sh-hdr{text-align:center;margin-bottom:48px}
+.cp-sh-hdr .cp-eyebrow{display:inline-block;font-size:12px !important;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;font-weight:700 !important}
+.cp-sh-hdr h2{font-size:36px !important;margin-bottom:12px !important;letter-spacing:-.02em}
+.cp-sh-hdr p{color:var(--muted);font-size:17px !important;max-width:600px;margin:0 auto !important}
+.cp-sh-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.cp-sh-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius);padding:28px;transition:var(--transition);position:relative;overflow:hidden;display:flex;flex-direction:column}
+.cp-sh-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent);transform:scaleX(0);transition:transform .4s ease;transform-origin:left}
+.cp-sh-card:hover::before{transform:scaleX(1)}
+.cp-sh-card:hover{border-color:var(--accent);box-shadow:var(--card-shadow-hover);transform:translateY(-6px)}
+.cp-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px !important;font-weight:700 !important;text-transform:uppercase;letter-spacing:.1em;color:var(--accent) !important;background:var(--accent-light);padding:5px 14px;border-radius:50px;margin-bottom:14px;width:fit-content}
+.cp-badge-flag{background:var(--accent) !important;color:#fff !important}
+.cp-sh-card h3{font-size:20px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important;margin-bottom:12px !important}
+.cp-sh-det{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:14px !important;color:var(--muted) !important;line-height:1.55 !important}
+.cp-sh-det svg{width:16px;height:16px;fill:var(--accent);flex-shrink:0;margin-top:3px}
+.cp-sh-det a{color:var(--muted) !important;transition:var(--transition);font-size:14px !important}
+.cp-sh-det a:hover{color:var(--accent) !important}
+.cp-sh-acts{margin-top:auto;padding-top:20px;display:flex;gap:12px}
+.cp-sh-btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px !important;border-radius:50px;font-size:14px !important;font-weight:700 !important;font-family:'Inter',sans-serif !important;transition:var(--transition);cursor:pointer;border:none !important;text-decoration:none !important;letter-spacing:.02em;line-height:1.3 !important}
+.cp-sh-btn-p{background:var(--dark) !important;color:#fff !important}
+.cp-sh-btn-p:hover{background:var(--accent) !important;color:#fff !important}
+.cp-sh-btn-o{background:transparent !important;color:var(--dark) !important;border:2px solid var(--border) !important}
+.cp-sh-btn-o:hover{border-color:var(--accent) !important;color:var(--accent) !important}
+.cp-sh-btn svg{width:14px;height:14px;fill:currentColor}
+
+/* ===== MAIN GRID (FORM + INFO) ===== */
+.cp-main{padding:80px 0}
+.cp-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+
+/* FORM */
+.cp-form-wrap{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:44px;box-shadow:var(--card-shadow);position:relative;overflow:hidden}
+.cp-form-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--accent),#d4b06a,var(--accent))}
+.cp-form-hdr{margin-bottom:28px}
+.cp-form-hdr h2{font-size:28px !important;margin-bottom:8px !important}
+.cp-form-hdr p{color:var(--muted) !important;font-size:15px !important}
+.cp-form{display:flex;flex-direction:column;gap:18px}
+.cp-form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.cp-fg{display:flex;flex-direction:column;gap:6px}
+.cp-fg label{font-size:13px !important;font-weight:600 !important;text-transform:uppercase;letter-spacing:.08em;color:var(--muted) !important}
+.cp-fg input,.cp-fg textarea,.cp-fg select{width:100% !important;padding:14px 18px !important;border:1.5px solid var(--border) !important;border-radius:var(--radius-sm) !important;font-family:'Inter',sans-serif !important;font-size:15px !important;color:var(--dark) !important;background:var(--surface) !important;transition:var(--transition);outline:none !important;-webkit-appearance:none}
+.cp-fg input:focus,.cp-fg textarea:focus,.cp-fg select:focus{border-color:var(--accent) !important;background:var(--white) !important;box-shadow:0 0 0 4px var(--accent-glow) !important}
+.cp-fg input::placeholder,.cp-fg textarea::placeholder{color:var(--light-text) !important;font-size:14px !important}
+.cp-fg textarea{resize:vertical;min-height:140px}
+.cp-fg select{-webkit-appearance:none !important;-moz-appearance:none !important;appearance:none !important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%235a5a5a' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") !important;background-repeat:no-repeat !important;background-position:right 16px center !important;background-size:16px !important;padding-right:40px !important;cursor:pointer;height:auto !important;line-height:1.4 !important;min-height:50px !important}
+.cp-fg select option{font-size:15px !important;color:var(--dark) !important;padding:8px !important}
+.cp-submit{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 40px !important;background:var(--accent) !important;color:#fff !important;border:none !important;border-radius:50px !important;font-family:'Inter',sans-serif !important;font-size:16px !important;font-weight:700 !important;cursor:pointer;transition:var(--transition);letter-spacing:.02em;margin-top:8px;width:100%}
+.cp-submit:hover{background:var(--accent-hover) !important;transform:translateY(-2px);box-shadow:0 10px 30px rgba(184,148,79,.25)}
+.cp-submit svg{width:18px;height:18px;fill:#fff !important}
+
+/* INFO CARDS */
+.cp-info{display:flex;flex-direction:column;gap:24px}
+.cp-card{background:var(--surface);border:1px solid var(--border-light);border-radius:var(--radius);padding:28px;transition:var(--transition)}
+.cp-card:hover{border-color:var(--accent);box-shadow:var(--card-shadow);transform:translateY(-3px)}
+.cp-card-hdr{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.cp-card-ico{width:48px;height:48px;background:var(--accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:var(--transition)}
+.cp-card:hover .cp-card-ico{background:var(--accent)}
+.cp-card:hover .cp-card-ico svg{fill:var(--white)}
+.cp-card-ico svg{width:22px;height:22px;fill:var(--accent);transition:var(--transition)}
+.cp-card h3{font-size:18px !important;font-family:'Inter',sans-serif !important;font-weight:700 !important}
+.cp-card p{color:var(--muted) !important;font-size:15px !important;line-height:1.65 !important}
+.cp-card a{color:var(--accent) !important;font-weight:600 !important;transition:var(--transition);font-size:15px !important}
+.cp-card a:hover{color:var(--accent-hover) !important}
+.cp-hours-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border-light);font-size:14px !important}
+.cp-hours-row:last-child{border-bottom:none}
+.cp-hours-row span:first-child{color:var(--muted) !important;font-size:14px !important}
+.cp-hours-row span:last-child{font-weight:600 !important;color:var(--dark) !important;font-size:14px !important}
+.cp-card-dark{background:var(--dark) !important;border-color:transparent !important}
+.cp-card-dark:hover{border-color:var(--accent) !important}
+.cp-card-dark h3{color:#fff !important}
+.cp-card-dark p{color:rgba(255,255,255,.7) !important}
+.cp-card-dark .cp-card-ico{background:rgba(184,148,79,.2) !important}
+.cp-guide-link{display:inline-flex;align-items:center;gap:6px;margin-top:14px;color:var(--accent) !important;font-weight:700 !important;font-size:15px !important}
+.cp-guide-link svg{width:16px;height:16px;fill:var(--accent)}
+
+/* ===== MAP ===== */
+.cp-map{position:relative;height:400px;overflow:hidden}
+.cp-map iframe{width:100%;height:100%;border:none;filter:grayscale(.3) contrast(1.05)}
+
+/* ===== CTA ===== */
+.cp-cta{padding:80px 0}
+.cp-cta-box{background:var(--dark);border-radius:var(--radius-lg);padding:64px;text-align:center;position:relative;overflow:hidden}
+.cp-cta-box::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--accent),#d4b06a,var(--accent))}
+.cp-cta-box::after{content:'';position:absolute;top:-50%;right:-20%;width:500px;height:500px;background:radial-gradient(circle,rgba(184,148,79,.08) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.cp-cta-box .cp-eyebrow{display:inline-block;font-size:12px !important;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;font-weight:700 !important;position:relative;z-index:1}
+.cp-cta-box h2{color:#fff !important;font-size:36px !important;margin-bottom:14px !important;position:relative;z-index:1}
+.cp-cta-box p{color:rgba(255,255,255,.7) !important;font-size:17px !important;max-width:600px;margin:0 auto 28px !important;position:relative;z-index:1}
+.cp-cta-btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;position:relative;z-index:1}
+.cp-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 36px !important;font-size:16px !important;font-weight:700 !important;border-radius:50px !important;text-decoration:none !important;transition:var(--transition);border:2px solid transparent !important;cursor:pointer;letter-spacing:.02em;font-family:'Inter',sans-serif !important}
+.cp-btn-accent{background:var(--accent) !important;color:#fff !important;border-color:var(--accent) !important}
+.cp-btn-accent:hover{background:var(--accent-hover) !important;border-color:var(--accent-hover) !important;transform:translateY(-2px);box-shadow:0 10px 30px rgba(184,148,79,.25)}
+.cp-btn-wo{background:transparent !important;color:#fff !important;border:2px solid rgba(255,255,255,.3) !important}
+.cp-btn-wo:hover{border-color:#fff !important;background:rgba(255,255,255,.08) !important}
+.cp-btn svg{width:18px;height:18px;fill:currentColor}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .cp-sh-grid{grid-template-columns:repeat(2,1fr)}
+  .cp-grid{gap:40px}
+  .cp-hero h1{font-size:42px !important}
+}
+@media(max-width:768px){
+  .cp-hero{min-height:40vh}
+  .cp-hero .cp-container{padding:56px 20px}
+  .cp-hero h1{font-size:32px !important}
+  .cp-hero p{font-size:15px !important}
+  .cp-quick-inner{grid-template-columns:1fr;margin:0 16px;border-radius:16px}
+  .cp-quick-item{border-right:none !important;border-bottom:1px solid var(--border-light);padding:16px 20px}
+  .cp-quick-item:last-child{border-bottom:none}
+  .cp-qt strong{font-size:14px !important}
+  .cp-main{padding:48px 0}
+  .cp-grid{grid-template-columns:1fr;gap:32px}
+  .cp-form-wrap{padding:24px 20px}
+  .cp-form-row{grid-template-columns:1fr}
+  .cp-form-hdr h2{font-size:24px !important}
+  .cp-showrooms{padding:48px 0}
+  .cp-sh-hdr{margin-bottom:32px}
+  .cp-sh-hdr h2{font-size:28px !important}
+  .cp-sh-grid{grid-template-columns:1fr;gap:16px}
+  .cp-sh-card{padding:22px}
+  .cp-sh-card h3{font-size:18px !important}
+  .cp-cta{padding:48px 0}
+  .cp-cta-box{padding:40px 20px;border-radius:16px}
+  .cp-cta-box h2{font-size:26px !important}
+  .cp-cta-btns{flex-direction:column;align-items:stretch}
+  .cp-btn{justify-content:center;padding:14px 24px !important;font-size:15px !important}
+  .cp-map{height:280px}
+  .cp-container{padding:0 16px}
+  .cp-card{padding:22px}
+  .cp-card h3{font-size:16px !important}
+}
+@media(max-width:480px){
+  .cp-hero{min-height:35vh}
+  .cp-hero h1{font-size:26px !important}
+  .cp-hero p{font-size:14px !important}
+  .cp-hero .cp-container{padding:44px 16px}
+  .cp-sh-card h3{font-size:17px !important}
+  .cp-form-hdr h2{font-size:22px !important}
+  .cp-cta-box h2{font-size:22px !important}
+  .cp-cta-box{padding:32px 16px}
+}
+</style>
+
+<div class="cp-wrap">
+
+<!-- ===== HERO ===== -->
+<section class="cp-hero">
+    <div class="cp-hero-bg">
+        <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/showroom-hero.jpg?v=1774834874" alt="Massage Chairs and More Showroom" loading="eager">
+    </div>
+    <div class="cp-container">
+        <span class="cp-eyebrow">Contact & Showrooms</span>
+        <h1>Experience Premium<br>Comfort In Person</h1>
+        <p>Visit one of our California showrooms or reach out to our massage chair experts. We're here to help you find the perfect chair.</p>
+    </div>
+</section>
+
+<!-- ===== QUICK CONTACT BAR ===== -->
+<div class="cp-quick">
+    <div class="cp-quick-inner">
+        <a href="tel:+14088891188" class="cp-quick-item">
+            <div class="cp-qi"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+            <div class="cp-qt"><small>Call Us</small><strong>+1 (408) 889-1188</strong></div>
+        </a>
+        <a href="mailto:info@massagechairsandmore.com" class="cp-quick-item">
+            <div class="cp-qi"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+            <div class="cp-qt"><small>Email Us</small><strong>info@massagechairsandmore.com</strong></div>
+        </a>
+        <a href="https://maps.app.goo.gl/sK3ShSSjggR8qkMMA" target="_blank" class="cp-quick-item">
+            <div class="cp-qi"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+            <div class="cp-qt"><small>Visit Us</small><strong>4 Showrooms in California</strong></div>
+        </a>
+    </div>
+</div>
+
+<!-- ===== SHOWROOMS (moved up) ===== -->
+<section class="cp-showrooms" id="cp-showrooms">
+    <div class="cp-container">
+        <div class="cp-sh-hdr cp-fade">
+            <span class="cp-eyebrow">Our Locations</span>
+            <h2>Visit Our Showrooms</h2>
+            <p>Experience the world's best massage chairs in person. Our expert team is ready to help you find the perfect fit.</p>
+        </div>
+        <div class="cp-sh-grid">
+            <div class="cp-sh-card cp-fade">
+                <span class="cp-badge cp-badge-flag">★ Flagship</span>
+                <h3>Santa Clara</h3>
+                <div class="cp-sh-det"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><a href="https://maps.app.goo.gl/sK3ShSSjggR8qkMMA" target="_blank">2855 Stevens Creek Blvd, Westfield Valley Fair Mall Ste #1091, Santa Clara, CA 95050</a></div>
+                <div class="cp-sh-det"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:+14088891188">+1 (408) 889-1188</a></div>
+                <div class="cp-sh-acts">
+                    <a href="https://maps.app.goo.gl/sK3ShSSjggR8qkMMA" target="_blank" class="cp-sh-btn cp-sh-btn-p"><svg viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9a.996.996 0 00-1.41 0l-9 9a.996.996 0 000 1.41l9 9c.39.39 1.02.39 1.41 0l9-9a.996.996 0 000-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>Directions</a>
+                    <a href="tel:+14088891188" class="cp-sh-btn cp-sh-btn-o">Call</a>
+                </div>
+            </div>
+            <div class="cp-sh-card cp-fade">
+                <span class="cp-badge">Showroom</span>
+                <h3>Pleasanton</h3>
+                <div class="cp-sh-det"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><a href="https://maps.app.goo.gl/ftAchCdqAZQ4NK8s9" target="_blank">1 Stoneridge Mall, STE B108, Pleasanton, CA 94588</a></div>
+                <div class="cp-sh-det"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:+14088891188">+1 (408) 889-1188</a></div>
+                <div class="cp-sh-acts">
+                    <a href="https://maps.app.goo.gl/ftAchCdqAZQ4NK8s9" target="_blank" class="cp-sh-btn cp-sh-btn-p"><svg viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9a.996.996 0 00-1.41 0l-9 9a.996.996 0 000 1.41l9 9c.39.39 1.02.39 1.41 0l9-9a.996.996 0 000-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>Directions</a>
+                    <a href="tel:+14088891188" class="cp-sh-btn cp-sh-btn-o">Call</a>
+                </div>
+            </div>
+            <div class="cp-sh-card cp-fade">
+                <span class="cp-badge">Showroom</span>
+                <h3>Daly City</h3>
+                <div class="cp-sh-det"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><a href="https://maps.app.goo.gl/QAt4csXuRr26iMiZ9" target="_blank">3 Serramonte Center STE #G606, Daly City, CA 94015</a></div>
+                <div class="cp-sh-det"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:+14088891188">+1 (408) 889-1188</a></div>
+                <div class="cp-sh-acts">
+                    <a href="https://maps.app.goo.gl/QAt4csXuRr26iMiZ9" target="_blank" class="cp-sh-btn cp-sh-btn-p"><svg viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9a.996.996 0 00-1.41 0l-9 9a.996.996 0 000 1.41l9 9c.39.39 1.02.39 1.41 0l9-9a.996.996 0 000-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>Directions</a>
+                    <a href="tel:+14088891188" class="cp-sh-btn cp-sh-btn-o">Call</a>
+                </div>
+            </div>
+            <div class="cp-sh-card cp-fade">
+                <span class="cp-badge">Showroom</span>
+                <h3>Sacramento</h3>
+                <div class="cp-sh-det"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><a href="https://maps.app.goo.gl/r4t8wgGQiauRroPN8" target="_blank">1151 Galleria Blvd, Ste #2058, Roseville, CA 95678</a></div>
+                <div class="cp-sh-det"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:+14088891188">+1 (408) 889-1188</a></div>
+                <div class="cp-sh-acts">
+                    <a href="https://maps.app.goo.gl/r4t8wgGQiauRroPN8" target="_blank" class="cp-sh-btn cp-sh-btn-p"><svg viewBox="0 0 24 24"><path d="M21.71 11.29l-9-9a.996.996 0 00-1.41 0l-9 9a.996.996 0 000 1.41l9 9c.39.39 1.02.39 1.41 0l9-9a.996.996 0 000-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/></svg>Directions</a>
+                    <a href="tel:+14088891188" class="cp-sh-btn cp-sh-btn-o">Call</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== MAP ===== -->
+<section class="cp-map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d404812.3!2d-122.286158!3d37.5478329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1smassage+chairs+%26+more+ca!5e0!3m2!1sen!2sus!4v1711686000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Massage Chairs and More Store Locations"></iframe>
+</section>
+
+<!-- ===== FORM + INFO ===== -->
+<section class="cp-main">
+    <div class="cp-container">
+        <div class="cp-grid">
+            <div class="cp-form-wrap cp-fade">
+                <div class="cp-form-hdr">
+                    <h2>Drop Us a Line</h2>
+                    <p>Have a question about a specific model? Need help choosing? We'll get back to you within 24 hours.</p>
+                </div>
+                {% form 'contact' %}
+                <div class="cp-form">
+                    <div class="cp-form-row">
+                        <div class="cp-fg">
+                            <label for="cp-name">Your Name *</label>
+                            <input type="text" id="cp-name" name="contact[name]" placeholder="John Doe" required>
+                        </div>
+                        <div class="cp-fg">
+                            <label for="cp-email">Email Address *</label>
+                            <input type="email" id="cp-email" name="contact[email]" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    <div class="cp-form-row">
+                        <div class="cp-fg">
+                            <label for="cp-phone">Phone Number</label>
+                            <input type="tel" id="cp-phone" name="contact[phone]" placeholder="+1 (xxx) xxx-xxxx">
+                        </div>
+                        <div class="cp-fg">
+                            <label for="cp-subject">Subject</label>
+                            <select id="cp-subject" name="contact[subject]">
+                                <option value="" disabled selected>Select a topic</option>
+                                <option value="Product Inquiry">Product Inquiry</option>
+                                <option value="Showroom Visit">Showroom Visit</option>
+                                <option value="Pricing & Financing">Pricing & Financing</option>
+                                <option value="After-Sales Support">After-Sales Support</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="cp-fg">
+                        <label for="cp-message">Your Message *</label>
+                        <textarea id="cp-message" name="contact[body]" placeholder="Tell us how we can help you..." required></textarea>
+                    </div>
+                    <button type="submit" class="cp-submit" id="cp-submit-btn">
+                        Send Message
+                        <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                    </button>
+                </div>
+                {% endform %}
+            </div>
+
+            <div class="cp-info cp-fade">
+                <div class="cp-card">
+                    <div class="cp-card-hdr">
+                        <div class="cp-card-ico"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+                        <h3>Customer Support</h3>
+                    </div>
+                    <p>Speak directly with our massage chair specialists for personalized recommendations.</p>
+                    <p style="margin-top:8px !important"><a href="tel:+14088891188">+1 (408) 889-1188</a></p>
+                </div>
+
+                <div class="cp-card">
+                    <div class="cp-card-hdr">
+                        <div class="cp-card-ico"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+                        <h3>Email Us</h3>
+                    </div>
+                    <p>Send us your questions anytime. We typically respond within 24 hours on business days.</p>
+                    <p style="margin-top:8px !important"><a href="mailto:info@massagechairsandmore.com">info@massagechairsandmore.com</a></p>
+                </div>
+
+                <div class="cp-card">
+                    <div class="cp-card-hdr">
+                        <div class="cp-card-ico"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
+                        <h3>Showroom Hours</h3>
+                    </div>
+                    <div>
+                        <div class="cp-hours-row"><span>Monday – Friday</span><span>10:00 AM – 9:00 PM</span></div>
+                        <div class="cp-hours-row"><span>Saturday</span><span>10:00 AM – 9:00 PM</span></div>
+                        <div class="cp-hours-row"><span>Sunday</span><span>11:00 AM – 7:00 PM</span></div>
+                    </div>
+                </div>
+
+                <div class="cp-card cp-card-dark">
+                    <div class="cp-card-hdr">
+                        <div class="cp-card-ico"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                        <h3>Not Sure Which Chair?</h3>
+                    </div>
+                    <p>Visit one of our showrooms and try them in person. Our team will walk you through the differences between models and help you find the right fit for your space, comfort, and budget.</p>
+                    <a href="/blogs/news/how-to-choose-the-best-massage-chair" class="cp-guide-link">
+                        Read Buying Guide
+                        <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="cp-cta">
+    <div class="cp-container">
+        <div class="cp-cta-box cp-fade">
+            <span class="cp-eyebrow">Ready to Experience the Difference?</span>
+            <h2>Find Your Perfect<br>Massage Chair Today</h2>
+            <p>Our experts have helped thousands of customers find their ideal massage chair. Let us help you next.</p>
+            <div class="cp-cta-btns">
+                <a href="/collections/massage-chair" class="cp-btn cp-btn-accent">
+                    <svg viewBox="0 0 24 24"><path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/></svg>
+                    Browse Collection
+                </a>
+                <a href="tel:+14088891188" class="cp-btn cp-btn-wo">
+                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    Call an Expert
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+
+<script>
+(function(){
+    var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry, i){
+            if(entry.isIntersecting){
+                setTimeout(function(){ entry.target.classList.add('cp-visible'); }, i * 100);
+                obs.unobserve(entry.target);
+            }
+        });
+    }, {threshold: 0.1, rootMargin: '0px 0px -50px 0px'});
+    document.querySelectorAll('.cp-fade').forEach(function(el){ obs.observe(el); });
+})();
+</script>

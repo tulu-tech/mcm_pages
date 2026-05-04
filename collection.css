@@ -614,7 +614,8 @@ img { max-width: 100%; display: block; }
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--border-light);
 }
-.col-card-prices .price-sale {
+.col-card-prices .price-sale,
+.col-card-prices .price-now {
     font-size: 1.3rem;
     font-weight: 800;
     color: var(--dark);

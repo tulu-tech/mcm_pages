@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "collection-koyo",
+      "settings": {
+        "phone": "+1 (408) 889-1188"
+      }
+    }
+  },
+  "order": ["main"]
+}

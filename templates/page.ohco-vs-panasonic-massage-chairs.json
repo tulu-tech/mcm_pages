@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "ohco-vs-panasonic-main": {
+      "type": "page-ohco-vs-panasonic",
+      "settings": {}
+    }
+  },
+  "order": [
+    "ohco-vs-panasonic-main"
+  ]
+}

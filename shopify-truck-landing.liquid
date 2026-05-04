@@ -1,0 +1,424 @@
+<style>{% render 'truck-landing.css' %}</style>
+<!-- If Shopify render doesn't work, paste CSS inline or use: <link rel="stylesheet" href="truck-landing.css"> -->
+
+<div class="mcm-truck">
+
+<!-- ===== HERO ===== -->
+<section class="t-hero">
+    <div class="t-hero-bg">
+        <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/truck-couple-trial.png" alt="Massage Chairs and More Mobile Showroom Truck — We Bring the Showroom to Your Driveway" loading="eager">
+    </div>
+    <div class="t-container">
+        <div class="t-hero-content">
+            <span class="t-eyebrow">MC Massage and More · Bay Area Mobile Showroom</span>
+            <h1>We Bring the Showroom<br>to Your Driveway</h1>
+            <p>Book a massage chair demo — we bring premium chairs to your home, workplace, or community so you can try before you decide. Rest for the soul &amp; body.</p>
+            <div class="t-hero-btns">
+                <a href="#booking-section" class="t-btn t-btn-primary">Book a Mobile Demo</a>
+                <a href="#" class="t-btn t-btn-white" data-form="host" id="hero-host-truck">Host the Truck at Your Event</a>
+            </div>
+            <div class="t-hero-trust">(408) 889-1188 <span>·</span> massagechairsandmore.com <span>·</span> Bay Area</div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== EMBEDDED BOOKING SECTION ===== -->
+<section id="booking-section" class="t-section t-booking-section">
+    <div class="t-container">
+        <div class="t-booking-grid">
+            
+            <div class="t-booking-info t-fade">
+                <span class="t-eyebrow">Special Couple Trial</span>
+                <h2>Because Great Decisions Are Made Together</h2>
+                <div class="t-booking-info-content">
+                    <p>Buying a premium massage chair is a shared decision. We believe you and your partner should experience the comfort side by side, right in your own driveway.</p>
+                    <ul class="t-booking-benefits">
+                        <li>
+                            <div class="t-benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/></svg></div>
+                            <div><strong>Try Side-by-Side:</strong> Test multiple premium models together and compare the differences.</div>
+                        </li>
+                        <li>
+                            <div class="t-benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/></svg></div>
+                            <div><strong>Zero Pressure:</strong> Enjoy an expert-guided demo with no obligations to purchase.</div>
+                        </li>
+                        <li>
+                            <div class="t-benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/></svg></div>
+                            <div><strong>Ultimate Convenience:</strong> Forget driving to a showroom. We bring the showroom and the espresso directly to you.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="t-booking-form-wrapper t-fade">
+                <div class="t-booking-form-box">
+                    <h3>Book Your Mobile Demo</h3>
+                    <p>Fill out the form below to request a visit anywhere in the Bay Area.</p>
+                    {% form 'contact' %}
+                    <div class="t-form">
+                        <input type="hidden" name="contact[subject]" value="Mobile Demo Request">
+                        <div class="t-form-row">
+                            <div class="t-fg"><label for="demo-name">Your Name *</label><input type="text" id="demo-name" name="contact[name]" placeholder="John Doe" required></div>
+                            <div class="t-fg"><label for="demo-email">Email *</label><input type="email" id="demo-email" name="contact[email]" placeholder="john@example.com" required></div>
+                        </div>
+                        <div class="t-form-row">
+                            <div class="t-fg"><label for="demo-phone">Phone *</label><input type="tel" id="demo-phone" name="contact[phone]" placeholder="+1 (xxx) xxx-xxxx" required></div>
+                            <div class="t-fg"><label for="demo-zip">Zip Code</label><input type="text" id="demo-zip" name="contact[zip]" placeholder="e.g. 95050"></div>
+                        </div>
+                        <div class="t-fg"><label for="demo-pref">Preferred Date &amp; Time</label><input type="text" id="demo-pref" name="contact[preferred_time]" placeholder="e.g. Saturday morning, weekday after 5pm"></div>
+                        <div class="t-fg"><label for="demo-notes">Anything Else?</label><textarea id="demo-notes" name="contact[body]" placeholder="Who will be trying the chairs? Models you want to see?"></textarea></div>
+                        <button type="submit" class="t-form-submit">Request My Demo</button>
+                    </div>
+                    {% endform %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="t-section t-section-alt">
+    <div class="t-container">
+        <div class="t-section-header t-fade">
+            <span class="t-eyebrow">How It Works</span>
+            <h2>Three Simple Steps to Premium Comfort</h2>
+            <p>From booking to trying — the experience is designed to be effortless.</p>
+        </div>
+        <div class="t-steps-grid">
+            <div class="t-step t-fade">
+                <div class="t-step-num">1</div>
+                <h3>Book or Request</h3>
+                <p>Choose a private demo or request the truck for your event, workplace, or community.</p>
+            </div>
+            <div class="t-step t-fade">
+                <div class="t-step-num">2</div>
+                <h3>We Come to You</h3>
+                <p>Our mobile showroom arrives at your location with premium massage chairs ready to try.</p>
+            </div>
+            <div class="t-step t-fade">
+                <div class="t-step-num">3</div>
+                <h3>Try, Compare, Decide</h3>
+                <p>Experience the chairs in person, compare side by side, and decide with confidence.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WHO IT'S FOR ===== -->
+<section class="t-section">
+    <div class="t-container">
+        <div class="t-section-header t-fade">
+            <span class="t-eyebrow">Who It's For</span>
+            <h2>The Mobile Showroom Comes to Everyone</h2>
+            <p>Whether you want a private demo or want to host the truck at your event, we bring the experience to you.</p>
+        </div>
+        <div class="t-audience-grid">
+            <div class="t-audience-card t-fade">
+                <div class="t-audience-icon"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div>
+                <h3>Homeowners &amp; Couples</h3>
+                <p>Try before you buy in the comfort of your own driveway. Bring your spouse into the decision moment.</p>
+            </div>
+            <div class="t-audience-card t-fade">
+                <div class="t-audience-icon"><svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-2 .89-2 2v11c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg></div>
+                <h3>Workplaces &amp; Tech Teams</h3>
+                <p>Employee wellness pop-ups, lunch-hour reset stations, and team appreciation events.</p>
+            </div>
+            <div class="t-audience-card t-fade">
+                <div class="t-audience-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+                <h3>Communities &amp; Churches</h3>
+                <p>Trust-based group experiences, neighborhood activations, and parking lot events.</p>
+            </div>
+            <div class="t-audience-card t-fade">
+                <div class="t-audience-icon"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+                <h3>Active Adult Communities</h3>
+                <p>Premium comfort demos for discerning buyers in retirement and active adult neighborhoods.</p>
+            </div>
+            <div class="t-audience-card t-fade">
+                <div class="t-audience-icon"><svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div>
+                <h3>Event Hosts &amp; Organizers</h3>
+                <p>A bookable premium comfort experience for any occasion — corporate, social, or residential.</p>
+            </div>
+            <div class="t-audience-card t-fade">
+                <div class="t-audience-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/></svg></div>
+                <h3>Curious Walk-Up Visitors</h3>
+                <p>No appointment needed at pop-ups. Approach, explore, and discover what premium comfort feels like.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WHY PEOPLE BOOK ===== -->
+<section class="t-section t-section-alt">
+    <div class="t-container">
+        <div class="t-section-header t-fade">
+            <span class="t-eyebrow">Special Couple Trial</span>
+            <h2>Great Decisions Are Made Together</h2>
+            <p>Because buying a massage chair is a shared decision. Bring your partner, try side by side, and decide with confidence — together.</p>
+        </div>
+        <div class="t-why-grid">
+            <div class="t-why-img t-fade">
+                <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/truck-interior-demo.png" alt="Couple experiencing premium massage chairs inside the mobile showroom">
+            </div>
+            <div class="t-why-cards t-fade">
+                <div class="t-why-card">
+                    <div class="t-why-card-ico"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/></svg></div>
+                    <div><h4>Try Before You Buy</h4><p>Feel the difference between models, not just read about them online.</p></div>
+                </div>
+                <div class="t-why-card">
+                    <div class="t-why-card-ico"><svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg></div>
+                    <div><h4>Compare Without Guesswork</h4><p>Side-by-side, in-person comparison beats spec sheets every time.</p></div>
+                </div>
+                <div class="t-why-card">
+                    <div class="t-why-card-ico"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+                    <div><h4>Bring Your Decision-Maker</h4><p>Spouse, partner, or family — everyone can try together and decide confidently.</p></div>
+                </div>
+                <div class="t-why-card">
+                    <div class="t-why-card-ico"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div>
+                    <div><h4>See What Actually Fits</h4><p>Understand space, comfort, and lifestyle fit before committing to a purchase.</p></div>
+                </div>
+                <div class="t-why-card">
+                    <div class="t-why-card-ico"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                    <div><h4>Expert Guidance, Zero Pressure</h4><p>Our specialists help you understand the differences — no hard sell, just clarity.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== HOST THE TRUCK ===== -->
+<section class="t-section">
+    <div class="t-container">
+        <div class="t-host-banner t-fade">
+            <div class="t-host-img">
+                <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/truck-corporate-event.png" alt="Mobile showroom truck at corporate wellness event">
+            </div>
+            <div class="t-host-content">
+                <span class="t-eyebrow">For Organizers &amp; Hosts</span>
+                <h2>Bring the Premium Comfort Experience to Your Event</h2>
+                <p>Our mobile showroom is a bookable experience platform. Host it at your workplace, community, or event and give your people something unforgettable.</p>
+                <div class="t-host-uses">
+                    <div class="t-host-use"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Workplace wellness pop-up</div>
+                    <div class="t-host-use"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Community activation</div>
+                    <div class="t-host-use"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Church / neighborhood event</div>
+                    <div class="t-host-use"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Residential amenity event</div>
+                    <div class="t-host-use"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Active adult / retirement visit</div>
+                    <div class="t-host-use"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Lifestyle / hospitality pop-up</div>
+                </div>
+                <a href="#" class="t-btn t-btn-primary" data-form="host" id="host-section-cta">Request the Truck for Your Event</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TRUST & CERTAINTY ===== -->
+<section class="t-section t-section-alt">
+    <div class="t-container">
+        <div class="t-section-header t-fade">
+            <span class="t-eyebrow">Why Trust Us</span>
+            <h2>Premium Experience, Backed by Real Support</h2>
+            <p>When you're ready to buy, you get the same premium ownership experience our showroom customers enjoy.</p>
+        </div>
+        <div class="t-trust-grid">
+            <div class="t-trust-card t-fade">
+                <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                <h4>White-Glove Delivery</h4>
+                <p>Directly to your room of choice with full setup included.</p>
+            </div>
+            <div class="t-trust-card t-fade">
+                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                <h4>Manufacturer Warranty</h4>
+                <p>Full coverage backed by the brand — real protection, real peace of mind.</p>
+            </div>
+            <div class="t-trust-card t-fade">
+                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                <h4>Expert Chair Matching</h4>
+                <p>Personalized recommendations based on your body, comfort needs, and space.</p>
+            </div>
+            <div class="t-trust-card t-fade">
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <h4>Premium Multi-Brand Selection</h4>
+                <p>OHCO, Panasonic, D.Core, KOYO, Positive Posture — compare the best.</p>
+            </div>
+            <div class="t-trust-card t-fade">
+                <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+                <h4>In-Home Service Support</h4>
+                <p>Ongoing maintenance and support — not just a sale, a lasting relationship.</p>
+            </div>
+            <div class="t-trust-card t-fade">
+                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                <h4>Clear Installation Process</h4>
+                <p>No surprises — we walk you through dimensions, delivery, and setup before you buy.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="t-section">
+    <div class="t-container-narrow">
+        <div class="t-section-header t-fade">
+            <span class="t-eyebrow">Questions &amp; Answers</span>
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="t-fade" style="border-top:1px solid var(--border);">
+            <div class="t-faq-item">
+                <div class="t-faq-q"><h3>Do you come to my area?</h3><svg class="t-faq-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                <div class="t-faq-a"><p>We currently serve the Bay Area including San Jose, Santa Clara, Sunnyvale, Cupertino, Mountain View, Palo Alto, Fremont, Pleasanton, Dublin, Walnut Creek, San Francisco, Daly City, and surrounding communities. If you're nearby, request a visit and we'll confirm availability.</p></div>
+            </div>
+            <div class="t-faq-item">
+                <div class="t-faq-q"><h3>Can I book for a group or event?</h3><svg class="t-faq-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                <div class="t-faq-a"><p>Absolutely. The mobile showroom is designed for both private demos and group events. Workplaces, communities, churches, retirement communities, and neighborhood groups can all request a visit.</p></div>
+            </div>
+            <div class="t-faq-item">
+                <div class="t-faq-q"><h3>Can two people try it together?</h3><svg class="t-faq-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                <div class="t-faq-a"><p>Yes. The mobile showroom features multiple chairs so couples, partners, or colleagues can experience the chairs side by side and compare together.</p></div>
+            </div>
+            <div class="t-faq-item">
+                <div class="t-faq-q"><h3>What if I'm still comparing options?</h3><svg class="t-faq-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                <div class="t-faq-a"><p>That's exactly what the demo is for. Our specialists will help you understand the meaningful differences between models — comfort, features, fit, and value — without pressure. You walk away more informed.</p></div>
+            </div>
+            <div class="t-faq-item">
+                <div class="t-faq-q"><h3>Can I request a workplace or community stop?</h3><svg class="t-faq-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                <div class="t-faq-a"><p>Yes. HR teams, office managers, community organizers, and residential managers can request the truck as a wellness activation, employee appreciation event, or community pop-up.</p></div>
+            </div>
+            <div class="t-faq-item">
+                <div class="t-faq-q"><h3>How long does a demo take?</h3><svg class="t-faq-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                <div class="t-faq-a"><p>A private demo typically takes 20–30 minutes, though you're welcome to take your time. Event activations can run for several hours depending on the arrangement.</p></div>
+            </div>
+            <div class="t-faq-item">
+                <div class="t-faq-q"><h3>Is there any obligation to buy?</h3><svg class="t-faq-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></div>
+                <div class="t-faq-a"><p>None at all. The mobile showroom is a zero-pressure experience. Try the chairs, ask questions, and take your time. We're here to help you decide with confidence — on your own timeline.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="t-section" style="padding-bottom:2rem;">
+    <div class="t-container">
+        <div class="t-final-cta t-fade">
+            <span class="t-eyebrow">Ready to Experience Premium Comfort?</span>
+            <h2>Try It in Person.<br>Decide With Confidence.</h2>
+            <p>Book a private mobile demo or host the truck at your next event. The premium massage chair experience comes to you.</p>
+            <div class="t-final-btns">
+                <a href="#booking-section" class="t-btn t-btn-primary">Book a Mobile Demo</a>
+                <a href="#" class="t-btn t-btn-white" data-form="host" id="final-host-truck">Host the Truck</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FORM MODALS ===== -->
+
+<!-- HOST FORM -->
+<div class="t-form-overlay" id="host-form-overlay">
+    <div class="t-form-modal">
+        <button class="t-form-close" aria-label="Close form"><svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button>
+        <h2>Host the Truck at Your Event</h2>
+        <p>Bring the premium massage chair experience to your workplace, community, or event.</p>
+        {% form 'contact' %}
+        <div class="t-form">
+            <input type="hidden" name="contact[subject]" value="Host Truck Request">
+            <div class="t-form-row">
+                <div class="t-fg"><label for="host-name">Your Name *</label><input type="text" id="host-name" name="contact[name]" placeholder="Jane Smith" required></div>
+                <div class="t-fg"><label for="host-email">Email *</label><input type="email" id="host-email" name="contact[email]" placeholder="jane@company.com" required></div>
+            </div>
+            <div class="t-form-row">
+                <div class="t-fg"><label for="host-phone">Phone *</label><input type="tel" id="host-phone" name="contact[phone]" placeholder="+1 (xxx) xxx-xxxx" required></div>
+                <div class="t-fg"><label for="host-org">Organization</label><input type="text" id="host-org" name="contact[organization]" placeholder="Company or community name"></div>
+            </div>
+            <div class="t-fg">
+                <label for="host-type">Event Type</label>
+                <select id="host-type" name="contact[event_type]">
+                    <option value="" disabled selected>Select event type</option>
+                    <option value="Workplace Wellness">Workplace Wellness Pop-Up</option>
+                    <option value="Community Event">Community / Neighborhood Event</option>
+                    <option value="Church Event">Church or Faith Community</option>
+                    <option value="Residential">Residential Amenity Event</option>
+                    <option value="Active Adult">Active Adult / Retirement Community</option>
+                    <option value="Corporate">Corporate / Tech Campus</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="t-fg"><label for="host-details">Event Details</label><textarea id="host-details" name="contact[body]" placeholder="Tell us about your event — expected attendees, preferred dates, location, and any special requests."></textarea></div>
+            <button type="submit" class="t-form-submit">Submit Request</button>
+        </div>
+        {% endform %}
+    </div>
+</div>
+
+</div><!-- end .mcm-truck -->
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+(function(){
+    // Intersection Observer for fade animations
+    var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry, i){
+            if(entry.isIntersecting){
+                setTimeout(function(){ entry.target.classList.add('t-visible'); }, i * 80);
+                obs.unobserve(entry.target);
+            }
+        });
+    }, {threshold: 0.1, rootMargin: '0px 0px -40px 0px'});
+    document.querySelectorAll('.mcm-truck .t-fade').forEach(function(el){ obs.observe(el); });
+
+    // FAQ accordion
+    document.querySelectorAll('.mcm-truck .t-faq-q').forEach(function(q){
+        q.addEventListener('click', function(){
+            var item = this.closest('.t-faq-item');
+            var wasActive = item.classList.contains('active');
+            document.querySelectorAll('.mcm-truck .t-faq-item').forEach(function(i){ i.classList.remove('active'); });
+            if(!wasActive) item.classList.add('active');
+        });
+    });
+
+    // Form modals
+    function openForm(type){
+        if(type === 'host') {
+            document.getElementById('host-form-overlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+    function closeForm(){
+        document.querySelectorAll('.mcm-truck .t-form-overlay').forEach(function(o){ o.classList.remove('active'); });
+        document.body.style.overflow = '';
+    }
+    document.querySelectorAll('.mcm-truck [data-form]').forEach(function(btn){
+        btn.addEventListener('click', function(e){
+            e.preventDefault();
+            openForm(this.getAttribute('data-form'));
+        });
+    });
+    document.querySelectorAll('.mcm-truck a[href="#booking-section"]').forEach(function(link){
+        link.addEventListener('click', function(e){
+            e.preventDefault();
+            document.getElementById('booking-section').scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+    document.querySelectorAll('.mcm-truck .t-form-close').forEach(function(btn){
+        btn.addEventListener('click', closeForm);
+    });
+    document.querySelectorAll('.mcm-truck .t-form-overlay').forEach(function(overlay){
+        overlay.addEventListener('click', function(e){
+            if(e.target === this) closeForm();
+        });
+    });
+})();
+</script>
+
+<!-- FAQ SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Do you come to my area?","acceptedAnswer":{"@type":"Answer","text":"We currently serve the Bay Area including San Jose, Santa Clara, Sunnyvale, Cupertino, Mountain View, Palo Alto, Fremont, Pleasanton, Dublin, Walnut Creek, San Francisco, Daly City, and surrounding communities."}},
+    {"@type":"Question","name":"Can I book for a group or event?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. The mobile showroom is designed for both private demos and group events. Workplaces, communities, churches, retirement communities, and neighborhood groups can all request a visit."}},
+    {"@type":"Question","name":"Can two people try it together?","acceptedAnswer":{"@type":"Answer","text":"Yes. The mobile showroom features multiple chairs so couples, partners, or colleagues can experience the chairs side by side."}},
+    {"@type":"Question","name":"What if I'm still comparing options?","acceptedAnswer":{"@type":"Answer","text":"That's exactly what the demo is for. Our specialists help you understand differences between models without pressure."}},
+    {"@type":"Question","name":"How long does a demo take?","acceptedAnswer":{"@type":"Answer","text":"A private demo typically takes 20-30 minutes. Event activations can run for several hours depending on the arrangement."}},
+    {"@type":"Question","name":"Is there any obligation to buy?","acceptedAnswer":{"@type":"Answer","text":"None at all. The mobile showroom is a zero-pressure experience. Try the chairs, ask questions, and take your time."}}
+  ]
+}
+</script>
