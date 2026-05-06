@@ -550,6 +550,178 @@
   height: auto;
 }
 
+.m2__zone-board-inner {
+  margin-top: 8px;
+  border-radius: 16px;
+  background: radial-gradient(circle at 50% 30%, #1a1a1e 0%, #0d0d10 100%);
+  padding: 36px 28px 30px;
+  box-shadow: 0 12px 48px rgba(30,25,18,.12);
+}
+.m2__zone-head {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.m2__zone-head-tag {
+  display: block;
+  color: #c9a06b;
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.m2__zone-head-sub {
+  display: block;
+  color: #888;
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+}
+.m2__zone-grid {
+  display: grid;
+  grid-template-columns: minmax(170px, 1fr) minmax(220px, 1.1fr) auto minmax(220px, 1.1fr) minmax(170px, 1fr);
+  gap: 18px;
+  align-items: center;
+}
+.m2__zone-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.m2__zone-list--man1 { text-align: right; }
+.m2__zone-list li {
+  padding: 9px 12px;
+  border-radius: 6px;
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  background: rgba(201, 160, 107, 0.10);
+  color: rgba(212, 168, 110, 0.62);
+  border: 1px solid rgba(201, 160, 107, 0.18);
+  transition: all 0.22s ease;
+}
+.m2__zone-list--dcore li {
+  background: rgba(97, 112, 100, 0.10);
+  color: rgba(168, 192, 177, 0.62);
+  border-color: rgba(97, 112, 100, 0.18);
+}
+.m2__zone-list li.is-active {
+  background: rgba(201, 160, 107, 0.24);
+  color: #d4a368;
+  border-color: rgba(212, 168, 110, 0.55);
+  box-shadow: 0 6px 18px rgba(201, 160, 107, 0.18);
+}
+.m2__zone-list--man1 li.is-active { transform: translateX(-4px); }
+.m2__zone-list--dcore li.is-active {
+  background: rgba(97, 112, 100, 0.26);
+  color: #b6cdbf;
+  border-color: rgba(168, 192, 177, 0.55);
+  box-shadow: 0 6px 18px rgba(97, 112, 100, 0.20);
+  transform: translateX(4px);
+}
+.m2__zone-list.is-filtering li:not(.is-active) { opacity: 0.32; }
+.m2__zone-fig {
+  position: relative;
+  background: #f4f4f1;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+.m2__zone-fig img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+.m2__zone-fig-brand {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: Inter, sans-serif;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: #c9a06b;
+  text-transform: uppercase;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.94);
+  padding: 4px 9px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+}
+.m2__zone-fig--dcore .m2__zone-fig-brand { color: #617064; }
+.m2__zone-pin {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.94);
+  background: rgba(201, 160, 107, 0.94);
+  color: #fff;
+  font-family: Inter, sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.34);
+  padding: 0;
+  z-index: 3;
+}
+.m2__zone-fig--dcore .m2__zone-pin { background: rgba(97, 112, 100, 0.94); }
+.m2__zone-pin:hover,
+.m2__zone-pin.is-active,
+.m2__zone-pin:focus-visible {
+  outline: none;
+  transform: translate(-50%, -50%) scale(1.18);
+  box-shadow: 0 0 0 8px rgba(201, 160, 107, 0.22), 0 8px 18px rgba(0, 0, 0, 0.34);
+}
+.m2__zone-fig--dcore .m2__zone-pin:hover,
+.m2__zone-fig--dcore .m2__zone-pin.is-active,
+.m2__zone-fig--dcore .m2__zone-pin:focus-visible {
+  box-shadow: 0 0 0 8px rgba(97, 112, 100, 0.22), 0 8px 18px rgba(0, 0, 0, 0.34);
+}
+.m2__zone-vs {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #1a1a1e;
+  border: 2px solid #333;
+  display: grid;
+  place-items: center;
+  color: #c9a06b;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+@media (max-width: 1100px) {
+  .m2__zone-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .m2__zone-fig--man1 { grid-column: 1; grid-row: 1; }
+  .m2__zone-fig--dcore { grid-column: 2; grid-row: 1; }
+  .m2__zone-list--man1 { grid-column: 1; grid-row: 2; text-align: left; }
+  .m2__zone-list--dcore { grid-column: 2; grid-row: 2; }
+  .m2__zone-list--man1 li.is-active { transform: translateX(4px); }
+  .m2__zone-vs { display: none; }
+}
+@media (max-width: 640px) {
+  .m2__zone-board-inner { padding: 24px 16px; }
+  .m2__zone-grid { grid-template-columns: 1fr; }
+  .m2__zone-fig--man1, .m2__zone-fig--dcore { grid-column: 1; }
+  .m2__zone-list--man1, .m2__zone-list--dcore { grid-column: 1; }
+  .m2__zone-fig--man1 { grid-row: 1; }
+  .m2__zone-list--man1 { grid-row: 2; }
+  .m2__zone-fig--dcore { grid-row: 3; }
+  .m2__zone-list--dcore { grid-row: 4; }
+}
+
 .m2__nav {
   position: sticky;
   top: 0;
@@ -1092,6 +1264,109 @@
   .m2__demo-card img { width: 104px; height: 104px; }
   .m2__mobile-cta { display: grid; }
 }
+
+
+/* ═══════ UI Polish Layer ═══════ */
+.m2 {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+.m2 :focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.m2 .m2__btn:focus-visible { outline-offset: 4px; }
+
+/* Headings refinement */
+.m2__h1 { letter-spacing: -0.02em; }
+.m2__h2 { letter-spacing: -0.015em; }
+
+/* Buttons polish */
+.m2__btn {
+  letter-spacing: 0.012em;
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+}
+.m2__btn:hover { transform: translateY(-2px); }
+
+/* Section breathing on desktop */
+@media (min-width: 1024px) {
+  .m2__section { padding: 96px 0; }
+}
+
+/* Cards — premium shadow */
+.m2__try-card,
+.m2__feel-card,
+.m2__price-card,
+.m2__model-card,
+.m2__group-card,
+.m2__demo-card,
+.m2__map-card {
+  border-radius: 12px;
+  transition: transform 0.32s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.32s ease, border-color 0.32s ease;
+}
+.m2__try-card:hover,
+.m2__feel-card:hover,
+.m2__price-card:hover,
+.m2__model-card:hover,
+.m2__demo-card:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 1px 2px rgba(22, 19, 15, 0.05),
+    0 14px 36px rgba(22, 19, 15, 0.10),
+    0 32px 70px rgba(22, 19, 15, 0.07);
+}
+
+/* Hero chip polish */
+.m2__chip {
+  letter-spacing: 0.012em;
+  transition: background 0.22s ease, border-color 0.22s ease, transform 0.22s ease;
+}
+.m2__chip:hover { transform: translateY(-1px); }
+
+/* Hero stats polish */
+.m2__hero-stat {
+  transition: transform 0.22s ease;
+}
+.m2__hero-stat:hover { transform: translateY(-2px); }
+
+/* Sticky nav refinement */
+.m2__nav a {
+  letter-spacing: 0.012em;
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+
+/* Pills/feature list polish */
+.m2__feature-list li {
+  letter-spacing: 0.005em;
+}
+
+/* FAQ details polish */
+.m2__faq details {
+  border-radius: 12px;
+  transition: box-shadow 0.22s ease, border-color 0.22s ease;
+}
+.m2__faq details:hover {
+  border-color: rgba(169, 130, 67, 0.4);
+}
+.m2__faq details[open] {
+  box-shadow: 0 12px 32px rgba(22, 19, 15, 0.06);
+}
+.m2__faq summary {
+  letter-spacing: -0.005em;
+  font-weight: 800;
+}
+
+/* Body text */
+.m2 p { letter-spacing: 0.005em; }
+
+/* Mobile typography tightening */
+@media (max-width: 760px) {
+  .m2__section { padding: 60px 0; }
+  .m2__btn { min-height: 50px; padding: 13px 22px; font-size: 14.5px; }
+}
+
 </style>
 
 <div class="m2">
@@ -1152,9 +1427,48 @@
             <p>Real chairs as the base — head, back, arms, calves, and feet compared zone by zone with calibrated annotations.</p>
           </div>
         </div>
-        <div class="m2__svg-diagram">
-          <img src="{{ 'man1-dcore2-feature-map.svg' | asset_url }}" alt="Feature Zone Map — Panasonic MAN1 vs D.Core 2: head, back, arms, calves, and feet zones compared" loading="lazy" width="1600" height="980">
+        <div class="m2__zone-board-inner">
+          <header class="m2__zone-head">
+            <span class="m2__zone-head-tag">FEATURE ZONE MAP</span>
+            <span class="m2__zone-head-sub">Hover any number to highlight matching features</span>
+          </header>
+          <div class="m2__zone-grid">
+            <ul class="m2__zone-list m2__zone-list--man1" id="m2-fmap-man1">
+              <li data-pin="1">Infrared Heated Rollers</li>
+              <li data-pin="2">Real Pro Ultra H.I. Engine</li>
+              <li data-pin="2">Shaped Palm Massage</li>
+              <li data-pin="3">Wrap-Around Calf</li>
+              <li data-pin="3">Reflexology Foot</li>
+            </ul>
+            <div class="m2__zone-fig m2__zone-fig--man1">
+              <span class="m2__zone-fig-brand">PANASONIC MAN1</span>
+              <img src="https://massagechairsandmore.com/cdn/shop/files/Artboard-1.png?v=1772489014&width=1200" alt="Panasonic MAN1 massage chair" loading="lazy">
+              <button type="button" class="m2__zone-pin" data-pin="1" data-target="m2-fmap-man1" style="top:23%;left:50%;" aria-label="Upper zone">1</button>
+              <button type="button" class="m2__zone-pin" data-pin="2" data-target="m2-fmap-man1" style="top:50%;left:58%;" aria-label="Mid zone">2</button>
+              <button type="button" class="m2__zone-pin" data-pin="3" data-target="m2-fmap-man1" style="top:78%;left:52%;" aria-label="Lower zone">3</button>
+            </div>
+            <div class="m2__zone-vs">VS</div>
+            <div class="m2__zone-fig m2__zone-fig--dcore">
+              <span class="m2__zone-fig-brand">D.CORE 2</span>
+              <img src="https://massagechairsandmore.com/cdn/shop/files/asd2.jpg?v=1772565432&width=1200" alt="D.Core 2 massage chair" loading="lazy">
+              <button type="button" class="m2__zone-pin" data-pin="1" data-target="m2-fmap-dcore" style="top:23%;left:48%;" aria-label="Upper zone">1</button>
+              <button type="button" class="m2__zone-pin" data-pin="2" data-target="m2-fmap-dcore" style="top:50%;left:52%;" aria-label="Mid zone">2</button>
+              <button type="button" class="m2__zone-pin" data-pin="3" data-target="m2-fmap-dcore" style="top:78%;left:60%;" aria-label="Lower zone">3</button>
+            </div>
+            <ul class="m2__zone-list m2__zone-list--dcore" id="m2-fmap-dcore">
+              <li data-pin="1">3D+ True Shiatsu</li>
+              <li data-pin="2">10-Hand Massage Robot</li>
+              <li data-pin="2">Tornado-Shiatsu Arms</li>
+              <li data-pin="3">Calf Rollers</li>
+              <li data-pin="3">Full-Body Compression</li>
+            </ul>
+          </div>
         </div>
+        <div class="m2__map-notes">
+          <div class="m2__map-note"><h4>Panasonic MAN1 highlights</h4><ul><li>Infrared heated rollers at the head</li><li>Real Pro Ultra H.I. back engine</li><li>Shaped palm massage, wrap-around calf, reflexology foot</li></ul></div>
+          <div class="m2__map-note"><h4>D.Core 2 highlights</h4><ul><li>3D+ True Shiatsu at the head</li><li>10-hand massage robot for back</li><li>Tornado-Shiatsu arms, calf rollers, full-body compression</li></ul></div>
+        </div>
+      </div>
         <div class="m2__map-notes">
           <div class="m2__map-note"><h4>Panasonic MAN1 highlights</h4><ul><li>Infrared heated rollers at the head</li><li>Real Pro Ultra H.I. back engine</li><li>Shaped palm massage, wrap-around calf, reflexology foot</li></ul></div>
           <div class="m2__map-note"><h4>D.Core 2 highlights</h4><ul><li>3D+ True Shiatsu at the head</li><li>10-hand massage robot for back</li><li>Tornado-Shiatsu arms, calf rollers, full-body compression</li></ul></div>
@@ -1170,9 +1484,44 @@
             <p>Roller path, mechanism personality, and what each chair is trying to feel like during the first few minutes.</p>
           </div>
         </div>
-        <div class="m2__svg-diagram">
-          <img src="{{ 'man1-dcore2-mechanism-diagram.svg' | asset_url }}" alt="Massage Engine Diagram — Panasonic Real Pro Ultra H.I. vs D.Core 3D+ True Shiatsu" loading="lazy" width="1600" height="980">
+        <div class="m2__zone-board-inner">
+          <header class="m2__zone-head">
+            <span class="m2__zone-head-tag">MASSAGE ENGINE</span>
+            <span class="m2__zone-head-sub">Roller path and mechanism comparison</span>
+          </header>
+          <div class="m2__zone-grid">
+            <ul class="m2__zone-list m2__zone-list--man1" id="m2-eng-man1">
+              <li data-pin="1">Real Pro Ultra H.I.</li>
+              <li data-pin="2">Pressure-Sensing Rollers</li>
+              <li data-pin="3">SL-Track Coverage</li>
+            </ul>
+            <div class="m2__zone-fig m2__zone-fig--man1">
+              <span class="m2__zone-fig-brand">PANASONIC MAN1</span>
+              <img src="https://massagechairsandmore.com/cdn/shop/files/Artboard-1.png?v=1772489014&width=1200" alt="Panasonic MAN1 massage chair" loading="lazy">
+              <button type="button" class="m2__zone-pin" data-pin="1" data-target="m2-eng-man1" style="top:23%;left:50%;" aria-label="Upper zone">1</button>
+              <button type="button" class="m2__zone-pin" data-pin="2" data-target="m2-eng-man1" style="top:50%;left:58%;" aria-label="Mid zone">2</button>
+              <button type="button" class="m2__zone-pin" data-pin="3" data-target="m2-eng-man1" style="top:78%;left:52%;" aria-label="Lower zone">3</button>
+            </div>
+            <div class="m2__zone-vs">VS</div>
+            <div class="m2__zone-fig m2__zone-fig--dcore">
+              <span class="m2__zone-fig-brand">D.CORE 2</span>
+              <img src="https://massagechairsandmore.com/cdn/shop/files/asd2.jpg?v=1772565432&width=1200" alt="D.Core 2 massage chair" loading="lazy">
+              <button type="button" class="m2__zone-pin" data-pin="1" data-target="m2-eng-dcore" style="top:23%;left:48%;" aria-label="Upper zone">1</button>
+              <button type="button" class="m2__zone-pin" data-pin="2" data-target="m2-eng-dcore" style="top:50%;left:52%;" aria-label="Mid zone">2</button>
+              <button type="button" class="m2__zone-pin" data-pin="3" data-target="m2-eng-dcore" style="top:78%;left:60%;" aria-label="Lower zone">3</button>
+            </div>
+            <ul class="m2__zone-list m2__zone-list--dcore" id="m2-eng-dcore">
+              <li data-pin="1">3D+ True Shiatsu</li>
+              <li data-pin="2">10-Hand Massage System</li>
+              <li data-pin="3">Refined Choreographed Flow</li>
+            </ul>
+          </div>
         </div>
+        <div class="m2__map-notes">
+          <div class="m2__map-note"><h4>Panasonic feels more engineered.</h4><ul><li>Precise, targeted, customizable.</li><li>Real-time force response and body scan matter most here.</li></ul></div>
+          <div class="m2__map-note"><h4>D.Core feels more composed.</h4><ul><li>Refined, rhythmic, furniture-first.</li><li>True Shiatsu and the 10-hand system are the headline.</li></ul></div>
+        </div>
+      </div>
         <div class="m2__map-notes">
           <div class="m2__map-note"><h4>Panasonic feels more engineered.</h4><ul><li>Precise, targeted, customizable.</li><li>Real-time force response and body scan matter most here.</li></ul></div>
           <div class="m2__map-note"><h4>D.Core feels more composed.</h4><ul><li>Refined, rhythmic, furniture-first.</li><li>True Shiatsu and the 10-hand system are the headline.</li></ul></div>
@@ -1188,9 +1537,40 @@
             <p>Body scanning and pressure only matter if the chair lands correctly on your body. This is why side-by-side testing matters.</p>
           </div>
         </div>
-        <div class="m2__svg-diagram">
-          <img src="{{ 'man1-dcore2-body-scan-diagram.svg' | asset_url }}" alt="Body Scan Diagram — Panasonic 1260P Acupoint scan vs D.Core 3D+ True Shiatsu Feel" loading="lazy" width="1600" height="980">
+        <div class="m2__zone-board-inner">
+          <header class="m2__zone-head">
+            <span class="m2__zone-head-tag">BODY SCAN, PRESSURE & FIT</span>
+            <span class="m2__zone-head-sub">How each chair lands on your body</span>
+          </header>
+          <div class="m2__zone-grid">
+            <ul class="m2__zone-list m2__zone-list--man1" id="m2-scan-man1">
+              <li data-pin="1">1260P Acupoint Body Scan</li>
+              <li data-pin="2">Pressure Sensing</li>
+              <li data-pin="3">Real-Time Force Map</li>
+            </ul>
+            <div class="m2__zone-fig m2__zone-fig--man1">
+              <span class="m2__zone-fig-brand">PANASONIC MAN1</span>
+              <img src="https://massagechairsandmore.com/cdn/shop/files/Artboard-1.png?v=1772489014&width=1200" alt="Panasonic MAN1 massage chair" loading="lazy">
+              <button type="button" class="m2__zone-pin" data-pin="1" data-target="m2-scan-man1" style="top:23%;left:50%;" aria-label="Upper zone">1</button>
+              <button type="button" class="m2__zone-pin" data-pin="2" data-target="m2-scan-man1" style="top:50%;left:58%;" aria-label="Mid zone">2</button>
+              <button type="button" class="m2__zone-pin" data-pin="3" data-target="m2-scan-man1" style="top:78%;left:52%;" aria-label="Lower zone">3</button>
+            </div>
+            <div class="m2__zone-vs">VS</div>
+            <div class="m2__zone-fig m2__zone-fig--dcore">
+              <span class="m2__zone-fig-brand">D.CORE 2</span>
+              <img src="https://massagechairsandmore.com/cdn/shop/files/asd2.jpg?v=1772565432&width=1200" alt="D.Core 2 massage chair" loading="lazy">
+              <button type="button" class="m2__zone-pin" data-pin="1" data-target="m2-scan-dcore" style="top:23%;left:48%;" aria-label="Upper zone">1</button>
+              <button type="button" class="m2__zone-pin" data-pin="2" data-target="m2-scan-dcore" style="top:50%;left:52%;" aria-label="Mid zone">2</button>
+              <button type="button" class="m2__zone-pin" data-pin="3" data-target="m2-scan-dcore" style="top:78%;left:60%;" aria-label="Lower zone">3</button>
+            </div>
+            <ul class="m2__zone-list m2__zone-list--dcore" id="m2-scan-dcore">
+              <li data-pin="1">True Shiatsu Touch</li>
+              <li data-pin="2">Composed Rhythmic Feel</li>
+              <li data-pin="3">Furniture-First Fit</li>
+            </ul>
+          </div>
         </div>
+      </div>
       </div>
 
       <!-- ═══ 04 · Lower Body ═══ -->
@@ -1202,9 +1582,40 @@
             <p>Full-body comfort extends beyond the back. Compare arm compression, calf rollers, and foot massage for each chair.</p>
           </div>
         </div>
-        <div class="m2__svg-diagram">
-          <img src="{{ 'man1-dcore2-lower-body-diagram.svg' | asset_url }}" alt="Lower Body Diagram — arms, calves, and feet comparison for Panasonic MAN1 and D.Core 2" loading="lazy" width="1600" height="980">
+        <div class="m2__zone-board-inner">
+          <header class="m2__zone-head">
+            <span class="m2__zone-head-tag">ARMS, CALVES & FEET</span>
+            <span class="m2__zone-head-sub">Lower-body and arm coverage</span>
+          </header>
+          <div class="m2__zone-grid">
+            <ul class="m2__zone-list m2__zone-list--man1" id="m2-lower-man1">
+              <li data-pin="1">Shaped Palm Massage</li>
+              <li data-pin="2">Wrap-Around Calf</li>
+              <li data-pin="3">Reflexology Foot Massage</li>
+            </ul>
+            <div class="m2__zone-fig m2__zone-fig--man1">
+              <span class="m2__zone-fig-brand">PANASONIC MAN1</span>
+              <img src="https://massagechairsandmore.com/cdn/shop/files/Artboard-1.png?v=1772489014&width=1200" alt="Panasonic MAN1 massage chair" loading="lazy">
+              <button type="button" class="m2__zone-pin" data-pin="1" data-target="m2-lower-man1" style="top:23%;left:50%;" aria-label="Upper zone">1</button>
+              <button type="button" class="m2__zone-pin" data-pin="2" data-target="m2-lower-man1" style="top:50%;left:58%;" aria-label="Mid zone">2</button>
+              <button type="button" class="m2__zone-pin" data-pin="3" data-target="m2-lower-man1" style="top:78%;left:52%;" aria-label="Lower zone">3</button>
+            </div>
+            <div class="m2__zone-vs">VS</div>
+            <div class="m2__zone-fig m2__zone-fig--dcore">
+              <span class="m2__zone-fig-brand">D.CORE 2</span>
+              <img src="https://massagechairsandmore.com/cdn/shop/files/asd2.jpg?v=1772565432&width=1200" alt="D.Core 2 massage chair" loading="lazy">
+              <button type="button" class="m2__zone-pin" data-pin="1" data-target="m2-lower-dcore" style="top:23%;left:48%;" aria-label="Upper zone">1</button>
+              <button type="button" class="m2__zone-pin" data-pin="2" data-target="m2-lower-dcore" style="top:50%;left:52%;" aria-label="Mid zone">2</button>
+              <button type="button" class="m2__zone-pin" data-pin="3" data-target="m2-lower-dcore" style="top:78%;left:60%;" aria-label="Lower zone">3</button>
+            </div>
+            <ul class="m2__zone-list m2__zone-list--dcore" id="m2-lower-dcore">
+              <li data-pin="1">Tornado-Shiatsu Arms</li>
+              <li data-pin="2">Calf Rollers</li>
+              <li data-pin="3">Full-Body Compression</li>
+            </ul>
+          </div>
         </div>
+      </div>
       </div>
 
       <!-- ═══ 05 · Heat & Programs ═══ -->
@@ -1216,9 +1627,40 @@
             <p>Heated rollers versus triple-region heat. Plus auto programs, zero gravity, and everyday comfort compared.</p>
           </div>
         </div>
-        <div class="m2__svg-diagram">
-          <img src="{{ 'man1-dcore2-heat-programs-diagram.svg' | asset_url }}" alt="Heat and Programs Diagram — Panasonic infrared rollers vs D.Core triple-region heat" loading="lazy" width="1600" height="980">
+        <div class="m2__zone-board-inner">
+          <header class="m2__zone-head">
+            <span class="m2__zone-head-tag">HEAT, PROGRAMS & COMFORT</span>
+            <span class="m2__zone-head-sub">Warmth distribution and session design</span>
+          </header>
+          <div class="m2__zone-grid">
+            <ul class="m2__zone-list m2__zone-list--man1" id="m2-heat-man1">
+              <li data-pin="1">Infrared Heated Rollers</li>
+              <li data-pin="2">Auto Programs · 10-30 min</li>
+              <li data-pin="3">Zero Gravity Recline</li>
+            </ul>
+            <div class="m2__zone-fig m2__zone-fig--man1">
+              <span class="m2__zone-fig-brand">PANASONIC MAN1</span>
+              <img src="https://massagechairsandmore.com/cdn/shop/files/Artboard-1.png?v=1772489014&width=1200" alt="Panasonic MAN1 massage chair" loading="lazy">
+              <button type="button" class="m2__zone-pin" data-pin="1" data-target="m2-heat-man1" style="top:23%;left:50%;" aria-label="Upper zone">1</button>
+              <button type="button" class="m2__zone-pin" data-pin="2" data-target="m2-heat-man1" style="top:50%;left:58%;" aria-label="Mid zone">2</button>
+              <button type="button" class="m2__zone-pin" data-pin="3" data-target="m2-heat-man1" style="top:78%;left:52%;" aria-label="Lower zone">3</button>
+            </div>
+            <div class="m2__zone-vs">VS</div>
+            <div class="m2__zone-fig m2__zone-fig--dcore">
+              <span class="m2__zone-fig-brand">D.CORE 2</span>
+              <img src="https://massagechairsandmore.com/cdn/shop/files/asd2.jpg?v=1772565432&width=1200" alt="D.Core 2 massage chair" loading="lazy">
+              <button type="button" class="m2__zone-pin" data-pin="1" data-target="m2-heat-dcore" style="top:23%;left:48%;" aria-label="Upper zone">1</button>
+              <button type="button" class="m2__zone-pin" data-pin="2" data-target="m2-heat-dcore" style="top:50%;left:52%;" aria-label="Mid zone">2</button>
+              <button type="button" class="m2__zone-pin" data-pin="3" data-target="m2-heat-dcore" style="top:78%;left:60%;" aria-label="Lower zone">3</button>
+            </div>
+            <ul class="m2__zone-list m2__zone-list--dcore" id="m2-heat-dcore">
+              <li data-pin="1">Triple-Region Heat</li>
+              <li data-pin="2">Curated Auto Programs</li>
+              <li data-pin="3">Daily Comfort Setup</li>
+            </ul>
+          </div>
         </div>
+      </div>
       </div>
 
       <!-- ═══ 06 · Fit & Warranty ═══ -->
@@ -1230,9 +1672,44 @@
             <p>Physical dimensions, height range, design style, price, and warranty compared side by side.</p>
           </div>
         </div>
-        <div class="m2__svg-diagram">
-          <img src="{{ 'man1-dcore2-fit-warranty-diagram.svg' | asset_url }}" alt="Fit and Warranty Diagram — physical dimensions, height range, and ownership highlights" loading="lazy" width="1600" height="980">
+        <div class="m2__zone-board-inner">
+          <header class="m2__zone-head">
+            <span class="m2__zone-head-tag">BODY FIT & OWNERSHIP</span>
+            <span class="m2__zone-head-sub">Physical dimensions, design, and value</span>
+          </header>
+          <div class="m2__zone-grid">
+            <ul class="m2__zone-list m2__zone-list--man1" id="m2-fit-man1">
+              <li data-pin="1">Height 4'8" – 6'2"</li>
+              <li data-pin="2">264 lb Limit</li>
+              <li data-pin="3">$15,299 → $12,999</li>
+            </ul>
+            <div class="m2__zone-fig m2__zone-fig--man1">
+              <span class="m2__zone-fig-brand">PANASONIC MAN1</span>
+              <img src="https://massagechairsandmore.com/cdn/shop/files/Artboard-1.png?v=1772489014&width=1200" alt="Panasonic MAN1 massage chair" loading="lazy">
+              <button type="button" class="m2__zone-pin" data-pin="1" data-target="m2-fit-man1" style="top:23%;left:50%;" aria-label="Upper zone">1</button>
+              <button type="button" class="m2__zone-pin" data-pin="2" data-target="m2-fit-man1" style="top:50%;left:58%;" aria-label="Mid zone">2</button>
+              <button type="button" class="m2__zone-pin" data-pin="3" data-target="m2-fit-man1" style="top:78%;left:52%;" aria-label="Lower zone">3</button>
+            </div>
+            <div class="m2__zone-vs">VS</div>
+            <div class="m2__zone-fig m2__zone-fig--dcore">
+              <span class="m2__zone-fig-brand">D.CORE 2</span>
+              <img src="https://massagechairsandmore.com/cdn/shop/files/asd2.jpg?v=1772565432&width=1200" alt="D.Core 2 massage chair" loading="lazy">
+              <button type="button" class="m2__zone-pin" data-pin="1" data-target="m2-fit-dcore" style="top:23%;left:48%;" aria-label="Upper zone">1</button>
+              <button type="button" class="m2__zone-pin" data-pin="2" data-target="m2-fit-dcore" style="top:50%;left:52%;" aria-label="Mid zone">2</button>
+              <button type="button" class="m2__zone-pin" data-pin="3" data-target="m2-fit-dcore" style="top:78%;left:60%;" aria-label="Lower zone">3</button>
+            </div>
+            <ul class="m2__zone-list m2__zone-list--dcore" id="m2-fit-dcore">
+              <li data-pin="1">Confirm Range In Showroom</li>
+              <li data-pin="2">Confirm Weight In Showroom</li>
+              <li data-pin="3">$16,999 → $14,999</li>
+            </ul>
+          </div>
         </div>
+        <div class="m2__map-notes">
+          <div class="m2__map-note"><h4>MAN1 ownership</h4><ul><li>Height range: 4'8" — 6'2", max 264 lb</li><li>Technology-forward, Panasonic service trust</li><li>$15,299 → $12,999</li></ul></div>
+          <div class="m2__map-note"><h4>D.Core 2 ownership</h4><ul><li>Confirm height + weight in showroom</li><li>Handcrafted Japanese luxury, oak panels</li><li>$16,999 → $14,999</li></ul></div>
+        </div>
+      </div>
         <div class="m2__map-notes">
           <div class="m2__map-note"><h4>MAN1 ownership</h4><ul><li>Height range: 4'8" — 6'2", max 264 lb</li><li>Technology-forward, Panasonic service trust</li><li>$15,299 → $12,999</li></ul></div>
           <div class="m2__map-note"><h4>D.Core 2 ownership</h4><ul><li>Confirm height + weight in showroom</li><li>Handcrafted Japanese luxury, oak panels</li><li>$16,999 → $14,999</li></ul></div>
@@ -1631,3 +2108,36 @@
     <a class="m2__btn m2__btn--dark" href="{{ phone_href }}">Call {{ phone_label }}</a>
   </div>
 </div>
+
+<script>
+(function () {
+  var pins = document.querySelectorAll('.m2__zone-pin');
+  if (!pins.length) return;
+  pins.forEach(function (pin) {
+    var listId = pin.getAttribute('data-target');
+    var pinId = pin.getAttribute('data-pin');
+    var list = document.getElementById(listId);
+    if (!list) return;
+    var items = list.querySelectorAll('li');
+    var siblings = pin.parentElement.querySelectorAll('.m2__zone-pin');
+    function activate() {
+      siblings.forEach(function (s) { s.classList.remove('is-active'); });
+      pin.classList.add('is-active');
+      list.classList.add('is-filtering');
+      items.forEach(function (li) {
+        li.classList.toggle('is-active', li.getAttribute('data-pin') === pinId);
+      });
+    }
+    function deactivate() {
+      pin.classList.remove('is-active');
+      list.classList.remove('is-filtering');
+      items.forEach(function (li) { li.classList.remove('is-active'); });
+    }
+    pin.addEventListener('mouseenter', activate);
+    pin.addEventListener('mouseleave', deactivate);
+    pin.addEventListener('focus', activate);
+    pin.addEventListener('blur', deactivate);
+    pin.addEventListener('click', function () { activate(); });
+  });
+})();
+</script>

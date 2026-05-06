@@ -14,7 +14,7 @@
   <rect x="60" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh5)"/>
   <rect x="80" y="185" width="310" height="38" rx="19" fill="#3f5f64"/>
   <text x="235" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">BRIO+ · HEAT &amp; PROGRAMS</text>
-  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100-14-1.jpg?v=1772325831" x="220" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet"/>
+  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100-14-1.jpg?v=1772325831" x="180" y="210" width="480" height="480" preserveAspectRatio="xMidYMid meet"/>
 
   <!-- Heat zones visualization on Brio+ -->
   <!-- Heated Rollers in back area -->
@@ -51,7 +51,7 @@
   <rect x="820" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh5)"/>
   <rect x="840" y="185" width="330" height="38" rx="19" fill="#a66f3d"/>
   <text x="1005" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">SOLARA · HEAT &amp; PROGRAMS</text>
-  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/1.jpg?v=1772326021" x="980" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet"/>
+  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/1.jpg?v=1772326021" x="940" y="210" width="480" height="480" preserveAspectRatio="xMidYMid meet"/>
 
   <!-- Heat zones on Solara -->
   <!-- Back heat -->

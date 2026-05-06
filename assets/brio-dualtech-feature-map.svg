@@ -25,7 +25,7 @@
   <ellipse cx="375" cy="367" rx="30" ry="60" fill="#9a7f4a" opacity=".10" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4"/>
   <line x1="405" y1="367" x2="560" y2="367" stroke="#9a7f4a" stroke-width="1.5"/>
   <rect x="560" y="343" width="200" height="48" rx="12" fill="#9a7f4a" opacity=".10"/>
-  <text x="660" y="363" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="12" font-weight="900" text-anchor="middle">HEAD & AIRBAGS</text>
+  <text x="660" y="363" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="12" font-weight="900" text-anchor="middle">HEAD &amp; AIRBAGS</text>
   <text x="660" y="381" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle">Shoulder-level airbags</text>
 
   <ellipse cx="405" cy="417" rx="35" ry="65" fill="#9a7f4a" opacity=".10" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4"/>
@@ -37,7 +37,7 @@
   <ellipse cx="447" cy="460" rx="30" ry="40" fill="#9a7f4a" opacity=".10" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4"/>
   <line x1="477" y1="460" x2="560" y2="460" stroke="#9a7f4a" stroke-width="1.5"/>
   <rect x="560" y="436" width="200" height="48" rx="12" fill="#9a7f4a" opacity=".10"/>
-  <text x="660" y="456" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="12" font-weight="900" text-anchor="middle">SEAT & GLUTES</text>
+  <text x="660" y="456" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="12" font-weight="900" text-anchor="middle">SEAT &amp; GLUTES</text>
   <text x="660" y="474" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle">Vibration + heat pad</text>
 
   <ellipse cx="497" cy="505" rx="25" ry="35" fill="#9a7f4a" opacity=".10" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4"/>

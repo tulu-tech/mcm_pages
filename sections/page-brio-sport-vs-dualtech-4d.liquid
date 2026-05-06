@@ -38,7 +38,7 @@
 
   Implementation notes for missing image URLs:
   - Generated comparison assets are stored in /assets and referenced with asset_url.
-  - New visual guide assets: brio-dualtech-massage-engine-map.png, brio-dualtech-feature-zone-map.png, brio-dualtech-heat-compression-map.png, brio-dualtech-lower-body-map.png, brio-dualtech-home-fit-control-map.png.
+  - Visual guide assets: brio-dualtech-mechanism-diagram.svg, brio-dualtech-feature-map.svg, brio-dualtech-heat-programs-diagram.svg, brio-dualtech-lower-body-diagram.svg, brio-dualtech-home-fit-control-map.png.
   - If a generated asset is not uploaded with the theme, the onerror fallback swaps to official MCM product/CDN imagery.
   - Product cards use live Shopify product data when available, with safe static fallbacks for price and images.
   - Product schema is conditional and does not fabricate ratings, review counts, SKU, or inventory.
@@ -60,10 +60,10 @@
 {%- assign img_hero_asset = 'https://cdn.shopify.com/s/files/1/0813/4036/7096/files/brio-dualtech-hero-comparison.png?v=1777559819' -%}
 {%- assign img_recovery_asset = 'https://cdn.shopify.com/s/files/1/0813/4036/7096/files/brio-dualtech-recovery-vs-dual-mechanism.png?v=1777559818' -%}
 {%- assign img_showroom_asset = 'https://cdn.shopify.com/s/files/1/0813/4036/7096/files/brio-dualtech-showroom-demo.png?v=1777559818' -%}
-{%- assign img_engine_map = 'brio-dualtech-massage-engine-map.png' | asset_url -%}
-{%- assign img_zone_map = 'brio-dualtech-feature-zone-map.png' | asset_url -%}
-{%- assign img_heat_map = 'brio-dualtech-heat-compression-map.png' | asset_url -%}
-{%- assign img_lower_map = 'brio-dualtech-lower-body-map.png' | asset_url -%}
+{%- assign img_engine_map = 'brio-dualtech-mechanism-diagram.svg' | asset_url -%}
+{%- assign img_zone_map = 'brio-dualtech-feature-map.svg' | asset_url -%}
+{%- assign img_heat_map = 'brio-dualtech-heat-programs-diagram.svg' | asset_url -%}
+{%- assign img_lower_map = 'brio-dualtech-lower-body-diagram.svg' | asset_url -%}
 {%- assign img_home_map = 'brio-dualtech-home-fit-control-map.png' | asset_url -%}
 {%- assign img_brio_black = 'https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100-11.jpg?v=1772325852' -%}
 {%- assign img_brio_beige = 'https://cdn.shopify.com/s/files/1/0813/4036/7096/files/PositivePosture_BrioSport_Beige_Upright_45.png?v=1772325852' -%}
@@ -574,6 +574,25 @@
     object-fit: cover;
     object-position: center;
   }
+  .bdc__hero-side {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .bdc__hero-image {
+    border-radius: 18px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 24px 60px rgba(43, 33, 20, 0.10), 0 4px 16px rgba(43, 33, 20, 0.06);
+    aspect-ratio: 4 / 3;
+  }
+  .bdc__hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
 
   .bdc__hero-content {
     position: relative;
@@ -685,6 +704,69 @@
     border: 1px solid rgba(17,16,14,.06);
     border-radius: 18px;
     box-shadow: 0 16px 42px rgba(25, 18, 10, 0.10);
+  }
+
+  .bdc__fit-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+  .bdc__fit-card {
+    background: #fff;
+    border: 1px solid rgba(17,16,14,.06);
+    border-radius: 22px;
+    padding: 24px 22px 22px;
+    box-shadow: 0 16px 42px rgba(25, 18, 10, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .bdc__fit-badge {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 999px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 2px;
+  }
+  .bdc__fit-badge--gold { background: #9a7f4a; }
+  .bdc__fit-badge--sage { background: #617064; }
+  .bdc__fit-photo {
+    background: linear-gradient(180deg, #faf7f1 0%, #f0eadd 100%);
+    border-radius: 16px;
+    padding: 16px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .bdc__fit-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .bdc__fit-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .bdc__fit-chip {
+    background: #f8f5ef;
+    color: #3c3c3c;
+    border: 1px solid rgba(17,16,14,.06);
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  @media (max-width: 760px) {
+    .bdc__fit-pair { grid-template-columns: 1fr; }
   }
 
   .bdc__visual-copy {
@@ -899,16 +981,15 @@
   }
 
   .bdc__summary-line {
-    max-width: 1060px;
-    margin: 30px auto 0;
-    padding: 22px 24px;
+    margin-top: 26px;
+    padding: 24px 28px;
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
     background: #fff;
     color: var(--text);
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 1.7;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.65;
     text-align: center;
   }
 
@@ -1423,13 +1504,57 @@
       padding-bottom: 78px;
     }
   }
+
+
+/* ═══════ UI Polish Layer ═══════ */
+  .bdc {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  .bdc :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  .bdc h1, .bdc h2, .bdc h3 { letter-spacing: -0.012em; }
+  .bdc__btn {
+    letter-spacing: 0.012em;
+    transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+  }
+  .bdc__btn:hover { transform: translateY(-2px); }
+  .bdc__card,
+  .bdc__feature,
+  .bdc__model-card,
+  .bdc__faq-item {
+    border-radius: 14px;
+    transition: transform 0.32s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.32s ease, border-color 0.32s ease;
+  }
+  .bdc__card:hover,
+  .bdc__feature:hover,
+  .bdc__model-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1px 2px rgba(20, 20, 20, 0.05), 0 14px 36px rgba(20, 20, 20, 0.10), 0 32px 70px rgba(20, 20, 20, 0.07);
+  }
+  .bdc__badge,
+  .bdc__chip {
+    letter-spacing: 0.012em;
+    transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+  }
+  .bdc p { letter-spacing: 0.005em; }
+  @media (min-width: 1024px) {
+    .bdc__section { padding: 96px 0; }
+  }
+  @media (max-width: 760px) {
+    .bdc__section { padding: 60px 0; }
+    .bdc__btn { min-height: 50px; padding: 13px 22px; font-size: 14.5px; }
+  }
+
 </style>
 
 <div class="bdc bdc__bleed">
   <section class="bdc__hero" id="top" aria-labelledby="bdc-h1">
-    <div class="bdc__hero-media" aria-hidden="true">
-      <img src="{{ img_hero_asset }}" onerror="this.onerror=null;this.src='{{ img_brio_beige }}';" alt="" width="2000" height="1125" fetchpriority="high">
-    </div>
+    <div class="bdc__hero-media" aria-hidden="true"></div>
     <div class="bdc__wrap--wide">
       <div class="bdc__hero-content">
         <div class="bdc__hero-copy">
@@ -1449,13 +1574,18 @@
             <span class="bdc__badge">MCM advantage: Compare in person before buying</span>
           </div>
         </div>
-        <aside class="bdc__hero-panel" aria-label="Comparison quick numbers">
-          <h2>How to read this massage chair comparison</h2>
-          <div class="bdc__mini-metric"><b>2</b><span>Positive Posture massage chairs compared side by side.</span></div>
-          <div class="bdc__mini-metric"><b>1 in</b><span>Wall clearance difference between the two chairs.</span></div>
-          <div class="bdc__mini-metric"><b>$1k</b><span>Current sale price gap based on listed price bands.</span></div>
-          <div class="bdc__mini-metric"><b>5 min</b><span>A short guided demo can usually clarify pressure, fit, and massage feel.</span></div>
-        </aside>
+        <div class="bdc__hero-side">
+          <div class="bdc__hero-image">
+            <img src="{{ img_dualtech_slate }}" alt="DualTech 4D massage chair" loading="eager" width="900" height="675">
+          </div>
+          <aside class="bdc__hero-panel" aria-label="Comparison quick numbers">
+            <h2>How to read this massage chair comparison</h2>
+            <div class="bdc__mini-metric"><b>2</b><span>Positive Posture massage chairs compared side by side.</span></div>
+            <div class="bdc__mini-metric"><b>1 in</b><span>Wall clearance difference between the two chairs.</span></div>
+            <div class="bdc__mini-metric"><b>$1k</b><span>Current sale price gap based on listed price bands.</span></div>
+            <div class="bdc__mini-metric"><b>5 min</b><span>A short guided demo can usually clarify pressure, fit, and massage feel.</span></div>
+          </aside>
+        </div>
       </div>
     </div>
   </section>
@@ -1471,7 +1601,7 @@
       <div class="bdc__visual-stack">
         <article class="bdc__visual-story">
           <div class="bdc__visual-frame">
-            <img src="{{ img_engine_map }}" onerror="this.onerror=null;this.src='{{ img_hero_asset }}';" alt="Brio Sport vs DualTech 4D massage engine comparison using real chair images" loading="lazy" width="2000" height="1125">
+            <object data="{{ img_engine_map }}" type="image/svg+xml" aria-label="Brio Sport vs DualTech 4D massage engine comparison using real chair images" style="width:100%;height:auto;display:block;aspect-ratio:1600/980"></object>
           </div>
           <div class="bdc__visual-copy">
             <div class="bdc__visual-copy-top">
@@ -1504,7 +1634,7 @@
 
         <article class="bdc__visual-story">
           <div class="bdc__visual-frame">
-            <img src="{{ img_zone_map }}" onerror="this.onerror=null;this.src='{{ img_brio_beige }}';" alt="Feature zone map for Brio Sport and DualTech 4D massage chairs" loading="lazy" width="2000" height="1125">
+            <object data="{{ img_zone_map }}" type="image/svg+xml" aria-label="Feature zone map for Brio Sport and DualTech 4D massage chairs" style="width:100%;height:auto;display:block;aspect-ratio:1600/980"></object>
           </div>
           <div class="bdc__visual-copy">
             <div class="bdc__visual-copy-top">
@@ -1537,7 +1667,7 @@
 
         <article class="bdc__visual-story">
           <div class="bdc__visual-frame">
-            <img src="{{ img_heat_map }}" onerror="this.onerror=null;this.src='{{ img_brio_heat }}';" alt="Heat and compression comparison for Brio Sport and DualTech 4D massage chairs" loading="lazy" width="2000" height="1125">
+            <object data="{{ img_heat_map }}" type="image/svg+xml" aria-label="Heat and compression comparison for Brio Sport and DualTech 4D massage chairs" style="width:100%;height:auto;display:block;aspect-ratio:1600/980"></object>
           </div>
           <div class="bdc__visual-copy">
             <div class="bdc__visual-copy-top">
@@ -1570,7 +1700,7 @@
 
         <article class="bdc__visual-story">
           <div class="bdc__visual-frame">
-            <img src="{{ img_lower_map }}" onerror="this.onerror=null;this.src='{{ img_dualtech_slate }}';" alt="Lower body and foot massage comparison for Brio Sport and DualTech 4D" loading="lazy" width="2000" height="1125">
+            <object data="{{ img_lower_map }}" type="image/svg+xml" aria-label="Lower body and foot massage comparison for Brio Sport and DualTech 4D" style="width:100%;height:auto;display:block;aspect-ratio:1600/980"></object>
           </div>
           <div class="bdc__visual-copy">
             <div class="bdc__visual-copy-top">
@@ -1603,7 +1733,30 @@
 
         <article class="bdc__visual-story">
           <div class="bdc__visual-frame">
-            <img src="{{ img_home_map }}" onerror="this.onerror=null;this.src='{{ img_dualtech_linen }}';" alt="Home fit and control comparison for Brio Sport and DualTech 4D massage chairs" loading="lazy" width="2000" height="1125">
+            <div class="bdc__fit-pair">
+              <div class="bdc__fit-card">
+                <span class="bdc__fit-badge bdc__fit-badge--gold">BRIO SPORT</span>
+                <div class="bdc__fit-photo">
+                  <img src="{{ img_brio_beige }}" alt="Brio Sport massage chair home fit and controls" loading="lazy" width="900" height="900">
+                </div>
+                <div class="bdc__fit-chips">
+                  <span class="bdc__fit-chip">4 in wall clearance</span>
+                  <span class="bdc__fit-chip">Easy-clean upholstery</span>
+                  <span class="bdc__fit-chip">Stylish, easy remote</span>
+                </div>
+              </div>
+              <div class="bdc__fit-card">
+                <span class="bdc__fit-badge bdc__fit-badge--sage">DUALTECH 4D</span>
+                <div class="bdc__fit-photo">
+                  <img src="{{ img_dualtech_linen }}" alt="DualTech 4D massage chair home fit and controls" loading="lazy" width="900" height="900">
+                </div>
+                <div class="bdc__fit-chips">
+                  <span class="bdc__fit-chip">3 in wall clearance</span>
+                  <span class="bdc__fit-chip">Linen-like exterior</span>
+                  <span class="bdc__fit-chip">Tablet remote, ambient lighting</span>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="bdc__visual-copy">
             <div class="bdc__visual-copy-top">
@@ -1643,12 +1796,8 @@
       <a href="#verdict">Verdict</a>
       <a href="#products">Product Cards</a>
       <a href="#comparison-table">Specs</a>
-      <a href="#feel">Massage Feel</a>
-      <a href="#price">Price</a>
       <a href="#features">Features</a>
-      <a href="#home-fit">Home Fit</a>
       <a href="#decision">Decision Guide</a>
-      <a href="#showroom">Showroom</a>
       <a href="#faq">FAQ</a>
     </div>
   </nav>
@@ -1666,14 +1815,12 @@
           <div class="bdc__card-body">
             <h2>Choose the Brio Sport if:</h2>
             <ul>
-              <li>You want a recovery-focused massage chair designed for active lifestyle routines.</li>
-              <li>You want adjustable deep-tissue massage feel.</li>
-              <li>You want Sport4D massage, heated rollers, full-body compression, and focused sessions.</li>
-              <li>You want specialized programs such as Warm Up, Cool Down, Stretch, Compression, and recovery-style sessions.</li>
-              <li>You want focus areas such as neck and shoulders, low back, glutes, and IT bands.</li>
-              <li>You want L-track coverage from the back of the head down to the glutes and hamstrings.</li>
-              <li>You want a taller user range up to 6 feet 5 inches.</li>
-              <li>You like easy-clean upholstery and a chair positioned around recovery and stress reset.</li>
+              <li>You live an active lifestyle and want a recovery-focused chair.</li>
+              <li>You prefer adjustable deep-tissue feel with Sport4D rollers and heated compression.</li>
+              <li>You want recovery programs: Warm Up, Cool Down, Stretch, and focused glute / IT-band sessions.</li>
+              <li>You need L-track coverage from head down to the glutes and hamstrings.</li>
+              <li>You are taller and need a user range up to 6&prime;5&Prime;.</li>
+              <li>You value easy-clean upholstery built around stress reset.</li>
             </ul>
           </div>
         </article>
@@ -1682,20 +1829,18 @@
           <div class="bdc__card-body">
             <h2>Choose the DualTech 4D if:</h2>
             <ul>
-              <li>You want the more modern-looking Positive Posture chair.</li>
-              <li>You like the idea of two specialized massage mechanisms working together.</li>
-              <li>You want an upper 4D mechanism for the neck, upper back, and lumbar regions.</li>
-              <li>You want a lower RotoTech mechanism focused on glute massage.</li>
+              <li>You prefer the modern-looking Positive Posture chair.</li>
+              <li>You want two specialized mechanisms: upper 4D for neck / back / lumbar, lower RotoTech for glutes.</li>
               <li>You want body-contoured SL-track coverage from neck to glutes.</li>
-              <li>You want intelligent body scan, bi-directional foot rollers, full-body air massage, dual-zone heat, True Zero Gravity, Bluetooth speakers, tablet remote, USB charging, ambient lighting, removable back pad, and adjustable headrest pillow.</li>
-              <li>You care about space-saving placement with only 3 inch wall clearance.</li>
-              <li>You want a top-selling chair with a strong modern value story.</li>
+              <li>You value intelligent body scan, bi-directional foot rollers, dual-zone heat, and True Zero Gravity.</li>
+              <li>You enjoy lifestyle extras: Bluetooth speakers, tablet remote, ambient lighting, USB charging.</li>
+              <li>You need space-saving placement with only 3&Prime; wall clearance.</li>
             </ul>
           </div>
         </article>
       </div>
 
-      <p class="bdc__summary-line">The Brio Sport is the more recovery-focused active-lifestyle chair. The DualTech 4D is the more modern dual-mechanism everyday comfort chair. The best decision depends on your body fit, recovery routine, lower-body needs, room space, and preferred massage feel.</p>
+      <div class="bdc__summary-line">The Brio Sport is the recovery-focused active-lifestyle chair. The DualTech 4D is the modern dual-mechanism everyday comfort chair. Your best fit depends on body size, recovery routine, lower-body needs, and room space.</div>
     </div>
   </section>
 
@@ -1806,33 +1951,6 @@
     </div>
   </section>
 
-  <section class="bdc__section bdc__section--white" id="feel" aria-labelledby="feel-heading">
-    <div class="bdc__wrap">
-      <div class="bdc__visual-split">
-        <div class="bdc__visual">
-          <img src="{{ img_recovery_asset }}" onerror="this.onerror=null;this.src='{{ img_brio_black }}';" alt="Brio Sport vs DualTech 4D massage chair comparison" loading="lazy" width="1600" height="1000">
-        </div>
-        <div>
-          <span class="bdc__eyebrow">Massage Feel Comparison</span>
-          <h2 class="bdc__h2" id="feel-heading">How the Massage Feels: Recovery-Focused Depth vs Dual-Mechanism Coverage</h2>
-          <div class="bdc__comparison-notes" style="margin-top:24px">
-            <article class="bdc__note">
-              <h3>Brio Sport feel</h3>
-              <p>More athletic, recovery-focused, and routine-based. It is designed around Sport4D, deep-tissue adjustability, focused sessions, heated rollers, compression, stretch, and active lifestyle use. It is a strong fit for customers who want a chair aligned with workouts, physical activity, evening reset, stretching, and post-exertion relaxation. It is best described as a recovery-style chair, not a medical device.</p>
-            </article>
-            <article class="bdc__note">
-              <h3>DualTech 4D feel</h3>
-              <p>More modern, coordinated, and lower-body focused. It is designed around two massage mechanisms working together: an upper 4D mechanism for neck, upper back, and lumbar areas, plus a lower RotoTech mechanism focused on glutes and lower-body comfort.</p>
-            </article>
-            <article class="bdc__note">
-              <h3>Demo truth</h3>
-              <p><strong>Specs can narrow the choice. A side-by-side demo usually makes the decision clearer.</strong> If you are trying to compare luxury massage chairs for back pain, stiffness, workout recovery, or daily tension, the smartest next step is to test comfort, pressure, body fit, and massage style in person.</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section class="bdc__section bdc__section--soft" id="recovery-vs-dual" aria-labelledby="recovery-heading">
     <div class="bdc__wrap">
@@ -1863,31 +1981,6 @@
     </div>
   </section>
 
-  <section class="bdc__section bdc__section--white" id="price" aria-labelledby="price-heading">
-    <div class="bdc__wrap">
-      <div class="bdc__section-head">
-        <span class="bdc__eyebrow">Massage Chair Price Comparison</span>
-        <h2 class="bdc__h2" id="price-heading">Modern Dual-Mechanism Value vs Recovery-Focused Performance Value</h2>
-        <p class="bdc__intro">This is not cheap versus expensive. It is a premium massage chair value decision: lower sale price and modern dual-mechanism value, or a higher recovery-focused performance package.</p>
-      </div>
-      <div class="bdc__price-grid">
-        <article class="bdc__price-card">
-          <h3>DualTech 4D Dual</h3>
-          <div class="bdc__price-band"><s>$10,999</s> $7,999</div>
-          <p>The DualTech 4D currently sits lower in sale price and is a top-selling Positive Posture chair with a strong modern dual-mechanism value story.</p>
-        </article>
-        <article class="bdc__price-card">
-          <h3>Brio Sport</h3>
-          <div class="bdc__price-band"><s>$11,000</s> $8,999</div>
-          <p>The Brio Sport costs more and should be framed around recovery-focused routines, Sport4D massage, heated rollers, focused sessions, and active lifestyle use.</p>
-        </article>
-      </div>
-      <div class="bdc__cta-row" style="margin-top:26px">
-        <a href="{{ url_contact }}" class="bdc__btn">Visit Massage Chairs & More to Compare Before Deciding</a>
-        <a href="{{ url_phone }}" class="bdc__btn bdc__btn--outline">Call {{ phone_label }}</a>
-      </div>
-    </div>
-  </section>
 
   <section class="bdc__section bdc__section--soft" id="features" aria-labelledby="features-heading">
     <div class="bdc__wrap">
@@ -1943,41 +2036,6 @@
     </div>
   </section>
 
-  <section class="bdc__section bdc__section--white" id="home-fit" aria-labelledby="home-heading">
-    <div class="bdc__wrap">
-      <div class="bdc__section-head">
-        <span class="bdc__eyebrow">Design And Home Fit</span>
-        <h2 class="bdc__h2" id="home-heading">Which One Fits Better in Your Home?</h2>
-        <p class="bdc__intro">The best-looking chair is not always the best-fitting chair. Test body fit, recline angle, foot/calf placement, arm position, glute coverage, wall clearance, entry/exit comfort, and room placement in person.</p>
-      </div>
-      <div class="bdc__two">
-        <article class="bdc__card">
-          <div class="bdc__product-img"><img src="{{ img_brio_air }}" onerror="this.onerror=null;this.src='{{ img_brio_black }}';" alt="Brio Sport recovery massage chair" loading="lazy" width="900" height="700"></div>
-          <div class="bdc__card-body">
-            <h3>Brio Sport: athletic and performance-oriented</h3>
-            <ul>
-              <li>Larger and heavier based on available specs.</li>
-              <li>Easy-clean upholstery supports active lifestyle positioning.</li>
-              <li>4 inch wall clearance remains space-conscious.</li>
-              <li>Strong fit for a home gym, wellness room, office, or dedicated relaxation space.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="bdc__card">
-          <div class="bdc__product-img"><img src="{{ img_dualtech_lifestyle }}" onerror="this.onerror=null;this.src='{{ img_dualtech_linen }}';" alt="DualTech 4D massage chair with dual massage mechanisms" loading="lazy" width="900" height="700"></div>
-          <div class="bdc__card-body">
-            <h3>DualTech 4D: modern and living-room friendly</h3>
-            <ul>
-              <li>Linen-like exterior arms create a softer furniture feel.</li>
-              <li>Narrower and lighter than Brio Sport based on available specs.</li>
-              <li>3 inch wall clearance supports space-saving placement.</li>
-              <li>Strong fit for a contemporary shared living area.</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
 
   <section class="bdc__section bdc__section--soft" id="decision" aria-labelledby="decision-heading">
     <div class="bdc__wrap">
@@ -2026,32 +2084,6 @@
     </div>
   </section>
 
-  <section class="bdc__section bdc__section--dark" id="showroom" aria-labelledby="showroom-heading" style="padding-top:0">
-    <div class="bdc__wrap">
-      <div class="bdc__showroom">
-        <div class="bdc__showroom-img">
-          <img src="{{ img_showroom_asset }}" onerror="this.onerror=null;this.src='{{ img_dualtech_slate }}';" alt="Brio Sport and DualTech 4D side by side showroom comparison" loading="lazy" width="1600" height="1000">
-        </div>
-        <div>
-          <span class="bdc__eyebrow">Showroom Confidence</span>
-          <h2 class="bdc__h2" id="showroom-heading">Compare the Brio Sport and DualTech 4D Side by Side</h2>
-          <p class="bdc__intro" style="color:rgba(255,255,255,.78)">Choosing between the Brio Sport and DualTech 4D is difficult online because the real difference is how each chair fits your body, your routine, and your home. At Massage Chairs & More, you can try both Positive Posture chairs in person, compare pressure, recline, body scan, recovery-style programs, neck and shoulder feel, glute massage, foot and calf massage, heat, controls, room placement, delivery, installation, warranty, and service support before deciding.</p>
-          <div class="bdc__confidence">
-            <span>Compare both chairs in one visit</span>
-            <span>Get expert guidance without pressure</span>
-            <span>Understand delivery, installation, warranty, and service</span>
-            <span>Make a premium purchase with confidence</span>
-          </div>
-          <div class="bdc__cta-row">
-            <a href="{{ url_contact }}" class="bdc__btn">Book a Side-by-Side Demo</a>
-            <a href="{{ url_brio }}" class="bdc__btn bdc__btn--outline">View Brio Sport</a>
-            <a href="{{ url_dualtech }}" class="bdc__btn bdc__btn--outline">View DualTech 4D</a>
-            <a href="{{ url_phone }}" class="bdc__btn bdc__btn--sage">Call Massage Chairs & More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section class="bdc__section bdc__section--white" id="faq" aria-labelledby="faq-heading">
     <div class="bdc__wrap">

@@ -406,6 +406,19 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(22px, 3vw, 34px);
 }
+.ppcmp__visual-svg {
+  border-radius: 24px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 16px 42px rgba(25, 18, 10, 0.10);
+  border: 1px solid rgba(255,255,255,.18);
+}
+.ppcmp__visual-svg object {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 1600 / 980;
+}
 .ppcmp__zone-card {
   position: relative;
   padding: clamp(18px, 2.4vw, 28px);
@@ -1073,6 +1086,51 @@
   .ppcmp__showroom-card img { width: 104px; height: 104px; }
   .ppcmp__mobile-cta { display: grid; }
 }
+
+/* ═══════ UI Polish Layer ═══════ */
+.ppcmp {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+.ppcmp :focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.ppcmp h1, .ppcmp h2, .ppcmp h3 { letter-spacing: -0.012em; }
+.ppcmp__btn {
+  letter-spacing: 0.012em;
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+}
+.ppcmp__btn:hover { transform: translateY(-2px); }
+.ppcmp__card,
+.ppcmp__zone-card,
+.ppcmp__model-card,
+.ppcmp__faq-item,
+.ppcmp__showroom-card {
+  border-radius: 14px;
+  transition: transform 0.32s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.32s ease, border-color 0.32s ease;
+}
+.ppcmp__card:hover,
+.ppcmp__zone-card:hover,
+.ppcmp__model-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1px 2px rgba(20, 20, 20, 0.05), 0 14px 36px rgba(20, 20, 20, 0.10), 0 32px 70px rgba(20, 20, 20, 0.07);
+}
+.ppcmp__badge,
+.ppcmp__chip {
+  letter-spacing: 0.012em;
+  transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+}
+.ppcmp p { letter-spacing: 0.005em; }
+@media (min-width: 1024px) {
+  .ppcmp__section { padding: 96px 0; }
+}
+@media (max-width: 760px) {
+  .ppcmp__section { padding: 60px 0; }
+  .ppcmp__btn { min-height: 50px; padding: 13px 22px; font-size: 14.5px; }
+}
 </style>
 
 <div class="ppcmp">
@@ -1134,50 +1192,8 @@
             <p>DualTech 4D is the newer dual-mechanism story. Brio+ is the classic refined 4D story with heated roller feel. Neither is automatically better; the right answer is the one that feels more natural on your body.</p>
           </div>
         </div>
-        <div class="ppcmp__visual-stage">
-          <article class="ppcmp__zone-card">
-            <span class="ppcmp__zone-tag">DualTech 4D Dual</span>
-            <div class="ppcmp__zone-media">
-              <img class="ppcmp__zone-img" src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/PositivePosture_DualTech_Linen_TZG_270-profile.webp?v=1772326032&width=1200" alt="DualTech 4D massage chair with dual massage mechanisms feature map" loading="lazy" width="900" height="900">
-              <svg class="ppcmp__zone-overlay" viewBox="0 0 520 420" aria-hidden="true" focusable="false">
-                <path class="ppcmp__zone-path" d="M258 62 C312 138 302 228 248 350" />
-                <path class="ppcmp__zone-path ppcmp__zone-path--blue" d="M288 78 C324 132 320 184 292 232" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--blue" cx="286" cy="88" r="34" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--blue" cx="286" cy="88" r="52" />
-                <circle class="ppcmp__zone-dot ppcmp__zone-dot--blue" cx="286" cy="88" r="13" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--gold" cx="252" cy="249" r="34" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--gold" cx="252" cy="249" r="54" />
-                <circle class="ppcmp__zone-dot" cx="252" cy="249" r="13" />
-                <circle class="ppcmp__zone-dot" cx="237" cy="348" r="13" />
-              </svg>
-            </div>
-            <div class="ppcmp__zone-caption">
-              <strong>Upper 4D + RotoTech glutes</strong>
-              <span>One upper 4D mechanism focuses on neck, upper back, and lumbar regions while the lower RotoTech mechanism is designed around glute massage.</span>
-            </div>
-          </article>
-
-          <article class="ppcmp__zone-card ppcmp__zone-card--brio">
-            <span class="ppcmp__zone-tag">Brio+ Massage Chair</span>
-            <div class="ppcmp__zone-media">
-              <img class="ppcmp__zone-img" src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/positive-posture-brio-plus-full-recline-side-03.png?v=1772813733&width=1200" alt="Brio+ massage chair with heated rollers and 4D massage feature map" loading="lazy" width="900" height="900">
-              <svg class="ppcmp__zone-overlay" viewBox="0 0 520 420" aria-hidden="true" focusable="false">
-                <path class="ppcmp__zone-path ppcmp__zone-path--sage" d="M286 66 C332 145 322 244 264 350" />
-                <path class="ppcmp__zone-path ppcmp__zone-path--wine" d="M312 96 C350 170 338 226 300 292" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--sage" cx="284" cy="93" r="34" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--sage" cx="284" cy="93" r="52" />
-                <circle class="ppcmp__zone-dot ppcmp__zone-dot--sage" cx="284" cy="93" r="13" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--wine" cx="304" cy="202" r="34" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--wine" cx="304" cy="202" r="52" />
-                <circle class="ppcmp__zone-dot ppcmp__zone-dot--wine" cx="304" cy="202" r="13" />
-                <circle class="ppcmp__zone-dot ppcmp__zone-dot--sage" cx="264" cy="349" r="13" />
-              </svg>
-            </div>
-            <div class="ppcmp__zone-caption">
-              <strong>Heated 4D choreography</strong>
-              <span>Brio+ centers on Intelligent 4D Massage, heated rollers, body scan, and a refined L-track massage chair rhythm from neck toward glutes.</span>
-            </div>
-          </article>
+        <div class="ppcmp__visual-svg">
+          <object data="assets/dualtech-brio-mechanism-diagram.svg" type="image/svg+xml" aria-label="DualTech 4D vs Brio+ massage mechanism comparison diagram"></object>
         </div>
         <div class="ppcmp__visual-explain">
           <div class="ppcmp__visual-note">
@@ -1199,53 +1215,8 @@
             <p>Compare one body zone at a time: neck and shoulders, lumbar, glutes, calves, feet, arms, hands, and heat. This is where online specs become a real showroom decision.</p>
           </div>
         </div>
-        <div class="ppcmp__visual-stage">
-          <article class="ppcmp__zone-card">
-            <span class="ppcmp__zone-tag">DualTech Coverage</span>
-            <div class="ppcmp__zone-media ppcmp__zone-media--wide">
-              <img class="ppcmp__zone-img ppcmp__zone-img--full" src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/PositivePosture_DualTech_Slate_315-angle-front.webp?v=1772326033&width=1200" alt="DualTech 4D Dual massage chair feature zone map" loading="lazy" width="900" height="900">
-              <svg class="ppcmp__zone-overlay" viewBox="0 0 520 420" aria-hidden="true" focusable="false">
-                <path class="ppcmp__zone-shade ppcmp__zone-shade--blue" d="M232 98 C298 94 322 166 304 224 C290 270 238 288 210 248 C182 207 178 117 232 98Z" />
-                <path class="ppcmp__zone-shade" d="M224 229 C288 216 314 264 286 320 C260 371 193 368 180 312 C170 270 186 239 224 229Z" />
-                <path class="ppcmp__zone-path ppcmp__zone-path--blue" d="M276 82 C314 145 302 212 254 300" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--blue" cx="272" cy="114" r="30" />
-                <circle class="ppcmp__zone-dot ppcmp__zone-dot--blue" cx="272" cy="114" r="12" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--gold" cx="242" cy="232" r="34" />
-                <circle class="ppcmp__zone-dot" cx="242" cy="232" r="12" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--gold" cx="218" cy="320" r="38" />
-                <circle class="ppcmp__zone-dot" cx="218" cy="320" r="12" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--blue" cx="386" cy="319" r="38" />
-                <circle class="ppcmp__zone-dot ppcmp__zone-dot--blue" cx="386" cy="319" r="12" />
-              </svg>
-            </div>
-            <div class="ppcmp__zone-caption">
-              <strong>SL-track, air massage, foot rollers</strong>
-              <span>Body-contoured SL-track coverage pairs with full-body air massage, bi-directional foot rollers, dual-zone heat, and a focused lower-body story.</span>
-            </div>
-          </article>
-
-          <article class="ppcmp__zone-card ppcmp__zone-card--brio">
-            <span class="ppcmp__zone-tag">Brio+ Coverage</span>
-            <div class="ppcmp__zone-media ppcmp__zone-media--wide">
-              <img class="ppcmp__zone-img ppcmp__zone-img--full" src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100-14.jpg?v=1772325831&width=1200" alt="Brio+ massage chair feature zone map" loading="lazy" width="900" height="900">
-              <svg class="ppcmp__zone-overlay" viewBox="0 0 520 420" aria-hidden="true" focusable="false">
-                <path class="ppcmp__zone-shade ppcmp__zone-shade--sage" d="M260 82 C332 92 356 174 332 250 C310 323 232 348 195 290 C156 229 176 93 260 82Z" />
-                <path class="ppcmp__zone-path ppcmp__zone-path--sage" d="M294 76 C346 156 326 264 248 344" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--sage" cx="292" cy="104" r="31" />
-                <circle class="ppcmp__zone-dot ppcmp__zone-dot--sage" cx="292" cy="104" r="12" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--wine" cx="305" cy="211" r="35" />
-                <circle class="ppcmp__zone-dot ppcmp__zone-dot--wine" cx="305" cy="211" r="12" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--sage" cx="250" cy="335" r="37" />
-                <circle class="ppcmp__zone-dot ppcmp__zone-dot--sage" cx="250" cy="335" r="12" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--wine" cx="399" cy="318" r="36" />
-                <circle class="ppcmp__zone-dot ppcmp__zone-dot--wine" cx="399" cy="318" r="12" />
-              </svg>
-            </div>
-            <div class="ppcmp__zone-caption">
-              <strong>L-track, heated rollers, touch foot rollers</strong>
-              <span>Brio+ maps a classic premium 4D massage chair experience through the back, glutes, calf and foot zones with heat-forward comfort.</span>
-            </div>
-          </article>
+        <div class="ppcmp__visual-svg">
+          <object data="assets/dualtech-brio-feature-map.svg" type="image/svg+xml" aria-label="DualTech 4D vs Brio+ feature zone comparison map"></object>
         </div>
         <div class="ppcmp__visual-spec-grid" aria-label="Visual zone checkpoints">
           <div class="ppcmp__visual-spec"><span>Neck + Shoulders</span><strong>Alignment test</strong><small>Check where the rollers land after body scan.</small></div>
@@ -1263,48 +1234,8 @@
             <p>The biggest difference many shoppers feel is not just how strong the chair is. It is where the chair feels specific, warm, balanced, and natural during the lower half of the session.</p>
           </div>
         </div>
-        <div class="ppcmp__visual-stage">
-          <article class="ppcmp__zone-card">
-            <span class="ppcmp__zone-tag">DualTech Lower Body</span>
-            <div class="ppcmp__zone-media">
-              <img class="ppcmp__zone-img ppcmp__zone-img--full" src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/positive-posture-dualtech-4d-legrest-air-05.png?v=1772808108&width=1200" alt="DualTech 4D Dual lower body massage and foot roller feature visual" loading="lazy" width="900" height="900">
-              <svg class="ppcmp__zone-overlay" viewBox="0 0 520 420" aria-hidden="true" focusable="false">
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--gold" cx="211" cy="163" r="42" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--gold" cx="211" cy="163" r="64" />
-                <circle class="ppcmp__zone-dot" cx="211" cy="163" r="14" />
-                <path class="ppcmp__zone-path" d="M216 168 C252 216 296 263 360 314" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--blue" cx="359" cy="314" r="42" />
-                <circle class="ppcmp__zone-dot ppcmp__zone-dot--blue" cx="359" cy="314" r="14" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--blue" cx="407" cy="326" r="34" />
-                <circle class="ppcmp__zone-dot ppcmp__zone-dot--blue" cx="407" cy="326" r="12" />
-              </svg>
-            </div>
-            <div class="ppcmp__zone-caption">
-              <strong>RotoTech glutes + bi-directional feet</strong>
-              <span>DualTech deserves the first test if glute massage, calf heat, leg fit, and lower-body pressure are high on your priority list.</span>
-            </div>
-          </article>
-
-          <article class="ppcmp__zone-card ppcmp__zone-card--brio">
-            <span class="ppcmp__zone-tag">Brio+ Heat Feel</span>
-            <div class="ppcmp__zone-media">
-              <img class="ppcmp__zone-img ppcmp__zone-img--full" src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/positive-posture-brio-plus-heating-massage-05.webp?v=1772813808&width=1400" alt="Brio+ massage chair heated rollers and lower body feature visual" loading="lazy" width="900" height="900">
-              <svg class="ppcmp__zone-overlay" viewBox="0 0 520 420" aria-hidden="true" focusable="false">
-                <path class="ppcmp__zone-shade ppcmp__zone-shade--wine" d="M223 95 C290 80 341 132 334 199 C326 281 234 315 190 249 C155 196 163 111 223 95Z" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--wine" cx="274" cy="142" r="38" />
-                <circle class="ppcmp__zone-dot ppcmp__zone-dot--wine" cx="274" cy="142" r="14" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--wine" cx="278" cy="235" r="38" />
-                <circle class="ppcmp__zone-dot ppcmp__zone-dot--wine" cx="278" cy="235" r="14" />
-                <path class="ppcmp__zone-path ppcmp__zone-path--sage" d="M276 240 C314 274 356 301 405 324" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--sage" cx="405" cy="324" r="38" />
-                <circle class="ppcmp__zone-dot ppcmp__zone-dot--sage" cx="405" cy="324" r="13" />
-              </svg>
-            </div>
-            <div class="ppcmp__zone-caption">
-              <strong>Heated rollers + infrared zones</strong>
-              <span>Brio+ should be tested if you want a warmer, more traditional back massage feel with lower back, calf, foot, and roller warmth cues.</span>
-            </div>
-          </article>
+        <div class="ppcmp__visual-svg">
+          <object data="assets/dualtech-brio-lower-body-diagram.svg" type="image/svg+xml" aria-label="DualTech 4D vs Brio+ heat, feet, and lower body comparison"></object>
         </div>
         <div class="ppcmp__visual-explain">
           <div class="ppcmp__visual-note">
@@ -1326,48 +1257,8 @@
             <p>Premium massage chair comparison should include the room, not only the massage. Compare clearance, controls, charging, sound, light, upholstery, and how naturally the chair fits your daily routine.</p>
           </div>
         </div>
-        <div class="ppcmp__visual-stage">
-          <article class="ppcmp__zone-card">
-            <span class="ppcmp__zone-tag">DualTech Living Room Fit</span>
-            <div class="ppcmp__zone-media ppcmp__zone-media--wide">
-              <img class="ppcmp__zone-img ppcmp__zone-img--full" src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/positive-posture-dualtech-4d-side-lifestyle-02.png?v=1772807945&width=1400" alt="DualTech 4D Dual massage chair space saving design and tablet remote visual" loading="lazy" width="1000" height="760">
-              <svg class="ppcmp__zone-overlay" viewBox="0 0 520 420" aria-hidden="true" focusable="false">
-                <path class="ppcmp__zone-path ppcmp__zone-path--blue" d="M92 334 C128 354 184 354 226 334" />
-                <circle class="ppcmp__zone-dot ppcmp__zone-dot--blue" cx="92" cy="334" r="10" />
-                <circle class="ppcmp__zone-dot ppcmp__zone-dot--blue" cx="226" cy="334" r="10" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--gold" cx="312" cy="190" r="34" />
-                <circle class="ppcmp__zone-dot" cx="312" cy="190" r="12" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--blue" cx="373" cy="110" r="30" />
-                <circle class="ppcmp__zone-dot ppcmp__zone-dot--blue" cx="373" cy="110" r="11" />
-                <path class="ppcmp__zone-path" d="M312 190 C330 156 348 132 373 110" />
-              </svg>
-            </div>
-            <div class="ppcmp__zone-caption">
-              <strong>3 inch wall clearance + tablet control</strong>
-              <span>DualTech has the tighter wall-clearance story, a modern tablet remote, ambient lighting, Bluetooth speakers, USB charging, and softer furniture cues.</span>
-            </div>
-          </article>
-
-          <article class="ppcmp__zone-card ppcmp__zone-card--brio">
-            <span class="ppcmp__zone-tag">Brio+ Classic Fit</span>
-            <div class="ppcmp__zone-media ppcmp__zone-media--wide">
-              <img class="ppcmp__zone-img ppcmp__zone-img--full" src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/positive-posture-brio-plus-upright-side-02.png?v=1772813662&width=1400" alt="Brio+ massage chair classic premium home fit and chromotherapy visual" loading="lazy" width="1000" height="760">
-              <svg class="ppcmp__zone-overlay" viewBox="0 0 520 420" aria-hidden="true" focusable="false">
-                <path class="ppcmp__zone-path ppcmp__zone-path--sage" d="M90 335 C134 360 196 360 242 335" />
-                <circle class="ppcmp__zone-dot ppcmp__zone-dot--sage" cx="90" cy="335" r="10" />
-                <circle class="ppcmp__zone-dot ppcmp__zone-dot--sage" cx="242" cy="335" r="10" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--wine" cx="302" cy="193" r="34" />
-                <circle class="ppcmp__zone-dot ppcmp__zone-dot--wine" cx="302" cy="193" r="12" />
-                <circle class="ppcmp__zone-ring ppcmp__zone-ring--sage" cx="363" cy="112" r="30" />
-                <circle class="ppcmp__zone-dot ppcmp__zone-dot--sage" cx="363" cy="112" r="11" />
-                <path class="ppcmp__zone-path ppcmp__zone-path--sage" d="M302 193 C320 158 342 132 363 112" />
-              </svg>
-            </div>
-            <div class="ppcmp__zone-caption">
-              <strong>4 inch wall clearance + classic controls</strong>
-              <span>Brio+ keeps a traditional premium profile with diamond stitch upholstery, chromotherapy, USB power, intuitive remote control, and broader height fit.</span>
-            </div>
-          </article>
+        <div class="ppcmp__visual-svg">
+          <object data="assets/dualtech-brio-fit-warranty-diagram.svg" type="image/svg+xml" aria-label="DualTech 4D vs Brio+ fit, dimensions, and warranty comparison"></object>
         </div>
         <div class="ppcmp__visual-spec-grid" aria-label="Home fit checkpoints">
           <div class="ppcmp__visual-spec"><span>Wall Space</span><strong>3 in vs 4 in</strong><small>DualTech has a slight clearance advantage.</small></div>
@@ -1407,12 +1298,11 @@
             <span class="ppcmp__kicker">Choose the DualTech 4D if</span>
             <h3>You want the more modern dual-mechanism Positive Posture chair.</h3>
             <ul class="ppcmp__checks ppcmp__checks--sage">
-              <li>You like the idea of two specialized massage mechanisms working together.</li>
-              <li>You want an upper 4D mechanism for neck, upper back, and lumbar regions.</li>
-              <li>You want a lower RotoTech mechanism focused on glute massage.</li>
+              <li>You like two specialized mechanisms: upper 4D + lower RotoTech for glutes.</li>
               <li>You want body-contoured SL-track coverage from neck to glutes.</li>
-              <li>You want intelligent body scan, bi-directional foot rollers, full-body air massage, dual-zone heat, True Zero Gravity, Bluetooth speakers, tablet remote, USB charging, ambient lighting, removable back pad, and adjustable headrest pillow.</li>
-              <li>You care about space-saving placement with only 3 inches of wall clearance.</li>
+              <li>You value intelligent body scan, bi-directional foot rollers, dual-zone heat, and True Zero Gravity.</li>
+              <li>You enjoy lifestyle extras: Bluetooth speakers, tablet remote, ambient lighting, and USB charging.</li>
+              <li>You need space-saving placement with only 3&Prime; wall clearance.</li>
             </ul>
           </div>
         </article>
@@ -1421,12 +1311,12 @@
             <span class="ppcmp__kicker">Choose the Brio+ if</span>
             <h3>You want proven premium 4D comfort with heated rollers.</h3>
             <ul class="ppcmp__checks">
-              <li>You want a classic Positive Posture feel with refined massage choreography.</li>
+              <li>You like the classic Positive Posture feel with refined massage choreography.</li>
               <li>You want heated rollers for a warm, hot-stone-style sensation.</li>
-              <li>You want Intelligent 4D Massage, automatic body scan, L-track coverage from neck to glutes, full-body air massage, Intelligent Touch foot rollers, True Zero Gravity, chromotherapy, and an intuitive remote.</li>
-              <li>You want a chair that supports a wider/taller user range up to 6 feet 5 inches.</li>
-              <li>You prefer diamond stitch upholstery and a more traditional premium massage chair design.</li>
-              <li>You want the stronger live-price value story between these two chairs right now.</li>
+              <li>You value Intelligent 4D Massage, auto body scan, L-track coverage, and True Zero Gravity.</li>
+              <li>You are taller and need a user range up to 6&prime;5&Prime;.</li>
+              <li>You prefer diamond stitch upholstery and a traditional premium chair design.</li>
+              <li>You want the stronger live-price value story between these two chairs.</li>
             </ul>
           </div>
         </article>

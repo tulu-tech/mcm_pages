@@ -485,8 +485,8 @@
   margin: 0;
   color: #ffffff;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(43px, 6vw, 78px);
-  line-height: 1;
+  font-size: clamp(38px, 4.6vw, 62px);
+  line-height: 1.05;
   letter-spacing: 0;
 }
 
@@ -1852,6 +1852,50 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ═══════ UI Polish Layer ═══════ */
+.dtm {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+.dtm :focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.dtm h1, .dtm h2, .dtm h3 { letter-spacing: -0.012em; }
+.dtm__btn {
+  letter-spacing: 0.012em;
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+}
+.dtm__btn:hover { transform: translateY(-2px); }
+.dtm__card,
+.dtm__feature,
+.dtm__model-card,
+.dtm__faq-item {
+  border-radius: 14px;
+  transition: transform 0.32s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.32s ease, border-color 0.32s ease;
+}
+.dtm__card:hover,
+.dtm__feature:hover,
+.dtm__model-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1px 2px rgba(20, 20, 20, 0.05), 0 14px 36px rgba(20, 20, 20, 0.10), 0 32px 70px rgba(20, 20, 20, 0.07);
+}
+.dtm__badge,
+.dtm__chip {
+  letter-spacing: 0.012em;
+  transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+}
+.dtm p { letter-spacing: 0.005em; }
+@media (min-width: 1024px) {
+  .dtm__section { padding: 96px 0; }
+}
+@media (max-width: 760px) {
+  .dtm__section { padding: 60px 0; }
+  .dtm__btn { min-height: 50px; padding: 13px 22px; font-size: 14.5px; }
+}
 </style>
 
 <div class="dtm">
@@ -1910,62 +1954,8 @@
         <h2 id="visual-engine-title">Dual mechanisms versus precision response.</h2>
         <p>Start with what each chair is trying to feel like. DualTech Pro AI is about layered coverage and modern premium value. Panasonic MAN1 is about technical mapping and pressure-responsive precision.</p>
         <figure class="dtm__calibrated-svg">
-          <img src="assets/dualtech-man1-mechanism-diagram.svg" alt="Massage engine comparison: DualTech Pro AI vs Panasonic MAN1" width="1600" height="980" loading="lazy">
+          <object data="assets/dualtech-man1-mechanism-diagram.svg" type="image/svg+xml" aria-label="Massage engine comparison: DualTech Pro AI vs Panasonic MAN1" style="width:100%;height:auto;display:block;aspect-ratio:1600/980"></object>
         </figure>
-        <div class="dtm__diagram-grid">
-          <article class="dtm__diagram-card">
-            <div class="dtm__diagram-top">
-              <span class="dtm__diagram-label">DualTech Pro AI 4D</span>
-              <span class="dtm__diagram-micro">Dual-mechanism feel</span>
-            </div>
-            <div class="dtm__diagram-stage dtm__diagram-stage--wide">
-              <img src="https://massagechairsandmore.com/cdn/shop/files/Positive-Posture_DualTech-Pro-AI_Charcoal_UPRIGHT_45o-Angled-Front.webp?v=1772326042&width=1400" alt="DualTech Pro AI 4D massage chair with dual mechanisms" loading="lazy" width="900" height="900">
-              <span class="dtm__floating-callout dtm__callout--top-left">Upper 4D mechanism<small>Neck, upper back, lumbar</small></span>
-              <span class="dtm__floating-callout dtm__callout--bottom-right">Lower RotoTech<small>Glute-focused rotation</small></span>
-              <svg class="dtm__diagram-overlay" viewBox="0 0 600 420" aria-hidden="true">
-                <path class="dtm__visual-path dtm__visual-path--gold" d="M330 65 C392 138 392 292 285 365" />
-                <circle class="dtm__visual-ring dtm__visual-ring--gold" cx="326" cy="96" r="38" />
-                <circle class="dtm__visual-ring dtm__visual-ring--gold" cx="326" cy="96" r="58" />
-                <circle class="dtm__visual-dot dtm__visual-dot--gold" cx="326" cy="96" r="13" />
-                <circle class="dtm__visual-ring dtm__visual-ring--gold" cx="355" cy="223" r="34" />
-                <circle class="dtm__visual-dot dtm__visual-dot--gold" cx="355" cy="223" r="13" />
-                <circle class="dtm__visual-ring dtm__visual-ring--gold" cx="286" cy="356" r="39" />
-                <circle class="dtm__visual-ring dtm__visual-ring--gold" cx="286" cy="356" r="58" />
-                <circle class="dtm__visual-dot dtm__visual-dot--gold" cx="286" cy="356" r="13" />
-              </svg>
-            </div>
-            <div class="dtm__diagram-caption">
-              <h3>Upper 4D + lower RotoTech</h3>
-              <p>Designed to layer upper-back depth with lower glute-focused movement, so the showroom demo should feel like more than one roller story.</p>
-            </div>
-          </article>
-          <article class="dtm__diagram-card">
-            <div class="dtm__diagram-top">
-              <span class="dtm__diagram-label dtm__diagram-label--man1">Panasonic MAN1</span>
-              <span class="dtm__diagram-micro">Pressure-sensing precision</span>
-            </div>
-            <div class="dtm__diagram-stage dtm__diagram-stage--wide">
-              <img src="https://massagechairsandmore.com/cdn/shop/files/Artboard-1-1.png?v=1772489014&width=1200" alt="Panasonic MAN1 precision massage chair" loading="lazy" width="900" height="900">
-              <span class="dtm__floating-callout dtm__callout--top-right">1260P scan<small>Detailed body mapping</small></span>
-              <span class="dtm__floating-callout dtm__callout--bottom-left">Real Pro Ultra H.I.<small>Pressure-responsive rollers</small></span>
-              <svg class="dtm__diagram-overlay" viewBox="0 0 600 420" aria-hidden="true">
-                <path class="dtm__visual-path dtm__visual-path--sage" d="M335 70 C412 155 390 292 275 363" />
-                <circle class="dtm__visual-ring dtm__visual-ring--sage" cx="330" cy="103" r="36" />
-                <circle class="dtm__visual-ring dtm__visual-ring--sage" cx="330" cy="103" r="56" />
-                <circle class="dtm__visual-dot dtm__visual-dot--sage" cx="330" cy="103" r="13" />
-                <circle class="dtm__visual-ring dtm__visual-ring--sage" cx="370" cy="232" r="34" />
-                <circle class="dtm__visual-dot dtm__visual-dot--sage" cx="370" cy="232" r="13" />
-                <circle class="dtm__visual-ring dtm__visual-ring--sage" cx="276" cy="356" r="40" />
-                <circle class="dtm__visual-ring dtm__visual-ring--sage" cx="276" cy="356" r="60" />
-                <circle class="dtm__visual-dot dtm__visual-dot--sage" cx="276" cy="356" r="13" />
-              </svg>
-            </div>
-            <div class="dtm__diagram-caption">
-              <h3>Real Pro Ultra H.I.</h3>
-              <p>Designed for targeted roller response, pressure sensing, and a more technical Panasonic chair massage feel during the demo.</p>
-            </div>
-          </article>
-        </div>
         <div class="dtm__insight-grid">
           <div class="dtm__insight">
             <span>DualTech demo focus</span>
@@ -1993,74 +1983,8 @@
         <h2 id="visual-zone-title">Compare one body zone at a time.</h2>
         <p>Do not try to absorb every feature at once. Use the real chairs as the base, then compare neck, back, glutes, calves, feet, arms, hands, heat, and recline one zone at a time.</p>
         <figure class="dtm__calibrated-svg">
-          <img src="assets/dualtech-man1-feature-map.svg" alt="Feature zone map comparison: DualTech Pro AI vs Panasonic MAN1" width="1600" height="980" loading="lazy">
+          <object data="assets/dualtech-man1-feature-map.svg" type="image/svg+xml" aria-label="Feature zone map comparison: DualTech Pro AI vs Panasonic MAN1" style="width:100%;height:auto;display:block;aspect-ratio:1600/980"></object>
         </figure>
-        <div class="dtm__diagram-grid">
-          <article class="dtm__diagram-card">
-            <div class="dtm__diagram-top">
-              <span class="dtm__diagram-label">DualTech Pro AI</span>
-              <span class="dtm__diagram-micro">Modern full-body value</span>
-            </div>
-            <div class="dtm__diagram-stage">
-              <img src="https://massagechairsandmore.com/cdn/shop/files/asd.jpg?v=1772326042&width=1200" alt="DualTech Pro AI 4D massage chair at Massage Chairs & More" loading="lazy" width="900" height="900">
-              <span class="dtm__floating-callout dtm__callout--top-left">Neck + shoulders<small>Upper 4D focus</small></span>
-              <span class="dtm__floating-callout dtm__callout--mid-right">Arms + hands<small>Full-body air massage</small></span>
-              <span class="dtm__floating-callout dtm__callout--bottom-left">Glutes<small>RotoTech lower mechanism</small></span>
-              <span class="dtm__floating-callout dtm__callout--bottom-right">Calves + feet<small>Heat + bi-directional rollers</small></span>
-              <svg class="dtm__diagram-overlay" viewBox="0 0 600 420" aria-hidden="true">
-                <path class="dtm__visual-path dtm__visual-path--gold" d="M284 87 C350 143 370 255 300 340" />
-                <circle class="dtm__visual-dot dtm__visual-dot--gold" cx="285" cy="92" r="13" />
-                <circle class="dtm__visual-dot dtm__visual-dot--gold" cx="355" cy="207" r="13" />
-                <circle class="dtm__visual-dot dtm__visual-dot--gold" cx="305" cy="327" r="13" />
-                <circle class="dtm__visual-ring dtm__visual-ring--gold" cx="305" cy="327" r="42" />
-                <circle class="dtm__visual-ring dtm__visual-ring--gold" cx="422" cy="354" r="34" />
-                <circle class="dtm__visual-dot dtm__visual-dot--gold" cx="422" cy="354" r="13" />
-              </svg>
-            </div>
-            <div class="dtm__diagram-caption">
-              <h3>Coverage story: upper 4D, glutes, calves, feet</h3>
-              <p>Best visual cue for buyers who want strong coverage, intelligent body scan, lower-body attention, and a living-room friendly premium massage chair.</p>
-              <div class="dtm__visual-pill-row">
-                <span class="dtm__visual-pill">Body Contoured SL-Track</span>
-                <span class="dtm__visual-pill">Full Body Air Massage</span>
-                <span class="dtm__visual-pill">Dual Zone Heat</span>
-                <span class="dtm__visual-pill">True Zero Gravity</span>
-              </div>
-            </div>
-          </article>
-          <article class="dtm__diagram-card">
-            <div class="dtm__diagram-top">
-              <span class="dtm__diagram-label dtm__diagram-label--man1">Panasonic MAN1</span>
-              <span class="dtm__diagram-micro">Targeted technical control</span>
-            </div>
-            <div class="dtm__diagram-stage">
-              <img src="https://massagechairsandmore.com/cdn/shop/files/Artboard-1.png?v=1772489014&width=1200" alt="Panasonic MAN1 massage chair at Massage Chairs & More" loading="lazy" width="900" height="900">
-              <span class="dtm__floating-callout dtm__callout--top-left">Acupoint scan<small>1260P body mapping</small></span>
-              <span class="dtm__floating-callout dtm__callout--mid-right">Heated rollers<small>Infrared contact warmth</small></span>
-              <span class="dtm__floating-callout dtm__callout--bottom-left">Lower body<small>Bodygrip air cells</small></span>
-              <span class="dtm__floating-callout dtm__callout--bottom-right">Feet<small>Reflexology massage</small></span>
-              <svg class="dtm__diagram-overlay" viewBox="0 0 600 420" aria-hidden="true">
-                <path class="dtm__visual-path dtm__visual-path--sage" d="M307 86 C384 152 388 278 284 355" />
-                <circle class="dtm__visual-dot dtm__visual-dot--sage" cx="309" cy="91" r="13" />
-                <circle class="dtm__visual-dot dtm__visual-dot--sage" cx="370" cy="209" r="13" />
-                <circle class="dtm__visual-dot dtm__visual-dot--sage" cx="285" cy="342" r="13" />
-                <circle class="dtm__visual-ring dtm__visual-ring--sage" cx="285" cy="342" r="42" />
-                <circle class="dtm__visual-ring dtm__visual-ring--sage" cx="424" cy="360" r="34" />
-                <circle class="dtm__visual-dot dtm__visual-dot--sage" cx="424" cy="360" r="13" />
-              </svg>
-            </div>
-            <div class="dtm__diagram-caption">
-              <h3>Coverage story: scan precision, heat, calf wrap, feet</h3>
-              <p>Best visual cue for buyers who want a Panasonic MAN1 massage chair with pressure response, detailed scan, and a targeted shiatsu massage chair feel.</p>
-              <div class="dtm__visual-pill-row">
-                <span class="dtm__visual-pill dtm__visual-pill--sage">1260P Acupoint Scan</span>
-                <span class="dtm__visual-pill dtm__visual-pill--sage">Pressure-Sensing Rollers</span>
-                <span class="dtm__visual-pill dtm__visual-pill--sage">Infrared-Heated Rollers</span>
-                <span class="dtm__visual-pill dtm__visual-pill--sage">Touchscreen Remote</span>
-              </div>
-            </div>
-          </article>
-        </div>
       </section>
 
       <section class="dtm__visual-chapter" aria-labelledby="visual-scan-title">
@@ -2068,52 +1992,8 @@
         <h2 id="visual-scan-title">Personalization is not the same in both chairs.</h2>
         <p>Both chairs personalize the session. DualTech Pro AI makes the AI massage chair story easy to understand through intelligent body scan and modern controls. Panasonic MAN1 leans harder into technical mapping, pressure sensing, and engineering refinement.</p>
         <figure class="dtm__calibrated-svg">
-          <img src="assets/dualtech-man1-body-scan-diagram.svg" alt="Body scan comparison: DualTech Pro AI vs Panasonic MAN1" width="1600" height="980" loading="lazy">
+          <object data="assets/dualtech-man1-body-scan-diagram.svg" type="image/svg+xml" aria-label="Body scan comparison: DualTech Pro AI vs Panasonic MAN1" style="width:100%;height:auto;display:block;aspect-ratio:1600/980"></object>
         </figure>
-        <div class="dtm__diagram-grid">
-          <article class="dtm__diagram-card">
-            <div class="dtm__diagram-top">
-              <span class="dtm__diagram-label">DualTech Pro AI</span>
-              <span class="dtm__diagram-micro">Simple personalization</span>
-            </div>
-            <div class="dtm__diagram-stage">
-              <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/positive-posture-dualtech-pro-ai4d-side-controls-03.png?v=1772807030&width=1400" alt="DualTech Pro AI massage chair control and design detail" loading="lazy" width="900" height="900">
-              <span class="dtm__floating-callout dtm__callout--top-left">Intelligent Body Scan<small>Maps shape and size</small></span>
-              <span class="dtm__floating-callout dtm__callout--bottom-right">Tablet remote<small>Fast program control</small></span>
-              <svg class="dtm__diagram-overlay" viewBox="0 0 600 420" aria-hidden="true">
-                <circle class="dtm__visual-ring dtm__visual-ring--gold" cx="300" cy="195" r="58" />
-                <circle class="dtm__visual-ring dtm__visual-ring--gold" cx="300" cy="195" r="94" />
-                <circle class="dtm__visual-ring dtm__visual-ring--gold" cx="300" cy="195" r="132" />
-                <path class="dtm__visual-path dtm__visual-path--gold" d="M170 105 C240 158 250 260 190 340" />
-              </svg>
-            </div>
-            <div class="dtm__diagram-caption">
-              <h3>Best if you want modern controls and simple scan confidence</h3>
-              <p>Use this demo to judge whether the body scan lands naturally and whether the tablet remote makes daily use feel easy.</p>
-            </div>
-          </article>
-          <article class="dtm__diagram-card">
-            <div class="dtm__diagram-top">
-              <span class="dtm__diagram-label dtm__diagram-label--man1">Panasonic MAN1</span>
-              <span class="dtm__diagram-micro">Detailed mapping</span>
-            </div>
-            <div class="dtm__diagram-stage">
-              <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/panasonic-man1-touchscreen-remote-07.jpg?v=1772721183&width=1400" alt="Panasonic MAN1 touchscreen remote and precision control" loading="lazy" width="900" height="900">
-              <span class="dtm__floating-callout dtm__callout--top-right">1260P mapping<small>Acupoint body scan</small></span>
-              <span class="dtm__floating-callout dtm__callout--bottom-left">Force feedback<small>Pressure-sensing rollers</small></span>
-              <svg class="dtm__diagram-overlay" viewBox="0 0 600 420" aria-hidden="true">
-                <circle class="dtm__visual-ring dtm__visual-ring--sage" cx="330" cy="188" r="50" />
-                <circle class="dtm__visual-ring dtm__visual-ring--sage" cx="330" cy="188" r="86" />
-                <circle class="dtm__visual-ring dtm__visual-ring--sage" cx="330" cy="188" r="124" />
-                <path class="dtm__visual-path dtm__visual-path--sage" d="M420 80 C360 150 355 270 435 345" />
-              </svg>
-            </div>
-            <div class="dtm__diagram-caption">
-              <h3>Best if you want technical precision and touchscreen control</h3>
-              <p>Use this demo to judge whether the Panasonic scan and pressure response feel more specific to your body.</p>
-            </div>
-          </article>
-        </div>
         <p class="dtm__demo-question">Demo question to ask: after both scans finish, which chair finds your shoulders, lower back, and glute/seat area more naturally?</p>
       </section>
 
@@ -2122,58 +2002,11 @@
         <h2 id="visual-home-title">The final decision is often practical.</h2>
         <p>Once the massage feel is close, buyers usually decide through heat style, calf and foot comfort, zero gravity, wall clearance, design language, delivery, installation, and service confidence.</p>
         <figure class="dtm__calibrated-svg">
-          <img src="assets/dualtech-man1-heat-programs-diagram.svg" alt="Heat and programs comparison: DualTech Pro AI vs Panasonic MAN1" width="1600" height="980" loading="lazy">
+          <object data="assets/dualtech-man1-heat-programs-diagram.svg" type="image/svg+xml" aria-label="Heat and programs comparison: DualTech Pro AI vs Panasonic MAN1" style="width:100%;height:auto;display:block;aspect-ratio:1600/980"></object>
         </figure>
         <figure class="dtm__calibrated-svg">
-          <img src="assets/dualtech-man1-fit-warranty-diagram.svg" alt="Fit and warranty comparison: DualTech Pro AI vs Panasonic MAN1" width="1600" height="980" loading="lazy">
+          <object data="assets/dualtech-man1-fit-warranty-diagram.svg" type="image/svg+xml" aria-label="Fit and warranty comparison: DualTech Pro AI vs Panasonic MAN1" style="width:100%;height:auto;display:block;aspect-ratio:1600/980"></object>
         </figure>
-        <div class="dtm__diagram-grid">
-          <article class="dtm__diagram-card">
-            <div class="dtm__diagram-top">
-              <span class="dtm__diagram-label">DualTech Pro AI</span>
-              <span class="dtm__diagram-micro">Living-room friendly value</span>
-            </div>
-            <div class="dtm__diagram-stage">
-              <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/positive-posture-dualtech-pro-ai4d-room-01.png?v=1772806972&width=1400" alt="DualTech Pro AI 4D massage chair in a living room" loading="lazy" width="900" height="900">
-              <span class="dtm__floating-callout dtm__callout--top-left">3 inch wall clearance<small>Space-saving design</small></span>
-              <span class="dtm__floating-callout dtm__callout--mid-right">Dual-zone heat<small>Calves + lower back</small></span>
-              <span class="dtm__floating-callout dtm__callout--bottom-left">Bi-directional foot rollers<small>Foot comfort demo</small></span>
-              <svg class="dtm__diagram-overlay" viewBox="0 0 600 420" aria-hidden="true">
-                <path class="dtm__visual-path dtm__visual-path--gold" d="M112 308 L228 308" />
-                <circle class="dtm__visual-ring dtm__visual-ring--gold" cx="438" cy="232" r="46" />
-                <circle class="dtm__visual-ring dtm__visual-ring--gold" cx="250" cy="352" r="42" />
-                <circle class="dtm__visual-dot dtm__visual-dot--gold" cx="250" cy="352" r="13" />
-              </svg>
-            </div>
-            <div class="dtm__diagram-caption">
-              <h3>Best for modern home fit and lower entry point</h3>
-              <p>Compare the softer design, ambient lighting, compact wall clearance, dual-zone heat, zero gravity, and foot roller comfort in person.</p>
-            </div>
-          </article>
-          <article class="dtm__diagram-card">
-            <div class="dtm__diagram-top">
-              <span class="dtm__diagram-label dtm__diagram-label--man1">Panasonic MAN1</span>
-              <span class="dtm__diagram-micro">Precision confidence</span>
-            </div>
-            <div class="dtm__diagram-stage">
-              <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/panasonic-man1-zero-gravity-recline-06.jpg?v=1772721149&width=1400" alt="Panasonic MAN1 zero gravity massage chair reclined" loading="lazy" width="900" height="900">
-              <span class="dtm__floating-callout dtm__callout--top-right">Infrared-heated rollers<small>Warmth at contact point</small></span>
-              <span class="dtm__floating-callout dtm__callout--mid-left">Wrap-around calf massage<small>Lower-body hold</small></span>
-              <span class="dtm__floating-callout dtm__callout--bottom-right">Room planning<small>Confirm reclined footprint</small></span>
-              <svg class="dtm__diagram-overlay" viewBox="0 0 600 420" aria-hidden="true">
-                <circle class="dtm__visual-ring dtm__visual-ring--sage" cx="338" cy="128" r="44" />
-                <circle class="dtm__visual-dot dtm__visual-dot--sage" cx="338" cy="128" r="13" />
-                <circle class="dtm__visual-ring dtm__visual-ring--sage" cx="232" cy="297" r="42" />
-                <circle class="dtm__visual-dot dtm__visual-dot--sage" cx="232" cy="297" r="13" />
-                <path class="dtm__visual-path dtm__visual-path--sage" d="M365 354 L496 354" />
-              </svg>
-            </div>
-            <div class="dtm__diagram-caption">
-              <h3>Best for precision massage and ownership confidence</h3>
-              <p>Compare infrared roller heat, calf wrap, reflexology foot massage, reclined depth, touchscreen control, warranty, and service support.</p>
-            </div>
-          </article>
-        </div>
       </section>
     </div>
   </div>
@@ -2204,13 +2037,11 @@
           <span class="dtm__kicker">Choose the DualTech Pro AI if</span>
           <h3>You want a premium chair with strong modern value.</h3>
           <ul class="dtm__checks">
-            <li>You want a premium massage chair below the Panasonic MAN1 price point.</li>
-            <li>You like the idea of dual massage mechanisms working together.</li>
-            <li>You want an upper 4D mechanism for neck, upper back, and lumbar areas.</li>
-            <li>You want a lower glute-focused mechanism with RotoTech massage heads.</li>
+            <li>You want a premium chair priced below the Panasonic MAN1.</li>
+            <li>You like dual mechanisms: upper 4D for neck / back / lumbar, lower RotoTech for glutes.</li>
             <li>You want body-contoured SL-track coverage from neck to glutes.</li>
-            <li>You want intelligent body scan, full-body air massage, dual-zone heat, bi-directional foot rollers, zero gravity, tablet remote, Bluetooth speakers, ambient lighting, and a modern living-room friendly design.</li>
-            <li>You want a priority premium value model that MCM can position confidently without relying only on discounting.</li>
+            <li>You value intelligent body scan, dual-zone heat, bi-directional foot rollers, and zero gravity.</li>
+            <li>You enjoy living-room friendly design with tablet remote, Bluetooth, and ambient lighting.</li>
           </ul>
         </article>
         <article class="dtm__card">
@@ -2218,9 +2049,10 @@
           <h3>You want the more precision-engineered premium choice.</h3>
           <ul class="dtm__checks dtm__checks--gold">
             <li>You care about pressure-sensing rollers and detailed body mapping.</li>
-            <li>You want Panasonic's Real Pro Ultra H.I. massage mechanism.</li>
-            <li>You want 1260P Acupoint Body Scan, Panasonic SL-Track, infrared-heated rollers, Junetsu Ultra Kneading, reflexology foot massage, Bodygrip lower-body air cells, wrap-around calf massage, shaped palm massage, touchscreen remote, Bluetooth, USB, and strong in-home service/warranty confidence.</li>
-            <li>You want a top-selling premium model at Massage Chairs &amp; More.</li>
+            <li>You want Panasonic&rsquo;s Real Pro Ultra H.I. mechanism with 1260P Acupoint Body Scan.</li>
+            <li>You value infrared-heated rollers, Junetsu Ultra Kneading, and reflexology foot massage.</li>
+            <li>You want Bodygrip lower-body air cells, wrap-around calf, and shaped palm massage.</li>
+            <li>You trust strong in-home service and warranty backing from a top-selling premium brand.</li>
           </ul>
         </article>
       </div>

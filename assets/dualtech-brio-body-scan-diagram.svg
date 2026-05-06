@@ -12,7 +12,7 @@
   <rect x="60" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh3)"/>
   <rect x="80" y="185" width="200" height="38" rx="19" fill="#9a7f4a"/>
   <text x="180" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">DUALTECH 4D DUAL</text>
-  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/PositivePosture_DualTech_Linen_315-Angle-front.webp?v=1772326033&amp;width=1200" x="220" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet"/>
+  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/PositivePosture_DualTech_Linen_315-Angle-front.webp?v=1772326033&amp;width=1200" x="180" y="210" width="480" height="480" preserveAspectRatio="xMidYMid meet"/>
 
   <!-- Scan zone: head(353,331) down to back(390,387) -->
   <ellipse cx="370" cy="355" rx="50" ry="60" fill="#2f4c5c" opacity=".08"/>
@@ -41,7 +41,7 @@
   <rect x="820" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh3)"/>
   <rect x="840" y="185" width="170" height="38" rx="19" fill="#617064"/>
   <text x="925" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">BRIO+ MASSAGE</text>
-  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100-14-1.jpg?v=1772325831&amp;width=1200" x="980" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet"/>
+  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100-14-1.jpg?v=1772325831&amp;width=1200" x="940" y="210" width="480" height="480" preserveAspectRatio="xMidYMid meet"/>
 
   <!-- Scan zone: head(1127,365) to back(1169,407) -->
   <ellipse cx="1148" cy="385" rx="50" ry="55" fill="#617064" opacity=".08"/>

@@ -12,7 +12,7 @@
   <rect x="60" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh3)"/>
   <rect x="80" y="185" width="280" height="38" rx="19" fill="#3f5f64"/>
   <text x="220" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">BRIO+ · AUTO BODY SCAN</text>
-  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100-14-1.jpg?v=1772325831" x="220" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet"/>
+  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100-14-1.jpg?v=1772325831" x="180" y="210" width="480" height="480" preserveAspectRatio="xMidYMid meet"/>
 
   <!-- Scan zone - Head to Neck -->
   <circle cx="374" cy="369" r="16" fill="none" stroke="#3f5f64" stroke-width="3" stroke-dasharray="6 3" opacity=".8"/>
@@ -46,7 +46,7 @@
   <rect x="820" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh3)"/>
   <rect x="840" y="185" width="290" height="38" rx="19" fill="#a66f3d"/>
   <text x="985" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">SOLARA · TRACK FITTING</text>
-  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/1.jpg?v=1772326021" x="980" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet"/>
+  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/1.jpg?v=1772326021" x="940" y="210" width="480" height="480" preserveAspectRatio="xMidYMid meet"/>
 
   <!-- SL-Track fitting -->
   <path d="M1128,367 Q1140,389 1151,412 Q1165,427 1178,441" fill="none" stroke="#a66f3d" stroke-width="3" stroke-dasharray="6 3" opacity=".6"/>

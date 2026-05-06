@@ -14,13 +14,13 @@
   <rect x="60" y="160" width="720" height="620" rx="24" fill="#fff" filter="url(#sh2)"/>
   <rect x="80" y="180" width="190" height="38" rx="19" fill="#9a7f4a"/>
   <text x="175" y="205" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">BRIO SPORT</text>
-  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/PositivePosture_BrioSport_Beige_Upright_45.png?v=1772325852" x="220" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet"/>
+  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/PositivePosture_BrioSport_Beige_Upright_45.png?v=1772325852" x="180" y="210" width="480" height="480" preserveAspectRatio="xMidYMid meet"/>
 
   <!-- DUALTECH 4D card -->
   <rect x="820" y="160" width="720" height="620" rx="24" fill="#fff" filter="url(#sh2)"/>
   <rect x="840" y="180" width="190" height="38" rx="19" fill="#617064"/>
   <text x="935" y="205" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">DUALTECH 4D</text>
-  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/PositivePosture_DualTech_Slate_315-angle-front.webp?v=1772326033" x="980" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet"/>
+  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/PositivePosture_DualTech_Slate_315-angle-front.webp?v=1772326033" x="940" y="210" width="480" height="480" preserveAspectRatio="xMidYMid meet"/>
 
   <ellipse cx="405" cy="417" rx="40" ry="68" fill="#9a7f4a" opacity=".10" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4"/>
   <line x1="445" y1="402" x2="560" y2="350" stroke="#9a7f4a" stroke-width="1.5"/>

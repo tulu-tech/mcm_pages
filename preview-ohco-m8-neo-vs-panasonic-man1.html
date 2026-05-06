@@ -1,17 +1,4 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>OHCO M8 NEO vs Panasonic MAN1 | Preview v3</title></head><body class="template-page">
-  SECTION: page-ohco-m8-neo-vs-panasonic-man1.liquid
-  Suggested URL slug: /compare/ohco-m8-neo-vs-panasonic-man1
-
-  SEO title:
-  OHCO M8 NEO vs Panasonic MAN1 | Premium Massage Chair Comparison
-
-  Meta description:
-  Compare the OHCO M8 NEO vs Panasonic MAN1 massage chairs at Massage Chairs & More.
-  See price, features, massage style, body scanning, heat, fit, warranty,
-  and which chair is right for you.
-
-
-
 <script type="application/ld+json">
 [
   {
@@ -440,10 +427,10 @@
   margin: 0;
   color: var(--white);
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(44px, 6vw, 76px);
+  font-size: clamp(38px, 4.4vw, 60px);
   font-weight: 700;
   letter-spacing: 0;
-  line-height: 0.96;
+  line-height: 1.05;
 }
 
 .m8m1__hero-copy {
@@ -839,7 +826,6 @@
 }
 
 .m8m1__product {
-  overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--r);
   background: var(--white);
@@ -849,8 +835,9 @@
 .m8m1__product-media {
   position: relative;
   display: block;
-  overflow: hidden;
   background: var(--warm);
+  border-top-left-radius: var(--r);
+  border-top-right-radius: var(--r);
 }
 
 .m8m1__product-media img {
@@ -858,10 +845,8 @@
   aspect-ratio: 4 / 3;
   object-fit: cover;
   transition: transform 0.28s ease;
-}
-
-.m8m1__product-media:hover img {
-  transform: scale(1.03);
+  border-top-left-radius: var(--r);
+  border-top-right-radius: var(--r);
 }
 
 .m8m1__hotspot {
@@ -877,10 +862,61 @@
   font-size: 12px;
   font-weight: 900;
   box-shadow: 0 8px 18px rgba(20, 21, 22, 0.24);
+  cursor: help;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  z-index: 4;
 }
 
 .m8m1__hotspot--green {
   background: rgba(82, 107, 96, 0.88);
+}
+
+.m8m1__hotspot::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 14px;
+  background: rgba(20, 21, 22, 0.94);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.32);
+  z-index: 5;
+}
+
+.m8m1__hotspot::before {
+  content: "";
+  position: absolute;
+  bottom: calc(100% + 1px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: rgba(20, 21, 22, 0.94);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+  z-index: 5;
+}
+
+.m8m1__hotspot:hover::after,
+.m8m1__hotspot:hover::before {
+  opacity: 1;
+}
+
+.m8m1__hotspot:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 6px rgba(167, 123, 53, 0.20), 0 8px 18px rgba(20, 21, 22, 0.32);
+}
+
+.m8m1__hotspot--green:hover {
+  box-shadow: 0 0 0 6px rgba(82, 107, 96, 0.20), 0 8px 18px rgba(20, 21, 22, 0.32);
 }
 
 .m8m1__product-body {
@@ -1612,6 +1648,404 @@
     min-height: 300px;
   }
 }
+
+.m8m1__zone-top--map {
+  display: block;
+  grid-template-columns: none;
+  padding: 40px 32px 36px;
+  background: radial-gradient(circle at 50% 30%, #1a1a1e 0%, #0d0d10 100%);
+}
+
+.m8m1__zone-mhead {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.m8m1__zone-mhead-tag {
+  display: block;
+  color: #9a7f4a;
+  font-family: Inter, sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.m8m1__zone-mhead-sub {
+  display: block;
+  color: #888;
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.m8m1__zone-mgrid {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) minmax(220px, 1.1fr) auto minmax(220px, 1.1fr) minmax(180px, 1fr);
+  gap: 18px;
+  align-items: center;
+}
+
+.m8m1__zone-mlist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.m8m1__zone-mlist--ohco {
+  text-align: right;
+}
+
+.m8m1__zone-mlist li {
+  padding: 9px 12px;
+  border-radius: 6px;
+  font-family: Inter, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  background: rgba(154, 127, 74, 0.10);
+  color: rgba(212, 168, 110, 0.62);
+  border: 1px solid rgba(154, 127, 74, 0.18);
+  transition: all 0.22s ease;
+  cursor: default;
+}
+
+.m8m1__zone-mlist--panasonic li {
+  background: rgba(97, 112, 100, 0.10);
+  color: rgba(168, 192, 177, 0.62);
+  border-color: rgba(97, 112, 100, 0.18);
+}
+
+.m8m1__zone-mlist li.is-active {
+  background: rgba(154, 127, 74, 0.24);
+  color: #d4a368;
+  border-color: rgba(212, 168, 110, 0.55);
+  box-shadow: 0 6px 18px rgba(154, 127, 74, 0.18);
+}
+
+.m8m1__zone-mlist--ohco li.is-active {
+  transform: translateX(-4px);
+}
+
+.m8m1__zone-mlist--panasonic li.is-active {
+  background: rgba(97, 112, 100, 0.26);
+  color: #b6cdbf;
+  border-color: rgba(168, 192, 177, 0.55);
+  box-shadow: 0 6px 18px rgba(97, 112, 100, 0.20);
+  transform: translateX(4px);
+}
+
+.m8m1__zone-mlist.is-filtering li:not(.is-active) {
+  opacity: 0.32;
+}
+
+.m8m1__zone-mfig {
+  position: relative;
+  background: #f4f4f1;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+.m8m1__zone-mfig img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.m8m1__zone-mfig-brand {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: Inter, sans-serif;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: #9a7f4a;
+  text-transform: uppercase;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.94);
+  padding: 4px 9px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+}
+
+.m8m1__zone-mfig--panasonic .m8m1__zone-mfig-brand {
+  color: #617064;
+}
+
+.m8m1__zone-mpin {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.94);
+  background: rgba(154, 127, 74, 0.94);
+  color: #fff;
+  font-family: Inter, sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.34);
+  padding: 0;
+  z-index: 3;
+}
+
+.m8m1__zone-mfig--panasonic .m8m1__zone-mpin {
+  background: rgba(97, 112, 100, 0.94);
+}
+
+.m8m1__zone-mpin:hover,
+.m8m1__zone-mpin.is-active,
+.m8m1__zone-mpin:focus-visible {
+  outline: none;
+  transform: translate(-50%, -50%) scale(1.18);
+  box-shadow: 0 0 0 8px rgba(154, 127, 74, 0.22), 0 8px 18px rgba(0, 0, 0, 0.34);
+}
+
+.m8m1__zone-mfig--panasonic .m8m1__zone-mpin:hover,
+.m8m1__zone-mfig--panasonic .m8m1__zone-mpin.is-active,
+.m8m1__zone-mfig--panasonic .m8m1__zone-mpin:focus-visible {
+  box-shadow: 0 0 0 8px rgba(97, 112, 100, 0.22), 0 8px 18px rgba(0, 0, 0, 0.34);
+}
+
+.m8m1__zone-mvs {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #1a1a1e;
+  border: 2px solid #333;
+  display: grid;
+  place-items: center;
+  color: #9a7f4a;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 1100px) {
+  .m8m1__zone-mgrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .m8m1__zone-mfig--ohco { grid-column: 1; grid-row: 1; }
+  .m8m1__zone-mfig--panasonic { grid-column: 2; grid-row: 1; }
+  .m8m1__zone-mlist--ohco { grid-column: 1; grid-row: 2; text-align: left; }
+  .m8m1__zone-mlist--panasonic { grid-column: 2; grid-row: 2; }
+  .m8m1__zone-mlist--ohco li.is-active { transform: translateX(4px); }
+  .m8m1__zone-mvs { display: none; }
+}
+
+@media (max-width: 640px) {
+  .m8m1__zone-top--map { padding: 26px 18px 22px; }
+  .m8m1__zone-mgrid { grid-template-columns: 1fr; }
+  .m8m1__zone-mfig--ohco, .m8m1__zone-mfig--panasonic { grid-column: 1; }
+  .m8m1__zone-mlist--ohco, .m8m1__zone-mlist--panasonic { grid-column: 1; }
+  .m8m1__zone-mfig--ohco { grid-row: 1; }
+  .m8m1__zone-mlist--ohco { grid-row: 2; }
+  .m8m1__zone-mfig--panasonic { grid-row: 3; }
+  .m8m1__zone-mlist--panasonic { grid-row: 4; }
+}
+
+/* ═══════ UI Polish Layer ═══════ */
+.m8m1 {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.m8m1 :focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.m8m1 .m8m1__btn:focus-visible { outline-offset: 4px; }
+
+/* Tighter, more breathable section rhythm */
+@media (min-width: 1024px) {
+  .m8m1__section { padding: 104px 0; }
+}
+
+/* Refined hero stage — proper chair sizing */
+.m8m1__stage {
+  gap: 20px;
+  align-self: center;
+}
+.m8m1__stage-item {
+  border-radius: 14px;
+  background: linear-gradient(180deg, #fbf7ef 0%, #ece4d4 100%);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35), 0 2px 4px rgba(255, 255, 255, 0.04) inset;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+  aspect-ratio: 4 / 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.m8m1__stage-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 40px 96px rgba(0, 0, 0, 0.42);
+}
+.m8m1__stage-item:nth-child(2):hover {
+  transform: translateY(22px);
+}
+.m8m1__stage-item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  padding: 18px;
+  object-fit: contain;
+}
+.m8m1__stage-label {
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+/* Heading refinement */
+.m8m1__title {
+  letter-spacing: -0.01em;
+}
+.m8m1__hero h1 {
+  letter-spacing: -0.012em;
+}
+
+/* Eyebrow brightness on dark sections */
+.m8m1__hero-strip span {
+  letter-spacing: 0.015em;
+}
+
+/* Buttons polish */
+.m8m1__btn {
+  letter-spacing: 0.01em;
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+}
+.m8m1__btn--gold {
+  box-shadow: 0 14px 30px rgba(167, 123, 53, 0.30), 0 1px 0 rgba(255, 255, 255, 0.18) inset;
+}
+.m8m1__btn--gold:hover {
+  box-shadow: 0 20px 38px rgba(167, 123, 53, 0.36), 0 1px 0 rgba(255, 255, 255, 0.22) inset;
+}
+.m8m1__btn--outline:hover {
+  border-color: rgba(255, 255, 255, 0.85);
+}
+
+/* Cards — premium layered shadow */
+.m8m1__quick,
+.m8m1__product,
+.m8m1__demo,
+.m8m1__feature-card,
+.m8m1__chapter,
+.m8m1__zone-map,
+.m8m1__compare-mini,
+.m8m1__reaction {
+  border-radius: 14px;
+  box-shadow:
+    0 1px 2px rgba(20, 21, 22, 0.04),
+    0 8px 24px rgba(20, 21, 22, 0.06),
+    0 24px 60px rgba(20, 21, 22, 0.05);
+  transition: transform 0.32s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.32s ease;
+}
+.m8m1__quick:hover,
+.m8m1__product:hover,
+.m8m1__feature-card:hover,
+.m8m1__compare-mini:hover,
+.m8m1__reaction:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 1px 2px rgba(20, 21, 22, 0.05),
+    0 12px 32px rgba(20, 21, 22, 0.10),
+    0 32px 72px rgba(20, 21, 22, 0.07);
+}
+
+/* Refined product price block */
+.m8m1__product-body { padding: 28px 28px 30px; }
+.m8m1__price s { letter-spacing: 0.01em; }
+
+/* Pill polish */
+.m8m1__pill {
+  letter-spacing: 0.012em;
+  transition: border-color 0.22s ease, color 0.22s ease, background 0.22s ease;
+}
+.m8m1__pill:hover {
+  border-color: var(--gold);
+  color: var(--ink);
+}
+
+/* Table — premium readability */
+.m8m1__table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(20, 21, 22, 0.04), 0 14px 36px rgba(20, 21, 22, 0.06);
+}
+.m8m1__table thead th {
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.m8m1__table tbody tr {
+  transition: background 0.18s ease;
+}
+.m8m1__table tbody tr:hover {
+  background: rgba(167, 123, 53, 0.04);
+}
+.m8m1__table th, .m8m1__table td { padding: 16px 18px; }
+
+/* FAQ details polish */
+.m8m1__faq details {
+  border-radius: 12px;
+  transition: box-shadow 0.22s ease, border-color 0.22s ease;
+}
+.m8m1__faq details:hover {
+  border-color: rgba(167, 123, 53, 0.4);
+}
+.m8m1__faq details[open] {
+  box-shadow: 0 10px 30px rgba(20, 21, 22, 0.06);
+}
+.m8m1__faq summary {
+  letter-spacing: -0.005em;
+  font-weight: 800;
+}
+
+/* Section divider — subtle */
+.m8m1__section + .m8m1__section--white,
+.m8m1__section + .m8m1__section--mist,
+.m8m1__section--white + .m8m1__section,
+.m8m1__section--mist + .m8m1__section {
+  border-top: 1px solid rgba(20, 21, 22, 0.05);
+}
+
+/* Lede readability */
+.m8m1__lede { letter-spacing: 0.005em; }
+
+/* Sticky mobile nav refinement */
+.m8m1__sticky a {
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  border-radius: 999px;
+}
+
+/* Showroom CTA refinements */
+.m8m1__showroom-content h2 { letter-spacing: -0.01em; }
+
+/* Mobile typography tightening */
+@media (max-width: 760px) {
+  .m8m1__section { padding: 64px 0; }
+  .m8m1__head { margin-bottom: 28px; }
+  .m8m1__btn { min-height: 52px; padding: 14px 22px; font-size: 14.5px; }
+}
 </style>
 
 <div class="m8m1" id="m8m1-compare">
@@ -1660,44 +2094,42 @@
 
       <div class="m8m1__zone-stack">
         <article class="m8m1__zone-map">
-          <div class="m8m1__zone-top m8m1__zone-top--svg">
-            <svg class="m8m1__zone-svg-diagram" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 980" width="1600" height="980">
-<defs>
-  <radialGradient id="bg" cx="50%" cy="30%"><stop offset="0%" stop-color="#1a1a1e"/><stop offset="100%" stop-color="#0d0d10"/></radialGradient>
-  <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-  <radialGradient id="hO" cx="50%" cy="50%"><stop offset="0%" stop-color="#9a7f4a" stop-opacity=".18"/><stop offset="100%" stop-color="#9a7f4a" stop-opacity="0"/></radialGradient>
-  <radialGradient id="hP" cx="50%" cy="50%"><stop offset="0%" stop-color="#617064" stop-opacity=".18"/><stop offset="100%" stop-color="#617064" stop-opacity="0"/></radialGradient>
-</defs>
-<rect width="1600" height="980" fill="url(#bg)"/>
-<text x="800" y="58" text-anchor="middle" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="13" font-weight="900" letter-spacing="3">FEATURE MAP</text>
-<text x="800" y="86" text-anchor="middle" fill="#555" font-family="Inter,sans-serif" font-size="11">Full-body zone overview — 5 annotation points per chair</text>
-<text x="420" y="228" text-anchor="middle" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2">OHCO M8 NEO</text>
-<text x="1180" y="228" text-anchor="middle" fill="#617064" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2">PANASONIC MAN1</text>
-<circle cx="800" cy="450" r="32" fill="#1a1a1e" stroke="#333" stroke-width="2"/>
-<text x="800" y="456" text-anchor="middle" fill="#9a7f4a" font-family="Georgia,serif" font-size="20" font-weight="700">VS</text>
-<image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100.jpg?v=1772325951" x="220" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet" opacity=".92"/>
-<image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/panasonic-man1.jpg" x="980" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet" opacity=".92"/>
-<circle cx="375" cy="374" r="28" fill="none" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="375" cy="374" r="5" fill="#9a7f4a" opacity=".9"/><line x1="375" y1="374" x2="190" y2="320" stroke="#9a7f4a" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="30" y="306" width="183.2" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="40" y="322" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Knead & Stretch Headrest</text><circle cx="1129" cy="355" r="28" fill="none" stroke="#617064" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="1129" cy="355" r="5" fill="#617064" opacity=".9"/><line x1="1129" y1="355" x2="1410" y2="320" stroke="#617064" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="1410" y="306" width="169.6" height="24" rx="6" fill="#617064" opacity=".10"/>
-<text x="1420" y="322" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Junetsu Ultra Kneading</text><circle cx="395" cy="413" r="28" fill="none" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="395" cy="413" r="5" fill="#9a7f4a" opacity=".9"/><line x1="395" y1="413" x2="190" y2="372" stroke="#9a7f4a" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="30" y="358" width="156" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="40" y="374" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Sens8 + MaxTrack 49″</text><circle cx="1143" cy="405" r="28" fill="none" stroke="#617064" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="1143" cy="405" r="5" fill="#617064" opacity=".9"/><line x1="1143" y1="405" x2="1410" y2="372" stroke="#617064" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="1410" y="358" width="149.2" height="24" rx="6" fill="#617064" opacity=".10"/>
-<text x="1420" y="374" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Real Pro Ultra H.I.</text><circle cx="428" cy="450" r="28" fill="none" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="428" cy="450" r="5" fill="#9a7f4a" opacity=".9"/><line x1="428" y1="450" x2="190" y2="424" stroke="#9a7f4a" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="30" y="410" width="156" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="40" y="426" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Movesync Dual System</text><circle cx="1188" cy="456" r="28" fill="none" stroke="#617064" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="1188" cy="456" r="5" fill="#617064" opacity=".9"/><line x1="1188" y1="456" x2="1410" y2="424" stroke="#617064" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="1410" y="410" width="122" height="24" rx="6" fill="#617064" opacity=".10"/>
-<text x="1420" y="426" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">1260P Body Scan</text><circle cx="503" cy="488" r="28" fill="none" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="503" cy="488" r="5" fill="#9a7f4a" opacity=".9"/><line x1="503" y1="488" x2="190" y2="476" stroke="#9a7f4a" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="30" y="462" width="156" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="40" y="478" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">TheraElliptical Calf</text><circle cx="1252" cy="519" r="28" fill="none" stroke="#617064" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="1252" cy="519" r="5" fill="#617064" opacity=".9"/><line x1="1252" y1="519" x2="1410" y2="476" stroke="#617064" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="1410" y="462" width="128.8" height="24" rx="6" fill="#617064" opacity=".10"/>
-<text x="1420" y="478" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Wrap-Around Calf</text><circle cx="520" cy="529" r="28" fill="none" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="520" cy="529" r="5" fill="#9a7f4a" opacity=".9"/><line x1="520" y1="529" x2="190" y2="528" stroke="#9a7f4a" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="30" y="514" width="142.39999999999998" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="40" y="530" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Foot Rollers + Air</text><circle cx="1313" cy="555" r="28" fill="none" stroke="#617064" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="1313" cy="555" r="5" fill="#617064" opacity=".9"/><line x1="1313" y1="555" x2="1410" y2="528" stroke="#617064" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="1410" y="514" width="128.8" height="24" rx="6" fill="#617064" opacity=".10"/>
-<text x="1420" y="530" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Reflexology Foot</text></svg>
+          <div class="m8m1__zone-top m8m1__zone-top--map">
+            <header class="m8m1__zone-mhead">
+              <span class="m8m1__zone-mhead-tag">FEATURE MAP</span>
+              <span class="m8m1__zone-mhead-sub">Full-body zone overview · hover any number to highlight features</span>
+            </header>
+            <div class="m8m1__zone-mgrid">
+              <ul class="m8m1__zone-mlist m8m1__zone-mlist--ohco" id="z1-ohco">
+                <li data-pin="1">Knead &amp; Stretch Headrest</li>
+                <li data-pin="1">Sens8 + MaxTrack 49″</li>
+                <li data-pin="2">Movesync Dual System</li>
+                <li data-pin="3">TheraElliptical Calf</li>
+                <li data-pin="3">Foot Rollers + Air</li>
+              </ul>
+              <div class="m8m1__zone-mfig m8m1__zone-mfig--ohco">
+                <span class="m8m1__zone-mfig-brand">OHCO M8 NEO</span>
+                <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100.jpg?v=1772325951" alt="OHCO M8 NEO massage chair" loading="lazy">
+                <button type="button" class="m8m1__zone-mpin" data-pin="1" data-target="z1-ohco" style="top:23%;left:50%;" aria-label="Upper body features">1</button>
+                <button type="button" class="m8m1__zone-mpin" data-pin="2" data-target="z1-ohco" style="top:50%;left:58%;" aria-label="Mid body features">2</button>
+                <button type="button" class="m8m1__zone-mpin" data-pin="3" data-target="z1-ohco" style="top:76%;left:52%;" aria-label="Lower body features">3</button>
+              </div>
+              <div class="m8m1__zone-mvs">VS</div>
+              <div class="m8m1__zone-mfig m8m1__zone-mfig--panasonic">
+                <span class="m8m1__zone-mfig-brand">PANASONIC MAN1</span>
+                <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/panasonic-man1.jpg" alt="Panasonic MAN1 massage chair" loading="lazy">
+                <button type="button" class="m8m1__zone-mpin" data-pin="1" data-target="z1-pana" style="top:23%;left:48%;" aria-label="Upper body features">1</button>
+                <button type="button" class="m8m1__zone-mpin" data-pin="2" data-target="z1-pana" style="top:50%;left:52%;" aria-label="Mid body features">2</button>
+                <button type="button" class="m8m1__zone-mpin" data-pin="3" data-target="z1-pana" style="top:78%;left:60%;" aria-label="Lower body features">3</button>
+              </div>
+              <ul class="m8m1__zone-mlist m8m1__zone-mlist--panasonic" id="z1-pana">
+                <li data-pin="1">Junetsu Ultra Kneading</li>
+                <li data-pin="1">Real Pro Ultra H.I.</li>
+                <li data-pin="2">1260P Body Scan</li>
+                <li data-pin="3">Wrap-Around Calf</li>
+                <li data-pin="3">Reflexology Foot</li>
+              </ul>
+            </div>
           </div>
           <div class="m8m1__zone-body">
             <span class="m8m1__zone-index">01</span>
@@ -1711,36 +2143,38 @@
         </article>
 
         <article class="m8m1__zone-map">
-          <div class="m8m1__zone-top m8m1__zone-top--svg">
-            <svg class="m8m1__zone-svg-diagram" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 980" width="1600" height="980">
-<defs>
-  <radialGradient id="bg" cx="50%" cy="30%"><stop offset="0%" stop-color="#1a1a1e"/><stop offset="100%" stop-color="#0d0d10"/></radialGradient>
-  <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-  <radialGradient id="hO" cx="50%" cy="50%"><stop offset="0%" stop-color="#9a7f4a" stop-opacity=".18"/><stop offset="100%" stop-color="#9a7f4a" stop-opacity="0"/></radialGradient>
-  <radialGradient id="hP" cx="50%" cy="50%"><stop offset="0%" stop-color="#617064" stop-opacity=".18"/><stop offset="100%" stop-color="#617064" stop-opacity="0"/></radialGradient>
-</defs>
-<rect width="1600" height="980" fill="url(#bg)"/>
-<text x="800" y="58" text-anchor="middle" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="13" font-weight="900" letter-spacing="3">MASSAGE ENGINE</text>
-<text x="800" y="86" text-anchor="middle" fill="#555" font-family="Inter,sans-serif" font-size="11">Roller path and mechanism comparison</text>
-<text x="420" y="228" text-anchor="middle" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2">OHCO M8 NEO</text>
-<text x="1180" y="228" text-anchor="middle" fill="#617064" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2">PANASONIC MAN1</text>
-<circle cx="800" cy="450" r="32" fill="#1a1a1e" stroke="#333" stroke-width="2"/>
-<text x="800" y="456" text-anchor="middle" fill="#9a7f4a" font-family="Georgia,serif" font-size="20" font-weight="700">VS</text>
-<image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100.jpg?v=1772325951" x="220" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet" opacity=".92"/>
-<image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/panasonic-man1.jpg" x="980" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet" opacity=".92"/>
-<path d="M375 374 C385 413 400 440 428 450" fill="none" stroke="#9a7f4a" stroke-width="3" stroke-dasharray="8 4" opacity=".6"/><ellipse cx="395" cy="413" rx="45" ry="70" fill="#9a7f4a" opacity=".08" stroke="#9a7f4a" stroke-width="1.5" stroke-dasharray="6 3"/><circle cx="375" cy="374" r="22" fill="none" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="375" cy="374" r="5" fill="#9a7f4a" opacity=".9"/><circle cx="395" cy="413" r="32" fill="none" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="395" cy="413" r="5" fill="#9a7f4a" opacity=".9"/><circle cx="428" cy="450" r="22" fill="none" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="428" cy="450" r="5" fill="#9a7f4a" opacity=".9"/><line x1="395" y1="413" x2="170" y2="380" stroke="#9a7f4a" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="20" y="326" width="176.4" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="30" y="342" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Sens8 Massage Mechanism</text><rect x="20" y="366" width="176.4" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="30" y="382" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">MaxTrack 49″ Ultra-Long</text><rect x="20" y="406" width="156" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="30" y="422" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Movesync Dual System</text><line x1="375" y1="374" x2="170" y2="340" stroke="#9a7f4a" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><line x1="428" y1="450" x2="170" y2="420" stroke="#9a7f4a" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><path d="M1129 355 C1139 405 1148 446 1188 456" fill="none" stroke="#617064" stroke-width="3" stroke-dasharray="8 4" opacity=".6"/><ellipse cx="1143" cy="405" rx="45" ry="70" fill="#617064" opacity=".08" stroke="#617064" stroke-width="1.5" stroke-dasharray="6 3"/><circle cx="1129" cy="355" r="22" fill="none" stroke="#617064" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="1129" cy="355" r="5" fill="#617064" opacity=".9"/><circle cx="1143" cy="405" r="32" fill="none" stroke="#617064" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="1143" cy="405" r="5" fill="#617064" opacity=".9"/><circle cx="1188" cy="456" r="22" fill="none" stroke="#617064" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="1188" cy="456" r="5" fill="#617064" opacity=".9"/><line x1="1129" y1="355" x2="1420" y2="340" stroke="#617064" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><line x1="1143" y1="405" x2="1420" y2="380" stroke="#617064" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><line x1="1188" y1="456" x2="1420" y2="420" stroke="#617064" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="1420" y="326" width="183.2" height="24" rx="6" fill="#617064" opacity=".10"/>
-<text x="1430" y="342" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Pressure-Sensing Rollers</text><rect x="1420" y="366" width="149.2" height="24" rx="6" fill="#617064" opacity=".10"/>
-<text x="1430" y="382" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Real Pro Ultra H.I.</text><rect x="1420" y="406" width="135.6" height="24" rx="6" fill="#617064" opacity=".10"/>
-<text x="1430" y="422" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">SL-Track Coverage</text></svg>
+          <div class="m8m1__zone-top m8m1__zone-top--map">
+            <header class="m8m1__zone-mhead">
+              <span class="m8m1__zone-mhead-tag">MASSAGE ENGINE</span>
+              <span class="m8m1__zone-mhead-sub">Roller path and mechanism comparison · hover a number to highlight</span>
+            </header>
+            <div class="m8m1__zone-mgrid">
+              <ul class="m8m1__zone-mlist m8m1__zone-mlist--ohco" id="z2-ohco">
+                <li data-pin="1">Sens8 Massage Mechanism</li>
+                <li data-pin="2">MaxTrack 49″ Ultra-Long</li>
+                <li data-pin="3">Movesync Dual System</li>
+              </ul>
+              <div class="m8m1__zone-mfig m8m1__zone-mfig--ohco">
+                <span class="m8m1__zone-mfig-brand">OHCO M8 NEO</span>
+                <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100.jpg?v=1772325951" alt="OHCO M8 NEO massage chair" loading="lazy">
+                <button type="button" class="m8m1__zone-mpin" data-pin="1" data-target="z2-ohco" style="top:23%;left:50%;" aria-label="Sens8 Mechanism">1</button>
+                <button type="button" class="m8m1__zone-mpin" data-pin="2" data-target="z2-ohco" style="top:50%;left:58%;" aria-label="MaxTrack track">2</button>
+                <button type="button" class="m8m1__zone-mpin" data-pin="3" data-target="z2-ohco" style="top:76%;left:52%;" aria-label="Movesync system">3</button>
+              </div>
+              <div class="m8m1__zone-mvs">VS</div>
+              <div class="m8m1__zone-mfig m8m1__zone-mfig--panasonic">
+                <span class="m8m1__zone-mfig-brand">PANASONIC MAN1</span>
+                <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/panasonic-man1.jpg" alt="Panasonic MAN1 massage chair" loading="lazy">
+                <button type="button" class="m8m1__zone-mpin" data-pin="1" data-target="z2-pana" style="top:23%;left:48%;" aria-label="Pressure rollers">1</button>
+                <button type="button" class="m8m1__zone-mpin" data-pin="2" data-target="z2-pana" style="top:50%;left:52%;" aria-label="Real Pro Ultra">2</button>
+                <button type="button" class="m8m1__zone-mpin" data-pin="3" data-target="z2-pana" style="top:78%;left:60%;" aria-label="SL-Track">3</button>
+              </div>
+              <ul class="m8m1__zone-mlist m8m1__zone-mlist--panasonic" id="z2-pana">
+                <li data-pin="1">Pressure-Sensing Rollers</li>
+                <li data-pin="2">Real Pro Ultra H.I.</li>
+                <li data-pin="3">SL-Track Coverage</li>
+              </ul>
+            </div>
           </div>
           <div class="m8m1__zone-body">
             <span class="m8m1__zone-index">02</span>
@@ -1754,31 +2188,38 @@
         </article>
 
         <article class="m8m1__zone-map">
-          <div class="m8m1__zone-top m8m1__zone-top--svg">
-            <svg class="m8m1__zone-svg-diagram" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 980" width="1600" height="980">
-<defs>
-  <radialGradient id="bg" cx="50%" cy="30%"><stop offset="0%" stop-color="#1a1a1e"/><stop offset="100%" stop-color="#0d0d10"/></radialGradient>
-</defs>
-<rect width="1600" height="980" fill="url(#bg)"/>
-<text x="800" y="58" text-anchor="middle" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="13" font-weight="900" letter-spacing="3">NECK & SHOULDER COMPARISON</text>
-<text x="800" y="86" text-anchor="middle" fill="#555" font-family="Inter,sans-serif" font-size="11">Headrest and upper-body targeting — test with your own body</text>
-<text x="420" y="228" text-anchor="middle" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2">OHCO M8 NEO</text>
-<text x="1180" y="228" text-anchor="middle" fill="#617064" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2">PANASONIC MAN1</text>
-<circle cx="800" cy="450" r="32" fill="#1a1a1e" stroke="#333" stroke-width="2"/>
-<text x="800" y="456" text-anchor="middle" fill="#9a7f4a" font-family="Georgia,serif" font-size="20" font-weight="700">VS</text>
-<image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100.jpg?v=1772325951" x="220" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet" opacity=".92"/>
-<image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/panasonic-man1.jpg" x="980" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet" opacity=".92"/>
-<ellipse cx="375" cy="374" rx="40" ry="35" fill="#9a7f4a" opacity=".06" stroke="#9a7f4a" stroke-width="1.5" stroke-dasharray="8 4"/><circle cx="375" cy="374" r="30" fill="none" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="375" cy="374" r="5" fill="#9a7f4a" opacity=".9"/><circle cx="395" cy="413" r="22" fill="none" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="395" cy="413" r="5" fill="#9a7f4a" opacity=".9"/><line x1="375" y1="374" x2="170" y2="350" stroke="#9a7f4a" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="20" y="336" width="183.2" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="30" y="352" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Knead & Stretch Headrest</text><line x1="395" y1="413" x2="170" y2="400" stroke="#9a7f4a" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="20" y="386" width="230.79999999999998" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="30" y="402" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Shiatsu Upper-Body Choreography</text><rect x="20" y="436" width="196.79999999999998" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="30" y="452" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Demo: check neck alignment</text><ellipse cx="1129" cy="355" rx="40" ry="35" fill="#617064" opacity=".06" stroke="#617064" stroke-width="1.5" stroke-dasharray="8 4"/><circle cx="1129" cy="355" r="30" fill="none" stroke="#617064" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="1129" cy="355" r="5" fill="#617064" opacity=".9"/><circle cx="1143" cy="405" r="22" fill="none" stroke="#617064" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="1143" cy="405" r="5" fill="#617064" opacity=".9"/><line x1="1129" y1="355" x2="1420" y2="350" stroke="#617064" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="1420" y="336" width="169.6" height="24" rx="6" fill="#617064" opacity=".10"/>
-<text x="1430" y="352" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Junetsu Ultra Kneading</text><line x1="1143" y1="405" x2="1420" y2="400" stroke="#617064" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="1420" y="386" width="196.79999999999998" height="24" rx="6" fill="#617064" opacity=".10"/>
-<text x="1430" y="402" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Pressure-Sensing Targeting</text><rect x="1420" y="436" width="217.2" height="24" rx="6" fill="#617064" opacity=".10"/>
-<text x="1430" y="452" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Demo: check shoulder accuracy</text></svg>
+          <div class="m8m1__zone-top m8m1__zone-top--map">
+            <header class="m8m1__zone-mhead">
+              <span class="m8m1__zone-mhead-tag">NECK &amp; SHOULDER COMPARISON</span>
+              <span class="m8m1__zone-mhead-sub">Headrest and upper-body targeting · hover any number to highlight</span>
+            </header>
+            <div class="m8m1__zone-mgrid">
+              <ul class="m8m1__zone-mlist m8m1__zone-mlist--ohco" id="z3-ohco">
+                <li data-pin="1">Knead &amp; Stretch Headrest</li>
+                <li data-pin="2">Shiatsu Upper-Body Choreography</li>
+                <li data-pin="3">Demo: check neck alignment</li>
+              </ul>
+              <div class="m8m1__zone-mfig m8m1__zone-mfig--ohco">
+                <span class="m8m1__zone-mfig-brand">OHCO M8 NEO</span>
+                <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100.jpg?v=1772325951" alt="OHCO M8 NEO massage chair" loading="lazy">
+                <button type="button" class="m8m1__zone-mpin" data-pin="1" data-target="z3-ohco" style="top:22%;left:50%;" aria-label="Headrest">1</button>
+                <button type="button" class="m8m1__zone-mpin" data-pin="2" data-target="z3-ohco" style="top:38%;left:58%;" aria-label="Choreography">2</button>
+                <button type="button" class="m8m1__zone-mpin" data-pin="3" data-target="z3-ohco" style="top:55%;left:55%;" aria-label="Demo cue">3</button>
+              </div>
+              <div class="m8m1__zone-mvs">VS</div>
+              <div class="m8m1__zone-mfig m8m1__zone-mfig--panasonic">
+                <span class="m8m1__zone-mfig-brand">PANASONIC MAN1</span>
+                <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/panasonic-man1.jpg" alt="Panasonic MAN1 massage chair" loading="lazy">
+                <button type="button" class="m8m1__zone-mpin" data-pin="1" data-target="z3-pana" style="top:22%;left:48%;" aria-label="Junetsu kneading">1</button>
+                <button type="button" class="m8m1__zone-mpin" data-pin="2" data-target="z3-pana" style="top:40%;left:50%;" aria-label="Pressure targeting">2</button>
+                <button type="button" class="m8m1__zone-mpin" data-pin="3" data-target="z3-pana" style="top:56%;left:54%;" aria-label="Demo cue">3</button>
+              </div>
+              <ul class="m8m1__zone-mlist m8m1__zone-mlist--panasonic" id="z3-pana">
+                <li data-pin="1">Junetsu Ultra Kneading</li>
+                <li data-pin="2">Pressure-Sensing Targeting</li>
+                <li data-pin="3">Demo: check shoulder accuracy</li>
+              </ul>
+            </div>
           </div>
           <div class="m8m1__zone-body">
             <span class="m8m1__zone-index">03</span>
@@ -1792,32 +2233,39 @@
         </article>
 
         <article class="m8m1__zone-map">
-          <div class="m8m1__zone-top m8m1__zone-top--svg">
-            <svg class="m8m1__zone-svg-diagram" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 980" width="1600" height="980">
-<defs>
-  <radialGradient id="bg" cx="50%" cy="30%"><stop offset="0%" stop-color="#1a1a1e"/><stop offset="100%" stop-color="#0d0d10"/></radialGradient>
-</defs>
-<rect width="1600" height="980" fill="url(#bg)"/>
-<text x="800" y="58" text-anchor="middle" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="13" font-weight="900" letter-spacing="3">ARMS, HANDS & ENTRY</text>
-<text x="800" y="86" text-anchor="middle" fill="#555" font-family="Inter,sans-serif" font-size="11">Easy Access Doors vs traditional entry — arm massage comparison</text>
-<text x="420" y="228" text-anchor="middle" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2">OHCO M8 NEO</text>
-<text x="1180" y="228" text-anchor="middle" fill="#617064" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2">PANASONIC MAN1</text>
-<circle cx="800" cy="450" r="32" fill="#1a1a1e" stroke="#333" stroke-width="2"/>
-<text x="800" y="456" text-anchor="middle" fill="#9a7f4a" font-family="Georgia,serif" font-size="20" font-weight="700">VS</text>
-<image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100.jpg?v=1772325951" x="220" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet" opacity=".92"/>
-<image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/panasonic-man1.jpg" x="980" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet" opacity=".92"/>
-<circle cx="428" cy="450" r="30" fill="none" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="428" cy="450" r="5" fill="#9a7f4a" opacity=".9"/><circle cx="375" cy="433" r="22" fill="none" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="375" cy="433" r="5" fill="#9a7f4a" opacity=".9"/><ellipse cx="413" cy="450" rx="50" ry="40" fill="#9a7f4a" opacity=".06" stroke="#9a7f4a" stroke-width="1" stroke-dasharray="6 4"/><line x1="428" y1="450" x2="170" y2="370" stroke="#9a7f4a" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="20" y="356" width="224" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="30" y="372" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Arms of Embrace (12 air cells)</text><rect x="20" y="406" width="183.2" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="30" y="422" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">479M+ arm massage combos</text><rect x="20" y="456" width="135.6" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="30" y="472" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Easy Access Doors</text><rect x="20" y="506" width="183.2" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="30" y="522" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Demo: entry/exit comfort</text><circle cx="1188" cy="456" r="30" fill="none" stroke="#617064" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="1188" cy="456" r="5" fill="#617064" opacity=".9"/><circle cx="1133" cy="430" r="22" fill="none" stroke="#617064" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="1133" cy="430" r="5" fill="#617064" opacity=".9"/><ellipse cx="1173" cy="456" rx="50" ry="40" fill="#617064" opacity=".06" stroke="#617064" stroke-width="1" stroke-dasharray="6 4"/><line x1="1188" y1="456" x2="1420" y2="370" stroke="#617064" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="1420" y="356" width="149.2" height="24" rx="6" fill="#617064" opacity=".10"/>
-<text x="1430" y="372" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Shaped Palm Massage</text><rect x="1420" y="406" width="162.79999999999998" height="24" rx="6" fill="#617064" opacity=".10"/>
-<text x="1430" y="422" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Full-Body Air Massage</text><rect x="1420" y="456" width="183.2" height="24" rx="6" fill="#617064" opacity=".10"/>
-<text x="1430" y="472" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Demo: wrist/palm/forearm</text></svg>
+          <div class="m8m1__zone-top m8m1__zone-top--map">
+            <header class="m8m1__zone-mhead">
+              <span class="m8m1__zone-mhead-tag">ARMS, HANDS &amp; ENTRY</span>
+              <span class="m8m1__zone-mhead-sub">Easy Access Doors vs traditional entry · hover any number to highlight</span>
+            </header>
+            <div class="m8m1__zone-mgrid">
+              <ul class="m8m1__zone-mlist m8m1__zone-mlist--ohco" id="z4-ohco">
+                <li data-pin="1">Arms of Embrace (12 air cells)</li>
+                <li data-pin="1">479M+ arm massage combos</li>
+                <li data-pin="2">Easy Access Doors</li>
+                <li data-pin="3">Demo: entry/exit comfort</li>
+              </ul>
+              <div class="m8m1__zone-mfig m8m1__zone-mfig--ohco">
+                <span class="m8m1__zone-mfig-brand">OHCO M8 NEO</span>
+                <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100.jpg?v=1772325951" alt="OHCO M8 NEO massage chair" loading="lazy">
+                <button type="button" class="m8m1__zone-mpin" data-pin="1" data-target="z4-ohco" style="top:42%;left:62%;" aria-label="Arms of Embrace">1</button>
+                <button type="button" class="m8m1__zone-mpin" data-pin="2" data-target="z4-ohco" style="top:48%;left:38%;" aria-label="Easy Access Doors">2</button>
+                <button type="button" class="m8m1__zone-mpin" data-pin="3" data-target="z4-ohco" style="top:78%;left:50%;" aria-label="Entry comfort">3</button>
+              </div>
+              <div class="m8m1__zone-mvs">VS</div>
+              <div class="m8m1__zone-mfig m8m1__zone-mfig--panasonic">
+                <span class="m8m1__zone-mfig-brand">PANASONIC MAN1</span>
+                <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/panasonic-man1.jpg" alt="Panasonic MAN1 massage chair" loading="lazy">
+                <button type="button" class="m8m1__zone-mpin" data-pin="1" data-target="z4-pana" style="top:46%;left:62%;" aria-label="Shaped Palm">1</button>
+                <button type="button" class="m8m1__zone-mpin" data-pin="2" data-target="z4-pana" style="top:55%;left:42%;" aria-label="Full-body air">2</button>
+                <button type="button" class="m8m1__zone-mpin" data-pin="3" data-target="z4-pana" style="top:75%;left:55%;" aria-label="Demo cue">3</button>
+              </div>
+              <ul class="m8m1__zone-mlist m8m1__zone-mlist--panasonic" id="z4-pana">
+                <li data-pin="1">Shaped Palm Massage</li>
+                <li data-pin="2">Full-Body Air Massage</li>
+                <li data-pin="3">Demo: wrist / palm / forearm</li>
+              </ul>
+            </div>
           </div>
           <div class="m8m1__zone-body">
             <span class="m8m1__zone-index">04</span>
@@ -1831,36 +2279,38 @@
         </article>
 
         <article class="m8m1__zone-map">
-          <div class="m8m1__zone-top m8m1__zone-top--svg">
-            <svg class="m8m1__zone-svg-diagram" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 980" width="1600" height="980">
-<defs>
-  <radialGradient id="bg" cx="50%" cy="30%"><stop offset="0%" stop-color="#1a1a1e"/><stop offset="100%" stop-color="#0d0d10"/></radialGradient>
-  <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-  <radialGradient id="hO" cx="50%" cy="50%"><stop offset="0%" stop-color="#9a7f4a" stop-opacity=".18"/><stop offset="100%" stop-color="#9a7f4a" stop-opacity="0"/></radialGradient>
-  <radialGradient id="hP" cx="50%" cy="50%"><stop offset="0%" stop-color="#617064" stop-opacity=".18"/><stop offset="100%" stop-color="#617064" stop-opacity="0"/></radialGradient>
-</defs>
-<rect width="1600" height="980" fill="url(#bg)"/>
-<text x="800" y="58" text-anchor="middle" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="13" font-weight="900" letter-spacing="3">LOWER BODY</text>
-<text x="800" y="86" text-anchor="middle" fill="#555" font-family="Inter,sans-serif" font-size="11">Arms, calves, and feet — often the deciding factor in a demo</text>
-<text x="420" y="228" text-anchor="middle" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2">OHCO M8 NEO</text>
-<text x="1180" y="228" text-anchor="middle" fill="#617064" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2">PANASONIC MAN1</text>
-<circle cx="800" cy="450" r="32" fill="#1a1a1e" stroke="#333" stroke-width="2"/>
-<text x="800" y="456" text-anchor="middle" fill="#9a7f4a" font-family="Georgia,serif" font-size="20" font-weight="700">VS</text>
-<image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100.jpg?v=1772325951" x="220" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet" opacity=".92"/>
-<image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/panasonic-man1.jpg" x="980" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet" opacity=".92"/>
-<ellipse cx="511.5" cy="508.5" rx="50" ry="45" fill="#9a7f4a" opacity=".06" stroke="#9a7f4a" stroke-width="1" stroke-dasharray="6 4"/><circle cx="428" cy="450" r="24" fill="none" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="428" cy="450" r="5" fill="#9a7f4a" opacity=".9"/><circle cx="503" cy="488" r="28" fill="none" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="503" cy="488" r="5" fill="#9a7f4a" opacity=".9"/><circle cx="520" cy="529" r="24" fill="none" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="520" cy="529" r="5" fill="#9a7f4a" opacity=".9"/><line x1="428" y1="450" x2="170" y2="370" stroke="#9a7f4a" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="20" y="356" width="224" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="30" y="372" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Arms of Embrace (12 air cells)</text><line x1="503" y1="488" x2="170" y2="420" stroke="#9a7f4a" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="20" y="406" width="217.2" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="30" y="422" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">TheraElliptical Calf Kneading</text><line x1="520" y1="529" x2="170" y2="470" stroke="#9a7f4a" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="20" y="456" width="183.2" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="30" y="472" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Back Calf + Foot Rollers</text><ellipse cx="1282.5" cy="537" rx="50" ry="45" fill="#617064" opacity=".06" stroke="#617064" stroke-width="1" stroke-dasharray="6 4"/><circle cx="1188" cy="456" r="24" fill="none" stroke="#617064" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="1188" cy="456" r="5" fill="#617064" opacity=".9"/><circle cx="1252" cy="519" r="28" fill="none" stroke="#617064" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="1252" cy="519" r="5" fill="#617064" opacity=".9"/><circle cx="1313" cy="555" r="24" fill="none" stroke="#617064" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="1313" cy="555" r="5" fill="#617064" opacity=".9"/><line x1="1188" y1="456" x2="1420" y2="370" stroke="#617064" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="1420" y="356" width="149.2" height="24" rx="6" fill="#617064" opacity=".10"/>
-<text x="1430" y="372" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Shaped Palm Massage</text><line x1="1252" y1="519" x2="1420" y2="420" stroke="#617064" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="1420" y="406" width="203.6" height="24" rx="6" fill="#617064" opacity=".10"/>
-<text x="1430" y="422" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Bodygrip + Wrap-Around Calf</text><line x1="1313" y1="555" x2="1420" y2="470" stroke="#617064" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="1420" y="456" width="183.2" height="24" rx="6" fill="#617064" opacity=".10"/>
-<text x="1430" y="472" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Reflexology Foot Massage</text></svg>
+          <div class="m8m1__zone-top m8m1__zone-top--map">
+            <header class="m8m1__zone-mhead">
+              <span class="m8m1__zone-mhead-tag">LOWER BODY</span>
+              <span class="m8m1__zone-mhead-sub">Arms, calves, and feet · hover any number to highlight features</span>
+            </header>
+            <div class="m8m1__zone-mgrid">
+              <ul class="m8m1__zone-mlist m8m1__zone-mlist--ohco" id="z5-ohco">
+                <li data-pin="1">Arms of Embrace (12 air cells)</li>
+                <li data-pin="2">TheraElliptical Calf Kneading</li>
+                <li data-pin="3">Back Calf + Foot Rollers</li>
+              </ul>
+              <div class="m8m1__zone-mfig m8m1__zone-mfig--ohco">
+                <span class="m8m1__zone-mfig-brand">OHCO M8 NEO</span>
+                <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100.jpg?v=1772325951" alt="OHCO M8 NEO massage chair" loading="lazy">
+                <button type="button" class="m8m1__zone-mpin" data-pin="1" data-target="z5-ohco" style="top:48%;left:62%;" aria-label="Arms of Embrace">1</button>
+                <button type="button" class="m8m1__zone-mpin" data-pin="2" data-target="z5-ohco" style="top:68%;left:55%;" aria-label="TheraElliptical Calf">2</button>
+                <button type="button" class="m8m1__zone-mpin" data-pin="3" data-target="z5-ohco" style="top:84%;left:48%;" aria-label="Foot rollers">3</button>
+              </div>
+              <div class="m8m1__zone-mvs">VS</div>
+              <div class="m8m1__zone-mfig m8m1__zone-mfig--panasonic">
+                <span class="m8m1__zone-mfig-brand">PANASONIC MAN1</span>
+                <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/panasonic-man1.jpg" alt="Panasonic MAN1 massage chair" loading="lazy">
+                <button type="button" class="m8m1__zone-mpin" data-pin="1" data-target="z5-pana" style="top:50%;left:62%;" aria-label="Shaped palm">1</button>
+                <button type="button" class="m8m1__zone-mpin" data-pin="2" data-target="z5-pana" style="top:70%;left:55%;" aria-label="Wrap-around calf">2</button>
+                <button type="button" class="m8m1__zone-mpin" data-pin="3" data-target="z5-pana" style="top:84%;left:60%;" aria-label="Reflexology foot">3</button>
+              </div>
+              <ul class="m8m1__zone-mlist m8m1__zone-mlist--panasonic" id="z5-pana">
+                <li data-pin="1">Shaped Palm Massage</li>
+                <li data-pin="2">Bodygrip + Wrap-Around Calf</li>
+                <li data-pin="3">Reflexology Foot Massage</li>
+              </ul>
+            </div>
           </div>
           <div class="m8m1__zone-body">
             <span class="m8m1__zone-index">05</span>
@@ -1874,39 +2324,42 @@
         </article>
 
         <article class="m8m1__zone-map">
-          <div class="m8m1__zone-top m8m1__zone-top--svg">
-            <svg class="m8m1__zone-svg-diagram" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 980" width="1600" height="980">
-<defs>
-  <radialGradient id="bg" cx="50%" cy="30%"><stop offset="0%" stop-color="#1a1a1e"/><stop offset="100%" stop-color="#0d0d10"/></radialGradient>
-  <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-  <radialGradient id="hO" cx="50%" cy="50%"><stop offset="0%" stop-color="#9a7f4a" stop-opacity=".18"/><stop offset="100%" stop-color="#9a7f4a" stop-opacity="0"/></radialGradient>
-  <radialGradient id="hP" cx="50%" cy="50%"><stop offset="0%" stop-color="#617064" stop-opacity=".18"/><stop offset="100%" stop-color="#617064" stop-opacity="0"/></radialGradient>
-</defs>
-<rect width="1600" height="980" fill="url(#bg)"/>
-<text x="800" y="58" text-anchor="middle" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="13" font-weight="900" letter-spacing="3">HEAT & SENSORY PROGRAMS</text>
-<text x="800" y="86" text-anchor="middle" fill="#555" font-family="Inter,sans-serif" font-size="11">Warmth distribution and session design</text>
-<text x="420" y="228" text-anchor="middle" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2">OHCO M8 NEO</text>
-<text x="1180" y="228" text-anchor="middle" fill="#617064" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2">PANASONIC MAN1</text>
-<circle cx="800" cy="450" r="32" fill="#1a1a1e" stroke="#333" stroke-width="2"/>
-<text x="800" y="456" text-anchor="middle" fill="#9a7f4a" font-family="Georgia,serif" font-size="20" font-weight="700">VS</text>
-<image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100.jpg?v=1772325951" x="220" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet" opacity=".92"/>
-<image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/panasonic-man1.jpg" x="980" y="250" width="400" height="400" preserveAspectRatio="xMidYMid meet" opacity=".92"/>
-<ellipse cx="395" cy="413" rx="60" ry="80" fill="url(#hO)"/><ellipse cx="503" cy="488" rx="40" ry="35" fill="url(#hO)"/><circle cx="395" cy="413" r="30" fill="none" stroke="#d4824a" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="395" cy="413" r="5" fill="#d4824a" opacity=".9"/><circle cx="503" cy="488" r="22" fill="none" stroke="#d4824a" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="503" cy="488" r="5" fill="#d4824a" opacity=".9"/><circle cx="375" cy="374" r="18" fill="none" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="375" cy="374" r="5" fill="#9a7f4a" opacity=".9"/><line x1="395" y1="413" x2="170" y2="340" stroke="#d4824a" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="20" y="326" width="203.6" height="24" rx="6" fill="#d4824a" opacity=".10"/>
-<text x="30" y="342" fill="#d4824a" font-family="Inter,sans-serif" font-size="11" font-weight="800">ConstantTouch Infrared Heat</text><rect x="20" y="366" width="122" height="24" rx="6" fill="#d4824a" opacity=".10"/>
-<text x="30" y="382" fill="#d4824a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Total-Body Heat</text><line x1="375" y1="374" x2="170" y2="420" stroke="#9a7f4a" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="20" y="406" width="210.4" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="30" y="422" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Chromotherapy + Aromatherapy</text><rect x="20" y="446" width="196.79999999999998" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="30" y="462" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">18 Sessions · ~18 min each</text><rect x="20" y="486" width="190" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="30" y="502" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Bluetooth Audio Immersion</text><rect x="20" y="526" width="176.4" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="30" y="542" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Air Ionizer + USB Power</text><ellipse cx="1143" cy="405" rx="40" ry="55" fill="url(#hP)"/><circle cx="1143" cy="405" r="26" fill="none" stroke="#d4824a" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="1143" cy="405" r="5" fill="#d4824a" opacity=".9"/><circle cx="1129" cy="355" r="18" fill="none" stroke="#617064" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="1129" cy="355" r="5" fill="#617064" opacity=".9"/><line x1="1143" y1="405" x2="1420" y2="340" stroke="#d4824a" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="1420" y="326" width="176.4" height="24" rx="6" fill="#d4824a" opacity=".10"/>
-<text x="1430" y="342" fill="#d4824a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Infrared-Heated Rollers</text><line x1="1129" y1="355" x2="1420" y2="400" stroke="#617064" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="1420" y="386" width="142.39999999999998" height="24" rx="6" fill="#617064" opacity=".10"/>
-<text x="1430" y="402" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Touchscreen Remote</text><rect x="1420" y="426" width="210.4" height="24" rx="6" fill="#617064" opacity=".10"/>
-<text x="1430" y="442" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">12 Auto Sessions · 10-30 min</text><rect x="1420" y="466" width="162.79999999999998" height="24" rx="6" fill="#617064" opacity=".10"/>
-<text x="1430" y="482" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Bluetooth Audio + USB</text></svg>
+          <div class="m8m1__zone-top m8m1__zone-top--map">
+            <header class="m8m1__zone-mhead">
+              <span class="m8m1__zone-mhead-tag">HEAT &amp; SENSORY PROGRAMS</span>
+              <span class="m8m1__zone-mhead-sub">Warmth distribution and session design · hover any number to highlight</span>
+            </header>
+            <div class="m8m1__zone-mgrid">
+              <ul class="m8m1__zone-mlist m8m1__zone-mlist--ohco" id="z6-ohco">
+                <li data-pin="1">ConstantTouch Infrared Heat</li>
+                <li data-pin="1">Total-Body Heat</li>
+                <li data-pin="2">Chromotherapy + Aromatherapy</li>
+                <li data-pin="2">18 Sessions · ~18 min each</li>
+                <li data-pin="3">Bluetooth Audio Immersion</li>
+                <li data-pin="3">Air Ionizer + USB Power</li>
+              </ul>
+              <div class="m8m1__zone-mfig m8m1__zone-mfig--ohco">
+                <span class="m8m1__zone-mfig-brand">OHCO M8 NEO</span>
+                <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100.jpg?v=1772325951" alt="OHCO M8 NEO massage chair" loading="lazy">
+                <button type="button" class="m8m1__zone-mpin" data-pin="1" data-target="z6-ohco" style="top:30%;left:55%;" aria-label="Heat features">1</button>
+                <button type="button" class="m8m1__zone-mpin" data-pin="2" data-target="z6-ohco" style="top:50%;left:42%;" aria-label="Sensory features">2</button>
+                <button type="button" class="m8m1__zone-mpin" data-pin="3" data-target="z6-ohco" style="top:78%;left:50%;" aria-label="Audio &amp; ionizer">3</button>
+              </div>
+              <div class="m8m1__zone-mvs">VS</div>
+              <div class="m8m1__zone-mfig m8m1__zone-mfig--panasonic">
+                <span class="m8m1__zone-mfig-brand">PANASONIC MAN1</span>
+                <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/panasonic-man1.jpg" alt="Panasonic MAN1 massage chair" loading="lazy">
+                <button type="button" class="m8m1__zone-mpin" data-pin="1" data-target="z6-pana" style="top:34%;left:55%;" aria-label="Infrared rollers">1</button>
+                <button type="button" class="m8m1__zone-mpin" data-pin="2" data-target="z6-pana" style="top:54%;left:38%;" aria-label="Touchscreen &amp; sessions">2</button>
+                <button type="button" class="m8m1__zone-mpin" data-pin="3" data-target="z6-pana" style="top:80%;left:60%;" aria-label="Bluetooth &amp; USB">3</button>
+              </div>
+              <ul class="m8m1__zone-mlist m8m1__zone-mlist--panasonic" id="z6-pana">
+                <li data-pin="1">Infrared-Heated Rollers</li>
+                <li data-pin="2">Touchscreen Remote</li>
+                <li data-pin="2">12 Auto Sessions · 10-30 min</li>
+                <li data-pin="3">Bluetooth Audio + USB</li>
+              </ul>
+            </div>
           </div>
           <div class="m8m1__zone-body">
             <span class="m8m1__zone-index">06</span>
@@ -1972,9 +2425,9 @@
         <article class="m8m1__product">
           <a class="m8m1__product-media" href="https://massagechairsandmore.com/product/ohco-m-8-massage-chair/">
             <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100.jpg?v=1772325951" alt="OHCO M8 NEO massage chair at Massage Chairs &amp; More" width="1080" height="1080" loading="lazy">
-            <span class="m8m1__hotspot" style="top: 22%; left: 18%;">1</span>
-            <span class="m8m1__hotspot" style="top: 44%; right: 22%;">2</span>
-            <span class="m8m1__hotspot" style="bottom: 18%; left: 45%;">3</span>
+            <span class="m8m1__hotspot" data-tip="Head &amp; shoulder choreography" style="top: 22%; left: 18%;">1</span>
+            <span class="m8m1__hotspot" data-tip="Arms of Embrace + Easy Access Doors" style="top: 44%; right: 22%;">2</span>
+            <span class="m8m1__hotspot" data-tip="Calf &amp; foot coverage" style="bottom: 18%; left: 45%;">3</span>
           </a>
           <div class="m8m1__product-body">
             <div class="m8m1__product-top">
@@ -1997,9 +2450,9 @@
         <article class="m8m1__product">
           <a class="m8m1__product-media" href="https://massagechairsandmore.com/product/panasonic-man1/">
             <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/panasonic-man1.jpg" alt="Panasonic MAN1 massage chair at Massage Chairs &amp; More" width="1080" height="1080" loading="lazy">
-            <span class="m8m1__hotspot m8m1__hotspot--green" style="top: 20%; right: 28%;">1</span>
-            <span class="m8m1__hotspot m8m1__hotspot--green" style="top: 43%; left: 28%;">2</span>
-            <span class="m8m1__hotspot m8m1__hotspot--green" style="bottom: 17%; right: 26%;">3</span>
+            <span class="m8m1__hotspot m8m1__hotspot--green" data-tip="Precision neck &amp; shoulder targeting" style="top: 20%; right: 28%;">1</span>
+            <span class="m8m1__hotspot m8m1__hotspot--green" data-tip="Pressure-sensing body scan" style="top: 43%; left: 28%;">2</span>
+            <span class="m8m1__hotspot m8m1__hotspot--green" data-tip="Lower-body &amp; foot massage" style="bottom: 17%; right: 26%;">3</span>
           </a>
           <div class="m8m1__product-body">
             <div class="m8m1__product-top">
@@ -2342,6 +2795,40 @@
     <a href="tel:+14088891188">Call MCM</a>
   </nav>
 </div>
+
+<script>
+(function () {
+  var pins = document.querySelectorAll('.m8m1__zone-mpin');
+  if (!pins.length) return;
+  pins.forEach(function (pin) {
+    var listId = pin.getAttribute('data-target');
+    var pinId = pin.getAttribute('data-pin');
+    var list = document.getElementById(listId);
+    if (!list) return;
+    var items = list.querySelectorAll('li');
+    var siblings = pin.parentElement.querySelectorAll('.m8m1__zone-mpin');
+
+    function activate() {
+      siblings.forEach(function (s) { s.classList.remove('is-active'); });
+      pin.classList.add('is-active');
+      list.classList.add('is-filtering');
+      items.forEach(function (li) {
+        li.classList.toggle('is-active', li.getAttribute('data-pin') === pinId);
+      });
+    }
+    function deactivate() {
+      pin.classList.remove('is-active');
+      list.classList.remove('is-filtering');
+      items.forEach(function (li) { li.classList.remove('is-active'); });
+    }
+    pin.addEventListener('mouseenter', activate);
+    pin.addEventListener('mouseleave', deactivate);
+    pin.addEventListener('focus', activate);
+    pin.addEventListener('blur', deactivate);
+    pin.addEventListener('click', function () { activate(); });
+  });
+})();
+</script>
 
 {
   "name": "OHCO M8 vs Panasonic MAN1",

@@ -377,6 +377,20 @@
   padding: clamp(24px, 4vw, 54px);
   background: linear-gradient(135deg, #f5efe5, #eee5d6);
 }
+.m8dc-panel-svg {
+  padding: clamp(24px, 4vw, 54px);
+  background: linear-gradient(135deg, #f5efe5, #eee5d6);
+  border-radius: 28px;
+}
+.m8dc-panel-svg object {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 1600 / 980;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 16px 42px rgba(25, 18, 10, 0.10);
+}
 .m8dc-compare-art {
   position: relative;
   min-height: 520px;
@@ -863,6 +877,52 @@
   }
   .m8dc-sticky-mobile a { min-height: 42px; padding: 10px 14px; font-size: 12px; }
 }
+
+/* ═══════ UI Polish Layer ═══════ */
+.m8dc {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+.m8dc :focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.m8dc h1, .m8dc h2, .m8dc h3 { letter-spacing: -0.012em; }
+.m8dc-btn {
+  letter-spacing: 0.012em;
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+}
+.m8dc-btn:hover { transform: translateY(-2px); }
+.m8dc-card,
+.m8dc-feature,
+.m8dc-model-card,
+.m8dc-faq-item,
+.m8dc-details {
+  border-radius: 14px;
+  transition: transform 0.32s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.32s ease, border-color 0.32s ease;
+}
+.m8dc-card:hover,
+.m8dc-feature:hover,
+.m8dc-model-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1px 2px rgba(20, 20, 20, 0.05), 0 14px 36px rgba(20, 20, 20, 0.10), 0 32px 70px rgba(20, 20, 20, 0.07);
+}
+.m8dc-badge,
+.m8dc-chip,
+.m8dc-callout-chip {
+  letter-spacing: 0.012em;
+  transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+}
+.m8dc p { letter-spacing: 0.005em; }
+@media (min-width: 1024px) {
+  .m8dc-section { padding: 96px 0; }
+}
+@media (max-width: 760px) {
+  .m8dc-section { padding: 60px 0; }
+  .m8dc-btn { min-height: 50px; padding: 13px 22px; font-size: 14.5px; }
+}
 </style>
 
 <div class="m8dc" id="m8dc-top">
@@ -921,29 +981,8 @@
       </div>
 
       <article class="m8dc-visual-panel" aria-labelledby="m8dc-engine-title">
-        <div class="m8dc-panel-visuals">
-          <div class="m8dc-compare-art">
-            <span class="m8dc-compare-art__badge">OHCO M8 NEO</span>
-            <div class="m8dc-compare-art__stage">
-              <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100.jpg?v=1772325951&width=1200" alt="OHCO M8 NEO massage engine visual comparison using official product image" loading="lazy">
-              <span class="m8dc-zone-line"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--head"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--back"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--calf"></span>
-            </div>
-            <strong class="m8dc-zone-caption">MaxTrack + Sens8<small>Choreographed, enveloping, sensory shiatsu feel</small></strong>
-          </div>
-          <div class="m8dc-compare-art m8dc-compare-art--dcore">
-            <span class="m8dc-compare-art__badge">D.Core 2</span>
-            <div class="m8dc-compare-art__stage">
-              <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/asd2.jpg?v=1772565432&width=1200" alt="D.Core 2 massage engine visual comparison using official product image" loading="lazy">
-              <span class="m8dc-zone-line"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--head"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--back"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--calf"></span>
-            </div>
-            <strong class="m8dc-zone-caption">3D+ Shiatsu 10-hand robot<small>Coverage-rich, tactile, True Shiatsu luxury feel</small></strong>
-          </div>
+        <div class="m8dc-panel-svg">
+          <object data="assets/ohco-dcore-mechanism-diagram.svg" type="image/svg+xml" aria-label="OHCO M8 NEO vs D.Core 2 massage engine comparison"></object>
         </div>
         <div class="m8dc-panel-copy">
           <span class="m8dc-panel-copy__num">01</span>
@@ -971,31 +1010,8 @@
       </article>
 
       <article class="m8dc-visual-panel" aria-labelledby="m8dc-zone-title">
-        <div class="m8dc-panel-visuals">
-          <div class="m8dc-compare-art">
-            <span class="m8dc-compare-art__badge">OHCO M8 NEO</span>
-            <div class="m8dc-compare-art__stage">
-              <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/ohco-m8-front-open-view-pearl-02.jpg?v=1772729586&width=1200" alt="OHCO M8 NEO feature zone map using official product detail image" loading="lazy">
-              <span class="m8dc-zone-line"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--head"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--arm"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--calf"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--foot"></span>
-            </div>
-            <strong class="m8dc-zone-caption">Neck, arms, calves, feet, sensory cues<small>Designed as a full wellness environment</small></strong>
-          </div>
-          <div class="m8dc-compare-art m8dc-compare-art--dcore">
-            <span class="m8dc-compare-art__badge">D.Core 2</span>
-            <div class="m8dc-compare-art__stage">
-              <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/dcore-2-beige-armrest-closeup-11.jpg?v=1772733849&width=1200" alt="D.Core 2 feature zone map using official product detail image" loading="lazy">
-              <span class="m8dc-zone-line m8dc-zone-line--short"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--head"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--control"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--panel"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--foot"></span>
-            </div>
-            <strong class="m8dc-zone-caption">Massage hands, oak panels, controls, lower body<small>Designed as furniture-first Japanese luxury</small></strong>
-          </div>
+        <div class="m8dc-panel-svg">
+          <object data="assets/ohco-dcore-feature-map.svg" type="image/svg+xml" aria-label="OHCO M8 NEO vs D.Core 2 feature zone map"></object>
         </div>
         <div class="m8dc-panel-copy">
           <span class="m8dc-panel-copy__num">02</span>
@@ -1023,29 +1039,8 @@
       </article>
 
       <article class="m8dc-visual-panel" aria-labelledby="m8dc-sensory-title">
-        <div class="m8dc-panel-visuals">
-          <div class="m8dc-compare-art">
-            <span class="m8dc-compare-art__badge">OHCO M8 NEO</span>
-            <div class="m8dc-compare-art__stage">
-              <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/ohco-m8-lifestyle-partial-recline-pearl-01.jpg?v=1772729566&width=1200" alt="OHCO M8 NEO sensory feature comparison using official product image" loading="lazy">
-              <span class="m8dc-zone-dot m8dc-zone-dot--head"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--back"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--arm"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--foot"></span>
-            </div>
-            <strong class="m8dc-zone-caption">Heat + light + aroma + sound + air<small>Total-body sensory luxury stack</small></strong>
-          </div>
-          <div class="m8dc-compare-art m8dc-compare-art--dcore">
-            <span class="m8dc-compare-art__badge">D.Core 2</span>
-            <div class="m8dc-compare-art__stage">
-              <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/asd2.jpg?v=1772565432&width=1200" alt="D.Core 2 furniture luxury feature comparison using official product image" loading="lazy">
-              <span class="m8dc-zone-dot m8dc-zone-dot--panel"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--control"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--heat"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--foot"></span>
-            </div>
-            <strong class="m8dc-zone-caption">Oak + touchscreen + speakers + heat<small>Furniture-first comfort stack</small></strong>
-          </div>
+        <div class="m8dc-panel-svg">
+          <object data="assets/ohco-dcore-body-scan-diagram.svg" type="image/svg+xml" aria-label="OHCO M8 NEO vs D.Core 2 sensory and body scan comparison"></object>
         </div>
         <div class="m8dc-panel-copy">
           <span class="m8dc-panel-copy__num">03</span>
@@ -1073,29 +1068,8 @@
       </article>
 
       <article class="m8dc-visual-panel" aria-labelledby="m8dc-demo-title">
-        <div class="m8dc-panel-visuals">
-          <div class="m8dc-compare-art">
-            <span class="m8dc-compare-art__badge">OHCO M8 NEO</span>
-            <div class="m8dc-compare-art__stage">
-              <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100.jpg?v=1772325951&width=1200" alt="OHCO M8 NEO showroom demo comparison using official product image" loading="lazy">
-              <span class="m8dc-zone-line"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--head"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--back"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--foot"></span>
-            </div>
-            <strong class="m8dc-zone-caption">Try fit, entry, recline, memory, atmosphere<small>Best if you want a ritual-like daily reset</small></strong>
-          </div>
-          <div class="m8dc-compare-art m8dc-compare-art--dcore">
-            <span class="m8dc-compare-art__badge">D.Core 2</span>
-            <div class="m8dc-compare-art__stage">
-              <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/asd2.jpg?v=1772565432&width=1200" alt="D.Core 2 showroom demo comparison using official product image" loading="lazy">
-              <span class="m8dc-zone-line"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--head"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--panel"></span>
-              <span class="m8dc-zone-dot m8dc-zone-dot--foot"></span>
-            </div>
-            <strong class="m8dc-zone-caption">Try pressure, oak presence, controls, room fit<small>Best if you want refined daily-use furniture luxury</small></strong>
-          </div>
+        <div class="m8dc-panel-svg">
+          <object data="assets/ohco-dcore-fit-warranty-diagram.svg" type="image/svg+xml" aria-label="OHCO M8 NEO vs D.Core 2 dimensions and fit comparison"></object>
         </div>
         <div class="m8dc-panel-copy">
           <span class="m8dc-panel-copy__num">04</span>
