@@ -3,7 +3,7 @@
     <linearGradient id="bg6" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#fbfaf7"/><stop offset="1" stop-color="#eee6da"/></linearGradient>
     <filter id="sh6" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#2b2114" flood-opacity=".12"/></filter>
   </defs>
-  <rect width="1600" height="980" fill="url(#bg6)"/>
+  
   <text x="800" y="56" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="13" font-weight="900" letter-spacing="4" text-anchor="middle">MASSAGE CHAIRS &amp; MORE — FIT &amp; OWNERSHIP</text>
   <text x="800" y="100" fill="#0b0b0b" font-family="Georgia,serif" font-size="40" font-weight="800" text-anchor="middle">Body fit, design, and ownership</text>
   <text x="800" y="132" fill="#67605a" font-family="Inter,sans-serif" font-size="16" text-anchor="middle">Physical dimensions, user height range, design style, and service confidence</text>
@@ -31,14 +31,14 @@
 
   <!-- MAN1 Key highlights -->
   <rect x="545" y="420" width="220" height="110" rx="10" fill="#9a7f4a" opacity=".08"/>
-  <text x="560" y="442" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="12" font-weight="800">KEY HIGHLIGHTS</text>
+  
   <text x="560" y="462" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="10" font-weight="600" opacity=".8">✦ Technology-forward design</text>
   <text x="560" y="480" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="10" font-weight="600" opacity=".8">✦ Designed in Osaka, Japan</text>
   <text x="560" y="498" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="10" font-weight="600" opacity=".8">✦ Strong Panasonic service</text>
   <text x="560" y="516" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="10" font-weight="600" opacity=".8">✦ $15,299 → $12,999</text>
 
-  <rect x="80" y="695" width="680" height="18" rx="4" fill="#9a7f4a" opacity=".06"/>
-  <text x="420" y="708" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle">Premium wellness device · Engineering-led · Panasonic trust</text>
+  
+  
 
   <!-- D.Core 2 Card -->
   <rect x="820" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh6)"/>
@@ -63,14 +63,14 @@
 
   <!-- D.Core 2 Key highlights -->
   <rect x="1310" y="420" width="210" height="110" rx="10" fill="#617064" opacity=".08"/>
-  <text x="1325" y="442" fill="#617064" font-family="Inter,sans-serif" font-size="12" font-weight="800">KEY HIGHLIGHTS</text>
+  
   <text x="1325" y="462" fill="#617064" font-family="Inter,sans-serif" font-size="10" font-weight="600" opacity=".8">✦ Furniture-first luxury</text>
   <text x="1325" y="480" fill="#617064" font-family="Inter,sans-serif" font-size="10" font-weight="600" opacity=".8">✦ Handcrafted in Japan</text>
   <text x="1325" y="498" fill="#617064" font-family="Inter,sans-serif" font-size="10" font-weight="600" opacity=".8">✦ Oak panels + handrails</text>
   <text x="1325" y="516" fill="#617064" font-family="Inter,sans-serif" font-size="10" font-weight="600" opacity=".8">✦ $16,999 → $14,999</text>
 
-  <rect x="840" y="695" width="680" height="18" rx="4" fill="#617064" opacity=".06"/>
-  <text x="1180" y="708" fill="#617064" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle">Handcrafted Japanese luxury · Oak design · Furniture-first</text>
+  
+  
 
   <!-- VS badge -->
   <circle cx="800" cy="450" r="32" fill="#1a1814"/>

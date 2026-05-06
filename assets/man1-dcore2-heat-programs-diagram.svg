@@ -5,7 +5,7 @@
     <linearGradient id="heatA" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e8a040" stop-opacity=".25"/><stop offset="1" stop-color="#e8a040" stop-opacity=".05"/></linearGradient>
     <linearGradient id="heatB" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#7a8c7e" stop-opacity=".25"/><stop offset="1" stop-color="#7a8c7e" stop-opacity=".05"/></linearGradient>
   </defs>
-  <rect width="1600" height="980" fill="url(#bg5)"/>
+  
   <text x="800" y="56" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="13" font-weight="900" letter-spacing="4" text-anchor="middle">MASSAGE CHAIRS &amp; MORE — HEAT &amp; PROGRAMS</text>
   <text x="800" y="100" fill="#0b0b0b" font-family="Georgia,serif" font-size="40" font-weight="800" text-anchor="middle">Heat, programs, and comfort</text>
   <text x="800" y="132" fill="#67605a" font-family="Inter,sans-serif" font-size="16" text-anchor="middle">Heated rollers vs triple-region heat — plus auto programs compared</text>

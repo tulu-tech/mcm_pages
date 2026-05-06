@@ -401,7 +401,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg, #fff 0%, var(--soft) 100%);
+  background: transparent;
   height: 286px;
   padding: 22px;
   border-bottom: 1px solid var(--line);
@@ -993,6 +993,17 @@
   .cmpx__faq-body p { padding-right: 0; }
   .cmpx__mobile-sticky { display: grid; }
 }
+
+  .cmpx__hero {
+    background: linear-gradient(90deg, #050505 0%, #050505 42%, rgba(5,5,5,0.72) 58%, rgba(5,5,5,0.18) 88%, rgba(5,5,5,0.04) 100%), linear-gradient(180deg, rgba(5,5,5,0.18) 0%, rgba(5,5,5,0.55) 100%), url('https://cdn.shopify.com/s/files/1/0813/4036/7096/files/sacramento-showroom-comparison.jpg') right center / cover no-repeat, #050505 !important;
+  }
+  .cmpx__hero h1,
+  .cmpx__hero h1 * {
+    color: #fff !important;
+  }
+  .cmpx__hero p {
+    color: rgba(255,255,255,0.82) !important;
+  }
 </style>
 
 <div class="cmpx">

@@ -3,7 +3,7 @@
     <linearGradient id="bg6" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#fbfaf7"/><stop offset="1" stop-color="#eee6da"/></linearGradient>
     <filter id="sh6" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#2b2114" flood-opacity=".12"/></filter>
   </defs>
-  <rect width="1600" height="980" fill="url(#bg6)"/>
+  
   <rect x="655" y="30" width="290" height="32" rx="16" fill="#0b0b0b"/>
   <text x="800" y="51" fill="#c3a363" font-family="Inter,sans-serif" font-size="11" font-weight="900" letter-spacing="3" text-anchor="middle">05 · FIT, ROOM &amp; WARRANTY</text>
   <text x="800" y="100" fill="#0b0b0b" font-family="Georgia,serif" font-size="38" font-weight="800" text-anchor="middle">Fit, room space, and warranty</text>
@@ -46,14 +46,14 @@
   <text x="1382" y="555" fill="#617064" font-family="Inter,sans-serif" font-size="12" font-weight="900" text-anchor="middle">2" Wall Hug</text>
 
   <rect x="80" y="670" width="680" height="90" rx="16" fill="#f8f5ef"/>
-  <text x="100" y="693" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="900" letter-spacing="2">KEY HIGHLIGHTS</text>
+  
   <circle cx="105" cy="714" r="5" fill="#9a7f4a"/>
   <text x="118" y="718" fill="#3c3c3c" font-family="Inter,sans-serif" font-size="13" font-weight="600">3-inch wall-hug · 5'0" to 6'2" · 265 lb max</text>
   <circle cx="105" cy="736" r="5" fill="#9a7f4a"/>
   <text x="118" y="740" fill="#3c3c3c" font-family="Inter,sans-serif" font-size="13" font-weight="600">3-year limited warranty, extendable to 5-year</text>
 
   <rect x="840" y="670" width="680" height="90" rx="16" fill="#f8f5ef"/>
-  <text x="860" y="693" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="900" letter-spacing="2">KEY HIGHLIGHTS</text>
+  
   <circle cx="865" cy="714" r="5" fill="#617064"/>
   <text x="878" y="718" fill="#3c3c3c" font-family="Inter,sans-serif" font-size="13" font-weight="600">2-inch wall-hug · 5'0" to 6'3" · 285 lb max</text>
   <circle cx="865" cy="736" r="5" fill="#617064"/>

@@ -240,7 +240,7 @@
   .bsvs-dot{width:7px;height:7px;border-radius:999px;background:var(--bsvs-gold)}
   .bsvs-hero-stage{position:relative;min-height:520px}
   .bsvs-hero-card{position:absolute;background:rgba(255,255,255,.94);border:1px solid rgba(255,255,255,.55);box-shadow:0 28px 70px rgba(0,0,0,.25);border-radius:8px;overflow:hidden}
-  .bsvs-hero-card img{width:100%;height:100%;object-fit:contain;background:linear-gradient(180deg,#fff,#f7f2ea)}
+  .bsvs-hero-card img{width:100%;height:100%;object-fit:contain;background:transparent}
   .bsvs-hero-card--brio{top:10px;right:0;width:58%;height:380px;z-index:2}
   .bsvs-hero-card--solara{bottom:24px;left:0;width:56%;height:340px;z-index:1}
   .bsvs-hero-label{position:absolute;left:16px;top:16px;background:var(--bsvs-charcoal);color:#fff;border-radius:999px;padding:8px 11px;font-size:12px;font-weight:900}
@@ -279,6 +279,16 @@
   .bsvs-map-overlay .bsvs-ring-green{fill:none;stroke:rgba(102,122,97,.22);stroke-width:4}
   .bsvs-map-overlay .bsvs-glow{fill:rgba(182,145,91,.12)}
   .bsvs-map-overlay .bsvs-glow-green{fill:rgba(102,122,97,.12)}
+  .bsvs-hotspot{position:absolute;z-index:5;width:36px;height:36px;border-radius:50%;border:2px solid #fff;color:#fff;font-family:Inter,sans-serif;font-size:14px;font-weight:900;cursor:pointer;transform:translate(-50%,-50%);display:grid;place-items:center;transition:transform .2s ease,box-shadow .2s ease;box-shadow:0 6px 14px rgba(0,0,0,.34);padding:0}
+  .bsvs-hotspot--brio{background:rgba(63,95,100,.94)}
+  .bsvs-hotspot--solara{background:rgba(166,111,61,.94)}
+  .bsvs-hotspot:hover,.bsvs-hotspot:focus-visible{outline:none;transform:translate(-50%,-50%) scale(1.18);box-shadow:0 0 0 8px rgba(63,95,100,.22),0 8px 18px rgba(0,0,0,.34)}
+  .bsvs-hotspot--solara:hover,.bsvs-hotspot--solara:focus-visible{box-shadow:0 0 0 8px rgba(166,111,61,.22),0 8px 18px rgba(0,0,0,.34)}
+  .bsvs-hotspot::before{content:attr(data-title);position:absolute;bottom:calc(100% + 12px);left:50%;transform:translateX(-50%);background:#0f0f10;color:#fff;font-size:12px;font-weight:900;letter-spacing:.04em;padding:8px 12px;border-radius:8px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease;z-index:10}
+  .bsvs-hotspot::after{content:attr(data-desc);position:absolute;bottom:calc(100% + 12px);left:50%;transform:translate(-50%,32px);background:#0f0f10;color:rgba(255,255,255,.78);font-size:11px;font-weight:600;letter-spacing:0;padding:8px 12px;border-radius:8px;width:max-content;max-width:240px;white-space:normal;line-height:1.4;opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease;z-index:10;text-align:center}
+  .bsvs-hotspot:hover::before,.bsvs-hotspot:focus-visible::before{opacity:1;transform:translate(-50%,-26px)}
+  .bsvs-hotspot:hover::after,.bsvs-hotspot:focus-visible::after{opacity:1;transform:translate(-50%,0)}
+  .bsvs-map-overlay{pointer-events:none}
   .bsvs-map-caption{position:absolute;z-index:4;left:26px;right:26px;bottom:24px;background:rgba(255,255,255,.9);border:1px solid var(--bsvs-line);border-radius:8px;padding:15px 18px;box-shadow:0 10px 24px rgba(31,36,33,.08)}
   .bsvs-map-caption strong{display:block;font-family:"Playfair Display",Georgia,serif;font-size:21px;line-height:1.15;margin-bottom:4px}
   .bsvs-map-caption span{display:block;color:var(--bsvs-soft);font-size:14px;line-height:1.45}
@@ -297,7 +307,7 @@
 
   .bsvs-product-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
   .bsvs-product{background:#fff;border:1px solid var(--bsvs-line);border-radius:8px;box-shadow:var(--bsvs-shadow-soft);overflow:hidden}
-  .bsvs-product-media{height:360px;background:linear-gradient(180deg,#fff,#f4efe7);display:grid;place-items:center;padding:20px;position:relative}
+  .bsvs-product-media{height:360px;background:transparent;display:grid;place-items:center;padding:20px;position:relative}
   .bsvs-product-media img{max-height:320px;object-fit:contain}
   .bsvs-product-tag{position:absolute;top:18px;left:18px;border-radius:999px;padding:8px 11px;color:#fff;font-size:12px;font-weight:900}
   .bsvs-product-tag--brio{background:var(--bsvs-brio)}
@@ -518,6 +528,25 @@
     .bsvs-section { padding: 60px 0; }
     .bsvs-btn { min-height: 50px; padding: 13px 22px; font-size: 14.5px; }
   }
+
+  .bsvs-hero {
+    background: linear-gradient(90deg, #050505 0%, #050505 42%, rgba(5,5,5,0.72) 58%, rgba(5,5,5,0.18) 88%, rgba(5,5,5,0.04) 100%), linear-gradient(180deg, rgba(5,5,5,0.18) 0%, rgba(5,5,5,0.55) 100%), url('https://cdn.shopify.com/s/files/1/0813/4036/7096/files/showroom-hero.jpg') right center / cover no-repeat, #050505 !important;
+  }
+  .bsvs-hero-media,
+  .bsvs-hero-media img,
+  .bsvs-hero-bg,
+  .bsvs-hero-image,
+  .bsvs-hero::before {
+    /* unify with new gradient bg */
+  }
+  .bsvs-hero h1,
+  .bsvs-hero h1 *,
+  .bsvs-hero p {
+    color: #fff !important;
+  }
+  .bsvs-hero p {
+    color: rgba(255,255,255,0.82) !important;
+  }
 </style>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -593,12 +622,10 @@
           <div class="bsvs-map-media bsvs-map-media--wide">
             <span class="bsvs-map-pill">Positive Posture Brio+</span>
             <img src="{{ img_brio_upright }}" alt="Brio+ massage chair visual map showing Intelligent 4D Massage and L-track coverage" loading="lazy">
-            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true">
-              <path class="bsvs-path-brio" d="M300 78 C346 136 353 208 326 270 C304 320 294 354 318 394"/>
-              <circle class="bsvs-glow-green" cx="300" cy="116" r="46"/><circle class="bsvs-ring-green" cx="300" cy="116" r="32"/><circle class="bsvs-zone-green" cx="300" cy="116" r="13"/>
-              <circle class="bsvs-glow-green" cx="331" cy="234" r="42"/><circle class="bsvs-ring-green" cx="331" cy="234" r="28"/><circle class="bsvs-zone-green" cx="331" cy="234" r="13"/>
-              <circle class="bsvs-glow-green" cx="311" cy="355" r="46"/><circle class="bsvs-ring-green" cx="311" cy="355" r="32"/><circle class="bsvs-zone-green" cx="311" cy="355" r="13"/>
-            </svg>
+            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true"><path class="bsvs-path-brio" d="M300 78 C346 136 353 208 326 270 C304 320 294 354 318 394"/></svg>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--brio" style="top:28%;left:50%;" data-title="Neck & Shoulder" data-desc="4D rollers adapt depth soft to firm." aria-label="Neck & Shoulder: 4D rollers adapt depth soft to firm.">1</button>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--brio" style="top:47%;left:52%;" data-title="Mid Back" data-desc="L-track contoured pressure path." aria-label="Mid Back: L-track contoured pressure path.">2</button>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--brio" style="top:64%;left:52%;" data-title="Glute / Hamstring" data-desc="Heated rollers extend past the seat." aria-label="Glute / Hamstring: Heated rollers extend past the seat.">3</button>
             <div class="bsvs-map-caption"><strong>Intelligent 4D + L-Track</strong><span>Deeper, more adjustable pressure from neck through glutes.</span></div>
           </div>
         </article>
@@ -606,12 +633,10 @@
           <div class="bsvs-map-media bsvs-map-media--wide">
             <span class="bsvs-map-pill">Positive Posture Solara</span>
             <img src="{{ img_solara_upright }}" alt="Solara massage chair visual map showing SL-track coverage" loading="lazy">
-            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true">
-              <path class="bsvs-path-solara" d="M303 90 C350 146 346 207 311 269 C288 312 270 350 288 390"/>
-              <circle class="bsvs-glow" cx="306" cy="118" r="44"/><circle class="bsvs-ring" cx="306" cy="118" r="30"/><circle class="bsvs-zone" cx="306" cy="118" r="13"/>
-              <circle class="bsvs-glow" cx="313" cy="244" r="42"/><circle class="bsvs-ring" cx="313" cy="244" r="28"/><circle class="bsvs-zone" cx="313" cy="244" r="13"/>
-              <circle class="bsvs-glow" cx="286" cy="358" r="44"/><circle class="bsvs-ring" cx="286" cy="358" r="30"/><circle class="bsvs-zone" cx="286" cy="358" r="13"/>
-            </svg>
+            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true"><path class="bsvs-path-solara" d="M303 90 C350 146 346 207 311 269 C288 312 270 350 288 390"/></svg>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--solara" style="top:28%;left:55%;" data-title="Neck & Shoulder" data-desc="SL-track contoured roller path." aria-label="Neck & Shoulder: SL-track contoured roller path.">1</button>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--solara" style="top:47%;left:58%;" data-title="Mid Back" data-desc="Adaptive coverage along the spine." aria-label="Mid Back: Adaptive coverage along the spine.">2</button>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--solara" style="top:64%;left:58%;" data-title="Upper Hamstring" data-desc="Roller path extends to seat edge." aria-label="Upper Hamstring: Roller path extends to seat edge.">3</button>
             <div class="bsvs-map-caption"><strong>Solara Engine + SL-Track</strong><span>Straightforward everyday coverage from neck to upper hamstrings.</span></div>
           </div>
         </article>
@@ -649,11 +674,10 @@
           <div class="bsvs-map-media">
             <span class="bsvs-map-pill">Brio+ Heated Rollers</span>
             <img src="{{ img_brio_heat }}" alt="Brio+ heated roller and infrared heat zone visual comparison" loading="lazy">
-            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true">
-              <circle class="bsvs-glow-green" cx="302" cy="148" r="54"/><circle class="bsvs-ring-green" cx="302" cy="148" r="39"/><circle class="bsvs-zone-green" cx="302" cy="148" r="15"/>
-              <circle class="bsvs-glow-green" cx="354" cy="292" r="48"/><circle class="bsvs-ring-green" cx="354" cy="292" r="34"/><circle class="bsvs-zone-green" cx="354" cy="292" r="14"/>
-              <circle class="bsvs-glow-green" cx="412" cy="346" r="42"/><circle class="bsvs-ring-green" cx="412" cy="346" r="28"/><circle class="bsvs-zone-green" cx="412" cy="346" r="13"/>
-            </svg>
+            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true"></svg>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--brio" style="top:26%;left:50%;" data-title="Upper Back Heat" data-desc="Roller-level infrared warmth." aria-label="Upper Back Heat: Roller-level infrared warmth.">1</button>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--brio" style="top:46%;left:52%;" data-title="Lumbar Heat" data-desc="Targeted lower-back heat zone." aria-label="Lumbar Heat: Targeted lower-back heat zone.">2</button>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--brio" style="top:62%;left:52%;" data-title="Calf / Foot Heat" data-desc="Lower-body warmth for full sessions." aria-label="Calf / Foot Heat: Lower-body warmth for full sessions.">3</button>
             <div class="bsvs-map-caption"><strong>Roller Heat + Infrared Zones</strong><span>Back, lower back, calves, and feet should be felt in showroom.</span></div>
           </div>
         </article>
@@ -661,10 +685,9 @@
           <div class="bsvs-map-media">
             <span class="bsvs-map-pill">Solara Heated Massage</span>
             <img src="{{ img_solara_recline }}" alt="Solara heated back and calf massage zone visual comparison" loading="lazy">
-            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true">
-              <circle class="bsvs-glow" cx="306" cy="163" r="54"/><circle class="bsvs-ring" cx="306" cy="163" r="39"/><circle class="bsvs-zone" cx="306" cy="163" r="15"/>
-              <circle class="bsvs-glow" cx="419" cy="330" r="52"/><circle class="bsvs-ring" cx="419" cy="330" r="36"/><circle class="bsvs-zone" cx="419" cy="330" r="15"/>
-            </svg>
+            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true"></svg>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--solara" style="top:32%;left:55%;" data-title="Back Heat" data-desc="Comfort-forward back warmth." aria-label="Back Heat: Comfort-forward back warmth.">1</button>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--solara" style="top:62%;left:60%;" data-title="Calf Heat" data-desc="Lower-body warmth without rollers." aria-label="Calf Heat: Lower-body warmth without rollers.">2</button>
             <div class="bsvs-map-caption"><strong>Back + Calf Heat</strong><span>Warmer everyday comfort without the Brio+ heated roller upgrade.</span></div>
           </div>
         </article>
@@ -689,11 +712,10 @@
           <div class="bsvs-map-media">
             <span class="bsvs-map-pill">Brio+ Full-Body Air</span>
             <img src="{{ img_brio_air }}" alt="Brio+ full-body air massage and Intelligent Touch foot rollers visual map" loading="lazy">
-            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true">
-              <circle class="bsvs-glow-green" cx="238" cy="145" r="42"/><circle class="bsvs-ring-green" cx="238" cy="145" r="28"/><circle class="bsvs-zone-green" cx="238" cy="145" r="12"/>
-              <circle class="bsvs-glow-green" cx="362" cy="178" r="42"/><circle class="bsvs-ring-green" cx="362" cy="178" r="28"/><circle class="bsvs-zone-green" cx="362" cy="178" r="12"/>
-              <circle class="bsvs-glow-green" cx="408" cy="330" r="48"/><circle class="bsvs-ring-green" cx="408" cy="330" r="34"/><circle class="bsvs-zone-green" cx="408" cy="330" r="13"/>
-            </svg>
+            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true"></svg>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--brio" style="top:30%;left:42%;" data-title="Shoulder Air Zone" data-desc="Compression squeeze on shoulders." aria-label="Shoulder Air Zone: Compression squeeze on shoulders.">1</button>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--brio" style="top:42%;left:60%;" data-title="Arm / Hand Air" data-desc="Dedicated arm air massage." aria-label="Arm / Hand Air: Dedicated arm air massage.">2</button>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--brio" style="top:62%;left:52%;" data-title="Intelligent Touch Feet" data-desc="Adaptive foot roller pressure." aria-label="Intelligent Touch Feet: Adaptive foot roller pressure.">3</button>
             <div class="bsvs-map-caption"><strong>Air Zones + Intelligent Touch Feet</strong><span>Compare squeeze, release, foot pressure, and calf placement.</span></div>
           </div>
         </article>
@@ -701,11 +723,10 @@
           <div class="bsvs-map-media">
             <span class="bsvs-map-pill">Solara Foot Rollers</span>
             <img src="{{ img_solara_foot }}" alt="Solara full body air massage and bi-directional dual speed foot rollers visual map" loading="lazy">
-            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true">
-              <circle class="bsvs-glow" cx="230" cy="160" r="42"/><circle class="bsvs-ring" cx="230" cy="160" r="28"/><circle class="bsvs-zone" cx="230" cy="160" r="12"/>
-              <circle class="bsvs-glow" cx="352" cy="250" r="46"/><circle class="bsvs-ring" cx="352" cy="250" r="32"/><circle class="bsvs-zone" cx="352" cy="250" r="13"/>
-              <circle class="bsvs-glow" cx="415" cy="344" r="48"/><circle class="bsvs-ring" cx="415" cy="344" r="34"/><circle class="bsvs-zone" cx="415" cy="344" r="13"/>
-            </svg>
+            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true"></svg>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--solara" style="top:30%;left:45%;" data-title="Shoulder Air" data-desc="Compression squeeze on shoulders." aria-label="Shoulder Air: Compression squeeze on shoulders.">1</button>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--solara" style="top:47%;left:60%;" data-title="Arm / Hand Air" data-desc="Lower-arm air massage zones." aria-label="Arm / Hand Air: Lower-arm air massage zones.">2</button>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--solara" style="top:64%;left:62%;" data-title="Dual-Speed Foot Rollers" data-desc="Bi-directional roller speed." aria-label="Dual-Speed Foot Rollers: Bi-directional roller speed.">3</button>
             <div class="bsvs-map-caption"><strong>Dual-Speed Foot Rollers</strong><span>Bi-directional foot rollers plus air massage for everyday lower-body comfort.</span></div>
           </div>
         </article>
@@ -743,11 +764,9 @@
           <div class="bsvs-map-media">
             <span class="bsvs-map-pill">Brio+ Larger Fit</span>
             <img src="{{ img_brio_recline }}" alt="Brio+ zero gravity wall clearance and taller user fit visual map" loading="lazy">
-            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true">
-              <path class="bsvs-path-brio" d="M134 332 C230 288 315 275 450 298"/>
-              <circle class="bsvs-glow-green" cx="150" cy="332" r="38"/><circle class="bsvs-ring-green" cx="150" cy="332" r="26"/><circle class="bsvs-zone-green" cx="150" cy="332" r="12"/>
-              <circle class="bsvs-glow-green" cx="448" cy="298" r="38"/><circle class="bsvs-ring-green" cx="448" cy="298" r="26"/><circle class="bsvs-zone-green" cx="448" cy="298" r="12"/>
-            </svg>
+            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true"><path class="bsvs-path-brio" d="M134 332 C230 288 315 275 450 298"/></svg>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--brio" style="top:58%;left:28%;" data-title="4" Wall Clearance" data-desc="Needs more space behind chair." aria-label="4" Wall Clearance: Needs more space behind chair.">1</button>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--brio" style="top:55%;left:75%;" data-title="6'5" User Fit" data-desc="Broader height range supported." aria-label="6'5" User Fit: Broader height range supported.">2</button>
             <div class="bsvs-map-caption"><strong>4" Wall Clearance + 6'5" Fit</strong><span>Larger footprint, broader height range, stronger premium recline presence.</span></div>
           </div>
         </article>
@@ -755,11 +774,9 @@
           <div class="bsvs-map-media">
             <span class="bsvs-map-pill">Solara Compact Fit</span>
             <img src="{{ img_solara_lifestyle }}" alt="Solara zero gravity compact wall hugging visual map" loading="lazy">
-            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true">
-              <path class="bsvs-path-solara" d="M151 338 C249 292 352 289 470 318"/>
-              <circle class="bsvs-glow" cx="154" cy="338" r="38"/><circle class="bsvs-ring" cx="154" cy="338" r="26"/><circle class="bsvs-zone" cx="154" cy="338" r="12"/>
-              <circle class="bsvs-glow" cx="470" cy="318" r="38"/><circle class="bsvs-ring" cx="470" cy="318" r="26"/><circle class="bsvs-zone" cx="470" cy="318" r="12"/>
-            </svg>
+            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true"><path class="bsvs-path-solara" d="M151 338 C249 292 352 289 470 318"/></svg>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--solara" style="top:60%;left:28%;" data-title="0.6" Wall Clearance" data-desc="Compact placement for tight rooms." aria-label="0.6" Wall Clearance: Compact placement for tight rooms.">1</button>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--solara" style="top:58%;left:75%;" data-title="6'0" User Fit" data-desc="Comfortable up to standard heights." aria-label="6'0" User Fit: Comfortable up to standard heights.">2</button>
             <div class="bsvs-map-caption"><strong>0.6" Wall Clearance + 6'0" Fit</strong><span>Compact placement advantage for smaller rooms and relaxation corners.</span></div>
           </div>
         </article>
@@ -784,11 +801,10 @@
           <div class="bsvs-map-media bsvs-map-media--wide">
             <span class="bsvs-map-pill">Brio+ Premium Details</span>
             <img src="{{ img_brio_card }}" alt="Brio+ diamond stitch upholstery USB power port and chromotherapy visual map" loading="lazy">
-            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true">
-              <circle class="bsvs-glow-green" cx="250" cy="138" r="42"/><circle class="bsvs-ring-green" cx="250" cy="138" r="28"/><circle class="bsvs-zone-green" cx="250" cy="138" r="12"/>
-              <circle class="bsvs-glow-green" cx="364" cy="196" r="42"/><circle class="bsvs-ring-green" cx="364" cy="196" r="28"/><circle class="bsvs-zone-green" cx="364" cy="196" r="12"/>
-              <circle class="bsvs-glow-green" cx="400" cy="312" r="42"/><circle class="bsvs-ring-green" cx="400" cy="312" r="28"/><circle class="bsvs-zone-green" cx="400" cy="312" r="12"/>
-            </svg>
+            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true"></svg>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--brio" style="top:30%;left:50%;" data-title="Diamond Stitch" data-desc="Premium upholstery styling." aria-label="Diamond Stitch: Premium upholstery styling.">1</button>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--brio" style="top:47%;left:55%;" data-title="USB Power Port" data-desc="Charge devices during sessions." aria-label="USB Power Port: Charge devices during sessions.">2</button>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--brio" style="top:62%;left:52%;" data-title="Chromotherapy" data-desc="Ambient color therapy lighting." aria-label="Chromotherapy: Ambient color therapy lighting.">3</button>
             <div class="bsvs-map-caption"><strong>Remote + USB + Diamond Stitch</strong><span>Classic premium styling with more program and manual control.</span></div>
           </div>
         </article>
@@ -796,11 +812,10 @@
           <div class="bsvs-map-media bsvs-map-media--wide">
             <span class="bsvs-map-pill">Solara Daily Details</span>
             <img src="{{ img_solara_remote }}" alt="Solara simple touch controller wireless charging and USB charging visual map" loading="lazy">
-            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true">
-              <circle class="bsvs-glow" cx="250" cy="142" r="44"/><circle class="bsvs-ring" cx="250" cy="142" r="30"/><circle class="bsvs-zone" cx="250" cy="142" r="13"/>
-              <circle class="bsvs-glow" cx="360" cy="210" r="44"/><circle class="bsvs-ring" cx="360" cy="210" r="30"/><circle class="bsvs-zone" cx="360" cy="210" r="13"/>
-              <circle class="bsvs-glow" cx="432" cy="304" r="44"/><circle class="bsvs-ring" cx="432" cy="304" r="30"/><circle class="bsvs-zone" cx="432" cy="304" r="13"/>
-            </svg>
+            <svg class="bsvs-map-overlay" viewBox="0 0 600 440" aria-hidden="true"></svg>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--solara" style="top:30%;left:50%;" data-title="Touch Control" data-desc="Simple intuitive remote." aria-label="Touch Control: Simple intuitive remote.">1</button>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--solara" style="top:47%;left:55%;" data-title="Wireless Charging" data-desc="Phone charging built in." aria-label="Wireless Charging: Phone charging built in.">2</button>
+            <button type="button" class="bsvs-hotspot bsvs-hotspot--solara" style="top:62%;left:55%;" data-title="Accent Lighting" data-desc="Subtle ambient design lighting." aria-label="Accent Lighting: Subtle ambient design lighting.">3</button>
             <div class="bsvs-map-caption"><strong>Touch Control + Wireless Charging</strong><span>Simple controls, wireless phone charging, USB, accent lighting, and softer exterior design.</span></div>
           </div>
         </article>

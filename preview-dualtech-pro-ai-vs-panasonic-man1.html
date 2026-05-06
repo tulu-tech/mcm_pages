@@ -1041,9 +1041,7 @@
 
 .dtm__product-media {
   min-height: 360px;
-  background:
-    linear-gradient(135deg, rgba(81, 108, 99, 0.1), rgba(167, 126, 67, 0.09)),
-    #ffffff;
+  background: transparent;
   display: grid;
   place-items: center;
   padding: 28px;
@@ -1896,6 +1894,17 @@
   .dtm__section { padding: 60px 0; }
   .dtm__btn { min-height: 50px; padding: 13px 22px; font-size: 14.5px; }
 }
+
+  .dtm__hero {
+    background: linear-gradient(90deg, #050505 0%, #050505 42%, rgba(5,5,5,0.72) 58%, rgba(5,5,5,0.18) 88%, rgba(5,5,5,0.04) 100%), linear-gradient(180deg, rgba(5,5,5,0.18) 0%, rgba(5,5,5,0.55) 100%), url('https://cdn.shopify.com/s/files/1/0813/4036/7096/files/showroom-hero.jpg') right center / cover no-repeat, #050505 !important;
+  }
+  .dtm__hero h1,
+  .dtm__hero h1 * {
+    color: #fff !important;
+  }
+  .dtm__hero p {
+    color: rgba(255,255,255,0.82) !important;
+  }
 </style>
 
 <div class="dtm">
@@ -1994,7 +2003,6 @@
         <figure class="dtm__calibrated-svg">
           <object data="assets/dualtech-man1-body-scan-diagram.svg" type="image/svg+xml" aria-label="Body scan comparison: DualTech Pro AI vs Panasonic MAN1" style="width:100%;height:auto;display:block;aspect-ratio:1600/980"></object>
         </figure>
-        <p class="dtm__demo-question">Demo question to ask: after both scans finish, which chair finds your shoulders, lower back, and glute/seat area more naturally?</p>
       </section>
 
       <section class="dtm__visual-chapter" aria-labelledby="visual-home-title">
@@ -2011,19 +2019,6 @@
     </div>
   </div>
 
-  <nav class="dtm__navrail" aria-label="Comparison page navigation">
-    <div class="dtm__wrap dtm__navrail-inner">
-      <a href="#verdict">Verdict</a>
-      <a href="#comparison">Table</a>
-      <a href="#feel">Massage Feel</a>
-      <a href="#scan">Scan vs Precision</a>
-      <a href="#price">Price</a>
-      <a href="#features">Features</a>
-      <a href="#design">Home Fit</a>
-      <a href="#faq">FAQ</a>
-      <a href="/pages/contact">Demo</a>
-    </div>
-  </nav>
 
   <section class="dtm__section" id="verdict">
     <div class="dtm__wrap">
@@ -2353,7 +2348,7 @@
       </div>
       <div class="dtm__home-grid">
         <article class="dtm__home-visual">
-          <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/positive-posture-dualtech-pro-ai4d-room-01.png?v=1772806972&width=1400" alt="DualTech Pro AI 4D massage chair in a living room" loading="lazy" width="1400" height="900">
+          <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/positive-posture-dualtech-pro-ai4d-recline-user-05.png?v=1772806972&width=1400" alt="DualTech Pro AI 4D massage chair in a living room" loading="lazy" width="1400" height="900">
           <div class="dtm__home-copy">
             <span class="dtm__kicker">DualTech Pro AI</span>
             <h3>More modern and living-room friendly.</h3>

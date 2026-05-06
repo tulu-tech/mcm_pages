@@ -695,7 +695,7 @@
   border-radius: 0 8px 8px 0;
   box-shadow: var(--shadow);
 }
-.ppcmp__product-media { background: #f3f1ec; }
+.ppcmp__product-media { background: transparent; }
 .ppcmp__product-media img { width: 100%; height: 360px; object-fit: contain; padding: 20px; }
 .ppcmp__price-row { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin: 14px 0 20px; }
 .ppcmp__old { color: var(--muted); text-decoration: line-through; font-size: 18px; font-weight: 800; }
@@ -1168,6 +1168,25 @@
   .ppcmp__btn { min-height: 50px; padding: 13px 22px; font-size: 14.5px; }
 }
 
+
+  .ppcmp__hero {
+    background: linear-gradient(90deg, #050505 0%, #050505 42%, rgba(5,5,5,0.72) 58%, rgba(5,5,5,0.18) 88%, rgba(5,5,5,0.04) 100%), linear-gradient(180deg, rgba(5,5,5,0.18) 0%, rgba(5,5,5,0.55) 100%), url('https://cdn.shopify.com/s/files/1/0813/4036/7096/files/showroom-hero.jpg') right center / cover no-repeat, #050505 !important;
+  }
+  .ppcmp__hero-media,
+  .ppcmp__hero-media img,
+  .ppcmp__hero-bg,
+  .ppcmp__hero-image,
+  .ppcmp__hero::before {
+    /* unify with new gradient bg */
+  }
+  .ppcmp__hero h1,
+  .ppcmp__hero h1 *,
+  .ppcmp__hero p {
+    color: #fff !important;
+  }
+  .ppcmp__hero p {
+    color: rgba(255,255,255,0.82) !important;
+  }
 </style>
 
 <div class="ppcmp">

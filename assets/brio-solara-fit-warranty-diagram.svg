@@ -3,7 +3,7 @@
     <linearGradient id="bg6" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#f7f9f9"/><stop offset="1" stop-color="#e8ede6"/></linearGradient>
     <filter id="sh6" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#1a2e30" flood-opacity=".12"/></filter>
   </defs>
-  <rect width="1600" height="980" fill="url(#bg6)"/>
+  
   <text x="800" y="56" fill="#3f5f64" font-family="Inter,sans-serif" font-size="13" font-weight="900" letter-spacing="4" text-anchor="middle">MASSAGE CHAIRS &amp; MORE — FIT &amp; WARRANTY</text>
   <text x="800" y="100" fill="#0b0b0b" font-family="Georgia,serif" font-size="40" font-weight="800" text-anchor="middle">Fit, Footprint &amp; Warranty</text>
   <text x="800" y="132" fill="#67605a" font-family="Inter,sans-serif" font-size="16" text-anchor="middle">Physical dimensions · Wall-hugging design · Height range · Warranty coverage</text>
@@ -48,8 +48,8 @@
   <text x="645" y="402" fill="#3f5f64" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">WARRANTY</text>
   <text x="645" y="430" fill="#3f5f64" font-family="Inter,sans-serif" font-size="13" font-weight="900" text-anchor="middle">Extended Available</text>
 
-  <rect x="80" y="695" width="680" height="18" rx="4" fill="#3f5f64" opacity=".06"/>
-  <text x="420" y="708" fill="#3f5f64" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle">Wall-Hugging (4") · Zero Gravity Recline · Diamond Stitch · $4,999</text>
+  
+  
 
   <!-- ========== SOLARA Card ========== -->
   <rect x="820" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh6)"/>
@@ -90,8 +90,8 @@
   <text x="1408" y="407" fill="#a66f3d" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">WARRANTY</text>
   <text x="1408" y="435" fill="#a66f3d" font-family="Inter,sans-serif" font-size="13" font-weight="900" text-anchor="middle">Extended Available</text>
 
-  <rect x="840" y="695" width="680" height="18" rx="4" fill="#a66f3d" opacity=".06"/>
-  <text x="1180" y="708" fill="#a66f3d" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle">Wall-Hugging · No Assembly · True Zero Gravity® · $2,499</text>
+  
+  
 
   <!-- VS Badge -->
   <circle cx="800" cy="445" r="32" fill="#0b0b0b"/>

@@ -941,7 +941,7 @@
     min-height: 360px;
     place-items: center;
     padding: 24px;
-    background: linear-gradient(180deg, #fff, var(--soft));
+    background: transparent;
     border-bottom: 1px solid var(--line);
   }
 
@@ -1550,6 +1550,25 @@
     .bdc__btn { min-height: 50px; padding: 13px 22px; font-size: 14.5px; }
   }
 
+
+  .bdc__hero {
+    background: linear-gradient(90deg, #050505 0%, #050505 42%, rgba(5,5,5,0.72) 58%, rgba(5,5,5,0.18) 88%, rgba(5,5,5,0.04) 100%), linear-gradient(180deg, rgba(5,5,5,0.18) 0%, rgba(5,5,5,0.55) 100%), url('https://cdn.shopify.com/s/files/1/0813/4036/7096/files/showroom-hero.jpg') right center / cover no-repeat, #050505 !important;
+  }
+  .bdc__hero-media,
+  .bdc__hero-media img,
+  .bdc__hero-bg,
+  .bdc__hero-image,
+  .bdc__hero::before {
+    /* unify with new gradient bg */
+  }
+  .bdc__hero h1,
+  .bdc__hero h1 *,
+  .bdc__hero p {
+    color: #fff !important;
+  }
+  .bdc__hero p {
+    color: rgba(255,255,255,0.82) !important;
+  }
 </style>
 
 <div class="bdc bdc__bleed">
@@ -1871,7 +1890,6 @@
             <p>Best for buyers who want a sports recovery massage chair with active-lifestyle routines, adjustable deep-tissue feel, Sport4D massage, heated rollers, compression, stretch, and focused lower-body sessions.</p>
             <div class="bdc__cta-row" style="margin-top:18px">
               <a href="{{ url_brio }}" class="bdc__btn">View Brio Sport</a>
-              <a href="{{ url_contact }}" class="bdc__btn bdc__btn--outline">Try In Showroom</a>
             </div>
           </div>
         </article>
@@ -1894,7 +1912,6 @@
             <p>Best for buyers who want a DualTech massage chair with dual massage mechanisms, upper 4D massage, lower RotoTech glute massage, intelligent body scan, SL track massage chair coverage, and modern room fit.</p>
             <div class="bdc__cta-row" style="margin-top:18px">
               <a href="{{ url_dualtech }}" class="bdc__btn bdc__btn--sage">View DualTech 4D</a>
-              <a href="{{ url_contact }}" class="bdc__btn bdc__btn--outline">Try In Showroom</a>
             </div>
           </div>
         </article>

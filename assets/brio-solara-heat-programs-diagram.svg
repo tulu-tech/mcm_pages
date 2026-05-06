@@ -5,7 +5,7 @@
     <linearGradient id="heat-brio" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#e74c3c" stop-opacity=".25"/><stop offset="1" stop-color="#e74c3c" stop-opacity=".05"/></linearGradient>
     <linearGradient id="heat-sol" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#e67e22" stop-opacity=".25"/><stop offset="1" stop-color="#e67e22" stop-opacity=".05"/></linearGradient>
   </defs>
-  <rect width="1600" height="980" fill="url(#bg5)"/>
+  
   <text x="800" y="56" fill="#3f5f64" font-family="Inter,sans-serif" font-size="13" font-weight="900" letter-spacing="4" text-anchor="middle">MASSAGE CHAIRS &amp; MORE — HEAT &amp; PROGRAMS</text>
   <text x="800" y="100" fill="#0b0b0b" font-family="Georgia,serif" font-size="40" font-weight="800" text-anchor="middle">Heat Zones &amp; Program Options</text>
   <text x="800" y="132" fill="#67605a" font-family="Inter,sans-serif" font-size="16" text-anchor="middle">Heated rollers · Heat zones · Pre-programmed sessions — warmth meets precision</text>

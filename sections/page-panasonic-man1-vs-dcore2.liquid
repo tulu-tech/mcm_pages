@@ -308,7 +308,7 @@
   padding: 16px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: #fff;
+  background: transparent;
 }
 .m2__product-tile img {
   width: 100%;
@@ -1367,6 +1367,25 @@
   .m2__btn { min-height: 50px; padding: 13px 22px; font-size: 14.5px; }
 }
 
+
+  .m2__hero {
+    background: linear-gradient(90deg, #050505 0%, #050505 42%, rgba(5,5,5,0.72) 58%, rgba(5,5,5,0.18) 88%, rgba(5,5,5,0.04) 100%), linear-gradient(180deg, rgba(5,5,5,0.18) 0%, rgba(5,5,5,0.55) 100%), url('https://cdn.shopify.com/s/files/1/0813/4036/7096/files/showroom-hero.jpg') right center / cover no-repeat, #050505 !important;
+  }
+  .m2__hero-media,
+  .m2__hero-media img,
+  .m2__hero-bg,
+  .m2__hero-image,
+  .m2__hero::before {
+    /* unify with new gradient bg */
+  }
+  .m2__hero h1,
+  .m2__hero h1 *,
+  .m2__hero p {
+    color: #fff !important;
+  }
+  .m2__hero p {
+    color: rgba(255,255,255,0.82) !important;
+  }
 </style>
 
 <div class="m2">

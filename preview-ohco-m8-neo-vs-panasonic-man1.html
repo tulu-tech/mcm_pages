@@ -835,7 +835,7 @@
 .m8m1__product-media {
   position: relative;
   display: block;
-  background: var(--warm);
+  background: transparent;
   border-top-left-radius: var(--r);
   border-top-right-radius: var(--r);
 }
@@ -1745,7 +1745,7 @@
 
 .m8m1__zone-mfig {
   position: relative;
-  background: #f4f4f1;
+  background: transparent;
   border-radius: 12px;
   overflow: hidden;
   aspect-ratio: 1 / 1;
@@ -1756,6 +1756,8 @@
   height: 100%;
   display: block;
   object-fit: contain;
+  padding: 18px;
+  box-sizing: border-box;
 }
 
 .m8m1__zone-mfig-brand {
@@ -2046,6 +2048,17 @@
   .m8m1__head { margin-bottom: 28px; }
   .m8m1__btn { min-height: 52px; padding: 14px 22px; font-size: 14.5px; }
 }
+
+  .m8m1__hero {
+    background: linear-gradient(90deg, #050505 0%, #050505 42%, rgba(5,5,5,0.72) 58%, rgba(5,5,5,0.18) 88%, rgba(5,5,5,0.04) 100%), linear-gradient(180deg, rgba(5,5,5,0.18) 0%, rgba(5,5,5,0.55) 100%), url('https://cdn.shopify.com/s/files/1/0813/4036/7096/files/showroom-hero.jpg') right center / cover no-repeat, #050505 !important;
+  }
+  .m8m1__hero h1,
+  .m8m1__hero h1 * {
+    color: #fff !important;
+  }
+  .m8m1__hero p {
+    color: rgba(255,255,255,0.82) !important;
+  }
 </style>
 
 <div class="m8m1" id="m8m1-compare">
@@ -2512,19 +2525,8 @@
       </div>
 
       <div class="m8m1__price-grid">
-        <figure class="m8m1__visual">
-          <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/m8man1-price-value-ladder.png?v=1777560034" alt="Abstract premium value ladder diagram without chairs or text" width="1536" height="864" loading="lazy">
-          <figcaption class="m8m1__overlay">
-            <span><strong style="color:#fff;">Value ladder:</strong> price, design, precision, demo clarity, and ownership confidence.</span>
-          </figcaption>
-        </figure>
         <div class="m8m1__value-copy">
-          <h3>Current comparison band</h3>
           <p><strong>Panasonic MAN1:</strong> $15,299 to $12,999. <strong>OHCO M8 NEO:</strong> $15,999 to $13,999. Panasonic sits lower in this price positioning and is a top-selling premium choice. OHCO costs more and leans harder into immersive luxury design, sensory features, and signature craftsmanship.</p>
-          <div class="m8m1__savings" aria-label="Approximate price band delta">
-            <div class="m8m1__saving"><strong>15%</strong><span>MAN1 band delta</span></div>
-            <div class="m8m1__saving"><strong>13%</strong><span>OHCO band delta</span></div>
-          </div>
           <p style="margin-top:18px;">For premium buyers, the better value is the chair you will actually use every week.</p>
         </div>
       </div>
@@ -2541,9 +2543,6 @@
 
       <div class="m8m1__chapters">
         <article class="m8m1__chapter">
-          <figure class="m8m1__chapter-visual">
-            <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/m8man1-sensory-ecosystem.png?v=1777560035" alt="Abstract sensory ecosystem diagram without chairs or text" width="1536" height="864" loading="lazy">
-          </figure>
           <div class="m8m1__chapter-body">
             <span class="m8m1__label">01 Massage philosophy</span>
             <h3>Ritual and atmosphere vs targeted engineering.</h3>
@@ -2556,9 +2555,6 @@
         </article>
 
         <article class="m8m1__chapter">
-          <figure class="m8m1__chapter-visual">
-            <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/m8man1-precision-scan.png?v=1777560035" alt="Abstract pressure-sensing body scan diagram without chairs or text" width="1536" height="864" loading="lazy">
-          </figure>
           <div class="m8m1__chapter-body">
             <span class="m8m1__label m8m1__label--green">02 Scan and track</span>
             <h3>How the chair finds you matters.</h3>
@@ -2616,9 +2612,6 @@
         </article>
 
         <article class="m8m1__chapter">
-          <figure class="m8m1__chapter-visual">
-            <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/m8man1-fit-demo-checklist.png?v=1777560035" alt="Abstract showroom fit and demo checklist diagram without chairs or text" width="1536" height="864" loading="lazy">
-          </figure>
           <div class="m8m1__chapter-body">
             <span class="m8m1__label m8m1__label--green">06 Home fit and control</span>
             <h3>A premium chair still has to fit the room and the routine.</h3>
@@ -2636,10 +2629,6 @@
   <section class="m8m1__section m8m1__section--mist" id="showroom-flow">
     <div class="m8m1__wrap">
       <div class="m8m1__demo-flow">
-        <figure class="m8m1__visual">
-          <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/m8man1-fit-demo-checklist.png?v=1777560035" alt="Abstract premium massage chair showroom demo checklist without chairs or text" width="1536" height="864" loading="lazy">
-          <figcaption class="m8m1__overlay"><span><strong style="color:#fff;">Showroom flow:</strong> fit, pressure, room planning, ownership confidence.</span></figcaption>
-        </figure>
         <div>
           <div class="m8m1__head">
             <span class="m8m1__eyebrow">Side-by-side demo flow</span>
