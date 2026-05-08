@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "truck-landing-main": {
+      "type": "page-truck-landing",
+      "settings": {}
+    }
+  },
+  "order": [
+    "truck-landing-main"
+  ]
+}

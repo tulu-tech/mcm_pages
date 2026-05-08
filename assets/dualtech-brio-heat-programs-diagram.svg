@@ -1,33 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-label="Heat and Programs — DualTech 4D vs Brio+">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 1600 980" role="img" aria-label="Heat and Programs — DualTech 4D vs Brio+">
   <defs>
     <linearGradient id="bg5" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#fbfaf7"/><stop offset="1" stop-color="#eee6da"/></linearGradient>
     <filter id="sh5" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#2b2114" flood-opacity=".12"/></filter>
     <linearGradient id="heat1" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#e85d3a" stop-opacity=".25"/><stop offset="1" stop-color="#e85d3a" stop-opacity=".05"/></linearGradient>
     <linearGradient id="heat2" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#c44" stop-opacity=".20"/><stop offset="1" stop-color="#c44" stop-opacity=".05"/></linearGradient>
   </defs>
+  <rect width="1600" height="980" fill="url(#bg5)"/>
   
   <text x="800" y="56" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="13" font-weight="900" letter-spacing="4" text-anchor="middle">HEAT ZONES &amp; PROGRAM COUNT</text>
   <text x="800" y="100" fill="#0b0b0b" font-family="Georgia,serif" font-size="40" font-weight="800" text-anchor="middle">Dual Zone Heat vs Heated Roller Feel</text>
   <text x="800" y="132" fill="#67605a" font-family="Inter,sans-serif" font-size="16" text-anchor="middle">Compare heat location, warmth, and roller feel after several minutes — not just at startup</text>
 
   <!-- DualTech Card -->
-  <rect x="60" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh5)"/>
+  <rect x="60" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh5)"/>  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/PositivePosture_DualTech_Linen_315-Angle-front.webp?v=1772326033&amp;width=1200" x="180" y="210" width="480" height="480" preserveAspectRatio="xMidYMid meet"/>
+
   <rect x="80" y="185" width="200" height="38" rx="19" fill="#9a7f4a"/>
   <text x="180" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">DUALTECH 4D DUAL</text>
-  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/PositivePosture_DualTech_Linen_315-Angle-front.webp?v=1772326033&amp;width=1200" x="180" y="210" width="480" height="480" preserveAspectRatio="xMidYMid meet"/>
 
   <!-- Heat zone 1: Lower back area around back(390,387) -->
   <ellipse cx="400" cy="400" rx="30" ry="25" fill="url(#heat1)"/>
   <ellipse cx="400" cy="400" rx="30" ry="25" fill="none" stroke="#e85d3a" stroke-width="1.5" stroke-dasharray="4 3" opacity=".6"/>
   <line x1="370" y1="395" x2="100" y2="375" stroke="#e85d3a" stroke-width="1.5"/>
-  <rect x="80" y="361" width="155" height="28" rx="8" fill="#e85d3a" opacity=".10"/>
+  <rect x="80" y="361" width="155" height="28" rx="8" fill="#fde8e0"/>
   <text x="158" y="380" fill="#e85d3a" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">🔥 Lower Back Heat</text>
 
   <!-- Heat zone 2: Calves around calves(503,497) -->
   <ellipse cx="503" cy="497" rx="25" ry="20" fill="url(#heat1)"/>
   <ellipse cx="503" cy="497" rx="25" ry="20" fill="none" stroke="#e85d3a" stroke-width="1.5" stroke-dasharray="4 3" opacity=".6"/>
   <line x1="528" y1="495" x2="575" y2="488" stroke="#e85d3a" stroke-width="1.5"/>
-  <rect x="570" y="474" width="135" height="28" rx="8" fill="#e85d3a" opacity=".10"/>
+  <rect x="570" y="474" width="135" height="28" rx="8" fill="#fde8e0"/>
   <text x="638" y="493" fill="#e85d3a" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">🔥 Calf Zone Heat</text>
 
   <!-- Program count badge -->
@@ -39,23 +40,23 @@
   <text x="420" y="707" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="700" text-anchor="middle">Dual zone heat (lower back + calves) · 12 auto programs · 7 manual sessions</text>
 
   <!-- Brio+ Card -->
-  <rect x="820" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh5)"/>
+  <rect x="820" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh5)"/>  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100-14-1.jpg?v=1772325831&amp;width=1200" x="940" y="210" width="480" height="480" preserveAspectRatio="xMidYMid meet"/>
+
   <rect x="840" y="185" width="170" height="38" rx="19" fill="#617064"/>
   <text x="925" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">BRIO+ MASSAGE</text>
-  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100-14-1.jpg?v=1772325831&amp;width=1200" x="940" y="210" width="480" height="480" preserveAspectRatio="xMidYMid meet"/>
 
   <!-- Heated rollers zone: back(1169,407) -->
   <ellipse cx="1169" cy="407" rx="30" ry="35" fill="url(#heat2)"/>
   <ellipse cx="1169" cy="407" rx="30" ry="35" fill="none" stroke="#c44" stroke-width="1.5" stroke-dasharray="4 3" opacity=".6"/>
   <line x1="1199" y1="400" x2="1320" y2="375" stroke="#c44" stroke-width="1.5"/>
-  <rect x="1315" y="361" width="170" height="28" rx="8" fill="#c44" opacity=".10"/>
+  <rect x="1315" y="361" width="170" height="28" rx="8" fill="#f8e1e1"/>
   <text x="1400" y="380" fill="#c44" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">🔥 Heated Roller Contact</text>
 
   <!-- Infrared zones: calves(1241,494) + feet(1260,535) -->
   <ellipse cx="1250" cy="514" rx="30" ry="40" fill="url(#heat2)"/>
   <ellipse cx="1250" cy="514" rx="30" ry="40" fill="none" stroke="#c44" stroke-width="1.5" stroke-dasharray="4 3" opacity=".6"/>
   <line x1="1220" y1="515" x2="870" y2="510" stroke="#c44" stroke-width="1.5"/>
-  <rect x="845" y="498" width="190" height="28" rx="8" fill="#c44" opacity=".10"/>
+  <rect x="845" y="498" width="190" height="28" rx="8" fill="#f8e1e1"/>
   <text x="940" y="517" fill="#c44" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">🔥 Infrared Calf + Foot Heat</text>
 
   <!-- Program count badge -->

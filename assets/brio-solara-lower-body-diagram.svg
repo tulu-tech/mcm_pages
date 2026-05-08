@@ -1,18 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-label="Lower Body Diagram — Brio+ vs Solara">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1600 980" role="img" aria-label="Lower Body Diagram — Brio+ vs Solara">
   <defs>
     <linearGradient id="bg4" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#f7f9f9"/><stop offset="1" stop-color="#e8ede6"/></linearGradient>
     <filter id="sh4" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#1a2e30" flood-opacity=".12"/></filter>
   </defs>
+  <rect width="1600" height="980" fill="url(#bg4)"/>
   
   <text x="800" y="56" fill="#3f5f64" font-family="Inter,sans-serif" font-size="13" font-weight="900" letter-spacing="4" text-anchor="middle">MASSAGE CHAIRS &amp; MORE — LOWER BODY COMPARISON</text>
   <text x="800" y="100" fill="#0b0b0b" font-family="Georgia,serif" font-size="40" font-weight="800" text-anchor="middle">Calves, Feet &amp; Lower Body</text>
   <text x="800" y="132" fill="#67605a" font-family="Inter,sans-serif" font-size="16" text-anchor="middle">Air compression · Foot rollers · Heat zones — where recovery meets relief</text>
 
   <!-- ========== BRIO+ Card ========== -->
-  <rect x="60" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh4)"/>
+  <rect x="60" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh4)"/>  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100-14-1.jpg?v=1772325831" x="180" y="210" width="480" height="480" preserveAspectRatio="xMidYMid meet"/>
+
   <rect x="80" y="185" width="300" height="38" rx="19" fill="#3f5f64"/>
   <text x="230" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">BRIO+ · LOWER BODY</text>
-  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100-14-1.jpg?v=1772325831" x="180" y="210" width="480" height="480" preserveAspectRatio="xMidYMid meet"/>
 
   <!-- Calves zone (480, 494) -->
   <circle cx="480" cy="494" r="24" fill="none" stroke="#3f5f64" stroke-width="3" stroke-dasharray="5 3"/>
@@ -39,10 +40,10 @@
   <text x="420" y="708" fill="#3f5f64" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle">Heat in lower back, calves, and feet · Full-body air massage</text>
 
   <!-- ========== SOLARA Card ========== -->
-  <rect x="820" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh4)"/>
+  <rect x="820" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh4)"/>  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/1.jpg?v=1772326021" x="940" y="210" width="480" height="480" preserveAspectRatio="xMidYMid meet"/>
+
   <rect x="840" y="185" width="320" height="38" rx="19" fill="#a66f3d"/>
   <text x="1000" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">SOLARA · LOWER BODY</text>
-  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/1.jpg?v=1772326021" x="940" y="210" width="480" height="480" preserveAspectRatio="xMidYMid meet"/>
 
   <!-- Calves zone (1223, 517) -->
   <circle cx="1223" cy="517" r="24" fill="none" stroke="#a66f3d" stroke-width="3" stroke-dasharray="5 3"/>

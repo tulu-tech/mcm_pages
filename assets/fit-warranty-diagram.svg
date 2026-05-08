@@ -1,8 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-label="Fit and Warranty Comparison">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1600 980" role="img" aria-label="Fit and Warranty Comparison">
   <defs>
     <linearGradient id="bg6" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#fbfaf7"/><stop offset="1" stop-color="#eee6da"/></linearGradient>
     <filter id="shF" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#2b2114" flood-opacity=".12"/></filter>
   </defs>
+  <rect width="1600" height="980" fill="url(#bg6)"/>
   
   <rect x="655" y="30" width="290" height="32" rx="16" fill="#0b0b0b"/>
   <text x="800" y="51" fill="#c3a363" font-family="Inter,sans-serif" font-size="11" font-weight="900" letter-spacing="3" text-anchor="middle">05 · FIT, ROOM &amp; WARRANTY</text>
@@ -20,11 +21,11 @@
   <line x1="272" y1="283" x2="272" y2="598" stroke="#9a7f4a" stroke-width="1.5"/>
   <line x1="267" y1="283" x2="277" y2="283" stroke="#9a7f4a" stroke-width="1.5"/>
   <line x1="267" y1="598" x2="277" y2="598" stroke="#9a7f4a" stroke-width="1.5"/>
-  <rect x="85" y="443" width="130" height="48" rx="10" fill="#9a7f4a" opacity=".10"/>
+  <rect x="85" y="443" width="130" height="48" rx="10" fill="#f0eada"/>
   <text x="150" y="463" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="12" font-weight="900" text-anchor="middle">HEIGHT RANGE</text>
   <text x="150" y="481" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle">5'1" — 6'4"</text>
   <line x1="215" y1="468" x2="272" y2="440" stroke="#9a7f4a" stroke-width="1" stroke-dasharray="4 3"/>
-  <rect x="545" y="535" width="155" height="28" rx="10" fill="#9a7f4a" opacity=".10"/>
+  <rect x="545" y="535" width="155" height="28" rx="10" fill="#f0eada"/>
   <text x="623" y="554" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">6.25" Wall Hug</text>
   <rect x="80" y="670" width="680" height="90" rx="16" fill="#f8f5ef"/>
   <text x="100" y="693" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="900" letter-spacing="2">KEY HIGHLIGHTS</text>
@@ -42,11 +43,11 @@
   <line x1="1038" y1="271" x2="1038" y2="598" stroke="#617064" stroke-width="1.5"/>
   <line x1="1033" y1="271" x2="1043" y2="271" stroke="#617064" stroke-width="1.5"/>
   <line x1="1033" y1="598" x2="1043" y2="598" stroke="#617064" stroke-width="1.5"/>
-  <rect x="865" y="410" width="130" height="48" rx="10" fill="#617064" opacity=".10"/>
+  <rect x="865" y="410" width="130" height="48" rx="10" fill="#e8ede9"/>
   <text x="930" y="430" fill="#617064" font-family="Inter,sans-serif" font-size="12" font-weight="900" text-anchor="middle">HEIGHT RANGE</text>
   <text x="930" y="448" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="600" text-anchor="middle">4'8" — 6'2"</text>
   <line x1="960" y1="435" x2="1038" y2="435" stroke="#617064" stroke-width="1" stroke-dasharray="4 3"/>
-  <rect x="1310" y="535" width="155" height="28" rx="10" fill="#617064" opacity=".10"/>
+  <rect x="1310" y="535" width="155" height="28" rx="10" fill="#e8ede9"/>
   <text x="1388" y="554" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle">5yr / 1000hr Mech.</text>
   <rect x="840" y="670" width="680" height="90" rx="16" fill="#f3f5f3"/>
   <text x="860" y="693" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="900" letter-spacing="2">KEY HIGHLIGHTS</text>

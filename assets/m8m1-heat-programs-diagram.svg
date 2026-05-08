@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 980" width="1600" height="980">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 980" width="100%" height="100%">
 <defs>
   <radialGradient id="bg" cx="50%" cy="30%"><stop offset="0%" stop-color="#1a1a1e"/><stop offset="100%" stop-color="#0d0d10"/></radialGradient>
   <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
@@ -20,14 +20,14 @@
 <circle cx="503" cy="488" r="5" fill="#d4824a" opacity=".9"/><circle cx="375" cy="374" r="18" fill="none" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
 <circle cx="375" cy="374" r="5" fill="#9a7f4a" opacity=".9"/><line x1="395" y1="413" x2="170" y2="340" stroke="#d4824a" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="20" y="326" width="203.6" height="24" rx="6" fill="#d4824a" opacity=".10"/>
 <text x="30" y="342" fill="#d4824a" font-family="Inter,sans-serif" font-size="11" font-weight="800">ConstantTouch Infrared Heat</text><rect x="20" y="366" width="122" height="24" rx="6" fill="#d4824a" opacity=".10"/>
-<text x="30" y="382" fill="#d4824a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Total-Body Heat</text><line x1="375" y1="374" x2="170" y2="420" stroke="#9a7f4a" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="20" y="406" width="210.4" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="30" y="422" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Chromotherapy + Aromatherapy</text><rect x="20" y="446" width="196.79999999999998" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="30" y="462" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">18 Sessions · ~18 min each</text><rect x="20" y="486" width="190" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="30" y="502" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Bluetooth Audio Immersion</text><rect x="20" y="526" width="176.4" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
+<text x="30" y="382" fill="#d4824a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Total-Body Heat</text><line x1="375" y1="374" x2="170" y2="420" stroke="#9a7f4a" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="20" y="406" width="210.4" height="24" rx="6" fill="#f0eada"/>
+<text x="30" y="422" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Chromotherapy + Aromatherapy</text><rect x="20" y="446" width="196.79999999999998" height="24" rx="6" fill="#f0eada"/>
+<text x="30" y="462" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">18 Sessions · ~18 min each</text><rect x="20" y="486" width="190" height="24" rx="6" fill="#f0eada"/>
+<text x="30" y="502" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Bluetooth Audio Immersion</text><rect x="20" y="526" width="176.4" height="24" rx="6" fill="#f0eada"/>
 <text x="30" y="542" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Air Ionizer + USB Power</text><ellipse cx="1143" cy="405" rx="40" ry="55" fill="url(#hP)"/><circle cx="1143" cy="405" r="26" fill="none" stroke="#d4824a" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
 <circle cx="1143" cy="405" r="5" fill="#d4824a" opacity=".9"/><circle cx="1129" cy="355" r="18" fill="none" stroke="#617064" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
 <circle cx="1129" cy="355" r="5" fill="#617064" opacity=".9"/><line x1="1143" y1="405" x2="1420" y2="340" stroke="#d4824a" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="1420" y="326" width="176.4" height="24" rx="6" fill="#d4824a" opacity=".10"/>
-<text x="1430" y="342" fill="#d4824a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Infrared-Heated Rollers</text><line x1="1129" y1="355" x2="1420" y2="400" stroke="#617064" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="1420" y="386" width="142.39999999999998" height="24" rx="6" fill="#617064" opacity=".10"/>
-<text x="1430" y="402" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Touchscreen Remote</text><rect x="1420" y="426" width="210.4" height="24" rx="6" fill="#617064" opacity=".10"/>
-<text x="1430" y="442" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">12 Auto Sessions · 10-30 min</text><rect x="1420" y="466" width="162.79999999999998" height="24" rx="6" fill="#617064" opacity=".10"/>
+<text x="1430" y="342" fill="#d4824a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Infrared-Heated Rollers</text><line x1="1129" y1="355" x2="1420" y2="400" stroke="#617064" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="1420" y="386" width="142.39999999999998" height="24" rx="6" fill="#e8ede9"/>
+<text x="1430" y="402" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Touchscreen Remote</text><rect x="1420" y="426" width="210.4" height="24" rx="6" fill="#e8ede9"/>
+<text x="1430" y="442" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">12 Auto Sessions · 10-30 min</text><rect x="1420" y="466" width="162.79999999999998" height="24" rx="6" fill="#e8ede9"/>
 <text x="1430" y="482" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Bluetooth Audio + USB</text></svg>

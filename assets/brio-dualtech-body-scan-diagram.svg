@@ -1,8 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-label="Body scan technology">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1600 980" role="img" aria-label="Body scan technology">
   <defs>
     <linearGradient id="bg3" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#fbfaf7"/><stop offset="1" stop-color="#eee6da"/></linearGradient>
     <filter id="sh3" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#2b2114" flood-opacity=".12"/></filter>
   </defs>
+  <rect width="1600" height="980" fill="url(#bg3)"/>
   
   <rect x="655" y="30" width="290" height="32" rx="16" fill="#0b0b0b"/>
   <text x="800" y="51" fill="#c3a363" font-family="Inter,sans-serif" font-size="11" font-weight="900" letter-spacing="3" text-anchor="middle">02 · BODY SCAN</text>
@@ -48,11 +49,11 @@
   <circle cx="1293" cy="540" r="4" fill="#617064" opacity=".7"/>
   <polyline points="375,367 391,388 405,417 447,460 497,505 511,544" fill="none" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4" opacity=".6"/>
   <polyline points="1117,332 1136,364 1177,397 1212,440 1261,490 1293,540" fill="none" stroke="#617064" stroke-width="2" stroke-dasharray="6 4" opacity=".6"/>
-  <rect x="560" y="380" width="200" height="48" rx="12" fill="#9a7f4a" opacity=".10"/>
+  <rect x="560" y="380" width="200" height="48" rx="12" fill="#f0eada"/>
   <text x="660" y="400" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="12" font-weight="900" text-anchor="middle">AUTO BODY SCAN</text>
   <text x="660" y="418" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle">6-zone detection</text>
 
-  <rect x="840" y="380" width="200" height="48" rx="12" fill="#617064" opacity=".10"/>
+  <rect x="840" y="380" width="200" height="48" rx="12" fill="#e8ede9"/>
   <text x="940" y="400" fill="#617064" font-family="Inter,sans-serif" font-size="12" font-weight="900" text-anchor="middle">AUTO BODY SCAN</text>
   <text x="940" y="418" fill="#617064" font-family="Inter,sans-serif" font-size="10" font-weight="600" text-anchor="middle">6-zone precision map</text>
 

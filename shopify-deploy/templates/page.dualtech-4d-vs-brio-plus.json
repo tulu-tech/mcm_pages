@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "dualtech-4d-vs-brio-plus-main": {
+      "type": "page-dualtech-4d-vs-brio-plus",
+      "settings": {}
+    }
+  },
+  "order": [
+    "dualtech-4d-vs-brio-plus-main"
+  ]
+}

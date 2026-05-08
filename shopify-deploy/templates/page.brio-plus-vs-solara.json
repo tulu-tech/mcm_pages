@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "brio-plus-vs-solara-main": {
+      "type": "page-brio-plus-vs-solara",
+      "settings": {}
+    }
+  },
+  "order": [
+    "brio-plus-vs-solara-main"
+  ]
+}

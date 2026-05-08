@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 980" width="1600" height="980">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 980" width="100%" height="100%">
 <defs>
   <radialGradient id="bg" cx="50%" cy="30%"><stop offset="0%" stop-color="#1a1a1e"/><stop offset="100%" stop-color="#0d0d10"/></radialGradient>
 </defs>
@@ -14,13 +14,13 @@
 <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/panasonic-man1.jpg" x="940" y="210" width="480" height="480" preserveAspectRatio="xMidYMid meet" opacity=".92"/>
 <circle cx="428" cy="450" r="30" fill="none" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
 <circle cx="428" cy="450" r="5" fill="#9a7f4a" opacity=".9"/><circle cx="375" cy="433" r="22" fill="none" stroke="#9a7f4a" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="375" cy="433" r="5" fill="#9a7f4a" opacity=".9"/><ellipse cx="413" cy="450" rx="50" ry="40" fill="#9a7f4a" opacity=".06" stroke="#9a7f4a" stroke-width="1" stroke-dasharray="6 4"/><line x1="428" y1="450" x2="170" y2="370" stroke="#9a7f4a" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="20" y="356" width="224" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="30" y="372" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Arms of Embrace (12 air cells)</text><rect x="20" y="406" width="183.2" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="30" y="422" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">479M+ arm massage combos</text><rect x="20" y="456" width="135.6" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
-<text x="30" y="472" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Easy Access Doors</text><rect x="20" y="506" width="183.2" height="24" rx="6" fill="#9a7f4a" opacity=".10"/>
+<circle cx="375" cy="433" r="5" fill="#9a7f4a" opacity=".9"/><ellipse cx="413" cy="450" rx="50" ry="40" fill="#9a7f4a" opacity=".06" stroke="#9a7f4a" stroke-width="1" stroke-dasharray="6 4"/><line x1="428" y1="450" x2="170" y2="370" stroke="#9a7f4a" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="20" y="356" width="224" height="24" rx="6" fill="#f0eada"/>
+<text x="30" y="372" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Arms of Embrace (12 air cells)</text><rect x="20" y="406" width="183.2" height="24" rx="6" fill="#f0eada"/>
+<text x="30" y="422" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">479M+ arm massage combos</text><rect x="20" y="456" width="135.6" height="24" rx="6" fill="#f0eada"/>
+<text x="30" y="472" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Easy Access Doors</text><rect x="20" y="506" width="183.2" height="24" rx="6" fill="#f0eada"/>
 <text x="30" y="522" fill="#9a7f4a" font-family="Inter,sans-serif" font-size="11" font-weight="800">Demo: entry/exit comfort</text><circle cx="1188" cy="456" r="30" fill="none" stroke="#617064" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
 <circle cx="1188" cy="456" r="5" fill="#617064" opacity=".9"/><circle cx="1133" cy="430" r="22" fill="none" stroke="#617064" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-<circle cx="1133" cy="430" r="5" fill="#617064" opacity=".9"/><ellipse cx="1173" cy="456" rx="50" ry="40" fill="#617064" opacity=".06" stroke="#617064" stroke-width="1" stroke-dasharray="6 4"/><line x1="1188" y1="456" x2="1420" y2="370" stroke="#617064" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="1420" y="356" width="149.2" height="24" rx="6" fill="#617064" opacity=".10"/>
-<text x="1430" y="372" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Shaped Palm Massage</text><rect x="1420" y="406" width="162.79999999999998" height="24" rx="6" fill="#617064" opacity=".10"/>
-<text x="1430" y="422" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Full-Body Air Massage</text><rect x="1420" y="456" width="183.2" height="24" rx="6" fill="#617064" opacity=".10"/>
+<circle cx="1133" cy="430" r="5" fill="#617064" opacity=".9"/><ellipse cx="1173" cy="456" rx="50" ry="40" fill="#617064" opacity=".06" stroke="#617064" stroke-width="1" stroke-dasharray="6 4"/><line x1="1188" y1="456" x2="1420" y2="370" stroke="#617064" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/><rect x="1420" y="356" width="149.2" height="24" rx="6" fill="#e8ede9"/>
+<text x="1430" y="372" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Shaped Palm Massage</text><rect x="1420" y="406" width="162.79999999999998" height="24" rx="6" fill="#e8ede9"/>
+<text x="1430" y="422" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Full-Body Air Massage</text><rect x="1420" y="456" width="183.2" height="24" rx="6" fill="#e8ede9"/>
 <text x="1430" y="472" fill="#617064" font-family="Inter,sans-serif" font-size="11" font-weight="800">Demo: wrist/palm/forearm</text></svg>

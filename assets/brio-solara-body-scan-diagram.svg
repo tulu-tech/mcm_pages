@@ -1,18 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-label="Body Scan Diagram — Brio+ vs Solara">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1600 980" role="img" aria-label="Body Scan Diagram — Brio+ vs Solara">
   <defs>
     <linearGradient id="bg3" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#f7f9f9"/><stop offset="1" stop-color="#e8ede6"/></linearGradient>
     <filter id="sh3" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#1a2e30" flood-opacity=".12"/></filter>
   </defs>
+  <rect width="1600" height="980" fill="url(#bg3)"/>
   
   <text x="800" y="56" fill="#3f5f64" font-family="Inter,sans-serif" font-size="13" font-weight="900" letter-spacing="4" text-anchor="middle">MASSAGE CHAIRS &amp; MORE — BODY SCAN TECHNOLOGY</text>
   <text x="800" y="100" fill="#0b0b0b" font-family="Georgia,serif" font-size="40" font-weight="800" text-anchor="middle">Body Scan &amp; Personalization</text>
   <text x="800" y="132" fill="#67605a" font-family="Inter,sans-serif" font-size="16" text-anchor="middle">How each chair finds your body and customizes the session to fit you</text>
 
   <!-- ========== BRIO+ Card ========== -->
-  <rect x="60" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh3)"/>
+  <rect x="60" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh3)"/>  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100-14-1.jpg?v=1772325831" x="180" y="210" width="480" height="480" preserveAspectRatio="xMidYMid meet"/>
+
   <rect x="80" y="185" width="280" height="38" rx="19" fill="#3f5f64"/>
   <text x="220" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">BRIO+ · AUTO BODY SCAN</text>
-  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/Artboard-1-100-14-1.jpg?v=1772325831" x="180" y="210" width="480" height="480" preserveAspectRatio="xMidYMid meet"/>
 
   <!-- Scan zone - Head to Neck -->
   <circle cx="374" cy="369" r="16" fill="none" stroke="#3f5f64" stroke-width="3" stroke-dasharray="6 3" opacity=".8"/>
@@ -43,10 +44,10 @@
   <text x="420" y="708" fill="#3f5f64" font-family="Inter,sans-serif" font-size="12" font-weight="700" text-anchor="middle">Automatic scan at every session start · No manual adjustment needed</text>
 
   <!-- ========== SOLARA Card ========== -->
-  <rect x="820" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh3)"/>
+  <rect x="820" y="165" width="720" height="560" rx="24" fill="#fff" filter="url(#sh3)"/>  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/1.jpg?v=1772326021" x="940" y="210" width="480" height="480" preserveAspectRatio="xMidYMid meet"/>
+
   <rect x="840" y="185" width="290" height="38" rx="19" fill="#a66f3d"/>
   <text x="985" y="210" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="2" text-anchor="middle">SOLARA · TRACK FITTING</text>
-  <image href="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/1.jpg?v=1772326021" x="940" y="210" width="480" height="480" preserveAspectRatio="xMidYMid meet"/>
 
   <!-- SL-Track fitting -->
   <path d="M1128,367 Q1140,389 1151,412 Q1165,427 1178,441" fill="none" stroke="#a66f3d" stroke-width="3" stroke-dasharray="6 3" opacity=".6"/>

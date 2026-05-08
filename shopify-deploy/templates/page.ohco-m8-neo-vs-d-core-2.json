@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "ohco-m8-neo-vs-d-core-2-main": {
+      "type": "page-ohco-m8-neo-vs-d-core-2",
+      "settings": {}
+    }
+  },
+  "order": [
+    "ohco-m8-neo-vs-d-core-2-main"
+  ]
+}
