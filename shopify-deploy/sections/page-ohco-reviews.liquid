@@ -1,0 +1,704 @@
+{%- comment -%}
+  SECTION: page-ohco-reviews.liquid
+  Template: templates/page.ohco-massage-chair-reviews.json
+  OHCO Massage Chair Reviews Landing Page
+  Ultra-premium Japanese review page covering OHCO R6, M8 Neo, M8 Neo LE
+{%- endcomment -%}
+
+{%- assign phone = section.settings.phone | default: "+1 (408) 889-1188" -%}
+{%- assign contact_url = "/pages/contact" -%}
+{%- assign collection_url = "/collections/ohco-massage-chairs" -%}
+{%- assign r6_url = "/products/ohco-r6-massage-chair" -%}
+{%- assign m8neo_url = "/products/ohco-m8-massage-chair" -%}
+{%- assign m8neole_url = "/products/ohco-m8-neo-le-massage-chair" -%}
+
+{%- comment -%} ── SCHEMA MARKUP (Article + FAQ + Breadcrumb; NO AggregateRating, NO Review) ── {%- endcomment -%}
+<script type="application/ld+json">
+[{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "OHCO Massage Chair Reviews: R6, M8 Neo & M8 Neo LE Compared",
+    "description": "Read OHCO massage chair reviews for the OHCO R6, M8 Neo, and M8 Neo LE. Compare Sens8 4D, Movesync dual massage mechanism, MaxTrack coverage, Bluetooth Audio Immersion, TheraElliptical calf kneading, price, delivery, warranty, and showroom demo options.",
+    "author": {"@type":"Organization","name":"Massage Chairs and More"},
+    "publisher": {"@type":"Organization","name":"Massage Chairs and More","url":"{{ shop.url }}"},
+    "mainEntityOfPage": "{{ canonical_url }}"
+},
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ shop.url }}"},
+        {"@type": "ListItem", "position": 2, "name": "OHCO Massage Chairs", "item": "{{ shop.url }}{{ collection_url }}"},
+        {"@type": "ListItem", "position": 3, "name": "OHCO Massage Chair Reviews", "item": "{{ canonical_url }}"}
+    ]
+},
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {"@type":"Question","name":"Are OHCO massage chairs worth it?","acceptedAnswer":{"@type":"Answer","text":"Many buyers consider OHCO massage chairs worth the investment because of the Sens8 4D mechanism, Japanese-inspired design, sensory features like Bluetooth Audio Immersion and the M-Sense Light Pool, and the depth of the M8 Neo platform. The best way to decide is to try the OHCO R6, OHCO M8 Neo, or OHCO M8 Neo LE in a showroom before you buy."}},
+        {"@type":"Question","name":"Is OHCO a good massage chair brand?","acceptedAnswer":{"@type":"Answer","text":"OHCO is widely considered a premium massage chair brand, distributed through Furniture For Life and known for design-led Japanese aesthetics, the Sens8 4D mechanism, the Movesync dual massage mechanism (M8 Neo platform), MaxTrack coverage, and sensory features like Bluetooth Audio Immersion and aromatherapy."}},
+        {"@type":"Question","name":"What is the best OHCO massage chair?","acceptedAnswer":{"@type":"Answer","text":"There is no single best OHCO massage chair for every buyer. The best OHCO massage chair review is the one that helps you match the model to your body, room, and budget. The R6 is best for design-conscious buyers, the M8 Neo is best for the full technology platform with the Movesync dual massage mechanism, and the M8 Neo LE is best for buyers who want the most exclusive OHCO experience."}},
+        {"@type":"Question","name":"How much does an OHCO massage chair cost?","acceptedAnswer":{"@type":"Answer","text":"OHCO massage chair price depends on the model, finish, availability, delivery options, warranty coverage, and current promotions. The OHCO R6 is typically the most accessible model in the lineup, the OHCO M8 Neo sits in the flagship premium range, and the OHCO M8 Neo LE is the ultra-premium limited-edition option. Speak with a specialist for current OHCO M8 price and R6 pricing."}},
+        {"@type":"Question","name":"What is the OHCO M8 price?","acceptedAnswer":{"@type":"Answer","text":"OHCO M8 price refers to the current pricing for the OHCO M8 Neo platform, which includes the Movesync dual massage mechanism, MaxTrack coverage, Bluetooth Audio Immersion, aromatherapy, and the M-Sense Light Pool. Pricing varies with finish, availability, financing, and current promotions — check the OHCO M8 Neo massage chair product page or speak with a specialist for live pricing."}},
+        {"@type":"Question","name":"What is the difference between OHCO R6 and OHCO M8 Neo?","acceptedAnswer":{"@type":"Answer","text":"The OHCO R6 is the design-forward entry into the lineup with a refined Mid-Century Modern footprint, while the OHCO M8 Neo is the flagship platform with the Movesync dual massage mechanism, MaxTrack extended track, TheraElliptical calf kneading, Bluetooth Audio Immersion, aromatherapy, and the M-Sense Light Pool. The R6 chair suits buyers who lead with design; the M8 Neo suits buyers who want the full technology stack."}},
+        {"@type":"Question","name":"What is the difference between OHCO M8 Neo and OHCO M8 Neo LE?","acceptedAnswer":{"@type":"Answer","text":"The OHCO M8 Neo LE is the limited-edition expression of the M8 Neo platform. Both share the Sens8 mechanism, Movesync dual massage mechanism, MaxTrack coverage, TheraElliptical calf kneading, Bluetooth Audio Immersion, aromatherapy, and the M-Sense Light Pool. The LE adds exclusive finishes, upgraded materials, and limited production positioning for buyers who want the most exclusive OHCO ownership experience."}},
+        {"@type":"Question","name":"Can I try an OHCO massage chair before buying?","acceptedAnswer":{"@type":"Answer","text":"Yes. Massage Chairs and More is built for in-person comparison, so you can try the OHCO R6, OHCO M8 Neo, and OHCO M8 Neo LE side by side in our showroom before you decide. Comparing OHCO models in person is the best way to judge body fit, headrest feel, calf sequence, and overall comfort."}},
+        {"@type":"Question","name":"Should I read OHCO massage chair reviews before visiting a showroom?","acceptedAnswer":{"@type":"Answer","text":"Reading OHCO massage chair reviews, OHCO chair reviews, and model-specific notes like an OHCO R6 review, OHCO M8 Neo review, or OHCO M8 Neo LE review can help you shortlist the right model. The best OHCO massage chair review is the one that helps you match the model to your body, room, and budget."}},
+        {"@type":"Question","name":"Is OHCO better than Panasonic?","acceptedAnswer":{"@type":"Answer","text":"If you are comparing OHCO vs Panasonic, the right answer depends on what you value. OHCO leans into Japanese-inspired design, shiatsu-inspired choreography, sensory immersion, and living-room integration. Panasonic is often considered by buyers who prioritize precision engineering and deep-tissue feel. The smartest path is to compare OHCO and Panasonic side by side in a showroom."}},
+        {"@type":"Question","name":"Can I buy an OHCO massage chair online?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can shop OHCO massage chairs online at Massage Chairs and More, an authorized OHCO dealer. Many shoppers research the OHCO R6, OHCO M8 Neo, and OHCO M8 Neo LE online, then book a showroom demo before they buy."}},
+        {"@type":"Question","name":"Does Massage Chairs & More offer white-glove delivery for OHCO chairs?","acceptedAnswer":{"@type":"Answer","text":"Yes. Massage Chairs and More offers white-glove delivery options for OHCO chairs, including room-of-choice placement. Delivery timing depends on current inventory, finish selection, and your location — current availability may vary, so confirm with a specialist."}},
+        {"@type":"Question","name":"Is financing available for OHCO massage chairs?","acceptedAnswer":{"@type":"Answer","text":"Yes. Financing is available for OHCO massage chairs through Affirm. Monthly payment options vary by model, finish, and promotional terms — ask a specialist about current OHCO offers, financing terms, and bundled delivery options."}},
+        {"@type":"Question","name":"Which OHCO chair is best for neck and shoulder comfort?","acceptedAnswer":{"@type":"Answer","text":"For neck and shoulder comfort, many buyers prefer the OHCO M8 Neo LE because of the Knead and Stretch Headrest with air-driven cervical support. The OHCO M8 Neo shares much of the same sensory and shiatsu-inspired choreography. The best way to judge neck and shoulder feel is to try the chairs in person — body fit and pressure preference vary by person."}}
+    ]
+}]
+</script>
+
+{%- style -%}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');
+
+.mcm-ohco-reviews{--or-bg:#faf8f5;--or-surface:#f3efe8;--or-dark:#151210;--or-dark2:#0a0908;--or-text:#2a2622;--or-muted:#5a554d;--or-light:#8a847a;--or-accent:#6b5a3e;--or-accent-hover:#574a32;--or-accent-light:rgba(107,90,62,.08);--or-gold:#b8976a;--or-rose:#c4a07a;--or-border:#e0d8cc;--or-border-light:#ece6db;--or-white:#fff;--or-card-shadow:0 2px 16px rgba(0,0,0,.04);--or-card-hover:0 16px 48px rgba(0,0,0,.09);--or-shadow-accent:0 8px 32px rgba(107,90,62,.20);--or-r:14px;--or-r-sm:9px;--or-r-lg:22px;--or-r-xl:30px;--or-tr:all .3s cubic-bezier(.4,0,.2,1)}
+.mcm-ohco-reviews *,.mcm-ohco-reviews *::before,.mcm-ohco-reviews *::after{box-sizing:border-box;margin:0;padding:0}
+.mcm-ohco-reviews{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--or-bg);color:var(--or-text);line-height:1.78;font-size:16px;-webkit-font-smoothing:antialiased}
+.mcm-ohco-reviews h1,.mcm-ohco-reviews h2,.mcm-ohco-reviews h3,.mcm-ohco-reviews h4{color:var(--or-dark);line-height:1.2;font-weight:700}
+.mcm-ohco-reviews h1,.mcm-ohco-reviews h2{font-family:'Playfair Display',Georgia,serif}
+.mcm-ohco-reviews a{color:inherit;text-decoration:none}
+.mcm-ohco-reviews img{max-width:100%;display:block}
+.mcm-ohco-reviews p{font-size:15px;color:var(--or-muted);line-height:1.8}
+.mcm-ohco-reviews .or-container{max-width:1300px;margin:0 auto;padding:0 32px}
+.mcm-ohco-reviews .or-narrow{max-width:880px;margin:0 auto;padding:0 32px}
+@keyframes orFadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes orShimmer{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes orPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.55}}
+@keyframes orGrad{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.mcm-ohco-reviews .or-fade{animation:orFadeUp .7s ease both}
+.mcm-ohco-reviews .or-d1{animation-delay:.1s}.mcm-ohco-reviews .or-d2{animation-delay:.22s}.mcm-ohco-reviews .or-d3{animation-delay:.34s}.mcm-ohco-reviews .or-d4{animation-delay:.46s}
+.mcm-ohco-reviews .or-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 36px;font-size:15px;font-weight:700;border-radius:50px;transition:var(--or-tr);border:2px solid transparent;cursor:pointer;letter-spacing:.02em;font-family:'Inter',sans-serif}
+.mcm-ohco-reviews .or-btn-primary{background:var(--or-dark);color:#fff;border-color:var(--or-dark)}.mcm-ohco-reviews .or-btn-primary:hover{background:var(--or-accent);border-color:var(--or-accent);transform:translateY(-2px);box-shadow:var(--or-shadow-accent)}
+.mcm-ohco-reviews .or-btn-accent{background:var(--or-accent);color:#fff;border-color:var(--or-accent)}.mcm-ohco-reviews .or-btn-accent:hover{background:var(--or-accent-hover);transform:translateY(-2px);box-shadow:var(--or-shadow-accent)}
+.mcm-ohco-reviews .or-btn-outline{background:transparent;color:var(--or-dark);border:2px solid var(--or-border)}.mcm-ohco-reviews .or-btn-outline:hover{border-color:var(--or-accent);color:var(--or-accent)}
+.mcm-ohco-reviews .or-btn-white{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.45)}.mcm-ohco-reviews .or-btn-white:hover{border-color:#fff;background:rgba(255,255,255,.10)}
+.mcm-ohco-reviews .or-btn-ghost{background:rgba(255,255,255,.07);color:#fff;border:1.5px solid rgba(255,255,255,.28)}.mcm-ohco-reviews .or-btn-ghost:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.45)}
+.mcm-ohco-reviews .or-section{padding:96px 0}
+.mcm-ohco-reviews .or-section-alt{background:var(--or-surface)}
+.mcm-ohco-reviews .or-section-header{text-align:center;margin-bottom:64px}
+.mcm-ohco-reviews .or-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--or-accent);margin-bottom:16px;font-weight:700}
+.mcm-ohco-reviews .or-eyebrow::before{content:'';width:20px;height:2px;background:linear-gradient(90deg,var(--or-accent),var(--or-gold));border-radius:2px}
+.mcm-ohco-reviews .or-section-header h2{font-size:44px;margin-bottom:16px;letter-spacing:-.02em}
+.mcm-ohco-reviews .or-section-header p{font-size:18px;color:var(--or-muted);max-width:700px;margin:0 auto;line-height:1.82}
+.mcm-ohco-reviews .or-product-link{color:var(--or-accent);font-weight:700;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;transition:color .2s}
+.mcm-ohco-reviews .or-product-link:hover{color:var(--or-accent-hover)}
+.mcm-ohco-reviews .or-hero{position:relative;min-height:78vh;display:flex;align-items:center;background:var(--or-dark2);overflow:hidden}
+.mcm-ohco-reviews .or-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 30%;opacity:.32;z-index:0}
+.mcm-ohco-reviews .or-hero-grain{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");z-index:1;opacity:.5;pointer-events:none}
+.mcm-ohco-reviews .or-hero-overlay{position:absolute;inset:0;background:linear-gradient(120deg,rgba(6,5,4,.96) 18%,rgba(12,10,7,.74) 55%,rgba(22,18,12,.42) 100%);z-index:2}
+.mcm-ohco-reviews .or-hero-glow{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(184,151,106,.10) 0%,transparent 70%);right:-100px;top:-100px;z-index:2;animation:orShimmer 7s ease-in-out infinite}
+.mcm-ohco-reviews .or-hero-stripe{position:absolute;left:0;bottom:0;width:100%;height:3px;background:linear-gradient(90deg,var(--or-accent),var(--or-gold),transparent 70%);z-index:3}
+.mcm-ohco-reviews .or-hero-content{position:relative;z-index:4;padding:80px 0 96px}
+.mcm-ohco-reviews .or-hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--or-gold);font-weight:700;margin-bottom:26px;background:rgba(184,151,106,.10);padding:6px 16px;border-radius:50px;border:1px solid rgba(184,151,106,.22)}
+.mcm-ohco-reviews .or-hero-eyebrow::before{content:'●';font-size:7px;animation:orPulse 2.8s infinite}
+.mcm-ohco-reviews .or-hero h1{font-size:48px;color:#fff;max-width:840px;margin-bottom:26px;font-weight:700;line-height:1.07;letter-spacing:-.025em}
+.mcm-ohco-reviews .or-hero-tag{background:linear-gradient(135deg,var(--or-gold),#d4b87a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.mcm-ohco-reviews .or-hero-sub{font-size:18px;color:rgba(255,255,255,.74);max-width:680px;margin-bottom:32px;line-height:1.75}
+.mcm-ohco-reviews .or-hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+.mcm-ohco-reviews .or-snap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;padding-top:32px;border-top:1px solid rgba(255,255,255,.08)}
+.mcm-ohco-reviews .or-snap-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:var(--or-r-sm);padding:14px 16px;backdrop-filter:blur(8px)}
+.mcm-ohco-reviews .or-snap-item strong{display:block;color:#fff;font-size:13px;font-weight:700;margin-bottom:4px;font-family:'Inter',sans-serif}
+.mcm-ohco-reviews .or-snap-item span{font-size:12px;color:rgba(255,255,255,.55);font-weight:500;line-height:1.5;display:block}
+.mcm-ohco-reviews .or-subnav{position:sticky;top:0;z-index:50;background:rgba(250,248,245,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--or-border-light);overflow-x:auto;scrollbar-width:none}
+.mcm-ohco-reviews .or-subnav::-webkit-scrollbar{display:none}
+.mcm-ohco-reviews .or-subnav-inner{display:flex;padding:0 32px;min-width:max-content}
+.mcm-ohco-reviews .or-subnav-inner a{display:block;padding:12px 14px;font-size:11px;font-weight:700;color:var(--or-muted);border-bottom:2.5px solid transparent;white-space:nowrap;transition:var(--or-tr);text-transform:uppercase;letter-spacing:.08em}
+.mcm-ohco-reviews .or-subnav-inner a:hover,.mcm-ohco-reviews .or-subnav-inner a.active{color:var(--or-dark);border-bottom-color:var(--or-accent)}
+.mcm-ohco-reviews .or-about-box{background:var(--or-accent-light);border:1px solid rgba(107,90,62,.15);border-radius:var(--or-r);padding:28px 32px;margin-bottom:36px}
+.mcm-ohco-reviews .or-about-box h3{font-size:16px;font-family:'Inter',sans-serif;margin-bottom:10px;color:var(--or-accent)}
+.mcm-ohco-reviews .or-about-box p{font-size:14px;line-height:1.8}
+.mcm-ohco-reviews .or-about-box p + p{margin-top:12px}
+.mcm-ohco-reviews .or-model-compare{width:100%;border-collapse:collapse;margin-bottom:32px;border:1px solid var(--or-border);border-radius:var(--or-r);overflow:hidden;background:#fff}
+.mcm-ohco-reviews .or-model-compare th{background:var(--or-dark);color:#fff;padding:14px 18px;font-size:13px;font-weight:700;text-align:left}
+.mcm-ohco-reviews .or-model-compare td{padding:14px 18px;border-bottom:1px solid var(--or-border);font-size:14px;line-height:1.55;color:var(--or-text);vertical-align:top}
+.mcm-ohco-reviews .or-model-compare tr:hover td{background:rgba(107,90,62,.04)}
+.mcm-ohco-reviews .or-model-compare td a.or-btn{padding:9px 18px;font-size:12px;letter-spacing:.04em}
+.mcm-ohco-reviews .or-model-block{background:#fff;border:1px solid var(--or-border);border-radius:var(--or-r-lg);padding:36px;margin-bottom:24px;position:relative;overflow:hidden}
+.mcm-ohco-reviews .or-model-block::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--or-accent),var(--or-gold))}
+.mcm-ohco-reviews .or-model-block h2{font-size:28px;margin-bottom:10px;font-family:'Playfair Display',Georgia,serif}
+.mcm-ohco-reviews .or-model-tier{display:inline-block;background:var(--or-accent-light);color:var(--or-accent);font-size:11px;font-weight:800;padding:5px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px}
+.mcm-ohco-reviews .or-model-block p{font-size:15px;line-height:1.8;color:var(--or-text);margin-bottom:14px}
+.mcm-ohco-reviews .or-model-block p:last-of-type{margin-bottom:24px}
+.mcm-ohco-reviews .or-model-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.mcm-ohco-reviews .or-model-ctas .or-btn{padding:11px 22px;font-size:13px}
+.mcm-ohco-reviews .or-feature-box{background:#fff;border:1px solid var(--or-border);border-radius:var(--or-r-lg);padding:36px;margin-bottom:24px}
+.mcm-ohco-reviews .or-feature-box h2,.mcm-ohco-reviews .or-feature-box h3{font-size:24px;margin-bottom:8px;font-family:'Playfair Display',Georgia,serif;color:var(--or-dark)}
+.mcm-ohco-reviews .or-feature-box .or-eyebrow{margin-bottom:8px}
+.mcm-ohco-reviews .or-feature-box p{font-size:15px;line-height:1.85;margin-bottom:14px;color:var(--or-text)}
+.mcm-ohco-reviews .or-feature-box p:last-child{margin-bottom:0}
+.mcm-ohco-reviews .or-pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:48px}
+.mcm-ohco-reviews .or-pros,.mcm-ohco-reviews .or-cons{background:var(--or-white);border:1px solid var(--or-border);border-radius:var(--or-r-lg);padding:32px;position:relative;overflow:hidden}
+.mcm-ohco-reviews .or-pros::before,.mcm-ohco-reviews .or-cons::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.mcm-ohco-reviews .or-pros::before{background:linear-gradient(90deg,#2e7d32,#43a047)}
+.mcm-ohco-reviews .or-cons::before{background:linear-gradient(90deg,#e65100,#ff9800)}
+.mcm-ohco-reviews .or-pros h3,.mcm-ohco-reviews .or-cons h3{font-size:18px;font-family:'Inter',sans-serif;margin-bottom:16px}
+.mcm-ohco-reviews .or-pros li,.mcm-ohco-reviews .or-cons li{font-size:14px;color:var(--or-muted);line-height:1.7;padding:6px 0;padding-left:24px;position:relative;list-style:none}
+.mcm-ohco-reviews .or-pros li::before{content:'✓';position:absolute;left:0;color:#2e7d32;font-weight:900}
+.mcm-ohco-reviews .or-cons li::before{content:'△';position:absolute;left:0;color:#e65100;font-weight:900}
+.mcm-ohco-reviews .or-bestfor{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:48px}
+.mcm-ohco-reviews .or-bestfor-card{background:var(--or-white);border:1px solid var(--or-border);border-radius:var(--or-r-lg);padding:32px}
+.mcm-ohco-reviews .or-bestfor-card h3{font-size:18px;font-family:'Inter',sans-serif;margin-bottom:16px}
+.mcm-ohco-reviews .or-bestfor-card li{font-size:14px;color:var(--or-muted);line-height:1.7;padding:6px 0;list-style:none;padding-left:20px;position:relative}
+.mcm-ohco-reviews .or-bestfor-card li::before{content:'→';position:absolute;left:0;color:var(--or-accent);font-weight:700}
+.mcm-ohco-reviews .or-themes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px}
+.mcm-ohco-reviews .or-theme-card{background:#fff;border:1px solid var(--or-border);border-radius:var(--or-r);padding:22px}
+.mcm-ohco-reviews .or-theme-card h4{font-size:12px;color:var(--or-accent);text-transform:uppercase;letter-spacing:.1em;font-family:'Inter',sans-serif;margin-bottom:10px}
+.mcm-ohco-reviews .or-theme-card blockquote{font-size:14px;font-style:italic;color:var(--or-text);line-height:1.7;margin-bottom:12px;border-left:2px solid var(--or-accent);padding-left:12px;position:relative}
+.mcm-ohco-reviews .or-theme-card blockquote::before,.mcm-ohco-reviews .or-theme-card blockquote::after{content:none !important;display:none !important}
+.mcm-ohco-reviews .or-theme-card blockquote::first-letter{font-size:inherit !important;float:none !important;line-height:inherit !important;color:inherit !important;margin:0 !important;padding:0 !important}
+.mcm-ohco-reviews .or-theme-card p{font-size:13px;color:var(--or-muted);line-height:1.6;margin:0}
+.mcm-ohco-reviews .or-cta-band{background:linear-gradient(155deg,#151210,#2a2218);border-radius:var(--or-r-xl);padding:64px;color:#fff;text-align:center;margin:48px 0;position:relative;overflow:hidden}
+.mcm-ohco-reviews .or-cta-band::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--or-accent),var(--or-gold),var(--or-accent));background-size:200% 100%;animation:orGrad 5s ease infinite}
+.mcm-ohco-reviews .or-cta-band h2{color:#fff;font-size:36px;margin-bottom:14px}
+.mcm-ohco-reviews .or-cta-band p{color:rgba(255,255,255,.62);font-size:16px;max-width:680px;margin:0 auto 32px;line-height:1.82}
+.mcm-ohco-reviews .or-cta-band .or-cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.mcm-ohco-reviews .or-faq-list{border-top:1px solid var(--or-border)}
+.mcm-ohco-reviews .or-faq-item{border-bottom:1px solid var(--or-border)}
+.mcm-ohco-reviews .or-faq-q{display:flex;justify-content:space-between;align-items:center;padding:22px 0;cursor:pointer;gap:16px}
+.mcm-ohco-reviews .or-faq-q h3{font-size:16px;font-family:'Inter',sans-serif;font-weight:700;margin:0;flex:1;color:var(--or-dark);transition:color .2s}
+.mcm-ohco-reviews .or-faq-q:hover h3{color:var(--or-accent)}
+.mcm-ohco-reviews .or-faq-toggle{width:36px;height:36px;border-radius:50%;background:var(--or-surface);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:300;color:var(--or-accent);flex-shrink:0;transition:var(--or-tr);border:none;cursor:pointer}
+.mcm-ohco-reviews .or-faq-item.open .or-faq-toggle{background:var(--or-accent);color:#fff;transform:rotate(45deg)}
+.mcm-ohco-reviews .or-faq-a{max-height:0;overflow:hidden;transition:max-height .38s cubic-bezier(.4,0,.2,1)}
+.mcm-ohco-reviews .or-faq-a-inner{padding:0 0 26px}
+.mcm-ohco-reviews .or-faq-a-inner p{font-size:15px;color:var(--or-muted);line-height:1.87}
+.mcm-ohco-reviews .or-sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.96);border-top:1px solid var(--or-border);box-shadow:0 -8px 32px rgba(0,0,0,.08);padding:12px 24px;display:none;backdrop-filter:blur(12px)}
+.mcm-ohco-reviews .or-sticky-inner{display:flex;align-items:center;justify-content:center;gap:12px;max-width:900px;margin:0 auto}
+.mcm-ohco-reviews .or-sticky-inner .or-btn{padding:12px 24px;font-size:13px}
+.mcm-ohco-reviews .or-expert-box{background:linear-gradient(135deg,#151210,#2a2218);border-radius:var(--or-r-xl);padding:48px;color:#fff;position:relative;overflow:hidden}
+.mcm-ohco-reviews .or-expert-box::before{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(184,151,106,.08) 0%,transparent 70%);right:-100px;bottom:-100px}
+.mcm-ohco-reviews .or-expert-box h2{color:#fff;font-size:28px;margin-bottom:16px}
+.mcm-ohco-reviews .or-expert-box p{color:rgba(255,255,255,.68);font-size:15px;line-height:1.9;margin-bottom:14px}
+@media(max-width:1100px){.mcm-ohco-reviews .or-themes-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.mcm-ohco-reviews .or-hero{min-height:auto}.mcm-ohco-reviews .or-hero h1{font-size:30px}.mcm-ohco-reviews .or-section{padding:64px 0}.mcm-ohco-reviews .or-themes-grid{grid-template-columns:1fr}.mcm-ohco-reviews .or-pros-cons,.mcm-ohco-reviews .or-bestfor{grid-template-columns:1fr}.mcm-ohco-reviews .or-container{padding:0 20px}.mcm-ohco-reviews .or-hero-ctas{flex-direction:column}.mcm-ohco-reviews .or-sticky-cta{display:block}.mcm-ohco-reviews .or-subnav-inner a{padding:12px 12px;font-size:10px}.mcm-ohco-reviews .or-model-block,.mcm-ohco-reviews .or-feature-box{padding:24px}.mcm-ohco-reviews .or-cta-band{padding:40px 24px}.mcm-ohco-reviews .or-cta-band h2{font-size:26px}}
+{%- endstyle -%}
+
+<div class="mcm-ohco-reviews">
+
+<!-- HERO -->
+<section class="or-hero" id="or-top">
+  <div class="or-hero-bg" style="background-image:url('https://cdn.shopify.com/s/files/1/0813/4036/7096/files/ohco-hero-bg.jpg?v=1776368399')"></div>
+  <div class="or-hero-grain"></div>
+  <div class="or-hero-overlay"></div>
+  <div class="or-hero-glow"></div>
+  <div class="or-hero-stripe"></div>
+  <div class="or-container or-hero-content">
+    <div class="or-hero-eyebrow or-fade">Customer-Informed Review Insights · Expert-Reviewed by MCM · No Scraping</div>
+    <h1 class="or-fade or-d1">OHCO Massage Chair Reviews: <span class="or-hero-tag">R6, M8 Neo &amp; M8 Neo LE Compared</span></h1>
+    <p class="or-hero-sub or-fade or-d2">Looking for OHCO massage chair reviews before choosing the right model? This guide brings together MCM showroom observations, manufacturer documentation, and model-by-model insight to help you compare the <a href="{{ r6_url }}" class="or-product-link" style="color:#d4b87a">OHCO R6</a>, <a href="{{ m8neo_url }}" class="or-product-link" style="color:#d4b87a">OHCO M8 Neo</a>, and <a href="{{ m8neole_url }}" class="or-product-link" style="color:#d4b87a">OHCO M8 Neo LE</a> — covering Sens8 4D feel, the Movesync dual massage mechanism, MaxTrack coverage, Bluetooth Audio Immersion, the M-Sense Light Pool, TheraElliptical calf kneading, price, warranty, and what to test in a showroom before you buy.</p>
+    <div class="or-hero-ctas or-fade or-d3">
+      <a href="{{ contact_url }}" class="or-btn or-btn-accent">Book an OHCO Showroom Demo</a>
+      <a href="#or-compare" class="or-btn or-btn-white">Compare OHCO Models</a>
+      <a href="{{ contact_url }}" class="or-btn or-btn-ghost">Ask Which OHCO Chair Fits You</a>
+    </div>
+    <div class="or-snap or-fade or-d4">
+      <div class="or-snap-item"><strong>Showroom-Informed Review Guide</strong><span>Not third-party aggregate ratings — review themes from showroom conversations</span></div>
+      <div class="or-snap-item"><strong>Expert-Reviewed by MCM</strong><span>Product specialists, manuals, customer questions</span></div>
+      <div class="or-snap-item"><strong>No Competitor Review Scraping</strong><span>Original insights only</span></div>
+      <div class="or-snap-item"><strong>R6 · M8 Neo · M8 Neo LE Compared</strong><span>Three premium OHCO models side by side</span></div>
+      <div class="or-snap-item"><strong>Warranty &amp; White-Glove Delivery</strong><span>What to ask before checkout</span></div>
+      <div class="or-snap-item"><strong>Showroom Demo Recommended</strong><span>Test in person before you buy</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY NAV -->
+<nav class="or-subnav" id="or-nav">
+  <div class="or-subnav-inner">
+    <a href="#or-about">About</a>
+    <a href="#or-verdict">Quick Verdict</a>
+    <a href="#or-brand">OHCO Brand</a>
+    <a href="#or-compare">Compare</a>
+    <a href="#or-r6">R6 Review</a>
+    <a href="#or-m8neo">M8 Neo Review</a>
+    <a href="#or-m8neole">M8 Neo LE Review</a>
+    <a href="#or-sens8">Sens8 &amp; Movesync</a>
+    <a href="#or-sensory">Sensory Environment</a>
+    <a href="#or-calf">Calf &amp; Lower-Leg</a>
+    <a href="#or-vs">OHCO vs Panasonic</a>
+    <a href="#or-price">Price</a>
+    <a href="#or-showroom">Showroom</a>
+    <a href="#or-warranty">Warranty &amp; Delivery</a>
+    <a href="#or-proscons">Pros &amp; Cons</a>
+    <a href="#or-bestfor">Best For</a>
+    <a href="#or-themes">Buyer Themes</a>
+    <a href="#or-mcm">MCM Take</a>
+    <a href="#or-faq">FAQ</a>
+  </div>
+</nav>
+
+<!-- ABOUT / METHODOLOGY -->
+<section class="or-section" id="or-about">
+  <div class="or-narrow">
+    <div class="or-eyebrow">Methodology</div>
+    <h2 style="font-size:34px;margin-bottom:18px">About These OHCO Chair Reviews</h2>
+    <p style="font-size:16px;line-height:1.85;margin-bottom:18px">These OHCO chair reviews are organized for shoppers who are researching the OHCO R6, OHCO M8 Neo, and OHCO M8 Neo LE before visiting a showroom or product page. This page is not built from scraped competitor reviews or fake star ratings. Instead, it organizes product documentation, showroom observations, warranty and service considerations, and common buyer questions into a practical OHCO massage chair review.</p>
+    <div class="or-about-box">
+      <h3>How We Approach These OHCO Reviews</h3>
+      <p>These OHCO massage chair reviews are based on MCM showroom observations, manufacturer documentation, model comparisons, customer questions, and product specialist evaluation. We do not scrape or reuse reviews from competing massage chair retailers. Any representative feedback examples are written as customer-informed summaries unless specifically marked as verified customer reviews.</p>
+      <p>The goal is to help you decide whether OHCO is worth trying in person, which OHCO model fits your body and room, and what to confirm before purchase. Unless a quote is clearly marked as verified, treat the examples on this page as representative feedback themes — not third-party verified buyer reviews.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK VERDICT -->
+<section class="or-section or-section-alt" id="or-verdict">
+  <div class="or-narrow">
+    <div class="or-eyebrow">Quick Verdict</div>
+    <h2 style="font-size:34px;margin-bottom:18px">Are OHCO Massage Chairs Worth It?</h2>
+    <p style="font-size:17px;line-height:1.85;margin-bottom:18px">Are OHCO massage chairs worth it? For the right shopper, yes — especially if you want a design-led Japanese-inspired massage chair lineup with the Sens8 4D mechanism, the Movesync dual massage mechanism (M8 Neo platform), MaxTrack coverage, Bluetooth Audio Immersion, the M-Sense Light Pool, TheraElliptical calf kneading, and clear warranty/service support.</p>
+    <p style="font-size:17px;line-height:1.85;margin-bottom:24px">OHCO may not be the right fit if you are shopping mainly by lowest price or if another premium chair feels better after a side-by-side showroom test. The R6 is best for design-conscious buyers, the M8 Neo is best for the full technology platform, and the M8 Neo LE is best for buyers who want the most exclusive OHCO experience.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:14px">
+      <a href="#or-compare" class="or-btn or-btn-accent">Compare OHCO Models</a>
+      <a href="{{ contact_url }}" class="or-btn or-btn-outline">Book a Showroom Demo</a>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND TRUST -->
+<section class="or-section" id="or-brand">
+  <div class="or-narrow">
+    <div class="or-feature-box">
+      <div class="or-eyebrow">Brand Trust</div>
+      <h3 style="font-size:30px">Is OHCO a Good Massage Chair Brand?</h3>
+      <p>Is OHCO a good massage chair brand? OHCO is widely considered a premium massage chair brand, distributed through Furniture For Life, a premium wellness brand family focused on design-led massage chairs. The brand combines Japanese-inspired industrial design with the proprietary Sens8 4D mechanism, the Movesync dual massage mechanism on the M8 platform, and a complete sensory environment.</p>
+      <p>As with any high-ticket chair, the better question is not only whether the brand is good — it is whether the OHCO R6, OHCO M8 Neo, or OHCO M8 Neo LE fits your body, pressure preference, room, delivery needs, and warranty expectations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MODEL COMPARISON TABLE -->
+<section class="or-section or-section-alt" id="or-compare">
+  <div class="or-container">
+    <div class="or-section-header">
+      <span class="or-eyebrow">OHCO Massage Chair Comparison</span>
+      <h2>OHCO Massage Chair Comparison: R6 vs M8 Neo vs M8 Neo LE</h2>
+      <p>All three chairs offer the OHCO premium experience, but each model serves a different buyer. Use this OHCO massage chair comparison to shortlist the right model — then visit the product page or book a showroom demo.</p>
+    </div>
+    <div style="overflow-x:auto;border-radius:var(--or-r);box-shadow:var(--or-card-shadow)">
+      <table class="or-model-compare">
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Best For</th>
+            <th>Key Review Angle</th>
+            <th>Key Features to Test</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="{{ r6_url }}" class="or-product-link"><strong>OHCO R6</strong></a><br><span style="font-size:12px;color:var(--or-light)">ohco r6 massage chair</span></td>
+            <td>Design-conscious buyer</td>
+            <td>Mid-century styling + Sens8 4D entry into the OHCO lineup</td>
+            <td>Body fit, design, room placement, R6 chair feel</td>
+            <td><a href="{{ r6_url }}" class="or-btn or-btn-accent">View OHCO R6 Massage Chair</a></td>
+          </tr>
+          <tr>
+            <td><a href="{{ m8neo_url }}" class="or-product-link"><strong>OHCO M8 Neo</strong></a><br><span style="font-size:12px;color:var(--or-light)">ohco m8 massage chair · ohco m8 neo massage chair</span></td>
+            <td>Full technology platform buyer</td>
+            <td>Movesync dual massage mechanism + MaxTrack + sensory features</td>
+            <td>Dual-system feel, body scan, headrest, BT Audio Immersion</td>
+            <td><a href="{{ m8neo_url }}" class="or-btn or-btn-accent">View OHCO M8 Neo Massage Chair</a></td>
+          </tr>
+          <tr>
+            <td><a href="{{ m8neole_url }}" class="or-product-link"><strong>OHCO M8 Neo LE</strong></a><br><span style="font-size:12px;color:var(--or-light)">ohco m8 neo le massage chair · also ohco m.8 neo le</span></td>
+            <td>Ultra-premium / limited-edition buyer</td>
+            <td>Exclusive finishes + complete OHCO ownership experience</td>
+            <td>Knead &amp; Stretch Headrest, finishes, LE availability</td>
+            <td><a href="{{ m8neole_url }}" class="or-btn or-btn-accent">Check OHCO M8 Neo LE Availability</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="text-align:center;margin-top:24px">
+      <a href="{{ collection_url }}" class="or-btn or-btn-outline">Compare All OHCO Massage Chairs</a>
+    </div>
+  </div>
+</section>
+
+<!-- PER-MODEL REVIEWS -->
+<section class="or-section">
+  <div class="or-container">
+    <div class="or-section-header">
+      <span class="or-eyebrow">Per-Model Reviews</span>
+      <h2>OHCO Reviews by Model</h2>
+      <p>Three OHCO models, three different buyer fits. Here is what to focus on in each OHCO model-specific review.</p>
+    </div>
+
+    <!-- R6 -->
+    <div class="or-model-block" id="or-r6">
+      <span class="or-model-tier">Design-Led Entry · OHCO R6</span>
+      <h2>OHCO R6 Review</h2>
+      <p>The OHCO R6 review focuses on the model's mid-century styling, body fit, and feel as the design-forward entry into the OHCO lineup. The R6 chair is best for buyers who want premium massage quality, mid-century styling, and a more accessible OHCO price point — without stepping into the M8 platform pricing.</p>
+      <p>For deeper notes on roller feel, body scan, and overall fit, read our OHCO R6 review notes below and the comparison table above. Many shoppers search for the OHCO R6 massage chair specifically when they want OHCO's premium experience in a more compact format.</p>
+      <div class="or-model-ctas">
+        <a href="{{ r6_url }}" class="or-btn or-btn-accent">View the OHCO R6 Massage Chair</a>
+        <a href="{{ contact_url }}" class="or-btn or-btn-outline">Try the R6 In-Store</a>
+      </div>
+    </div>
+
+    <!-- M8 Neo -->
+    <div class="or-model-block" id="or-m8neo">
+      <span class="or-model-tier">Flagship Platform · OHCO M8 Neo</span>
+      <h2>OHCO M8 Neo Review</h2>
+      <p>Our OHCO M8 Neo review explains how the dual-system feel differs in person. The OHCO M8 Neo is the flagship platform for buyers who want the full OHCO technology stack, including the Movesync dual massage mechanism, MaxTrack coverage, sensory features, and deeper neck-and-shoulder support. Many shoppers search for OHCO M8 when comparing the current M8 Neo platform.</p>
+      <p>Pay attention to how the M8 Neo platform layers back, neck, shoulder, and sensory features into a more dimensional session — and explore the OHCO M8 massage chair product page for current pricing, finishes, and availability. Also searched as OHCO M.8 — OHCO M.8 Neo and OHCO M8 Neo refer to the same model family naming style.</p>
+      <div class="or-model-ctas">
+        <a href="{{ m8neo_url }}" class="or-btn or-btn-accent">View the OHCO M8 Neo Massage Chair</a>
+        <a href="#or-price" class="or-btn or-btn-outline">Compare OHCO M8 Price &amp; Features</a>
+      </div>
+    </div>
+
+    <!-- M8 Neo LE -->
+    <div class="or-model-block" id="or-m8neole">
+      <span class="or-model-tier">Limited Edition · OHCO M8 Neo LE</span>
+      <h2>OHCO M8 Neo LE Review</h2>
+      <p>The OHCO M8 Neo LE review is useful if you are deciding whether the limited-edition upgrade is worth it. Shoppers looking for OHCO M8 Neo LE massage chair reviews should compare materials, headrest feel, delivery, warranty, and showroom availability against the standard OHCO M8 Neo. Also searched as OHCO M.8 Neo LE — the same model family.</p>
+      <p>The OHCO M8 Neo LE shares the M8 platform's full technology stack (Sens8 4D, Movesync, MaxTrack, sensory environment, TheraElliptical calf kneading) and adds exclusive finishes, the Knead and Stretch Headrest, and limited production positioning. It's best for buyers who want the most exclusive OHCO experience.</p>
+      <div class="or-model-ctas">
+        <a href="{{ m8neole_url }}" class="or-btn or-btn-accent">Check OHCO M8 Neo LE Massage Chair Availability</a>
+        <a href="{{ contact_url }}" class="or-btn or-btn-outline">Ask About LE Availability</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SENS8 + MOVESYNC -->
+<section class="or-section or-section-alt" id="or-sens8">
+  <div class="or-narrow">
+    <div class="or-feature-box">
+      <div class="or-eyebrow">Massage Mechanism</div>
+      <h2>Sens8 4D Mechanism &amp; Movesync Dual Massage Mechanism</h2>
+      <p>OHCO's Sens8 4D mechanism is the core of the lineup — a responsive massage engine that varies depth, speed, and pressure rather than running a fixed roller pattern. It appears on the R6, M8 Neo, and M8 Neo LE, and is one of the main reasons shoppers compare OHCO in person rather than from specs alone.</p>
+      <p>The Movesync dual massage mechanism is one of the biggest reasons to compare the OHCO M8 Neo platform in person. Instead of relying on a single roller path, the M8 platform layers back, neck, shoulder, and sensory features into a more dimensional session. This is the difference most reviewers notice between the R6 and the M8 Neo / M8 Neo LE during a side-by-side demo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SENSORY ENVIRONMENT -->
+<section class="or-section" id="or-sensory">
+  <div class="or-narrow">
+    <div class="or-feature-box">
+      <div class="or-eyebrow">Sensory Environment</div>
+      <h2>Bluetooth Audio Immersion, M-Sense Light Pool &amp; Complete Sensory Environment</h2>
+      <p>OHCO goes beyond massage with a complete sensory environment. Bluetooth Audio Immersion lets you connect your smart device to play music, podcasts, calming soundscapes, or guided meditation during your session. You can connect a smart device to play your own playlists, then layer the session with aromatherapy for scent-based relaxation and an air ionizer for a fresher ambient feel.</p>
+      <p>The M-Sense Light Pool creates a soft glow around the chair before and during use, helping the experience feel more like a daily wellness ritual than a routine. These sensory features are most fully expressed on the M8 Neo and M8 Neo LE, which is one of the clearest reasons buyers move up from the R6.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CALF / LOWER LEG -->
+<section class="or-section or-section-alt" id="or-calf">
+  <div class="or-narrow">
+    <div class="or-feature-box">
+      <div class="or-eyebrow">Lower-Leg Comfort</div>
+      <h2>Calf, Foot &amp; Lower-Leg Massage</h2>
+      <p>TheraElliptical calf kneading is designed around coordinated compression and rotation, gently compressing and kneading the sides of the calves while rear calf rollers work along the back of the lower leg. The movement is inspired by how a shiatsu master gently compresses, releases, and works through the lower leg, leaving your calves refreshed without relying on simple squeezing alone.</p>
+      <p>The goal is to leave your calves feeling relaxed, supported, and ready for the rest of the day. The coordinated compression and roller movement can support a lower-leg session that feels focused, layered, and complete — particularly on the M8 Neo and M8 Neo LE.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OHCO VS PANASONIC -->
+<section class="or-section" id="or-vs">
+  <div class="or-narrow">
+    <div class="or-feature-box">
+      <div class="or-eyebrow">Premium Brand Comparison</div>
+      <h2>OHCO vs Panasonic and Other Premium Brands</h2>
+      <p>If you are comparing OHCO vs Panasonic, start with feel. OHCO emphasizes design-led Japanese luxury, shiatsu-inspired rhythm, sensory immersion, and living-room integration. Panasonic is often considered by buyers who prioritize precision engineering and deep-tissue performance.</p>
+      <p>The smartest path is to compare OHCO and Panasonic side by side in a showroom, especially if neck, shoulder, calf, and body-fit details matter to you. Both brands are well-engineered — the right pick is the one that fits your body and daily routine.</p>
+      <div class="or-model-ctas" style="margin-top:14px">
+        <a href="{{ shop.url }}/pages/ohco-m-8-neo-vs-panasonic-man1-premium-japanese-comparison" class="or-btn or-btn-accent">Compare OHCO M8 Neo vs Panasonic MAN1</a>
+        <a href="{{ shop.url }}/pages/ohco-m-8-neo-vs-d-core-2-premium-japanese-comparison" class="or-btn or-btn-outline">Compare OHCO M8 Neo vs D.Core 2</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section class="or-section or-section-alt" id="or-price">
+  <div class="or-narrow">
+    <div class="or-feature-box">
+      <div class="or-eyebrow">Pricing Overview</div>
+      <h2>OHCO Massage Chair Price: What to Expect</h2>
+      <p>OHCO massage chair price depends on the model, finish, availability, financing, delivery options, and current promotions. The OHCO R6 is typically the most accessible model in the lineup, the OHCO M8 Neo sits in the flagship premium range, and the OHCO M8 Neo LE is the ultra-premium limited-edition option.</p>
+      <p>If you are comparing OHCO M8 price or deciding whether to move up to the M8 Neo LE, speak with a specialist for current pricing, delivery timing, warranty coverage, and financing options. Current site pricing may vary — always confirm the live product page before you finalize your decision.</p>
+      <div class="or-model-ctas" style="margin-top:14px">
+        <a href="{{ contact_url }}" class="or-btn or-btn-accent">Check Current OHCO Pricing</a>
+        <a href="{{ contact_url }}" class="or-btn or-btn-outline">Ask About Financing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWROOM -->
+<section class="or-section" id="or-showroom">
+  <div class="or-narrow">
+    <div class="or-feature-box">
+      <div class="or-eyebrow">Showroom Demo</div>
+      <h2>Why Try OHCO in a Showroom?</h2>
+      <p>Online specs can explain OHCO chairs, but they cannot tell you whether the massage feels right on your shoulders, lower back, hips, calves, and feet. A showroom demo lets you compare the OHCO R6, OHCO M8 Neo, and OHCO M8 Neo LE in one visit and narrow the decision to the model that fits your body, room, and budget.</p>
+      <p>Same specs can feel different by body type, shoulder position, and pressure preference. Room fit and recline arc should be checked. A second decision-maker should ideally try the chair too. A 15-minute demo usually reduces "I need to think about it" more than a week of online research.</p>
+      <div class="or-model-ctas" style="margin-top:14px">
+        <a href="{{ contact_url }}" class="or-btn or-btn-accent">Book an OHCO Showroom Demo</a>
+        <a href="{{ contact_url }}" class="or-btn or-btn-outline">Try OHCO Massage Chairs In-Store</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WARRANTY / DELIVERY / FINANCING -->
+<section class="or-section or-section-alt" id="or-warranty">
+  <div class="or-narrow">
+    <div class="or-feature-box">
+      <div class="or-eyebrow">Ownership Picture</div>
+      <h2>Delivery, White-Glove Installation, Warranty &amp; Financing</h2>
+      <p>For high-ticket OHCO buyers, white-glove delivery, room-of-choice installation, warranty coverage, and financing through Affirm often matter as much as the massage itself. Massage Chairs and More offers white-glove delivery options for OHCO chairs, and delivery timing depends on current inventory, finish selection, and your location — current availability may vary, so confirm with a specialist.</p>
+      <p>Ask about warranty terms, in-home service availability, extended coverage options, and current OHCO offers before checkout. Financing terms and bundled delivery options vary by model, finish, and promotion — a specialist conversation typically clarifies the full ownership picture in one call.</p>
+      <div class="or-model-ctas" style="margin-top:14px">
+        <a href="{{ contact_url }}" class="or-btn or-btn-accent">Ask About Delivery, Warranty &amp; Financing</a>
+        <a href="tel:+14088891188" class="or-btn or-btn-outline">Call MCM at {{ phone }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MID-PAGE CTA -->
+<section class="or-section" style="padding:0 0 48px">
+  <div class="or-container">
+    <div class="or-cta-band">
+      <h2>Not sure which OHCO model fits you best?</h2>
+      <p>Compare the OHCO R6, OHCO M8 Neo, and OHCO M8 Neo LE side by side with an MCM specialist. A showroom demo is the fastest way to match the right model to your body, room, and routine.</p>
+      <div class="or-cta-btns">
+        <a href="#or-compare" class="or-btn or-btn-accent">Compare OHCO Models</a>
+        <a href="{{ contact_url }}" class="or-btn or-btn-white">Book a Showroom Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROS & CONS -->
+<section class="or-section or-section-alt" id="or-proscons">
+  <div class="or-container">
+    <div class="or-section-header"><span class="or-eyebrow">Balanced Assessment</span><h2>Common Pros and Cons</h2></div>
+    <div class="or-pros-cons">
+      <div class="or-pros">
+        <h3 style="color:#2e7d32">✓ Common Pros</h3>
+        <ul>
+          <li>Three-model lineup covering design entry (R6), flagship platform (M8 Neo), and limited-edition (M8 Neo LE)</li>
+          <li>Sens8 4D mechanism across all three models — responsive, layered massage feel</li>
+          <li>Movesync dual massage mechanism on M8 Neo and M8 Neo LE for a more dimensional session</li>
+          <li>MaxTrack coverage from neck through glutes on the M8 platform</li>
+          <li>Bluetooth Audio Immersion lets you connect your smart device to play music or meditation</li>
+          <li>M-Sense Light Pool creates a soft glow around the chair for a daily ritual feel</li>
+          <li>TheraElliptical calf kneading designed around compression + rotation, not simple squeezing</li>
+          <li>Furniture For Life distribution and design-led Japanese aesthetics</li>
+          <li>Authorized OHCO dealer support with white-glove delivery and warranty coverage</li>
+        </ul>
+      </div>
+      <div class="or-cons">
+        <h3 style="color:#e65100">△ Common Cons</h3>
+        <ul>
+          <li>Premium pricing across all three models — confirm financing options early</li>
+          <li>R6 lacks the full sensory environment and Movesync of the M8 platform</li>
+          <li>M8 Neo LE limited-edition finishes can affect availability and delivery timing</li>
+          <li>Sensory features (BT audio, aromatherapy, M-Sense Light Pool) reward demo time over spec sheets</li>
+          <li>Chair footprint and recline arc require careful room measurement</li>
+          <li>Some buyers may prefer a stronger deep-tissue feel offered by other premium brands</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEST FOR -->
+<section class="or-section" id="or-bestfor">
+  <div class="or-container">
+    <div class="or-section-header"><span class="or-eyebrow">Buyer Fit Guide</span><h2>Best For / May Not Be Ideal For</h2></div>
+    <div class="or-bestfor">
+      <div class="or-bestfor-card" style="border-top:3px solid #2e7d32">
+        <h3 style="color:#2e7d32">Best For</h3>
+        <ul>
+          <li>Design-conscious buyers comparing the OHCO R6 against other premium options</li>
+          <li>Shoppers who want the full OHCO technology stack via the M8 Neo platform</li>
+          <li>Premium buyers who want exclusive limited-edition finishes (M8 Neo LE)</li>
+          <li>Households that value the M-Sense Light Pool and Bluetooth Audio Immersion sensory layer</li>
+          <li>Users who want a daily wellness ritual rather than a single-feature massage chair</li>
+          <li>Shoppers who care about white-glove delivery, warranty, and showroom support</li>
+          <li>Buyers who want to compare OHCO with Panasonic and D.Core in one showroom visit</li>
+        </ul>
+      </div>
+      <div class="or-bestfor-card" style="border-top:3px solid #e65100">
+        <h3 style="color:#e65100">May Not Be Ideal For</h3>
+        <ul>
+          <li>Bargain-first buyers — OHCO sits in premium pricing across the lineup</li>
+          <li>Shoppers who prefer the strongest possible deep-tissue intensity above all else</li>
+          <li>Buyers expecting medical treatment or guaranteed pain relief</li>
+          <li>Homes with very limited room for a full recline arc</li>
+          <li>Users unwilling to test the chair in person before buying</li>
+          <li>Shoppers who choose mainly by visual design without trying the massage feel</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REPRESENTATIVE BUYER FEEDBACK THEMES -->
+<section class="or-section or-section-alt" id="or-themes">
+  <div class="or-container">
+    <div class="or-section-header">
+      <span class="or-eyebrow">Representative Feedback</span>
+      <h2>Representative OHCO Buyer Feedback Themes</h2>
+      <p>These examples summarize common review themes heard during showroom conversations. They are not presented as verified buyer reviews unless specifically labeled as verified.</p>
+    </div>
+    <div class="or-themes-grid">
+      <div class="or-theme-card">
+        <h4>Common feedback theme</h4>
+        <blockquote>"The Sens8 feel is different from any 4D chair I tried. It feels more layered, not just stronger."</blockquote>
+        <p><strong>MCM interpretation:</strong> Lead with Sens8 4D as OHCO's clearest in-person differentiator.</p>
+      </div>
+      <div class="or-theme-card">
+        <h4>Common feedback theme</h4>
+        <blockquote>"The R6 fit our living room better than I expected. The design is the reason we picked it."</blockquote>
+        <p><strong>MCM interpretation:</strong> R6 wins on design-conscious buyers who reject equipment-style massage chairs.</p>
+      </div>
+      <div class="or-theme-card">
+        <h4>Common feedback theme</h4>
+        <blockquote>"The M8 Neo felt the most complete. The dual-system massage made the decision easier."</blockquote>
+        <p><strong>MCM interpretation:</strong> M8 Neo is the strongest fit for buyers who want the full OHCO technology platform.</p>
+      </div>
+      <div class="or-theme-card">
+        <h4>Common feedback theme</h4>
+        <blockquote>"The Light Pool and Bluetooth audio sound gimmicky on paper — they're not. The sensory layer changes how the session feels."</blockquote>
+        <p><strong>MCM interpretation:</strong> The M-Sense Light Pool and Bluetooth Audio Immersion reward demo time over spec sheets.</p>
+      </div>
+      <div class="or-theme-card">
+        <h4>Common feedback theme</h4>
+        <blockquote>"The LE finishes were the deciding factor. If you've already committed to the M8 platform, the upgrade makes sense."</blockquote>
+        <p><strong>MCM interpretation:</strong> M8 Neo LE suits buyers who want the most exclusive OHCO ownership experience.</p>
+      </div>
+      <div class="or-theme-card">
+        <h4>Common feedback theme</h4>
+        <blockquote>"White-glove delivery and clear warranty support reduced the anxiety of a high-ticket purchase."</blockquote>
+        <p><strong>MCM interpretation:</strong> Confirm white-glove delivery, warranty terms, and financing before checkout.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MCM SPECIALIST ASSESSMENT -->
+<section class="or-section" id="or-mcm">
+  <div class="or-container">
+    <div class="or-expert-box">
+      <span class="or-eyebrow" style="color:var(--or-gold)">Expert Editorial Summary</span>
+      <h2>MCM Specialist Assessment</h2>
+      <p>OHCO is strongest as a three-model lineup that lets shoppers choose by intent rather than forcing a single answer. The R6 for design-led entry into the OHCO experience. The M8 Neo for the full technology platform. The M8 Neo LE for buyers who want the most exclusive OHCO ownership experience.</p>
+      <p>The strongest OHCO buyer is someone who says: <strong style="color:#fff">"I want a design-led Japanese-inspired premium chair that fits my home, with the sensory environment and Sens8 feel that defines OHCO — and I want to test it in person."</strong></p>
+      <p>The weakest OHCO buyer fit is someone who says: "I want the cheapest premium massage chair," or "I want the strongest deep-tissue feel above all." Those shoppers usually find a better match elsewhere.</p>
+      <p>Across the lineup, the right next step is the same: book a side-by-side showroom demo, confirm white-glove delivery and warranty for your area, and choose the model that fits your daily routine — not the longest spec sheet.</p>
+      <div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap">
+        <a href="{{ contact_url }}" class="or-btn or-btn-accent">Speak With an MCM Specialist</a>
+        <a href="{{ collection_url }}" class="or-btn or-btn-white">View OHCO Massage Chairs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="or-section or-section-alt" id="or-faq">
+  <div class="or-narrow">
+    <div class="or-section-header"><span class="or-eyebrow">Common Questions</span><h2>OHCO Massage Chair FAQs</h2><p>OHCO review, brand, model, price, warranty, delivery, financing, and showroom questions — answered without filler.</p></div>
+    <div class="or-faq-list" id="or-faq-list">
+
+      <div class="or-faq-item"><div class="or-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Are OHCO massage chairs worth it?</h3><button class="or-faq-toggle" aria-label="Toggle">+</button></div><div class="or-faq-a"><div class="or-faq-a-inner"><p>Many buyers consider OHCO massage chairs worth the investment because of the Sens8 4D mechanism, Japanese-inspired design, sensory features like Bluetooth Audio Immersion and the M-Sense Light Pool, and the depth of the M8 Neo platform. The best way to decide is to try the OHCO R6, OHCO M8 Neo, or OHCO M8 Neo LE in a showroom before you buy.</p></div></div></div>
+
+      <div class="or-faq-item"><div class="or-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Is OHCO a good massage chair brand?</h3><button class="or-faq-toggle" aria-label="Toggle">+</button></div><div class="or-faq-a"><div class="or-faq-a-inner"><p>OHCO is widely considered a premium massage chair brand, distributed through Furniture For Life and known for design-led Japanese aesthetics, the Sens8 4D mechanism, the Movesync dual massage mechanism (M8 Neo platform), MaxTrack coverage, and sensory features like Bluetooth Audio Immersion and aromatherapy.</p></div></div></div>
+
+      <div class="or-faq-item"><div class="or-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>What is the best OHCO massage chair?</h3><button class="or-faq-toggle" aria-label="Toggle">+</button></div><div class="or-faq-a"><div class="or-faq-a-inner"><p>There is no single best OHCO massage chair for every buyer. The best OHCO massage chair review is the one that helps you match the model to your body, room, and budget. The R6 is best for design-conscious buyers, the M8 Neo is best for the full technology platform with the Movesync dual massage mechanism, and the M8 Neo LE is best for buyers who want the most exclusive OHCO experience.</p></div></div></div>
+
+      <div class="or-faq-item"><div class="or-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>How much does an OHCO massage chair cost?</h3><button class="or-faq-toggle" aria-label="Toggle">+</button></div><div class="or-faq-a"><div class="or-faq-a-inner"><p>OHCO massage chair price depends on the model, finish, availability, delivery options, warranty coverage, and current promotions. The OHCO R6 is typically the most accessible model in the lineup, the OHCO M8 Neo sits in the flagship premium range, and the OHCO M8 Neo LE is the ultra-premium limited-edition option. Speak with a specialist for current OHCO M8 price and R6 pricing.</p></div></div></div>
+
+      <div class="or-faq-item"><div class="or-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>What is the OHCO M8 price?</h3><button class="or-faq-toggle" aria-label="Toggle">+</button></div><div class="or-faq-a"><div class="or-faq-a-inner"><p>OHCO M8 price refers to the current pricing for the OHCO M8 Neo platform, which includes the Movesync dual massage mechanism, MaxTrack coverage, Bluetooth Audio Immersion, aromatherapy, and the M-Sense Light Pool. Pricing varies with finish, availability, financing, and current promotions — check the OHCO M8 Neo massage chair product page or speak with a specialist for live pricing.</p></div></div></div>
+
+      <div class="or-faq-item"><div class="or-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>What is the difference between OHCO R6 and OHCO M8 Neo?</h3><button class="or-faq-toggle" aria-label="Toggle">+</button></div><div class="or-faq-a"><div class="or-faq-a-inner"><p>The OHCO R6 is the design-forward entry into the lineup with a refined Mid-Century Modern footprint, while the OHCO M8 Neo is the flagship platform with the Movesync dual massage mechanism, MaxTrack extended track, TheraElliptical calf kneading, Bluetooth Audio Immersion, aromatherapy, and the M-Sense Light Pool. The R6 chair suits buyers who lead with design; the M8 Neo suits buyers who want the full technology stack.</p></div></div></div>
+
+      <div class="or-faq-item"><div class="or-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>What is the difference between OHCO M8 Neo and OHCO M8 Neo LE?</h3><button class="or-faq-toggle" aria-label="Toggle">+</button></div><div class="or-faq-a"><div class="or-faq-a-inner"><p>The OHCO M8 Neo LE is the limited-edition expression of the M8 Neo platform. Both share the Sens8 mechanism, Movesync dual massage mechanism, MaxTrack coverage, TheraElliptical calf kneading, Bluetooth Audio Immersion, aromatherapy, and the M-Sense Light Pool. The LE adds exclusive finishes, upgraded materials, and limited production positioning for buyers who want the most exclusive OHCO ownership experience.</p></div></div></div>
+
+      <div class="or-faq-item"><div class="or-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Can I try an OHCO massage chair before buying?</h3><button class="or-faq-toggle" aria-label="Toggle">+</button></div><div class="or-faq-a"><div class="or-faq-a-inner"><p>Yes. Massage Chairs and More is built for in-person comparison, so you can try the OHCO R6, OHCO M8 Neo, and OHCO M8 Neo LE side by side in our showroom before you decide. Comparing OHCO models in person is the best way to judge body fit, headrest feel, calf sequence, and overall comfort.</p></div></div></div>
+
+      <div class="or-faq-item"><div class="or-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Should I read OHCO massage chair reviews before visiting a showroom?</h3><button class="or-faq-toggle" aria-label="Toggle">+</button></div><div class="or-faq-a"><div class="or-faq-a-inner"><p>Reading OHCO massage chair reviews, OHCO chair reviews, and model-specific notes like an OHCO R6 review, OHCO M8 Neo review, or OHCO M8 Neo LE review can help you shortlist the right model. The best OHCO massage chair review is the one that helps you match the model to your body, room, and budget.</p></div></div></div>
+
+      <div class="or-faq-item"><div class="or-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Is OHCO better than Panasonic?</h3><button class="or-faq-toggle" aria-label="Toggle">+</button></div><div class="or-faq-a"><div class="or-faq-a-inner"><p>If you are comparing OHCO vs Panasonic, the right answer depends on what you value. OHCO leans into Japanese-inspired design, shiatsu-inspired choreography, sensory immersion, and living-room integration. Panasonic is often considered by buyers who prioritize precision engineering and deep-tissue feel. The smartest path is to compare OHCO and Panasonic side by side in a showroom.</p></div></div></div>
+
+      <div class="or-faq-item"><div class="or-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Can I buy an OHCO massage chair online?</h3><button class="or-faq-toggle" aria-label="Toggle">+</button></div><div class="or-faq-a"><div class="or-faq-a-inner"><p>Yes. You can shop OHCO massage chairs online at Massage Chairs and More, an authorized OHCO dealer. Many shoppers research the OHCO R6, OHCO M8 Neo, and OHCO M8 Neo LE online, then book a showroom demo before they buy.</p></div></div></div>
+
+      <div class="or-faq-item"><div class="or-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Does Massage Chairs &amp; More offer white-glove delivery for OHCO chairs?</h3><button class="or-faq-toggle" aria-label="Toggle">+</button></div><div class="or-faq-a"><div class="or-faq-a-inner"><p>Yes. Massage Chairs and More offers white-glove delivery options for OHCO chairs, including room-of-choice placement. Delivery timing depends on current inventory, finish selection, and your location — current availability may vary, so confirm with a specialist.</p></div></div></div>
+
+      <div class="or-faq-item"><div class="or-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Is financing available for OHCO massage chairs?</h3><button class="or-faq-toggle" aria-label="Toggle">+</button></div><div class="or-faq-a"><div class="or-faq-a-inner"><p>Yes. Financing is available for OHCO massage chairs through Affirm. Monthly payment options vary by model, finish, and promotional terms — ask a specialist about current OHCO offers, financing terms, and bundled delivery options.</p></div></div></div>
+
+      <div class="or-faq-item"><div class="or-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Which OHCO chair is best for neck and shoulder comfort?</h3><button class="or-faq-toggle" aria-label="Toggle">+</button></div><div class="or-faq-a"><div class="or-faq-a-inner"><p>For neck and shoulder comfort, many buyers prefer the OHCO M8 Neo LE because of the Knead and Stretch Headrest with air-driven cervical support. The OHCO M8 Neo shares much of the same sensory and shiatsu-inspired choreography. The best way to judge neck and shoulder feel is to try the chairs in person — body fit and pressure preference vary by person.</p></div></div></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="or-section" style="padding:48px 0 96px">
+  <div class="or-container">
+    <div class="or-cta-band">
+      <h2>Ready to experience OHCO in person?</h2>
+      <p>Visit MCM to compare the OHCO R6, OHCO M8 Neo, and OHCO M8 Neo LE side by side. Test the Sens8 4D feel, the Movesync dual massage mechanism, Bluetooth Audio Immersion, the M-Sense Light Pool, TheraElliptical calf kneading, and warranty and white-glove delivery support — all in one visit.</p>
+      <div class="or-cta-btns">
+        <a href="{{ contact_url }}" class="or-btn or-btn-accent">Book Your OHCO Showroom Demo</a>
+        <a href="{{ collection_url }}" class="or-btn or-btn-white">View OHCO Massage Chairs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY MOBILE CTA -->
+<div class="or-sticky-cta" id="or-sticky">
+  <div class="or-sticky-inner">
+    <a href="{{ contact_url }}" class="or-btn or-btn-accent" style="flex:1;text-align:center">Book Demo</a>
+    <a href="#or-compare" class="or-btn or-btn-outline" style="flex:1;text-align:center">Compare Models</a>
+  </div>
+</div>
+
+<script>
+const orSections=document.querySelectorAll('[id^="or-"]');
+const orNavLinks=document.querySelectorAll('.or-subnav-inner a');
+const orObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){const id=entry.target.id;orNavLinks.forEach(link=>{link.classList.toggle('active',link.getAttribute('href')==='#'+id)})}})},{rootMargin:'-20% 0px -70% 0px'});
+orSections.forEach(s=>orObserver.observe(s));
+const orSticky=document.getElementById('or-sticky');
+const orHeroEl=document.getElementById('or-top');
+if(orSticky&&orHeroEl){const stickyObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(window.innerWidth<=768){orSticky.style.display=e.isIntersecting?'none':'block'}})});stickyObs.observe(orHeroEl)}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const target=document.querySelector(a.getAttribute('href'));if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'})}})});
+</script>
+
+</div>
+
+{% schema %}
+{
+  "name": "OHCO Reviews",
+  "settings": [
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Phone Number",
+      "default": "+1 (408) 889-1188"
+    }
+  ],
+  "presets": [
+    {
+      "name": "OHCO Reviews"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,751 @@
+{%- comment -%}
+  Section: page-panasonic-reviews
+  Template: page.panasonic-massage-chair-reviews.json
+  Description: Panasonic Massage Chair Reviews landing page — MAN1, MAK1, MAF1
+               showroom-informed reviews, comparison, pricing, body scan, Real Pro Ultra,
+               heated rollers, reflexology foot massage, warranty & service.
+  Product URLs:
+    MAN1: /products/panasonic-man1-massage-chair
+    MAK1: /products/panasonic-mak1-massage-chair
+    MAF1: /products/panasonic-maf1-massage-chair
+  Collection: /collections/panasonic-massage-chairs
+{%- endcomment -%}
+
+{%- assign phone = section.settings.phone | default: "+1 (408) 889-1188" -%}
+{%- assign contact_url = "/pages/contact" -%}
+{%- assign collection_url = "/collections/panasonic-massage-chairs" -%}
+{%- assign man1_url = "/products/panasonic-man1-massage-chair" -%}
+{%- assign mak1_url = "/products/panasonic-mak1-massage-chair" -%}
+{%- assign maf1_url = "/products/panasonic-maf1-massage-chair" -%}
+
+{%- comment -%} ── SCHEMA MARKUP (Article + FAQ + Breadcrumb; NO AggregateRating, NO Review) ── {%- endcomment -%}
+<script type="application/ld+json">
+[{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Panasonic Massage Chair Reviews: MAN1, MAK1 & MAF1 Compared",
+    "description": "Read Panasonic massage chair reviews for MAN1, MAK1, and MAF1. Compare Panasonic massage chair price, body scan technology, heated rollers, foot massage, warranty, and showroom demo options.",
+    "author": {"@type":"Organization","name":"Massage Chairs and More"},
+    "publisher": {"@type":"Organization","name":"Massage Chairs and More","url":"{{ shop.url }}"},
+    "mainEntityOfPage": "{{ canonical_url }}"
+},
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ shop.url }}"},
+        {"@type": "ListItem", "position": 2, "name": "Panasonic Massage Chairs", "item": "{{ shop.url }}{{ collection_url }}"},
+        {"@type": "ListItem", "position": 3, "name": "Panasonic Massage Chair Reviews", "item": "{{ canonical_url }}"}
+    ]
+},
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {"@type":"Question","name":"Are Panasonic massage chairs worth it?","acceptedAnswer":{"@type":"Answer","text":"Panasonic massage chairs are worth considering if you want an engineering-led massage chair brand with strong body scan personalization, targeted heat, deep massage control, and long-term ownership confidence. They may not be the right fit for buyers who want the flashiest visual design or the lowest price."}},
+        {"@type":"Question","name":"What is the best Panasonic massage chair?","acceptedAnswer":{"@type":"Answer","text":"The best Panasonic massage chair depends on your priorities. MAN1 is the strongest fit for flagship precision and Panasonic Real Pro Ultra technology. MAK1 is a premium Panasonic option for shoppers comparing advanced comfort and massage features. MAF1 is the value Panasonic model for buyers who want Panasonic confidence at a lower entry point."}},
+        {"@type":"Question","name":"How much does a Panasonic massage chair cost?","acceptedAnswer":{"@type":"Answer","text":"Panasonic massage chair price depends on the model, current promotion, delivery method, installation needs, warranty coverage, and financing options. Ask MCM for the current MAN1, MAK1, and MAF1 pricing before deciding."}},
+        {"@type":"Question","name":"Where can I try a Panasonic massage chair showroom demo?","acceptedAnswer":{"@type":"Answer","text":"You can visit an MCM Panasonic massage chair showroom to compare MAN1, MAK1, and MAF1 in person. A showroom demo helps you evaluate body scan fit, heated rollers, foot massage, recline comfort, and deep tissue intensity before buying."}},
+        {"@type":"Question","name":"Is the Panasonic MAN1 massage chair review different from an EP-MAN1 review?","acceptedAnswer":{"@type":"Answer","text":"Many shoppers search for Panasonic MAN1 massage chair review or Panasonic EP-MAN1 review when researching the same flagship model family. The key things to evaluate are Panasonic Real Pro Ultra H.I., 1260P Acupoint Body Scan, heated rollers, reflexology foot massage, and warranty support."}},
+        {"@type":"Question","name":"What should I know from a Panasonic MAK1 review?","acceptedAnswer":{"@type":"Answer","text":"A Panasonic MAK1 review should help you understand how MAK1 compares with MAN1 and MAF1. MAK1 is best evaluated as a premium Panasonic massage chair for buyers comparing comfort, technology, service support, and long-term value. Shoppers also search for Panasonic EP-MAK1 review when researching the same family."}},
+        {"@type":"Question","name":"What should I know from a Panasonic MAF1 review?","acceptedAnswer":{"@type":"Answer","text":"A Panasonic MAF1 review should focus on value, fit, and everyday usability. The Panasonic MAF1 massage chair may be a smart option for buyers who want Panasonic brand confidence without moving into the flagship MAN1 price tier."}},
+        {"@type":"Question","name":"Is Panasonic MAN1 a good massage chair?","acceptedAnswer":{"@type":"Answer","text":"Panasonic MAN1 is positioned as the flagship Real Pro Ultra massage chair in the Panasonic lineup. For buyers focused on precision, body profiling, pressure-sensing rollers, heated rollers, and reflexology foot massage, MAN1 typically delivers the strongest Panasonic experience available today."}},
+        {"@type":"Question","name":"What makes Panasonic massage chairs different?","acceptedAnswer":{"@type":"Answer","text":"Panasonic engineers massage chairs around controlled movement, pressure response, body scan personalization, and repeatable comfort, rather than feature volume alone. The combination of advanced technologies — Real Pro Ultra H.I., 1260P Acupoint Body Scan, infrared-heated rollers, full body air massage, and reflexology foot massage — is what makes Panasonic feel different on a showroom demo."}},
+        {"@type":"Question","name":"Does Panasonic MAN1 have heated rollers?","acceptedAnswer":{"@type":"Answer","text":"Yes. Panasonic MAN1 features Panasonic heated rollers — infrared heating elements integrated close to the roller assembly so warmth lands directly where the massage is happening, rather than as a generic heat pad."}},
+        {"@type":"Question","name":"Does Panasonic MAN1 have foot massage?","acceptedAnswer":{"@type":"Answer","text":"Yes. Panasonic MAN1 includes Panasonic foot massage with reflexology-style sole kneading, sole shiatsu, and plantar arch manipulation. Air cells help stabilize the foot while the sole mechanism works, making MAN1 a strong reflexology foot massage chair candidate."}},
+        {"@type":"Question","name":"Does Panasonic MAN1 have body scan?","acceptedAnswer":{"@type":"Answer","text":"Yes. Panasonic MAN1 includes the 1260P Acupoint Body Scan, designed to map key points on the body so the chair can align massage movements with the neck, back, hips, and seat area more accurately."}},
+        {"@type":"Question","name":"Is Panasonic good for deep tissue massage?","acceptedAnswer":{"@type":"Answer","text":"Panasonic is a serious deep tissue massage chair option for buyers who want pressure and control rather than random force. The best setting depends on body sensitivity, posture, and experience level — sensitive users should test the chair in a showroom before buying."}},
+        {"@type":"Question","name":"How long should you use a Panasonic massage chair?","acceptedAnswer":{"@type":"Answer","text":"Most Panasonic massage chair sessions land between 10 and 30 minutes. The right length depends on the program, intensity setting, and your own comfort. Panasonic's benefits are best framed around comfort, relaxation, tension release, and daily reset rather than medical treatment claims."}},
+        {"@type":"Question","name":"Should I buy Panasonic online or try it in a showroom?","acceptedAnswer":{"@type":"Answer","text":"A Panasonic massage chair showroom demo is strongly recommended. Body scan fit, heated roller warmth, foot massage intensity, recline comfort, and deep tissue pressure response are difficult to judge from specs alone. MCM specialists can help you compare MAN1, MAK1, and MAF1 in person."}}
+    ]
+}]
+</script>
+
+<style>
+
+:root{--pnr-bg:#f8f9fb;--pnr-surface:#f0f2f6;--pnr-dark:#0d1b2a;--pnr-dark2:#081420;--pnr-text:#1e2d3d;--pnr-muted:#4a5e73;--pnr-light:#7a8fa3;--pnr-accent:#1565c0;--pnr-accent-hover:#0d47a1;--pnr-accent-light:rgba(21,101,192,.07);--pnr-accent-sky:#42a5f5;--pnr-border:#dce3eb;--pnr-border-light:#e8edf3;--pnr-white:#fff;--pnr-card-shadow:0 2px 16px rgba(0,0,0,.04);--pnr-card-hover:0 16px 48px rgba(0,0,0,.09);--pnr-shadow-accent:0 8px 32px rgba(21,101,192,.18);--pnr-r:14px;--pnr-r-sm:9px;--pnr-r-lg:22px;--pnr-r-xl:30px;--pnr-tr:all .3s cubic-bezier(.4,0,.2,1)}
+.pnr-page *,.pnr-page *::before,.pnr-page *::after{box-sizing:border-box;margin:0;padding:0}
+.pnr-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--pnr-bg);color:var(--pnr-text);line-height:1.78;font-size:16px;-webkit-font-smoothing:antialiased}
+.pnr-page h1,.pnr-page h2,.pnr-page h3,.pnr-page h4{color:var(--pnr-dark);line-height:1.2;font-weight:700}
+.pnr-page h1,.pnr-page h2{font-family:'Playfair Display',Georgia,serif}
+.pnr-page a{color:inherit;text-decoration:none}
+.pnr-page img{max-width:100%;display:block}
+.pnr-page p{font-size:15px;color:var(--pnr-muted);line-height:1.8}
+.pnr-container{max-width:1300px;margin:0 auto;padding:0 32px}
+.pnr-narrow{max-width:880px;margin:0 auto;padding:0 32px}
+@keyframes pnrFadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pnrShimmer{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes pnrPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.55}}
+@keyframes pnrGrad{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.pnr-fade{animation:pnrFadeUp .7s ease both}
+.pnr-d1{animation-delay:.1s}.pnr-d2{animation-delay:.22s}.pnr-d3{animation-delay:.34s}.pnr-d4{animation-delay:.46s}
+.pnr-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 36px;font-size:15px;font-weight:700;border-radius:50px;transition:var(--pnr-tr);border:2px solid transparent;cursor:pointer;letter-spacing:.02em;font-family:'Inter',sans-serif}
+.pnr-btn-primary{background:var(--pnr-dark);color:#fff;border-color:var(--pnr-dark)}.pnr-btn-primary:hover{background:var(--pnr-accent);border-color:var(--pnr-accent);transform:translateY(-2px);box-shadow:var(--pnr-shadow-accent)}
+.pnr-btn-accent{background:var(--pnr-accent);color:#fff;border-color:var(--pnr-accent)}.pnr-btn-accent:hover{background:var(--pnr-accent-hover);transform:translateY(-2px);box-shadow:var(--pnr-shadow-accent)}
+.pnr-btn-outline{background:transparent;color:var(--pnr-dark);border:2px solid var(--pnr-border)}.pnr-btn-outline:hover{border-color:var(--pnr-accent);color:var(--pnr-accent)}
+.pnr-btn-white{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.45)}.pnr-btn-white:hover{border-color:#fff;background:rgba(255,255,255,.10)}
+.pnr-btn-ghost{background:rgba(255,255,255,.07);color:#fff;border:1.5px solid rgba(255,255,255,.28)}.pnr-btn-ghost:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.45)}
+.pnr-section{padding:96px 0}
+.pnr-section-alt{background:var(--pnr-surface)}
+.pnr-section-header{text-align:center;margin-bottom:64px}
+.pnr-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--pnr-accent);margin-bottom:16px;font-weight:700}
+.pnr-eyebrow::before{content:'';width:20px;height:2px;background:linear-gradient(90deg,var(--pnr-accent),var(--pnr-accent-sky));border-radius:2px}
+.pnr-section-header h2{font-size:44px;margin-bottom:16px;letter-spacing:-.02em}
+.pnr-section-header p{font-size:18px;color:var(--pnr-muted);max-width:700px;margin:0 auto;line-height:1.82}
+.pnr-hero{position:relative;min-height:78vh;display:flex;align-items:center;background:var(--pnr-dark2);overflow:hidden}
+.pnr-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 30%;opacity:.32;z-index:0}
+.pnr-hero-grain{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");z-index:1;opacity:.5;pointer-events:none}
+.pnr-hero-overlay{position:absolute;inset:0;background:linear-gradient(120deg,rgba(8,16,28,.96) 18%,rgba(13,27,42,.78) 55%,rgba(21,42,68,.42) 100%);z-index:2}
+.pnr-product-link{color:var(--pnr-accent);font-weight:700;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;transition:color .2s}
+.pnr-product-link:hover{color:var(--pnr-accent-hover)}
+.pnr-hero-glow{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(21,101,192,.10) 0%,transparent 70%);right:-100px;top:-100px;z-index:2;animation:pnrShimmer 7s ease-in-out infinite}
+.pnr-hero-stripe{position:absolute;left:0;bottom:0;width:100%;height:3px;background:linear-gradient(90deg,var(--pnr-accent),var(--pnr-accent-sky),transparent 70%);z-index:3}
+.pnr-hero-content{position:relative;z-index:4;padding:80px 0 96px}
+.pnr-hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--pnr-accent-sky);font-weight:700;margin-bottom:26px;background:rgba(21,101,192,.12);padding:6px 16px;border-radius:50px;border:1px solid rgba(21,101,192,.25)}
+.pnr-hero-eyebrow::before{content:'●';font-size:7px;animation:pnrPulse 2.8s infinite}
+.pnr-hero h1{font-size:52px;color:#fff;max-width:840px;margin-bottom:26px;font-weight:700;line-height:1.07;letter-spacing:-.025em}
+.pnr-hero-tag{background:linear-gradient(135deg,var(--pnr-accent-sky),#90caf9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.pnr-hero-sub{font-size:18px;color:rgba(255,255,255,.74);max-width:680px;margin-bottom:32px;line-height:1.75}
+.pnr-hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+.pnr-snap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;padding-top:32px;border-top:1px solid rgba(255,255,255,.08)}
+.pnr-snap-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:var(--pnr-r-sm);padding:14px 16px;backdrop-filter:blur(8px)}
+.pnr-snap-item strong{display:block;color:#fff;font-size:13px;font-weight:700;margin-bottom:4px;font-family:'Inter',sans-serif}
+.pnr-snap-item span{font-size:12px;color:rgba(255,255,255,.55);font-weight:500;line-height:1.5;display:block}
+.pnr-subnav{position:sticky;top:0;z-index:50;background:rgba(248,249,251,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--pnr-border-light);overflow-x:auto;scrollbar-width:none}
+.pnr-subnav::-webkit-scrollbar{display:none}
+.pnr-subnav-inner{display:flex;padding:0 32px;min-width:max-content}
+.pnr-subnav-inner a{display:block;padding:12px 14px;font-size:11px;font-weight:700;color:var(--pnr-muted);border-bottom:2.5px solid transparent;white-space:nowrap;transition:var(--pnr-tr);text-transform:uppercase;letter-spacing:.08em}
+.pnr-subnav-inner a:hover,.pnr-subnav-inner a.active{color:var(--pnr-dark);border-bottom-color:var(--pnr-accent)}
+.pnr-about-box{background:var(--pnr-accent-light);border:1px solid rgba(21,101,192,.15);border-radius:var(--pnr-r);padding:28px 32px;margin-bottom:36px}
+.pnr-about-box h3{font-size:16px;font-family:'Inter',sans-serif;margin-bottom:10px;color:var(--pnr-accent)}
+.pnr-about-box p{font-size:14px;line-height:1.8}
+.pnr-about-box p + p{margin-top:12px}
+.pnr-model-compare{width:100%;border-collapse:collapse;margin-bottom:32px;border:1px solid var(--pnr-border);border-radius:var(--pnr-r);overflow:hidden;background:#fff}
+.pnr-model-compare th{background:var(--pnr-dark);color:#fff;padding:14px 18px;font-size:13px;font-weight:700;text-align:left}
+.pnr-model-compare td{padding:14px 18px;border-bottom:1px solid var(--pnr-border);font-size:14px;line-height:1.55;color:var(--pnr-text);vertical-align:top}
+.pnr-model-compare tr:hover td{background:rgba(21,101,192,.04)}
+.pnr-model-compare td a.pnr-btn{padding:9px 18px;font-size:12px;letter-spacing:.04em}
+.pnr-theme-table{width:100%;border-collapse:collapse;margin-bottom:48px}
+.pnr-theme-table th{background:var(--pnr-dark);color:#fff;padding:14px 18px;text-align:left;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.pnr-theme-table td{padding:14px 18px;border-bottom:1px solid var(--pnr-border);font-size:14px;color:var(--pnr-text);line-height:1.6}
+.pnr-theme-table tr:hover td{background:rgba(21,101,192,.04)}
+.pnr-theme-table .pnr-sent{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.04em}
+.pnr-sent-pos{background:rgba(46,125,50,.08);color:#2e7d32}
+.pnr-sent-mix{background:rgba(255,152,0,.08);color:#e65100}
+.pnr-sent-strong{background:rgba(21,101,192,.1);color:var(--pnr-accent)}
+.pnr-model-block{background:#fff;border:1px solid var(--pnr-border);border-radius:var(--pnr-r-lg);padding:36px;margin-bottom:24px;position:relative;overflow:hidden}
+.pnr-model-block::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--pnr-accent),var(--pnr-accent-sky))}
+.pnr-model-block h2{font-size:30px;margin-bottom:10px}
+.pnr-model-tier{display:inline-block;background:var(--pnr-accent-light);color:var(--pnr-accent);font-size:11px;font-weight:800;padding:5px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px}
+.pnr-model-block p{font-size:15px;line-height:1.8;color:var(--pnr-text);margin-bottom:14px}
+.pnr-model-block p:last-of-type{margin-bottom:24px}
+.pnr-model-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.pnr-model-ctas .pnr-btn{padding:11px 22px;font-size:13px}
+.pnr-feature-box{background:#fff;border:1px solid var(--pnr-border);border-radius:var(--pnr-r-lg);padding:36px;margin-bottom:24px}
+.pnr-feature-box h2{font-size:26px;margin-bottom:8px;font-family:'Playfair Display',Georgia,serif}
+.pnr-feature-box .pnr-eyebrow{margin-bottom:8px}
+.pnr-feature-box p{font-size:15px;line-height:1.85;margin-bottom:14px;color:var(--pnr-text)}
+.pnr-feature-box p:last-child{margin-bottom:0}
+.pnr-pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:48px}
+.pnr-pros,.pnr-cons{background:var(--pnr-white);border:1px solid var(--pnr-border);border-radius:var(--pnr-r-lg);padding:32px;position:relative;overflow:hidden}
+.pnr-pros::before,.pnr-cons::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.pnr-pros::before{background:linear-gradient(90deg,#2e7d32,#43a047)}
+.pnr-cons::before{background:linear-gradient(90deg,#e65100,#ff9800)}
+.pnr-pros h3,.pnr-cons h3{font-size:18px;font-family:'Inter',sans-serif;margin-bottom:16px}
+.pnr-pros li,.pnr-cons li{font-size:14px;color:var(--pnr-muted);line-height:1.7;padding:6px 0;padding-left:24px;position:relative;list-style:none}
+.pnr-pros li::before{content:'✓';position:absolute;left:0;color:#2e7d32;font-weight:900}
+.pnr-cons li::before{content:'△';position:absolute;left:0;color:#e65100;font-weight:900}
+.pnr-bestfor{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:48px}
+.pnr-bestfor-card{background:var(--pnr-white);border:1px solid var(--pnr-border);border-radius:var(--pnr-r-lg);padding:32px}
+.pnr-bestfor-card h3{font-size:18px;font-family:'Inter',sans-serif;margin-bottom:16px}
+.pnr-bestfor-card li{font-size:14px;color:var(--pnr-muted);line-height:1.7;padding:6px 0;list-style:none;padding-left:20px;position:relative}
+.pnr-bestfor-card li::before{content:'→';position:absolute;left:0;color:var(--pnr-accent);font-weight:700}
+.pnr-themes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px}
+.pnr-theme-card{background:#fff;border:1px solid var(--pnr-border);border-radius:var(--pnr-r);padding:22px}
+.pnr-theme-card h4{font-size:12px;color:var(--pnr-accent);text-transform:uppercase;letter-spacing:.1em;font-family:'Inter',sans-serif;margin-bottom:10px}
+.pnr-theme-card blockquote{font-size:14px;font-style:italic;color:var(--pnr-text);line-height:1.7;margin-bottom:12px;border-left:2px solid var(--pnr-accent);padding-left:12px;position:relative}
+.pnr-theme-card blockquote::before,.pnr-theme-card blockquote::after{content:none !important;display:none !important}
+.pnr-theme-card blockquote::first-letter{font-size:inherit !important;float:none !important;line-height:inherit !important;color:inherit !important;margin:0 !important;padding:0 !important}
+.pnr-theme-card p{font-size:13px;color:var(--pnr-muted);line-height:1.6;margin:0}
+.pnr-cta-band{background:linear-gradient(155deg,#0d1b2a,#1a3a5c);border-radius:var(--pnr-r-xl);padding:64px;color:#fff;text-align:center;margin:48px 0;position:relative;overflow:hidden}
+.pnr-cta-band::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--pnr-accent),var(--pnr-accent-sky),var(--pnr-accent));background-size:200% 100%;animation:pnrGrad 5s ease infinite}
+.pnr-cta-band h2{color:#fff;font-size:36px;margin-bottom:14px}
+.pnr-cta-band p{color:rgba(255,255,255,.62);font-size:16px;max-width:680px;margin:0 auto 32px;line-height:1.82}
+.pnr-cta-band .pnr-cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.pnr-faq-list{border-top:1px solid var(--pnr-border)}
+.pnr-faq-item{border-bottom:1px solid var(--pnr-border)}
+.pnr-faq-q{display:flex;justify-content:space-between;align-items:center;padding:22px 0;cursor:pointer;gap:16px}
+.pnr-faq-q h3{font-size:16px;font-family:'Inter',sans-serif;font-weight:700;margin:0;flex:1;color:var(--pnr-dark);transition:color .2s}
+.pnr-faq-q:hover h3{color:var(--pnr-accent)}
+.pnr-faq-toggle{width:36px;height:36px;border-radius:50%;background:var(--pnr-surface);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:300;color:var(--pnr-accent);flex-shrink:0;transition:var(--pnr-tr);border:none;cursor:pointer}
+.pnr-faq-item.open .pnr-faq-toggle{background:var(--pnr-accent);color:#fff;transform:rotate(45deg)}
+.pnr-faq-a{max-height:0;overflow:hidden;transition:max-height .38s cubic-bezier(.4,0,.2,1)}
+.pnr-faq-a-inner{padding:0 0 26px}
+.pnr-faq-a-inner p{font-size:15px;color:var(--pnr-muted);line-height:1.87}
+.pnr-sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.96);border-top:1px solid var(--pnr-border);box-shadow:0 -8px 32px rgba(0,0,0,.08);padding:12px 24px;display:none;backdrop-filter:blur(12px)}
+.pnr-sticky-inner{display:flex;align-items:center;justify-content:center;gap:12px;max-width:900px;margin:0 auto}
+.pnr-sticky-inner .pnr-btn{padding:12px 24px;font-size:13px}
+.pnr-expert-box{background:linear-gradient(135deg,#0d1b2a,#1a3a5c);border-radius:var(--pnr-r-xl);padding:48px;color:#fff;position:relative;overflow:hidden}
+.pnr-expert-box::before{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(21,101,192,.08) 0%,transparent 70%);right:-100px;bottom:-100px}
+.pnr-expert-box h2{color:#fff;font-size:28px;margin-bottom:16px}
+.pnr-expert-box p{color:rgba(255,255,255,.68);font-size:15px;line-height:1.9;margin-bottom:14px}
+@media(max-width:1100px){.pnr-themes-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.pnr-hero{min-height:auto}.pnr-hero h1{font-size:30px}.pnr-section{padding:64px 0}.pnr-themes-grid{grid-template-columns:1fr}.pnr-pros-cons,.pnr-bestfor{grid-template-columns:1fr}.pnr-container{padding:0 20px}.pnr-hero-ctas{flex-direction:column}.pnr-sticky-cta{display:block}.pnr-subnav-inner a{padding:12px 12px;font-size:10px}.pnr-model-block,.pnr-feature-box{padding:24px}.pnr-cta-band{padding:40px 24px}.pnr-cta-band h2{font-size:26px}}
+
+</style>
+
+<div class="pnr-page">
+
+<!-- HERO -->
+<section class="pnr-hero" id="pnr-top">
+  <div class="pnr-hero-bg" style="background-image:url('https://cdn.shopify.com/s/files/1/0813/4036/7096/files/panasonic-hero-bg.png?v=1776368399')"></div>
+  <div class="pnr-hero-grain"></div>
+  <div class="pnr-hero-overlay"></div>
+  <div class="pnr-hero-glow"></div>
+  <div class="pnr-hero-stripe"></div>
+  <div class="pnr-container pnr-hero-content">
+    <div class="pnr-hero-eyebrow pnr-fade">Customer-Informed Panasonic Chair Reviews · Expert-Reviewed by MCM</div>
+    <h1 class="pnr-fade pnr-d1">Panasonic Massage Chair Reviews: <span class="pnr-hero-tag">MAN1, MAK1 &amp; MAF1 Compared</span></h1>
+    <p class="pnr-hero-sub pnr-fade pnr-d2">Looking for Panasonic massage chair reviews before choosing a premium massage chair? This guide brings together MCM's Panasonic chair reviews, showroom observations, and model-by-model insight to help you compare <a href="{{ man1_url }}" class="pnr-product-link" style="color:#90caf9">MAN1</a>, <a href="{{ mak1_url }}" class="pnr-product-link" style="color:#90caf9">MAK1</a>, and <a href="{{ maf1_url }}" class="pnr-product-link" style="color:#90caf9">MAF1</a> — covering massage precision, deep tissue performance, body scan personalization, Panasonic heated rollers, Panasonic foot massage, warranty support, Panasonic massage chair price ranges, and what to test in a Panasonic massage chair showroom before you buy.</p>
+    <div class="pnr-hero-ctas pnr-fade pnr-d3">
+      <a href="{{ contact_url }}" class="pnr-btn pnr-btn-accent">Book a Panasonic Showroom Demo</a>
+      <a href="#pnr-compare" class="pnr-btn pnr-btn-white">Compare Panasonic Models</a>
+      <a href="{{ contact_url }}" class="pnr-btn pnr-btn-ghost">Ask About Warranty &amp; In-Home Service</a>
+    </div>
+    <div class="pnr-snap pnr-fade pnr-d4">
+      <div class="pnr-snap-item"><strong>MCM Showroom-Informed Review Snapshot</strong><span>Not third-party aggregate ratings — review themes from showroom conversations</span></div>
+      <div class="pnr-snap-item"><strong>Expert-Reviewed by MCM</strong><span>Product specialists, manufacturer docs, customer questions</span></div>
+      <div class="pnr-snap-item"><strong>No Competitor Review Scraping</strong><span>Original insights only</span></div>
+      <div class="pnr-snap-item"><strong>MAN1 · MAK1 · MAF1 Compared</strong><span>Three Panasonic models, side by side</span></div>
+      <div class="pnr-snap-item"><strong>Warranty &amp; Service Covered</strong><span>What to ask before checkout</span></div>
+      <div class="pnr-snap-item"><strong>Showroom Demo Recommended</strong><span>Test in person before you buy</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY NAV -->
+<nav class="pnr-subnav" id="pnr-nav">
+  <div class="pnr-subnav-inner">
+    <a href="#pnr-verdict">Quick Verdict</a>
+    <a href="#pnr-about">About</a>
+    <a href="#pnr-compare">Compare</a>
+    <a href="#pnr-themes">Themes</a>
+    <a href="#pnr-man1">MAN1 Review</a>
+    <a href="#pnr-mak1">MAK1 Review</a>
+    <a href="#pnr-maf1">MAF1 Review</a>
+    <a href="#pnr-realpro">Real Pro Ultra</a>
+    <a href="#pnr-bodyscan">Body Scan</a>
+    <a href="#pnr-deep">Deep Tissue</a>
+    <a href="#pnr-heat">Heated Rollers</a>
+    <a href="#pnr-foot">Foot Massage</a>
+    <a href="#pnr-showroom">Showroom</a>
+    <a href="#pnr-price">Price</a>
+    <a href="#pnr-best">Best Panasonic</a>
+    <a href="#pnr-proscons">Pros &amp; Cons</a>
+    <a href="#pnr-bestfor">Best For</a>
+    <a href="#pnr-buyer-themes">Buyer Themes</a>
+    <a href="#pnr-mcm">MCM Take</a>
+    <a href="#pnr-faq">FAQ</a>
+  </div>
+</nav>
+
+<!-- QUICK VERDICT -->
+<section class="pnr-section" id="pnr-verdict">
+  <div class="pnr-narrow">
+    <div class="pnr-eyebrow">Quick Verdict</div>
+    <h2 style="font-size:36px;margin-bottom:18px">Are Panasonic Massage Chairs Worth It?</h2>
+    <p style="font-size:17px;line-height:1.85;margin-bottom:18px">Panasonic massage chairs are worth considering if you want an engineering-led massage chair brand with strong body scan personalization, targeted heat, deep massage control, and long-term ownership confidence. The brand reflects Panasonic's wider engineering reputation — products engineered for homes around the world and continuously contributing to everyday comfort — applied to massage chair design.</p>
+    <p style="font-size:17px;line-height:1.85;margin-bottom:18px">If you are searching for Panasonic massage chair reviews, you are usually deciding between three models: the flagship MAN1, the premium MAK1, and the value-tier MAF1. This guide gives you the showroom-informed view of each, plus what to test before you buy.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:14px">
+      <a href="#pnr-compare" class="pnr-btn pnr-btn-accent">Compare MAN1, MAK1 &amp; MAF1</a>
+      <a href="{{ contact_url }}" class="pnr-btn pnr-btn-outline">Book a Panasonic Showroom Demo</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT THESE REVIEWS -->
+<section class="pnr-section pnr-section-alt" id="pnr-about">
+  <div class="pnr-narrow">
+    <div class="pnr-eyebrow">Methodology</div>
+    <h2 style="font-size:32px;margin-bottom:14px">How MCM Builds Panasonic Chair Reviews</h2>
+    <div class="pnr-about-box">
+      <h3>About These Panasonic Reviews</h3>
+      <p>These Panasonic chair reviews are based on MCM showroom observations, manufacturer documentation, model comparisons, and common customer decision questions — not scraped competitor reviews. We use this page to help shoppers understand what people commonly notice when comparing MAN1, MAK1, and MAF1: massage precision, body scan accuracy, heated rollers, foot massage, deep tissue intensity, warranty, delivery, and service.</p>
+      <p>Any representative customer language on this page summarizes common Panasonic review themes heard during showroom conversations and should not be treated as a verified individual review unless clearly labeled. For the most accurate decision, we recommend testing the chairs in person.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MODEL COMPARISON TABLE (moved high) -->
+<section class="pnr-section" id="pnr-compare">
+  <div class="pnr-container">
+    <div class="pnr-section-header">
+      <span class="pnr-eyebrow">Panasonic Massage Chair Comparison</span>
+      <h2>Panasonic Massage Chair Comparison: MAN1 vs MAK1 vs MAF1</h2>
+      <p>Use this Panasonic massage chair comparison to decide whether MAN1, MAK1, or MAF1 is the better fit for your body, room, routine, and budget.</p>
+    </div>
+    <div style="overflow-x:auto;border-radius:var(--pnr-r);box-shadow:var(--pnr-card-shadow)">
+      <table class="pnr-model-compare">
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Best For</th>
+            <th>Massage Feel</th>
+            <th>Key Feature</th>
+            <th>Price Position</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="{{ man1_url }}" class="pnr-product-link"><strong>Panasonic MAN1</strong></a><br><span style="font-size:12px;color:var(--pnr-light)">EP-MAN1 / panasonic man1 massage chair</span></td>
+            <td>Flagship precision buyer</td>
+            <td>Deep, targeted, responsive</td>
+            <td>Panasonic Real Pro Ultra H.I., 1260P Acupoint Body Scan, infrared-heated rollers</td>
+            <td>Premium / flagship</td>
+            <td><a href="{{ man1_url }}" class="pnr-btn pnr-btn-accent">View Panasonic MAN1 Massage Chair</a></td>
+          </tr>
+          <tr>
+            <td><a href="{{ mak1_url }}" class="pnr-product-link"><strong>Panasonic MAK1</strong></a><br><span style="font-size:12px;color:var(--pnr-light)">EP-MAK1 / panasonic mak1 massage chair</span></td>
+            <td>Premium Panasonic shopper</td>
+            <td>Advanced comfort with strong massage performance</td>
+            <td>Panasonic engineering, body scan, heated roller experience</td>
+            <td>Premium alternative</td>
+            <td><a href="{{ mak1_url }}" class="pnr-btn pnr-btn-accent">View Panasonic MAK1 Massage Chair</a></td>
+          </tr>
+          <tr>
+            <td><a href="{{ maf1_url }}" class="pnr-product-link"><strong>Panasonic MAF1</strong></a><br><span style="font-size:12px;color:var(--pnr-light)">panasonic maf1 massage chair</span></td>
+            <td>Value Panasonic buyer</td>
+            <td>Accessible Panasonic massage experience</td>
+            <td>Panasonic trust and core massage performance</td>
+            <td>Value Panasonic</td>
+            <td><a href="{{ maf1_url }}" class="pnr-btn pnr-btn-accent">View Panasonic MAF1 Massage Chair</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="text-align:center;margin-top:24px">
+      <a href="{{ collection_url }}" class="pnr-btn pnr-btn-outline">Compare All Panasonic Massage Chairs</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT CUSTOMERS NOTICE / THEMES -->
+<section class="pnr-section pnr-section-alt" id="pnr-themes">
+  <div class="pnr-narrow">
+    <div class="pnr-eyebrow">Common Feedback Themes</div>
+    <h2 style="font-size:32px;margin-bottom:14px">What Customers Say About Panasonic Massage Chairs</h2>
+    <p style="font-size:16px;line-height:1.85;margin-bottom:14px">For shoppers comparing Panasonic chair reviews, the most consistent theme is confidence: Panasonic feels like an engineering-led massage chair brand, not simply another luxury furniture item. Buyers tend to highlight massage precision, body scan personalization, heated rollers, reflexology foot massage, deep tissue intensity, and warranty/service clarity.</p>
+    <p style="font-size:16px;line-height:1.85;margin-bottom:32px">Panasonic is not just furniture for life — it is a high-ticket wellness appliance that should fit your body, your room, and your support expectations.</p>
+
+    <div style="overflow-x:auto;border-radius:var(--pnr-r);border:1px solid var(--pnr-border);box-shadow:var(--pnr-card-shadow);margin-bottom:0">
+      <table class="pnr-theme-table">
+        <thead><tr><th>Review Theme</th><th>Sentiment</th><th>Common Comment</th><th>Strategic Note</th></tr></thead>
+        <tbody>
+          <tr><td>Brand trust</td><td><span class="pnr-sent pnr-sent-strong">Very positive</span></td><td>"It's Panasonic — I know what I'm getting."</td><td>Lead with engineering confidence</td></tr>
+          <tr><td>Massage precision</td><td><span class="pnr-sent pnr-sent-strong">Very positive</span></td><td>"Feels more controlled than random."</td><td>Position around Real Pro Ultra</td></tr>
+          <tr><td>Deep tissue</td><td><span class="pnr-sent pnr-sent-mix">Positive but personal</span></td><td>"Strong, accurate, sometimes intense."</td><td>Recommend showroom demo</td></tr>
+          <tr><td>Body scan</td><td><span class="pnr-sent pnr-sent-pos">Positive</span></td><td>"It seems to actually adjust to me."</td><td>Explain in-store</td></tr>
+          <tr><td>Heated rollers</td><td><span class="pnr-sent pnr-sent-pos">Positive</span></td><td>"Warmth lands where the rollers work."</td><td>Differentiate from generic heat pads</td></tr>
+          <tr><td>Reflexology foot massage</td><td><span class="pnr-sent pnr-sent-pos">Positive</span></td><td>"Foot massage is more serious than expected."</td><td>MAN1 strongest demo trigger</td></tr>
+          <tr><td>Chair size / room fit</td><td><span class="pnr-sent pnr-sent-mix">Mixed-positive</span></td><td>"Measure your room first."</td><td>Add space-fit checklist</td></tr>
+          <tr><td>Price</td><td><span class="pnr-sent pnr-sent-mix">Mixed</span></td><td>"Not cheap, but feels worth it."</td><td>Frame within MAN1/MAK1/MAF1 tiers</td></tr>
+          <tr><td>Warranty &amp; service</td><td><span class="pnr-sent pnr-sent-pos">Positive</span></td><td>"Knowing service is local matters."</td><td>Confirm before checkout</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PER-MODEL REVIEWS -->
+<section class="pnr-section">
+  <div class="pnr-container">
+    <div class="pnr-section-header">
+      <span class="pnr-eyebrow">Per-Model Reviews</span>
+      <h2>Panasonic Reviews by Model</h2>
+      <p>Three Panasonic models, three different buyer fits. Here is what each model-specific review should focus on.</p>
+    </div>
+
+    <!-- MAN1 -->
+    <div class="pnr-model-block" id="pnr-man1">
+      <span class="pnr-model-tier">Flagship Precision · MAN1</span>
+      <h2>Panasonic MAN1 Massage Chair Review: Flagship Precision and Deep Tissue Performance</h2>
+      <p>This Panasonic MAN1 massage chair review focuses on what matters most for flagship buyers: how the chair feels, how the body scan personalizes the session, and how the combination of advanced technologies pays off in daily use. If you are searching for a Panasonic EP-MAN1 review, MAN1 is the model to evaluate for Panasonic's strongest precision story.</p>
+      <p>MAN1 is the Real Pro Ultra massage chair in the Panasonic lineup for buyers focused on precision and pressure response. Its value comes from a combination of advanced technologies: Real Pro Ultra H.I., 1260P Acupoint body scan, pressure-sensing rollers, heated rollers, SL-track coverage, and reflexology foot massage. It is also Panasonic's strongest deep tissue massage chair candidate for buyers who want pressure and control rather than random force.</p>
+      <div class="pnr-model-ctas">
+        <a href="{{ man1_url }}" class="pnr-btn pnr-btn-accent">View the Panasonic MAN1 Massage Chair</a>
+        <a href="{{ contact_url }}" class="pnr-btn pnr-btn-outline">Compare MAN1 in a Showroom</a>
+      </div>
+    </div>
+
+    <!-- MAK1 -->
+    <div class="pnr-model-block" id="pnr-mak1">
+      <span class="pnr-model-tier">Premium Panasonic · MAK1</span>
+      <h2>Panasonic MAK1 Review: Premium Panasonic Comfort and Advanced Massage Features</h2>
+      <p>This Panasonic MAK1 massage chair review focuses on who should compare MAK1 against MAN1 and MAF1. MAK1 is best evaluated as a premium Panasonic massage chair for buyers comparing comfort, advanced massage features, service support, and long-term value. Shoppers looking for a Panasonic EP-MAK1 review should compare MAK1's premium comfort story against MAN1's flagship precision.</p>
+      <p>The Panasonic MAK1 massage chair fits buyers who want the engineering and ownership confidence of the Panasonic brand at a different tier from the flagship. If you are unsure between MAK1 and MAN1, test both in-store — body fit, pressure preference, and design feel often decide the question more clearly than spec sheets.</p>
+      <div class="pnr-model-ctas">
+        <a href="{{ mak1_url }}" class="pnr-btn pnr-btn-accent">View the Panasonic MAK1 Massage Chair</a>
+        <a href="{{ contact_url }}" class="pnr-btn pnr-btn-outline">Compare MAK1 with MAN1 In-Store</a>
+      </div>
+    </div>
+
+    <!-- MAF1 -->
+    <div class="pnr-model-block" id="pnr-maf1">
+      <span class="pnr-model-tier">Value Panasonic · MAF1</span>
+      <h2>Panasonic MAF1 Review: Value Panasonic for Practical Premium Buyers</h2>
+      <p>This Panasonic MAF1 massage chair review explains why MAF1 may fit buyers who want Panasonic confidence at a lower entry point. The Panasonic MAF1 massage chair is the value Panasonic option for shoppers who want brand trust, dependable everyday massage performance, and a more accessible price.</p>
+      <p>If you are deciding between MAF1 and a non-Panasonic value chair, the question usually comes down to long-term ownership confidence — service, warranty, and engineering reputation often justify the premium even at this tier. Compare MAF1 pricing with MAK1 and MAN1 before deciding.</p>
+      <div class="pnr-model-ctas">
+        <a href="{{ maf1_url }}" class="pnr-btn pnr-btn-accent">View the Panasonic MAF1 Massage Chair</a>
+        <a href="{{ contact_url }}" class="pnr-btn pnr-btn-outline">Compare MAF1 Pricing with a Specialist</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REAL PRO ULTRA -->
+<section class="pnr-section pnr-section-alt" id="pnr-realpro">
+  <div class="pnr-narrow">
+    <div class="pnr-feature-box">
+      <div class="pnr-eyebrow">Massage Technology</div>
+      <h2>Panasonic Real Pro Ultra: Why MAN1 Feels Different</h2>
+      <p>Panasonic Real Pro Ultra H.I. is the technology story behind MAN1. If you are comparing a Real Pro Ultra massage chair against other premium chairs, the key difference is not simply intensity. It is the combination of advanced technologies: body profiling, pressure-sensing rollers, real-time adjustment, heated rollers, SL-track coverage, and reflexology foot massage.</p>
+      <p>Panasonic engineers massage chairs with the same precision mindset buyers associate with the broader Panasonic brand — Real Pro Ultra H.I. is one of Panasonic's most important differentiators because it helps the chair respond to body position and pressure instead of simply running a generic roller pattern.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BODY SCAN -->
+<section class="pnr-section" id="pnr-bodyscan">
+  <div class="pnr-narrow">
+    <div class="pnr-feature-box">
+      <div class="pnr-eyebrow">Body Scan Personalization</div>
+      <h2>Panasonic Body Scan Massage Chair Technology</h2>
+      <p>A Panasonic body scan massage chair is designed to adjust the massage path around the user's body position rather than treating every person the same. In MAN1, the 1260P Acupoint Body Scan helps map key points on the body so the chair can better align massage movements with the neck, back, hips, and seat area.</p>
+      <p>Body air cells and body air cell coverage can also help stabilize the body while the rollers perform shiatsu massaging and deeper kneading movements. Panasonic's shiatsu massaging is best explained as targeted pressure applied to specific points on the body, complemented by a full body air cell system and full body air massage around the hips, legs, arms, and shoulders.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DEEP TISSUE -->
+<section class="pnr-section pnr-section-alt" id="pnr-deep">
+  <div class="pnr-narrow">
+    <div class="pnr-feature-box">
+      <div class="pnr-eyebrow">Deep Tissue Feel</div>
+      <h2>Deep Tissue Massage Chair Feel: Pressure, Control &amp; Sensitivity</h2>
+      <p>Panasonic is a strong deep tissue massage chair candidate for buyers who want serious pressure, but the best setting depends on body sensitivity, posture, and experience level. For safety and accuracy, Panasonic's benefits are best described around comfort, relaxation, tension release, daily reset, and massage personalization rather than medical treatment claims.</p>
+      <p>No chair replaces a real massage therapist, but Panasonic's goal is to make the movement feel more intentional and less random. During a showroom demo, ask the specialist to check how the chair positions your neck, pelvis, chest, leg rest, and feet — small fit differences can change how accurate the massage feels.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HEATED ROLLERS -->
+<section class="pnr-section" id="pnr-heat">
+  <div class="pnr-narrow">
+    <div class="pnr-feature-box">
+      <div class="pnr-eyebrow">Heat &amp; Comfort</div>
+      <h2>Panasonic Heated Rollers &amp; Infrared Heat</h2>
+      <p>Panasonic heated rollers create point-specific warmth directly where the rollers work. They are different from a basic heat pad because the heating elements are located close to the roller assembly, creating warmth exactly where the massage is happening — not as a generic warm surface behind your back.</p>
+      <p>For buyers who use the chair as part of an evening or post-work routine, heated rollers can make the deep tissue setting feel more comfortable and the shiatsu massaging feel warmer. Always test heat intensity in person if you are sensitive to heat or have specific medical considerations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOT MASSAGE -->
+<section class="pnr-section pnr-section-alt" id="pnr-foot">
+  <div class="pnr-narrow">
+    <div class="pnr-feature-box">
+      <div class="pnr-eyebrow">Foot &amp; Calf</div>
+      <h2>Panasonic Foot Massage: Reflexology Foot Massage Chair Experience</h2>
+      <p>Panasonic foot massage is one of the biggest reasons buyers should demo the chair in person. On MAN1, body air cells help hold the foot in place while the sole mechanism performs plantar arch manipulation, sole kneading, and sole shiatsu. That makes MAN1 a strong reflexology foot massage chair option for buyers who want a more serious sole and calf experience.</p>
+      <p>If the foot massage matters to you, ask the specialist about adjusting the leg rest length, recline angle, and air cell pressure — Panasonic foot massage is at its best when the lower body is properly supported and the sole mechanism is aligned with your foot size.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY VISIT SHOWROOM -->
+<section class="pnr-section" id="pnr-showroom">
+  <div class="pnr-narrow">
+    <div class="pnr-feature-box">
+      <div class="pnr-eyebrow">Showroom Demo</div>
+      <h2>Why Visit a Panasonic Massage Chair Showroom?</h2>
+      <p>A Panasonic massage chair showroom visit matters because the features that define Panasonic are difficult to judge from specs alone. Body scan accuracy, heated roller warmth, foot massage intensity, recline comfort, neck and shoulder alignment, and deep tissue pressure response all feel different from person to person.</p>
+      <p>In-store, an MCM specialist can help you compare MAN1, MAK1, and MAF1, check room-fit questions, and review home service, warranty, delivery, and installation before you buy. Test in person before committing — a 20-minute showroom session usually answers more questions than a week of online research.</p>
+      <div class="pnr-model-ctas" style="margin-top:18px">
+        <a href="{{ contact_url }}" class="pnr-btn pnr-btn-accent">Book a Panasonic Demo</a>
+        <a href="{{ contact_url }}" class="pnr-btn pnr-btn-outline">Try Panasonic Massage Chairs In Person</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section class="pnr-section pnr-section-alt" id="pnr-price">
+  <div class="pnr-narrow">
+    <div class="pnr-feature-box">
+      <div class="pnr-eyebrow">Pricing Overview</div>
+      <h2>Panasonic Massage Chair Price: MAN1 vs MAK1 vs MAF1</h2>
+      <p>Panasonic massage chair price depends on the model, current promotion, delivery method, installation needs, warranty coverage, and available financing. In the MCM lineup, MAN1 is the flagship precision model, MAK1 is a premium Panasonic alternative, and MAF1 is the value Panasonic option for shoppers who want brand confidence at a more accessible entry point.</p>
+      <p>For high-ticket Panasonic buyers, warranty, home service, delivery planning, and setup support often matter as much as the massage itself. Warranty coverage may vary by model, promotion, registration, and date of purchase, so buyers should confirm current Panasonic home service, delivery, installation, and warranty details before ordering.</p>
+      <div class="pnr-model-ctas" style="margin-top:18px">
+        <a href="{{ contact_url }}" class="pnr-btn pnr-btn-accent">Ask About Current Panasonic Pricing</a>
+        <a href="{{ contact_url }}" class="pnr-btn pnr-btn-outline">Confirm Warranty &amp; Service Details</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEST PANASONIC -->
+<section class="pnr-section" id="pnr-best">
+  <div class="pnr-narrow">
+    <div class="pnr-feature-box">
+      <div class="pnr-eyebrow">Buyer Guide</div>
+      <h2>What Is the Best Panasonic Massage Chair?</h2>
+      <p>The best Panasonic massage chair is not the same for every buyer. MAN1 is usually the strongest fit for shoppers who want the flagship Panasonic Real Pro Ultra experience, deeper pressure response, and the most complete technology story. MAK1 may fit buyers comparing premium Panasonic comfort and advanced massage features. MAF1 may be the better match for shoppers who want Panasonic trust, a lower entry point, and practical everyday massage performance.</p>
+      <p>The clearest answer comes from a side-by-side demo. Compare Panasonic MAN1, MAK1, and MAF1 in a showroom — body fit, pressure preference, and ownership priorities usually decide the right pick in the first 15 minutes.</p>
+      <div class="pnr-model-ctas" style="margin-top:18px">
+        <a href="{{ contact_url }}" class="pnr-btn pnr-btn-accent">Compare Panasonic MAN1, MAK1 &amp; MAF1 in a Showroom</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MID-PAGE CTA -->
+<section class="pnr-section" style="padding:0 0 48px">
+  <div class="pnr-container">
+    <div class="pnr-cta-band">
+      <h2>Not sure which Panasonic model fits you best?</h2>
+      <p>Compare MAN1, MAK1, and MAF1 side by side with a specialist. A Panasonic massage chair showroom demo is the fastest way to match the right model to your body, room, and routine.</p>
+      <div class="pnr-cta-btns">
+        <a href="#pnr-compare" class="pnr-btn pnr-btn-accent">Compare Panasonic Models</a>
+        <a href="{{ contact_url }}" class="pnr-btn pnr-btn-white">Book a Showroom Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROS & CONS -->
+<section class="pnr-section pnr-section-alt" id="pnr-proscons">
+  <div class="pnr-container">
+    <div class="pnr-section-header"><span class="pnr-eyebrow">Balanced Assessment</span><h2>Common Pros and Cons</h2></div>
+    <div class="pnr-pros-cons">
+      <div class="pnr-pros">
+        <h3 style="color:#2e7d32">✓ Common Pros</h3>
+        <ul>
+          <li>Engineering-led massage chair brand with strong long-term ownership confidence</li>
+          <li>Real Pro Ultra H.I. technology with body profiling and pressure-sensing rollers (MAN1)</li>
+          <li>1260P Acupoint body scan helps personalize the massage path</li>
+          <li>Panasonic heated rollers deliver point-specific warmth where the massage is happening</li>
+          <li>Reflexology foot massage with sole kneading, sole shiatsu, and arch manipulation</li>
+          <li>Full body air cell coverage stabilizes the body during deeper massage movements</li>
+          <li>Three-tier lineup (MAN1, MAK1, MAF1) covers flagship, premium, and value buyers</li>
+          <li>Warranty and service infrastructure helps reduce high-ticket purchase risk</li>
+        </ul>
+      </div>
+      <div class="pnr-cons">
+        <h3 style="color:#e65100">△ Common Cons</h3>
+        <ul>
+          <li>Visual design is engineering-led rather than the flashiest in the category</li>
+          <li>Deep tissue intensity may be too strong for sensitive users without a demo</li>
+          <li>Chair footprint requires careful room measurement and access planning</li>
+          <li>Panasonic massage chair price sits in the premium tier — confirm financing options</li>
+          <li>Feature set rewards demo time; spec sheets undersell the body scan feel</li>
+          <li>Warranty/service details vary by model and date of purchase — confirm in writing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEST FOR -->
+<section class="pnr-section" id="pnr-bestfor">
+  <div class="pnr-container">
+    <div class="pnr-section-header"><span class="pnr-eyebrow">Buyer Fit Guide</span><h2>Best For / May Not Be Ideal For</h2></div>
+    <div class="pnr-bestfor">
+      <div class="pnr-bestfor-card" style="border-top:3px solid #2e7d32">
+        <h3 style="color:#2e7d32">Best For</h3>
+        <ul>
+          <li>Buyers who want an engineering-led massage chair brand they already trust</li>
+          <li>Shoppers comparing flagship Panasonic Real Pro Ultra performance</li>
+          <li>Users who prioritize precision, body scan personalization, and pressure control</li>
+          <li>Premium buyers who want heated rollers tied directly to the roller path</li>
+          <li>Shoppers who want a serious reflexology foot massage chair experience</li>
+          <li>Buyers who value warranty, service, and long-term ownership confidence</li>
+          <li>Showroom-first shoppers who want to test the chair before committing</li>
+          <li>Homes with adequate space for a premium chair footprint</li>
+        </ul>
+      </div>
+      <div class="pnr-bestfor-card" style="border-top:3px solid #e65100">
+        <h3 style="color:#e65100">May Not Be Ideal For</h3>
+        <ul>
+          <li>Bargain-first buyers</li>
+          <li>Users who prefer a very gentle, casual recliner feel</li>
+          <li>Shoppers who choose mainly by visual design and screen size</li>
+          <li>Buyers expecting medical treatment or guaranteed pain relief</li>
+          <li>Homes with very limited room space or tight access paths</li>
+          <li>Users unwilling to test the chair in person before buying</li>
+          <li>Customers who plan to use the chair only occasionally</li>
+          <li>Shoppers who compare only by feature count and discount percentage</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REPRESENTATIVE BUYER FEEDBACK THEMES -->
+<section class="pnr-section pnr-section-alt" id="pnr-buyer-themes">
+  <div class="pnr-container">
+    <div class="pnr-section-header">
+      <span class="pnr-eyebrow">Representative Feedback</span>
+      <h2>Common Panasonic Buyer Feedback Themes</h2>
+      <p>The following examples summarize common Panasonic review themes heard during showroom conversations. They should not be read as verified individual customer reviews unless clearly labeled.</p>
+    </div>
+    <div class="pnr-themes-grid">
+      <div class="pnr-theme-card">
+        <h4>Common feedback theme</h4>
+        <blockquote>"It's Panasonic — I went in already trusting the brand, and the massage backed it up."</blockquote>
+        <p><strong>MCM interpretation:</strong> Brand trust is one of Panasonic's clearest selling points. Lead with engineering confidence.</p>
+      </div>
+      <div class="pnr-theme-card">
+        <h4>Common feedback theme</h4>
+        <blockquote>"The massage feels controlled rather than random. You can tell the chair is actually adjusting."</blockquote>
+        <p><strong>MCM interpretation:</strong> Best for shoppers who want Real Pro Ultra precision and body scan personalization, not gimmicks.</p>
+      </div>
+      <div class="pnr-theme-card">
+        <h4>Common feedback theme</h4>
+        <blockquote>"Strong, accurate, sometimes intense. The MAN1 setting can be a lot if you're not used to deep pressure."</blockquote>
+        <p><strong>MCM interpretation:</strong> Test pressure in person; sensitive users should start lower and build up.</p>
+      </div>
+      <div class="pnr-theme-card">
+        <h4>Common feedback theme</h4>
+        <blockquote>"The heat lands exactly where the rollers work. It's not a generic warm pad."</blockquote>
+        <p><strong>MCM interpretation:</strong> Differentiate Panasonic heated rollers from basic heat features in other brands.</p>
+      </div>
+      <div class="pnr-theme-card">
+        <h4>Common feedback theme</h4>
+        <blockquote>"The foot massage is more serious than I expected. I thought it would just squeeze."</blockquote>
+        <p><strong>MCM interpretation:</strong> Reflexology foot massage is one of MAN1's strongest demo triggers.</p>
+      </div>
+      <div class="pnr-theme-card">
+        <h4>Common feedback theme</h4>
+        <blockquote>"Knowing service and warranty is local made the high-ticket purchase easier."</blockquote>
+        <p><strong>MCM interpretation:</strong> Confirm warranty, home service, and date-of-purchase coverage before checkout.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MCM SPECIALIST ASSESSMENT -->
+<section class="pnr-section" id="pnr-mcm">
+  <div class="pnr-container">
+    <div class="pnr-expert-box">
+      <span class="pnr-eyebrow" style="color:var(--pnr-accent-sky)">Expert Editorial Summary</span>
+      <h2>MCM Specialist Assessment</h2>
+      <p>Panasonic massage chairs are not positioned as the cheapest or flashiest option. They are positioned as serious, engineering-led massage chairs for buyers who care about precision, body scan fit, deep tissue control, foot massage, home service, warranty confidence, and trying the chair in a showroom before making a high-ticket decision.</p>
+      <p>The strongest Panasonic buyer is someone who says: <strong style="color:#fff">"I want a chair from a brand I already trust, with engineering I can feel — and I want to confirm it in person before buying."</strong></p>
+      <p>The weakest Panasonic buyer fit is someone who says: "I want the cheapest price, the loudest screen, and the flashiest design." That buyer is not Panasonic's audience.</p>
+      <p>Across MAN1, MAK1, and MAF1, the right next step is the same: compare in person, ask about warranty, confirm delivery and home service, and decide based on body fit and pressure preference — not spec sheets alone.</p>
+      <div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap">
+        <a href="{{ contact_url }}" class="pnr-btn pnr-btn-accent">Speak With an MCM Specialist</a>
+        <a href="#pnr-compare" class="pnr-btn pnr-btn-white">Compare Panasonic Models</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="pnr-section pnr-section-alt" id="pnr-faq">
+  <div class="pnr-narrow">
+    <div class="pnr-section-header"><span class="pnr-eyebrow">Common Questions</span><h2>Frequently Asked Questions</h2><p>Panasonic review, price, warranty, model, and showroom questions — answered without filler.</p></div>
+    <div class="pnr-faq-list" id="pnr-faq-list">
+
+      <div class="pnr-faq-item"><div class="pnr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Are Panasonic massage chairs worth it?</h3><button class="pnr-faq-toggle" aria-label="Toggle">+</button></div><div class="pnr-faq-a"><div class="pnr-faq-a-inner"><p>Panasonic massage chairs are worth considering if you want an engineering-led massage chair brand with strong body scan personalization, targeted heat, deep massage control, and long-term ownership confidence. They may not be the right fit for buyers who want the flashiest visual design or the lowest price.</p></div></div></div>
+
+      <div class="pnr-faq-item"><div class="pnr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>What is the best Panasonic massage chair?</h3><button class="pnr-faq-toggle" aria-label="Toggle">+</button></div><div class="pnr-faq-a"><div class="pnr-faq-a-inner"><p>The best Panasonic massage chair depends on your priorities. MAN1 is the strongest fit for flagship precision and Real Pro Ultra H.I. technology. MAK1 is a premium Panasonic option for shoppers comparing advanced comfort and massage features. MAF1 is the value Panasonic model for buyers who want Panasonic confidence at a lower entry point.</p></div></div></div>
+
+      <div class="pnr-faq-item"><div class="pnr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>How much does a Panasonic massage chair cost?</h3><button class="pnr-faq-toggle" aria-label="Toggle">+</button></div><div class="pnr-faq-a"><div class="pnr-faq-a-inner"><p>Panasonic massage chair price depends on the model, current promotion, delivery method, installation needs, warranty coverage, and financing options. Ask MCM for the current MAN1, MAK1, and MAF1 pricing before deciding.</p></div></div></div>
+
+      <div class="pnr-faq-item"><div class="pnr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Where can I try a Panasonic massage chair showroom demo?</h3><button class="pnr-faq-toggle" aria-label="Toggle">+</button></div><div class="pnr-faq-a"><div class="pnr-faq-a-inner"><p>You can visit an MCM Panasonic massage chair showroom to compare MAN1, MAK1, and MAF1 in person. A showroom demo helps you evaluate body scan fit, heated rollers, foot massage, recline comfort, and deep tissue intensity before buying.</p></div></div></div>
+
+      <div class="pnr-faq-item"><div class="pnr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Is the Panasonic MAN1 massage chair review different from an EP-MAN1 review?</h3><button class="pnr-faq-toggle" aria-label="Toggle">+</button></div><div class="pnr-faq-a"><div class="pnr-faq-a-inner"><p>Many shoppers search for Panasonic MAN1 massage chair review or Panasonic EP-MAN1 review when researching the same flagship model family. The key things to evaluate are Panasonic Real Pro Ultra H.I., 1260P Acupoint Body Scan, heated rollers, reflexology foot massage, and warranty support.</p></div></div></div>
+
+      <div class="pnr-faq-item"><div class="pnr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>What should I know from a Panasonic MAK1 review?</h3><button class="pnr-faq-toggle" aria-label="Toggle">+</button></div><div class="pnr-faq-a"><div class="pnr-faq-a-inner"><p>A Panasonic MAK1 review should help you understand how MAK1 compares with MAN1 and MAF1. MAK1 is best evaluated as a premium Panasonic massage chair for buyers comparing comfort, technology, service support, and long-term value. Shoppers also search for Panasonic EP-MAK1 review when researching the same family.</p></div></div></div>
+
+      <div class="pnr-faq-item"><div class="pnr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>What should I know from a Panasonic MAF1 review?</h3><button class="pnr-faq-toggle" aria-label="Toggle">+</button></div><div class="pnr-faq-a"><div class="pnr-faq-a-inner"><p>A Panasonic MAF1 review should focus on value, fit, and everyday usability. The Panasonic MAF1 massage chair may be a smart option for buyers who want Panasonic brand confidence without moving into the flagship MAN1 price tier.</p></div></div></div>
+
+      <div class="pnr-faq-item"><div class="pnr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Is Panasonic MAN1 a good massage chair?</h3><button class="pnr-faq-toggle" aria-label="Toggle">+</button></div><div class="pnr-faq-a"><div class="pnr-faq-a-inner"><p>Panasonic MAN1 is positioned as the flagship Real Pro Ultra massage chair in the Panasonic lineup. For buyers focused on precision, body profiling, pressure-sensing rollers, heated rollers, and reflexology foot massage, MAN1 typically delivers the strongest Panasonic experience available today.</p></div></div></div>
+
+      <div class="pnr-faq-item"><div class="pnr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>What makes Panasonic massage chairs different?</h3><button class="pnr-faq-toggle" aria-label="Toggle">+</button></div><div class="pnr-faq-a"><div class="pnr-faq-a-inner"><p>Panasonic engineers massage chairs around controlled movement, pressure response, body scan personalization, and repeatable comfort, rather than feature volume alone. The combination of advanced technologies — Real Pro Ultra H.I., 1260P Acupoint Body Scan, infrared-heated rollers, full body air massage, and reflexology foot massage — is what makes Panasonic feel different on a showroom demo.</p></div></div></div>
+
+      <div class="pnr-faq-item"><div class="pnr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Does Panasonic MAN1 have heated rollers?</h3><button class="pnr-faq-toggle" aria-label="Toggle">+</button></div><div class="pnr-faq-a"><div class="pnr-faq-a-inner"><p>Yes. Panasonic MAN1 features Panasonic heated rollers — infrared heating elements integrated close to the roller assembly so warmth lands directly where the massage is happening, rather than as a generic heat pad.</p></div></div></div>
+
+      <div class="pnr-faq-item"><div class="pnr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Does Panasonic MAN1 have foot massage?</h3><button class="pnr-faq-toggle" aria-label="Toggle">+</button></div><div class="pnr-faq-a"><div class="pnr-faq-a-inner"><p>Yes. Panasonic MAN1 includes Panasonic foot massage with reflexology-style sole kneading, sole shiatsu, and plantar arch manipulation. Body air cells help stabilize the foot while the sole mechanism works, making MAN1 a strong reflexology foot massage chair candidate.</p></div></div></div>
+
+      <div class="pnr-faq-item"><div class="pnr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Does Panasonic MAN1 have body scan?</h3><button class="pnr-faq-toggle" aria-label="Toggle">+</button></div><div class="pnr-faq-a"><div class="pnr-faq-a-inner"><p>Yes. Panasonic MAN1 includes the 1260P Acupoint Body Scan, designed to map key points on the body so the chair can align massage movements with the neck, back, hips, and seat area more accurately.</p></div></div></div>
+
+      <div class="pnr-faq-item"><div class="pnr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Is Panasonic good for deep tissue massage?</h3><button class="pnr-faq-toggle" aria-label="Toggle">+</button></div><div class="pnr-faq-a"><div class="pnr-faq-a-inner"><p>Panasonic is a serious deep tissue massage chair option for buyers who want pressure and control rather than random force. The best setting depends on body sensitivity, posture, and experience level — sensitive users should test the chair in a showroom before buying.</p></div></div></div>
+
+      <div class="pnr-faq-item"><div class="pnr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>How long should you use a Panasonic massage chair?</h3><button class="pnr-faq-toggle" aria-label="Toggle">+</button></div><div class="pnr-faq-a"><div class="pnr-faq-a-inner"><p>Most Panasonic massage chair sessions land between 10 and 30 minutes. The right length depends on the program, intensity setting, and your own comfort. Panasonic's benefits are best framed around comfort, relaxation, tension release, and daily reset rather than medical treatment claims.</p></div></div></div>
+
+      <div class="pnr-faq-item"><div class="pnr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Should I buy Panasonic online or try it in a showroom?</h3><button class="pnr-faq-toggle" aria-label="Toggle">+</button></div><div class="pnr-faq-a"><div class="pnr-faq-a-inner"><p>A Panasonic massage chair showroom demo is strongly recommended. Body scan fit, heated roller warmth, foot massage intensity, recline comfort, and deep tissue pressure response are difficult to judge from specs alone. MCM specialists can help you compare MAN1, MAK1, and MAF1 in person.</p></div></div></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="pnr-section" style="padding:48px 0 96px">
+  <div class="pnr-container">
+    <div class="pnr-cta-band">
+      <h2>Ready to experience Panasonic massage precision?</h2>
+      <p>A Panasonic massage chair is best evaluated through a real demo. Visit MCM to compare MAN1, MAK1, and MAF1, test body scan accuracy, feel the heated rollers, try the reflexology foot massage, and confirm warranty and service before you buy.</p>
+      <div class="pnr-cta-btns">
+        <a href="{{ contact_url }}" class="pnr-btn pnr-btn-accent">Book Your Panasonic Showroom Demo</a>
+        <a href="{{ collection_url }}" class="pnr-btn pnr-btn-white">View Panasonic Massage Chairs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY MOBILE CTA -->
+<div class="pnr-sticky-cta" id="pnr-sticky">
+  <div class="pnr-sticky-inner">
+    <a href="{{ contact_url }}" class="pnr-btn pnr-btn-accent" style="flex:1;text-align:center">Book Demo</a>
+    <a href="#pnr-compare" class="pnr-btn pnr-btn-outline" style="flex:1;text-align:center">Compare Models</a>
+  </div>
+</div>
+
+<script>
+const pnrSections=document.querySelectorAll('[id^="pnr-"]');
+const pnrNavLinks=document.querySelectorAll('.pnr-subnav-inner a');
+const pnrObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){const id=entry.target.id;pnrNavLinks.forEach(link=>{link.classList.toggle('active',link.getAttribute('href')==='#'+id)})}})},{rootMargin:'-20% 0px -70% 0px'});
+pnrSections.forEach(s=>pnrObserver.observe(s));
+const pnrSticky=document.getElementById('pnr-sticky');
+const pnrHeroEl=document.getElementById('pnr-top');
+if(pnrSticky&&pnrHeroEl){const stickyObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(window.innerWidth<=768){pnrSticky.style.display=e.isIntersecting?'none':'block'}})});stickyObs.observe(pnrHeroEl)}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const target=document.querySelector(a.getAttribute('href'));if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'})}})});
+</script>
+
+</div><!-- /.pnr-page -->
+
+{% schema %}
+{
+  "name": "Panasonic Reviews",
+  "tag": "section",
+  "class": "panasonic-reviews-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Phone Number",
+      "default": "+1 (408) 889-1188"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Panasonic Reviews"
+    }
+  ]
+}
+{% endschema %}

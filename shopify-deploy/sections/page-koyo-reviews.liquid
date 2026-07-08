@@ -1,0 +1,701 @@
+{%- comment -%}
+  SECTION: page-koyo-reviews.liquid
+  Template: templates/page.koyo-massage-chair-reviews.json
+  KOYO 303TS Massage Chair Reviews landing page
+{%- endcomment -%}
+
+{%- assign phone = section.settings.phone | default: "+1 (408) 889-1188" -%}
+{%- assign contact_url = "/pages/contact" -%}
+{%- assign collection_url = "/collections/koyo-massage-chairs" -%}
+{%- assign product_url = "/products/koyo-303ts-massage-chair" -%}
+
+{%- comment -%} ── SCHEMA MARKUP (Article + FAQ + Breadcrumb; NO AggregateRating, NO Review) ── {%- endcomment -%}
+<script type="application/ld+json">
+[{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "KOYO Massage Chair Reviews: Is the 303TS Worth Trying?",
+    "description": "Read KOYO massage chair reviews for the KOYO 303TS. Compare massage feel, body fit, Made in Japan positioning, price, warranty, service, delivery, and showroom demo value.",
+    "author": {"@type":"Organization","name":"Massage Chairs and More"},
+    "publisher": {"@type":"Organization","name":"Massage Chairs and More","url":"{{ shop.url }}"},
+    "mainEntityOfPage": "{{ canonical_url }}"
+},
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ shop.url }}"},
+        {"@type": "ListItem", "position": 2, "name": "KOYO Massage Chairs", "item": "{{ shop.url }}{{ collection_url }}"},
+        {"@type": "ListItem", "position": 3, "name": "KOYO Massage Chair Reviews", "item": "{{ canonical_url }}"}
+    ]
+},
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {"@type":"Question","name":"Is KOYO a good massage chair brand?","acceptedAnswer":{"@type":"Answer","text":"KOYO is worth considering if you want a premium Japanese massage chair with documented features, clear service expectations, and the ability to test the chair before buying. The better question is whether the KOYO 303TS fits your body, pressure preference, room, and budget."}},
+        {"@type":"Question","name":"Are KOYO massage chairs worth it?","acceptedAnswer":{"@type":"Answer","text":"Are KOYO massage chairs worth it? For the right shopper, yes — especially if you want a premium Japanese massage chair with a clean control experience, showroom-demo confidence, and visible warranty and service support. The KOYO 303TS is strongest for buyers who care about massage feel, body fit, Made in Japan positioning, and long-term confidence."}},
+        {"@type":"Question","name":"Is this a KOYO 303TS review or a product page?","acceptedAnswer":{"@type":"Answer","text":"This KOYO 303TS massage chair review is for research and decision support. For current KOYO 303TS price, color, availability, and checkout, visit the product page."}},
+        {"@type":"Question","name":"What is the difference between KOYO 303TS, KOYO 303 TS, and KOYO 303?","acceptedAnswer":{"@type":"Answer","text":"Some shoppers search for this model as KOYO 303 TS, KOYO 303, or KOYO 303TS. These are generally search variations for the same model — check the product page for the official model name and current configuration."}},
+        {"@type":"Question","name":"What is the KOYO 303TS price?","acceptedAnswer":{"@type":"Answer","text":"KOYO 303TS price is evaluated in the premium massage chair category. Current pricing can vary by promotion, color, availability, and financing terms, so use the KOYO 303TS product page as the source of current price and availability."}},
+        {"@type":"Question","name":"What affects KOYO massage chair price?","acceptedAnswer":{"@type":"Answer","text":"KOYO massage chair price can vary by model, promotion, showroom availability, delivery and installation needs, warranty selection, and financing terms. Confirm the live KOYO 303TS product page for the current price."}},
+        {"@type":"Question","name":"Is the KOYO 303TS a 4D massage chair?","acceptedAnswer":{"@type":"Answer","text":"Yes. The KOYO 303TS 4D massage chair uses a Servo 4D massage mechanism with anthropoid silicone massage heads and a precision brushless motor, designed to deliver controlled kneading, tapping, rolling, and pressing across each part of your body."}},
+        {"@type":"Question","name":"Is the KOYO 303TS a massage chair made in Japan?","acceptedAnswer":{"@type":"Answer","text":"KOYO is positioned as a premium Japanese massage chair brand. Made in Japan positioning is one of KOYO's clearest trust signals, but a massage chair made in Japan still needs to be tested for body fit and comfort before purchase."}},
+        {"@type":"Question","name":"Are massage chairs made in Japan better?","acceptedAnswer":{"@type":"Answer","text":"Massage chairs made in Japan can offer a strong engineering reputation, but they are not automatically better for every body type. Compare KOYO with other massage chairs from Japan in person to confirm body fit, pressure preference, and daily usability."}},
+        {"@type":"Question","name":"What Japanese massage chair brands should I compare with KOYO?","acceptedAnswer":{"@type":"Answer","text":"When comparing Japanese massage chair brands, look at KOYO, Panasonic, D.Core, and OHCO. A showroom visit lets you compare massage feel, body fit, service support, warranty, and overall confidence side by side."}},
+        {"@type":"Question","name":"Is the KOYO 303TS the best Japanese massage chair?","acceptedAnswer":{"@type":"Answer","text":"The best Japanese massage chair is not the same for every shopper. The KOYO 303TS can be the best Japanese massage chair for buyers who want a clean Servo 4D feel, simple controls, Made in Japan positioning, and clear warranty support — but the answer should be confirmed through a side-by-side showroom demo."}},
+        {"@type":"Question","name":"Where can I find the KOYO manual?","acceptedAnswer":{"@type":"Answer","text":"The KOYO manual is useful for safe use, operation, troubleshooting, care, warranty and after-sales service, and specifications. Ask an MCM specialist for the current KOYO manual and any model-specific documentation before purchase."}},
+        {"@type":"Question","name":"What does the KOYO warranty include?","acceptedAnswer":{"@type":"Answer","text":"KOYO warranty coverage typically includes a multi-year limited warranty with optional extended coverage. Specifics — including parts, labor, service process, and in-home service availability — should be confirmed with an MCM specialist before purchase."}},
+        {"@type":"Question","name":"What does the KOYO massage chair warranty include?","acceptedAnswer":{"@type":"Answer","text":"KOYO massage chair warranty details vary by model, promotion, and date of purchase. Ask MCM what the warranty covers, how service requests are handled, and whether in-home service is available for the KOYO 303TS in your area."}},
+        {"@type":"Question","name":"Can I try the KOYO 303TS before buying?","acceptedAnswer":{"@type":"Answer","text":"Yes. A showroom demo is strongly recommended. Body fit, massage feel, foot rollers, air massage pressure, and remote usability are easier to judge in person than from specs alone. Book a 15-minute KOYO chair matching session to compare KOYO with Panasonic, D.Core, OHCO, and Positive Posture in one visit."}}
+    ]
+}]
+</script>
+
+{%- style -%}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Serif+JP:wght@400;500;600;700;900&display=swap');
+
+.mcm-kr{--kr-bg:#fafaf8;--kr-surface:#f4f3ef;--kr-dark:#141618;--kr-dark2:#0a0b0d;--kr-text:#2a2d32;--kr-muted:#5a5e66;--kr-light:#8a8e96;--kr-accent:#2d4a6f;--kr-accent-hover:#1e3554;--kr-accent-light:rgba(45,74,111,.07);--kr-accent-warm:#c4463a;--kr-indigo:#3d4f7c;--kr-border:#e4e2dc;--kr-border-light:#eeecea;--kr-white:#fff;--kr-card-shadow:0 2px 16px rgba(0,0,0,.04);--kr-card-hover:0 16px 48px rgba(0,0,0,.09);--kr-shadow-accent:0 8px 32px rgba(45,74,111,.18);--kr-r:14px;--kr-r-sm:9px;--kr-r-lg:22px;--kr-r-xl:30px;--kr-tr:all .3s cubic-bezier(.4,0,.2,1);font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif !important;color:var(--kr-text);line-height:1.78;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.mcm-kr *,.mcm-kr *::before,.mcm-kr *::after{box-sizing:border-box;margin:0;padding:0}
+.mcm-kr h1,.mcm-kr h2,.mcm-kr h3,.mcm-kr h4{color:var(--kr-dark);line-height:1.2;font-weight:700}
+.mcm-kr h1,.mcm-kr h2{font-family:'Noto Serif JP','Inter',serif}
+.mcm-kr a{color:inherit;text-decoration:none}
+.mcm-kr img{max-width:100%;display:block}
+.mcm-kr p{font-size:15px;color:var(--kr-muted);line-height:1.8}
+.mcm-kr .kr-container{max-width:1300px;margin:0 auto;padding:0 32px}
+.mcm-kr .kr-narrow{max-width:880px;margin:0 auto;padding:0 32px}
+@keyframes krFadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes krShimmer{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes krPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.55}}
+@keyframes krGrad{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.mcm-kr .kr-fade{animation:krFadeUp .7s ease both}
+.mcm-kr .kr-d1{animation-delay:.1s}.mcm-kr .kr-d2{animation-delay:.22s}.mcm-kr .kr-d3{animation-delay:.34s}.mcm-kr .kr-d4{animation-delay:.46s}
+.mcm-kr .kr-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 36px;font-size:15px;font-weight:700;border-radius:50px;transition:var(--kr-tr);border:2px solid transparent;cursor:pointer;letter-spacing:.02em;font-family:'Inter',sans-serif}
+.mcm-kr .kr-btn-primary{background:var(--kr-dark);color:#fff;border-color:var(--kr-dark)}.mcm-kr .kr-btn-primary:hover{background:var(--kr-accent);border-color:var(--kr-accent);transform:translateY(-2px);box-shadow:var(--kr-shadow-accent)}
+.mcm-kr .kr-btn-accent{background:var(--kr-accent);color:#fff;border-color:var(--kr-accent)}.mcm-kr .kr-btn-accent:hover{background:var(--kr-accent-hover);transform:translateY(-2px);box-shadow:var(--kr-shadow-accent)}
+.mcm-kr .kr-btn-outline{background:transparent;color:var(--kr-dark);border:2px solid var(--kr-border)}.mcm-kr .kr-btn-outline:hover{border-color:var(--kr-accent);color:var(--kr-accent)}
+.mcm-kr .kr-btn-white{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.45)}.mcm-kr .kr-btn-white:hover{border-color:#fff;background:rgba(255,255,255,.10)}
+.mcm-kr .kr-btn-ghost{background:rgba(255,255,255,.07);color:#fff;border:1.5px solid rgba(255,255,255,.28)}.mcm-kr .kr-btn-ghost:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.45)}
+.mcm-kr .kr-section{padding:96px 0}
+.mcm-kr .kr-section-alt{background:var(--kr-surface)}
+.mcm-kr .kr-section-header{text-align:center;margin-bottom:64px}
+.mcm-kr .kr-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--kr-accent);margin-bottom:16px;font-weight:700}
+.mcm-kr .kr-eyebrow::before{content:'';width:20px;height:2px;background:linear-gradient(90deg,var(--kr-accent),var(--kr-indigo));border-radius:2px}
+.mcm-kr .kr-section-header h2{font-size:44px;margin-bottom:16px;letter-spacing:-.02em}
+.mcm-kr .kr-section-header p{font-size:18px;color:var(--kr-muted);max-width:700px;margin:0 auto;line-height:1.82}
+.mcm-kr .kr-product-link{color:var(--kr-accent);font-weight:700;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;transition:color .2s}
+.mcm-kr .kr-product-link:hover{color:var(--kr-accent-hover)}
+.mcm-kr .kr-hero{position:relative;min-height:78vh;display:flex;align-items:center;background:var(--kr-dark2);overflow:hidden}
+.mcm-kr .kr-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 30%;opacity:.32;z-index:0}
+.mcm-kr .kr-hero-grain{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");z-index:1;opacity:.5;pointer-events:none}
+.mcm-kr .kr-hero-overlay{position:absolute;inset:0;background:linear-gradient(120deg,rgba(6,8,12,.96) 18%,rgba(10,14,22,.75) 55%,rgba(20,26,38,.40) 100%);z-index:2}
+.mcm-kr .kr-hero-glow{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(45,74,111,.10) 0%,transparent 70%);right:-100px;top:-100px;z-index:2;animation:krShimmer 7s ease-in-out infinite}
+.mcm-kr .kr-hero-stripe{position:absolute;left:0;bottom:0;width:100%;height:3px;background:linear-gradient(90deg,var(--kr-accent),var(--kr-indigo),transparent 70%);z-index:3}
+.mcm-kr .kr-hero-content{position:relative;z-index:4;padding:80px 0 96px}
+.mcm-kr .kr-hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;margin-bottom:26px;background:rgba(45,74,111,.12);padding:6px 16px;border-radius:50px;border:1px solid rgba(45,74,111,.22);color:rgba(180,200,230,1)}
+.mcm-kr .kr-hero-eyebrow::before{content:'●';font-size:7px;animation:krPulse 2.8s infinite}
+.mcm-kr .kr-hero h1{font-size:52px;color:#fff;max-width:840px;margin-bottom:26px;font-weight:700;line-height:1.07;letter-spacing:-.025em}
+.mcm-kr .kr-hero-tag{background:linear-gradient(135deg,#6b8bb5,#a0b8d8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.mcm-kr .kr-hero-sub{font-size:18px;color:rgba(255,255,255,.74);max-width:680px;margin-bottom:32px;line-height:1.75}
+.mcm-kr .kr-hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+.mcm-kr .kr-snap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;padding-top:32px;border-top:1px solid rgba(255,255,255,.08)}
+.mcm-kr .kr-snap-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:var(--kr-r-sm);padding:14px 16px;backdrop-filter:blur(8px)}
+.mcm-kr .kr-snap-item strong{display:block;color:#fff;font-size:13px;font-weight:700;margin-bottom:4px;font-family:'Inter',sans-serif}
+.mcm-kr .kr-snap-item span{font-size:12px;color:rgba(255,255,255,.55);font-weight:500;line-height:1.5;display:block}
+.mcm-kr .kr-subnav{position:sticky;top:0;z-index:50;background:rgba(250,250,248,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--kr-border-light);overflow-x:auto;scrollbar-width:none}
+.mcm-kr .kr-subnav::-webkit-scrollbar{display:none}
+.mcm-kr .kr-subnav-inner{display:flex;padding:0 32px;min-width:max-content}
+.mcm-kr .kr-subnav-inner a{display:block;padding:12px 14px;font-size:11px;font-weight:700;color:var(--kr-muted);border-bottom:2.5px solid transparent;white-space:nowrap;transition:var(--kr-tr);text-transform:uppercase;letter-spacing:.08em}
+.mcm-kr .kr-subnav-inner a:hover,.mcm-kr .kr-subnav-inner a.active{color:var(--kr-dark);border-bottom-color:var(--kr-accent)}
+.mcm-kr .kr-about-box{background:var(--kr-accent-light);border:1px solid rgba(45,74,111,.15);border-radius:var(--kr-r);padding:28px 32px;margin-bottom:36px}
+.mcm-kr .kr-about-box h3{font-size:16px;font-family:'Inter',sans-serif;margin-bottom:10px;color:var(--kr-accent)}
+.mcm-kr .kr-about-box p{font-size:14px;line-height:1.8}
+.mcm-kr .kr-about-box p + p{margin-top:12px}
+.mcm-kr .kr-model-block{background:#fff;border:1px solid var(--kr-border);border-radius:var(--kr-r-lg);padding:36px;margin-bottom:24px;position:relative;overflow:hidden}
+.mcm-kr .kr-model-block::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--kr-accent),var(--kr-indigo))}
+.mcm-kr .kr-model-block h2{font-size:28px;margin-bottom:10px;font-family:'Noto Serif JP','Inter',serif}
+.mcm-kr .kr-model-tier{display:inline-block;background:var(--kr-accent-light);color:var(--kr-accent);font-size:11px;font-weight:800;padding:5px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px}
+.mcm-kr .kr-model-block p{font-size:15px;line-height:1.8;color:var(--kr-text);margin-bottom:14px}
+.mcm-kr .kr-model-block p:last-of-type{margin-bottom:24px}
+.mcm-kr .kr-model-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.mcm-kr .kr-model-ctas .kr-btn{padding:11px 22px;font-size:13px}
+.mcm-kr .kr-feature-box{background:#fff;border:1px solid var(--kr-border);border-radius:var(--kr-r-lg);padding:32px;margin-bottom:20px}
+.mcm-kr .kr-feature-box h3{font-size:20px;margin-bottom:8px;font-family:'Noto Serif JP','Inter',serif;color:var(--kr-dark);font-weight:700}
+.mcm-kr .kr-feature-box .kr-eyebrow{margin-bottom:8px}
+.mcm-kr .kr-feature-box p{font-size:15px;line-height:1.85;margin-bottom:14px;color:var(--kr-text)}
+.mcm-kr .kr-feature-box p:last-child{margin-bottom:0}
+.mcm-kr .kr-pros-cons{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:48px}
+.mcm-kr .kr-pros,.mcm-kr .kr-cons{background:var(--kr-white);border:1px solid var(--kr-border);border-radius:var(--kr-r-lg);padding:32px;position:relative;overflow:hidden}
+.mcm-kr .kr-pros::before,.mcm-kr .kr-cons::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.mcm-kr .kr-pros::before{background:linear-gradient(90deg,#2e7d32,#43a047)}
+.mcm-kr .kr-cons::before{background:linear-gradient(90deg,#e65100,#ff9800)}
+.mcm-kr .kr-pros h3,.mcm-kr .kr-cons h3{font-size:18px;font-family:'Inter',sans-serif;margin-bottom:16px}
+.mcm-kr .kr-pros li,.mcm-kr .kr-cons li{font-size:14px;color:var(--kr-muted);line-height:1.7;padding:6px 0;padding-left:24px;position:relative;list-style:none}
+.mcm-kr .kr-pros li::before{content:'✓';position:absolute;left:0;color:#2e7d32;font-weight:900}
+.mcm-kr .kr-cons li::before{content:'△';position:absolute;left:0;color:#e65100;font-weight:900}
+.mcm-kr .kr-bestfor{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:48px}
+.mcm-kr .kr-bestfor-card{background:var(--kr-white);border:1px solid var(--kr-border);border-radius:var(--kr-r-lg);padding:32px}
+.mcm-kr .kr-bestfor-card h3{font-size:18px;font-family:'Inter',sans-serif;margin-bottom:16px}
+.mcm-kr .kr-bestfor-card li{font-size:14px;color:var(--kr-muted);line-height:1.7;padding:6px 0;list-style:none;padding-left:20px;position:relative}
+.mcm-kr .kr-bestfor-card li::before{content:'→';position:absolute;left:0;color:var(--kr-accent);font-weight:700}
+.mcm-kr .kr-themes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px}
+.mcm-kr .kr-theme-card{background:#fff;border:1px solid var(--kr-border);border-radius:var(--kr-r);padding:22px}
+.mcm-kr .kr-theme-card h4{font-size:12px;color:var(--kr-accent);text-transform:uppercase;letter-spacing:.1em;font-family:'Inter',sans-serif;margin-bottom:10px}
+.mcm-kr .kr-theme-card blockquote{font-size:14px;font-style:italic;color:var(--kr-text);line-height:1.7;margin-bottom:12px;border-left:2px solid var(--kr-accent);padding-left:12px;position:relative}
+.mcm-kr .kr-theme-card blockquote::before,.mcm-kr .kr-theme-card blockquote::after{content:none !important;display:none !important}
+.mcm-kr .kr-theme-card blockquote::first-letter{font-size:inherit !important;float:none !important;line-height:inherit !important;color:inherit !important;margin:0 !important;padding:0 !important}
+.mcm-kr .kr-theme-card p{font-size:13px;color:var(--kr-muted);line-height:1.6;margin:0}
+.mcm-kr .kr-cta-band{background:linear-gradient(155deg,#111418,#1e2430);border-radius:var(--kr-r-xl);padding:64px;color:#fff;text-align:center;margin:48px 0;position:relative;overflow:hidden}
+.mcm-kr .kr-cta-band::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--kr-accent),var(--kr-indigo),var(--kr-accent));background-size:200% 100%;animation:krGrad 5s ease infinite}
+.mcm-kr .kr-cta-band h2{color:#fff;font-size:36px;margin-bottom:14px}
+.mcm-kr .kr-cta-band p{color:rgba(255,255,255,.62);font-size:16px;max-width:680px;margin:0 auto 32px;line-height:1.82}
+.mcm-kr .kr-cta-band .kr-cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.mcm-kr .kr-faq-list{border-top:1px solid var(--kr-border)}
+.mcm-kr .kr-faq-item{border-bottom:1px solid var(--kr-border)}
+.mcm-kr .kr-faq-q{display:flex;justify-content:space-between;align-items:center;padding:22px 0;cursor:pointer;gap:16px}
+.mcm-kr .kr-faq-q h3{font-size:16px;font-family:'Inter',sans-serif;font-weight:700;margin:0;flex:1;color:var(--kr-dark);transition:color .2s}
+.mcm-kr .kr-faq-q:hover h3{color:var(--kr-accent)}
+.mcm-kr .kr-faq-toggle{width:36px;height:36px;border-radius:50%;background:var(--kr-surface);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:300;color:var(--kr-accent);flex-shrink:0;transition:var(--kr-tr);border:none;cursor:pointer}
+.mcm-kr .kr-faq-item.open .kr-faq-toggle{background:var(--kr-accent);color:#fff;transform:rotate(45deg)}
+.mcm-kr .kr-faq-a{max-height:0;overflow:hidden;transition:max-height .38s cubic-bezier(.4,0,.2,1)}
+.mcm-kr .kr-faq-a-inner{padding:0 0 26px}
+.mcm-kr .kr-faq-a-inner p{font-size:15px;color:var(--kr-muted);line-height:1.87}
+.mcm-kr .kr-expert-box{background:linear-gradient(135deg,#111418,#1e2430);border-radius:var(--kr-r-xl);padding:48px;color:#fff;position:relative;overflow:hidden}
+.mcm-kr .kr-expert-box::before{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(45,74,111,.08) 0%,transparent 70%);right:-100px;bottom:-100px}
+.mcm-kr .kr-expert-box h2{color:#fff;font-size:28px;margin-bottom:16px}
+.mcm-kr .kr-expert-box p{color:rgba(255,255,255,.68);font-size:15px;line-height:1.9;margin-bottom:14px}
+.mcm-kr .kr-sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.96);border-top:1px solid var(--kr-border);box-shadow:0 -8px 32px rgba(0,0,0,.08);padding:12px 24px;display:none;backdrop-filter:blur(12px)}
+.mcm-kr .kr-sticky-inner{display:flex;align-items:center;justify-content:center;gap:12px;max-width:900px;margin:0 auto}
+.mcm-kr .kr-sticky-inner .kr-btn{padding:12px 24px;font-size:13px}
+@media(max-width:1100px){.mcm-kr .kr-themes-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.mcm-kr .kr-hero{min-height:auto}.mcm-kr .kr-hero h1{font-size:30px}.mcm-kr .kr-section{padding:64px 0}.mcm-kr .kr-themes-grid{grid-template-columns:1fr}.mcm-kr .kr-pros-cons,.mcm-kr .kr-bestfor{grid-template-columns:1fr}.mcm-kr .kr-container{padding:0 20px}.mcm-kr .kr-hero-ctas{flex-direction:column}.mcm-kr .kr-sticky-cta{display:block}.mcm-kr .kr-subnav-inner a{padding:12px 12px;font-size:10px}.mcm-kr .kr-model-block,.mcm-kr .kr-feature-box{padding:24px}.mcm-kr .kr-cta-band{padding:40px 24px}.mcm-kr .kr-cta-band h2{font-size:26px}}
+{%- endstyle -%}
+
+<div class="mcm-kr">
+
+<!-- HERO -->
+<section class="kr-hero" id="kr-top">
+  <div class="kr-hero-bg" style="background-image:url('{{ 'koyo-hero.png' | asset_url }}')"></div>
+  <div class="kr-hero-grain"></div>
+  <div class="kr-hero-overlay"></div>
+  <div class="kr-hero-glow"></div>
+  <div class="kr-hero-stripe"></div>
+  <div class="kr-container kr-hero-content">
+    <div class="kr-hero-eyebrow kr-fade">Customer-Informed Review Insights · Expert-Reviewed by MCM</div>
+    <h1 class="kr-fade kr-d1">KOYO Massage Chair Reviews: <span class="kr-hero-tag">Is the 303TS Worth Trying?</span></h1>
+    <p class="kr-hero-sub kr-fade kr-d2">KOYO massage chair reviews should help you decide whether the <a href="{{ product_url }}" class="kr-product-link" style="color:#a0b8d8">KOYO 303TS</a> is worth trying in person — not pressure you with generic claims. This KOYO 303TS massage chair review looks at massage feel, body fit, Japanese / Made in Japan positioning, price, warranty, service, delivery, and showroom demo value.</p>
+    <div class="kr-hero-ctas kr-fade kr-d3">
+      <a href="{{ contact_url }}" class="kr-btn kr-btn-accent">Try the KOYO 303TS In-Store</a>
+      <a href="#kr-japanese" class="kr-btn kr-btn-white">Compare Japanese Massage Chairs</a>
+      <a href="{{ contact_url }}" class="kr-btn kr-btn-ghost">Ask About Warranty &amp; Delivery</a>
+    </div>
+    <div class="kr-snap kr-fade kr-d4">
+      <div class="kr-snap-item"><strong>Showroom-Informed Review Guide</strong><span>Not third-party aggregate ratings — review themes from showroom conversations</span></div>
+      <div class="kr-snap-item"><strong>Expert-Reviewed by MCM</strong><span>Product specialists, manual references, customer questions</span></div>
+      <div class="kr-snap-item"><strong>No Competitor Review Scraping</strong><span>Original insights only</span></div>
+      <div class="kr-snap-item"><strong>Made in Japan Positioning</strong><span>Japanese engineering reputation context</span></div>
+      <div class="kr-snap-item"><strong>Warranty &amp; Service Covered</strong><span>What to ask before checkout</span></div>
+      <div class="kr-snap-item"><strong>Showroom Demo Recommended</strong><span>Test in person before you buy</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY NAV -->
+<nav class="kr-subnav" id="kr-nav">
+  <div class="kr-subnav-inner">
+    <a href="#kr-about">About</a>
+    <a href="#kr-verdict">Quick Verdict</a>
+    <a href="#kr-brand">KOYO Brand</a>
+    <a href="#kr-303ts">303TS Review</a>
+    <a href="#kr-price">Price</a>
+    <a href="#kr-japanese">Best Japanese</a>
+    <a href="#kr-vs">KOYO vs Others</a>
+    <a href="#kr-check">Before Buying</a>
+    <a href="#kr-showroom">Showroom</a>
+    <a href="#kr-warranty">Warranty &amp; Manual</a>
+    <a href="#kr-proscons">Pros &amp; Cons</a>
+    <a href="#kr-bestfor">Best For</a>
+    <a href="#kr-themes">Buyer Themes</a>
+    <a href="#kr-mcm">MCM Take</a>
+    <a href="#kr-faq">FAQ</a>
+  </div>
+</nav>
+
+<!-- ABOUT THESE REVIEWS -->
+<section class="kr-section" id="kr-about">
+  <div class="kr-narrow">
+    <div class="kr-eyebrow">Methodology</div>
+    <h2 style="font-size:34px;margin-bottom:18px">About These KOYO Chair Reviews</h2>
+    <div class="kr-about-box">
+      <h3>How We Approach These KOYO Reviews</h3>
+      <p>These KOYO chair reviews are designed for shoppers who are researching the KOYO 303TS before visiting a showroom or product page. This page is not built from scraped competitor reviews or fake star ratings. Instead, it organizes product documentation, showroom observations, warranty and service considerations, and common buyer questions into a practical KOYO 303TS review.</p>
+      <p>The goal is to help you decide whether the 303TS is worth trying in person, what to compare, and what to confirm before purchase. These KOYO massage chair reviews are based on product documentation, showroom observations, warranty and service details, and common questions shoppers ask before trying the KOYO 303TS.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK VERDICT -->
+<section class="kr-section kr-section-alt" id="kr-verdict">
+  <div class="kr-narrow">
+    <div class="kr-eyebrow">Quick Verdict</div>
+    <h2 style="font-size:34px;margin-bottom:18px">Are KOYO Massage Chairs Worth It?</h2>
+    <p style="font-size:17px;line-height:1.85;margin-bottom:18px">Are KOYO massage chairs worth it? For the right shopper, yes — especially if you want a premium Japanese massage chair with a clean control experience, showroom-demo confidence, and visible warranty and service support. The KOYO 303TS is strongest for buyers who care about massage feel, body fit, Made in Japan positioning, and long-term confidence.</p>
+    <p style="font-size:17px;line-height:1.85;margin-bottom:24px">It may not be the right fit if you are shopping mainly by lowest price or if another model feels better after a side-by-side showroom test.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px">
+      <div style="background:#fff;border:1px solid var(--kr-border);border-radius:var(--kr-r);padding:24px;border-top:3px solid #2e7d32">
+        <div style="font-size:12px;color:#2e7d32;text-transform:uppercase;letter-spacing:.1em;font-weight:800;margin-bottom:10px">Try it if</div>
+        <ul style="list-style:none;padding:0;margin:0;font-size:14px;color:var(--kr-muted);line-height:1.75">
+          <li style="padding:4px 0">You want a premium Japanese massage chair</li>
+          <li style="padding:4px 0">You value Made in Japan positioning</li>
+          <li style="padding:4px 0">You want a clean Servo 4D massage feel</li>
+          <li style="padding:4px 0">You want simple, learnable controls</li>
+          <li style="padding:4px 0">You care about warranty/service clarity</li>
+          <li style="padding:4px 0">You want to compare before buying</li>
+        </ul>
+      </div>
+      <div style="background:#fff;border:1px solid var(--kr-border);border-radius:var(--kr-r);padding:24px;border-top:3px solid #e65100">
+        <div style="font-size:12px;color:#e65100;text-transform:uppercase;letter-spacing:.1em;font-weight:800;margin-bottom:10px">Compare alternatives if</div>
+        <ul style="list-style:none;padding:0;margin:0;font-size:14px;color:var(--kr-muted);line-height:1.75">
+          <li style="padding:4px 0">You need a lower price point</li>
+          <li style="padding:4px 0">You want a larger height range</li>
+          <li style="padding:4px 0">You prefer stronger or lighter pressure after testing</li>
+          <li style="padding:4px 0">You want an ultra-luxury design statement</li>
+          <li style="padding:4px 0">You are still comparing Panasonic, D.Core, OHCO, or Positive Posture</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+      <a href="{{ contact_url }}" class="kr-btn kr-btn-accent">Book a 15-Minute KOYO Chair Matching Session</a>
+      <a href="#kr-vs" class="kr-btn kr-btn-outline">Compare KOYO With Other Japanese Brands</a>
+    </div>
+  </div>
+</section>
+
+<!-- IS KOYO A GOOD MASSAGE CHAIR BRAND -->
+<section class="kr-section" id="kr-brand">
+  <div class="kr-narrow">
+    <div class="kr-feature-box">
+      <div class="kr-eyebrow">Brand Trust</div>
+      <h3 style="font-size:30px">Is KOYO a Good Massage Chair Brand?</h3>
+      <p>Is KOYO a good massage chair brand? KOYO is worth considering if you want a massage chair made in Japan with documented features, clear support information, and a premium-but-practical value position. As with any high-ticket chair, the better question is not only whether the brand is good, but whether the chair fits your body, pressure preference, room, delivery needs, and warranty expectations.</p>
+      <p>Made in Japan positioning is one of KOYO's clearest trust signals. The 303TS product documentation, warranty/service clarity, and showroom demo availability give shoppers a way to validate the brand in person — which usually matters more than badges or marketing language alone.</p>
+    </div>
+  </div>
+</section>
+
+<!-- KOYO 303TS REVIEW (main section with 5 H3 subsections) -->
+<section class="kr-section kr-section-alt" id="kr-303ts">
+  <div class="kr-container">
+    <div class="kr-section-header">
+      <span class="kr-eyebrow">Model Review</span>
+      <h2>KOYO 303TS Review: What to Know Before You Try It</h2>
+      <p>This KOYO 303TS massage chair review focuses on fit, feel, warranty, and value. Below is what to look for in each part of the chair during a showroom demo.</p>
+    </div>
+
+    <div class="kr-model-block" id="kr-303ts-feel">
+      <span class="kr-model-tier">Massage Feel</span>
+      <h2>Servo 4D Massage Mechanism with Anthropoid Silicone Massage Heads</h2>
+      <p>The KOYO 303TS 4D massage chair uses a Servo 4D massage mechanism with anthropoid silicone massage heads and a precision brushless motor. In plain language, this means the chair is designed to deliver controlled kneading, tapping, rolling, and pressing movements across each part of your body.</p>
+      <p>During a showroom demo, many shoppers first notice the chair's massage mechanism with anthropoid silicone massage heads. The goal is not just stronger pressure; it is more controlled movement across each part of your body. The precision brushless motor also helps the massage feel smoother and quieter, which matters if you plan to use the chair daily.</p>
+    </div>
+
+    <div class="kr-model-block" id="kr-303ts-sltrack">
+      <span class="kr-model-tier">Body Coverage &amp; Fit</span>
+      <h2>Hybrid SL-Track, Traditional L-Track Coverage, and Body Fit</h2>
+      <p>The hybrid SL-track combines the broad body coverage of a traditional L-track with a curved S shape that follows the contours of your body more closely. This is one reason a showroom test matters: two shoppers can read the same specs but feel the track very differently based on torso length, shoulder position, and pressure preference.</p>
+      <p>If you have ever rejected a massage chair because the rollers missed your lower back or stopped short at your hips, the hybrid SL-track is what to test on the 303TS. Pay attention to whether the rollers stay engaged from your neck through your glutes.</p>
+    </div>
+
+    <div class="kr-model-block" id="kr-303ts-scan">
+      <span class="kr-model-tier">Personalization</span>
+      <h2>Automatic Body Scan and Pressure Personalization</h2>
+      <p>The automatic body scan is designed to help the 4D massage mechanism adapt to each part of your body. Still, body scan accuracy depends on how you sit, where your shoulders land, and whether the chair fits your height and torso length. This is why trying the chair in-store is more useful than relying only on specs.</p>
+      <p>During a demo, the showroom specialist can help you confirm the automatic body scan picks up your shoulder line correctly — small posture adjustments often improve fit dramatically.</p>
+    </div>
+
+    <div class="kr-model-block" id="kr-303ts-remote">
+      <span class="kr-model-tier">Daily Usability</span>
+      <h2>Super Simple Touch Screen Remote and Fingertip Control Dial</h2>
+      <p>The super simple touch screen remote is one of the most practical daily-use advantages of the KOYO 303TS. KOYO designed the remote to be simple: menus are clear, buttons are big, and in minutes anyone can learn to control the full functionality of the chair.</p>
+      <p>The fingertip control dial also lets you adjust the massage feel quickly without digging through menus — useful if you tend to start a program, then realize you want a different intensity or a different area focus. For shoppers who have struggled with complicated massage chair remotes in the past, the 303TS remote is one of the strongest demo arguments for this chair.</p>
+    </div>
+
+    <div class="kr-model-block" id="kr-303ts-bluetooth">
+      <span class="kr-model-tier">Routine</span>
+      <h2>Bluetooth Sound System and Daily Use Experience</h2>
+      <p>The Bluetooth sound system is not the main reason to choose the KOYO 303TS, but it can make daily use more enjoyable. You can drift off to your favorite classical piece, listen to a guided relaxation track, or pair the chair with your own evening routine.</p>
+      <p>Treat it as a quality-of-life feature, not the headline. It is more useful if you already have a wind-down routine you want to pair with the massage program — and far less important if you mainly value massage feel, body fit, and warranty support.</p>
+    </div>
+
+    <div class="kr-model-ctas" style="margin-top:24px;justify-content:center">
+      <a href="{{ product_url }}" class="kr-btn kr-btn-accent">View the KOYO 303TS Massage Chair</a>
+      <a href="{{ contact_url }}" class="kr-btn kr-btn-outline">Book a Showroom Demo</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE & VALUE -->
+<section class="kr-section" id="kr-price">
+  <div class="kr-narrow">
+    <div class="kr-feature-box">
+      <div class="kr-eyebrow">Price &amp; Value</div>
+      <h3 style="font-size:30px">KOYO 303TS Price and Value</h3>
+      <p>KOYO 303TS price should be evaluated in the context of the full ownership experience: chair fit, massage feel, delivery, installation, warranty, service, and financing. KOYO massage chair price may vary by model, promotion, showroom availability, and current offer, so use this review page for research and the product page for current price, availability, and purchase details.</p>
+      <p>For high-ticket shoppers, the more important question is rarely "what's the sticker price?" — it is "what is the full ownership picture, and does it justify the investment for daily use?" That answer is best confirmed with a specialist before checkout.</p>
+      <div class="kr-model-ctas" style="margin-top:18px">
+        <a href="{{ product_url }}" class="kr-btn kr-btn-accent">View Current KOYO 303TS Price and Availability</a>
+        <a href="{{ contact_url }}" class="kr-btn kr-btn-outline">Ask About Financing &amp; Delivery</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEST JAPANESE -->
+<section class="kr-section kr-section-alt" id="kr-japanese">
+  <div class="kr-narrow">
+    <div class="kr-feature-box">
+      <div class="kr-eyebrow">Japanese Massage Chair Comparison</div>
+      <h3 style="font-size:30px">Is the KOYO 303TS the Best Japanese Massage Chair for You?</h3>
+      <p>The best Japanese massage chair is not the same for every shopper. When comparing Japanese massage chair brands, look beyond country of origin and compare how each chair fits your body, how the massage pressure feels, what service support is available, and whether you can try the chair before buying.</p>
+      <p>A massage chair made in Japan can be a valuable trust signal, but massage chairs made in Japan still need to be compared in person. Shoppers researching massage chairs from Japan should consider KOYO alongside Panasonic, D.Core, and OHCO — and the most useful comparison usually happens during a single showroom visit.</p>
+      <div class="kr-model-ctas" style="margin-top:18px">
+        <a href="{{ contact_url }}" class="kr-btn kr-btn-accent">Compare Japanese Massage Chairs In-Store</a>
+        <a href="{{ collection_url }}" class="kr-btn kr-btn-outline">See Japanese Massage Chair Options</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KOYO VS COMPETITORS -->
+<section class="kr-section" id="kr-vs">
+  <div class="kr-container">
+    <div class="kr-section-header">
+      <span class="kr-eyebrow">Brand Comparison</span>
+      <h2>KOYO vs Panasonic, D.Core, OHCO, and Positive Posture</h2>
+      <p>How KOYO compares with the other premium brands at MCM. This is research support, not a knockout fight — the right choice usually comes from a side-by-side demo.</p>
+    </div>
+
+    <div class="kr-feature-box">
+      <h3 style="font-size:20px">KOYO vs Panasonic</h3>
+      <p>Panasonic is the larger global brand with a wider model lineup, strong body scan technology, heated rollers, and reflexology foot massage. KOYO is the more niche premium Japanese option that emphasizes value-within-premium and clean controls. If brand familiarity and feature depth matter most, compare Panasonic first; if a simpler premium Japanese experience appeals more, the KOYO 303TS is worth a serious demo.</p>
+    </div>
+
+    <div class="kr-feature-box">
+      <h3 style="font-size:20px">KOYO vs D.Core</h3>
+      <p>D.Core leans more ultra-premium and design-led, with stronger shiatsu-style pressure and real black walnut trim on flagship models. KOYO offers a more accessible premium Japanese option with clean controls and Made in Japan positioning. Try both back-to-back if you want the contrast between ultra-premium design and practical premium engineering.</p>
+    </div>
+
+    <div class="kr-feature-box">
+      <h3 style="font-size:20px">KOYO vs OHCO</h3>
+      <p>OHCO is heavier on design language, sensory immersion, and limited-edition finishes (especially on the M8 Neo platform). KOYO is positioned toward feature, value, and service clarity rather than design statement. If your home calls for a centerpiece chair, OHCO leads; if you want a quieter premium presence with strong engineering reputation, KOYO is the cleaner pick.</p>
+    </div>
+
+    <div class="kr-feature-box">
+      <h3 style="font-size:20px">KOYO vs Positive Posture</h3>
+      <p>Positive Posture covers a broader range of premium massage chair experiences, including different recovery and value options. KOYO offers a more focused Made in Japan positioning with the 303TS as the single anchor model. Pick KOYO if you want a clear, focused Japanese premium chair; pick Positive Posture if you want to compare more variations before deciding.</p>
+    </div>
+
+    <p style="font-size:14px;color:var(--kr-light);max-width:700px;margin:24px auto 0;text-align:center;line-height:1.7"><em>This comparison is for research support. The best choice typically becomes clear in 20 minutes of a side-by-side showroom demo, not from spec sheets alone.</em></p>
+  </div>
+</section>
+
+<!-- WHAT TO CHECK -->
+<section class="kr-section kr-section-alt" id="kr-check">
+  <div class="kr-narrow">
+    <div class="kr-feature-box">
+      <div class="kr-eyebrow">Pre-Purchase Checklist</div>
+      <h3 style="font-size:30px">What to Check Before Buying the KOYO 303TS</h3>
+      <p>A high-ticket chair lives or falls on the small details. Before buying the KOYO 303TS, run through the items below — most can be confirmed in a single showroom session.</p>
+      <ul style="list-style:none;padding:0;margin:14px 0 0;font-size:15px;color:var(--kr-text);line-height:1.85">
+        <li style="padding:6px 0;padding-left:20px;position:relative">→ <span style="margin-left:6px">Shoulder position vs. roller path</span></li>
+        <li style="padding:6px 0;padding-left:20px;position:relative">→ <span style="margin-left:6px">Torso length and height fit</span></li>
+        <li style="padding:6px 0;padding-left:20px;position:relative">→ <span style="margin-left:6px">Leg and foot fit; whether feet sit naturally in the foot wells</span></li>
+        <li style="padding:6px 0;padding-left:20px;position:relative">→ <span style="margin-left:6px">Pressure preference — too strong, too soft, or just right after a full program</span></li>
+        <li style="padding:6px 0;padding-left:20px;position:relative">→ <span style="margin-left:6px">Whether the massage feels controlled or random</span></li>
+        <li style="padding:6px 0;padding-left:20px;position:relative">→ <span style="margin-left:6px">Room measurements and recline arc — chair footprint and wall clearance</span></li>
+        <li style="padding:6px 0;padding-left:20px;position:relative">→ <span style="margin-left:6px">Delivery path through the home</span></li>
+        <li style="padding:6px 0;padding-left:20px;position:relative">→ <span style="margin-left:6px">Warranty terms and what is covered</span></li>
+        <li style="padding:6px 0;padding-left:20px;position:relative">→ <span style="margin-left:6px">Service access and in-home support availability</span></li>
+        <li style="padding:6px 0;padding-left:20px;position:relative">→ <span style="margin-left:6px">Financing terms and total monthly cost</span></li>
+        <li style="padding:6px 0;padding-left:20px;position:relative">→ <span style="margin-left:6px">Approval from a partner or second decision-maker who will also use the chair</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWROOM -->
+<section class="kr-section" id="kr-showroom">
+  <div class="kr-narrow">
+    <div class="kr-feature-box">
+      <div class="kr-eyebrow">Showroom Demo</div>
+      <h3 style="font-size:30px">Why Try the KOYO 303TS in a Showroom?</h3>
+      <p>Online specs can explain the chair, but they cannot tell you whether the massage feels right on your shoulders, lower back, hips, calves, and feet. A showroom demo lets you compare the KOYO 303TS with other premium chairs in one visit and narrow the decision to the model that fits your body, room, and budget.</p>
+      <p>Same specs can feel different by body type, shoulder position, and pressure preference. Room fit should be checked. A second decision-maker should ideally try the chair too. A 15-minute demo usually reduces "I need to think about it" more than a week of research.</p>
+      <div class="kr-model-ctas" style="margin-top:18px">
+        <a href="{{ contact_url }}" class="kr-btn kr-btn-accent">Try the KOYO 303TS In-Store</a>
+        <a href="{{ contact_url }}" class="kr-btn kr-btn-outline">Book a 15-Minute Chair Matching Session</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WARRANTY / MANUAL / SERVICE -->
+<section class="kr-section kr-section-alt" id="kr-warranty">
+  <div class="kr-narrow">
+    <div class="kr-feature-box">
+      <div class="kr-eyebrow">Ownership Picture</div>
+      <h3 style="font-size:30px">KOYO Warranty, Service, Manual, Delivery, and Installation</h3>
+      <p>Before buying, ask our team to walk you through the current KOYO warranty, delivery, installation, and service process. The KOYO warranty typically includes a multi-year limited warranty with optional extended coverage and in-home service in most US/Canada locations — confirm the exact terms for your model and date of purchase.</p>
+      <p>The KOYO manual is useful for safety, operation, troubleshooting, care, and specifications. It should support your decision — not replace a product page or showroom consultation. For service or repairs, KOYO support typically asks for model number, serial number, receipt, and a description of the issue.</p>
+      <div class="kr-model-ctas" style="margin-top:18px">
+        <a href="{{ contact_url }}" class="kr-btn kr-btn-accent">Ask About KOYO Warranty, Delivery &amp; Installation</a>
+        <a href="{{ contact_url }}" class="kr-btn kr-btn-outline">Review the KOYO Manual With a Specialist</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MID-PAGE CTA -->
+<section class="kr-section" style="padding:0 0 48px">
+  <div class="kr-container">
+    <div class="kr-cta-band">
+      <h2>Looking for current KOYO 303TS price, colors, or availability?</h2>
+      <p>This review page is built for research. For current price, colors, and checkout, head to the KOYO 303TS product page.</p>
+      <div class="kr-cta-btns">
+        <a href="{{ product_url }}" class="kr-btn kr-btn-accent">View the KOYO 303TS Product Page</a>
+        <a href="{{ contact_url }}" class="kr-btn kr-btn-white">Compare KOYO With Other Premium Brands</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROS & CONS -->
+<section class="kr-section kr-section-alt" id="kr-proscons">
+  <div class="kr-container">
+    <div class="kr-section-header"><span class="kr-eyebrow">Balanced Assessment</span><h2>Common Pros and Cons</h2></div>
+    <div class="kr-pros-cons">
+      <div class="kr-pros">
+        <h3 style="color:#2e7d32">✓ Common Pros</h3>
+        <ul>
+          <li>Premium Japanese massage chair positioning with documented Made in Japan reputation</li>
+          <li>Servo 4D massage mechanism with anthropoid silicone massage heads</li>
+          <li>Hybrid SL-track combines broad body coverage of a traditional L-track with a curved S shape</li>
+          <li>Automatic body scan helps the 4D mechanism adapt to each part of your body</li>
+          <li>Super simple touch screen remote with big buttons and clear menus</li>
+          <li>Fingertip control dial for quick massage feel adjustments</li>
+          <li>Zero gravity recline and foot rollers for daily reset routines</li>
+          <li>Calf and low back heat for added comfort during longer sessions</li>
+          <li>Bluetooth sound system for a more personal routine</li>
+          <li>Clear warranty/service framework with in-home service in most locations</li>
+        </ul>
+      </div>
+      <div class="kr-cons">
+        <h3 style="color:#e65100">△ Common Cons</h3>
+        <ul>
+          <li>Still premium pricing — not a bargain chair</li>
+          <li>Single-model lineup limits intra-brand comparison</li>
+          <li>Foot rollers can feel strong for sensitive users</li>
+          <li>Heat is comforting rather than intense — confirm in person</li>
+          <li>Chair footprint requires careful room measurement</li>
+          <li>Design language is practical rather than ultra-luxury</li>
+          <li>Body scan accuracy depends on posture and shoulder position</li>
+          <li>Less suited to shoppers who choose mainly by screen size or visual drama</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEST FOR -->
+<section class="kr-section" id="kr-bestfor">
+  <div class="kr-container">
+    <div class="kr-section-header"><span class="kr-eyebrow">Buyer Fit Guide</span><h2>Best For / May Not Be Ideal For</h2></div>
+    <div class="kr-bestfor">
+      <div class="kr-bestfor-card" style="border-top:3px solid #2e7d32">
+        <h3 style="color:#2e7d32">Best For</h3>
+        <ul>
+          <li>Buyers who want a premium Japanese massage chair with practical daily controls</li>
+          <li>Shoppers who value Made in Japan engineering reputation</li>
+          <li>Users who want clean Servo 4D feel without an overload of features</li>
+          <li>Buyers who want a super simple touch screen remote and fingertip control dial</li>
+          <li>Premium shoppers who care about warranty, service, and delivery clarity</li>
+          <li>Customers comparing KOYO with Panasonic, D.Core, OHCO, or Positive Posture</li>
+          <li>Showroom-first buyers who want to test before purchase</li>
+          <li>Homes with adequate room for a premium chair footprint</li>
+        </ul>
+      </div>
+      <div class="kr-bestfor-card" style="border-top:3px solid #e65100">
+        <h3 style="color:#e65100">May Not Be Ideal For</h3>
+        <ul>
+          <li>Bargain-first buyers</li>
+          <li>Shoppers wanting an ultra-luxury design statement</li>
+          <li>Users who prefer very gentle, casual massage</li>
+          <li>Shoppers outside the recommended user height range</li>
+          <li>Buyers expecting medical treatment or guaranteed pain relief</li>
+          <li>Homes with very limited room space or tight access paths</li>
+          <li>Users unwilling to test the chair in person before buying</li>
+          <li>Customers who plan only occasional use of the chair</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWROOM ADVISOR NOTES (representative feedback themes — no verified review labels) -->
+<section class="kr-section kr-section-alt" id="kr-themes">
+  <div class="kr-container">
+    <div class="kr-section-header">
+      <span class="kr-eyebrow">Showroom Advisor Notes</span>
+      <h2>What Shoppers Commonly Notice During a KOYO 303TS Demo</h2>
+      <p>These are review themes — summarized from MCM showroom observations and customer questions — not verified individual customer reviews.</p>
+    </div>
+    <div class="kr-themes-grid">
+      <div class="kr-theme-card">
+        <h4>Common feedback theme</h4>
+        <blockquote>"The 303TS feels more controlled than aggressive — that's why it's easier to use daily."</blockquote>
+        <p><strong>MCM interpretation:</strong> Lead with controlled Servo 4D feel rather than intensity claims.</p>
+      </div>
+      <div class="kr-theme-card">
+        <h4>Common feedback theme</h4>
+        <blockquote>"The Made in Japan piece mattered to me. It gave the chair instant credibility."</blockquote>
+        <p><strong>MCM interpretation:</strong> Made in Japan positioning is a strong trust trigger for premium Japanese chair shoppers.</p>
+      </div>
+      <div class="kr-theme-card">
+        <h4>Common feedback theme</h4>
+        <blockquote>"The remote is the best part. I picked up the chair's functionality in minutes, not weeks."</blockquote>
+        <p><strong>MCM interpretation:</strong> The super simple touch screen remote and fingertip control dial reduce friction for daily users.</p>
+      </div>
+      <div class="kr-theme-card">
+        <h4>Common feedback theme</h4>
+        <blockquote>"Foot rollers can be intense if you have never used a premium chair before."</blockquote>
+        <p><strong>MCM interpretation:</strong> Confirm pressure preference in person; start lower and build up.</p>
+      </div>
+      <div class="kr-theme-card">
+        <h4>Common feedback theme</h4>
+        <blockquote>"Heat is more comforting than dramatic. Plan to use it as part of a relaxation routine, not as a heating pad."</blockquote>
+        <p><strong>MCM interpretation:</strong> Manage heat expectations during the demo — soothing, not intense.</p>
+      </div>
+      <div class="kr-theme-card">
+        <h4>Common feedback theme</h4>
+        <blockquote>"It's not the flashiest chair I tried, but it felt the most reasonable for daily use."</blockquote>
+        <p><strong>MCM interpretation:</strong> Practical-premium positioning is KOYO's clearest opportunity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MCM SPECIALIST ASSESSMENT -->
+<section class="kr-section" id="kr-mcm">
+  <div class="kr-container">
+    <div class="kr-expert-box">
+      <span class="kr-eyebrow" style="color:#a0b8d8">Expert Editorial Summary</span>
+      <h2>MCM Specialist Assessment</h2>
+      <p>KOYO is strongest as a practical premium Japanese massage chair. It is not the flashiest chair on the showroom floor and it is not the cheapest, but it offers documented engineering, Made in Japan trust, clean controls, and a warranty/service framework that supports daily ownership.</p>
+      <p>The strongest KOYO buyer is someone who says: <strong style="color:#fff">"I want a premium Japanese chair that I can use daily without learning a complicated remote — and I want to compare it in person before I buy."</strong></p>
+      <p>The weakest KOYO buyer fit is someone who says: "I want the lowest price, the flashiest screen, or the most luxurious-looking chair in the room." That shopper is usually a better fit elsewhere.</p>
+      <p>For shoppers researching KOYO chair reviews online, the most useful next step is a side-by-side showroom demo with Panasonic, D.Core, OHCO, and Positive Posture — the right answer typically becomes clear in under 30 minutes of in-person testing.</p>
+      <div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap">
+        <a href="{{ contact_url }}" class="kr-btn kr-btn-accent">Speak With an MCM Specialist</a>
+        <a href="{{ product_url }}" class="kr-btn kr-btn-white">View the KOYO 303TS</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="kr-section kr-section-alt" id="kr-faq">
+  <div class="kr-narrow">
+    <div class="kr-section-header"><span class="kr-eyebrow">Common Questions</span><h2>Frequently Asked Questions About KOYO Massage Chairs</h2><p>KOYO review, price, warranty, manual, and showroom questions — answered without filler.</p></div>
+    <div class="kr-faq-list" id="kr-faq-list">
+
+      <div class="kr-faq-item"><div class="kr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Is KOYO a good massage chair brand?</h3><button class="kr-faq-toggle" aria-label="Toggle">+</button></div><div class="kr-faq-a"><div class="kr-faq-a-inner"><p>KOYO is worth considering if you want a premium Japanese massage chair with documented features, clear service expectations, and the ability to test the chair before buying. The better question is whether the KOYO 303TS fits your body, pressure preference, room, and budget.</p></div></div></div>
+
+      <div class="kr-faq-item"><div class="kr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Are KOYO massage chairs worth it?</h3><button class="kr-faq-toggle" aria-label="Toggle">+</button></div><div class="kr-faq-a"><div class="kr-faq-a-inner"><p>Are KOYO massage chairs worth it? For the right shopper, yes — especially if you want a premium Japanese massage chair with a clean control experience, showroom-demo confidence, and visible warranty and service support. The KOYO 303TS is strongest for buyers who care about massage feel, body fit, Made in Japan positioning, and long-term confidence.</p></div></div></div>
+
+      <div class="kr-faq-item"><div class="kr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Is this a KOYO 303TS review or a product page?</h3><button class="kr-faq-toggle" aria-label="Toggle">+</button></div><div class="kr-faq-a"><div class="kr-faq-a-inner"><p>This KOYO 303TS massage chair review is for research and decision support. For current KOYO 303TS price, color, availability, and checkout, visit the product page.</p></div></div></div>
+
+      <div class="kr-faq-item"><div class="kr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>What is the difference between KOYO 303TS, KOYO 303 TS, and KOYO 303?</h3><button class="kr-faq-toggle" aria-label="Toggle">+</button></div><div class="kr-faq-a"><div class="kr-faq-a-inner"><p>Some shoppers search for this model as KOYO 303 TS, KOYO 303, or KOYO 303TS. These are generally search variations for the same model — check the product page for the official model name and current configuration.</p></div></div></div>
+
+      <div class="kr-faq-item"><div class="kr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>What is the KOYO 303TS price?</h3><button class="kr-faq-toggle" aria-label="Toggle">+</button></div><div class="kr-faq-a"><div class="kr-faq-a-inner"><p>KOYO 303TS price is evaluated in the premium massage chair category. Current pricing can vary by promotion, color, availability, and financing terms, so use the KOYO 303TS product page as the source of current price and availability.</p></div></div></div>
+
+      <div class="kr-faq-item"><div class="kr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>What affects KOYO massage chair price?</h3><button class="kr-faq-toggle" aria-label="Toggle">+</button></div><div class="kr-faq-a"><div class="kr-faq-a-inner"><p>KOYO massage chair price can vary by model, promotion, showroom availability, delivery and installation needs, warranty selection, and financing terms. Confirm the live KOYO 303TS product page for the current price.</p></div></div></div>
+
+      <div class="kr-faq-item"><div class="kr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Is the KOYO 303TS a 4D massage chair?</h3><button class="kr-faq-toggle" aria-label="Toggle">+</button></div><div class="kr-faq-a"><div class="kr-faq-a-inner"><p>Yes. The KOYO 303TS 4D massage chair uses a Servo 4D massage mechanism with anthropoid silicone massage heads and a precision brushless motor, designed to deliver controlled kneading, tapping, rolling, and pressing across each part of your body.</p></div></div></div>
+
+      <div class="kr-faq-item"><div class="kr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Is the KOYO 303TS a massage chair made in Japan?</h3><button class="kr-faq-toggle" aria-label="Toggle">+</button></div><div class="kr-faq-a"><div class="kr-faq-a-inner"><p>KOYO is positioned as a premium Japanese massage chair brand. Made in Japan positioning is one of KOYO's clearest trust signals, but a massage chair made in Japan still needs to be tested for body fit and comfort before purchase.</p></div></div></div>
+
+      <div class="kr-faq-item"><div class="kr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Are massage chairs made in Japan better?</h3><button class="kr-faq-toggle" aria-label="Toggle">+</button></div><div class="kr-faq-a"><div class="kr-faq-a-inner"><p>Massage chairs made in Japan can offer a strong engineering reputation, but they are not automatically better for every body type. Compare KOYO with other massage chairs from Japan in person to confirm body fit, pressure preference, and daily usability.</p></div></div></div>
+
+      <div class="kr-faq-item"><div class="kr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>What Japanese massage chair brands should I compare with KOYO?</h3><button class="kr-faq-toggle" aria-label="Toggle">+</button></div><div class="kr-faq-a"><div class="kr-faq-a-inner"><p>When comparing Japanese massage chair brands, look at KOYO, Panasonic, D.Core, and OHCO. A showroom visit lets you compare massage feel, body fit, service support, warranty, and overall confidence side by side.</p></div></div></div>
+
+      <div class="kr-faq-item"><div class="kr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Is the KOYO 303TS the best Japanese massage chair?</h3><button class="kr-faq-toggle" aria-label="Toggle">+</button></div><div class="kr-faq-a"><div class="kr-faq-a-inner"><p>The best Japanese massage chair is not the same for every shopper. The KOYO 303TS can be the best Japanese massage chair for buyers who want a clean Servo 4D feel, simple controls, Made in Japan positioning, and clear warranty support — but the answer should be confirmed through a side-by-side showroom demo.</p></div></div></div>
+
+      <div class="kr-faq-item"><div class="kr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Where can I find the KOYO manual?</h3><button class="kr-faq-toggle" aria-label="Toggle">+</button></div><div class="kr-faq-a"><div class="kr-faq-a-inner"><p>The KOYO manual is useful for safe use, operation, troubleshooting, care, warranty and after-sales service, and specifications. Ask an MCM specialist for the current KOYO manual and any model-specific documentation before purchase.</p></div></div></div>
+
+      <div class="kr-faq-item"><div class="kr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>What does the KOYO warranty include?</h3><button class="kr-faq-toggle" aria-label="Toggle">+</button></div><div class="kr-faq-a"><div class="kr-faq-a-inner"><p>KOYO warranty coverage typically includes a multi-year limited warranty with optional extended coverage. Specifics — including parts, labor, service process, and in-home service availability — should be confirmed with an MCM specialist before purchase.</p></div></div></div>
+
+      <div class="kr-faq-item"><div class="kr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>What does the KOYO massage chair warranty include?</h3><button class="kr-faq-toggle" aria-label="Toggle">+</button></div><div class="kr-faq-a"><div class="kr-faq-a-inner"><p>KOYO massage chair warranty details vary by model, promotion, and date of purchase. Ask MCM what the warranty covers, how service requests are handled, and whether in-home service is available for the KOYO 303TS in your area.</p></div></div></div>
+
+      <div class="kr-faq-item"><div class="kr-faq-q" onclick="this.parentElement.classList.toggle('open');var a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'"><h3>Can I try the KOYO 303TS before buying?</h3><button class="kr-faq-toggle" aria-label="Toggle">+</button></div><div class="kr-faq-a"><div class="kr-faq-a-inner"><p>Yes. A showroom demo is strongly recommended. Body fit, massage feel, foot rollers, air massage pressure, and remote usability are easier to judge in person than from specs alone. Book a 15-minute KOYO chair matching session to compare KOYO with Panasonic, D.Core, OHCO, and Positive Posture in one visit.</p></div></div></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="kr-section" style="padding:48px 0 96px">
+  <div class="kr-container">
+    <div class="kr-cta-band">
+      <h2>Ready to experience KOYO 303TS?</h2>
+      <p>Visit MCM to test the Servo 4D massage, foot rollers, zero gravity, heat, automatic body scan, and super simple touch screen remote in person — and compare KOYO with Panasonic, D.Core, OHCO, and Positive Posture in one visit.</p>
+      <div class="kr-cta-btns">
+        <a href="{{ contact_url }}" class="kr-btn kr-btn-accent">Book Your KOYO 303TS Showroom Demo</a>
+        <a href="{{ product_url }}" class="kr-btn kr-btn-white">View the KOYO 303TS Product Page</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY MOBILE CTA -->
+<div class="kr-sticky-cta" id="kr-sticky">
+  <div class="kr-sticky-inner">
+    <a href="{{ contact_url }}" class="kr-btn kr-btn-accent" style="flex:1;text-align:center">Book Demo</a>
+    <a href="{{ product_url }}" class="kr-btn kr-btn-outline" style="flex:1;text-align:center">View Product</a>
+  </div>
+</div>
+
+<script>
+const krSections=document.querySelectorAll('[id^="kr-"]');
+const krNavLinks=document.querySelectorAll('.kr-subnav-inner a');
+const krObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){const id=entry.target.id;krNavLinks.forEach(link=>{link.classList.toggle('active',link.getAttribute('href')==='#'+id)})}})},{rootMargin:'-20% 0px -70% 0px'});
+krSections.forEach(s=>krObserver.observe(s));
+const krSticky=document.getElementById('kr-sticky');
+const krHeroEl=document.getElementById('kr-top');
+if(krSticky&&krHeroEl){const stickyObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(window.innerWidth<=768){krSticky.style.display=e.isIntersecting?'none':'block'}})});stickyObs.observe(krHeroEl)}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const target=document.querySelector(a.getAttribute('href'));if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'})}})});
+</script>
+
+</div>
+
+{% schema %}
+{
+  "name": "KOYO Reviews",
+  "tag": "section",
+  "class": "koyo-reviews-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Phone Number",
+      "default": "+1 (408) 889-1188"
+    }
+  ],
+  "presets": [
+    {
+      "name": "KOYO Reviews"
+    }
+  ]
+}
+{% endschema %}

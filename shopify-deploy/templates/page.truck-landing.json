@@ -1,7 +1,7 @@
 {
   "sections": {
     "truck-landing-main": {
-      "type": "page-truck-landing",
+      "type": "page-truck-landing-v2",
       "settings": {}
     }
   },

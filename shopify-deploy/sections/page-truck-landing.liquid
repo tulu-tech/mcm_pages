@@ -2,6 +2,7 @@
   SECTION: page-truck-landing.liquid
   Template: templates/page.truck-landing.json
   Mobile Showroom Truck landing page
+  Build: fonts-bump-v3 ({{ "now" | date: "%s" }})
 {%- endcomment -%}
 
 {%- style -%}
@@ -37,9 +38,9 @@
 .mcm-truck .t-section{padding:5rem 0}
 .mcm-truck .t-section-alt{background:var(--surface)}
 .mcm-truck .t-section-header{text-align:center;margin-bottom:3.5rem}
-.mcm-truck .t-eyebrow{display:inline-block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;font-weight:700;font-family:'Inter',sans-serif}
-.mcm-truck .t-section-header h2{font-size:clamp(1.75rem,3.5vw,2.5rem);margin-bottom:1rem;letter-spacing:-.02em}
-.mcm-truck .t-section-header p{font-size:1.05rem;color:var(--muted);max-width:620px;margin:0 auto;line-height:1.7}
+.mcm-truck .t-eyebrow{display:inline-block;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;font-weight:700;font-family:'Inter',sans-serif}
+.mcm-truck .t-section-header h2{font-size:clamp(32px,3.8vw,44px);margin-bottom:1rem;letter-spacing:-.02em}
+.mcm-truck .t-section-header p{font-size:19px;color:var(--muted);max-width:680px;margin:0 auto;line-height:1.75}
 
 /* HERO */
 .mcm-truck .t-hero{position:relative;min-height:90vh;display:flex;align-items:center;background:var(--dark);overflow:hidden}
@@ -49,19 +50,19 @@
 .mcm-truck .t-hero .t-container{position:relative;z-index:2}
 .mcm-truck .t-hero-content{max-width:680px;padding:4rem 0}
 .mcm-truck .t-hero .t-eyebrow{animation:tFadeUp .8s ease forwards}
-.mcm-truck .t-hero h1{font-size:clamp(2rem,5vw,3.5rem);color:var(--white);margin-bottom:1.25rem;font-weight:700;line-height:1.1;letter-spacing:-.02em;animation:tFadeUp .8s ease .15s forwards;opacity:0}
-.mcm-truck .t-hero p{font-size:1.1rem;color:rgba(255,255,255,.85);max-width:540px;margin-bottom:2rem;line-height:1.7;animation:tFadeUp .8s ease .3s forwards;opacity:0}
+.mcm-truck .t-hero h1{font-size:clamp(36px,5.2vw,60px);color:var(--white);margin-bottom:1.25rem;font-weight:700;line-height:1.1;letter-spacing:-.02em;animation:tFadeUp .8s ease .15s forwards;opacity:0}
+.mcm-truck .t-hero p{font-size:20px;color:rgba(255,255,255,.88);max-width:600px;margin-bottom:2rem;line-height:1.7;animation:tFadeUp .8s ease .3s forwards;opacity:0}
 .mcm-truck .t-hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:tFadeUp .8s ease .45s forwards;opacity:0}
-.mcm-truck .t-hero-trust{margin-top:2rem;font-size:.8rem;color:rgba(255,255,255,.55);letter-spacing:.04em;animation:tFadeUp .8s ease .6s forwards;opacity:0}
+.mcm-truck .t-hero-trust{margin-top:2rem;font-size:15px;color:rgba(255,255,255,.6);letter-spacing:.04em;animation:tFadeUp .8s ease .6s forwards;opacity:0}
 .mcm-truck .t-hero-trust span{margin:0 .5rem;opacity:.4}
 
 /* HOW IT WORKS */
 .mcm-truck .t-steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;position:relative}
 .mcm-truck .t-steps-grid::before{content:'';position:absolute;top:48px;left:16%;right:16%;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-light),var(--accent));z-index:0}
 .mcm-truck .t-step{text-align:center;padding:0 1rem;position:relative;z-index:1}
-.mcm-truck .t-step-num{width:56px;height:56px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;color:var(--white);font-weight:800;font-size:1.2rem;box-shadow:0 4px 20px rgba(184,148,79,.3);border:4px solid var(--white)}
-.mcm-truck .t-step h3{font-size:1.05rem;margin-bottom:.5rem;font-family:'Inter',sans-serif}
-.mcm-truck .t-step p{font-size:.9rem;color:var(--muted);line-height:1.6}
+.mcm-truck .t-step-num{width:56px;height:56px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;color:var(--white);font-weight:800;font-size:19.2px;box-shadow:0 4px 20px rgba(184,148,79,.3);border:4px solid var(--white)}
+.mcm-truck .t-step h3{font-size:20px;margin-bottom:.5rem;font-family:'Inter',sans-serif}
+.mcm-truck .t-step p{font-size:16px;color:var(--muted);line-height:1.7}
 
 /* WHO ITS FOR */
 .mcm-truck .t-audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
@@ -71,8 +72,8 @@
 .mcm-truck .t-audience-card:hover .t-audience-icon{background:var(--accent)}
 .mcm-truck .t-audience-card:hover .t-audience-icon svg{fill:var(--white)}
 .mcm-truck .t-audience-icon svg{width:28px;height:28px;fill:var(--accent);transition:fill .3s ease}
-.mcm-truck .t-audience-card h3{font-size:1rem;margin-bottom:.5rem;font-family:'Inter',sans-serif}
-.mcm-truck .t-audience-card p{font-size:.85rem;color:var(--muted);line-height:1.6;margin:0}
+.mcm-truck .t-audience-card h3{font-size:19px;margin-bottom:.5rem;font-family:'Inter',sans-serif}
+.mcm-truck .t-audience-card p{font-size:16px;color:var(--muted);line-height:1.7;margin:0}
 
 /* WHY BOOK - IMAGE + CARDS */
 .mcm-truck .t-why-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
@@ -83,8 +84,8 @@
 .mcm-truck .t-why-card:hover{border-color:var(--accent);box-shadow:var(--card-shadow);transform:translateX(4px)}
 .mcm-truck .t-why-card-ico{width:44px;height:44px;background:var(--accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .mcm-truck .t-why-card-ico svg{width:20px;height:20px;fill:var(--accent)}
-.mcm-truck .t-why-card h4{font-size:.95rem;margin-bottom:4px;font-family:'Inter',sans-serif}
-.mcm-truck .t-why-card p{font-size:.85rem;color:var(--muted);line-height:1.55;margin:0}
+.mcm-truck .t-why-card h4{font-size:18px;margin-bottom:6px;font-family:'Inter',sans-serif}
+.mcm-truck .t-why-card p{font-size:16px;color:var(--muted);line-height:1.65;margin:0}
 
 /* HOST THE TRUCK */
 .mcm-truck .t-host-banner{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:var(--radius-lg);overflow:hidden;background:var(--dark);position:relative}
@@ -94,10 +95,10 @@
 .mcm-truck .t-host-banner:hover .t-host-img img{transform:scale(1.04)}
 .mcm-truck .t-host-content{padding:3.5rem;display:flex;flex-direction:column;justify-content:center;color:var(--white)}
 .mcm-truck .t-host-content .t-eyebrow{color:var(--accent)}
-.mcm-truck .t-host-content h2{color:var(--white);font-size:clamp(1.5rem,2.5vw,2.25rem);margin-bottom:1rem}
-.mcm-truck .t-host-content p{color:rgba(255,255,255,.75);font-size:1rem;margin-bottom:1.5rem;line-height:1.7}
+.mcm-truck .t-host-content h2{color:var(--white);font-size:clamp(28px,2.8vw,40px);margin-bottom:1rem}
+.mcm-truck .t-host-content p{color:rgba(255,255,255,.78);font-size:18px;margin-bottom:1.5rem;line-height:1.7}
 .mcm-truck .t-host-uses{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:2rem}
-.mcm-truck .t-host-use{display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:rgba(255,255,255,.7)}
+.mcm-truck .t-host-use{display:flex;align-items:center;gap:.5rem;font-size:16px;color:rgba(255,255,255,.75)}
 .mcm-truck .t-host-use svg{width:16px;height:16px;fill:var(--accent);flex-shrink:0}
 
 /* TRUST GRID */
@@ -105,27 +106,27 @@
 .mcm-truck .t-trust-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius);padding:2rem;text-align:center;transition:var(--transition)}
 .mcm-truck .t-trust-card:hover{border-color:var(--accent);box-shadow:var(--card-shadow);transform:translateY(-4px)}
 .mcm-truck .t-trust-card svg{width:32px;height:32px;fill:var(--accent);margin:0 auto .75rem;display:block}
-.mcm-truck .t-trust-card h4{font-size:.95rem;margin-bottom:.35rem;font-family:'Inter',sans-serif}
-.mcm-truck .t-trust-card p{font-size:.82rem;color:var(--muted);line-height:1.55;margin:0}
+.mcm-truck .t-trust-card h4{font-size:18px;margin-bottom:.45rem;font-family:'Inter',sans-serif}
+.mcm-truck .t-trust-card p{font-size:16px;color:var(--muted);line-height:1.65;margin:0}
 
 /* FAQ */
 .mcm-truck .t-faq-item{border-bottom:1px solid var(--border)}
 .mcm-truck .t-faq-q{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;cursor:pointer;gap:1rem}
-.mcm-truck .t-faq-q h3{font-size:1rem;font-family:'Inter',sans-serif;margin:0;transition:color .3s ease}
+.mcm-truck .t-faq-q h3{font-size:19px;font-family:'Inter',sans-serif;margin:0;transition:color .3s ease;font-weight:700}
 .mcm-truck .t-faq-q:hover h3{color:var(--accent)}
 .mcm-truck .t-faq-arrow{width:24px;height:24px;fill:var(--muted);flex-shrink:0;transition:transform .3s ease}
 .mcm-truck .t-faq-item.active .t-faq-arrow{transform:rotate(180deg)}
 .mcm-truck .t-faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease}
 .mcm-truck .t-faq-item.active .t-faq-a{max-height:300px}
-.mcm-truck .t-faq-a p{font-size:.95rem;color:var(--muted);line-height:1.7;padding-bottom:1.5rem}
+.mcm-truck .t-faq-a p{font-size:17px;color:var(--muted);line-height:1.75;padding-bottom:1.5rem}
 
 /* FINAL CTA */
 .mcm-truck .t-final-cta{background:var(--dark);border-radius:var(--radius-lg);padding:4rem;text-align:center;position:relative;overflow:hidden}
 .mcm-truck .t-final-cta::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--accent),#d4b06a,var(--accent))}
 .mcm-truck .t-final-cta::after{content:'';position:absolute;top:-50%;right:-20%;width:500px;height:500px;background:radial-gradient(circle,rgba(184,148,79,.08) 0%,transparent 70%);border-radius:50%;pointer-events:none}
 .mcm-truck .t-final-cta .t-eyebrow{position:relative;z-index:1}
-.mcm-truck .t-final-cta h2{color:var(--white);font-size:clamp(1.75rem,3vw,2.5rem);margin-bottom:1rem;position:relative;z-index:1}
-.mcm-truck .t-final-cta p{color:rgba(255,255,255,.7);font-size:1.05rem;max-width:600px;margin:0 auto 2rem;position:relative;z-index:1}
+.mcm-truck .t-final-cta h2{color:var(--white);font-size:clamp(32px,3.2vw,44px);margin-bottom:1rem;position:relative;z-index:1}
+.mcm-truck .t-final-cta p{color:rgba(255,255,255,.78);font-size:19px;max-width:640px;margin:0 auto 2rem;position:relative;z-index:1;line-height:1.7}
 .mcm-truck .t-final-btns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;position:relative;z-index:1}
 
 /* FORM MODAL */
@@ -136,32 +137,32 @@
 .mcm-truck .t-form-close{position:absolute;top:16px;right:16px;width:36px;height:36px;background:var(--surface);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition)}
 .mcm-truck .t-form-close:hover{background:var(--accent);color:var(--white)}
 .mcm-truck .t-form-close svg{width:18px;height:18px;fill:currentColor}
-.mcm-truck .t-form-modal h2{font-size:1.5rem;margin-bottom:.5rem}
-.mcm-truck .t-form-modal>p{color:var(--muted);font-size:.9rem;margin-bottom:1.5rem}
+.mcm-truck .t-form-modal h2{font-size:28px;margin-bottom:.5rem}
+.mcm-truck .t-form-modal>p{color:var(--muted);font-size:17px;margin-bottom:1.5rem;line-height:1.6}
 .mcm-truck .t-form{display:flex;flex-direction:column;gap:1rem}
 .mcm-truck .t-fg{display:flex;flex-direction:column;gap:5px}
-.mcm-truck .t-fg label{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
-.mcm-truck .t-fg input,.mcm-truck .t-fg textarea,.mcm-truck .t-fg select{width:100%;padding:13px 16px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-family:'Inter',sans-serif;font-size:15px;color:var(--dark);background:var(--surface);transition:var(--transition);outline:none;-webkit-appearance:none}
+.mcm-truck .t-fg label{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.mcm-truck .t-fg input,.mcm-truck .t-fg textarea,.mcm-truck .t-fg select{width:100%;padding:14px 16px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-family:'Inter',sans-serif;font-size:16px;color:var(--dark);background:var(--surface);transition:var(--transition);outline:none;-webkit-appearance:none}
 .mcm-truck .t-fg input:focus,.mcm-truck .t-fg textarea:focus,.mcm-truck .t-fg select:focus{border-color:var(--accent);background:var(--white);box-shadow:0 0 0 4px var(--accent-glow)}
 .mcm-truck .t-fg textarea{resize:vertical;min-height:100px}
 .mcm-truck .t-fg select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%235a5a5a' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:16px;padding-right:36px;cursor:pointer}
 .mcm-truck .t-form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.mcm-truck .t-form-submit{padding:15px 36px;background:var(--accent);color:#fff;border:none;border-radius:50px;font-family:'Inter',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:var(--transition);width:100%;margin-top:.5rem}
+.mcm-truck .t-form-submit{padding:16px 36px;background:var(--accent);color:#fff;border:none;border-radius:50px;font-family:'Inter',sans-serif;font-size:17px;font-weight:700;cursor:pointer;transition:var(--transition);width:100%;margin-top:.5rem;letter-spacing:.02em}
 .mcm-truck .t-form-submit:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:0 10px 30px rgba(184,148,79,.25)}
 
 /* EMBEDDED BOOKING SECTION */
 .mcm-truck .t-booking-section{background:var(--surface-alt);border-bottom:1px solid var(--border)}
 .mcm-truck .t-booking-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
 .mcm-truck .t-booking-info-content{margin-top:1.5rem}
-.mcm-truck .t-booking-info-content p{font-size:1.1rem;color:var(--text);margin-bottom:2rem;line-height:1.7}
+.mcm-truck .t-booking-info-content p{font-size:20px;color:var(--text);margin-bottom:2rem;line-height:1.7}
 .mcm-truck .t-booking-benefits{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:1.5rem}
-.mcm-truck .t-booking-benefits li{display:flex;gap:1rem;align-items:flex-start;font-size:.95rem;color:var(--muted);line-height:1.6}
+.mcm-truck .t-booking-benefits li{display:flex;gap:1rem;align-items:flex-start;font-size:17px;color:var(--muted);line-height:1.7}
 .mcm-truck .t-booking-benefits li strong{color:var(--dark);font-family:'Inter',sans-serif}
 .mcm-truck .t-benefit-icon{width:40px;height:40px;background:var(--accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .mcm-truck .t-benefit-icon svg{width:18px;height:18px;fill:var(--accent)}
 .mcm-truck .t-booking-form-box{background:var(--white);border-radius:var(--radius-lg);padding:3rem;box-shadow:var(--card-shadow-hover);border:1px solid var(--border-light)}
-.mcm-truck .t-booking-form-box h3{font-size:1.5rem;margin-bottom:.5rem;font-family:'Playfair Display',serif}
-.mcm-truck .t-booking-form-box p{font-size:.95rem;color:var(--muted);margin-bottom:2rem;line-height:1.5}
+.mcm-truck .t-booking-form-box h3{font-size:30px;margin-bottom:.65rem;font-family:'Playfair Display',serif}
+.mcm-truck .t-booking-form-box p{font-size:17px;color:var(--muted);margin-bottom:2rem;line-height:1.6}
 
 /* RESPONSIVE */
 @media(max-width:1024px){
@@ -173,8 +174,8 @@
 .mcm-truck .t-container{padding:0 1rem}
 .mcm-truck .t-container-narrow{padding:0 1rem}
 .mcm-truck .t-hero{min-height:85vh}
-.mcm-truck .t-hero h1{font-size:1.75rem}
-.mcm-truck .t-hero p{font-size:.95rem}
+.mcm-truck .t-hero h1{font-size:28px}
+.mcm-truck .t-hero p{font-size:15.2px}
 .mcm-truck .t-hero-btns{flex-direction:column;align-items:stretch}
 .mcm-truck .t-hero-btns .t-btn{justify-content:center}
 .mcm-truck .t-audience-card{padding:1.5rem}
@@ -188,20 +189,20 @@
 .mcm-truck .t-host-uses{grid-template-columns:1fr}
 .mcm-truck .t-trust-grid{grid-template-columns:1fr;gap:1rem}
 .mcm-truck .t-final-cta{padding:2.5rem 1.5rem;border-radius:var(--radius)}
-.mcm-truck .t-final-cta h2{font-size:1.5rem}
+.mcm-truck .t-final-cta h2{font-size:24px}
 .mcm-truck .t-final-btns{flex-direction:column;align-items:stretch}
 .mcm-truck .t-final-btns .t-btn{justify-content:center}
 .mcm-truck .t-btn{padding:14px 28px;font-size:15px}
 .mcm-truck .t-form-modal{padding:1.5rem;margin:1rem}
 .mcm-truck .t-form-row{grid-template-columns:1fr}
-.mcm-truck .t-faq-q h3{font-size:.92rem}
+.mcm-truck .t-faq-q h3{font-size:14.72px}
 }
 @media(max-width:480px){
 .mcm-truck .t-hero{min-height:80vh}
-.mcm-truck .t-hero h1{font-size:1.5rem}
+.mcm-truck .t-hero h1{font-size:24px}
 .mcm-truck .t-hero-content{padding:2.5rem 0}
 .mcm-truck .t-btn{padding:12px 24px;font-size:14px}
-.mcm-truck .t-section-header h2{font-size:1.35rem}
+.mcm-truck .t-section-header h2{font-size:21.6px}
 .mcm-truck .t-final-cta{padding:2rem 1.25rem}
 }
 {%- endstyle -%}
@@ -212,7 +213,7 @@
 <!-- ===== HERO ===== -->
 <section class="t-hero">
     <div class="t-hero-bg">
-        <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/truck-couple-trial.png" alt="Massage Chairs and More Mobile Showroom Truck — We Bring the Showroom to Your Driveway" loading="eager">
+        <img src="{{ 'truck-couple-trial.png' | asset_url }}" alt="Massage Chairs and More Mobile Showroom Truck — We Bring the Showroom to Your Driveway" loading="eager">
     </div>
     <div class="t-container">
         <div class="t-hero-content">
@@ -363,7 +364,7 @@
         </div>
         <div class="t-why-grid">
             <div class="t-why-img t-fade">
-                <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/truck-interior-demo.png" alt="Couple experiencing premium massage chairs inside the mobile showroom">
+                <img src="{{ 'truck-interior-demo.png' | asset_url }}" alt="Couple experiencing premium massage chairs inside the mobile showroom">
             </div>
             <div class="t-why-cards t-fade">
                 <div class="t-why-card">
@@ -396,7 +397,7 @@
     <div class="t-container">
         <div class="t-host-banner t-fade">
             <div class="t-host-img">
-                <img src="https://cdn.shopify.com/s/files/1/0813/4036/7096/files/truck-corporate-event.png" alt="Mobile showroom truck at corporate wellness event">
+                <img src="{{ 'truck-corporate-event.png' | asset_url }}" alt="Mobile showroom truck at corporate wellness event">
             </div>
             <div class="t-host-content">
                 <span class="t-eyebrow">For Organizers &amp; Hosts</span>

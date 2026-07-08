@@ -153,7 +153,9 @@
       "@type": "Offer",
       "url": "{{ url_ohco }}",
       "priceCurrency": "USD",
-      "price": "{{ p_ohco_m8.price | money_without_currency | remove: ',' }}"
+      "price": "{{ p_ohco_m8.price | money_without_currency | remove: ',' }}",
+      "availability": "{% if p_ohco_m8.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+      "itemCondition": "https://schema.org/NewCondition"
     }
   }
   {%- endif -%}
@@ -169,7 +171,9 @@
       "@type": "Offer",
       "url": "{{ url_dcore }}",
       "priceCurrency": "USD",
-      "price": "{{ p_dcore2.price | money_without_currency | remove: ',' }}"
+      "price": "{{ p_dcore2.price | money_without_currency | remove: ',' }}",
+      "availability": "{% if p_dcore2.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+      "itemCondition": "https://schema.org/NewCondition"
     }
   }
   {%- endif -%}
